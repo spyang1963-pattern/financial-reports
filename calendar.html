@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>市場行事曆 - 金融情報系統</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; margin: 0;
+         background: #f5f6f8; color: #1c1e21; line-height: 1.7; }
+  header { background: #1b2a4a; color: #fff; padding: 14px 24px;
+           display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  header h1 { font-size: 18px; margin: 0; flex: 1; }
+  header nav a { color: #cdd8ee; text-decoration: none; margin-left: 14px; font-size: 14px; }
+  header nav a:hover, header nav a.active { color: #fff; text-decoration: underline; }
+  #clock { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; font-size: 13px; }
+  .clk { background: rgba(255,255,255,.08); border-radius: 6px; padding: 4px 10px; }
+  .clk-city { color: #9fb0cf; margin-right: 6px; }
+  .clk-time { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .mkt { margin-left: 8px; font-size: 12px; padding: 1px 7px; border-radius: 9px; display: inline-block; }
+  .mkt.open { background: #2e7d32; color: #fff; }
+  .mkt.closed { background: #5a6474; color: #fff; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 20px; }
+  .card { background: #fff; border-radius: 8px; padding: 18px 22px; margin: 14px 0;
+          box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .card h2 { margin: 0 0 12px; font-size: 18px; border-bottom: 1px solid #e3e6eb; padding-bottom: 6px; }
+  .card h3 { margin: 14px 0 6px; font-size: 15px; }
+  .muted { color: #666; font-size: 13px; }
+  .big-clock { display: flex; gap: 22px; flex-wrap: wrap; }
+  .bc { flex: 1; min-width: 240px; background: #f4f6fa; border-radius: 8px; padding: 14px 18px; }
+  .bc .city { font-size: 13px; color: #4a5568; }
+  .bc .time { font-size: 34px; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: 1px; }
+  .bc .date { color: #666; font-size: 13px; }
+  .tag { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 11px; color: #fff; }
+  .tag.est { background: #8a6d1d; }
+  .tag.ok { background: #2e7d32; }
+  .impact { font-size: 11px; color: #fff; border-radius: 4px; padding: 1px 6px; }
+  .impact.high { background: #d64545; }
+  .impact.medium { background: #d98527; }
+  .impact.low { background: #7a8699; }
+  .ev { border-left: 3px solid #ccc; padding: 8px 12px; margin: 8px 0; background: #fafbfc; border-radius: 0 6px 6px 0; }
+  .ev.high { border-left-color: #d64545; }
+  .ev .top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .ev .iname { font-weight: 600; font-size: 14px; }
+  .ev .desc { color: #333; font-size: 14px; }
+  .ev .meta { color: #777; font-size: 12px; margin-top: 2px; }
+  .forecast { background: #eef4fb; border-radius: 6px; padding: 6px 10px; margin-top: 6px; font-size: 13px; color: #1b2a4a; }
+  .forecast b { color: #1459c8; }
+  table.cal { width: 100%; border-collapse: collapse; table-layout: fixed; margin-top: 8px; }
+  table.cal th { background: #eef1f6; font-size: 12px; color: #4a5568; padding: 4px 0; border: 1px solid #d8dce3; }
+  table.cal td { border: 1px solid #d8dce3; vertical-align: top; height: 78px; padding: 3px; font-size: 12px; }
+  table.cal td.today { background: #fff8e1; outline: 2px solid #ca8a04; outline-offset: -2px; }
+  table.cal .dn { font-weight: 600; color: #33415c; }
+  table.cal .evdot { display: block; border-radius: 4px; color: #fff; font-size: 11px;
+         padding: 1px 5px; margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .month-title { font-weight: 700; font-size: 15px; margin-top: 4px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; font-size: 12px; color: #4a5568; }
+  .legend span { display: inline-flex; align-items: center; gap: 5px; }
+  .legend i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+  .empty { color: #999; font-style: italic; }
+  footer { text-align: center; color: #999; font-size: 12px; padding: 20px; }
+  @media (max-width: 640px) { table.cal { font-size: 11px; } table.cal td { height: 60px; } .evdot { font-size: 10px; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>金融情報系統報告</h1>
+  <nav>
+    <a href="index.html">首頁</a>
+    <a href="calendar.html" class="active">行事曆</a>
+    <a href="daily/2026-08-10.html">最新每日</a>
+    <a href="deep/2026-08-10-am.html">最新深度</a>
+  </nav>
+  <div id="clock">
+    <span class="clk"><span class="clk-city">台北</span><span class="clk-time" id="clk-tw">--:--:--</span><span class="mkt closed" id="tw-mkt">…</span></span>
+    <span class="clk"><span class="clk-city">紐約</span><span class="clk-time" id="clk-ny">--:--:--</span><span class="mkt closed" id="ny-mkt">…</span></span>
+  </div>
+</header>
+<div class="wrap">
+  <div class="card">
+    <h2>即時時鐘 · 台北 / 紐約 對照</h2>
+    <div class="big-clock">
+      <div class="bc">
+        <div class="city">台北時間 (GMT+8)</div>
+        <div class="time" id="bc-tw">--:--:--</div>
+        <div class="date" id="bc-tw-d">...</div>
+        <span class="mkt closed" id="tw-mkt2">…</span>
+      </div>
+      <div class="bc">
+        <div class="city">紐約時間 (美東 ET)</div>
+        <div class="time" id="bc-ny">--:--:--</div>
+        <div class="date" id="bc-ny-d">...</div>
+        <span class="mkt closed" id="ny-mkt2">…</span>
+      </div>
+    </div>
+    <p class="muted" style="margin-bottom:0">台股交易時段 09:00-13:30（台北時間）· 美股交易時段 09:30-16:00（美東，冬令延後1小時開收）</p>
+  </div>
+
+  <div class="card">
+    <h2>今日 / 明日提醒</h2>
+    <h3>2026年08月10日 週一（今日）</h3>
+    
+      <p class="empty">今日無排定的重大機構事件，仍請留意盤中突發新聞與 Fed 官員談話。</p>
+    
+    <h3>2026年08月11日 週二（明日）</h3>
+    
+      <p class="empty">明日暫無排定的重大機構事件。</p>
+    
+  </div>
+  <div class="card">
+    <h2>未來 7 天重點提醒</h2>
+    
+    
+      
+<div class="ev high">
+  <div class="top">
+    <span class="iname">美國勞工部 BLS</span>
+    <span class="tag" style="background:#ea580c">物價</span>
+    <span class="impact high">影響高</span>
+    <span class="tag ok">官方時程</span>
+  </div>
+  <div class="desc">CPI 消費者物價指數(7月)</div>
+  <div class="meta">2026/08/12 · 台灣時間 20:30（當日） · 美東 08:30 · 2天後</div>
+  <div class="forecast"><b>法人預測方向：</b>市場共識為通膨持續降溫；原油價格與租金為主要變數。數據偏高將推升美債殖利率並壓抑科技股。</div>
+</div>
+
+<div class="ev high">
+  <div class="top">
+    <span class="iname">美國勞工部 BLS</span>
+    <span class="tag" style="background:#ea580c">物價</span>
+    <span class="impact high">影響高</span>
+    <span class="tag est">日期估算</span>
+  </div>
+  <div class="desc">PPI 生產者物價指數(7月)</div>
+  <div class="meta">2026/08/13 · 台灣時間 20:30（當日） · 美東 08:30 · 3天後</div>
+  
+</div>
+
+<div class="ev ">
+  <div class="top">
+    <span class="iname">美國商務部 Census</span>
+    <span class="tag" style="background:#0d9488">GDP</span>
+    
+    <span class="tag est">日期估算</span>
+  </div>
+  <div class="desc">零售銷售(7月)</div>
+  <div class="meta">2026/08/14 · 台灣時間 20:30（當日） · 美東 08:30 · 4天後</div>
+  
+</div>
+
+    
+  </div>
+  <div class="card">
+    <h2>機構事件月曆</h2>
+    
+      <div class="month-title">2026年08月</div>
+      <table class="cal">
+        <tr><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th><th>日</th></tr>
+        
+        <tr>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">1</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">2</span>
+              
+            
+          </td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td>
+            
+              <span class="dn">3</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">4</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">5</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">6</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">7</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">8</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">9</span>
+              
+            
+          </td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td class="today">
+            
+              <span class="dn">10</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">11</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">12</span>
+              
+                <span class="evdot" style="background:#ea580c" title="美國勞工部 BLS｜CPI 消費者物價指數(7月)｜台灣時間 20:30">物價:20:30</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">13</span>
+              
+                <span class="evdot" style="background:#ea580c" title="美國勞工部 BLS｜PPI 生產者物價指數(7月)｜台灣時間 20:30">物價:20:30</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">14</span>
+              
+                <span class="evdot" style="background:#0d9488" title="美國商務部 Census｜零售銷售(7月)｜台灣時間 20:30">GDP:20:30</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">15</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">16</span>
+              
+            
+          </td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td>
+            
+              <span class="dn">17</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">18</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">19</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">20</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">21</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">22</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">23</span>
+              
+            
+          </td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td>
+            
+              <span class="dn">24</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">25</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">26</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">27</span>
+              
+                <span class="evdot" style="background:#0d9488" title="美國商務部 BEA｜GDP 第二季第二次修正｜台灣時間 20:30">GDP:20:30</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">28</span>
+              
+                <span class="evdot" style="background:#ea580c" title="美國商務部 BEA｜PCE 個人消費支出(7月)｜台灣時間 20:30">物價:20:30</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">29</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">30</span>
+              
+            
+          </td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td>
+            
+              <span class="dn">31</span>
+              
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+        </tr>
+        
+      </table>
+    
+      <div class="month-title">2026年09月</div>
+      <table class="cal">
+        <tr><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th><th>日</th></tr>
+        
+        <tr>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">1</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">2</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">3</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">4</span>
+              
+                <span class="evdot" style="background:#7c3aed" title="美國勞工部 BLS｜非農就業 NFP + 失業率(8月)｜台灣時間 20:30">就業:20:30</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">5</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">6</span>
+              
+            
+          </td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td>
+            
+              <span class="dn">7</span>
+              
+                <span class="evdot" style="background:#ca8a04" title="主計總處｜台灣 CPI 消費者物價指數(8月)｜台灣時間 16:00">台股/台灣數據:16:00</span>
+              
+                <span class="evdot" style="background:#64748b" title="美股休市｜勞工節 Labor Day 休市一日｜台灣時間 -">休市</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">8</span>
+              
+                <span class="evdot" style="background:#ca8a04" title="財政部｜海關出口統計(8月)｜台灣時間 16:00">台股/台灣數據:16:00</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">9</span>
+              
+                <span class="evdot" style="background:#db2777" title="Apple｜秋季發表會（新款iPhone）｜台灣時間 22:00">產品發表:22:00</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">10</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">11</span>
+              
+                <span class="evdot" style="background:#ea580c" title="美國勞工部 BLS｜CPI 消費者物價指數(8月)｜台灣時間 20:30">物價:20:30</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">12</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">13</span>
+              
+            
+          </td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td>
+            
+              <span class="dn">14</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">15</span>
+              
+                <span class="evdot" style="background:#ea580c" title="美國勞工部 BLS｜PPI 生產者物價指數(8月)｜台灣時間 20:30">物價:20:30</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">16</span>
+              
+                <span class="evdot" style="background:#2563eb" title="聯準會 FOMC｜利率決策 + 經濟預測(SEP/點陣圖)｜台灣時間 02:00">央行:02:00</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">17</span>
+              
+                <span class="evdot" style="background:#2563eb" title="中央銀行｜央行理監事會議（第三季）｜台灣時間 16:00">央行:16:00</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">18</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">19</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">20</span>
+              
+            
+          </td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td>
+            
+              <span class="dn">21</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">22</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">23</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">24</span>
+              
+                <span class="evdot" style="background:#0d9488" title="美國商務部 BEA｜GDP 第二季終值｜台灣時間 20:30">GDP:20:30</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">25</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">26</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">27</span>
+              
+            
+          </td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td>
+            
+              <span class="dn">28</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">29</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">30</span>
+              
+                <span class="evdot" style="background:#ea580c" title="美國商務部 BEA｜PCE 個人消費支出(8月)｜台灣時間 20:30">物價:20:30</span>
+              
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+        </tr>
+        
+      </table>
+    
+      <div class="month-title">2026年10月</div>
+      <table class="cal">
+        <tr><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th><th>日</th></tr>
+        
+        <tr>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">1</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">2</span>
+              
+                <span class="evdot" style="background:#7c3aed" title="美國勞工部 BLS｜非農就業 NFP + 失業率(9月)｜台灣時間 20:30">就業:20:30</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">3</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">4</span>
+              
+            
+          </td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td>
+            
+              <span class="dn">5</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">6</span>
+              
+                <span class="evdot" style="background:#ca8a04" title="主計總處｜台灣 CPI 消費者物價指數(9月)｜台灣時間 16:00">台股/台灣數據:16:00</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">7</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">8</span>
+              
+                <span class="evdot" style="background:#ca8a04" title="財政部｜海關出口統計(9月)｜台灣時間 16:00">台股/台灣數據:16:00</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">9</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">10</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">11</span>
+              
+            
+          </td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td>
+            
+              <span class="dn">12</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">13</span>
+              
+                <span class="evdot" style="background:#ea580c" title="美國勞工部 BLS｜CPI 消費者物價指數(9月)｜台灣時間 20:30">物價:20:30</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">14</span>
+              
+                <span class="evdot" style="background:#ea580c" title="美國勞工部 BLS｜PPI 生產者物價指數(9月)｜台灣時間 20:30">物價:20:30</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">15</span>
+              
+                <span class="evdot" style="background:#16a34a" title="台積電｜Q3 法說會（台灣場）｜台灣時間 14:00">財報/法說:14:00</span>
+              
+                <span class="evdot" style="background:#0d9488" title="美國商務部 Census｜零售銷售(9月)｜台灣時間 20:30">GDP:20:30</span>
+              
+                <span class="evdot" style="background:#16a34a" title="台積電 ADR / Netflix｜美股盤後公布財報｜台灣時間 04:05">財報/法說:04:05</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">16</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">17</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">18</span>
+              
+            
+          </td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td>
+            
+              <span class="dn">19</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">20</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">21</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">22</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">23</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">24</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">25</span>
+              
+            
+          </td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td>
+            
+              <span class="dn">26</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">27</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">28</span>
+              
+                <span class="evdot" style="background:#2563eb" title="聯準會 FOMC｜利率決策（無SEP）｜台灣時間 02:00">央行:02:00</span>
+              
+                <span class="evdot" style="background:#16a34a" title="Tesla / Meta｜美股盤後公布財報｜台灣時間 04:05">財報/法說:04:05</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">29</span>
+              
+                <span class="evdot" style="background:#0d9488" title="美國商務部 BEA｜GDP 第三季初值｜台灣時間 20:30">GDP:20:30</span>
+              
+                <span class="evdot" style="background:#16a34a" title="Apple / Microsoft / Alphabet / Amazon｜美股盤後公布財報（科技五巨頭）｜台灣時間 04:05">財報/法說:04:05</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">30</span>
+              
+                <span class="evdot" style="background:#ea580c" title="美國商務部 BEA｜PCE 個人消費支出(9月)｜台灣時間 20:30">物價:20:30</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">31</span>
+              
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+        </tr>
+        
+      </table>
+    
+      <div class="month-title">2026年11月</div>
+      <table class="cal">
+        <tr><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th><th>日</th></tr>
+        
+        <tr>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">1</span>
+              
+            
+          </td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td>
+            
+              <span class="dn">2</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">3</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">4</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">5</span>
+              
+                <span class="evdot" style="background:#ca8a04" title="主計總處｜台灣 CPI 消費者物價指數(10月)｜台灣時間 16:00">台股/台灣數據:16:00</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">6</span>
+              
+                <span class="evdot" style="background:#7c3aed" title="美國勞工部 BLS｜非農就業 NFP + 失業率(10月)｜台灣時間 21:30">就業:21:30</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">7</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">8</span>
+              
+            
+          </td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td>
+            
+              <span class="dn">9</span>
+              
+                <span class="evdot" style="background:#ca8a04" title="財政部｜海關出口統計(10月)｜台灣時間 16:00">台股/台灣數據:16:00</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">10</span>
+              
+                <span class="evdot" style="background:#ea580c" title="美國勞工部 BLS｜CPI 消費者物價指數(10月)｜台灣時間 21:30">物價:21:30</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">11</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">12</span>
+              
+                <span class="evdot" style="background:#ea580c" title="美國勞工部 BLS｜PPI 生產者物價指數(10月)｜台灣時間 21:30">物價:21:30</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">13</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">14</span>
+              
+                <span class="evdot" style="background:#16a34a" title="鴻海｜Q3 法說會｜台灣時間 15:00">財報/法說:15:00</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">15</span>
+              
+            
+          </td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td>
+            
+              <span class="dn">16</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">17</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">18</span>
+              
+                <span class="evdot" style="background:#16a34a" title="NVIDIA｜美股盤後公布財報｜台灣時間 05:05">財報/法說:05:05</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">19</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">20</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">21</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">22</span>
+              
+            
+          </td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td>
+            
+              <span class="dn">23</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">24</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">25</span>
+              
+                <span class="evdot" style="background:#0d9488" title="美國商務部 BEA｜GDP 第三季第二次修正 + PCE(10月)｜台灣時間 21:30">GDP:21:30</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">26</span>
+              
+                <span class="evdot" style="background:#64748b" title="美股休市｜感恩節 Thanksgiving 休市一日｜台灣時間 -">休市</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">27</span>
+              
+                <span class="evdot" style="background:#64748b" title="美股｜感恩節翌日 提早至13:00 ET收盤｜台灣時間 02:00">休市:02:00</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">28</span>
+              
+            
+          </td>
+          
+          <td>
+            
+              <span class="dn">29</span>
+              
+            
+          </td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td>
+            
+              <span class="dn">30</span>
+              
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+        </tr>
+        
+      </table>
+    
+    <div class="legend">
+      
+      <span><i style="background:#2563eb"></i>央行</span>
+      
+      <span><i style="background:#ea580c"></i>物價</span>
+      
+      <span><i style="background:#7c3aed"></i>就業</span>
+      
+      <span><i style="background:#0d9488"></i>GDP</span>
+      
+      <span><i style="background:#16a34a"></i>財報/法說</span>
+      
+      <span><i style="background:#db2777"></i>產品發表</span>
+      
+      <span><i style="background:#ca8a04"></i>台股/台灣數據</span>
+      
+      <span><i style="background:#64748b"></i>休市</span>
+      
+    </div>
+    <p class="muted" style="margin-bottom:0">格內時間為台灣時間；「日期估算」為依慣例推算，實際日期請以發布機構為準。</p>
+  </div>
+  <div class="card">
+    <h2>法人機構預測方向</h2>
+    <p class="muted">以下為彙整市場共識之參考資訊，非投資建議；實際以官方發布與即時市場定價為準。</p>
+    
+      <div class="ev high">
+        <div class="top">
+          <span class="iname">美國勞工部 BLS</span>
+          <span class="tag" style="background:#ea580c">物價</span>
+          <span class="tag ok">官方時程</span>
+        </div>
+        <div class="desc">CPI 消費者物價指數(7月)</div>
+        <div class="meta">2026/08/12 · 台灣時間 20:30（當日） · 2天後</div>
+        <div class="forecast"><b>法人預測方向：</b>市場共識為通膨持續降溫；原油價格與租金為主要變數。數據偏高將推升美債殖利率並壓抑科技股。</div>
+      </div>
+    
+      <div class="ev high">
+        <div class="top">
+          <span class="iname">美國勞工部 BLS</span>
+          <span class="tag" style="background:#7c3aed">就業</span>
+          <span class="tag est">日期估算</span>
+        </div>
+        <div class="desc">非農就業 NFP + 失業率(8月)</div>
+        <div class="meta">2026/09/04 · 台灣時間 20:30（當日） · 25天後</div>
+        <div class="forecast"><b>法人預測方向：</b>就業若持續降溫將強化降息預期；法人觀察失業率是否升破4%。</div>
+      </div>
+    
+      <div class="ev high">
+        <div class="top">
+          <span class="iname">Apple</span>
+          <span class="tag" style="background:#db2777">產品發表</span>
+          <span class="tag est">日期估算</span>
+        </div>
+        <div class="desc">秋季發表會（新款iPhone）</div>
+        <div class="meta">2026/09/09 · 台灣時間 22:00（當日） · 30天後</div>
+        <div class="forecast"><b>法人預測方向：</b>新品規格與售價將帶動台灣蘋概股（組裝/鏡頭/PCB）。</div>
+      </div>
+    
+      <div class="ev high">
+        <div class="top">
+          <span class="iname">聯準會 FOMC</span>
+          <span class="tag" style="background:#2563eb">央行</span>
+          <span class="tag ok">官方時程</span>
+        </div>
+        <div class="desc">利率決策 + 經濟預測(SEP/點陣圖)</div>
+        <div class="meta">2026/09/16 · 台灣時間 02:00（次日） · 37天後</div>
+        <div class="forecast"><b>法人預測方向：</b>利率現為3.50%-3.75%。市場聚焦9月是否啟動降息循環，SEP與點陣圖將給出2026-2027年利率路徑。鮑爾記者會14:30 ET舉行。決策公布後美股波動常放大。</div>
+      </div>
+    
+      <div class="ev high">
+        <div class="top">
+          <span class="iname">中央銀行</span>
+          <span class="tag" style="background:#2563eb">央行</span>
+          <span class="tag est">日期估算</span>
+        </div>
+        <div class="desc">央行理監事會議（第三季）</div>
+        <div class="meta">2026/09/17 · 台灣時間 16:00（當日） · 38天後</div>
+        <div class="forecast"><b>法人預測方向：</b>市場多預期利率按兵不動，聚焦會後記者會對房市信用管制與匯率看法。</div>
+      </div>
+    
+      <div class="ev high">
+        <div class="top">
+          <span class="iname">台積電</span>
+          <span class="tag" style="background:#16a34a">財報/法說</span>
+          <span class="tag est">日期估算</span>
+        </div>
+        <div class="desc">Q3 法說會（台灣場）</div>
+        <div class="meta">2026/10/15 · 台灣時間 14:00（當日） · 66天後</div>
+        <div class="forecast"><b>法人預測方向：</b>法說會與美股盤後ADR財報互為連動；法人聚焦AI/HPC營收比重與明年資本支出。</div>
+      </div>
+    
+      <div class="ev high">
+        <div class="top">
+          <span class="iname">台積電 ADR / Netflix</span>
+          <span class="tag" style="background:#16a34a">財報/法說</span>
+          <span class="tag est">日期估算</span>
+        </div>
+        <div class="desc">美股盤後公布財報</div>
+        <div class="meta">2026/10/15 · 台灣時間 04:05（次日） · 66天後</div>
+        <div class="forecast"><b>法人預測方向：</b>台積電為AI/HPC需求風向球，盤後公布後連動台股與費半走勢。</div>
+      </div>
+    
+      <div class="ev high">
+        <div class="top">
+          <span class="iname">聯準會 FOMC</span>
+          <span class="tag" style="background:#2563eb">央行</span>
+          <span class="tag ok">官方時程</span>
+        </div>
+        <div class="desc">利率決策（無SEP）</div>
+        <div class="meta">2026/10/28 · 台灣時間 02:00（次日） · 79天後</div>
+        <div class="forecast"><b>法人預測方向：</b>本次不附SEP/點陣圖，市場聚焦聲明措辭與鮑爾記者會對降息步調的暗示。</div>
+      </div>
+    
+      <div class="ev high">
+        <div class="top">
+          <span class="iname">Apple / Microsoft / Alphabet / Amazon</span>
+          <span class="tag" style="background:#16a34a">財報/法說</span>
+          <span class="tag est">日期估算</span>
+        </div>
+        <div class="desc">美股盤後公布財報（科技五巨頭）</div>
+        <div class="meta">2026/10/29 · 台灣時間 04:05（次日） · 80天後</div>
+        <div class="forecast"><b>法人預測方向：</b>重量級科技股財報集中日，盤後波動大，連動台灣供應鏈與隔日台股。</div>
+      </div>
+    
+      <div class="ev high">
+        <div class="top">
+          <span class="iname">NVIDIA</span>
+          <span class="tag" style="background:#16a34a">財報/法說</span>
+          <span class="tag est">日期估算</span>
+        </div>
+        <div class="desc">美股盤後公布財報</div>
+        <div class="meta">2026/11/18 · 台灣時間 05:05（次日） · 100天後</div>
+        <div class="forecast"><b>法人預測方向：</b>AI題材核心指標，指引將牽動全球AI供應鏈與台股權值股。</div>
+      </div>
+    
+      <div class="ev high">
+        <div class="top">
+          <span class="iname">聯準會 FOMC</span>
+          <span class="tag" style="background:#2563eb">央行</span>
+          <span class="tag ok">官方時程</span>
+        </div>
+        <div class="desc">利率決策 + 經濟預測(SEP/點陣圖)</div>
+        <div class="meta">2026/12/09 · 台灣時間 03:00（次日） · 121天後</div>
+        <div class="forecast"><b>法人預測方向：</b>年終會議附SEP/點陣圖，為2027年利率路徑定調，法人視為觀察降息循環是否結束的關鍵。</div>
+      </div>
+    
+  </div>
+</div>
+<footer>由金融情報系統自動發佈 · 僅供參考，不構成投資建議</footer>
+<script>
+const WEEK = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function nowParts(tz){
+  const p = {};
+  new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short', month: 'short',
+    day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
+  }).formatToParts(new Date()).forEach(x => p[x.type] = x.value);
+  return p;
+}
+function marketOpen(tz, open, close){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  return wd>=1 && wd<=5 && m>=open && m<close;
+}
+function pad(n){ return String(n).padStart(2,'0'); }
+function setMkt(id, open, label){
+  const el = document.getElementById(id);
+  el.className = 'mkt ' + (open ? 'open' : 'closed');
+  el.textContent = (label ? label + ' ' : '') + (open ? '開盤中' : '未開盤');
+}
+function tick(){
+  const tw = nowParts('Asia/Taipei');
+  const ny = nowParts('America/New_York');
+  const twS = pad(tw.hour)+':'+pad(tw.minute)+':'+pad(tw.second);
+  const nyS = pad(ny.hour)+':'+pad(ny.minute)+':'+pad(ny.second);
+  document.getElementById('clk-tw').textContent = twS;
+  document.getElementById('clk-ny').textContent = nyS;
+  document.getElementById('bc-tw').textContent = twS;
+  document.getElementById('bc-ny').textContent = nyS;
+  document.getElementById('bc-tw-d').textContent = tw.month + ' ' + tw.day + '（' + tw.weekday + '）';
+  document.getElementById('bc-ny-d').textContent = ny.month + ' ' + ny.day + '（' + ny.weekday + '）';
+  const twO = marketOpen('Asia/Taipei', 9*60, 13*60+30);
+  const nyO = marketOpen('America/New_York', 9*60+30, 16*60);
+  setMkt('tw-mkt', twO, '台股'); setMkt('tw-mkt2', twO, '台股');
+  setMkt('ny-mkt', nyO, '美股'); setMkt('ny-mkt2', nyO, '美股');
+}
+tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>
