@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日報告 2026-08-03</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; margin: 0;
+         background: #f5f6f8; color: #1c1e21; line-height: 1.7; }
+  header { background: #1b2a4a; color: #fff; padding: 14px 24px;
+           display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  header h1 { font-size: 18px; margin: 0; flex: 1; }
+  header nav a { color: #cdd8ee; text-decoration: none; margin-left: 14px; font-size: 14px; }
+  header nav a:hover, header nav a.active { color: #fff; text-decoration: underline; }
+  #clock { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; font-size: 13px; }
+  .clk { background: rgba(255,255,255,.08); border-radius: 6px; padding: 4px 10px; }
+  .clk-city { color: #9fb0cf; margin-right: 6px; }
+  .clk-time { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .mkt { margin-left: 8px; font-size: 12px; padding: 1px 7px; border-radius: 9px; }
+  .mkt.open { background: #2e7d32; color: #fff; }
+  .mkt.closed { background: #5a6474; color: #fff; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 20px; }
+  .card { background: #fff; border-radius: 8px; padding: 18px 22px; margin: 14px 0;
+          box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .card h3 { margin: 0 0 6px; }
+  .card a { color: #1b2a4a; text-decoration: none; }
+  .card a:hover { text-decoration: underline; }
+  .muted { color: #666; font-size: 13px; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px;
+           color: #fff; margin-left: 6px; }
+  .b-daily { background: #2e7d32; }
+  .b-deep { background: #b45309; }
+  .day-nav { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+  .day-nav a { font-size: 13px; padding: 3px 10px; background: #e8ecf3; border-radius: 12px;
+               color: #33415c; text-decoration: none; }
+  .day-nav a:hover { background: #d2dbea; }
+  article.card { line-height: 1.8; }
+  article.card h1, article.card h2 { border-bottom: 1px solid #e3e6eb; padding-bottom: 6px; }
+  article.card h1 { font-size: 24px; }
+  article.card h2 { font-size: 20px; margin-top: 26px; }
+  article.card h3 { font-size: 17px; margin-top: 20px; }
+  article.card blockquote { border-left: 4px solid #9fb0cf; margin: 10px 0;
+        padding: 2px 14px; color: #4a5568; background: #f4f6fa; }
+  article.card code { background: #eef0f4; padding: 1px 5px; border-radius: 4px;
+        font-size: 14px; font-family: Consolas, monospace; }
+  article.card pre { background: #1b2a4a; color: #e6ecf7; padding: 14px; border-radius: 8px; overflow-x: auto; }
+  article.card pre code { background: transparent; color: inherit; padding: 0; }
+  article.card table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+  article.card th, article.card td { border: 1px solid #d8dce3; padding: 6px 10px; }
+  article.card th { background: #eef1f6; }
+  article.card a { color: #1459c8; }
+  footer { text-align: center; color: #999; font-size: 12px; padding: 20px; }
+</style>
+</head>
+<body>
+  <header>
+  <h1>金融情報系統報告</h1>
+  <nav>
+    <a href="../index.html" class="">首頁</a>
+    <a href="../calendar.html" class="">行事曆</a>
+    <a href="../daily/2026-08-13.html" class="active">最新每日</a>
+    <a href="../deep/2026-08-13-am.html" class="">最新深度</a>
+  </nav>
+  <div id="clock">
+    <span class="clk"><span class="clk-city">台北</span><span class="clk-time" id="clk-tw">--:--:--</span><span class="mkt closed" id="tw-mkt">…</span></span>
+    <span class="clk"><span class="clk-city">紐約</span><span class="clk-time" id="clk-ny">--:--:--</span><span class="mkt closed" id="ny-mkt">…</span></span>
+  </div>
+</header>
+<div class="wrap">
+  
+    <div class="day-nav">
+      <a href="../index.html">← 首頁</a>
+      
+        
+        <a href="../daily/2026-08-13.html">2026-08-13</a>
+        
+        <a href="../daily/2026-08-12.html">2026-08-12</a>
+        
+        <a href="../daily/2026-08-11.html">2026-08-11</a>
+        
+        <a href="../daily/2026-08-10.html">2026-08-10</a>
+        
+        <a href="../daily/2026-08-09.html">2026-08-09</a>
+        
+        <a href="../daily/2026-08-08.html">2026-08-08</a>
+        
+        <a href="../daily/2026-08-07.html">2026-08-07</a>
+        
+        <a href="../daily/2026-08-06.html">2026-08-06</a>
+        
+        <a href="../daily/2026-08-05.html">2026-08-05</a>
+        
+        <a href="../daily/2026-08-04.html">2026-08-04</a>
+        
+        <a href="../daily/2026-08-03.html">2026-08-03</a>
+        
+        <a href="../daily/2026-08-02.html">2026-08-02</a>
+        
+      
+    </div>
+    <article class="card">
+      <div class="muted">2026-08-03
+        <span class="badge b-daily">
+          每日報告
+        </span>
+      </div>
+      <h1 id="2026-08-03">金融重點報告 2026-08-03</h1>
+<blockquote>
+<p>產出時間: 2026-08-03 23:24（台灣時間）
+本報告由 AI 自動生成，僅供參考，不構成投資建議。</p>
+</blockquote>
+<h2 id="_1">市場行情快照</h2>
+<pre><code>加權指數            43,119.75  TWD ▼-1.18%
+台積電              2,425.00  TWD ▲+3.19%
+鴻海                 250.50  TWD ▼-0.99%
+聯發科              3,555.00  TWD ▼-3.40%
+台達電              1,640.00  TWD ▼-6.55%
+富邦金                130.00  TWD ―+0.00%
+S&amp;P 500          7,489.72  USD ▲+1.05%
+納斯達克            25,373.85  USD ▲+1.59%
+道瓊              52,485.03  USD ▲+1.04%
+日經225           64,362.02  JPY ▼-0.88%
+上證指數             3,832.26  CNY ▼-0.67%
+Apple              308.91  USD ▼-7.24%
+Microsoft          464.72  USD ▲+21.75%
+NVIDIA             200.75  USD ▼-2.94%
+Amazon             271.58  USD ▲+17.00%
+Tesla              311.21  USD ▼-0.58%
+美元/日圓              157.40  JPY ▼-3.80%
+美元/台幣               32.30  TWD ▼-0.08%
+歐元/美元                1.15  EUR ▲+1.16%
+美元/人民幣               6.75  CNY ▼-0.31%
+WTI原油               84.67  USD ▲+6.83%
+布蘭特原油               90.12  USD ▲+7.17%
+黃金               4,107.00  USD ▲+1.75%
+美元指數DXY             99.80  USD ▼-1.56%
+美債10年殖利率             4.75  USD ▲+2.24%
+</code></pre>
+<h2 id="severity-2">重大事件（severity ≥ 2）</h2>
+<ul>
+<li><strong>[高][債市][negative]</strong> JPMorgan says Warsh failure to buttress Fed credibility may force a rate hike before year-end</li>
+<li>影響: 摩根大通警告Fed主席華許記者會引發信譽疑慮，提前預期年底前可能升息，債市承壓、殖利率面臨上揚風險。</li>
+<li>
+<p>標的: <code>TLT,TNX</code></p>
+</li>
+<li>
+<p><strong>[高][地緣政治][positive]</strong> Dow futures jump 600 points after Trump calls off planned attacks, oil prices slide: Live updates - CNBC</p>
+</li>
+<li>影響: 川普喊停對伊朗攻擊，地緣政治風險降溫，美股期指大漲600點，原油價格重挫，舒緩通膨壓力。</li>
+<li>
+<p>標的: <code>DIA,USO</code></p>
+</li>
+<li>
+<p><strong>[中高][匯市][neutral]</strong> Bessent Plays Currency-Market Chess With Likely Eye on US Treasury Yields - bloomberg.com</p>
+</li>
+<li>影響: 美國財政部官員貝森特操作匯市策略，意在調控美債殖利率與匯率聯動，牽動全球資金流向。</li>
+<li>
+<p>標的: <code>美元指數,US10Y</code></p>
+</li>
+<li>
+<p><strong>[中高][匯市][neutral]</strong> Bessent Plays Currency-Market Chess With Likely Eye on US Treasury Yields - Bloomberg</p>
+</li>
+<li>影響: 貝森特的外匯市場操作策略牽動美國公債殖利率，影響全球資金成本與匯率波動。</li>
+<li>
+<p>標的: <code>美元指數,美國公債</code></p>
+</li>
+<li>
+<p><strong>[中高][總體經濟][neutral]</strong> Bessent Plays Currency-Market Chess With Likely Eye on US Treasury Yields - Bloomberg.com</p>
+</li>
+<li>影響: 官員動向牽動匯率與美債殖利率策略，干擾全球外匯與債券市場定價。</li>
+<li>
+<p>標的: <code>美元指數,美債</code></p>
+</li>
+<li>
+<p><strong>[中高][股市][positive]</strong> The gap between big tech and the rest of the market just vanished. Here’s what it means for investors.</p>
+</li>
+<li>影響: 大型科技股估值回落使美股大盤與科技股差距縮小，高盛建議重新審視科技股買點。</li>
+<li>
+<p>標的: <code>NVDA,AAPL,MSFT,2330</code></p>
+</li>
+<li>
+<p><strong>[中高][商品(油金)][negative]</strong> Stock Market Today: Return to Diplomacy Brings Reprieve for Oil Prices — Live Updates - wsj.com</p>
+</li>
+<li>影響: 外交重回談判桌緩解地緣政治緊張，導致國際油價回落，減輕能源通膨壓力。</li>
+<li>
+<p>標的: <code>USO,BRENT</code></p>
+</li>
+<li>
+<p><strong>[中高][股市][negative]</strong> AstraZeneca slides after reports of Bristol Myers merger talks leave analysts 'perplexed'</p>
+</li>
+<li>影響: AstraZeneca因傳出與Bristol Myers合併傳聞引發分析師疑惑導致股價下跌。</li>
+<li>
+<p>標的: <code>AZN,BMY</code></p>
+</li>
+<li>
+<p><strong>[中高][匯市][positive]</strong> What the market is saying about the U.S. intervention to prop up the yen</p>
+</li>
+<li>影響: 美日干預使日圓從40年低點回升至157，減輕日圓貶值壓力，牽動亞幣與美元走勢。</li>
+<li>
+<p>標的: <code>USDJPY,美元指數</code></p>
+</li>
+<li>
+<p><strong>[中高][股市][positive]</strong> Trump’s ‘Perimeter of a Deal’ Rallies the Market</p>
+</li>
+<li>影響: 美伊和平談判樂觀情緒帶動美股多頭氣勢，風險偏好回升支撐股市表現。</li>
+<li>
+<p>標的: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[中高][股市][negative]</strong> SpaceX's post-IPO plunge sets tense backdrop for first earnings report</p>
+</li>
+<li>影響: SpaceX上市後股價重挫，加上特斯拉財報不佳，馬斯克旗下企業面臨市場嚴格檢視，影響高估值科技股氣氛。</li>
+<li>
+<p>標的: <code>TSLA,SpaceX</code></p>
+</li>
+<li>
+<p><strong>[中高][股市][positive]</strong> 川普取消攻擊、美伊恢復談判！道瓊期指狂飆逾500點、油價崩跌 - news.cnyes.com</p>
+</li>
+<li>影響: 美伊恢復談判激勵道瓊期指大漲逾500點，同時油價崩跌，資金轉向風險資產。</li>
+<li>
+<p>標的: <code>YM=F,USO</code></p>
+</li>
+<li>
+<p><strong>[中高][商品(油金)][positive]</strong> Oil prices tumble after Trump calls off attack on Iran</p>
+</li>
+<li>影響: 美伊地緣政治風險降溫，油價因地緣溢價消退而大跌，有助於舒緩全球通膨壓力。</li>
+<li>
+<p>標的: <code>USO,BNO</code></p>
+</li>
+<li>
+<p><strong>[中高][地緣政治][positive]</strong> Stock Market Today: S&amp;P 500, Dow, Nasdaq 100 Futures Gain as Trump Halts 'Massive Attack' on Iran—Atkore - Benzinga</p>
+</li>
+<li>影響: 川普叫停對伊朗的大規模攻擊，中東地緣政治風險降溫，激勵美股三大指數期貨走高，油價回落。</li>
+<li>
+<p>標的: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[中高][總體經濟][neutral]</strong> Stock Market Today: Dow Futures Rise; Oil Prices Slide; U.S.-Japan Prop Up Yen — Live Updates - WSJ</p>
+</li>
+<li>影響: 美日聯手支撐日圓，油價下跌有助緩解通膨壓力，美股期指上升，有利全球風險資產表現。</li>
+<li>
+<p>標的: <code>美元指數,日圓</code></p>
+</li>
+<li>
+<p><strong>[中高][商品(油金)][positive]</strong> Oil Prices Plummet as Investors Digest Pause in Iran War Fighting</p>
+</li>
+<li>影響: 美伊戰事暫停使原油供應中斷疑慮消退，油價大跌，有利降低全球製造業與運輸成本。</li>
+<li>
+<p>標的: <code>USO,BNO</code></p>
+</li>
+<li>
+<p><strong>[中高][總體經濟][neutral]</strong> Dow Jones, Nasdaq, S&amp;P 500 preview: Jobs data, earnings deluge to set market tone - Investing.com</p>
+</li>
+<li>影響: 市場等待美國就業數據與密集財報潮公布，美股三大指數觀望氣氛濃厚。</li>
+<li>
+<p>標的: <code>SPY,QQQ,DIA</code></p>
+</li>
+<li>
+<p><strong>[中高][商品(油金)][positive]</strong> Global oil prices fall below $83 a barrel to hover at 3-week low after Trump calls off planned attack and says Iran talks to resume Monday</p>
+</li>
+<li>影響: 川普取消攻擊計畫且美伊將重啟會談，地緣政治風險降溫致油價跌破83美元創三週新低。</li>
+<li>
+<p>標的: <code>CL=F,BZ=F</code></p>
+</li>
+<li>
+<p><strong>[中高][匯市][positive]</strong> 環球動態 | 伊朗和談憧憬拖累油價急挫5%，美日聯手干預日圓彈至三個月高 | 即時新聞 - 新聞 - etnet 經濟通</p>
+</li>
+<li>影響: 伊朗和談拖累油價急挫，同時美日聯手干預推升日圓至三個月高點，匯市波動加劇。</li>
+<li>
+<p>標的: <code>美元指數,USD/JPY</code></p>
+</li>
+<li>
+<p><strong>[中高][商品(油金)][positive]</strong> 〈美股早盤〉美伊緊張局勢降溫、油價跌破80美元 主要指數開高 - news.cnyes.com</p>
+</li>
+<li>影響: 美伊緊張局勢降溫使油價跌破80美元，成本壓力減輕，助推美股主要指數開高。</li>
+<li>
+<p>標的: <code>USO,CL=F</code></p>
+</li>
+<li>
+<p><strong>[中高][商品(油金)][positive]</strong> 川普取消空襲伊朗油價重挫6％帶動美股開盤勁揚- 國際 - 工商時報</p>
+</li>
+<li>影響: 川普取消空襲伊朗使油價重挫6％，顯著降低停滯性通膨疑慮並激勵美股開盤勁揚。</li>
+<li>
+<p>標的: <code>CL=F,DJI,SPY</code></p>
+</li>
+<li>
+<p><strong>[中高][總體經濟][positive]</strong> Stock Market Today: Dow Jumps 500 Points; Oil Prices Slide; U.S.-Japan Prop Up Yen — Live Updates - WSJ</p>
+</li>
+<li>影響: 油價下跌與美日干預匯市撐住日圓，激勵道瓊大漲500點，市場風險偏好回升。</li>
+<li>
+<p>標的: <code>DJI,USDJPY</code></p>
+</li>
+<li>
+<p><strong>[中高][地緣政治][positive]</strong> 伊朗局勢趨緩油價下跌 美股週一開盤大漲| 國際焦點 - 太報 TaiSounds</p>
+</li>
+<li>影響: 中東地緣政治風險降溫推動油價下跌，成本壓力減輕帶動美股大漲。</li>
+<li>
+<p>標的: <code>USO,CL=F</code></p>
+</li>
+<li>
+<p><strong>[中高][總體經濟][positive]</strong> American manufacturers grow at fastest clip in 4 years due to AI boom — but all is not well</p>
+</li>
+<li>影響: AI需求帶動美製造業創4年最快增速，但供應鏈瓶頸與高通膨隱憂仍存。</li>
+<li>
+<p>標的: <code>NVDA,MSFT,AAPL</code></p>
+</li>
+<li>
+<p><strong>[中高][股市][neutral]</strong> Why tech stocks are likely to take a back seat for the rest of 2026, according to JPMorgan strategists</p>
+</li>
+<li>影響: 摩根大通策略師建議下半年科技股讓位非美股市，並看好半導體勝過大型雲端巨頭，牽動資金輪動。</li>
+<li>
+<p>標的: <code>NVDA,TSM,2330</code></p>
+</li>
+<li>
+<p><strong>[中高][股市][positive]</strong> Amazon tops $3 trillion market cap as stock continues post-earnings surge</p>
+</li>
+<li>影響: 亞馬遜財報後強勢上漲，市值突破 3 兆美元，帶動美股大型科技股信心與多頭氣氛。</li>
+<li>
+<p>標的: <code>AMZN</code></p>
+</li>
+<li>
+<p><strong>[中高][匯市][positive]</strong> Why the U.S. decided to help Japan by boosting the flailing yen</p>
+</li>
+<li>影響: 美日聯手干預匯市支撐日圓，短期內將導緻美元回檔、日圓強勢彈升，減輕亞幣貶值壓力。</li>
+<li>標的: <code>USDJPY,美元指數</code></li>
+</ul>
+<hr />
+<h2 id="_2">分類彙整</h2>
+<h3 id="21">股市（21）</h3>
+<ul>
+<li><strong>[中高][positive]</strong> Amazon tops $3 trillion market cap as stock continues post-earnings surge</li>
+<li>
+<p>影響: 亞馬遜財報後強勢上漲，市值突破 3 兆美元，帶動美股大型科技股信心與多頭氣氛。</p>
+</li>
+<li>
+<p><strong>[中高][neutral]</strong> Why tech stocks are likely to take a back seat for the rest of 2026, according to JPMorgan strategists</p>
+</li>
+<li>
+<p>影響: 摩根大通策略師建議下半年科技股讓位非美股市，並看好半導體勝過大型雲端巨頭，牽動資金輪動。</p>
+</li>
+<li>
+<p><strong>[中高][positive]</strong> 川普取消攻擊、美伊恢復談判！道瓊期指狂飆逾500點、油價崩跌 - news.cnyes.com</p>
+</li>
+<li>
+<p>影響: 美伊恢復談判激勵道瓊期指大漲逾500點，同時油價崩跌，資金轉向風險資產。</p>
+</li>
+<li>
+<p><strong>[中高][negative]</strong> SpaceX's post-IPO plunge sets tense backdrop for first earnings report</p>
+</li>
+<li>
+<p>影響: SpaceX上市後股價重挫，加上特斯拉財報不佳，馬斯克旗下企業面臨市場嚴格檢視，影響高估值科技股氣氛。</p>
+</li>
+<li>
+<p><strong>[中高][positive]</strong> Trump’s ‘Perimeter of a Deal’ Rallies the Market</p>
+</li>
+<li>
+<p>影響: 美伊和平談判樂觀情緒帶動美股多頭氣勢，風險偏好回升支撐股市表現。</p>
+</li>
+<li>
+<p><strong>[中高][negative]</strong> AstraZeneca slides after reports of Bristol Myers merger talks leave analysts 'perplexed'</p>
+</li>
+<li>
+<p>影響: AstraZeneca因傳出與Bristol Myers合併傳聞引發分析師疑惑導致股價下跌。</p>
+</li>
+<li>
+<p><strong>[中高][positive]</strong> The gap between big tech and the rest of the market just vanished. Here’s what it means for investors.</p>
+</li>
+<li>
+<p>影響: 大型科技股估值回落使美股大盤與科技股差距縮小，高盛建議重新審視科技股買點。</p>
+</li>
+<li>
+<p><strong>[中低][negative]</strong> SpaceX’s Stock Lockup Is Expiring. Prepare for a Bumpy Ride.</p>
+</li>
+<li>
+<p>影響: 內部人股票禁售期解禁，可能引發賣壓並造成短期股價波動。</p>
+</li>
+<li>
+<p><strong>[中低][positive]</strong> Dow Jones and Nasdaq climbs as big tech drive gains ahead of busy Wall Street week - Proactive Investors</p>
+</li>
+<li>
+<p>影響: 大型科技股帶動道瓊與那斯達克指數走高，為本週市場奠定強勢基調。</p>
+</li>
+<li>
+<p><strong>[中低][positive]</strong> US Stock Futures Advance as Oil Dips; Dow Outpaces Nasdaq Ahead of ISM Data - TechStock²</p>
+</li>
+<li>
+<p>影響: 油價下跌激勵期指走揚，道瓊表現優於那斯達克，市場聚焦即將公布的ISM數據。</p>
+</li>
+<li>
+<p><strong>[中低][positive]</strong> Nasdaq Stabilizes as Earnings Validate AI - TradeStation</p>
+</li>
+<li>
+<p>影響: 財報表現驗證AI需求強勁，支撐那斯達克指數止穩回升。</p>
+</li>
+<li>
+<p><strong>[中低][positive]</strong> 台股處置制度確定鬆綁 4大變動、上路時間曝！證交所：每半年檢討一次 - 三立新聞</p>
+</li>
+<li>
+<p>影響: 台股處置制度（禁閉股機制）鬆綁4大變動並每半年檢討一次，有助提升台股市場流動性與資金運用效率。</p>
+</li>
+<li>
+<p><strong>[中低][positive]</strong> Stock markets take winning run to 4th day as crude oil prices drop sharply; Nifty surges 1.6% - The Hindu</p>
+</li>
+<li>
+<p>影響: 油價大跌帶動全球股市走揚，印度Nifty指數大漲1.6%，顯示風險偏好回升。</p>
+</li>
+<li>
+<p><strong>[中低][positive]</strong> Stock Market Today: Dow, S&amp;P 500, Nasdaq Set to Open Up; Trump, Iran Hope; Micron, SpaceX, Palantir, More Movers - Barron's</p>
+</li>
+<li>
+<p>影響: 美股期指走揚，美伊地緣政治緊張緩解，提振市場風險偏好，科技股與記憶體族群獲得買盤支撐。</p>
+</li>
+<li>
+<p><strong>[中低][neutral]</strong> Dow futures jump but Nasdaq flat ahead of busy week for Wall Street - Yahoo! Finance Canada</p>
+</li>
+<li>
+<p>影響: 道瓊期指走揚而那斯達克相對平盤，顯示資金在超級財報週前夕進行類股輪動，轉向價值股與防禦股。</p>
+</li>
+<li>
+<p><strong>[中低][neutral]</strong> An AstraZeneca, Bristol Myers Squibb merger could create a cancer-drug giant, but analysts call it ‘odd’</p>
+</li>
+<li>
+<p>影響: AZN下跌而BMY上漲，併購傳聞引發市場對製藥巨頭綜效的懷疑，短期生技醫療類股波動加劇。</p>
+</li>
+<li>
+<p><strong>[中低][neutral]</strong> SpaceX’s first-ever earnings report is a big deal — but not because of the numbers</p>
+</li>
+<li>
+<p>影響: SpaceX首份財報發布，市場焦點集中於馬斯克的言論及潛在股票波動，未直接牽動台美主流供應鏈。</p>
+</li>
+<li>
+<p><strong>[中低][neutral]</strong> Shell Sells European Onshore Renewables Portfolio to TotalEnergies - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p>影響: Shell出售歐洲陸上再生能源資產給TotalEnergies，屬企業資產重組，對大盤影響有限。</p>
+</li>
+<li>
+<p><strong>[中低][negative]</strong> 台股大跌怎麼辦？5 步驟自救指南，判斷你要抄底、續抱或減碼｜股市話題｜豐雲學堂2026 年 08 月 - sinotrade.com.tw</p>
+</li>
+<li>
+<p>影響: 台股大跌引發散戶恐慌，短線加權指數修正壓力增加，影響投資人信心。</p>
+</li>
+<li>
+<p><strong>[中低][positive]</strong> Nasdaq 100 and S&amp;P500: Oil Plunge Opens the Door for Growth Stocks - FXEmpire</p>
+</li>
+<li>
+<p>影響: 油價大跌舒緩通膨壓力，有利美股成長股（如科技股）估值擴張。</p>
+</li>
+<li>
+<p><strong>[中低][neutral]</strong> AstraZeneca reported tie-up talks with Bristol-Myers Squibb are moving stocks. Analysts are puzzled.</p>
+</li>
+<li>影響: 傳出合併傳聞使阿斯特捷利閣下跌、必治妥施貴寶上漲，引發市場對製藥巨頭策略的質疑。</li>
+</ul>
+<h3 id="1">債市（1）</h3>
+<ul>
+<li><strong>[高][negative]</strong> JPMorgan says Warsh failure to buttress Fed credibility may force a rate hike before year-end</li>
+<li>影響: 摩根大通警告Fed主席華許記者會引發信譽疑慮，提前預期年底前可能升息，債市承壓、殖利率面臨上揚風險。</li>
+</ul>
+<h3 id="8">匯市（8）</h3>
+<ul>
+<li><strong>[中高][positive]</strong> Why the U.S. decided to help Japan by boosting the flailing yen</li>
+<li>
+<p>影響: 美日聯手干預匯市支撐日圓，短期內將導緻美元回檔、日圓強勢彈升，減輕亞幣貶值壓力。</p>
+</li>
+<li>
+<p><strong>[中高][positive]</strong> 環球動態 | 伊朗和談憧憬拖累油價急挫5%，美日聯手干預日圓彈至三個月高 | 即時新聞 - 新聞 - etnet 經濟通</p>
+</li>
+<li>
+<p>影響: 伊朗和談拖累油價急挫，同時美日聯手干預推升日圓至三個月高點，匯市波動加劇。</p>
+</li>
+<li>
+<p><strong>[中高][positive]</strong> What the market is saying about the U.S. intervention to prop up the yen</p>
+</li>
+<li>
+<p>影響: 美日干預使日圓從40年低點回升至157，減輕日圓貶值壓力，牽動亞幣與美元走勢。</p>
+</li>
+<li>
+<p><strong>[中高][neutral]</strong> Bessent Plays Currency-Market Chess With Likely Eye on US Treasury Yields - bloomberg.com</p>
+</li>
+<li>
+<p>影響: 美國財政部官員貝森特操作匯市策略，意在調控美債殖利率與匯率聯動，牽動全球資金流向。</p>
+</li>
+<li>
+<p><strong>[中高][neutral]</strong> Bessent Plays Currency-Market Chess With Likely Eye on US Treasury Yields - Bloomberg</p>
+</li>
+<li>
+<p>影響: 貝森特的外匯市場操作策略牽動美國公債殖利率，影響全球資金成本與匯率波動。</p>
+</li>
+<li>
+<p><strong>[中低][neutral]</strong> US Dollar (DXY), USD/JPY Forecast: Key Levels to Watch - FOREX.com</p>
+</li>
+<li>
+<p>影響: 市場關注美元指數與美元兌日圓的關鍵支撐與阻力位，匯市面臨方向選擇。</p>
+</li>
+<li>
+<p><strong>[中低][negative]</strong> Ringgit ends lower against US dollar, major currencies as US Treasury yields rise - The Star</p>
+</li>
+<li>
+<p>影響: 美債殖利率上升帶動美元走強，致使馬幣等亞洲新興市場貨幣收低。</p>
+</li>
+<li>
+<p><strong>[中低][neutral]</strong> Bessent Plays Currency-Market Chess With Likely Eye on US Treasury Yields - Bloomberg</p>
+</li>
+<li>影響: 貝森特操作匯市策略並關注美債殖利率，牽動美元及美債市場資金流向。</li>
+</ul>
+<h3 id="13">商品(油金)（13）</h3>
+<ul>
+<li><strong>[中高][positive]</strong> 川普取消空襲伊朗油價重挫6％帶動美股開盤勁揚- 國際 - 工商時報</li>
+<li>
+<p>影響: 川普取消空襲伊朗使油價重挫6％，顯著降低停滯性通膨疑慮並激勵美股開盤勁揚。</p>
+</li>
+<li>
+<p><strong>[中高][positive]</strong> 〈美股早盤〉美伊緊張局勢降溫、油價跌破80美元 主要指數開高 - news.cnyes.com</p>
+</li>
+<li>
+<p>影響: 美伊緊張局勢降溫使油價跌破80美元，成本壓力減輕，助推美股主要指數開高。</p>
+</li>
+<li>
+<p><strong>[中高][positive]</strong> Global oil prices fall below $83 a barrel to hover at 3-week low after Trump calls off planned attack and says Iran talks to resume Monday</p>
+</li>
+<li>
+<p>影響: 川普取消攻擊計畫且美伊將重啟會談，地緣政治風險降溫致油價跌破83美元創三週新低。</p>
+</li>
+<li>
+<p><strong>[中高][positive]</strong> Oil Prices Plummet as Investors Digest Pause in Iran War Fighting</p>
+</li>
+<li>
+<p>影響: 美伊戰事暫停使原油供應中斷疑慮消退，油價大跌，有利降低全球製造業與運輸成本。</p>
+</li>
+<li>
+<p><strong>[中高][positive]</strong> Oil prices tumble after Trump calls off attack on Iran</p>
+</li>
+<li>
+<p>影響: 美伊地緣政治風險降溫，油價因地緣溢價消退而大跌，有助於舒緩全球通膨壓力。</p>
+</li>
+<li>
+<p><strong>[中高][negative]</strong> Stock Market Today: Return to Diplomacy Brings Reprieve for Oil Prices — Live Updates - wsj.com</p>
+</li>
+<li>
+<p>影響: 外交重回談判桌緩解地緣政治緊張，導致國際油價回落，減輕能源通膨壓力。</p>
+</li>
+<li>
+<p><strong>[中低][negative]</strong> Surge in global energy, goods prices pushing up WPI inflation: Govt - India Tribune - Chicago</p>
+</li>
+<li>
+<p>影響: 全球能源與商品價格飆升推高印度批發物價通膨（WPI），突顯新興市場輸入性通膨壓力仍在。</p>
+</li>
+<li>
+<p><strong>[中低][neutral]</strong> Seven Months After Maduro's Fall, Big Oil Still Won't Commit To Venezuela - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p>影響: 委內瑞拉政權更迭七個月後，國際石油巨頭仍不願大規模投資，導致當地原油產能恢復緩慢，對全球油價供給增添不確定性。</p>
+</li>
+<li>
+<p><strong>[中低][negative]</strong> 川普點名雪佛龍執行長 怒要求石油公司立即調降油價 - 民視新聞網</p>
+</li>
+<li>
+<p>影響: 政治人物施壓石油企業降價，對能源類股形成政策性短空壓力。</p>
+</li>
+<li>
+<p><strong>[中低][neutral]</strong> India’s Wholesale Price Inflation and Global Energy Costs in 2026 - discoveryalert.com.au</p>
+</li>
+<li>
+<p>影響: 全球能源成本變動牽動印度躉售物價通膨，對新興市場貨幣與輸入型通膨造成影響。</p>
+</li>
+<li>
+<p><strong>[中低][positive]</strong> Gold is still in its ‘explosive phase,’ says Deutsche Bank, as it sticks to year-end target</p>
+</li>
+<li>
+<p>影響: 德意志銀行看好黃金處於爆發期，對抗通膨能力佳，推動金價維持強勢，吸引避險與配置資金。</p>
+</li>
+<li>
+<p><strong>[中低][neutral]</strong> Australian Regulator Wants Tougher Pollution Rules for Darwin LNG Plants - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p>影響: 澳洲監管機構擬對Darwin LNG廠實施更嚴格污染規範，可能增加營運成本，對區域天然氣供給產生潛在約束。</p>
+</li>
+<li>
+<p><strong>[低][neutral]</strong> Indian Oil Subsidiary CPCL Plans 280,000 Bpd Manali Refinery - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>影響: 印度石油子公司計畫建設新煉油廠，屬於長期產能規劃，對當前大宗商品市場直接影響有限。</li>
+</ul>
+<h3 id="3">地緣政治（3）</h3>
+<ul>
+<li><strong>[高][positive]</strong> Dow futures jump 600 points after Trump calls off planned attacks, oil prices slide: Live updates - CNBC</li>
+<li>
+<p>影響: 川普喊停對伊朗攻擊，地緣政治風險降溫，美股期指大漲600點，原油價格重挫，舒緩通膨壓力。</p>
+</li>
+<li>
+<p><strong>[中高][positive]</strong> 伊朗局勢趨緩油價下跌 美股週一開盤大漲| 國際焦點 - 太報 TaiSounds</p>
+</li>
+<li>
+<p>影響: 中東地緣政治風險降溫推動油價下跌，成本壓力減輕帶動美股大漲。</p>
+</li>
+<li>
+<p><strong>[中高][positive]</strong> Stock Market Today: S&amp;P 500, Dow, Nasdaq 100 Futures Gain as Trump Halts 'Massive Attack' on Iran—Atkore - Benzinga</p>
+</li>
+<li>影響: 川普叫停對伊朗的大規模攻擊，中東地緣政治風險降溫，激勵美股三大指數期貨走高，油價回落。</li>
+</ul>
+<h3 id="10">總體經濟（10）</h3>
+<ul>
+<li><strong>[中高][positive]</strong> American manufacturers grow at fastest clip in 4 years due to AI boom — but all is not well</li>
+<li>
+<p>影響: AI需求帶動美製造業創4年最快增速，但供應鏈瓶頸與高通膨隱憂仍存。</p>
+</li>
+<li>
+<p><strong>[中高][positive]</strong> Stock Market Today: Dow Jumps 500 Points; Oil Prices Slide; U.S.-Japan Prop Up Yen — Live Updates - WSJ</p>
+</li>
+<li>
+<p>影響: 油價下跌與美日干預匯市撐住日圓，激勵道瓊大漲500點，市場風險偏好回升。</p>
+</li>
+<li>
+<p><strong>[中高][neutral]</strong> Dow Jones, Nasdaq, S&amp;P 500 preview: Jobs data, earnings deluge to set market tone - Investing.com</p>
+</li>
+<li>
+<p>影響: 市場等待美國就業數據與密集財報潮公布，美股三大指數觀望氣氛濃厚。</p>
+</li>
+<li>
+<p><strong>[中高][neutral]</strong> Stock Market Today: Dow Futures Rise; Oil Prices Slide; U.S.-Japan Prop Up Yen — Live Updates - WSJ</p>
+</li>
+<li>
+<p>影響: 美日聯手支撐日圓，油價下跌有助緩解通膨壓力，美股期指上升，有利全球風險資產表現。</p>
+</li>
+<li>
+<p><strong>[中高][neutral]</strong> Bessent Plays Currency-Market Chess With Likely Eye on US Treasury Yields - Bloomberg.com</p>
+</li>
+<li>
+<p>影響: 官員動向牽動匯率與美債殖利率策略，干擾全球外匯與債券市場定價。</p>
+</li>
+<li>
+<p><strong>[中低][negative]</strong> Disappointed by your skimpy pay raise? Blame your healthcare benefits.</p>
+</li>
+<li>
+<p>影響: 企業醫療福利成本攀升侵蝕員工薪資增長與企業利潤，對消費力道形成潛在壓抑。</p>
+</li>
+<li>
+<p><strong>[中低][neutral]</strong> Dow Jones, Nasdaq, S&amp;P 500 preview: Jobs data, earnings deluge to set market tone - Investing.com Canada</p>
+</li>
+<li>
+<p>影響: 美國非農就業數據與企業財報密集公布，將直接主導美股短期多空方向與波動率。</p>
+</li>
+<li>
+<p><strong>[中低][neutral]</strong> Greece wildfire in pictures: Firefighters battle blaze worsened by 100km per hour winds</p>
+</li>
+<li>
+<p>影響: 希臘野火受極端天候影響加劇，主要衝擊當地觀光與農業，對全球金融市場直接影響有限。</p>
+</li>
+<li>
+<p><strong>[中低][neutral]</strong> Make or break for the South African Reserve Bank - businesstech.co.za</p>
+</li>
+<li>
+<p>影響: 南非央行面臨關鍵決策時刻，影響南非蘭德及當地債市，對國際主流市場外溢效果有限。</p>
+</li>
+<li>
+<p><strong>[中低][negative]</strong> Govt cites global commodity, energy costs for rise in wholesale price inflation - ETGovernment.com</p>
+</li>
+<li>影響: 全球商品與能源成本推升躉售物價通膨，顯示輸入性通膨壓力仍在。</li>
+</ul>
+<h3 id="24">其他（24）</h3>
+<ul>
+<li><strong>[低][neutral]</strong> Derelict former BHS site a 'continuing nightmare'</li>
+<li>
+<p>影響: 資訊不足，為英國房產個案，對全球金融市場無實質影響。</p>
+</li>
+<li>
+<p><strong>[低][neutral]</strong> Former ’60 Minutes’ Correspondents Sharyn Alfonsi, Scott Pelley Will Teach At Columbia</p>
+</li>
+<li>
+<p>影響: 資訊不足，屬教育與媒體人事異動，對金融市場無實質影響。</p>
+</li>
+<li>
+<p><strong>[低][neutral]</strong> They spent tens of thousands of dollars on home remodels — only to regret it. ‘It’s just been so much.’</p>
+</li>
+<li>
+<p>影響: 無</p>
+</li>
+<li>
+<p><strong>[低][neutral]</strong> Here’s Why the US Is Helping Prop Up the Japanese Yen</p>
+</li>
+<li>
+<p>影響: 無</p>
+</li>
+<li>
+<p><strong>[低][neutral]</strong> 川普怒轟雪佛龍執行長 施壓石油巨頭「立刻調降油價」 - 民視新聞網</p>
+</li>
+<li>
+<p>影響: 無</p>
+</li>
+<li>
+<p><strong>[低][neutral]</strong> My boss and I work in different cities and she never responds to my messages. What do I do?</p>
+</li>
+<li>
+<p>影響: 無</p>
+</li>
+<li>
+<p><strong>[低][neutral]</strong> Stock Market Today: Dow Jumps 700 Points; Oil Prices Slide; U.S.-Japan Prop Up Yen — Live Updates - WSJ</p>
+</li>
+<li>
+<p>影響: 無</p>
+</li>
+<li>
+<p><strong>[低][neutral]</strong> 油價大跌！美股3大指數早盤漲逾1%僅費半跌 台指期夜盤殺逾600點 - 知新聞</p>
+</li>
+<li>
+<p>影響: 無</p>
+</li>
+<li>
+<p><strong>[低][neutral]</strong> 油價大跌！美股3大指數早盤漲逾1%僅費半跌 台指期夜盤殺逾600點 - 知新聞</p>
+</li>
+<li>
+<p>影響: 無</p>
+</li>
+<li>
+<p><strong>[低][neutral]</strong> 不求對美國決定性戰果專家解析德黑蘭衝突策略- 國際 - 自由時報</p>
+</li>
+<li>
+<p>影響: 無</p>
+</li>
+<li>
+<p><strong>[低][neutral]</strong> Google Earth Disables A.I. Tool After One Day Over Disinformation Concerns</p>
+</li>
+<li>
+<p>影響: 無</p>
+</li>
+<li>
+<p><strong>[低][neutral]</strong> Dark Tanker Transits Surge at Bab el-Mandeb as Houthi Threat Persists - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p>影響: 無</p>
+</li>
+<li>
+<p><strong>[低][neutral]</strong> Stock Market Today: Dow surges 600 points toward a record high, S&amp;P 500 and Nasdaq also rise; oil prices, Treasury yields fall on signs of U.S.-Iran war de-escalation; Palantir earnings on tap - MarketWatch</p>
+</li>
+<li>
+<p>影響: 無</p>
+</li>
+<li>
+<p><strong>[低][neutral]</strong> 川普點名雪佛龍等石油巨頭：現在就把零售油價降下來！ - 動區動趨</p>
+</li>
+<li>
+<p>影響: 無</p>
+</li>
+<li>
+<p><strong>[低][neutral]</strong> 伊朗局勢趨緩油價下跌 美股週一開盤大漲 - Yahoo新聞</p>
+</li>
+<li>
+<p>影響: 無</p>
+</li>
+<li>
+<p><strong>[低][neutral]</strong> Stock market today: Nasdaq leads Dow, S&amp;P 500 higher as Big Tech gains, oil prices ease - Yahoo Finance</p>
+</li>
+<li>
+<p>影響: 無</p>
+</li>
+<li>
+<p><strong>[低][neutral]</strong> Stock Market Today: Dow surges 600 points to a record high, S&amp;P 500 and Nasdaq also rise; Oil prices drop, Treasury yields fall on signs of de-escalation in U.S.-Iran war; ISM manufacturing and Palantir results on tap - MarketWatch</p>
+</li>
+<li>
+<p>影響: 無</p>
+</li>
+<li>
+<p><strong>[低][neutral]</strong> 台股明天慘兮兮？台指期夜盤失守4.3萬點大關「一度大跌近千點」 - Yahoo股市</p>
+</li>
+<li>
+<p>影響: 無</p>
+</li>
+<li>
+<p><strong>[低][neutral]</strong> Dow futures jump 600 points after Trump calls off planned attacks, oil prices slide: Live updates - cnbc.com</p>
+</li>
+<li>
+<p>影響: 無</p>
+</li>
+<li>
+<p><strong>[低][neutral]</strong> Treasury selloff signals need to bolster Fed's inflation credibility, Musalem tells FT - KITCO</p>
+</li>
+<li>
+<p>影響: 無</p>
+</li>
+<li>
+<p><strong>[低][neutral]</strong> 【美股盤前】三大指數期貨齊漲，油價跌破80美元，亞馬遜、Alphabet走強，市場聚焦PLTR財報 - TradingKey</p>
+</li>
+<li>
+<p>影響: 無</p>
+</li>
+<li>
+<p><strong>[低][neutral]</strong> US Dollar (DXY), USD/JPY Forecast: Key Levels to Watch - FOREX.com</p>
+</li>
+<li>
+<p>影響: 無</p>
+</li>
+<li>
+<p><strong>[低][neutral]</strong> Xbox Series X price hiked by £170 due to rising memory chip costs</p>
+</li>
+<li>
+<p>影響: 無</p>
+</li>
+<li>
+<p><strong>[低][neutral]</strong> ‘I’m easing into retirement’: I’m getting an $80,000 pension payout. Where can I invest it safely?</p>
+</li>
+<li>影響: 個人退休金配置諮詢，對總體資本市場無實質影響。</li>
+</ul>
+<hr />
+<h2 id="_3">全部事件</h2>
+<ul>
+<li><code>[08-03 15:20]</code> <strong>[sev中高]</strong> Why the U.S. decided to help Japan by boosting the flailing yen <code>marketwatch</code></li>
+<li><code>[08-03 15:17]</code> <strong>[sev中低]</strong> Disappointed by your skimpy pay raise? Blame your healthcare benefits. <code>marketwatch</code></li>
+<li><code>[08-03 15:15]</code> <strong>[sev低]</strong> Derelict former BHS site a 'continuing nightmare' <code>bbcbusiness</code></li>
+<li><code>[08-03 15:07]</code> <strong>[sev低]</strong> Former ’60 Minutes’ Correspondents Sharyn Alfonsi, Scott Pelley Will Teach At Columbia <code>nytbusiness</code></li>
+<li><code>[08-03 15:05]</code> <strong>[sev中高]</strong> Amazon tops $3 trillion market cap as stock continues post-earnings surge <code>cnbc</code></li>
+<li><code>[08-03 15:03]</code> <strong>[sev中高]</strong> Why tech stocks are likely to take a back seat for the rest of 2026, according to JPMorgan strategists <code>marketwatch</code></li>
+<li><code>[08-03 15:01]</code> <strong>[sev中低]</strong> Surge in global energy, goods prices pushing up WPI inflation: Govt - India Tribune - Chicago <code>google-news:inflation CPI</code></li>
+<li><code>[08-03 15:00]</code> <strong>[sev中低]</strong> Seven Months After Maduro's Fall, Big Oil Still Won't Commit To Venezuela - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><code>[08-03 14:52]</code> <strong>[sev低]</strong> They spent tens of thousands of dollars on home remodels — only to regret it. ‘It’s just been so much.’ <code>marketwatch</code></li>
+<li><code>[08-03 14:44]</code> <strong>[sev低]</strong> Here’s Why the US Is Helping Prop Up the Japanese Yen <code>nytbusiness</code></li>
+<li><code>[08-03 14:40]</code> <strong>[sev低]</strong> 川普怒轟雪佛龍執行長 施壓石油巨頭「立刻調降油價」 - 民視新聞網 <code>google-news:油價</code></li>
+<li><code>[08-03 14:37]</code> <strong>[sev低]</strong> My boss and I work in different cities and she never responds to my messages. What do I do? <code>marketwatch</code></li>
+<li><code>[08-03 14:37]</code> <strong>[sev低]</strong> Stock Market Today: Dow Jumps 700 Points; Oil Prices Slide; U.S.-Japan Prop Up Yen — Live Updates - WSJ <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><code>[08-03 14:36]</code> <strong>[sev低]</strong> 油價大跌！美股3大指數早盤漲逾1%僅費半跌 台指期夜盤殺逾600點 - 知新聞 <code>google-news:油價</code></li>
+<li><code>[08-03 14:36]</code> <strong>[sev低]</strong> 油價大跌！美股3大指數早盤漲逾1%僅費半跌 台指期夜盤殺逾600點 - 知新聞 <code>google-news:台股 大跌</code></li>
+<li><code>[08-03 14:32]</code> <strong>[sev低]</strong> 不求對美國決定性戰果專家解析德黑蘭衝突策略- 國際 - 自由時報 <code>google-news:戰爭 衝突</code></li>
+<li><code>[08-03 14:31]</code> <strong>[sev低]</strong> Google Earth Disables A.I. Tool After One Day Over Disinformation Concerns <code>nytbusiness</code></li>
+<li><code>[08-03 14:30]</code> <strong>[sev低]</strong> Dark Tanker Transits Surge at Bab el-Mandeb as Houthi Threat Persists - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><code>[08-03 14:25]</code> <strong>[sev低]</strong> Stock Market Today: Dow surges 600 points toward a record high, S&amp;P 500 and Nasdaq also rise; oil prices, Treasury yields fall on signs of U.S.-Iran war de-escalation; Palantir earnings on tap - MarketWatch <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><code>[08-03 14:22]</code> <strong>[sev中低]</strong> SpaceX’s Stock Lockup Is Expiring. Prepare for a Bumpy Ride. <code>nytbusiness</code></li>
+<li><code>[08-03 14:21]</code> <strong>[sev低]</strong> 川普點名雪佛龍等石油巨頭：現在就把零售油價降下來！ - 動區動趨 <code>google-news:油價</code></li>
+<li><code>[08-03 14:21]</code> <strong>[sev中高]</strong> American manufacturers grow at fastest clip in 4 years due to AI boom — but all is not well <code>marketwatch</code></li>
+<li><code>[08-03 14:13]</code> <strong>[sev低]</strong> 伊朗局勢趨緩油價下跌 美股週一開盤大漲 - Yahoo新聞 <code>google-news:油價</code></li>
+<li><code>[08-03 14:13]</code> <strong>[sev中高]</strong> 伊朗局勢趨緩油價下跌 美股週一開盤大漲| 國際焦點 - 太報 TaiSounds <code>google-news:油價</code></li>
+<li><code>[08-03 14:10]</code> <strong>[sev中低]</strong> 川普點名雪佛龍執行長 怒要求石油公司立即調降油價 - 民視新聞網 <code>google-news:油價</code></li>
+<li><code>[08-03 14:09]</code> <strong>[sev中高]</strong> Stock Market Today: Dow Jumps 500 Points; Oil Prices Slide; U.S.-Japan Prop Up Yen — Live Updates - WSJ <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><code>[08-03 14:08]</code> <strong>[sev中低]</strong> India’s Wholesale Price Inflation and Global Energy Costs in 2026 - discoveryalert.com.au <code>google-news:inflation CPI</code></li>
+<li><code>[08-03 14:08]</code> <strong>[sev低]</strong> Stock market today: Nasdaq leads Dow, S&amp;P 500 higher as Big Tech gains, oil prices ease - Yahoo Finance <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><code>[08-03 14:00]</code> <strong>[sev中低]</strong> Dow Jones and Nasdaq climbs as big tech drive gains ahead of busy Wall Street week - Proactive Investors <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><code>[08-03 13:56]</code> <strong>[sev中高]</strong> 川普取消空襲伊朗油價重挫6％帶動美股開盤勁揚- 國際 - 工商時報 <code>google-news:油價</code></li>
+<li><code>[08-03 13:42]</code> <strong>[sev中高]</strong> 〈美股早盤〉美伊緊張局勢降溫、油價跌破80美元 主要指數開高 - news.cnyes.com <code>google-news:油價</code></li>
+<li><code>[08-03 13:39]</code> <strong>[sev低]</strong> Stock Market Today: Dow surges 600 points to a record high, S&amp;P 500 and Nasdaq also rise; Oil prices drop, Treasury yields fall on signs of de-escalation in U.S.-Iran war; ISM manufacturing and Palantir results on tap - MarketWatch <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><code>[08-03 13:38]</code> <strong>[sev中低]</strong> US Stock Futures Advance as Oil Dips; Dow Outpaces Nasdaq Ahead of ISM Data - TechStock² <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><code>[08-03 13:35]</code> <strong>[sev中高]</strong> 環球動態 | 伊朗和談憧憬拖累油價急挫5%，美日聯手干預日圓彈至三個月高 | 即時新聞 - 新聞 - etnet 經濟通 <code>google-news:油價</code></li>
+<li><code>[08-03 13:32]</code> <strong>[sev中低]</strong> US Dollar (DXY), USD/JPY Forecast: Key Levels to Watch - FOREX.com <code>google-news:dollar index DXY</code></li>
+<li><code>[08-03 13:30]</code> <strong>[sev低]</strong> Indian Oil Subsidiary CPCL Plans 280,000 Bpd Manali Refinery - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><code>[08-03 13:29]</code> <strong>[sev低]</strong> 台股明天慘兮兮？台指期夜盤失守4.3萬點大關「一度大跌近千點」 - Yahoo股市 <code>google-news:台股 大跌</code></li>
+<li><code>[08-03 13:28]</code> <strong>[sev中高]</strong> Global oil prices fall below $83 a barrel to hover at 3-week low after Trump calls off planned attack and says Iran talks to resume Monday <code>marketwatch</code></li>
+<li><code>[08-03 13:25]</code> <strong>[sev中低]</strong> Nasdaq Stabilizes as Earnings Validate AI - TradeStation <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><code>[08-03 13:11]</code> <strong>[sev中低]</strong> Dow Jones, Nasdaq, S&amp;P 500 preview: Jobs data, earnings deluge to set market tone - Investing.com Canada <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><code>[08-03 13:08]</code> <strong>[sev中高]</strong> Dow Jones, Nasdaq, S&amp;P 500 preview: Jobs data, earnings deluge to set market tone - Investing.com <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><code>[08-03 13:06]</code> <strong>[sev低]</strong> Dow futures jump 600 points after Trump calls off planned attacks, oil prices slide: Live updates - cnbc.com <code>google-news:Treasury yields</code></li>
+<li><code>[08-03 13:06]</code> <strong>[sev高]</strong> JPMorgan says Warsh failure to buttress Fed credibility may force a rate hike before year-end <code>marketwatch</code></li>
+<li><code>[08-03 13:06]</code> <strong>[sev高]</strong> Dow futures jump 600 points after Trump calls off planned attacks, oil prices slide: Live updates - CNBC <code>google-news:Treasury yields</code></li>
+<li><code>[08-03 12:55]</code> <strong>[sev中高]</strong> Oil Prices Plummet as Investors Digest Pause in Iran War Fighting <code>nytbusiness</code></li>
+<li><code>[08-03 12:48]</code> <strong>[sev中低]</strong> 台股處置制度確定鬆綁 4大變動、上路時間曝！證交所：每半年檢討一次 - 三立新聞 <code>google-news:台股 大跌</code></li>
+<li><code>[08-03 12:39]</code> <strong>[sev中低]</strong> Stock markets take winning run to 4th day as crude oil prices drop sharply; Nifty surges 1.6% - The Hindu <code>google-news:oil price crude</code></li>
+<li><code>[08-03 12:37]</code> <strong>[sev中低]</strong> Stock Market Today: Dow, S&amp;P 500, Nasdaq Set to Open Up; Trump, Iran Hope; Micron, SpaceX, Palantir, More Movers - Barron's <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><code>[08-03 12:36]</code> <strong>[sev中低]</strong> Gold is still in its ‘explosive phase,’ says Deutsche Bank, as it sticks to year-end target <code>marketwatch</code></li>
+<li><code>[08-03 12:30]</code> <strong>[sev中高]</strong> Stock Market Today: Dow Futures Rise; Oil Prices Slide; U.S.-Japan Prop Up Yen — Live Updates - WSJ <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><code>[08-03 12:30]</code> <strong>[sev中低]</strong> Australian Regulator Wants Tougher Pollution Rules for Darwin LNG Plants - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><code>[08-03 12:28]</code> <strong>[sev中高]</strong> Stock Market Today: S&amp;P 500, Dow, Nasdaq 100 Futures Gain as Trump Halts 'Massive Attack' on Iran—Atkore - Benzinga <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><code>[08-03 12:26]</code> <strong>[sev中低]</strong> Dow futures jump but Nasdaq flat ahead of busy week for Wall Street - Yahoo! Finance Canada <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><code>[08-03 12:13]</code> <strong>[sev中低]</strong> An AstraZeneca, Bristol Myers Squibb merger could create a cancer-drug giant, but analysts call it ‘odd’ <code>marketwatch</code></li>
+<li><code>[08-03 12:11]</code> <strong>[sev中低]</strong> Greece wildfire in pictures: Firefighters battle blaze worsened by 100km per hour winds <code>cnbc</code></li>
+<li><code>[08-03 12:09]</code> <strong>[sev低]</strong> Treasury selloff signals need to bolster Fed's inflation credibility, Musalem tells FT - KITCO <code>google-news:Treasury yields</code></li>
+<li><code>[08-03 12:08]</code> <strong>[sev中高]</strong> Oil prices tumble after Trump calls off attack on Iran <code>cnbc</code></li>
+<li><code>[08-03 12:06]</code> <strong>[sev低]</strong> 【美股盤前】三大指數期貨齊漲，油價跌破80美元，亞馬遜、Alphabet走強，市場聚焦PLTR財報 - TradingKey <code>google-news:油價</code></li>
+<li><code>[08-03 12:05]</code> <strong>[sev低]</strong> US Dollar (DXY), USD/JPY Forecast: Key Levels to Watch - FOREX.com <code>google-news:dollar index DXY</code></li>
+<li><code>[08-03 12:01]</code> <strong>[sev中高]</strong> 川普取消攻擊、美伊恢復談判！道瓊期指狂飆逾500點、油價崩跌 - news.cnyes.com <code>google-news:油價</code></li>
+<li><code>[08-03 12:01]</code> <strong>[sev中低]</strong> Make or break for the South African Reserve Bank - businesstech.co.za <code>google-news:central bank policy</code></li>
+<li><code>[08-03 12:00]</code> <strong>[sev中高]</strong> SpaceX's post-IPO plunge sets tense backdrop for first earnings report <code>cnbc</code></li>
+<li><code>[08-03 11:54]</code> <strong>[sev中低]</strong> SpaceX’s first-ever earnings report is a big deal — but not because of the numbers <code>marketwatch</code></li>
+<li><code>[08-03 11:51]</code> <strong>[sev中高]</strong> Trump’s ‘Perimeter of a Deal’ Rallies the Market <code>nytbusiness</code></li>
+<li><code>[08-03 11:47]</code> <strong>[sev中高]</strong> What the market is saying about the U.S. intervention to prop up the yen <code>cnbc</code></li>
+<li><code>[08-03 11:35]</code> <strong>[sev中高]</strong> AstraZeneca slides after reports of Bristol Myers merger talks leave analysts 'perplexed' <code>cnbc</code></li>
+<li><code>[08-03 11:35]</code> <strong>[sev中高]</strong> Stock Market Today: Return to Diplomacy Brings Reprieve for Oil Prices — Live Updates - wsj.com <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><code>[08-03 11:30]</code> <strong>[sev中低]</strong> Shell Sells European Onshore Renewables Portfolio to TotalEnergies - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><code>[08-03 11:24]</code> <strong>[sev中高]</strong> The gap between big tech and the rest of the market just vanished. Here’s what it means for investors. <code>marketwatch</code></li>
+<li><code>[08-03 11:22]</code> <strong>[sev中低]</strong> 台股大跌怎麼辦？5 步驟自救指南，判斷你要抄底、續抱或減碼｜股市話題｜豐雲學堂2026 年 08 月 - sinotrade.com.tw <code>google-news:台股 大跌</code></li>
+<li><code>[08-03 11:20]</code> <strong>[sev中低]</strong> Nasdaq 100 and S&amp;P500: Oil Plunge Opens the Door for Growth Stocks - FXEmpire <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><code>[08-03 11:19]</code> <strong>[sev中低]</strong> Ringgit ends lower against US dollar, major currencies as US Treasury yields rise - The Star <code>google-news:Treasury yields</code></li>
+<li><code>[08-03 11:18]</code> <strong>[sev低]</strong> Xbox Series X price hiked by £170 due to rising memory chip costs <code>bbcbusiness</code></li>
+<li><code>[08-03 11:10]</code> <strong>[sev中低]</strong> Govt cites global commodity, energy costs for rise in wholesale price inflation - ETGovernment.com <code>google-news:inflation CPI</code></li>
+<li><code>[08-03 11:02]</code> <strong>[sev中低]</strong> AstraZeneca reported tie-up talks with Bristol-Myers Squibb are moving stocks. Analysts are puzzled. <code>marketwatch</code></li>
+<li><code>[08-03 11:00]</code> <strong>[sev中高]</strong> Bessent Plays Currency-Market Chess With Likely Eye on US Treasury Yields - bloomberg.com <code>google-news:Treasury yields</code></li>
+<li><code>[08-03 11:00]</code> <strong>[sev中高]</strong> Bessent Plays Currency-Market Chess With Likely Eye on US Treasury Yields - Bloomberg <code>google-news:Treasury yields</code></li>
+<li><code>[08-03 11:00]</code> <strong>[sev中低]</strong> Bessent Plays Currency-Market Chess With Likely Eye on US Treasury Yields - Bloomberg <code>google-news:Treasury yields</code></li>
+<li><code>[08-03 11:00]</code> <strong>[sev中高]</strong> Bessent Plays Currency-Market Chess With Likely Eye on US Treasury Yields - Bloomberg.com <code>google-news:Treasury yields</code></li>
+<li><code>[08-03 11:00]</code> <strong>[sev低]</strong> ‘I’m easing into retirement’: I’m getting an $80,000 pension payout. Where can I invest it safely? <code>marketwatch</code></li>
+</ul>
+    </article>
+  
+</div>
+<footer>由金融情報系統自動發佈 · 僅供參考，不構成投資建議</footer>
+<script>
+const WEEK = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function nowParts(tz){
+  const p = {};
+  new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short', month: 'short',
+    day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
+  }).formatToParts(new Date()).forEach(x => p[x.type] = x.value);
+  return p;
+}
+function marketOpen(tz, open, close){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  return wd>=1 && wd<=5 && m>=open && m<close;
+}
+function pad(n){ return String(n).padStart(2,'0'); }
+function setMkt(id, open, label){
+  const el = document.getElementById(id);
+  el.className = 'mkt ' + (open ? 'open' : 'closed');
+  el.textContent = (label ? label + ' ' : '') + (open ? '開盤中' : '未開盤');
+}
+function tick(){
+  const tw = nowParts('Asia/Taipei');
+  const ny = nowParts('America/New_York');
+  document.getElementById('clk-tw').textContent = pad(tw.hour)+':'+pad(tw.minute)+':'+pad(tw.second);
+  document.getElementById('clk-ny').textContent = pad(ny.hour)+':'+pad(ny.minute)+':'+pad(ny.second);
+  const twO = marketOpen('Asia/Taipei', 9*60, 13*60+30);
+  const nyO = marketOpen('America/New_York', 9*60+30, 16*60);
+  setMkt('tw-mkt', twO, '台股'); setMkt('ny-mkt', nyO, '美股');
+}
+tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>
