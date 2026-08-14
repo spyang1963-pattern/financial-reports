@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度分析報告 2026-08-15 早上</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; margin: 0;
+         background: #f5f6f8; color: #1c1e21; line-height: 1.7; }
+  header { background: #1b2a4a; color: #fff; padding: 14px 24px;
+           display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  header h1 { font-size: 18px; margin: 0; flex: 1; }
+  header nav a { color: #cdd8ee; text-decoration: none; margin-left: 14px; font-size: 14px; }
+  header nav a:hover, header nav a.active { color: #fff; text-decoration: underline; }
+  #clock { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; font-size: 13px; }
+  .clk { background: rgba(255,255,255,.08); border-radius: 6px; padding: 4px 10px; }
+  .clk-city { color: #9fb0cf; margin-right: 6px; }
+  .clk-time { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .mkt { margin-left: 8px; font-size: 12px; padding: 1px 7px; border-radius: 9px; }
+  .mkt.open { background: #2e7d32; color: #fff; }
+  .mkt.closed { background: #5a6474; color: #fff; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 20px; }
+  .card { background: #fff; border-radius: 8px; padding: 18px 22px; margin: 14px 0;
+          box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .card h3 { margin: 0 0 6px; }
+  .card a { color: #1b2a4a; text-decoration: none; }
+  .card a:hover { text-decoration: underline; }
+  .muted { color: #666; font-size: 13px; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px;
+           color: #fff; margin-left: 6px; }
+  .b-daily { background: #2e7d32; }
+  .b-deep { background: #b45309; }
+  .day-nav { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+  .day-nav a { font-size: 13px; padding: 3px 10px; background: #e8ecf3; border-radius: 12px;
+               color: #33415c; text-decoration: none; }
+  .day-nav a:hover { background: #d2dbea; }
+  article.card { line-height: 1.8; }
+  article.card h1, article.card h2 { border-bottom: 1px solid #e3e6eb; padding-bottom: 6px; }
+  article.card h1 { font-size: 24px; }
+  article.card h2 { font-size: 20px; margin-top: 26px; }
+  article.card h3 { font-size: 17px; margin-top: 20px; }
+  article.card blockquote { border-left: 4px solid #9fb0cf; margin: 10px 0;
+        padding: 2px 14px; color: #4a5568; background: #f4f6fa; }
+  article.card code { background: #eef0f4; padding: 1px 5px; border-radius: 4px;
+        font-size: 14px; font-family: Consolas, monospace; }
+  article.card pre { background: #1b2a4a; color: #e6ecf7; padding: 14px; border-radius: 8px; overflow-x: auto; }
+  article.card pre code { background: transparent; color: inherit; padding: 0; }
+  article.card table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+  article.card th, article.card td { border: 1px solid #d8dce3; padding: 6px 10px; }
+  article.card th { background: #eef1f6; }
+  article.card a { color: #1459c8; }
+  footer { text-align: center; color: #999; font-size: 12px; padding: 20px; }
+</style>
+</head>
+<body>
+  <header>
+  <h1>金融情報系統報告</h1>
+  <nav>
+    <a href="../index.html" class="">首頁</a>
+    <a href="../calendar.html" class="">行事曆</a>
+    <a href="../daily/2026-08-15.html" class="">最新每日</a>
+    <a href="../deep/2026-08-15-am.html" class="active">最新深度</a>
+  </nav>
+  <div id="clock">
+    <span class="clk"><span class="clk-city">台北</span><span class="clk-time" id="clk-tw">--:--:--</span><span class="mkt closed" id="tw-idx">…</span><span class="mkt closed" id="tx-day">…</span><span class="mkt closed" id="tx-night">…</span></span>
+    <span class="clk"><span class="clk-city">紐約</span><span class="clk-time" id="clk-ny">--:--:--</span><span class="mkt closed" id="ny-mkt">…</span><span class="mkt closed" id="ny-night">…</span></span>
+  </div>
+</header>
+<div class="wrap">
+  
+    <div class="day-nav">
+      <a href="../index.html">← 首頁</a>
+      
+        
+        <a href="../deep/2026-08-15-am.html">2026-08-15</a>
+        
+        <a href="../deep/2026-08-14-pm.html">2026-08-14</a>
+        
+        <a href="../deep/2026-08-13-pm.html">2026-08-13</a>
+        
+        <a href="../deep/2026-08-12-pm.html">2026-08-12</a>
+        
+        <a href="../deep/2026-08-11-pm.html">2026-08-11</a>
+        
+        <a href="../deep/2026-08-10-pm.html">2026-08-10</a>
+        
+        <a href="../deep/2026-08-09-pm.html">2026-08-09</a>
+        
+      
+    </div>
+    <article class="card">
+      <div class="muted">2026-08-15
+        <span class="badge b-deep">
+          深度分析
+        </span>
+      </div>
+      <blockquote>
+<p>報告時間：2026-08-15 07:00（台灣時間）</p>
+</blockquote>
+<hr />
+<h2 id="_1">一、市場總覽</h2>
+<ul>
+<li><strong>台股</strong>：受美股週五回檔及高檔獲利了結影響，加權指數收在 <strong>45,811.01 點</strong>（▼-0.46%），權值股如台積電（2395）面臨調節賣壓，但中小型題材股與記憶體族群表現抗跌，顯示內資動能仍在。</li>
+<li><strong>美股</strong>：公布的 7 月零售銷售意外月減 0.6%，引發消費情勢疲軟與經濟放緩擔憂，加上週末前夕觀望氣氛濃厚，三大指數全面收黑（S&amp;P 500 ▼-0.17%、那斯達克 ▼-0.28%、道瓊 ▼-0.20%），但週線仍多維持紅盤。</li>
+<li><strong>債市</strong>：美國長天期公債面臨財政赤字與供給壓力，30 年期美債殖利率維持高檔，10 年期美債殖利率回升至 <strong>4.70%</strong>（▲+1.19%），反映市場對通膨黏著與聯準會降息路徑的分歧。</li>
+<li><strong>匯市</strong>：美元指數（DXY）微幅回落至 <strong>99.64</strong>（▼-0.32%），非美貨幣相對持穩，美元/台幣收在 <strong>32.00</strong>，日圓則持續在 159 附近震盪整理。</li>
+<li><strong>商品</strong>：地緣政治風險急遽升溫，美國威脅對伊朗施加更大經濟壓力，激勵 <strong>WTI 原油（82.40 美元，▲+1.42%）與黃金（4,432.00 美元，▲+1.57%）齊揚</strong>，避險與通膨避險需求同步湧現。</li>
+</ul>
+<h2 id="_2">二、行情快照與台股夜盤解析</h2>
+<h3 id="_3">時效性說明與即時快照</h3>
+<ul>
+<li>本報告之行情快照時間點為 <strong>2026-08-15 05:32</strong>，台股收盤數據為最近一個交易日（2026-08-14）之收盤價，夜盤與美股最新動態已全數納入跨日觀察。</li>
+</ul>
+<h3 id="_4">台股夜盤與美股連動解析</h3>
+<ul>
+<li>雖然美股三大指數在週五因零售數據疲弱而收黑，但台股夜盤與 ADR 表現展現一定抗跌韌性。台積電 ADR 與主要科技股在經歷前日大漲後進入高檔震盪。</li>
+<li>觀察台股現貨與期指在週五的表現，雖然權值股午後出現熄火，但外資在期現貨籌碼上並未出現全面翻空（例如前日反手買超現貨並減碼期貨空單），顯示市場在 46,000 點大關附近進行健康的籌碼換手與震盪壁壘。</li>
+</ul>
+<h2 id="_5">三、重大事件深度解讀</h2>
+<h3 id="1-7-06">1. 美國 7 月零售銷售意外衰退 0.6% 與消費情勢疲軟</h3>
+<ul>
+<li><strong>事件核心</strong>：美國公布 7 月零售銷售月減 0.6%，降幅大於市場預期，消費者信心下滑，引發市場對美國經濟成長動能放緩的疑慮。</li>
+<li><strong>傳導路徑</strong>：</li>
+<li>股市：消費降溫直接壓抑零售、非必需消費品及整體美股評價面，導致美股自歷史高點回落。</li>
+<li>債市：經濟數據降溫一度推升降息預期，但伴隨通膨黏著隱憂，美債殖利率出現劇烈「Round Trip」來回震盪。</li>
+<li>匯市與商品：美元指數承壓回落，資金轉向防禦性資產與商品市場。</li>
+<li><strong>關聯標的</strong>：<code>SPY</code>、<code>QQQ</code>、<code>US10Y</code></li>
+<li><strong>未來一週走勢</strong>：短線將持續干擾市場對「軟著陸」與「硬著陸」的辯論，若後續消費數據未見改善，美股高檔震盪幅度將加劇。</li>
+</ul>
+<h3 id="2">2. 美國威脅對伊朗施加更大經濟壓力推升油價</h3>
+<ul>
+<li><strong>事件核心</strong>：美國財政部預告將對伊朗實施史無前例的經濟壓力，中東地緣政治風險再度升溫。</li>
+<li><strong>傳導路徑</strong>：</li>
+<li>商品：地緣衝突隱憂直接推動 WTI 原油（82.40 美元）與布蘭特原油（88.59 美元）大漲逾 1.4% 至 1.7%。</li>
+<li>股市：能源類股獲得支撐，但高油價同時加深市場對通膨死灰復燃的擔憂，對整體股市評價面形成雙面刃。</li>
+<li><strong>關聯標的</strong>：<code>CL=F</code>、能源類股</li>
+<li><strong>未來一週走勢</strong>：油價短線將高度受制於中東地緣政治的實際動態與口頭干預，若衝突擴大，將持續推升大宗商品抗通膨需求。</li>
+</ul>
+<h3 id="3-21-spacex">3. 輝達揭露 21 億美元投資 SpaceX</h3>
+<ul>
+<li><strong>事件核心</strong>：輝達（Nvidia）在第二季末財報中揭露，透過 xAI 相關架構投資 SpaceX 達 21 億美元。</li>
+<li><strong>傳導路徑</strong>：</li>
+<li>股市：此舉強化了 AI 巨頭與太空科技、先進通訊生態系的實質鏈結，激化市場對 AI 應用邊界擴張的想像。</li>
+<li><strong>關聯標的</strong>：<code>NVDA</code>、<code>TSLA</code></li>
+<li><strong>未來一週走勢</strong>：有助於維繫半導體與先進科技股的多頭核心信心，即使大盤因總經數據回檔，題材面強勢股仍有買盤點火。</li>
+</ul>
+<h2 id="_6">四、跨日相關性分析</h2>
+<h3 id="_7">近三日市場演變的因果閉環與主軸</h3>
+<ul>
+<li><strong>8月13日（主軸：PPI 降溫與降息定心丸）</strong>：美國 PPI 實際值（4.7%）低於預期，消除市場對通膨復熾的恐慌，激發全球風險胃納。台股大漲 503 點站上 46,000 點，成交值重回兆元，美股標普創歷史新高。</li>
+<li><strong>8月14日（主軸：高檔獲利了結與債市警訊）</strong>：美股在創高後面臨長天期美債殖利率飆升（30年期創 2007 年來新高）與財政赤字隱憂的壓抑；台股盤中權值股熄火，但外資在期現貨籌碼出現分歧，指數回測。</li>
+<li><strong>8月15日（主軸：消費數據疲軟與地緣政治避險）</strong>：零售銷售月減 0.6% 戳破部分經濟過熱想像，美股拉回收黑；同時美國對伊朗施壓使油價與黃金雙雙大漲，資金在科技股內部（如記憶體逆勢走強）進行高位輪動。</li>
+<li><strong>趨勢結論</strong>：市場從前期的「降息狂歡與通膨降溫」主軸，迅速轉為「經濟放緩疑慮」與「地緣政治風險」的交織測試。台股在 46,000 點附近面臨籌碼沉澱與美股連動修正，但內資動能與特定科技題材（如記憶體、AI 應用）展現強大抗震能力。</li>
+</ul>
+<h2 id="_8">五、分類展望</h2>
+<h3 id="_9">股市</h3>
+<ul>
+<li><strong>短（1週）</strong>：保守震盪。受美股零售數據疲軟與週末前夕賣壓影響，台美股市短線面臨高檔技術性修正與籌碼沉澱。</li>
+<li><strong>中（1月）</strong>：多頭格局未破但波動加劇。需觀察企業財報能否消化高估值，以及資金在 AI 與傳產/防禦板塊間的輪動。</li>
+<li><strong>長（1季）</strong>：偏多看待。受惠於全球降息預期底定與科技創新（如 AI 結合太空、機器人浪潮）驅動，企業盈餘有望支撐長線多頭。</li>
+</ul>
+<h3 id="_10">債市</h3>
+<ul>
+<li><strong>短（1週）</strong>：震盪偏弱。長天期美債殖利率受財政供給壓力與通膨黏著影響而居高不下（10年期處於 4.7% 附近）。</li>
+<li><strong>中（1月）</strong>：區間整理。取決於後續就業與通膨數據是否給予聯準會更明確的降息時點訊號。</li>
+<li><strong>長（1季）</strong>：漸進改善。隨著通膨趨緩與聯準會啟動實質寬鬆，長債資本利得空間將逐步打開。</li>
+</ul>
+<h3 id="_11">匯市</h3>
+<ul>
+<li><strong>短（1週）</strong>：美元指數在 99.6 附近狹幅震盪，非美貨幣受避險情緒牽制。</li>
+<li><strong>中（1月）</strong>：美元偏弱整理。降息預期升溫將逐步削弱美元優勢，亞幣（如台幣、日圓）壓力有望緩解。</li>
+<li><strong>長（1季）</strong>：美元走勢向下。隨著貨幣政策轉向，資金將流向非美市場。</li>
+</ul>
+<h3 id="_12">商品（油金）</h3>
+<ul>
+<li><strong>短（1週）</strong>：強勢走高。地緣政治風險（美國對伊朗施壓）與避險需求同步推升原油與黃金大漲。</li>
+<li><strong>中（1月）</strong>：高檔高波動。油價受中東局勢與需求放緩拉鋸，黃金則受惠於實質利率下降與央行買盤支撐。</li>
+<li><strong>長（1季）</strong>：偏多。地緣政治不確定性與避險需求構成大宗商品的底氣。</li>
+</ul>
+<h3 id="_13">地緣政治</h3>
+<ul>
+<li><strong>短（1週）</strong>：高度警戒。美伊衝突升溫、無人機戰損及潛艦技術轉移等隱憂，持續牽動軍工與能源市場神經。</li>
+<li><strong>中（1月）</strong>：持續摩擦。區域衝突難以在短期內完全平息，將成為金融市場常態性擾動因子。</li>
+<li><strong>長（1季）</strong>：資訊不足，無法給予長期定論。</li>
+</ul>
+<hr />
+<h2 id="_14">六、風險與機會</h2>
+<h3 id="_15">風險（警示）</h3>
+<ol>
+<li><strong>美國消費動能超預期熄火（標標：<code>SPY</code>, <code>QQQ</code>）</strong>：零售銷售月減 0.6% 若演變為全面消費緊縮，將直接打擊企業營收與美股多頭基礎。</li>
+<li><strong>長天期美債殖利率居高不下（標的：<code>US10Y</code>）</strong>：30 年期與 10 年期美債殖利率維持高檔，融資成本攀升將持續壓抑高估值科技股與房市評價。</li>
+<li><strong>中東地緣政治失控（標的：<code>CL=F</code>）</strong>：美國對伊朗施壓若升級為實際軍事衝突，將導致油價狂飆，全面引爆輸入型通膨危機。</li>
+</ol>
+<h3 id="_16">機會（看好）</h3>
+<ol>
+<li><strong>AI 產業鏈與跨領域生態擴張（標的：<code>NVDA</code>, <code>TSLA</code>）</strong>：輝達投資 SpaceX 顯示 AI 應用正向太空與先進科技外溢，硬體與基礎設施領導廠逢低具布局價值。</li>
+<li><strong>科技股內部高位輪動與記憶體族群（標的：記憶體概念股如 SanDisk）</strong>：在指數回檔之際，記憶體與特定利基科技股逆勢走強，顯示資金尋找低基期或具報價支撐的次族群。</li>
+<li><strong>避險資產強勢崛起（標的：黃金 <code>Gold</code>）</strong>：在地緣政治與通膨雙重避險需求驅動下，黃金價格突破 4,400 美元後動能強勁。</li>
+</ol>
+<hr />
+<h2 id="_17">七、操作建議摘要</h2>
+<ol>
+<li><strong>嚴控部位現金水位</strong>：面對美股消費數據不如預期與高檔獲利了結賣壓，短線不宜過度追高，應保留適當現金以應對技術性修正。</li>
+<li><strong>盯緊美債殖利率與油價動向</strong>：持續監控 10 年期美債殖利率是否突破 4.75% 警戒線，以及 WTI 原油是否因中東局勢進一步擴大漲幅。</li>
+<li><strong>關注台指期夜盤與外資籌碼變化</strong>：觀察台指期夜盤是否能守穩關鍵支撐，並留意現貨外資在權值股（如台積電 2395）的調節力道是否擴大。</li>
+<li><strong>尋找資金輪動的防禦與次族群</strong>：留意資金在科技股內部的輪動軌跡（如記憶體、AI 基礎設施），避免過度集中單一高權值標的。</li>
+</ol>
+<hr />
+<h2 id="_18">八、免責聲明</h2>
+<p>本報告由 AI 自動生成，僅供參考，不構成投資建議。金融市場瞬息萬變，投資人應自行評估風險並自負盈虧。</p>
+    </article>
+  
+</div>
+<footer>由金融情報系統自動發佈 · 僅供參考，不構成投資建議</footer>
+<script>
+const WEEK = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function nowParts(tz){
+  const p = {};
+  new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short', month: 'short',
+    day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
+  }).formatToParts(new Date()).forEach(x => p[x.type] = x.value);
+  return p;
+}
+function marketOpen(tz, open, close){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  return wd>=1 && wd<=5 && m>=open && m<close;
+}
+// Taiwan index-futures night session 15:00 -> next-day 05:00 (crosses midnight):
+// 15:00-24:00 Mon-Fri, plus 00:00-05:00 Tue-Sat (Sat 00:00-05:00 is Fri night session).
+function nightOpen(tz){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  if (m >= 5*60 && m < 15*60) return false;   // 05:00-15:00 recess
+  if (m >= 15*60) return wd >= 1 && wd <= 5;   // 15:00-24:00 Mon-Fri
+  return wd >= 2 && wd <= 6;                   // 00:00-05:00 Tue-Sat
+}
+function pad(n){ return String(n).padStart(2,'0'); }
+function setMkt(id, open, label){
+  const el = document.getElementById(id);
+  el.className = 'mkt ' + (open ? 'open' : 'closed');
+  el.textContent = (label ? label + ' ' : '') + (open ? '開盤中' : '未開盤');
+}
+function tick(){
+  const tw = nowParts('Asia/Taipei');
+  const ny = nowParts('America/New_York');
+  document.getElementById('clk-tw').textContent = pad(tw.hour)+':'+pad(tw.minute)+':'+pad(tw.second);
+  document.getElementById('clk-ny').textContent = pad(ny.hour)+':'+pad(ny.minute)+':'+pad(ny.second);
+  // Taiwan: TWSE weighted index 09:00-13:30; TX futures day 08:45-13:45; TX night 15:00-05:00
+  setMkt('tw-idx',  marketOpen('Asia/Taipei', 9*60, 13*60+30), '加權');
+  setMkt('tx-day',  marketOpen('Asia/Taipei', 8*60+45, 13*60+45), '期日盤');
+  setMkt('tx-night', nightOpen('Asia/Taipei'), '期夜盤');
+  // US: regular session 09:30-16:00 ET; after-hours 16:00-20:00 ET
+  setMkt('ny-mkt',  marketOpen('America/New_York', 9*60+30, 16*60), '美股');
+  setMkt('ny-night', marketOpen('America/New_York', 16*60, 20*60), '美股夜');
+}
+tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>
