@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度分析報告 2026-08-26 傍晚</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; margin: 0;
+         background: #f5f6f8; color: #1c1e21; line-height: 1.7; }
+  header { background: #1b2a4a; color: #fff; padding: 14px 24px;
+           display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  header h1 { font-size: 18px; margin: 0; flex: 1; }
+  header nav a { color: #cdd8ee; text-decoration: none; margin-left: 14px; font-size: 14px; }
+  header nav a:hover, header nav a.active { color: #fff; text-decoration: underline; }
+  #clock { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; font-size: 13px; }
+  .clk { background: rgba(255,255,255,.08); border-radius: 6px; padding: 4px 10px; }
+  .clk-city { color: #9fb0cf; margin-right: 6px; }
+  .clk-time { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .mkt { margin-left: 8px; font-size: 12px; padding: 1px 7px; border-radius: 9px; }
+  .mkt.open { background: #2e7d32; color: #fff; }
+  .mkt.closed { background: #5a6474; color: #fff; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 20px; }
+  .card { background: #fff; border-radius: 8px; padding: 18px 22px; margin: 14px 0;
+          box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .card h3 { margin: 0 0 6px; }
+  .card a { color: #1b2a4a; text-decoration: none; }
+  .card a:hover { text-decoration: underline; }
+  .muted { color: #666; font-size: 13px; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px;
+           color: #fff; margin-left: 6px; }
+  .b-daily { background: #2e7d32; }
+  .b-deep { background: #b45309; }
+  .day-nav { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+  .day-nav a { font-size: 13px; padding: 3px 10px; background: #e8ecf3; border-radius: 12px;
+               color: #33415c; text-decoration: none; }
+  .day-nav a:hover { background: #d2dbea; }
+  article.card { line-height: 1.8; }
+  article.card h1, article.card h2, article.card h3 { padding-bottom: 6px; }
+  article.card h1, article.card h2 { border-bottom: 2px solid #33415c; }
+  article.card h1 { font-size: 30px; margin-top: 8px; }
+  article.card h2 { font-size: 23px; margin-top: 34px; color: #1b2a4a;
+        border-left: 6px solid #1459c8; padding-left: 12px; }
+  article.card h3 { font-size: 19px; margin-top: 24px; color: #24365c;
+        background: #eef4fb; border-radius: 6px; padding: 6px 12px; }
+  article.card strong { color: #b02020; }
+  article.card blockquote { border-left: 4px solid #9fb0cf; margin: 10px 0;
+        padding: 2px 14px; color: #4a5568; background: #f4f6fa; }
+  article.card hr { border: none; border-top: 1px dashed #c3ccdb; margin: 26px 0; }
+  article.card code { background: #eef0f4; padding: 1px 5px; border-radius: 4px;
+        font-size: 14px; font-family: Consolas, monospace; }
+  article.card pre { background: #1b2a4a; color: #e6ecf7; padding: 14px; border-radius: 8px; overflow-x: auto; }
+  article.card pre code { background: transparent; color: inherit; padding: 0; }
+  article.card table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+  article.card th, article.card td { border: 1px solid #d8dce3; padding: 6px 10px; }
+  article.card th { background: #eef1f6; }
+  article.card a { color: #1459c8; }
+  footer { text-align: center; color: #999; font-size: 12px; padding: 20px; }
+</style>
+</head>
+<body>
+  <header>
+  <h1>金融情報系統報告</h1>
+  <nav>
+    <a href="../index.html" class="">首頁</a>
+    <a href="../calendar.html" class="">行事曆</a>
+    <a href="../daily/2026-08-26.html" class="">最新每日</a>
+    <a href="../deep/2026-08-26-pm.html" class="active">最新深度</a>
+  </nav>
+  <div id="clock">
+    <span class="clk"><span class="clk-city">台北</span><span class="clk-time" id="clk-tw">--:--:--</span><span class="mkt closed" id="tw-idx">…</span><span class="mkt closed" id="tx-day">…</span><span class="mkt closed" id="tx-night">…</span></span>
+    <span class="clk"><span class="clk-city">紐約</span><span class="clk-time" id="clk-ny">--:--:--</span><span class="mkt closed" id="ny-mkt">…</span><span class="mkt closed" id="ny-night">…</span></span>
+  </div>
+</header>
+<div class="wrap">
+  
+    <div class="day-nav">
+      <a href="../index.html">← 首頁</a>
+      
+        
+        <a href="../deep/2026-08-26-pm.html">2026-08-26</a>
+        
+        <a href="../deep/2026-08-25-pm.html">2026-08-25</a>
+        
+        <a href="../deep/2026-08-24-pm.html">2026-08-24</a>
+        
+        <a href="../deep/2026-08-23-pm.html">2026-08-23</a>
+        
+        <a href="../deep/2026-08-22-pm.html">2026-08-22</a>
+        
+        <a href="../deep/2026-08-21-pm.html">2026-08-21</a>
+        
+        <a href="../deep/2026-08-20-pm.html">2026-08-20</a>
+        
+        <a href="../deep/2026-08-19-pm.html">2026-08-19</a>
+        
+        <a href="../deep/2026-08-18-pm.html">2026-08-18</a>
+        
+        <a href="../deep/2026-08-17-pm.html">2026-08-17</a>
+        
+        <a href="../deep/2026-08-16-pm.html">2026-08-16</a>
+        
+        <a href="../deep/2026-08-15-pm.html">2026-08-15</a>
+        
+        <a href="../deep/2026-08-14-pm.html">2026-08-14</a>
+        
+        <a href="../deep/2026-08-13-pm.html">2026-08-13</a>
+        
+        <a href="../deep/2026-08-12-pm.html">2026-08-12</a>
+        
+        <a href="../deep/2026-08-11-pm.html">2026-08-11</a>
+        
+        <a href="../deep/2026-08-10-pm.html">2026-08-10</a>
+        
+        <a href="../deep/2026-08-09-pm.html">2026-08-09</a>
+        
+      
+    </div>
+    <article class="card">
+      <div class="muted">2026-08-26
+        <span class="badge b-deep">
+          深度分析
+        </span>
+      </div>
+      <blockquote>
+<p>報告時間：2026-08-26 18:00（台灣時間）</p>
+</blockquote>
+<hr />
+<h2 id="_1">一、市場總覽</h2>
+<ul>
+<li><strong>股市</strong>：全球股市在輝達財報前夕與美債殖利率下滑的激勵下偏多震盪，美股三大指數全面收紅，標普500指數上漲 <strong>+0.32%</strong> 來到 <strong>7,677.28</strong> 點，那斯達克指數上漲 <strong>+0.66%</strong> 至 <strong>26,151.30</strong> 點，道瓊指數則收在 <strong>53,577.40</strong> 點（漲幅 <strong>+0.30%</strong>）；台股加權指數更展現強勁抗跌與反彈力道，大漲 <strong>+1.47%</strong> 收在 <strong>45,832.62</strong> 點。</li>
+<li><strong>債市</strong>：美國財政部積極介入長債市場並推動回購計畫，雖引發華爾街對「金融壓抑（政府干預市場價格導致資金定價失真）」的擔憂，但美債10年期殖利率（把錢借給政府每年能拿到的利息回報率）仍顯著下滑 <strong>1.38%</strong>，收在 <strong>4.64%</strong>。</li>
+<li><strong>匯市</strong>：美元指數（追蹤美元對一籃子主要貨幣強弱的指標）微幅走升 <strong>+0.07%</strong> 至 <strong>98.99</strong> 點；美元兌台幣匯率收在 <strong>31.78</strong>（微跌 <strong>-0.09%</strong>），美元兌日圓則報 <strong>158.98</strong>（微跌 <strong>-0.10%</strong>），整體匯市波動相對平穩。</li>
+<li><strong>商品</strong>：地緣政治擔憂暫時降溫，加上投資人對美國針對伊朗的經濟制裁反應淡定，國際原油價格重挫，WTI原油大跌 <strong>-2.84%</strong> 收在 <strong>80.02</strong> 美元，布蘭特原油更跌破90大關，重挫 <strong>-4.01%</strong> 收在 <strong>85.03</strong> 美元；避險資金則推升黃金價格上漲 <strong>+0.89%</strong>，收在 <strong>4,679.50</strong> 美元。</li>
+</ul>
+<h2 id="_2">二、行情快照與台股夜盤解析</h2>
+<ul>
+<li><strong>台股現貨與權值股表現</strong>：依據快照資料時間 <strong>2026-08-26 18:00</strong> 的數據，加權指數收在 <strong>45,832.62</strong> 點（▲+1.47%）。權值股全面回神，台積電收在 <strong>2,415.00</strong> TWD（▲+0.62%），鴻海收在 <strong>246.50</strong> TWD（▲+1.44%），聯發科大漲 <strong>+5.62%</strong> 至 <strong>3,945.00</strong> TWD，台達電收在 <strong>1,750.00</strong> TWD（▲+2.34%），僅富邦金逆勢收跌 <strong>-2.12%</strong> 至 <strong>138.50</strong> TWD。</li>
+<li><strong>美股與國際主要指數連動</strong>：美股標普500（▲+0.32%）、那斯達克（▲+0.66%）與道瓊（▲+0.30%）全面收高；亞洲市場亦同步走揚，日經225指數上漲 <strong>+0.62%</strong> 至 <strong>66,262.16</strong> 點，上證指數上漲 <strong>+0.59%</strong> 至 <strong>3,912.52</strong> 點，顯示全球風險偏好在科技巨頭財報前夕回溫。</li>
+<li><strong>台股夜盤與美股背離或連動</strong>：受美股科技股走高及美債殖利率滑落至 <strong>4.64%</strong> 的雙重利多帶動，台股展現強烈的補漲與跟漲力道，擺脫前幾日的恐慌殺盤，權值雙雄與高價 IC 設計族群（如聯發科）成為帶領大盤站穩高位的重要推手。</li>
+</ul>
+<h2 id="_3">三、重大事件深度解讀</h2>
+<h3 id="1">1. 美國財政部擴大公債回購與華爾街的「金融壓抑」爭議</h3>
+<ul>
+<li><strong>事件核心</strong>：美國財政部長貝森特（Scott Bessent）為了壓抑飆升的長端公債殖利率，計畫將長債回購規模加倍。然而，Citadel Securities 等頂尖華爾街機構與多家大銀行公開批評，此舉形同「金融壓抑」，無法從根本解決財政赤字與基本面通膨問題，反而會干預正常市場定價機制。</li>
+<li><strong>對四大市場傳導路徑</strong>：政府干預雖短暫將美債10年期殖利率壓低至 <strong>4.64%</strong>（下滑 <strong>1.38%</strong>），推升美股期指與科技股反彈；但跨資產波動率（市場價格亂跳的程度）顯著上升，對匯市與債市的長期流動性埋下隱憂。</li>
+<li><strong>關聯標的</strong>：<code>美元指數</code>、美債相關 ETF。</li>
+<li><strong>未來一週走勢</strong>：若傑克森霍爾年會（全球央行年會）未能給出明確的貨幣與財政協調指引，債市可能出現反撲，導致殖利率再度彈升。</li>
+</ul>
+<h3 id="2-10">2. 上市櫃公司上半年營收獲利創10年同期新高</h3>
+<ul>
+<li><strong>事件核心</strong>：受惠於全球強勁的 AI 商機與雲端基礎設施需求，台灣上市櫃公司今年上半年營收與獲利雙雙創下10年來同期新高，特別是半導體與 AI 供應鏈表現極為亮眼。</li>
+<li><strong>對四大市場傳導路徑</strong>：基本面強勁的數據為台股多頭提供了最強的底部支撐，激勵台積電（<code>2330</code>）站穩 <strong>2,415</strong> 元、聯發科（<code>2330</code> / <code>2454</code>）大漲 <strong>+5.62%</strong>，吸引長線資金回流台股。</li>
+<li><strong>關聯標的</strong>：<code>2330</code>（台積電）、<code>2454</code>（聯發科）、<code>TWA00</code>（加權指數）。</li>
+<li><strong>未來一週走勢</strong>：在實質財報與營收利多護體下，台股若無重大利空襲擊，指數有望在 <strong>45,000</strong> 點之上穩健築底。</li>
+</ul>
+<h3 id="3">3. 伊朗地緣政治降溫與國際原油價格重挫</h3>
+<ul>
+<li><strong>事件核心</strong>：儘管美國先前揚言對伊朗祭出嚴厲的經濟制裁與「經濟D日」計畫，但市場投資人逐漸選擇忽視該地緣政治風險，加上伊朗傳出擬定應對計畫，導致市場恐慌情緒消散。</li>
+<li><strong>對四大市場傳導路徑</strong>：地緣政治風險溢價迅速消退，引發原油多頭大量停損賣壓，WTI原油大跌 <strong>-2.84%</strong>（收 <strong>80.02</strong> 美元）、布蘭特原油大跌 <strong>-4.01%</strong>（收 <strong>85.03</strong> 美元），直接減輕全球企業的運輸與能源成本壓力，間接利好股市評價。</li>
+<li><strong>關聯標的</strong>：<code>USO</code>（美國石油基金）、<code>布蘭特原油</code>。</li>
+<li><strong>未來一週走勢</strong>：油價短線跌幅已深，若無新的中東衝突升級，預期將在 <strong>80</strong> 美元附近震盪整理，有助於壓抑通膨預期。</li>
+</ul>
+<h2 id="_4">四、跨日相關性分析</h2>
+<ul>
+<li><strong>近三日因果閉環與主軸</strong>：</li>
+<li><strong>8月24日</strong>：市場遭逢美股費半大跌 <strong>3.63%</strong> 與川普威脅對加拿大加征50%汽車關稅的雙重夾擊，加權指數一度跌至 <strong>44,762.32</strong> 點（跌幅 <strong>-1.02%</strong>），台指期夜盤重挫逾300點，市場瀰漫恐慌氣氛。</li>
+<li><strong>8月25日</strong>：台股展現強韌的「V轉」神技，尾盤急拉近千點翻紅，收在 <strong>45,169.46</strong> 點（漲幅 <strong>+0.91%</strong>），同時美國財政部釋出強力干預債市訊號，使美債殖利率開始回落。</li>
+<li><strong>8月26日</strong>：恐慌情緒全面消散，美股收紅帶動亞股全面反彈，加權指數強勢大漲 <strong>+1.47%</strong> 站上 <strong>45,832.62</strong> 點。主軸從前兩日的「地緣政治與科技股高檔賣壓恐慌」，迅速轉換為「AI基本面財報創高與殖利率下滑帶動的資金行情」。</li>
+<li><strong>趨勢延續與轉折</strong>：市場成功化解了前幾日由關稅與晶片股回檔引發的短線危機，資金重新聚焦於具備實質獲利支撐的 AI 權值股與半導體供應鏈。</li>
+</ul>
+<h2 id="_5">五、分類展望</h2>
+<h3 id="_6">股市</h3>
+<ul>
+<li><strong>短期（1週）</strong>：偏多震盪。市場高度聚焦輝達（Nvidia）即將公布的財報與選擇權結算，科技股波動將加劇，但下檔有台股上半年營收創高做為強力支撐。</li>
+<li><strong>中期（1個月）</strong>：震盪向上。隨著美國聯準會年會落幕，貨幣政策路徑趨於明朗，資金將回流基本面良好的大型權值股。</li>
+<li><strong>長期（1季）</strong>：看好。AI 基礎設施與人形機器人等長線需求明確，全球企業資本支出維持擴張。</li>
+</ul>
+<h3 id="_7">債市</h3>
+<ul>
+<li><strong>短期（1週）</strong>：高檔劇烈波動。因美國財政部強力介入長債回購，引發市場對金融壓抑的爭議，殖利率短線下探至 <strong>4.64%</strong> 後可能出現反彈。</li>
+<li><strong>中期（1個月）</strong>：區間整理。需觀察財政部買回債券的實際成效是否能有效壓抑長端利率。</li>
+<li><strong>長期（1季）</strong>：資訊不足，無法準確預判通膨與財政赤字的長期終點，暫不給予確定性預測。</li>
+</ul>
+<h3 id="_8">匯市</h3>
+<ul>
+<li><strong>短期（1週）</strong>：震盪偏穩。美元指數在 <strong>98.99</strong> 附近狹幅遊走，非美貨幣（如台幣 <strong>31.78</strong>、日圓 <strong>158.98</strong>）缺乏強烈的單邊表態動能。</li>
+<li><strong>中期（1個月）</strong>：取決於美國總體經濟數據（如 PCE 通膨表現）對聯準會降息預期的影響。</li>
+<li><strong>長期（1季）</strong>：資訊不足，維持中性看待。</li>
+</ul>
+<h3 id="_9">商品（油金）</h3>
+<ul>
+<li><strong>短期（1週）</strong>：黃金偏強（收 <strong>4,679.50</strong> 美元，漲 <strong>+0.89%</strong>），原油偏弱（WTI跌至 <strong>80.02</strong> 美元）。地緣政治風險降溫使油價遭到重挫，避險需求則支撐金價。</li>
+<li><strong>中期（1個月）</strong>：原油受制於需求疲弱與產能供應，黃金則視實質利率走勢而定。</li>
+<li><strong>長期（1季）</strong>：資訊不足，無法預測中東地緣政治的長期走向。</li>
+</ul>
+<h3 id="_10">地緣政治</h3>
+<ul>
+<li><strong>短期（1週）</strong>：美國對伊朗新制裁及與加拿大的貿易摩擦雖持續，但市場已有疲勞免疫效果，實質衝擊暫時減緩。</li>
+<li><strong>中期（1個月）</strong>：需密切追蹤美加貿易戰是否進一步落實50%汽車關稅。</li>
+<li><strong>長期（1季）</strong>：資訊不足，不確定川普政府後續外交政策的全面外溢效果。</li>
+</ul>
+<h2 id="_11">六、風險與機會</h2>
+<h3 id="_12">風險（警示）</h3>
+<ol>
+<li><strong>財政部乾預債市的副作用</strong>：美國財政部強行干預長債市場（買回公債），可能引發華爾街機構對「金融壓抑」的強烈反彈，導致債市定價失靈與跨資產波動率飆升。</li>
+<li><strong>AI 基礎設施建設的債務規模</strong>：市場擔憂由債務驅動的龐大 AI 基礎設施建設若未來變現不如預期，可能埋下系統性泡沫風險。</li>
+<li><strong>零售與內需消費力道疲弱</strong>：如零售商 Dick's Sporting Goods 財報不如預期並大跌 <strong>-15%</strong>，顯示高利率環境下一般消費與鞋類市場面臨嚴峻挑戰。</li>
+</ol>
+<h3 id="_13">機會（看好）</h3>
+<ol>
+<li><strong>上市櫃公司基本面極佳</strong>：台股上市櫃公司上半年營收與獲利創下10年同期新高，半導體與 AI 供應鏈（如台積電 <code>2330</code>、聯發科）具備強大基本面護城河。</li>
+<li><strong>科技巨頭合作生態擴大</strong>：思科攜手美超微（<code>SMCI</code>）與輝達（<code>NVDA</code>）擴大 AI 工廠合作，選擇權交易員高度押注輝達財報後反彈，利好整體 AI 硬體供應鏈。</li>
+<li><strong>機器人與自動化長期需求</strong>：摩根大通看好人形機器人需求爆發（如特斯拉 <code>TSLA</code>），有利於自動化與機器人概念股的長期評價提升。</li>
+</ol>
+<h2 id="_14">七、操作建議摘要</h2>
+<ol>
+<li><strong>盯緊輝達（NVIDIA）財報與選擇權結算表現</strong>：這是牽動全球科技股與台股電子權值股能否延續多頭氣勢的絕對核心指標。</li>
+<li><strong>關注美債10年期殖利率變化</strong>：觀察殖利率是否能在跌破 <strong>4.65%</strong>（目前 <strong>4.64%</strong>）後站穩，若再度彈升將對高本益比的科技股帶來評價壓抑。</li>
+<li><strong>追蹤台指期夜盤與外資籌碼動向</strong>：留意國際突發地緣政治消息（如美加貿易戰進展）是否造成台指期夜盤出現劇烈波動。</li>
+<li><strong>檢視國際油價（WTI與布蘭特原油）支撐力道</strong>：觀察油價在重挫後（WTI跌破 <strong>81</strong> 美元）能否在 <strong>80</strong> 美元附近止穩，以評估全球總體通膨是否二次復發。</li>
+</ol>
+<h2 id="_15">八、免責聲明</h2>
+<p>本報告由 AI 自動生成，僅供參考，不構成投資建議。金融市場瞬息萬變，投資人應獨立判斷、審慎評估風險並自負盈虧。</p>
+    </article>
+  
+</div>
+<footer>由金融情報系統自動發佈 · 僅供參考，不構成投資建議</footer>
+<script>
+const WEEK = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function nowParts(tz){
+  const p = {};
+  new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short', month: 'short',
+    day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
+  }).formatToParts(new Date()).forEach(x => p[x.type] = x.value);
+  return p;
+}
+function marketOpen(tz, open, close){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  return wd>=1 && wd<=5 && m>=open && m<close;
+}
+// Taiwan index-futures night session 15:00 -> next-day 05:00 (crosses midnight):
+// 15:00-24:00 Mon-Fri, plus 00:00-05:00 Tue-Sat (Sat 00:00-05:00 is Fri night session).
+function nightOpen(tz){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  if (m >= 5*60 && m < 15*60) return false;   // 05:00-15:00 recess
+  if (m >= 15*60) return wd >= 1 && wd <= 5;   // 15:00-24:00 Mon-Fri
+  return wd >= 2 && wd <= 6;                   // 00:00-05:00 Tue-Sat
+}
+function pad(n){ return String(n).padStart(2,'0'); }
+function setMkt(id, open, label){
+  const el = document.getElementById(id);
+  el.className = 'mkt ' + (open ? 'open' : 'closed');
+  el.textContent = (label ? label + ' ' : '') + (open ? '開盤中' : '未開盤');
+}
+function tick(){
+  const tw = nowParts('Asia/Taipei');
+  const ny = nowParts('America/New_York');
+  document.getElementById('clk-tw').textContent = pad(tw.hour)+':'+pad(tw.minute)+':'+pad(tw.second);
+  document.getElementById('clk-ny').textContent = pad(ny.hour)+':'+pad(ny.minute)+':'+pad(ny.second);
+  // Taiwan: TWSE weighted index 09:00-13:30; TX futures day 08:45-13:45; TX night 15:00-05:00
+  setMkt('tw-idx',  marketOpen('Asia/Taipei', 9*60, 13*60+30), '加權');
+  setMkt('tx-day',  marketOpen('Asia/Taipei', 8*60+45, 13*60+45), '期日盤');
+  setMkt('tx-night', nightOpen('Asia/Taipei'), '期夜盤');
+  // US: regular session 09:30-16:00 ET; after-hours 16:00-20:00 ET
+  setMkt('ny-mkt',  marketOpen('America/New_York', 9*60+30, 16*60), '美股');
+  setMkt('ny-night', marketOpen('America/New_York', 16*60, 20*60), '美股夜');
+}
+tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>
