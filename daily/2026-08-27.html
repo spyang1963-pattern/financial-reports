@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日報告 2026-08-27</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; margin: 0;
+         background: #f5f6f8; color: #1c1e21; line-height: 1.7; }
+  header { background: #1b2a4a; color: #fff; padding: 14px 24px;
+           display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  header h1 { font-size: 18px; margin: 0; flex: 1; }
+  header nav a { color: #cdd8ee; text-decoration: none; margin-left: 14px; font-size: 14px; }
+  header nav a:hover, header nav a.active { color: #fff; text-decoration: underline; }
+  #clock { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; font-size: 13px; }
+  .clk { background: rgba(255,255,255,.08); border-radius: 6px; padding: 4px 10px; }
+  .clk-city { color: #9fb0cf; margin-right: 6px; }
+  .clk-time { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .mkt { margin-left: 8px; font-size: 12px; padding: 1px 7px; border-radius: 9px; }
+  .mkt.open { background: #2e7d32; color: #fff; }
+  .mkt.closed { background: #5a6474; color: #fff; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 20px; }
+  .card { background: #fff; border-radius: 8px; padding: 18px 22px; margin: 14px 0;
+          box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .card h3 { margin: 0 0 6px; }
+  .card a { color: #1b2a4a; text-decoration: none; }
+  .card a:hover { text-decoration: underline; }
+  .muted { color: #666; font-size: 13px; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px;
+           color: #fff; margin-left: 6px; }
+  .b-daily { background: #2e7d32; }
+  .b-deep { background: #b45309; }
+  .day-nav { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+  .day-nav a { font-size: 13px; padding: 3px 10px; background: #e8ecf3; border-radius: 12px;
+               color: #33415c; text-decoration: none; }
+  .day-nav a:hover { background: #d2dbea; }
+  article.card { line-height: 1.8; }
+  article.card h1, article.card h2, article.card h3 { padding-bottom: 6px; }
+  article.card h1, article.card h2 { border-bottom: 2px solid #33415c; }
+  article.card h1 { font-size: 30px; margin-top: 8px; }
+  article.card h2 { font-size: 23px; margin-top: 34px; color: #1b2a4a;
+        border-left: 6px solid #1459c8; padding-left: 12px; }
+  article.card h3 { font-size: 19px; margin-top: 24px; color: #24365c;
+        background: #eef4fb; border-radius: 6px; padding: 6px 12px; }
+  article.card strong { color: #b02020; }
+  article.card blockquote { border-left: 4px solid #9fb0cf; margin: 10px 0;
+        padding: 2px 14px; color: #4a5568; background: #f4f6fa; }
+  article.card hr { border: none; border-top: 1px dashed #c3ccdb; margin: 26px 0; }
+  article.card code { background: #eef0f4; padding: 1px 5px; border-radius: 4px;
+        font-size: 14px; font-family: Consolas, monospace; }
+  article.card pre { background: #1b2a4a; color: #e6ecf7; padding: 14px; border-radius: 8px; overflow-x: auto; }
+  article.card pre code { background: transparent; color: inherit; padding: 0; }
+  article.card table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+  article.card th, article.card td { border: 1px solid #d8dce3; padding: 6px 10px; }
+  article.card th { background: #eef1f6; }
+  article.card a { color: #1459c8; }
+  footer { text-align: center; color: #999; font-size: 12px; padding: 20px; }
+</style>
+</head>
+<body>
+  <header>
+  <h1>金融情報系統報告</h1>
+  <nav>
+    <a href="../index.html" class="">首頁</a>
+    <a href="../calendar.html" class="">行事曆</a>
+    <a href="../daily/2026-08-27.html" class="active">最新每日</a>
+    <a href="../deep/2026-08-26-pm.html" class="">最新深度</a>
+  </nav>
+  <div id="clock">
+    <span class="clk"><span class="clk-city">台北</span><span class="clk-time" id="clk-tw">--:--:--</span><span class="mkt closed" id="tw-idx">…</span><span class="mkt closed" id="tx-day">…</span><span class="mkt closed" id="tx-night">…</span></span>
+    <span class="clk"><span class="clk-city">紐約</span><span class="clk-time" id="clk-ny">--:--:--</span><span class="mkt closed" id="ny-mkt">…</span><span class="mkt closed" id="ny-night">…</span></span>
+  </div>
+</header>
+<div class="wrap">
+  
+    <div class="day-nav">
+      <a href="../index.html">← 首頁</a>
+      
+        
+        <a href="../daily/2026-08-27.html">2026-08-27</a>
+        
+        <a href="../daily/2026-08-26.html">2026-08-26</a>
+        
+        <a href="../daily/2026-08-25.html">2026-08-25</a>
+        
+        <a href="../daily/2026-08-24.html">2026-08-24</a>
+        
+        <a href="../daily/2026-08-23.html">2026-08-23</a>
+        
+        <a href="../daily/2026-08-22.html">2026-08-22</a>
+        
+        <a href="../daily/2026-08-21.html">2026-08-21</a>
+        
+        <a href="../daily/2026-08-20.html">2026-08-20</a>
+        
+        <a href="../daily/2026-08-19.html">2026-08-19</a>
+        
+        <a href="../daily/2026-08-18.html">2026-08-18</a>
+        
+        <a href="../daily/2026-08-17.html">2026-08-17</a>
+        
+        <a href="../daily/2026-08-16.html">2026-08-16</a>
+        
+        <a href="../daily/2026-08-15.html">2026-08-15</a>
+        
+        <a href="../daily/2026-08-14.html">2026-08-14</a>
+        
+        <a href="../daily/2026-08-13.html">2026-08-13</a>
+        
+        <a href="../daily/2026-08-12.html">2026-08-12</a>
+        
+        <a href="../daily/2026-08-11.html">2026-08-11</a>
+        
+        <a href="../daily/2026-08-10.html">2026-08-10</a>
+        
+        <a href="../daily/2026-08-09.html">2026-08-09</a>
+        
+        <a href="../daily/2026-08-08.html">2026-08-08</a>
+        
+        <a href="../daily/2026-08-07.html">2026-08-07</a>
+        
+        <a href="../daily/2026-08-06.html">2026-08-06</a>
+        
+        <a href="../daily/2026-08-05.html">2026-08-05</a>
+        
+        <a href="../daily/2026-08-04.html">2026-08-04</a>
+        
+        <a href="../daily/2026-08-03.html">2026-08-03</a>
+        
+        <a href="../daily/2026-08-02.html">2026-08-02</a>
+        
+      
+    </div>
+    <article class="card">
+      <div class="muted">2026-08-27
+        <span class="badge b-daily">
+          每日報告
+        </span>
+      </div>
+      <h1 id="2026-08-27">金融重點報告 2026-08-27</h1>
+<blockquote>
+<p>產出時間: 2026-08-27 02:24（台灣時間）
+品質儀表板: 資料新鮮度 ≤8min | 去重率 23.9% | 最大來源佔 13.2% | 驗證覆蓋 20.2% | ⚠️疑似誤殺 10
+本報告由 AI 自動生成，僅供參考，不構成投資建議。</p>
+</blockquote>
+<h2 id="_1">🆕 本次新增事件</h2>
+<blockquote>
+<p>本次新增 60 筆，重要 47 筆</p>
+</blockquote>
+<ul>
+<li><code>[08-27 01:32]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][neutral]</strong> The biggest risk to retirement plans may no longer be a stock market crash or inflation <code>marketwatch</code></li>
+<li>
+<p>影響: 探討退休規劃與壽命延長的結構性議題，對資本市場無即時衝擊，但長遠影響理財商品趨勢。</p>
+</li>
+<li>
+<p><code>[08-27 01:31]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> The U.S. economy is better than it looks — but it might be due for a slowdown <code>marketwatch</code></p>
+</li>
+<li>
+<p>影響: 分析美國經濟韌性與 Q2 消費支出亮眼但面臨放緩風險，牽動聯準會降息預期與股市評價。</p>
+</li>
+<li>
+<p><code>[08-27 01:12]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Meta dodges ‘Big Tobacco’ nightmare with $18 billion settlement in child-safety lawsuit <code>marketwatch</code></p>
+</li>
+<li>影響: Meta以巨額和解金擺脫兒童安全訴訟的系統性法規風險，激勵股價上揚，對科技股氣氛偏多。</li>
+<li>
+<p>標的: <code>META</code></p>
+</li>
+<li>
+<p><code>[08-27 02:15]</code> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[地緣政治][negative]</strong> Fed, NASA and DOJ among victims of Chinese state-sponsored hacker group: Court documents <code>cnbc</code></p>
+</li>
+<li>
+<p>影響: 中國駭客組織針對Fed、NASA與國防承包商等關鍵機構，加劇美中資安與地緣政治緊張，對整體科技股與防禦類股帶來隱憂。</p>
+</li>
+<li>
+<p><code>[08-27 02:03]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> F.D.A. Approves the Drug Daraxonrasib That’s Poised to Transform Pancreatic Cancer <code>nytbusiness</code></p>
+</li>
+<li>
+<p>影響: FDA核准突破性胰臟癌新藥，顯著延長患者存活期，大幅提振生技醫療板塊投資情緒。</p>
+</li>
+<li>
+<p><code>[08-27 01:54]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][neutral]</strong> Oil prices turn positive after Iran says deal reached with Oman to share revenue from Hormuz <code>cnbc</code></p>
+</li>
+<li>
+<p>影響: 荷姆茲海峽收益分享傳聞與美伊緊張交織，導致油價盤中震盪翻紅，牽動能源與通膨預期。</p>
+</li>
+<li>
+<p><code>[08-27 01:54]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][neutral]</strong> Iran says the U.S. is standing in the way of Hormuz deal amid talks with Oman <code>cnbc</code></p>
+</li>
+<li>
+<p>影響: 伊朗與阿曼談判荷姆茲海峽安全，美國採取經濟壓力，干擾原油航運與地緣政治風險溢價。</p>
+</li>
+<li>
+<p><code>[08-27 01:44]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Meta's $18bn settlement a landmark victory for US states <code>bbcbusiness</code></p>
+</li>
+<li>影響: Meta達成高達18億美元的和解金額，對公司現金流與法律合規成本造成負面衝擊。</li>
+<li>
+<p>標的: <code>META</code></p>
+</li>
+<li>
+<p><code>[08-27 01:40]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Apple sets iPhone launch event for Sept. 9, first under new CEO John Ternus <code>cnbc</code></p>
+</li>
+<li>影響: 蘋果宣佈新執行長上任後首場發表會日期，預期推出新款iPhone與摺疊機，帶動供應鏈話題。</li>
+<li>
+<p>標的: <code>AAPL,2330,3008</code></p>
+</li>
+<li>
+<p><code>[08-27 01:37]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Meta to Pay Up to $17.1 Billion in Landmark Settlement Over Social Media Addiction Claims <code>nytbusiness</code></p>
+</li>
+<li>影響: Meta因社群成癮訴訟與多州達成高達171億美元巨額和解並須修改產品，影響企業形象與獲利。</li>
+<li>
+<p>標的: <code>META</code></p>
+</li>
+<li>
+<p><code>[08-27 01:15]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> Mark Walter's TWG Global says there's 'no fraud' amid probe of insurers' disclosures <code>cnbc</code></p>
+</li>
+<li>
+<p>影響: 控股公司面臨保險揭露調查與資產出售傳聞，對整體市場衝擊有限，主要影響相關私人企業與關係人。</p>
+</li>
+<li>
+<p><code>[08-27 01:09]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> AI助零售商精準預測假期商品組合 轉向「狹而深」策略 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p>影響: AI技術應用有助零售商優化庫存與假期銷售策略，提升相關軟體與零售類股的營運效率。</p>
+</li>
+<li>
+<p><code>[08-27 00:58]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Nasdaq 100 Falls as Hot PCE Inflation Stirs Rate-Hike Bets: Stock Market Today - TradingView <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li>影響: 高於預期的PCE通膨數據升溫降息預期，打壓美股科技股與那斯達克100指數表現。</li>
+<li>
+<p>標的: <code>QQQ,NVDA,AAPL</code></p>
+</li>
+<li>
+<p><code>[08-27 00:50]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> 全球市場波動加劇 新加坡年輕投資者轉向本地股市尋求避險 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p>影響: 新加坡年輕投資者轉向本地股市避險，提升新加坡本地股市流動性與抗震能力。</p>
+</li>
+<li>
+<p><code>[08-27 00:44]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> 三菱日聯銀行捨棄效率至上思維 轉向客戶生命週期價值經營 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p>影響: 三菱日聯銀行轉向客戶生命週期價值經營，屬於長期企業策略調整，對股價短期影響有限。</p>
+</li>
+<li>
+<p><code>[08-27 00:33]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Meta settles social media addiction case with California, other states for $16.7 billion <code>cnbc</code></p>
+</li>
+<li>影響: Meta以167億美元達成社群成癮訴訟和解，消除重大法律不確定性，激勵股價情緒。</li>
+<li>
+<p>標的: <code>META</code></p>
+</li>
+<li>
+<p><code>[08-27 00:32]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][neutral]</strong> 支付鏈趨複雜 金融監管挑戰「見林不見樹」防洗錢 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p>影響: 金融科技與支付鏈複雜化增加反洗錢監管難度，中長期將推升金融機構的合規成本。</p>
+</li>
+<li>
+<p><code>[08-27 00:30]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Meta巨額和解不是利空？分析師：至少拆掉一顆未爆彈 <code>yahoo-tw-finance</code></p>
+</li>
+<li>影響: 鉅額和解未如市場擔憂嚴重，分析師認為拆除未爆彈，對大型科技股評價具正面支撐。</li>
+<li>
+<p>標的: <code>META</code></p>
+</li>
+<li>
+<p><code>[08-27 00:25]</code> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][neutral]</strong> Wall St awaits Nvidia's AI verdict after hot inflation data - Reuters <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li>影響: 市場在高通膨數據後聚焦輝達財報，財報結果將左右全球AI概念股與美股走向。</li>
+<li>
+<p>標的: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><code>[08-27 00:25]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][neutral]</strong> Bill Gates warns ‘there is no plan’ for the ‘upheaval’ AI will cause <code>cnbc</code></p>
+</li>
+<li>
+<p>影響: 比爾蓋茲警告AI將造成勞動市場動盪且缺乏準備，長期可能引發社會與政策干預風險。</p>
+</li>
+<li>
+<p><code>[08-27 00:24]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> PCE Index Shows Inflation Remained Elevated in July Amid High Energy Costs <code>nytbusiness</code></p>
+</li>
+<li>
+<p>影響: 美國7月PCE通膨維持高檔，受高能源成本推動，聯準會降息預期可能受壓抑制債市與股市表現。</p>
+</li>
+<li>
+<p><code>[08-27 00:22]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[地緣政治][neutral]</strong> States sue to block Trump-backed USPS mail-ballot rule after Supreme Court setback <code>cnbc</code></p>
+</li>
+<li>
+<p>影響: 美國各州針對郵寄投票規則展開訴訟，增添政治紛擾，但對當前金融市場影響有限。</p>
+</li>
+<li>
+<p><code>[08-27 00:15]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][neutral]</strong> Trump Administration Wants Billion-Dollar Businesses to Qualify as ‘Small’ <code>nytbusiness</code></p>
+</li>
+<li>
+<p>影響: 調整中小企業資格認定可能影響政府合約與貸款分配，對整體總經市場無直接重大衝擊。</p>
+</li>
+<li>
+<p><code>[08-27 00:02]</code> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[商品(油金)][negative]</strong> Diesel Price Nears Record High, Helping Oil Companies and Hurting Consumers <code>nytbusiness</code></p>
+</li>
+<li>
+<p>影響: 地緣政治與煉油廠受襲推升柴油價格逼近歷史高點，增加運輸與農業成本，加劇通膨壓力。</p>
+</li>
+<li>
+<p><code>[08-26 23:49]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> 電子產品成本飆漲 買「整新品」省荷包又能護環境 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p>影響: 電子產品成本飆漲推動整新品市場成長，反映硬體供應鏈成本壓力與消費者轉趨保守。</p>
+</li>
+<li>
+<p><code>[08-26 23:36]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 黃金、台股雙強　AI缺料成隱憂！超高齡商機成投資新焦點 <code>yahoo-tw-finance</code></p>
+</li>
+<li>影響: 台股受惠資金與黃金創高展現多頭氣勢，但AI產業面臨長短料缺料隱憂，影響半導體出貨動能。</li>
+<li>
+<p>標的: <code>2330,TSM</code></p>
+</li>
+<li>
+<p><code>[08-26 23:33]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> 結構性通膨來了！富達示警投資版圖重塑 最好手握「金山銀礦」這三大資產 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p>影響: 富達警示結構性通膨持續，促使投資人轉向實質資產如黃金與原物料，重塑全球投資版圖。</p>
+</li>
+<li>
+<p><code>[08-26 23:30]</code> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][neutral]</strong> 美債已替Fed升息？投資人等華許在傑克森霍爾說清楚 <code>yahoo-tw-finance</code></p>
+</li>
+<li>影響: 長天期美債殖利率上升已實質收緊金融環境，市場高度關注Fed主席華許於傑克森霍爾年會的政策動向與升息立場。</li>
+<li>
+<p>標的: <code>美元指數</code></p>
+</li>
+<li>
+<p><code>[08-26 23:17]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Market Factors: Former Fed president sees five reasons the equity rally will end in 2027 - The Globe and Mail <code>google-news:stock market rally</code></p>
+</li>
+<li>
+<p>影響: 前Fed官員警示2027年股市多頭恐告終，牽動機構投資人對未來資產配置與風險預期的調整。</p>
+</li>
+<li>
+<p><code>[08-26 22:55]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Medical device maker Boston Scientific is being hit by a cyberattack. The shares are falling <code>cnbc</code></p>
+</li>
+<li>影響: 醫療設備大廠Boston Scientific遭網路攻擊影響出貨，股價下跌，連動醫療器材板塊短期情緒。</li>
+<li>
+<p>標的: <code>BSX</code></p>
+</li>
+<li>
+<p><code>[08-27 02:07]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> Andy Burnham ‘risks trade war’ with Trump over Israel sanctions - The Times <code>google-news:sanctions trade war</code></p>
+</li>
+<li>
+<p>影響: 英國政界與川普政府潛在的貿易戰風險，對跨大西洋貿易及相關跨國企業信心造成干擾。</p>
+</li>
+<li>
+<p><code>[08-27 02:00]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[商品(油金)][neutral]</strong> Why Kazakhstan's New Political Order Matters for US Trade - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p>影響: 哈薩克新政治秩序牽動美國貿易與中亞能源供應，對原油及大宗商品市場具潛在觀察價值。</p>
+</li>
+<li>
+<p><code>[08-27 01:00]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> Europe's Heatwaves Are Putting Nuclear Power Under Pressure - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p>影響: 歐洲熱浪迫使核能發電受限，可能推升替代能源如天然氣及原油的需求，支撐能源商品價格。</p>
+</li>
+<li>
+<p><code>[08-27 00:00]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[商品(油金)][positive]</strong> UK Government Takes Stake in Tungsten Mine With 71m Mine Bet - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p>影響: 英國政府入股鎢礦展現對關鍵原物料供應鏈安全的重視，有助於支持稀有金屬與礦業市場發展。</p>
+</li>
+<li>
+<p><code>[08-27 00:00]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> The Netherlands to Miss Natural Gas Filling Target for Winter - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p>影響: 荷蘭天然氣庫存填充目標恐將落空，冬季能源供應緊繃，推升歐洲天然氣與相關替代能源價格。</p>
+</li>
+<li>
+<p><code>[08-27 01:19]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> TWA00 加權指數 - 美股投資人觀望態度，耐心等待好消息 2026/08/27 ... - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></p>
+</li>
+<li>影響: 台股投資人受美股動向牽動，持觀望態度，市場成交量能可能收斂。</li>
+<li>
+<p>標的: <code>TWA00</code></p>
+</li>
+<li>
+<p><code>[08-27 01:18]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> US stocks drift lower while bonds yields rise following the latest update on inflation - WHEC.com <code>google-news:Treasury yields</code></p>
+</li>
+<li>
+<p>影響: 通膨數據高於預期推升美債殖利率走揚，進一步壓抑美股表現，股債同步承壓。</p>
+</li>
+<li>
+<p><code>[08-27 00:58]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> The Battle Against Rising Yields Has Begun - Bloomberg <code>google-news:Treasury yields</code></p>
+</li>
+<li>影響: 殖利率持續攀升對債市構成資本利得壓力，並增加企業與政府融資成本，壓抑風險資產。</li>
+<li>
+<p>標的: <code>TLT,US10Y</code></p>
+</li>
+<li>
+<p><code>[08-27 00:55]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> The ugly math on interest expenses, yields and the $40 trillion U.S. national debt - MarketWatch <code>google-news:Treasury yields</code></p>
+</li>
+<li>影響: 美國40兆美元國債利息支出與高殖利率的惡性數學題，將排擠財政空間並推升長期債券發行壓力。</li>
+<li>
+<p>標的: <code>US10Y</code></p>
+</li>
+<li>
+<p><code>[08-26 23:30]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> PCE inflation remains sticky as Fed weighs next move - American Banker <code>google-news:inflation CPI</code></p>
+</li>
+<li>
+<p>影響: PCE通膨數據保持僵固，增加Fed後續貨幣政策決策的難度，對股債市場形成壓抑。</p>
+</li>
+<li>
+<p><code>[08-26 23:19]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> Watch Treasury Yields Rise as Data Keep Fed Bets in Play - Bloomberg <code>google-news:Treasury yields</code></p>
+</li>
+<li>
+<p>影響: 美債殖利率持續攀升，反映市場對Fed利率路徑的重新定價，對股市高估值板塊構成資金排擠。</p>
+</li>
+<li>
+<p><code>[08-26 23:06]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> TWA00 加權指數- 其實輝達的財報一點都不重要，大家都在看輝達的走勢。 焦點股... - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></p>
+</li>
+<li>影響: 市場情緒高度聚焦輝達股價技術走勢而非單純財報數據，直接牽動台股加權指數與AI供應鏈神經。</li>
+<li>
+<p>標的: <code>NVDA,2330</code></p>
+</li>
+<li>
+<p><code>[08-26 23:06]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][neutral]</strong> The Treasury Twist and the Competition for Capital - ETF Database <code>google-news:Treasury yields</code></p>
+</li>
+<li>
+<p>影響: 財政部債務操作（Treasury Twist）與資本競爭持續影響債市收益率曲線與資金流向。</p>
+</li>
+<li>
+<p><code>[08-26 22:56]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[匯市][negative]</strong> Australian Dollar stumbles as hot Australian CPI runs into a firmer US Dollar - FXStreet <code>google-news:inflation CPI</code></p>
+</li>
+<li>影響: 澳洲CPI偏高但受制於強勢美元，澳幣走貶，影響匯市資金流向。</li>
+<li>
+<p>標的: <code>美元指數,AUD</code></p>
+</li>
+<li>
+<p><code>[08-26 22:55]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> TWA00 加權指數 - 四萬六相對高點 今天買股票的 明天都要被套牢了😱😱 - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></p>
+</li>
+<li>影響: 散戶情緒指標顯示加權指數處於高點恐慌，台股短線震盪加劇。</li>
+<li>
+<p>標的: <code>TWA00,2330</code></p>
+</li>
+<li>
+<p><code>[08-27 01:47]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 國銀房貸逾放警報大響 金管會要找一家大型民營銀行喝咖啡 - 經濟日報 <code>google-news:金管會</code></p>
+</li>
+<li>影響: 國銀房貸逾放警報引發金管會關注，短期對國內金融股特別是大型民營銀行營運與放款審查壓力增加。</li>
+<li>
+<p>標的: <code>2881,2882,2891</code></p>
+</li>
+<li>
+<p><code>[08-27 00:35]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[商品(油金)][positive]</strong> 油價下跌　歐股多收紅 - 經濟日報 <code>google-news:台股 大跌</code></p>
+</li>
+<li>影響: 油價下跌降低企業成本與通膨壓力，帶動歐股多數收紅，有利資本市場情緒。</li>
+</ul>
+<p><strong>其他同時段收錄（未分析，共 13 筆）</strong>：</p>
+<ul>
+<li><code>[08-27 02:10]</code> 5 affordable cities to retire in the U.S. right now（<code>marketwatch</code>）</li>
+<li><code>[08-27 02:00]</code> Initial jobless claims headline Thursday’s economic calendar（<code>investing-com</code>）</li>
+<li><code>[08-27 01:44]</code> I need to get out of my job, but I’ve signed a noncompete. Can I still leave for a competitor?（<code>marketwatch</code>）</li>
+<li><code>[08-27 01:37]</code> Two-thirds of parents are failing at this vital safety measure for their children（<code>marketwatch</code>）</li>
+<li><code>[08-27 01:30]</code> ‘It’s the ultimate regifting’: My mom gave me a house. Should I transfer it back to her to reduce capital gains?（<code>marketwatch</code>）</li>
+<li><code>[08-27 00:45]</code> Does a 2% beneficiary inherit 100% if the 98% beneficiary dies in a car accident? Asking for a friend.（<code>marketwatch</code>）</li>
+<li><code>[08-27 01:19]</code> How Dollywood Captured the Essence of Dolly Parton（<code>nytbusiness</code>）</li>
+<li><code>[08-27 00:56]</code> 'Ironing board' seats to be replaced on Thameslink（<code>bbcbusiness</code>）</li>
+<li><code>[08-26 23:12]</code> 人形機器人成本低廉搶佔美國製造業 FCC禁中製產品掀貿易戰（<code>yahoo-tw-finance</code>）</li>
+<li><code>[08-26 23:09]</code> Dolly Parton Was a Trailblazer in Business, Too（<code>nytbusiness</code>）</li>
+<li><code>[08-26 22:56]</code> I manage Dolly Parton’s Imagination Library in Cincinnati—the No. 1 lesson she taught me about success（<code>cnbc</code>）</li>
+<li><code>[08-27 00:37]</code> TWA00 加權指數- GPT說明天跌- 股市爆料同學會 - CMoney（<code>google-news:加權指數</code>）</li>
+<li><code>[08-27 00:12]</code> TWA00 加權指數- 收益來源就是買彩劵的賭客，賭客沒中獎的收溢來源。 - 股市爆料同學會 - CMoney（<code>google-news:加權指數</code>）</li>
+</ul>
+<hr />
+<h2 id="_2">市場行情快照</h2>
+<pre><code>加權指數            45,832.62    點 ▲+1.47%
+台積電              2,415.00  TWD ▲+0.62%
+鴻海                 246.50  TWD ▲+1.44%
+聯發科              3,945.00  TWD ▲+5.62%
+台達電              1,750.00  TWD ▲+2.34%
+富邦金                138.50  TWD ▼-2.12%
+S&amp;P 500          7,674.78    點 ▼-0.03%
+納斯達克            26,113.07    點 ▼-0.15%
+道瓊              53,455.60    點 ▼-0.23%
+日經225           66,262.16    點 ▲+0.62%
+上證指數             3,912.52    點 ▲+0.59%
+Apple              313.08  USD ▲+1.02%
+Microsoft          494.52  USD ▲+0.57%
+NVIDIA             210.60  USD ▼-1.15%
+Amazon             258.87  USD ▼-0.84%
+Tesla              345.03  USD ▼-1.49%
+美元/日圓              159.39  JPY ▲+0.16%
+美元/台幣               31.84  TWD ▲+0.08%
+歐元/美元                1.17  EUR ▼-0.10%
+美元/人民幣               6.71  CNY ▼-0.16%
+WTI原油               82.36  USD ―+0.00%
+布蘭特原油               87.07  USD ▼-1.70%
+黃金               4,657.80  USD ▲+0.42%
+美元指數DXY             99.14    點 ▲+0.22%
+美債10年殖利率             4.67    % ▲+0.63%
+</code></pre>
+<blockquote>
+<p>（快照資料時間：2026-08-27 02:24，台股收盤為最近一個交易日）</p>
+</blockquote>
+<h2 id="severity-2">重大事件（severity ≥ 2）</h2>
+<ul>
+<li><code>[08-27 02:15]</code> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[地緣政治][negative]</strong> Fed, NASA and DOJ among victims of Chinese state-sponsored hacker group: Court documents</li>
+<li>
+<p>影響: 中國駭客組織針對Fed、NASA與國防承包商等關鍵機構，加劇美中資安與地緣政治緊張，對整體科技股與防禦類股帶來隱憂。</p>
+</li>
+<li>
+<p><code>[08-27 02:07]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> Andy Burnham ‘risks trade war’ with Trump over Israel sanctions - The Times</p>
+</li>
+<li>
+<p>影響: 英國政界與川普政府潛在的貿易戰風險，對跨大西洋貿易及相關跨國企業信心造成干擾。</p>
+</li>
+<li>
+<p><code>[08-27 02:03]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> F.D.A. Approves the Drug Daraxonrasib That’s Poised to Transform Pancreatic Cancer</p>
+</li>
+<li>
+<p>影響: FDA核准突破性胰臟癌新藥，顯著延長患者存活期，大幅提振生技醫療板塊投資情緒。</p>
+</li>
+<li>
+<p><code>[08-27 01:54]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][neutral]</strong> Oil prices turn positive after Iran says deal reached with Oman to share revenue from Hormuz</p>
+</li>
+<li>
+<p>影響: 荷姆茲海峽收益分享傳聞與美伊緊張交織，導致油價盤中震盪翻紅，牽動能源與通膨預期。</p>
+</li>
+<li>
+<p><code>[08-27 01:54]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][neutral]</strong> Iran says the U.S. is standing in the way of Hormuz deal amid talks with Oman</p>
+</li>
+<li>
+<p>影響: 伊朗與阿曼談判荷姆茲海峽安全，美國採取經濟壓力，干擾原油航運與地緣政治風險溢價。</p>
+</li>
+<li>
+<p><code>[08-27 01:47]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 國銀房貸逾放警報大響 金管會要找一家大型民營銀行喝咖啡 - 經濟日報</p>
+</li>
+<li>影響: 國銀房貸逾放警報引發金管會關注，短期對國內金融股特別是大型民營銀行營運與放款審查壓力增加。</li>
+<li>
+<p>標的: <code>2881,2882,2891</code></p>
+</li>
+<li>
+<p><code>[08-27 01:44]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Meta's $18bn settlement a landmark victory for US states</p>
+</li>
+<li>影響: Meta達成高達18億美元的和解金額，對公司現金流與法律合規成本造成負面衝擊。</li>
+<li>
+<p>標的: <code>META</code></p>
+</li>
+<li>
+<p><code>[08-27 01:37]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Meta to Pay Up to $17.1 Billion in Landmark Settlement Over Social Media Addiction Claims</p>
+</li>
+<li>影響: Meta因社群成癮訴訟與多州達成高達171億美元巨額和解並須修改產品，影響企業形象與獲利。</li>
+<li>
+<p>標的: <code>META</code></p>
+</li>
+<li>
+<p><code>[08-27 01:31]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> The U.S. economy is better than it looks — but it might be due for a slowdown</p>
+</li>
+<li>
+<p>影響: 分析美國經濟韌性與 Q2 消費支出亮眼但面臨放緩風險，牽動聯準會降息預期與股市評價。</p>
+</li>
+<li>
+<p><code>[08-27 01:18]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> US stocks drift lower while bonds yields rise following the latest update on inflation - WHEC.com</p>
+</li>
+<li>
+<p>影響: 通膨數據高於預期推升美債殖利率走揚，進一步壓抑美股表現，股債同步承壓。</p>
+</li>
+<li>
+<p><code>[08-27 01:12]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Meta dodges ‘Big Tobacco’ nightmare with $18 billion settlement in child-safety lawsuit</p>
+</li>
+<li>影響: Meta以巨額和解金擺脫兒童安全訴訟的系統性法規風險，激勵股價上揚，對科技股氣氛偏多。</li>
+<li>
+<p>標的: <code>META</code></p>
+</li>
+<li>
+<p><code>[08-27 01:00]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> Europe's Heatwaves Are Putting Nuclear Power Under Pressure - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p>影響: 歐洲熱浪迫使核能發電受限，可能推升替代能源如天然氣及原油的需求，支撐能源商品價格。</p>
+</li>
+<li>
+<p><code>[08-27 00:58]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Nasdaq 100 Falls as Hot PCE Inflation Stirs Rate-Hike Bets: Stock Market Today - TradingView</p>
+</li>
+<li>影響: 高於預期的PCE通膨數據升溫降息預期，打壓美股科技股與那斯達克100指數表現。</li>
+<li>
+<p>標的: <code>QQQ,NVDA,AAPL</code></p>
+</li>
+<li>
+<p><code>[08-27 00:58]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> The Battle Against Rising Yields Has Begun - Bloomberg</p>
+</li>
+<li>影響: 殖利率持續攀升對債市構成資本利得壓力，並增加企業與政府融資成本，壓抑風險資產。</li>
+<li>
+<p>標的: <code>TLT,US10Y</code></p>
+</li>
+<li>
+<p><code>[08-27 00:55]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> The ugly math on interest expenses, yields and the $40 trillion U.S. national debt - MarketWatch</p>
+</li>
+<li>影響: 美國40兆美元國債利息支出與高殖利率的惡性數學題，將排擠財政空間並推升長期債券發行壓力。</li>
+<li>
+<p>標的: <code>US10Y</code></p>
+</li>
+<li>
+<p><code>[08-27 00:33]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Meta settles social media addiction case with California, other states for $16.7 billion</p>
+</li>
+<li>影響: Meta以167億美元達成社群成癮訴訟和解，消除重大法律不確定性，激勵股價情緒。</li>
+<li>
+<p>標的: <code>META</code></p>
+</li>
+<li>
+<p><code>[08-27 00:30]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Meta巨額和解不是利空？分析師：至少拆掉一顆未爆彈</p>
+</li>
+<li>影響: 鉅額和解未如市場擔憂嚴重，分析師認為拆除未爆彈，對大型科技股評價具正面支撐。</li>
+<li>
+<p>標的: <code>META</code></p>
+</li>
+<li>
+<p><code>[08-27 00:25]</code> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][neutral]</strong> Wall St awaits Nvidia's AI verdict after hot inflation data - Reuters</p>
+</li>
+<li>影響: 市場在高通膨數據後聚焦輝達財報，財報結果將左右全球AI概念股與美股走向。</li>
+<li>
+<p>標的: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><code>[08-27 00:24]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> PCE Index Shows Inflation Remained Elevated in July Amid High Energy Costs</p>
+</li>
+<li>
+<p>影響: 美國7月PCE通膨維持高檔，受高能源成本推動，聯準會降息預期可能受壓抑制債市與股市表現。</p>
+</li>
+<li>
+<p><code>[08-27 00:02]</code> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[商品(油金)][negative]</strong> Diesel Price Nears Record High, Helping Oil Companies and Hurting Consumers</p>
+</li>
+<li>
+<p>影響: 地緣政治與煉油廠受襲推升柴油價格逼近歷史高點，增加運輸與農業成本，加劇通膨壓力。</p>
+</li>
+<li>
+<p><code>[08-27 00:00]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> The Netherlands to Miss Natural Gas Filling Target for Winter - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p>影響: 荷蘭天然氣庫存填充目標恐將落空，冬季能源供應緊繃，推升歐洲天然氣與相關替代能源價格。</p>
+</li>
+<li>
+<p><code>[08-26 23:36]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 黃金、台股雙強　AI缺料成隱憂！超高齡商機成投資新焦點</p>
+</li>
+<li>影響: 台股受惠資金與黃金創高展現多頭氣勢，但AI產業面臨長短料缺料隱憂，影響半導體出貨動能。</li>
+<li>
+<p>標的: <code>2330,TSM</code></p>
+</li>
+<li>
+<p><code>[08-26 23:33]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> 結構性通膨來了！富達示警投資版圖重塑 最好手握「金山銀礦」這三大資產</p>
+</li>
+<li>
+<p>影響: 富達警示結構性通膨持續，促使投資人轉向實質資產如黃金與原物料，重塑全球投資版圖。</p>
+</li>
+<li>
+<p><code>[08-26 23:30]</code> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][neutral]</strong> 美債已替Fed升息？投資人等華許在傑克森霍爾說清楚</p>
+</li>
+<li>影響: 長天期美債殖利率上升已實質收緊金融環境，市場高度關注Fed主席華許於傑克森霍爾年會的政策動向與升息立場。</li>
+<li>
+<p>標的: <code>美元指數</code></p>
+</li>
+<li>
+<p><code>[08-26 23:30]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> PCE inflation remains sticky as Fed weighs next move - American Banker</p>
+</li>
+<li>
+<p>影響: PCE通膨數據保持僵固，增加Fed後續貨幣政策決策的難度，對股債市場形成壓抑。</p>
+</li>
+<li>
+<p><code>[08-26 23:19]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> Watch Treasury Yields Rise as Data Keep Fed Bets in Play - Bloomberg</p>
+</li>
+<li>
+<p>影響: 美債殖利率持續攀升，反映市場對Fed利率路徑的重新定價，對股市高估值板塊構成資金排擠。</p>
+</li>
+<li>
+<p><code>[08-26 23:17]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Market Factors: Former Fed president sees five reasons the equity rally will end in 2027 - The Globe and Mail</p>
+</li>
+<li>
+<p>影響: 前Fed官員警示2027年股市多頭恐告終，牽動機構投資人對未來資產配置與風險預期的調整。</p>
+</li>
+<li>
+<p><code>[08-26 23:06]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> TWA00 加權指數- 其實輝達的財報一點都不重要，大家都在看輝達的走勢。 焦點股... - 股市爆料同學會 - CMoney</p>
+</li>
+<li>影響: 市場情緒高度聚焦輝達股價技術走勢而非單純財報數據，直接牽動台股加權指數與AI供應鏈神經。</li>
+<li>
+<p>標的: <code>NVDA,2330</code></p>
+</li>
+<li>
+<p><code>[08-26 23:06]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][neutral]</strong> The Treasury Twist and the Competition for Capital - ETF Database</p>
+</li>
+<li>
+<p>影響: 財政部債務操作（Treasury Twist）與資本競爭持續影響債市收益率曲線與資金流向。</p>
+</li>
+<li>
+<p><code>[08-26 22:55]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Medical device maker Boston Scientific is being hit by a cyberattack. The shares are falling</p>
+</li>
+<li>影響: 醫療設備大廠Boston Scientific遭網路攻擊影響出貨，股價下跌，連動醫療器材板塊短期情緒。</li>
+<li>
+<p>標的: <code>BSX</code></p>
+</li>
+<li>
+<p><code>[08-26 22:45]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Slightly hotter than expected PCE inflation keeps Fed’s September rate rise in play - Financial Times</p>
+</li>
+<li>影響: PCE通膨高於預期，維持聯準會升息或維持高利率預期，對美股與債市形成壓力。</li>
+<li>
+<p>標的: <code>美元指數,SPY</code></p>
+</li>
+<li>
+<p><code>[08-26 22:25]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> Treasury Buyback Supports Gold Above $4,600 Despite Fed Tightening Risk - Crux Investor</p>
+</li>
+<li>
+<p>影響: 美國國債買回操作提供流動性支持，抵銷部分聯準會緊縮風險，推升黃金價格站穩4600美元上方。</p>
+</li>
+<li>
+<p><code>[08-26 22:06]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> 拉警報？房貸逾放飆5年新高 金管會急找銀行喝咖啡 - udn房地產</p>
+</li>
+<li>
+<p>影響: 房貸逾放比創5年新高，金管會關注銀行授信風險，對國內金融股與房市內需保守看待。</p>
+</li>
+<li>
+<p><code>[08-26 22:03]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> TWA00 加權指數- 台股量價齊揚📈 外資大買365億，收復均線轉強🔎 - 股市爆料同學會 - CMoney</p>
+</li>
+<li>影響: 台股量價齊揚且外資大買365億元，成功收復均線，帶動台股短期轉強。</li>
+<li>
+<p>標的: <code>TWA00</code></p>
+</li>
+<li>
+<p><code>[08-26 22:00]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> 油價跌破90美元，荷莫茲海峽通行量何時回升？-筠婷強勢股攻略 - CMoney投資網誌</p>
+</li>
+<li>
+<p>影響: 油價跌破90美元，反映地緣政治供給疑慮緩解或需求疲軟，對能源類股與通膨降溫有利。</p>
+</li>
+<li>
+<p><code>[08-26 21:44]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> TWA00 加權指數- 美國國債突破40兆美元壓力浮現！川普政府財政失衡苦戰- 股市爆料同學會 - CMoney</p>
+</li>
+<li>影響: 美國國債突破40兆美元凸顯財政失衡，長期恐引發債信疑慮並加劇公債殖利率波動。</li>
+<li>
+<p>標的: <code>美元指數</code></p>
+</li>
+<li>
+<p><code>[08-26 21:44]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> Nasdaq, S&amp;P 500 and Dow Brace for Jackson Hole Signals - FXEmpire</p>
+</li>
+<li>影響: 美股三大指數等待全球央行年會（Jackson Hole）風向球，市場觀望氣氛濃厚。</li>
+<li>
+<p>標的: <code>SPX,NDX,DJIA</code></p>
+</li>
+<li>
+<p><code>[08-26 21:40]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> TWA00 加權指數- 報復川普加拿大對美700商品徵15-50%關稅 - 股市爆料同學會 - CMoney</p>
+</li>
+<li>影響: 加拿大針對美國商品祭出報復性關稅，加劇貿易緊張局勢，對全球供應鏈及出口導向的台股加權指數帶來心理壓抑。</li>
+<li>
+<p>標的: <code>TWA00</code></p>
+</li>
+<li>
+<p><code>[08-26 21:37]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> 美伊降溫油價跌破90美元美債殖利率也下滑| 金融 - 非凡新聞台</p>
+</li>
+<li>
+<p>影響: 美伊緊張降溫導致油價跌破90美元，舒緩通膨壓力，同時美債殖利率下滑，對債市與風險資產偏正面。</p>
+</li>
+<li>
+<p><code>[08-26 21:36]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][positive]</strong> There’s so much betting against long-term bonds that a turnaround could catch investors off guard, says Citadel Securities - MarketWatch</p>
+</li>
+<li>影響: 市場對長天期美債的空頭押注過重，Citadel警告反轉可能使投資人措手不及，潛在短軋風險高。</li>
+<li>
+<p>標的: <code>TLT</code></p>
+</li>
+<li>
+<p><code>[08-26 21:35]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> Dollar and bond markets 'on edge' ahead of Jackson Hole as Bessent's market intervention piles pressure on Warsh</p>
+</li>
+<li>影響: Jackson Hole年會前夕，匯市與債市高度警戒，政策干預引發市場對貨幣政策走向的猜測。</li>
+<li>
+<p>標的: <code>美元指數</code></p>
+</li>
+<li>
+<p><code>[08-26 21:27]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> OpenAI’s Jalapeño AI chip brings new 'threat' to Nvidia margins as custom silicon gains ground</p>
+</li>
+<li>影響: OpenAI推出Jalapeño自研AI晶片，在推論效率上挑戰輝達Blackwell系統，加劇客製化晶片對輝達市佔與毛利率的威脅。</li>
+<li>標的: <code>NVDA,TSM</code></li>
+</ul>
+<hr />
+<h2 id="_3">分類彙整</h2>
+<h3 id="27">股市（27）</h3>
+<ul>
+<li><code>[08-27 02:03]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> F.D.A. Approves the Drug Daraxonrasib That’s Poised to Transform Pancreatic Cancer</li>
+<li>
+<p>影響: FDA核准突破性胰臟癌新藥，顯著延長患者存活期，大幅提振生技醫療板塊投資情緒。</p>
+</li>
+<li>
+<p><code>[08-27 01:47]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 國銀房貸逾放警報大響 金管會要找一家大型民營銀行喝咖啡 - 經濟日報</p>
+</li>
+<li>
+<p>影響: 國銀房貸逾放警報引發金管會關注，短期對國內金融股特別是大型民營銀行營運與放款審查壓力增加。</p>
+</li>
+<li>
+<p><code>[08-27 01:44]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Meta's $18bn settlement a landmark victory for US states</p>
+</li>
+<li>
+<p>影響: Meta達成高達18億美元的和解金額，對公司現金流與法律合規成本造成負面衝擊。</p>
+</li>
+<li>
+<p><code>[08-27 01:40]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Apple sets iPhone launch event for Sept. 9, first under new CEO John Ternus</p>
+</li>
+<li>
+<p>影響: 蘋果宣佈新執行長上任後首場發表會日期，預期推出新款iPhone與摺疊機，帶動供應鏈話題。</p>
+</li>
+<li>
+<p><code>[08-27 01:37]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Meta to Pay Up to $17.1 Billion in Landmark Settlement Over Social Media Addiction Claims</p>
+</li>
+<li>
+<p>影響: Meta因社群成癮訴訟與多州達成高達171億美元巨額和解並須修改產品，影響企業形象與獲利。</p>
+</li>
+<li>
+<p><code>[08-27 01:19]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> TWA00 加權指數 - 美股投資人觀望態度，耐心等待好消息 2026/08/27 ... - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p>影響: 台股投資人受美股動向牽動，持觀望態度，市場成交量能可能收斂。</p>
+</li>
+<li>
+<p><code>[08-27 01:15]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Mark Walter's TWG Global says there's 'no fraud' amid probe of insurers' disclosures</p>
+</li>
+<li>
+<p>影響: 控股公司面臨保險揭露調查與資產出售傳聞，對整體市場衝擊有限，主要影響相關私人企業與關係人。</p>
+</li>
+<li>
+<p><code>[08-27 01:12]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Meta dodges ‘Big Tobacco’ nightmare with $18 billion settlement in child-safety lawsuit</p>
+</li>
+<li>
+<p>影響: Meta以巨額和解金擺脫兒童安全訴訟的系統性法規風險，激勵股價上揚，對科技股氣氛偏多。</p>
+</li>
+<li>
+<p><code>[08-27 01:09]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> AI助零售商精準預測假期商品組合 轉向「狹而深」策略</p>
+</li>
+<li>
+<p>影響: AI技術應用有助零售商優化庫存與假期銷售策略，提升相關軟體與零售類股的營運效率。</p>
+</li>
+<li>
+<p><code>[08-27 00:58]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Nasdaq 100 Falls as Hot PCE Inflation Stirs Rate-Hike Bets: Stock Market Today - TradingView</p>
+</li>
+<li>
+<p>影響: 高於預期的PCE通膨數據升溫降息預期，打壓美股科技股與那斯達克100指數表現。</p>
+</li>
+<li>
+<p><code>[08-27 00:50]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> 全球市場波動加劇 新加坡年輕投資者轉向本地股市尋求避險</p>
+</li>
+<li>
+<p>影響: 新加坡年輕投資者轉向本地股市避險，提升新加坡本地股市流動性與抗震能力。</p>
+</li>
+<li>
+<p><code>[08-27 00:44]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 三菱日聯銀行捨棄效率至上思維 轉向客戶生命週期價值經營</p>
+</li>
+<li>
+<p>影響: 三菱日聯銀行轉向客戶生命週期價值經營，屬於長期企業策略調整，對股價短期影響有限。</p>
+</li>
+<li>
+<p><code>[08-27 00:37]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> TWA00 加權指數- GPT說明天跌- 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p>影響: 散戶討論區與AI對隔日台股走勢的臆測，屬情緒面訊息，無實質宏觀影響。</p>
+</li>
+<li>
+<p><code>[08-27 00:33]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Meta settles social media addiction case with California, other states for $16.7 billion</p>
+</li>
+<li>
+<p>影響: Meta以167億美元達成社群成癮訴訟和解，消除重大法律不確定性，激勵股價情緒。</p>
+</li>
+<li>
+<p><code>[08-27 00:30]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Meta巨額和解不是利空？分析師：至少拆掉一顆未爆彈</p>
+</li>
+<li>
+<p>影響: 鉅額和解未如市場擔憂嚴重，分析師認為拆除未爆彈，對大型科技股評價具正面支撐。</p>
+</li>
+<li>
+<p><code>[08-27 00:25]</code> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> Wall St awaits Nvidia's AI verdict after hot inflation data - Reuters</p>
+</li>
+<li>
+<p>影響: 市場在高通膨數據後聚焦輝達財報，財報結果將左右全球AI概念股與美股走向。</p>
+</li>
+<li>
+<p><code>[08-27 00:12]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> TWA00 加權指數- 收益來源就是買彩劵的賭客，賭客沒中獎的收溢來源。 - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p>影響: 社群討論性質，將台股加權指數比喻為零和博弈，對實際市場與價格走勢無實質影響。</p>
+</li>
+<li>
+<p><code>[08-26 23:49]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 電子產品成本飆漲 買「整新品」省荷包又能護環境</p>
+</li>
+<li>
+<p>影響: 電子產品成本飆漲推動整新品市場成長，反映硬體供應鏈成本壓力與消費者轉趨保守。</p>
+</li>
+<li>
+<p><code>[08-26 23:36]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> 黃金、台股雙強　AI缺料成隱憂！超高齡商機成投資新焦點</p>
+</li>
+<li>
+<p>影響: 台股受惠資金與黃金創高展現多頭氣勢，但AI產業面臨長短料缺料隱憂，影響半導體出貨動能。</p>
+</li>
+<li>
+<p><code>[08-26 23:17]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Market Factors: Former Fed president sees five reasons the equity rally will end in 2027 - The Globe and Mail</p>
+</li>
+<li>
+<p>影響: 前Fed官員警示2027年股市多頭恐告終，牽動機構投資人對未來資產配置與風險預期的調整。</p>
+</li>
+<li>
+<p><code>[08-26 23:06]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> TWA00 加權指數- 其實輝達的財報一點都不重要，大家都在看輝達的走勢。 焦點股... - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p>影響: 市場情緒高度聚焦輝達股價技術走勢而非單純財報數據，直接牽動台股加權指數與AI供應鏈神經。</p>
+</li>
+<li>
+<p><code>[08-26 22:55]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Medical device maker Boston Scientific is being hit by a cyberattack. The shares are falling</p>
+</li>
+<li>
+<p>影響: 醫療設備大廠Boston Scientific遭網路攻擊影響出貨，股價下跌，連動醫療器材板塊短期情緒。</p>
+</li>
+<li>
+<p><code>[08-26 22:55]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> TWA00 加權指數 - 四萬六相對高點 今天買股票的 明天都要被套牢了😱😱 - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p>影響: 散戶情緒指標顯示加權指數處於高點恐慌，台股短線震盪加劇。</p>
+</li>
+<li>
+<p><code>[08-26 22:28]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[positive]</strong> TWA00 加權指數- 騙不了我的！明天照噴幾百點！ - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p>影響: 散戶情緒偏向樂觀，但屬於網路討論區言論，對實際市場無直接實質影響。</p>
+</li>
+<li>
+<p><code>[08-26 22:03]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> TWA00 加權指數- 台股量價齊揚📈 外資大買365億，收復均線轉強🔎 - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p>影響: 台股量價齊揚且外資大買365億元，成功收復均線，帶動台股短期轉強。</p>
+</li>
+<li>
+<p><code>[08-26 21:43]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> US Stock Market Today: S&amp;P 500, Dow Little Changed As Inflation Data Eases Fed Pressure; Chips Weigh On Nasdaq - NDTV Profit</p>
+</li>
+<li>
+<p>影響: 通膨數據緩解聯準會壓力，支撐大盤，但晶片股走弱拖累那斯達克指數表現。</p>
+</li>
+<li>
+<p><code>[08-26 21:27]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> OpenAI’s Jalapeño AI chip brings new 'threat' to Nvidia margins as custom silicon gains ground</p>
+</li>
+<li>影響: OpenAI推出Jalapeño自研AI晶片，在推論效率上挑戰輝達Blackwell系統，加劇客製化晶片對輝達市佔與毛利率的威脅。</li>
+</ul>
+<h3 id="4">債市（4）</h3>
+<ul>
+<li><code>[08-27 00:58]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> The Battle Against Rising Yields Has Begun - Bloomberg</li>
+<li>
+<p>影響: 殖利率持續攀升對債市構成資本利得壓力，並增加企業與政府融資成本，壓抑風險資產。</p>
+</li>
+<li>
+<p><code>[08-26 23:19]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Watch Treasury Yields Rise as Data Keep Fed Bets in Play - Bloomberg</p>
+</li>
+<li>
+<p>影響: 美債殖利率持續攀升，反映市場對Fed利率路徑的重新定價，對股市高估值板塊構成資金排擠。</p>
+</li>
+<li>
+<p><code>[08-26 23:06]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> The Treasury Twist and the Competition for Capital - ETF Database</p>
+</li>
+<li>
+<p>影響: 財政部債務操作（Treasury Twist）與資本競爭持續影響債市收益率曲線與資金流向。</p>
+</li>
+<li>
+<p><code>[08-26 21:36]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> There’s so much betting against long-term bonds that a turnaround could catch investors off guard, says Citadel Securities - MarketWatch</p>
+</li>
+<li>影響: 市場對長天期美債的空頭押注過重，Citadel警告反轉可能使投資人措手不及，潛在短軋風險高。</li>
+</ul>
+<h3 id="1">匯市（1）</h3>
+<ul>
+<li><code>[08-26 22:56]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> Australian Dollar stumbles as hot Australian CPI runs into a firmer US Dollar - FXStreet</li>
+<li>影響: 澳洲CPI偏高但受制於強勢美元，澳幣走貶，影響匯市資金流向。</li>
+</ul>
+<h3 id="15">商品(油金)（15）</h3>
+<ul>
+<li><code>[08-27 02:00]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Why Kazakhstan's New Political Order Matters for US Trade - Crude Oil Prices Today | OilPrice.com</li>
+<li>
+<p>影響: 哈薩克新政治秩序牽動美國貿易與中亞能源供應，對原油及大宗商品市場具潛在觀察價值。</p>
+</li>
+<li>
+<p><code>[08-27 01:54]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Oil prices turn positive after Iran says deal reached with Oman to share revenue from Hormuz</p>
+</li>
+<li>
+<p>影響: 荷姆茲海峽收益分享傳聞與美伊緊張交織，導致油價盤中震盪翻紅，牽動能源與通膨預期。</p>
+</li>
+<li>
+<p><code>[08-27 01:54]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Iran says the U.S. is standing in the way of Hormuz deal amid talks with Oman</p>
+</li>
+<li>
+<p>影響: 伊朗與阿曼談判荷姆茲海峽安全，美國採取經濟壓力，干擾原油航運與地緣政治風險溢價。</p>
+</li>
+<li>
+<p><code>[08-27 01:00]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Europe's Heatwaves Are Putting Nuclear Power Under Pressure - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p>影響: 歐洲熱浪迫使核能發電受限，可能推升替代能源如天然氣及原油的需求，支撐能源商品價格。</p>
+</li>
+<li>
+<p><code>[08-27 00:35]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> 油價下跌　歐股多收紅 - 經濟日報</p>
+</li>
+<li>
+<p>影響: 油價下跌降低企業成本與通膨壓力，帶動歐股多數收紅，有利資本市場情緒。</p>
+</li>
+<li>
+<p><code>[08-27 00:02]</code> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Diesel Price Nears Record High, Helping Oil Companies and Hurting Consumers</p>
+</li>
+<li>
+<p>影響: 地緣政治與煉油廠受襲推升柴油價格逼近歷史高點，增加運輸與農業成本，加劇通膨壓力。</p>
+</li>
+<li>
+<p><code>[08-27 00:00]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> UK Government Takes Stake in Tungsten Mine With 71m Mine Bet - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p>影響: 英國政府入股鎢礦展現對關鍵原物料供應鏈安全的重視，有助於支持稀有金屬與礦業市場發展。</p>
+</li>
+<li>
+<p><code>[08-27 00:00]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> The Netherlands to Miss Natural Gas Filling Target for Winter - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p>影響: 荷蘭天然氣庫存填充目標恐將落空，冬季能源供應緊繃，推升歐洲天然氣與相關替代能源價格。</p>
+</li>
+<li>
+<p><code>[08-26 22:37]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> U.S. Crude Stocks Barely Budge as Gasoline Inventories Fall - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p>影響: 美國原油庫存變動不大、汽油庫存下降，對原油期貨價格影響中性。</p>
+</li>
+<li>
+<p><code>[08-26 22:30]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> India's ONGC Targets Tenfold Oil Output Boost in Venezuela - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p>影響: 印度ONGC計畫大幅提升委內瑞拉產油量，若落實將增加長期原油供給，對國際油價形成潛在壓力。</p>
+</li>
+<li>
+<p><code>[08-26 22:30]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> Natural Gas, Not Oil, Is Key Inflation Concern in Europe - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p>影響: 歐洲天然氣成為主要通膨隱憂，推升歐洲能源成本，影響歐洲總經復甦與歐元。</p>
+</li>
+<li>
+<p><code>[08-26 22:25]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Treasury Buyback Supports Gold Above $4,600 Despite Fed Tightening Risk - Crux Investor</p>
+</li>
+<li>
+<p>影響: 美國國債買回操作提供流動性支持，抵銷部分聯準會緊縮風險，推升黃金價格站穩4600美元上方。</p>
+</li>
+<li>
+<p><code>[08-26 22:00]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 油價跌破90美元，荷莫茲海峽通行量何時回升？-筠婷強勢股攻略 - CMoney投資網誌</p>
+</li>
+<li>
+<p>影響: 油價跌破90美元，反映地緣政治供給疑慮緩解或需求疲軟，對能源類股與通膨降溫有利。</p>
+</li>
+<li>
+<p><code>[08-26 21:37]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 美伊降溫油價跌破90美元美債殖利率也下滑| 金融 - 非凡新聞台</p>
+</li>
+<li>
+<p>影響: 美伊緊張降溫導致油價跌破90美元，舒緩通膨壓力，同時美債殖利率下滑，對債市與風險資產偏正面。</p>
+</li>
+<li>
+<p><code>[08-26 21:30]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> UK Energy Bills to Hit Three-Year High as Gas Prices Surge - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>影響: 天然氣價格飆升推高英國能源帳單至三年新高，加重歐洲在地緣與能源轉型下的通膨壓力。</li>
+</ul>
+<h3 id="4_1">地緣政治（4）</h3>
+<ul>
+<li><code>[08-27 02:15]</code> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Fed, NASA and DOJ among victims of Chinese state-sponsored hacker group: Court documents</li>
+<li>
+<p>影響: 中國駭客組織針對Fed、NASA與國防承包商等關鍵機構，加劇美中資安與地緣政治緊張，對整體科技股與防禦類股帶來隱憂。</p>
+</li>
+<li>
+<p><code>[08-27 02:07]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Andy Burnham ‘risks trade war’ with Trump over Israel sanctions - The Times</p>
+</li>
+<li>
+<p>影響: 英國政界與川普政府潛在的貿易戰風險，對跨大西洋貿易及相關跨國企業信心造成干擾。</p>
+</li>
+<li>
+<p><code>[08-27 00:22]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> States sue to block Trump-backed USPS mail-ballot rule after Supreme Court setback</p>
+</li>
+<li>
+<p>影響: 美國各州針對郵寄投票規則展開訴訟，增添政治紛擾，但對當前金融市場影響有限。</p>
+</li>
+<li>
+<p><code>[08-26 21:40]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> TWA00 加權指數- 報復川普加拿大對美700商品徵15-50%關稅 - 股市爆料同學會 - CMoney</p>
+</li>
+<li>影響: 加拿大針對美國商品祭出報復性關稅，加劇貿易緊張局勢，對全球供應鏈及出口導向的台股加權指數帶來心理壓抑。</li>
+</ul>
+<h3 id="17">總體經濟（17）</h3>
+<ul>
+<li><code>[08-27 01:32]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> The biggest risk to retirement plans may no longer be a stock market crash or inflation</li>
+<li>
+<p>影響: 探討退休規劃與壽命延長的結構性議題，對資本市場無即時衝擊，但長遠影響理財商品趨勢。</p>
+</li>
+<li>
+<p><code>[08-27 01:31]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> The U.S. economy is better than it looks — but it might be due for a slowdown</p>
+</li>
+<li>
+<p>影響: 分析美國經濟韌性與 Q2 消費支出亮眼但面臨放緩風險，牽動聯準會降息預期與股市評價。</p>
+</li>
+<li>
+<p><code>[08-27 01:18]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> US stocks drift lower while bonds yields rise following the latest update on inflation - WHEC.com</p>
+</li>
+<li>
+<p>影響: 通膨數據高於預期推升美債殖利率走揚，進一步壓抑美股表現，股債同步承壓。</p>
+</li>
+<li>
+<p><code>[08-27 00:55]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> The ugly math on interest expenses, yields and the $40 trillion U.S. national debt - MarketWatch</p>
+</li>
+<li>
+<p>影響: 美國40兆美元國債利息支出與高殖利率的惡性數學題，將排擠財政空間並推升長期債券發行壓力。</p>
+</li>
+<li>
+<p><code>[08-27 00:32]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 支付鏈趨複雜 金融監管挑戰「見林不見樹」防洗錢</p>
+</li>
+<li>
+<p>影響: 金融科技與支付鏈複雜化增加反洗錢監管難度，中長期將推升金融機構的合規成本。</p>
+</li>
+<li>
+<p><code>[08-27 00:25]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Bill Gates warns ‘there is no plan’ for the ‘upheaval’ AI will cause</p>
+</li>
+<li>
+<p>影響: 比爾蓋茲警告AI將造成勞動市場動盪且缺乏準備，長期可能引發社會與政策干預風險。</p>
+</li>
+<li>
+<p><code>[08-27 00:24]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> PCE Index Shows Inflation Remained Elevated in July Amid High Energy Costs</p>
+</li>
+<li>
+<p>影響: 美國7月PCE通膨維持高檔，受高能源成本推動，聯準會降息預期可能受壓抑制債市與股市表現。</p>
+</li>
+<li>
+<p><code>[08-27 00:15]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Trump Administration Wants Billion-Dollar Businesses to Qualify as ‘Small’</p>
+</li>
+<li>
+<p>影響: 調整中小企業資格認定可能影響政府合約與貸款分配，對整體總經市場無直接重大衝擊。</p>
+</li>
+<li>
+<p><code>[08-26 23:33]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 結構性通膨來了！富達示警投資版圖重塑 最好手握「金山銀礦」這三大資產</p>
+</li>
+<li>
+<p>影響: 富達警示結構性通膨持續，促使投資人轉向實質資產如黃金與原物料，重塑全球投資版圖。</p>
+</li>
+<li>
+<p><code>[08-26 23:30]</code> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> 美債已替Fed升息？投資人等華許在傑克森霍爾說清楚</p>
+</li>
+<li>
+<p>影響: 長天期美債殖利率上升已實質收緊金融環境，市場高度關注Fed主席華許於傑克森霍爾年會的政策動向與升息立場。</p>
+</li>
+<li>
+<p><code>[08-26 23:30]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> PCE inflation remains sticky as Fed weighs next move - American Banker</p>
+</li>
+<li>
+<p>影響: PCE通膨數據保持僵固，增加Fed後續貨幣政策決策的難度，對股債市場形成壓抑。</p>
+</li>
+<li>
+<p><code>[08-26 22:45]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Slightly hotter than expected PCE inflation keeps Fed’s September rate rise in play - Financial Times</p>
+</li>
+<li>
+<p>影響: PCE通膨高於預期，維持聯準會升息或維持高利率預期，對美股與債市形成壓力。</p>
+</li>
+<li>
+<p><code>[08-26 22:06]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 拉警報？房貸逾放飆5年新高 金管會急找銀行喝咖啡 - udn房地產</p>
+</li>
+<li>
+<p>影響: 房貸逾放比創5年新高，金管會關注銀行授信風險，對國內金融股與房市內需保守看待。</p>
+</li>
+<li>
+<p><code>[08-26 21:44]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> TWA00 加權指數- 美國國債突破40兆美元壓力浮現！川普政府財政失衡苦戰- 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p>影響: 美國國債突破40兆美元凸顯財政失衡，長期恐引發債信疑慮並加劇公債殖利率波動。</p>
+</li>
+<li>
+<p><code>[08-26 21:44]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Nasdaq, S&amp;P 500 and Dow Brace for Jackson Hole Signals - FXEmpire</p>
+</li>
+<li>
+<p>影響: 美股三大指數等待全球央行年會（Jackson Hole）風向球，市場觀望氣氛濃厚。</p>
+</li>
+<li>
+<p><code>[08-26 21:38]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Inflation remains sticky in July; 2nd-quarter GDP unrevised at 1.5% - The Detroit News</p>
+</li>
+<li>
+<p>影響: 7月通膨具僵固性且Q2 GDP維持1.5%，顯示經濟放緩但未衰退，聯準會降息路徑可能受限。</p>
+</li>
+<li>
+<p><code>[08-26 21:35]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Dollar and bond markets 'on edge' ahead of Jackson Hole as Bessent's market intervention piles pressure on Warsh</p>
+</li>
+<li>影響: Jackson Hole年會前夕，匯市與債市高度警戒，政策干預引發市場對貨幣政策走向的猜測。</li>
+</ul>
+<h3 id="12">其他（12）</h3>
+<ul>
+<li><code>[08-27 02:10]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 5 affordable cities to retire in the U.S. right now</li>
+<li>
+<p>影響: 生活理財類資訊，對總體金融市場、股債匯無直接影響。</p>
+</li>
+<li>
+<p><code>[08-27 02:00]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Initial jobless claims headline Thursday’s economic calendar</p>
+</li>
+<li>
+<p>影響: 無</p>
+</li>
+<li>
+<p><code>[08-27 01:44]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> I need to get out of my job, but I’ve signed a noncompete. Can I still leave for a competitor?</p>
+</li>
+<li>
+<p>影響: 資訊不足，屬職場法律諮詢性質新聞，對金融市場無直接實質影響。</p>
+</li>
+<li>
+<p><code>[08-27 01:37]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Two-thirds of parents are failing at this vital safety measure for their children</p>
+</li>
+<li>
+<p>影響: 資訊不足，屬家庭安全法律衛教資訊，對宏觀市場無實質影響。</p>
+</li>
+<li>
+<p><code>[08-27 01:30]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> ‘It’s the ultimate regifting’: My mom gave me a house. Should I transfer it back to her to reduce capital gains?</p>
+</li>
+<li>
+<p>影響: 個人稅務與不動產贈與問題，對整體金融市場無直接影響。</p>
+</li>
+<li>
+<p><code>[08-27 01:19]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> How Dollywood Captured the Essence of Dolly Parton</p>
+</li>
+<li>
+<p>影響: 單一主題樂園商業成功案例，對廣泛金融市場無連動影響。</p>
+</li>
+<li>
+<p><code>[08-27 00:56]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 'Ironing board' seats to be replaced on Thameslink</p>
+</li>
+<li>
+<p>影響: 英國Thameslink鐵路座位升級與國有化計畫，對全球金融市場無直接實質影響。</p>
+</li>
+<li>
+<p><code>[08-27 00:45]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Does a 2% beneficiary inherit 100% if the 98% beneficiary dies in a car accident? Asking for a friend.</p>
+</li>
+<li>
+<p>影響: 屬法律與遺產繼承的趣味/生活法律問題，對金融市場無實質影響。</p>
+</li>
+<li>
+<p><code>[08-26 23:12]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 人形機器人成本低廉搶佔美國製造業 FCC禁中製產品掀貿易戰</p>
+</li>
+<li>
+<p>影響: 無</p>
+</li>
+<li>
+<p><code>[08-26 23:09]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Dolly Parton Was a Trailblazer in Business, Too</p>
+</li>
+<li>
+<p>影響: 名人商業與智財權經營之歷史報導，對整體金融市場無直接實質影響。</p>
+</li>
+<li>
+<p><code>[08-26 22:56]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> I manage Dolly Parton’s Imagination Library in Cincinnati—the No. 1 lesson she taught me about success</p>
+</li>
+<li>
+<p>影響: 個人心得分享與慈善活動，對金融市場無直接影響。</p>
+</li>
+<li>
+<p><code>[08-26 22:41]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Reform proposes £30 tax rebate for HMRC phone delays</p>
+</li>
+<li>影響: 英國政治稅收提案，對整體國際金融市場無實質影響。</li>
+</ul>
+<hr />
+<h2 id="_4">全部事件</h2>
+<ul>
+<li><code>[08-27 02:15]</code> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Fed, NASA and DOJ among victims of Chinese state-sponsored hacker group: Court documents <code>cnbc</code></li>
+<li><code>[08-27 02:10]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 5 affordable cities to retire in the U.S. right now <code>marketwatch</code></li>
+<li><code>[08-27 02:07]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Andy Burnham ‘risks trade war’ with Trump over Israel sanctions - The Times <code>google-news:sanctions trade war</code></li>
+<li><code>[08-27 02:03]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> F.D.A. Approves the Drug Daraxonrasib That’s Poised to Transform Pancreatic Cancer <code>nytbusiness</code></li>
+<li><code>[08-27 02:00]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Initial jobless claims headline Thursday’s economic calendar <code>investing-com</code></li>
+<li><code>[08-27 02:00]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Why Kazakhstan's New Political Order Matters for US Trade - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><code>[08-27 01:54]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Oil prices turn positive after Iran says deal reached with Oman to share revenue from Hormuz <code>cnbc</code></li>
+<li><code>[08-27 01:54]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Iran says the U.S. is standing in the way of Hormuz deal amid talks with Oman <code>cnbc</code></li>
+<li><code>[08-27 01:47]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 國銀房貸逾放警報大響 金管會要找一家大型民營銀行喝咖啡 - 經濟日報 <code>google-news:金管會</code></li>
+<li><code>[08-27 01:44]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Meta's $18bn settlement a landmark victory for US states <code>bbcbusiness</code></li>
+<li><code>[08-27 01:44]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> I need to get out of my job, but I’ve signed a noncompete. Can I still leave for a competitor? <code>marketwatch</code></li>
+<li><code>[08-27 01:40]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Apple sets iPhone launch event for Sept. 9, first under new CEO John Ternus <code>cnbc</code></li>
+<li><code>[08-27 01:37]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Meta to Pay Up to $17.1 Billion in Landmark Settlement Over Social Media Addiction Claims <code>nytbusiness</code></li>
+<li><code>[08-27 01:37]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Two-thirds of parents are failing at this vital safety measure for their children <code>marketwatch</code></li>
+<li><code>[08-27 01:32]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> The biggest risk to retirement plans may no longer be a stock market crash or inflation <code>marketwatch</code></li>
+<li><code>[08-27 01:31]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> The U.S. economy is better than it looks — but it might be due for a slowdown <code>marketwatch</code></li>
+<li><code>[08-27 01:30]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> ‘It’s the ultimate regifting’: My mom gave me a house. Should I transfer it back to her to reduce capital gains? <code>marketwatch</code></li>
+<li><code>[08-27 01:19]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> How Dollywood Captured the Essence of Dolly Parton <code>nytbusiness</code></li>
+<li><code>[08-27 01:19]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> TWA00 加權指數 - 美股投資人觀望態度，耐心等待好消息 2026/08/27 ... - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><code>[08-27 01:18]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> US stocks drift lower while bonds yields rise following the latest update on inflation - WHEC.com <code>google-news:Treasury yields</code></li>
+<li><code>[08-27 01:15]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Mark Walter's TWG Global says there's 'no fraud' amid probe of insurers' disclosures <code>cnbc</code></li>
+<li><code>[08-27 01:12]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Meta dodges ‘Big Tobacco’ nightmare with $18 billion settlement in child-safety lawsuit <code>marketwatch</code></li>
+<li><code>[08-27 01:09]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> AI助零售商精準預測假期商品組合 轉向「狹而深」策略 <code>yahoo-tw-finance</code></li>
+<li><code>[08-27 01:00]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Europe's Heatwaves Are Putting Nuclear Power Under Pressure - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><code>[08-27 00:58]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Nasdaq 100 Falls as Hot PCE Inflation Stirs Rate-Hike Bets: Stock Market Today - TradingView <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><code>[08-27 00:58]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> The Battle Against Rising Yields Has Begun - Bloomberg <code>google-news:Treasury yields</code></li>
+<li><code>[08-27 00:56]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 'Ironing board' seats to be replaced on Thameslink <code>bbcbusiness</code></li>
+<li><code>[08-27 00:55]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> The ugly math on interest expenses, yields and the $40 trillion U.S. national debt - MarketWatch <code>google-news:Treasury yields</code></li>
+<li><code>[08-27 00:50]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 全球市場波動加劇 新加坡年輕投資者轉向本地股市尋求避險 <code>yahoo-tw-finance</code></li>
+<li><code>[08-27 00:45]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Does a 2% beneficiary inherit 100% if the 98% beneficiary dies in a car accident? Asking for a friend. <code>marketwatch</code></li>
+<li><code>[08-27 00:44]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 三菱日聯銀行捨棄效率至上思維 轉向客戶生命週期價值經營 <code>yahoo-tw-finance</code></li>
+<li><code>[08-27 00:37]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> TWA00 加權指數- GPT說明天跌- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><code>[08-27 00:35]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 油價下跌　歐股多收紅 - 經濟日報 <code>google-news:台股 大跌</code></li>
+<li><code>[08-27 00:33]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Meta settles social media addiction case with California, other states for $16.7 billion <code>cnbc</code></li>
+<li><code>[08-27 00:32]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 支付鏈趨複雜 金融監管挑戰「見林不見樹」防洗錢 <code>yahoo-tw-finance</code></li>
+<li><code>[08-27 00:30]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Meta巨額和解不是利空？分析師：至少拆掉一顆未爆彈 <code>yahoo-tw-finance</code></li>
+<li><code>[08-27 00:25]</code> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Wall St awaits Nvidia's AI verdict after hot inflation data - Reuters <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><code>[08-27 00:25]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Bill Gates warns ‘there is no plan’ for the ‘upheaval’ AI will cause <code>cnbc</code></li>
+<li><code>[08-27 00:24]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> PCE Index Shows Inflation Remained Elevated in July Amid High Energy Costs <code>nytbusiness</code></li>
+<li><code>[08-27 00:22]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> States sue to block Trump-backed USPS mail-ballot rule after Supreme Court setback <code>cnbc</code></li>
+<li><code>[08-27 00:15]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Trump Administration Wants Billion-Dollar Businesses to Qualify as ‘Small’ <code>nytbusiness</code></li>
+<li><code>[08-27 00:12]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> TWA00 加權指數- 收益來源就是買彩劵的賭客，賭客沒中獎的收溢來源。 - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><code>[08-27 00:02]</code> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Diesel Price Nears Record High, Helping Oil Companies and Hurting Consumers <code>nytbusiness</code></li>
+<li><code>[08-27 00:00]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> UK Government Takes Stake in Tungsten Mine With 71m Mine Bet - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><code>[08-27 00:00]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> The Netherlands to Miss Natural Gas Filling Target for Winter - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><code>[08-26 23:49]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 電子產品成本飆漲 買「整新品」省荷包又能護環境 <code>yahoo-tw-finance</code></li>
+<li><code>[08-26 23:36]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 黃金、台股雙強　AI缺料成隱憂！超高齡商機成投資新焦點 <code>yahoo-tw-finance</code></li>
+<li><code>[08-26 23:33]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 結構性通膨來了！富達示警投資版圖重塑 最好手握「金山銀礦」這三大資產 <code>yahoo-tw-finance</code></li>
+<li><code>[08-26 23:30]</code> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 美債已替Fed升息？投資人等華許在傑克森霍爾說清楚 <code>yahoo-tw-finance</code></li>
+<li><code>[08-26 23:30]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> PCE inflation remains sticky as Fed weighs next move - American Banker <code>google-news:inflation CPI</code></li>
+<li><code>[08-26 23:19]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Watch Treasury Yields Rise as Data Keep Fed Bets in Play - Bloomberg <code>google-news:Treasury yields</code></li>
+<li><code>[08-26 23:17]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Market Factors: Former Fed president sees five reasons the equity rally will end in 2027 - The Globe and Mail <code>google-news:stock market rally</code></li>
+<li><code>[08-26 23:12]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 人形機器人成本低廉搶佔美國製造業 FCC禁中製產品掀貿易戰 <code>yahoo-tw-finance</code></li>
+<li><code>[08-26 23:09]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Dolly Parton Was a Trailblazer in Business, Too <code>nytbusiness</code></li>
+<li><code>[08-26 23:06]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> TWA00 加權指數- 其實輝達的財報一點都不重要，大家都在看輝達的走勢。 焦點股... - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><code>[08-26 23:06]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> The Treasury Twist and the Competition for Capital - ETF Database <code>google-news:Treasury yields</code></li>
+<li><code>[08-26 22:56]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> I manage Dolly Parton’s Imagination Library in Cincinnati—the No. 1 lesson she taught me about success <code>cnbc</code></li>
+<li><code>[08-26 22:56]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Australian Dollar stumbles as hot Australian CPI runs into a firmer US Dollar - FXStreet <code>google-news:inflation CPI</code></li>
+<li><code>[08-26 22:55]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Medical device maker Boston Scientific is being hit by a cyberattack. The shares are falling <code>cnbc</code></li>
+<li><code>[08-26 22:55]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> TWA00 加權指數 - 四萬六相對高點 今天買股票的 明天都要被套牢了😱😱 - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><code>[08-26 22:45]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Slightly hotter than expected PCE inflation keeps Fed’s September rate rise in play - Financial Times <code>google-news:inflation CPI</code></li>
+<li><code>[08-26 22:41]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Reform proposes £30 tax rebate for HMRC phone delays <code>bbcbusiness</code></li>
+<li><code>[08-26 22:37]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> U.S. Crude Stocks Barely Budge as Gasoline Inventories Fall - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><code>[08-26 22:30]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> India's ONGC Targets Tenfold Oil Output Boost in Venezuela - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><code>[08-26 22:30]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Natural Gas, Not Oil, Is Key Inflation Concern in Europe - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><code>[08-26 22:28]</code> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> TWA00 加權指數- 騙不了我的！明天照噴幾百點！ - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><code>[08-26 22:25]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Treasury Buyback Supports Gold Above $4,600 Despite Fed Tightening Risk - Crux Investor <code>google-news:Treasury yields</code></li>
+<li><code>[08-26 22:06]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 拉警報？房貸逾放飆5年新高 金管會急找銀行喝咖啡 - udn房地產 <code>google-news:金管會</code></li>
+<li><code>[08-26 22:03]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> TWA00 加權指數- 台股量價齊揚📈 外資大買365億，收復均線轉強🔎 - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><code>[08-26 22:00]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 油價跌破90美元，荷莫茲海峽通行量何時回升？-筠婷強勢股攻略 - CMoney投資網誌 <code>google-news:油價</code></li>
+<li><code>[08-26 21:44]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> TWA00 加權指數- 美國國債突破40兆美元壓力浮現！川普政府財政失衡苦戰- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><code>[08-26 21:44]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Nasdaq, S&amp;P 500 and Dow Brace for Jackson Hole Signals - FXEmpire <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><code>[08-26 21:43]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> US Stock Market Today: S&amp;P 500, Dow Little Changed As Inflation Data Eases Fed Pressure; Chips Weigh On Nasdaq - NDTV Profit <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><code>[08-26 21:40]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> TWA00 加權指數- 報復川普加拿大對美700商品徵15-50%關稅 - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><code>[08-26 21:38]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Inflation remains sticky in July; 2nd-quarter GDP unrevised at 1.5% - The Detroit News <code>google-news:inflation CPI</code></li>
+<li><code>[08-26 21:37]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 美伊降溫油價跌破90美元美債殖利率也下滑| 金融 - 非凡新聞台 <code>google-news:油價</code></li>
+<li><code>[08-26 21:36]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> There’s so much betting against long-term bonds that a turnaround could catch investors off guard, says Citadel Securities - MarketWatch <code>google-news:Treasury yields</code></li>
+<li><code>[08-26 21:35]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Dollar and bond markets 'on edge' ahead of Jackson Hole as Bessent's market intervention piles pressure on Warsh <code>cnbc</code></li>
+<li><code>[08-26 21:30]</code> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> UK Energy Bills to Hit Three-Year High as Gas Prices Surge - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><code>[08-26 21:27]</code> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> OpenAI’s Jalapeño AI chip brings new 'threat' to Nvidia margins as custom silicon gains ground <code>cnbc</code></li>
+</ul>
+    </article>
+  
+</div>
+<footer>由金融情報系統自動發佈 · 僅供參考，不構成投資建議</footer>
+<script>
+const WEEK = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function nowParts(tz){
+  const p = {};
+  new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short', month: 'short',
+    day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
+  }).formatToParts(new Date()).forEach(x => p[x.type] = x.value);
+  return p;
+}
+function marketOpen(tz, open, close){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  return wd>=1 && wd<=5 && m>=open && m<close;
+}
+// Taiwan index-futures night session 15:00 -> next-day 05:00 (crosses midnight):
+// 15:00-24:00 Mon-Fri, plus 00:00-05:00 Tue-Sat (Sat 00:00-05:00 is Fri night session).
+function nightOpen(tz){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  if (m >= 5*60 && m < 15*60) return false;   // 05:00-15:00 recess
+  if (m >= 15*60) return wd >= 1 && wd <= 5;   // 15:00-24:00 Mon-Fri
+  return wd >= 2 && wd <= 6;                   // 00:00-05:00 Tue-Sat
+}
+function pad(n){ return String(n).padStart(2,'0'); }
+function setMkt(id, open, label){
+  const el = document.getElementById(id);
+  el.className = 'mkt ' + (open ? 'open' : 'closed');
+  el.textContent = (label ? label + ' ' : '') + (open ? '開盤中' : '未開盤');
+}
+function tick(){
+  const tw = nowParts('Asia/Taipei');
+  const ny = nowParts('America/New_York');
+  document.getElementById('clk-tw').textContent = pad(tw.hour)+':'+pad(tw.minute)+':'+pad(tw.second);
+  document.getElementById('clk-ny').textContent = pad(ny.hour)+':'+pad(ny.minute)+':'+pad(ny.second);
+  // Taiwan: TWSE weighted index 09:00-13:30; TX futures day 08:45-13:45; TX night 15:00-05:00
+  setMkt('tw-idx',  marketOpen('Asia/Taipei', 9*60, 13*60+30), '加權');
+  setMkt('tx-day',  marketOpen('Asia/Taipei', 8*60+45, 13*60+45), '期日盤');
+  setMkt('tx-night', nightOpen('Asia/Taipei'), '期夜盤');
+  // US: regular session 09:30-16:00 ET; after-hours 16:00-20:00 ET
+  setMkt('ny-mkt',  marketOpen('America/New_York', 9*60+30, 16*60), '美股');
+  setMkt('ny-night', marketOpen('America/New_York', 16*60, 20*60), '美股夜');
+}
+tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>
