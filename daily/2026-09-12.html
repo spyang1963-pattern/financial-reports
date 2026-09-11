@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日報告 2026-09-12</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; margin: 0;
+         background: #f5f6f8; color: #1c1e21; line-height: 1.7; }
+  header { background: #1b2a4a; color: #fff; padding: 14px 24px;
+           display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  header h1 { font-size: 18px; margin: 0; flex: 1; }
+  header nav a { color: #cdd8ee; text-decoration: none; margin-left: 14px; font-size: 14px; }
+  header nav a:hover, header nav a.active { color: #fff; text-decoration: underline; }
+  #clock { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; font-size: 13px; }
+  .clk { background: rgba(255,255,255,.08); border-radius: 6px; padding: 4px 10px; }
+  .clk-city { color: #9fb0cf; margin-right: 6px; }
+  .clk-time { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .mkt { margin-left: 8px; font-size: 12px; padding: 1px 7px; border-radius: 9px; }
+  .mkt.open { background: #2e7d32; color: #fff; }
+  .mkt.closed { background: #5a6474; color: #fff; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 20px; }
+  .card { background: #fff; border-radius: 8px; padding: 18px 22px; margin: 14px 0;
+          box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .card h3 { margin: 0 0 6px; }
+  .card a { color: #1b2a4a; text-decoration: none; }
+  .card a:hover { text-decoration: underline; }
+  .muted { color: #666; font-size: 13px; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px;
+           color: #fff; margin-left: 6px; }
+  .b-daily { background: #2e7d32; }
+  .b-deep { background: #b45309; }
+  .day-nav { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+  .day-nav a { font-size: 13px; padding: 3px 10px; background: #e8ecf3; border-radius: 12px;
+               color: #33415c; text-decoration: none; }
+  .day-nav a:hover { background: #d2dbea; }
+  article.card { line-height: 1.15; }
+  article.card p { margin: 3px 0; }
+  article.card ul, article.card ol { margin: 3px 0 6px; padding-left: 22px; }
+  article.card h1, article.card h2, article.card h3 { padding-bottom: 4px; }
+  article.card h1, article.card h2 { border-bottom: 2px solid #33415c; }
+  article.card h1 { font-size: 30px; margin-top: 8px; }
+  article.card h2 { font-size: 23px; margin-top: 12px; color: #1b2a4a;
+        border-left: 6px solid #1459c8; padding-left: 12px; }
+  article.card h3 { font-size: 19px; margin-top: 10px; color: #24365c;
+        background: #eef4fb; border-radius: 6px; padding: 4px 12px; }
+  article.card h4 { font-size: 17px; margin-top: 18px; color: #145c3a;
+        background: #e8f5ee; border-left: 4px solid #2e7d32;
+        padding: 5px 10px; border-radius: 4px; }
+  article.card h5 { font-size: 15px; margin-top: 14px; color: #4a5568;
+        font-weight: 600; }
+  article.card h4, article.card h5 { margin-bottom: 2px; }
+  article.card strong { font-weight: 700; }
+  article.card blockquote { border-left: 4px solid #9fb0cf; margin: 4px 0;
+        padding: 2px 12px; color: #4a5568; background: #f4f6fa; }
+  article.card hr { border: none; border-top: 1px dashed #c3ccdb; margin: 12px 0; }
+  article.card code { background: #eef0f4; padding: 1px 5px; border-radius: 4px;
+        font-size: 14px; font-family: Consolas, monospace; }
+  article.card pre { background: #1b2a4a; color: #e6ecf7; padding: 14px; border-radius: 8px; overflow-x: auto; }
+  article.card pre code { background: transparent; color: inherit; padding: 0; }
+  article.card table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+  article.card th, article.card td { border: 1px solid #d8dce3; padding: 6px 10px; }
+  article.card th { background: #eef1f6; }
+  article.card a { color: #1459c8; }
+  footer { text-align: center; color: #999; font-size: 12px; padding: 20px; }
+</style>
+</head>
+<body>
+  <header>
+  <h1>金融情報系統報告</h1>
+  <nav>
+    <a href="../index.html" class="">首頁</a>
+    <a href="../calendar.html" class="">行事曆</a>
+    <a href="../daily/2026-09-12.html" class="active">最新每日</a>
+    <a href="../deep/2026-09-11-pm.html" class="">最新深度</a>
+  </nav>
+  <div id="clock">
+    <span class="clk"><span class="clk-city">台北</span><span class="clk-time" id="clk-tw">--:--:--</span><span class="mkt closed" id="tw-idx">…</span><span class="mkt closed" id="tx-day">…</span><span class="mkt closed" id="tx-night">…</span></span>
+    <span class="clk"><span class="clk-city">紐約</span><span class="clk-time" id="clk-ny">--:--:--</span><span class="mkt closed" id="ny-mkt">…</span><span class="mkt closed" id="ny-night">…</span></span>
+  </div>
+</header>
+<div class="wrap">
+  
+    <div class="day-nav">
+      <a href="../index.html">← 首頁</a>
+      
+        
+        <a href="../daily/2026-09-12.html">2026-09-12</a>
+        
+        <a href="../daily/2026-09-11.html">2026-09-11</a>
+        
+        <a href="../daily/2026-09-10.html">2026-09-10</a>
+        
+        <a href="../daily/2026-09-09.html">2026-09-09</a>
+        
+        <a href="../daily/2026-09-08.html">2026-09-08</a>
+        
+        <a href="../daily/2026-09-07.html">2026-09-07</a>
+        
+        <a href="../daily/2026-09-06.html">2026-09-06</a>
+        
+        <a href="../daily/2026-09-05.html">2026-09-05</a>
+        
+        <a href="../daily/2026-09-04.html">2026-09-04</a>
+        
+        <a href="../daily/2026-09-03.html">2026-09-03</a>
+        
+        <a href="../daily/2026-09-02.html">2026-09-02</a>
+        
+        <a href="../daily/2026-09-01.html">2026-09-01</a>
+        
+        <a href="../daily/2026-08-31.html">2026-08-31</a>
+        
+        <a href="../daily/2026-08-30.html">2026-08-30</a>
+        
+        <a href="../daily/2026-08-29.html">2026-08-29</a>
+        
+        <a href="../daily/2026-08-28.html">2026-08-28</a>
+        
+        <a href="../daily/2026-08-27.html">2026-08-27</a>
+        
+        <a href="../daily/2026-08-26.html">2026-08-26</a>
+        
+        <a href="../daily/2026-08-25.html">2026-08-25</a>
+        
+        <a href="../daily/2026-08-24.html">2026-08-24</a>
+        
+        <a href="../daily/2026-08-23.html">2026-08-23</a>
+        
+        <a href="../daily/2026-08-22.html">2026-08-22</a>
+        
+        <a href="../daily/2026-08-21.html">2026-08-21</a>
+        
+        <a href="../daily/2026-08-20.html">2026-08-20</a>
+        
+        <a href="../daily/2026-08-19.html">2026-08-19</a>
+        
+        <a href="../daily/2026-08-18.html">2026-08-18</a>
+        
+        <a href="../daily/2026-08-17.html">2026-08-17</a>
+        
+        <a href="../daily/2026-08-16.html">2026-08-16</a>
+        
+        <a href="../daily/2026-08-15.html">2026-08-15</a>
+        
+        <a href="../daily/2026-08-14.html">2026-08-14</a>
+        
+        <a href="../daily/2026-08-13.html">2026-08-13</a>
+        
+        <a href="../daily/2026-08-12.html">2026-08-12</a>
+        
+        <a href="../daily/2026-08-11.html">2026-08-11</a>
+        
+        <a href="../daily/2026-08-10.html">2026-08-10</a>
+        
+        <a href="../daily/2026-08-09.html">2026-08-09</a>
+        
+        <a href="../daily/2026-08-08.html">2026-08-08</a>
+        
+        <a href="../daily/2026-08-07.html">2026-08-07</a>
+        
+        <a href="../daily/2026-08-06.html">2026-08-06</a>
+        
+        <a href="../daily/2026-08-05.html">2026-08-05</a>
+        
+        <a href="../daily/2026-08-04.html">2026-08-04</a>
+        
+        <a href="../daily/2026-08-03.html">2026-08-03</a>
+        
+        <a href="../daily/2026-08-02.html">2026-08-02</a>
+        
+      
+    </div>
+    <article class="card">
+      <div class="muted">2026-09-12
+        <span class="badge b-daily">
+          每日報告
+        </span>
+      </div>
+      <h1 id="2026-09-12">金融重點報告 2026-09-12</h1>
+<blockquote>
+<p>產出時間: 2026-09-12 00:22（台灣時間）
+資料截止: 09-11 23:56（收錄庫最新事件，若久久未前進代表蒐集上游疑中斷）
+品質儀表板: 資料新鮮度 ≤30min | 去重率 25.7% | 最大來源佔 15.0% | 驗證覆蓋 24.5% | ⚠️疑似誤殺 23
+本報告由 AI 自動生成，僅供參考，不構成投資建議。</p>
+</blockquote>
+<h2 id="_1">🆕 本次新增事件（置頂：最新產出）</h2>
+<blockquote>
+<p>本次新增 <strong>60 筆</strong>，重要 57 筆</p>
+</blockquote>
+<p><strong>重要事件（severity ≥ 1）</strong>：</p>
+<ul>
+<li><strong>[09-11 23:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][neutral]</strong> 美投資環境考驗外資 韓國經驗凸顯公平性關鍵 <code>yahoo-tw-finance</code></li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 南韓企業赴美投資計畫逐步執行，對美國基礎建設與能源供應鏈正面，台韓外資赴美布局競爭壓力增加。</p>
+</li>
+<li>
+<p><strong>[09-11 23:45]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[商品(油金)][positive]</strong> 美投資7300萬美元推「未來礦場」計畫 將採礦業變科技實驗室 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國能源部推動未來礦場計畫，將傳統採礦業轉型科技實驗室，對相關礦業技術與自動化設備利多。</p>
+</li>
+<li>
+<p><strong>[09-11 23:42]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Investors brace for possible rate hike at uncertain Fed meeting <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 投資人警戒美國聯準會可能在不確定會議中意外升息，金融市場風險偏好轉趨保守。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> 油價走跌只是喘口氣？中東危機仍推周線狂漲逾8% <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 儘管單日小幅拉回，中東危機仍推動油價周線狂漲逾8%，柴油均價突破對民生與企業成本形成沉重壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>WTI,布蘭特原油</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:34]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][positive]</strong> 美國8月CPI數據持平，道瓊強彈逾600點帶動AI伺服器供應鏈營收創高！-財經焦點情報站 - CMoney投資網誌 <code>google-news:美國 CPI 通膨</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI數據持平，激勵道瓊強彈，並由強勁營收帶動AI伺服器供應鏈走揚。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TSM,NVDA</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> 美國9月密大消費者信心驟降 一年期通膨預期升至4.6% - news.cnyes.com <code>google-news:美國 CPI 通膨</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國9月密大消費者信心驟降且一年期通膨預期升至4.6%，增加停滯性通膨擔憂。</p>
+</li>
+<li>
+<p><strong>[09-11 22:43]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> 【美國】8 月核心 CPI 略超預期，9 月聯準會升息機率升至九成！ | 財經Ｍ平方短評 - LINE TODAY <code>google-news:美國 CPI 通膨</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月核心CPI略超預期，年增率達3.4%，9月聯準會升息機率飆升至九成，引發債市拋售與股市壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債10年期殖利率,SPY</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:48]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[商品(油金)][positive]</strong> Gold climbs on dip-buying, Fed rate hike bets rise after US inflation data - The Korea Times <code>google-news:US CPI inflation data</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 受美國通膨數據與聯準會升息預期影響，黃金現逢低買盤推升，避險與抗通膨需求增溫。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>黃金</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:36]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> US consumers faced more high prices in August as Iran war raised energy costs - The Guardian <code>google-news:US CPI inflation data</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI顯示消費者面臨更高物價，主因地緣衝突與伊朗戰爭導致能源成本飆高，強化通膨頑固性。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[商品(油金)][negative]</strong> 油輪遇襲激增！國際油價飆逾6%雙雙衝破百美元大關 - 四季線上4gTV <code>google-news:油價</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油輪遇襲激增導致國際油價飆逾6%並衝破百美元大關，推升全球能源成本與輸入性通膨壓力。</p>
+</li>
+<li>
+<p><strong>[09-11 23:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> 油價破百、美債殖利率攀升 阮慕驊點出科技股3大壓力 | 蕭宥宸 | 新聞 - 風傳媒 <code>google-news:油價</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價破百與美債殖利率攀升加重科技股估值壓力，對股市構成負面衝擊。</p>
+</li>
+<li>
+<p><strong>[09-11 23:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> IEA Sees 5.7 Million Bpd Oil Supply Plunge as Gulf Recovery Slips to 2027 - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: IEA預期墨西哥灣原油供應至2027年面臨大幅短缺，推升能源商品價格。</p>
+</li>
+<li>
+<p><strong>[09-11 23:24]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][neutral]</strong> August Inflation Remains Steady Amid Rising Energy Prices - hardwareretailing.com <code>google-news:inflation CPI</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國8月CPI通膨數據在能源價格攀升下保持穩定，符合市場對通膨僵固性的預期。</p>
+</li>
+<li>
+<p><strong>[09-11 23:19]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[商品(油金)][negative]</strong> 葉門青年運動攻佔紅海戰略要地 國際油價恐破百美元大關 - 民視新聞網 <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 葉門青年運動攻佔紅海戰略要地，推升原油供應中斷疑慮，國際油價恐逼近或突破百美元大關，利多商品市場、利空全球股市與債市。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>布蘭特原油,WTI</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:08]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 胡塞武裝襲擊沙烏地油設施，國際油價飆升拖累美股 - 行銷人 <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 胡塞武裝襲擊沙烏地油設施導致油價飆升，加劇通膨與經濟成長放緩擔憂，直接拖累美股大盤走勢。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:07]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> Banks Hike Oil Price Forecasts on Prolonged Gulf Disruptions - EnergyNow.com <code>google-news:oil price crude</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 大型銀行因波斯灣局勢長期中斷而上調油價預測，進一步強化商品市場的多頭預期與通膨黏著度。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>布蘭特原油</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:04]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[商品(油金)][negative]</strong> 伊朗封鎖荷姆茲海峽推升油價 將赴阿曼與波斯灣各國會談 - 民視新聞網 <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 伊朗封鎖荷姆茲海峽的威脅推升油價，波斯灣地緣政治風險急遽升高，對全球能源供應鏈造成系統性威脅。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>布蘭特原油</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:49]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][neutral]</strong> Week Ahead for FX, Bonds: All Eyes on Fed Rate Decision - WSJ <code>google-news:Federal Reserve rate decision</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 市場聚焦聯準會利率決策與美國8月CPI數據，公債殖利率與匯市波動加劇，資金轉趨觀望。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:32]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[匯市][positive]</strong> Bitcoin Rises as Markets Digest Inflation Data Ahead of Fed Rate Decision - Decrypt <code>google-news:Federal Reserve rate decision</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 市場消化通膨數據並等待聯準會利率決議，比特幣價格走高，風險資產情緒回穩。</p>
+</li>
+<li>
+<p><strong>[09-11 22:49]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][neutral]</strong> Fed Chair Tries to Set the Record Straight - News at IU <code>google-news:Treasury yields</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Fed主席談話試圖釐清政策方向，在通膨與地緣政治交織下，市場對聯準會下一步動向高度敏感。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債殖利率</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:26]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 台積電營收創高卻跌40元！現在能撿？財經專家給答案 - NOWnews今日新聞 <code>google-news:台股 大跌</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台積電營收創高但股價逆勢下跌40元，反映市場先前已部分預支利多或受大盤籌碼影響。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TSM</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:23]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Forget the Fed. The Bank of Japan could deliver next week’s market shock. <code>marketwatch</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 日本央行可能帶來市場震撼，引發資金對日圓及全球資產配置的重新評估，對美股與全球股市構成潛在波動壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:09]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Elevated Inflation Keeps Pressure on Fed to Raise Rates <code>nytbusiness</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 受美國8月CPI報告影響，市場定價聯準會下週升息一碼機率飆升至90%，全面衝擊全球金融資產定價。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債殖利率,2330</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:10]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[地緣政治][neutral]</strong> Iran, Russia condemn Western economic sanctions and urge BRICS bloc to deepen economic ties <code>cnbc</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 伊朗與俄羅斯呼籲BRICS深化經貿與去美元化，雖具地緣政治意義，但對現行全球金融體系影響緩慢。</p>
+</li>
+<li>
+<p><strong>[09-11 23:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[匯市][positive]</strong> Dollar edges higher against Swiss franc after US inflation data - marketscreener.com <code>google-news:US CPI inflation data</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI通膨數據公佈後，美元走強，對非美貨幣如瑞郎與主要外匯形成壓抑。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:57]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 台股重挫755點守住4萬6 專家曝美國CPI是短線小關卡：「它」才是真正大魔王 - Yahoo新聞 <code>google-news:美國 CPI 通膨</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股重挫755點，美國CPI為短線關卡，市場更擔憂總經與產業結構的大魔王挑戰，拖累台股權值股表現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:18]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Fed rate-hike case builds as inflation fails to cool - Reuters <code>google-news:inflation CPI</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI通膨數據未能如期冷卻，強化聯準會升息預期，推升美債殖利率並壓抑股價表現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債殖利率</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:16]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Stocks Fall For Week As Oil Prices, Yields Soar, But End On High Note - Investor's Business Daily <code>google-news:inflation CPI</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 受油價與美債殖利率飆升影響，美股週線收跌，反映總體經濟與通膨壓力對股市的直接衝擊。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:09]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> FMI releases statement on August 2026 CPI Food Price numbers - Mass Market Retailers <code>google-news:inflation CPI</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: FMI發布美國8月CPI食品價格數據，印證整體通膨黏著度高，增加民眾生活成本與通膨預期。</p>
+</li>
+<li>
+<p><strong>[09-11 23:01]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> 通膨陰火再起：高油價、運費飆漲與AI資本競逐，美國經濟被「上層繁榮」撐住？ - CMoney投資網誌 <code>google-news:油價</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 高油價、運費飆漲與AI資本競逐推升通膨隱憂，美國CPI數據顯示核心通膨月增0.3%，增添聯準會貨幣政策壓力，對股債市形成潛在壓抑。</p>
+</li>
+<li>
+<p><strong>[09-11 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> 油價走跌只是喘口氣？中東危機仍推周線狂漲逾8% - news.cnyes.com <code>google-news:油價</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 中東危機推升國際油價周線狂漲逾8%，儘管短線回檔但高油價威脅持續，牽動全球能源成本與通膨預期。</p>
+</li>
+<li>
+<p><strong>[09-11 22:54]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Gasoline Rebound Lifts U.S. Consumer Inflation in August; Core Up 0.3% - Modern Distribution Management <code>google-news:inflation CPI</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國8月CPI顯示汽油價格反彈推升消費者通膨，核心CPI月增0.3%，高於市場預期，打擊市場對通膨迅速降溫的樂觀情緒。</p>
+</li>
+<li>
+<p><strong>[09-11 22:42]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 油價回落與科技股拉抬打贏CPI 美股開盤全面上漲 - Yahoo新聞 <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 國際油價回跌與科技股拉抬抵銷了CPI數據的負面衝擊，美股開盤全面上揚，科技巨頭展現抗跌韌性。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:33]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> 國際油價回跌激勵美股早盤反彈三大指數齊步上揚 | 民視新聞網 - LINE TODAY <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 國際油價回跌激勵美股早盤反彈，三大指數齊步上揚，紓解了市場對能源成本推升通膨的恐慌情緒。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>#GSPC</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:02]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> #GSPC S&amp;P 500指數 - 羅賓漢八月資料顯示投資者仍有理由持續關注- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 羅賓漢八月數據顯示散戶投資者維持關注美股，對S&amp;P 500指數帶來支撐，市場情緒偏向穩定。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>#GSPC</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:54]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][neutral]</strong> 5 Things That Investors Might Consider Ahead Of The Fed's Rate Decision (US2Y) - Seeking Alpha <code>google-news:Federal Reserve rate decision</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 聯準會利率決策前夕，美國2年期公債殖利率緊盯通膨與就業數據，債市波動加劇，影響資金成本定價。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>US2Y</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:42]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[商品(油金)][positive]</strong> Oil tanker rates hit record highs following Iran, US shipping attacks <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 伊朗與美國船隻衝突激化，導致油輪運費創歷史新高，推升航運與能源相關成本。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>油輪,能源股</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:41]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][neutral]</strong> AARP Projects 2027 Social Security COLA at 3.6% <code>nytbusiness</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: AARP預估2027年社會安全生活費調整（COLA）達3.6%，反映長期通膨預期維持高於歷史平均。</p>
+</li>
+<li>
+<p><strong>[09-11 22:38]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 不懼升息壓力！美股開盤四大指數齊漲　台指期夜盤上漲234點 <code>yahoo-tw-stock</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI雖推升升息預期，但美股四大指數與台指期夜盤逆勢齊漲，台積電ADR同步上揚。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>台指期,2330,SPY</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:33]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> 國際能源總署調降今年石油需求激勵　美股三大指數開盤上揚 <code>yahoo-tw-stock</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 國際能源總署(IEA)調降今年石油需求預期，舒緩通膨壓力，激勵美股三大指數全面上揚，那斯達克漲1.21%。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>IXIC,DJI</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:52]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[匯市][negative]</strong> Canadian Dollar slides with Oil prices, US CPI fails to keep US Dollar higher - Mitrade <code>google-news:US CPI inflation data</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI公布後美元指數未能持續走高，同步受到油價下跌拖累，加幣隨油價走貶。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,加幣</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:30]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> 美8月CPI不冷不熱！美股道瓊大漲600點 | NOWNEWS今日新聞 - LINE TODAY <code>google-news:美國 CPI 通膨</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI數據不冷不熱，符合或略優於極端預期，激勵美股道瓊工業指數大漲600點。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DJI</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:47]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> US Consumer Inflation Picks up in August - gvwire.com <code>google-news:inflation CPI</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月消費者通膨升溫，加劇市場對聯準會（Fed）升息及維持高利率的擔憂。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,SPY</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:42]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 油價回落與科技股拉抬打贏CPI 美股開盤全面上漲| 國際焦點 - 太報 TaiSounds <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價回落與科技股強力買盤抵銷了美國8月CPI升溫的負面情緒，美股開盤全面走高。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,NVDA,SPY</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:41]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][neutral]</strong> Here’s the inflation breakdown for August 2026 — in one chart - CNBC <code>google-news:inflation CPI</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI細項顯示通膨結構變化，直接牽動聯準會後續貨幣政策走向與市場資產配置。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> August Consumer Inflation Hits Three-Month High as Core CPI Unexpectedly Accelerates - Yahoo Finance <code>google-news:inflation CPI</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI創三個月高點且核心CPI意外加速，強化通膨頑固訊號，對股債雙市形成壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> Stock Market Today: Dow, S&amp;P 500, Nasdaq Open Up After CPI Inflation Report; Micron, Oracle, Marvell, More Movers - Barron's <code>google-news:inflation CPI</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI數據公布後，美股三大指數開盤上揚，道瓊、標普與那斯達克皆走高，科技股如Micron、Oracle與Marvell表現活躍。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DJI,SPX,IXIC,MU,ORCL,MRVL</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:36]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][neutral]</strong> Stock Market Today: Dow Opens Higher; Odds of Rate Hike Jump After Inflation Report — Live Updates - WSJ <code>google-news:inflation CPI</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI公布後，通膨數據顯示黏著性，市場對聯準會升息的機率預期上升，但道瓊指數仍開高，顯示股市反應複雜。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DJI</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:33]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> U.S. Stocks Rise, Treasury Yields Slip Despite Stubborn Inflation - WSJ <code>google-news:Treasury yields</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 儘管美國8月CPI通膨數據表現僵固，美股依然走高，同時美國公債殖利率下滑，顯示市場對風險資產的胃納仍強。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>US10Y</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[regulation][neutral]</strong> How Minnesota Became the Front Line in the Fight Over Prediction Markets <code>nytbusiness</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 明尼蘇達州禁預測市場引發聯邦訴訟，對整體金融與加密預測平台合規性帶來潛在監管變數。</p>
+</li>
+<li>
+<p><strong>[09-11 22:34]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> Oil prices fall after double-digit weekly gains above $100 <code>cnbc</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價自百元高檔回落，終結連漲勢頭，緩解能源成本壓力，利好通膨降溫。</p>
+</li>
+<li>
+<p><strong>[09-11 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> US consumer sentiment deteriorates in September, inflation expectations rise <code>investing-com</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 9月美國消費者信心惡化且通膨預期上升，加重停滯性通膨擔憂，不利消費類股。</p>
+</li>
+<li>
+<p><strong>[09-11 22:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][positive]</strong> 【即時新聞】8月CPI符合預期！美國10年期公債(US10Y)殖利率回跌，相關債券ETF一次看 - CMoney投資網誌 <code>google-news:美國 CPI 通膨</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI符合預期，美債殖利率回跌，利好美國公債與相關債券ETF價格反彈。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>US10Y</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:31]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> CPI Report Live Updates: Elevated Inflation Keeps Pressure on Fed to Raise Interest Rates - The New York Times <code>google-news:inflation CPI</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI顯示通膨持續，維持聯準會升息與鷹派壓力，美元與美債殖利率面臨波動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:31]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> Trump dismisses AI extinction risks as more than a dozen OpenAI, Anthropic insiders call for a slowdown <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 川普淡化AI末日風險，與內部呼籲放緩發展形成對比，AI產業政策監管方向仍具爭議。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,MSFT</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> The iPhone Duo enters China’s crowded foldable market — and faces a price test <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 蘋果摺疊機進入中國市場面臨當地高性價比品牌強烈競爭，價格測試考驗市占率。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>AAPL</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:31]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[crypto][negative]</strong> Solana slips as Fed hike bets rise: could $90 become the next battleground? - Cryptonews.net <code>google-news:Federal Reserve rate decision</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 聯準會升息預期升溫推動下，Solana等加密貨幣價格下滑，市場測試關鍵支撐位。</li>
+<li><strong style="color:#174ea6">標的</strong>: <code>SOL</code></li>
+</ul>
+<p><strong>其他同時段收錄（未分析，共 3 筆）</strong>：</p>
+<ul>
+<li><strong>[09-11 23:31]</strong> Investors are all wrong about demography（<code>marketwatch</code>）</li>
+<li><strong>[09-11 23:37]</strong> Ryanair boss O'Leary defends 'high-fare rapists' airlines remarks（<code>bbcbusiness</code>）</li>
+<li><strong>[09-11 23:23]</strong> Record U.S. cyclosporiasis outbreak is over, CDC says（<code>cnbc</code>）</li>
+</ul>
+<hr />
+<h2 id="_2">市場行情快照</h2>
+<pre><code>加權指數            46,184.85    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-1.61%
+台積電              2,410.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-1.63%
+鴻海                 248.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-1.20%
+聯發科              4,585.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-2.86%
+台達電              1,620.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-3.28%
+富邦金                148.50  TWD ―+0.00%
+S&amp;P 500          7,667.14    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.99%
+納斯達克            26,373.11    點 <span style="color:#c0392b;font-weight:bold">▲</span>+1.12%
+費城半導體指數         11,854.00    點 <span style="color:#c0392b;font-weight:bold">▲</span>+2.07%
+道瓊              52,589.88    點 <span style="color:#c0392b;font-weight:bold">▲</span>+1.01%
+日經225           64,011.34    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-1.93%
+上證指數             3,888.11    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-1.18%
+Apple              334.12  USD <span style="color:#c0392b;font-weight:bold">▲</span>+2.31%
+Microsoft          495.86  USD <span style="color:#c0392b;font-weight:bold">▲</span>+0.70%
+NVIDIA             219.21  USD <span style="color:#c0392b;font-weight:bold">▲</span>+0.39%
+Amazon             255.77  USD <span style="color:#c0392b;font-weight:bold">▲</span>+1.54%
+Tesla              364.43  USD <span style="color:#c0392b;font-weight:bold">▲</span>+0.24%
+美元/日圓              153.68  JPY <span style="color:#c0392b;font-weight:bold">▲</span>+0.07%
+美元/台幣               31.60  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+0.44%
+歐元/美元                1.16  EUR <span style="color:#2e7d32;font-weight:bold">▼</span>-0.21%
+美元/人民幣               6.70  CNY <span style="color:#2e7d32;font-weight:bold">▼</span>-0.21%
+WTI原油               99.83  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-2.59%
+布蘭特原油              105.25  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-2.21%
+黃金               4,409.60  USD <span style="color:#c0392b;font-weight:bold">▲</span>+1.03%
+美元指數DXY             99.07    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-0.02%
+美債10年殖利率             4.95    % <span style="color:#c0392b;font-weight:bold">▲</span>+0.12%
+</code></pre>
+<blockquote>
+<p>（快照資料時間：2026-09-12 00:22，台股收盤為最近一個交易日）</p>
+</blockquote>
+<h2 id="severity-2">重大事件（severity ≥ 2）</h2>
+<ul>
+<li><strong>[09-11 23:49]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][neutral]</strong> Week Ahead for FX, Bonds: All Eyes on Fed Rate Decision - WSJ</li>
+<li><strong style="color:#174ea6">影響</strong>: 市場聚焦聯準會利率決策與美國8月CPI數據，公債殖利率與匯市波動加劇，資金轉趨觀望。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:48]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[商品(油金)][positive]</strong> Gold climbs on dip-buying, Fed rate hike bets rise after US inflation data - The Korea Times</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 受美國通膨數據與聯準會升息預期影響，黃金現逢低買盤推升，避險與抗通膨需求增溫。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>黃金</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:42]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Investors brace for possible rate hike at uncertain Fed meeting</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 投資人警戒美國聯準會可能在不確定會議中意外升息，金融市場風險偏好轉趨保守。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[商品(油金)][negative]</strong> 油輪遇襲激增！國際油價飆逾6%雙雙衝破百美元大關 - 四季線上4gTV</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油輪遇襲激增導致國際油價飆逾6%並衝破百美元大關，推升全球能源成本與輸入性通膨壓力。</p>
+</li>
+<li>
+<p><strong>[09-11 23:36]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> US consumers faced more high prices in August as Iran war raised energy costs - The Guardian</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI顯示消費者面臨更高物價，主因地緣衝突與伊朗戰爭導致能源成本飆高，強化通膨頑固性。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> 油價破百、美債殖利率攀升 阮慕驊點出科技股3大壓力 | 蕭宥宸 | 新聞 - 風傳媒</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價破百與美債殖利率攀升加重科技股估值壓力，對股市構成負面衝擊。</p>
+</li>
+<li>
+<p><strong>[09-11 23:34]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][positive]</strong> 美國8月CPI數據持平，道瓊強彈逾600點帶動AI伺服器供應鏈營收創高！-財經焦點情報站 - CMoney投資網誌</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI數據持平，激勵道瓊強彈，並由強勁營收帶動AI伺服器供應鏈走揚。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TSM,NVDA</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> 美國9月密大消費者信心驟降 一年期通膨預期升至4.6% - news.cnyes.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國9月密大消費者信心驟降且一年期通膨預期升至4.6%，增加停滯性通膨擔憂。</p>
+</li>
+<li>
+<p><strong>[09-11 23:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> IEA Sees 5.7 Million Bpd Oil Supply Plunge as Gulf Recovery Slips to 2027 - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: IEA預期墨西哥灣原油供應至2027年面臨大幅短缺，推升能源商品價格。</p>
+</li>
+<li>
+<p><strong>[09-11 23:26]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 台積電營收創高卻跌40元！現在能撿？財經專家給答案 - NOWnews今日新聞</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台積電營收創高但股價逆勢下跌40元，反映市場先前已部分預支利多或受大盤籌碼影響。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TSM</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:24]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][neutral]</strong> August Inflation Remains Steady Amid Rising Energy Prices - hardwareretailing.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國8月CPI通膨數據在能源價格攀升下保持穩定，符合市場對通膨僵固性的預期。</p>
+</li>
+<li>
+<p><strong>[09-11 23:23]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Forget the Fed. The Bank of Japan could deliver next week’s market shock.</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 日本央行可能帶來市場震撼，引發資金對日圓及全球資產配置的重新評估，對美股與全球股市構成潛在波動壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:19]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[商品(油金)][negative]</strong> 葉門青年運動攻佔紅海戰略要地 國際油價恐破百美元大關 - 民視新聞網</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 葉門青年運動攻佔紅海戰略要地，推升原油供應中斷疑慮，國際油價恐逼近或突破百美元大關，利多商品市場、利空全球股市與債市。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>布蘭特原油,WTI</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:18]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Fed rate-hike case builds as inflation fails to cool - Reuters</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI通膨數據未能如期冷卻，強化聯準會升息預期，推升美債殖利率並壓抑股價表現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債殖利率</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:16]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Stocks Fall For Week As Oil Prices, Yields Soar, But End On High Note - Investor's Business Daily</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 受油價與美債殖利率飆升影響，美股週線收跌，反映總體經濟與通膨壓力對股市的直接衝擊。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[匯市][positive]</strong> Dollar edges higher against Swiss franc after US inflation data - marketscreener.com</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI通膨數據公佈後，美元走強，對非美貨幣如瑞郎與主要外匯形成壓抑。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:09]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> FMI releases statement on August 2026 CPI Food Price numbers - Mass Market Retailers</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: FMI發布美國8月CPI食品價格數據，印證整體通膨黏著度高，增加民眾生活成本與通膨預期。</p>
+</li>
+<li>
+<p><strong>[09-11 23:09]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Elevated Inflation Keeps Pressure on Fed to Raise Rates</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 受美國8月CPI報告影響，市場定價聯準會下週升息一碼機率飆升至90%，全面衝擊全球金融資產定價。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債殖利率,2330</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:08]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 胡塞武裝襲擊沙烏地油設施，國際油價飆升拖累美股 - 行銷人</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 胡塞武裝襲擊沙烏地油設施導致油價飆升，加劇通膨與經濟成長放緩擔憂，直接拖累美股大盤走勢。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:07]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> Banks Hike Oil Price Forecasts on Prolonged Gulf Disruptions - EnergyNow.com</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 大型銀行因波斯灣局勢長期中斷而上調油價預測，進一步強化商品市場的多頭預期與通膨黏著度。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>布蘭特原油</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:04]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[商品(油金)][negative]</strong> 伊朗封鎖荷姆茲海峽推升油價 將赴阿曼與波斯灣各國會談 - 民視新聞網</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 伊朗封鎖荷姆茲海峽的威脅推升油價，波斯灣地緣政治風險急遽升高，對全球能源供應鏈造成系統性威脅。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>布蘭特原油</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:01]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> 通膨陰火再起：高油價、運費飆漲與AI資本競逐，美國經濟被「上層繁榮」撐住？ - CMoney投資網誌</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 高油價、運費飆漲與AI資本競逐推升通膨隱憂，美國CPI數據顯示核心通膨月增0.3%，增添聯準會貨幣政策壓力，對股債市形成潛在壓抑。</p>
+</li>
+<li>
+<p><strong>[09-11 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> 油價走跌只是喘口氣？中東危機仍推周線狂漲逾8%</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 儘管單日小幅拉回，中東危機仍推動油價周線狂漲逾8%，柴油均價突破對民生與企業成本形成沉重壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>WTI,布蘭特原油</code></p>
+</li>
+<li>
+<p><strong>[09-11 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> 油價走跌只是喘口氣？中東危機仍推周線狂漲逾8% - news.cnyes.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 中東危機推升國際油價周線狂漲逾8%，儘管短線回檔但高油價威脅持續，牽動全球能源成本與通膨預期。</p>
+</li>
+<li>
+<p><strong>[09-11 22:57]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 台股重挫755點守住4萬6 專家曝美國CPI是短線小關卡：「它」才是真正大魔王 - Yahoo新聞</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股重挫755點，美國CPI為短線關卡，市場更擔憂總經與產業結構的大魔王挑戰，拖累台股權值股表現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:54]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][neutral]</strong> 5 Things That Investors Might Consider Ahead Of The Fed's Rate Decision (US2Y) - Seeking Alpha</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 聯準會利率決策前夕，美國2年期公債殖利率緊盯通膨與就業數據，債市波動加劇，影響資金成本定價。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>US2Y</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:54]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Gasoline Rebound Lifts U.S. Consumer Inflation in August; Core Up 0.3% - Modern Distribution Management</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國8月CPI顯示汽油價格反彈推升消費者通膨，核心CPI月增0.3%，高於市場預期，打擊市場對通膨迅速降溫的樂觀情緒。</p>
+</li>
+<li>
+<p><strong>[09-11 22:52]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[匯市][negative]</strong> Canadian Dollar slides with Oil prices, US CPI fails to keep US Dollar higher - Mitrade</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI公布後美元指數未能持續走高，同步受到油價下跌拖累，加幣隨油價走貶。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,加幣</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:47]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> US Consumer Inflation Picks up in August - gvwire.com</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月消費者通膨升溫，加劇市場對聯準會（Fed）升息及維持高利率的擔憂。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,SPY</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:43]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> 【美國】8 月核心 CPI 略超預期，9 月聯準會升息機率升至九成！ | 財經Ｍ平方短評 - LINE TODAY</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月核心CPI略超預期，年增率達3.4%，9月聯準會升息機率飆升至九成，引發債市拋售與股市壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債10年期殖利率,SPY</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:42]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[商品(油金)][positive]</strong> Oil tanker rates hit record highs following Iran, US shipping attacks</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 伊朗與美國船隻衝突激化，導致油輪運費創歷史新高，推升航運與能源相關成本。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>油輪,能源股</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:42]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 油價回落與科技股拉抬打贏CPI 美股開盤全面上漲 - Yahoo新聞</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 國際油價回跌與科技股拉抬抵銷了CPI數據的負面衝擊，美股開盤全面上揚，科技巨頭展現抗跌韌性。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:42]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 油價回落與科技股拉抬打贏CPI 美股開盤全面上漲| 國際焦點 - 太報 TaiSounds</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價回落與科技股強力買盤抵銷了美國8月CPI升溫的負面情緒，美股開盤全面走高。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,NVDA,SPY</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:41]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][neutral]</strong> Here’s the inflation breakdown for August 2026 — in one chart - CNBC</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI細項顯示通膨結構變化，直接牽動聯準會後續貨幣政策走向與市場資產配置。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:38]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 不懼升息壓力！美股開盤四大指數齊漲　台指期夜盤上漲234點</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI雖推升升息預期，但美股四大指數與台指期夜盤逆勢齊漲，台積電ADR同步上揚。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>台指期,2330,SPY</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> August Consumer Inflation Hits Three-Month High as Core CPI Unexpectedly Accelerates - Yahoo Finance</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI創三個月高點且核心CPI意外加速，強化通膨頑固訊號，對股債雙市形成壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> Stock Market Today: Dow, S&amp;P 500, Nasdaq Open Up After CPI Inflation Report; Micron, Oracle, Marvell, More Movers - Barron's</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI數據公布後，美股三大指數開盤上揚，道瓊、標普與那斯達克皆走高，科技股如Micron、Oracle與Marvell表現活躍。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DJI,SPX,IXIC,MU,ORCL,MRVL</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][positive]</strong> 【即時新聞】8月CPI符合預期！美國10年期公債(US10Y)殖利率回跌，相關債券ETF一次看 - CMoney投資網誌</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI符合預期，美債殖利率回跌，利好美國公債與相關債券ETF價格反彈。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>US10Y</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:36]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][neutral]</strong> Stock Market Today: Dow Opens Higher; Odds of Rate Hike Jump After Inflation Report — Live Updates - WSJ</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI公布後，通膨數據顯示黏著性，市場對聯準會升息的機率預期上升，但道瓊指數仍開高，顯示股市反應複雜。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DJI</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:34]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> Oil prices fall after double-digit weekly gains above $100</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價自百元高檔回落，終結連漲勢頭，緩解能源成本壓力，利好通膨降溫。</p>
+</li>
+<li>
+<p><strong>[09-11 22:33]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> 國際能源總署調降今年石油需求激勵　美股三大指數開盤上揚</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 國際能源總署(IEA)調降今年石油需求預期，舒緩通膨壓力，激勵美股三大指數全面上揚，那斯達克漲1.21%。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>IXIC,DJI</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:33]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> U.S. Stocks Rise, Treasury Yields Slip Despite Stubborn Inflation - WSJ</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 儘管美國8月CPI通膨數據表現僵固，美股依然走高，同時美國公債殖利率下滑，顯示市場對風險資產的胃納仍強。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>US10Y</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:31]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> CPI Report Live Updates: Elevated Inflation Keeps Pressure on Fed to Raise Interest Rates - The New York Times</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI顯示通膨持續，維持聯準會升息與鷹派壓力，美元與美債殖利率面臨波動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> US consumer sentiment deteriorates in September, inflation expectations rise</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 9月美國消費者信心惡化且通膨預期上升，加重停滯性通膨擔憂，不利消費類股。</p>
+</li>
+<li>
+<p><strong>[09-11 22:30]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> 美8月CPI不冷不熱！美股道瓊大漲600點 | NOWNEWS今日新聞 - LINE TODAY</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI數據不冷不熱，符合或略優於極端預期，激勵美股道瓊工業指數大漲600點。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DJI</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> UAE Rethinks 5-Gigawatt AI Campus After Iran Targets US Assets in Gulf - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 伊朗針對波灣美軍資產，導致阿拉伯聯合大公國（UAE）重新評估5吉瓦的AI園區計畫，地緣政治風險升溫對區域能源與科技投資造成干擾。</p>
+</li>
+<li>
+<p><strong>[09-11 22:29]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][mixed]</strong> 財經一週：油價再破百、歐洲央行升息1碼、蘋果正式參戰摺疊 - 天下雜誌</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價再破百、歐洲央行升息1碼，加上蘋果正式參戰摺疊機市場，牽動全球總經成本、匯市與特定科技供應鏈。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>AAPL</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:28]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[地緣政治][negative]</strong> Trump says he has no regrets about starting the Iran war as U.S. dials up economic pressure</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 川普表示不後悔對伊朗開戰，地緣政治風險與荷姆茲海峽封鎖隱憂推升油價，對全球股市構成壓抑，但利好能源與原物料相關資產。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>00715L</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:27]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> 美股3大指數盤初漲逾1%　投資人評估美最新通膨數據</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國勞工部公布最新CPI通膨數據，投資人評估後美股三大指數盤初漲逾1%，市場情緒暫時偏向樂觀。</p>
+</li>
+<li>
+<p><strong>[09-11 22:27]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Sticky US inflation justifies a Fed rate hike - Forex Factory</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI顯示通膨黏著性高，市場認為這合理化了聯準會未來進一步升息的必要性，對債市與高估值資產構成壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>US10Y,美元指數</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:26]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> 今日最夯 ETF／美伊衝突再起、油價大漲 00715L 大漲12.1% | 基金天地 | 理財 - 經濟日報</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美伊衝突再起與油價大漲帶動期貨ETF大漲12.1%，與前篇重複報導，強化能源多頭趨勢。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>00715L</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:26]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> 今日最夯 ETF／美伊衝突再起、油價大漲 00715L 大漲12.1% - 經濟日報</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美伊衝突再起推升國際油價大漲，期街口布蘭特正2（00715L）單日大漲12.1%，資金明顯流入能源期信商品。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>00715L</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:25]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Bond yields near multi-year peaks, Wall Street surges on accelerating US prices</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國8月CPI加速上升推升通膨風險，導致全球債市下跌、公債殖利率逼近多年高點，華爾街股市則因物價加速上漲出現波動與分歧。</p>
+</li>
+<li>
+<p><strong>[09-11 22:24]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 國際油價回跌激勵美股早盤反彈三大指數齊步上揚 - finance.ftvnews.com.tw</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 國際油價回跌舒緩通膨壓力，激勵美股早盤反彈，三大指數走揚。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:22]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> US prices remain high as fuel costs squeeze household budgets</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月通膨率報3.4%，燃料成本持續擠壓家庭預算，顯示通膨黏著度高，消費動能恐遭削弱。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:22]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> US inflation holds steady as diesel prices pass $6 a gallon</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國勞工部公布最新美國8月CPI通膨數據年增3.4%，顯示通膨持穩但具黏著性，且柴油價格突破每加侖6美元，加劇企業運輸與生產成本壓力。</p>
+</li>
+<li>
+<p><strong>[09-11 22:22]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> All the ways $6 diesel and rising gas prices are about to make your life more expensive — from commuting to grocery shopping</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 柴油與燃油價格處於高檔，將全面推升交通與民生消費成本，加劇通膨黏著度。</p>
+</li>
+<li>
+<p><strong>[09-11 22:19]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][neutral]</strong> 【即時新聞】美國8月CPI月增0.4%！能源價格狂飆推升通膨，這類物價卻意外持平 - CMoney投資網誌</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國8月CPI月增0.4%，能源價格飆升推升整體通膨，顯示物價具備相當黏著度。</p>
+</li>
+<li>
+<p><strong>[09-11 22:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> August consumer inflation cements Fed rate hike odds. What Wall Street is saying - CNBC</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI顯示通膨升溫，市場對聯準會(Fed)升息預期急遽升溫，衝擊債市與美元波動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[09-11 22:14]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> August CPI shows sticky core inflation ahead of Fed meeting - HousingWire</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 8月CPI數據顯示核心通膨具黏著度，增添FOMC會議前夕的利率政策變數。</li>
+</ul>
+<hr />
+<h2 id="_3">分類彙整</h2>
+<h3 id="14">股市（14）</h3>
+<ul>
+<li><strong>[09-11 23:34]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> 美國8月CPI數據持平，道瓊強彈逾600點帶動AI伺服器供應鏈營收創高！-財經焦點情報站 - CMoney投資網誌</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國8月CPI數據持平，激勵道瓊強彈，並由強勁營收帶動AI伺服器供應鏈走揚。</p>
+</li>
+<li>
+<p><strong>[09-11 23:26]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> 台積電營收創高卻跌40元！現在能撿？財經專家給答案 - NOWnews今日新聞</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台積電營收創高但股價逆勢下跌40元，反映市場先前已部分預支利多或受大盤籌碼影響。</p>
+</li>
+<li>
+<p><strong>[09-11 23:16]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Stocks Fall For Week As Oil Prices, Yields Soar, But End On High Note - Investor's Business Daily</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 受油價與美債殖利率飆升影響，美股週線收跌，反映總體經濟與通膨壓力對股市的直接衝擊。</p>
+</li>
+<li>
+<p><strong>[09-11 23:08]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 胡塞武裝襲擊沙烏地油設施，國際油價飆升拖累美股 - 行銷人</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 胡塞武裝襲擊沙烏地油設施導致油價飆升，加劇通膨與經濟成長放緩擔憂，直接拖累美股大盤走勢。</p>
+</li>
+<li>
+<p><strong>[09-11 23:02]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> #GSPC S&amp;P 500指數 - 羅賓漢八月資料顯示投資者仍有理由持續關注- 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 羅賓漢八月數據顯示散戶投資者維持關注美股，對S&amp;P 500指數帶來支撐，市場情緒偏向穩定。</p>
+</li>
+<li>
+<p><strong>[09-11 22:57]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 台股重挫755點守住4萬6 專家曝美國CPI是短線小關卡：「它」才是真正大魔王 - Yahoo新聞</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股重挫755點，美國CPI為短線關卡，市場更擔憂總經與產業結構的大魔王挑戰，拖累台股權值股表現。</p>
+</li>
+<li>
+<p><strong>[09-11 22:42]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 油價回落與科技股拉抬打贏CPI 美股開盤全面上漲 - Yahoo新聞</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 國際油價回跌與科技股拉抬抵銷了CPI數據的負面衝擊，美股開盤全面上揚，科技巨頭展現抗跌韌性。</p>
+</li>
+<li>
+<p><strong>[09-11 22:42]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 油價回落與科技股拉抬打贏CPI 美股開盤全面上漲| 國際焦點 - 太報 TaiSounds</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價回落與科技股強力買盤抵銷了美國8月CPI升溫的負面情緒，美股開盤全面走高。</p>
+</li>
+<li>
+<p><strong>[09-11 22:38]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 不懼升息壓力！美股開盤四大指數齊漲　台指期夜盤上漲234點</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國8月CPI雖推升升息預期，但美股四大指數與台指期夜盤逆勢齊漲，台積電ADR同步上揚。</p>
+</li>
+<li>
+<p><strong>[09-11 22:33]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> 國際油價回跌激勵美股早盤反彈三大指數齊步上揚 | 民視新聞網 - LINE TODAY</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 國際油價回跌激勵美股早盤反彈，三大指數齊步上揚，紓解了市場對能源成本推升通膨的恐慌情緒。</p>
+</li>
+<li>
+<p><strong>[09-11 22:31]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Trump dismisses AI extinction risks as more than a dozen OpenAI, Anthropic insiders call for a slowdown</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 川普淡化AI末日風險，與內部呼籲放緩發展形成對比，AI產業政策監管方向仍具爭議。</p>
+</li>
+<li>
+<p><strong>[09-11 22:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> The iPhone Duo enters China’s crowded foldable market — and faces a price test</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 蘋果摺疊機進入中國市場面臨當地高性價比品牌強烈競爭，價格測試考驗市占率。</p>
+</li>
+<li>
+<p><strong>[09-11 22:24]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 國際油價回跌激勵美股早盤反彈三大指數齊步上揚 - finance.ftvnews.com.tw</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 國際油價回跌舒緩通膨壓力，激勵美股早盤反彈，三大指數走揚。</p>
+</li>
+<li>
+<p><strong>[09-11 22:22]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Nasdaq, Dow and S&amp;P 500 Rise as Oil Prices Retreat - FXEmpire</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價回落緩解通膨壓力，推動美股三大指數（Nasdaq, Dow, S&amp;P 500）走揚。</li>
+</ul>
+<h3 id="3">債市（3）</h3>
+<ul>
+<li><strong>[09-11 23:49]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> Week Ahead for FX, Bonds: All Eyes on Fed Rate Decision - WSJ</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 市場聚焦聯準會利率決策與美國8月CPI數據，公債殖利率與匯市波動加劇，資金轉趨觀望。</p>
+</li>
+<li>
+<p><strong>[09-11 22:54]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> 5 Things That Investors Might Consider Ahead Of The Fed's Rate Decision (US2Y) - Seeking Alpha</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 聯準會利率決策前夕，美國2年期公債殖利率緊盯通膨與就業數據，債市波動加劇，影響資金成本定價。</p>
+</li>
+<li>
+<p><strong>[09-11 22:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 【即時新聞】8月CPI符合預期！美國10年期公債(US10Y)殖利率回跌，相關債券ETF一次看 - CMoney投資網誌</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI符合預期，美債殖利率回跌，利好美國公債與相關債券ETF價格反彈。</li>
+</ul>
+<h3 id="3_1">匯市（3）</h3>
+<ul>
+<li><strong>[09-11 23:32]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Bitcoin Rises as Markets Digest Inflation Data Ahead of Fed Rate Decision - Decrypt</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 市場消化通膨數據並等待聯準會利率決議，比特幣價格走高，風險資產情緒回穩。</p>
+</li>
+<li>
+<p><strong>[09-11 23:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Dollar edges higher against Swiss franc after US inflation data - marketscreener.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國8月CPI通膨數據公佈後，美元走強，對非美貨幣如瑞郎與主要外匯形成壓抑。</p>
+</li>
+<li>
+<p><strong>[09-11 22:52]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Canadian Dollar slides with Oil prices, US CPI fails to keep US Dollar higher - Mitrade</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國8月CPI公布後美元指數未能持續走高，同步受到油價下跌拖累，加幣隨油價走貶。</li>
+</ul>
+<h3 id="15">商品(油金)（15）</h3>
+<ul>
+<li><strong>[09-11 23:48]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> Gold climbs on dip-buying, Fed rate hike bets rise after US inflation data - The Korea Times</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 受美國通膨數據與聯準會升息預期影響，黃金現逢低買盤推升，避險與抗通膨需求增溫。</p>
+</li>
+<li>
+<p><strong>[09-11 23:45]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> 美投資7300萬美元推「未來礦場」計畫 將採礦業變科技實驗室</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國能源部推動未來礦場計畫，將傳統採礦業轉型科技實驗室，對相關礦業技術與自動化設備利多。</p>
+</li>
+<li>
+<p><strong>[09-11 23:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 油輪遇襲激增！國際油價飆逾6%雙雙衝破百美元大關 - 四季線上4gTV</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油輪遇襲激增導致國際油價飆逾6%並衝破百美元大關，推升全球能源成本與輸入性通膨壓力。</p>
+</li>
+<li>
+<p><strong>[09-11 23:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> IEA Sees 5.7 Million Bpd Oil Supply Plunge as Gulf Recovery Slips to 2027 - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: IEA預期墨西哥灣原油供應至2027年面臨大幅短缺，推升能源商品價格。</p>
+</li>
+<li>
+<p><strong>[09-11 23:19]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 葉門青年運動攻佔紅海戰略要地 國際油價恐破百美元大關 - 民視新聞網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 葉門青年運動攻佔紅海戰略要地，推升原油供應中斷疑慮，國際油價恐逼近或突破百美元大關，利多商品市場、利空全球股市與債市。</p>
+</li>
+<li>
+<p><strong>[09-11 23:07]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Banks Hike Oil Price Forecasts on Prolonged Gulf Disruptions - EnergyNow.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 大型銀行因波斯灣局勢長期中斷而上調油價預測，進一步強化商品市場的多頭預期與通膨黏著度。</p>
+</li>
+<li>
+<p><strong>[09-11 23:04]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 伊朗封鎖荷姆茲海峽推升油價 將赴阿曼與波斯灣各國會談 - 民視新聞網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 伊朗封鎖荷姆茲海峽的威脅推升油價，波斯灣地緣政治風險急遽升高，對全球能源供應鏈造成系統性威脅。</p>
+</li>
+<li>
+<p><strong>[09-11 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 油價走跌只是喘口氣？中東危機仍推周線狂漲逾8%</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 儘管單日小幅拉回，中東危機仍推動油價周線狂漲逾8%，柴油均價突破對民生與企業成本形成沉重壓力。</p>
+</li>
+<li>
+<p><strong>[09-11 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 油價走跌只是喘口氣？中東危機仍推周線狂漲逾8% - news.cnyes.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 中東危機推升國際油價周線狂漲逾8%，儘管短線回檔但高油價威脅持續，牽動全球能源成本與通膨預期。</p>
+</li>
+<li>
+<p><strong>[09-11 22:42]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> Oil tanker rates hit record highs following Iran, US shipping attacks</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 伊朗與美國船隻衝突激化，導致油輪運費創歷史新高，推升航運與能源相關成本。</p>
+</li>
+<li>
+<p><strong>[09-11 22:34]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Oil prices fall after double-digit weekly gains above $100</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價自百元高檔回落，終結連漲勢頭，緩解能源成本壓力，利好通膨降溫。</p>
+</li>
+<li>
+<p><strong>[09-11 22:33]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 國際能源總署調降今年石油需求激勵　美股三大指數開盤上揚</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 國際能源總署(IEA)調降今年石油需求預期，舒緩通膨壓力，激勵美股三大指數全面上揚，那斯達克漲1.21%。</p>
+</li>
+<li>
+<p><strong>[09-11 22:29]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[mixed]</strong> 財經一週：油價再破百、歐洲央行升息1碼、蘋果正式參戰摺疊 - 天下雜誌</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價再破百、歐洲央行升息1碼，加上蘋果正式參戰摺疊機市場，牽動全球總經成本、匯市與特定科技供應鏈。</p>
+</li>
+<li>
+<p><strong>[09-11 22:26]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 今日最夯 ETF／美伊衝突再起、油價大漲 00715L 大漲12.1% | 基金天地 | 理財 - 經濟日報</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美伊衝突再起與油價大漲帶動期貨ETF大漲12.1%，與前篇重複報導，強化能源多頭趨勢。</p>
+</li>
+<li>
+<p><strong>[09-11 22:26]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 今日最夯 ETF／美伊衝突再起、油價大漲 00715L 大漲12.1% - 經濟日報</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美伊衝突再起推升國際油價大漲，期街口布蘭特正2（00715L）單日大漲12.1%，資金明顯流入能源期信商品。</li>
+</ul>
+<h3 id="3_2">地緣政治（3）</h3>
+<ul>
+<li><strong>[09-11 23:10]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Iran, Russia condemn Western economic sanctions and urge BRICS bloc to deepen economic ties</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 伊朗與俄羅斯呼籲BRICS深化經貿與去美元化，雖具地緣政治意義，但對現行全球金融體系影響緩慢。</p>
+</li>
+<li>
+<p><strong>[09-11 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> UAE Rethinks 5-Gigawatt AI Campus After Iran Targets US Assets in Gulf - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 伊朗針對波灣美軍資產，導致阿拉伯聯合大公國（UAE）重新評估5吉瓦的AI園區計畫，地緣政治風險升溫對區域能源與科技投資造成干擾。</p>
+</li>
+<li>
+<p><strong>[09-11 22:28]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Trump says he has no regrets about starting the Iran war as U.S. dials up economic pressure</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 川普表示不後悔對伊朗開戰，地緣政治風險與荷姆茲海峽封鎖隱憂推升油價，對全球股市構成壓抑，但利好能源與原物料相關資產。</li>
+</ul>
+<h3 id="35">總體經濟（35）</h3>
+<ul>
+<li><strong>[09-11 23:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 美投資環境考驗外資 韓國經驗凸顯公平性關鍵</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 南韓企業赴美投資計畫逐步執行，對美國基礎建設與能源供應鏈正面，台韓外資赴美布局競爭壓力增加。</p>
+</li>
+<li>
+<p><strong>[09-11 23:42]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Investors brace for possible rate hike at uncertain Fed meeting</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 投資人警戒美國聯準會可能在不確定會議中意外升息，金融市場風險偏好轉趨保守。</p>
+</li>
+<li>
+<p><strong>[09-11 23:36]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> US consumers faced more high prices in August as Iran war raised energy costs - The Guardian</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國8月CPI顯示消費者面臨更高物價，主因地緣衝突與伊朗戰爭導致能源成本飆高，強化通膨頑固性。</p>
+</li>
+<li>
+<p><strong>[09-11 23:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 油價破百、美債殖利率攀升 阮慕驊點出科技股3大壓力 | 蕭宥宸 | 新聞 - 風傳媒</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價破百與美債殖利率攀升加重科技股估值壓力，對股市構成負面衝擊。</p>
+</li>
+<li>
+<p><strong>[09-11 23:31]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Investors are all wrong about demography</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 探討人口結構縮減對經濟的長期影響，對短期金融市場無直接衝擊。</p>
+</li>
+<li>
+<p><strong>[09-11 23:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 美國9月密大消費者信心驟降 一年期通膨預期升至4.6% - news.cnyes.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國9月密大消費者信心驟降且一年期通膨預期升至4.6%，增加停滯性通膨擔憂。</p>
+</li>
+<li>
+<p><strong>[09-11 23:24]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> August Inflation Remains Steady Amid Rising Energy Prices - hardwareretailing.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國8月CPI通膨數據在能源價格攀升下保持穩定，符合市場對通膨僵固性的預期。</p>
+</li>
+<li>
+<p><strong>[09-11 23:23]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Forget the Fed. The Bank of Japan could deliver next week’s market shock.</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 日本央行可能帶來市場震撼，引發資金對日圓及全球資產配置的重新評估，對美股與全球股市構成潛在波動壓力。</p>
+</li>
+<li>
+<p><strong>[09-11 23:18]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Fed rate-hike case builds as inflation fails to cool - Reuters</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國8月CPI通膨數據未能如期冷卻，強化聯準會升息預期，推升美債殖利率並壓抑股價表現。</p>
+</li>
+<li>
+<p><strong>[09-11 23:09]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> FMI releases statement on August 2026 CPI Food Price numbers - Mass Market Retailers</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: FMI發布美國8月CPI食品價格數據，印證整體通膨黏著度高，增加民眾生活成本與通膨預期。</p>
+</li>
+<li>
+<p><strong>[09-11 23:09]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Elevated Inflation Keeps Pressure on Fed to Raise Rates</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 受美國8月CPI報告影響，市場定價聯準會下週升息一碼機率飆升至90%，全面衝擊全球金融資產定價。</p>
+</li>
+<li>
+<p><strong>[09-11 23:01]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 通膨陰火再起：高油價、運費飆漲與AI資本競逐，美國經濟被「上層繁榮」撐住？ - CMoney投資網誌</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 高油價、運費飆漲與AI資本競逐推升通膨隱憂，美國CPI數據顯示核心通膨月增0.3%，增添聯準會貨幣政策壓力，對股債市形成潛在壓抑。</p>
+</li>
+<li>
+<p><strong>[09-11 22:54]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Gasoline Rebound Lifts U.S. Consumer Inflation in August; Core Up 0.3% - Modern Distribution Management</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國8月CPI顯示汽油價格反彈推升消費者通膨，核心CPI月增0.3%，高於市場預期，打擊市場對通膨迅速降溫的樂觀情緒。</p>
+</li>
+<li>
+<p><strong>[09-11 22:49]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Fed Chair Tries to Set the Record Straight - News at IU</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Fed主席談話試圖釐清政策方向，在通膨與地緣政治交織下，市場對聯準會下一步動向高度敏感。</p>
+</li>
+<li>
+<p><strong>[09-11 22:47]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> US Consumer Inflation Picks up in August - gvwire.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國8月消費者通膨升溫，加劇市場對聯準會（Fed）升息及維持高利率的擔憂。</p>
+</li>
+<li>
+<p><strong>[09-11 22:43]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 【美國】8 月核心 CPI 略超預期，9 月聯準會升息機率升至九成！ | 財經Ｍ平方短評 - LINE TODAY</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國8月核心CPI略超預期，年增率達3.4%，9月聯準會升息機率飆升至九成，引發債市拋售與股市壓力。</p>
+</li>
+<li>
+<p><strong>[09-11 22:41]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> Here’s the inflation breakdown for August 2026 — in one chart - CNBC</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國8月CPI細項顯示通膨結構變化，直接牽動聯準會後續貨幣政策走向與市場資產配置。</p>
+</li>
+<li>
+<p><strong>[09-11 22:41]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> AARP Projects 2027 Social Security COLA at 3.6%</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: AARP預估2027年社會安全生活費調整（COLA）達3.6%，反映長期通膨預期維持高於歷史平均。</p>
+</li>
+<li>
+<p><strong>[09-11 22:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> August Consumer Inflation Hits Three-Month High as Core CPI Unexpectedly Accelerates - Yahoo Finance</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國8月CPI創三個月高點且核心CPI意外加速，強化通膨頑固訊號，對股債雙市形成壓力。</p>
+</li>
+<li>
+<p><strong>[09-11 22:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> Stock Market Today: Dow, S&amp;P 500, Nasdaq Open Up After CPI Inflation Report; Micron, Oracle, Marvell, More Movers - Barron's</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國8月CPI數據公布後，美股三大指數開盤上揚，道瓊、標普與那斯達克皆走高，科技股如Micron、Oracle與Marvell表現活躍。</p>
+</li>
+<li>
+<p><strong>[09-11 22:36]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> Stock Market Today: Dow Opens Higher; Odds of Rate Hike Jump After Inflation Report — Live Updates - WSJ</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國8月CPI公布後，通膨數據顯示黏著性，市場對聯準會升息的機率預期上升，但道瓊指數仍開高，顯示股市反應複雜。</p>
+</li>
+<li>
+<p><strong>[09-11 22:33]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> U.S. Stocks Rise, Treasury Yields Slip Despite Stubborn Inflation - WSJ</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 儘管美國8月CPI通膨數據表現僵固，美股依然走高，同時美國公債殖利率下滑，顯示市場對風險資產的胃納仍強。</p>
+</li>
+<li>
+<p><strong>[09-11 22:31]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> CPI Report Live Updates: Elevated Inflation Keeps Pressure on Fed to Raise Interest Rates - The New York Times</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國8月CPI顯示通膨持續，維持聯準會升息與鷹派壓力，美元與美債殖利率面臨波動。</p>
+</li>
+<li>
+<p><strong>[09-11 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> US consumer sentiment deteriorates in September, inflation expectations rise</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 9月美國消費者信心惡化且通膨預期上升，加重停滯性通膨擔憂，不利消費類股。</p>
+</li>
+<li>
+<p><strong>[09-11 22:30]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> 美8月CPI不冷不熱！美股道瓊大漲600點 | NOWNEWS今日新聞 - LINE TODAY</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國8月CPI數據不冷不熱，符合或略優於極端預期，激勵美股道瓊工業指數大漲600點。</p>
+</li>
+<li>
+<p><strong>[09-11 22:27]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> 美股3大指數盤初漲逾1%　投資人評估美最新通膨數據</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國勞工部公布最新CPI通膨數據，投資人評估後美股三大指數盤初漲逾1%，市場情緒暫時偏向樂觀。</p>
+</li>
+<li>
+<p><strong>[09-11 22:27]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Sticky US inflation justifies a Fed rate hike - Forex Factory</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國8月CPI顯示通膨黏著性高，市場認為這合理化了聯準會未來進一步升息的必要性，對債市與高估值資產構成壓力。</p>
+</li>
+<li>
+<p><strong>[09-11 22:25]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Bond yields near multi-year peaks, Wall Street surges on accelerating US prices</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國8月CPI加速上升推升通膨風險，導致全球債市下跌、公債殖利率逼近多年高點，華爾街股市則因物價加速上漲出現波動與分歧。</p>
+</li>
+<li>
+<p><strong>[09-11 22:25]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> India's Central Bank to Pull $10.5 Billion From Banks to Curb Inflation Risk - finance.biggo.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 印度央行自銀行體系回收105億美元以抑制通膨風險，屬於印度國內流動性緊縮措施，對全球宏觀影響有限。</p>
+</li>
+<li>
+<p><strong>[09-11 22:22]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> US prices remain high as fuel costs squeeze household budgets</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國8月通膨率報3.4%，燃料成本持續擠壓家庭預算，顯示通膨黏著度高，消費動能恐遭削弱。</p>
+</li>
+<li>
+<p><strong>[09-11 22:22]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> US inflation holds steady as diesel prices pass $6 a gallon</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國勞工部公布最新美國8月CPI通膨數據年增3.4%，顯示通膨持穩但具黏著性，且柴油價格突破每加侖6美元，加劇企業運輸與生產成本壓力。</p>
+</li>
+<li>
+<p><strong>[09-11 22:22]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> All the ways $6 diesel and rising gas prices are about to make your life more expensive — from commuting to grocery shopping</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 柴油與燃油價格處於高檔，將全面推升交通與民生消費成本，加劇通膨黏著度。</p>
+</li>
+<li>
+<p><strong>[09-11 22:19]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> 【即時新聞】美國8月CPI月增0.4%！能源價格狂飆推升通膨，這類物價卻意外持平 - CMoney投資網誌</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國8月CPI月增0.4%，能源價格飆升推升整體通膨，顯示物價具備相當黏著度。</p>
+</li>
+<li>
+<p><strong>[09-11 22:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> August consumer inflation cements Fed rate hike odds. What Wall Street is saying - CNBC</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國8月CPI顯示通膨升溫，市場對聯準會(Fed)升息預期急遽升溫，衝擊債市與美元波動。</p>
+</li>
+<li>
+<p><strong>[09-11 22:14]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> August CPI shows sticky core inflation ahead of Fed meeting - HousingWire</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 8月CPI數據顯示核心通膨具黏著度，增添FOMC會議前夕的利率政策變數。</li>
+</ul>
+<h3 id="5">其他（5）</h3>
+<ul>
+<li><strong>[09-11 23:37]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Ryanair boss O'Leary defends 'high-fare rapists' airlines remarks</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 僅為個別企業高層言論爭議，對整體金融市場無實質影響。</p>
+</li>
+<li>
+<p><strong>[09-11 23:23]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Record U.S. cyclosporiasis outbreak is over, CDC says</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國寄生蟲病疫情結束，事件已落幕，對整體金融市場無實質影響。</p>
+</li>
+<li>
+<p><strong>[09-11 22:30]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> ‘I’m the executor’: My two siblings and I inherited an IRA. Can we just cash it out?</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 個人理財與繼承IRA帳戶的稅務與規定詢問，對整體金融市場無實質影響。</p>
+</li>
+<li>
+<p><strong>[09-11 22:22]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 美國公布8月CPI「符合預期」主要指數強彈！道瓊開飆600點 台積電ADR、台指期夜盤齊揚 - Yahoo股市</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[09-11 22:16]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> On my late husband’s birthday, I want to pay for every customer at his favorite restaurant. Is this a good idea?</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 個人生活瑣事與信用卡刷卡問題，對金融市場無實質影響。</li>
+</ul>
+<hr />
+<h2 id="_4">全部事件</h2>
+<ul>
+<li><strong>[09-11 23:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 美投資環境考驗外資 韓國經驗凸顯公平性關鍵 <code>yahoo-tw-finance</code></li>
+<li><strong>[09-11 23:49]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Week Ahead for FX, Bonds: All Eyes on Fed Rate Decision - WSJ <code>google-news:Federal Reserve rate decision</code></li>
+<li><strong>[09-11 23:48]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Gold climbs on dip-buying, Fed rate hike bets rise after US inflation data - The Korea Times <code>google-news:US CPI inflation data</code></li>
+<li><strong>[09-11 23:45]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 美投資7300萬美元推「未來礦場」計畫 將採礦業變科技實驗室 <code>yahoo-tw-finance</code></li>
+<li><strong>[09-11 23:42]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Investors brace for possible rate hike at uncertain Fed meeting <code>investing-com</code></li>
+<li><strong>[09-11 23:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 油輪遇襲激增！國際油價飆逾6%雙雙衝破百美元大關 - 四季線上4gTV <code>google-news:油價</code></li>
+<li><strong>[09-11 23:37]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Ryanair boss O'Leary defends 'high-fare rapists' airlines remarks <code>bbcbusiness</code></li>
+<li><strong>[09-11 23:36]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> US consumers faced more high prices in August as Iran war raised energy costs - The Guardian <code>google-news:US CPI inflation data</code></li>
+<li><strong>[09-11 23:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 油價破百、美債殖利率攀升 阮慕驊點出科技股3大壓力 | 蕭宥宸 | 新聞 - 風傳媒 <code>google-news:油價</code></li>
+<li><strong>[09-11 23:34]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 美國8月CPI數據持平，道瓊強彈逾600點帶動AI伺服器供應鏈營收創高！-財經焦點情報站 - CMoney投資網誌 <code>google-news:美國 CPI 通膨</code></li>
+<li><strong>[09-11 23:32]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Bitcoin Rises as Markets Digest Inflation Data Ahead of Fed Rate Decision - Decrypt <code>google-news:Federal Reserve rate decision</code></li>
+<li><strong>[09-11 23:31]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Investors are all wrong about demography <code>marketwatch</code></li>
+<li><strong>[09-11 23:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 美國9月密大消費者信心驟降 一年期通膨預期升至4.6% - news.cnyes.com <code>google-news:美國 CPI 通膨</code></li>
+<li><strong>[09-11 23:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> IEA Sees 5.7 Million Bpd Oil Supply Plunge as Gulf Recovery Slips to 2027 - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[09-11 23:26]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 台積電營收創高卻跌40元！現在能撿？財經專家給答案 - NOWnews今日新聞 <code>google-news:台股 大跌</code></li>
+<li><strong>[09-11 23:24]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> August Inflation Remains Steady Amid Rising Energy Prices - hardwareretailing.com <code>google-news:inflation CPI</code></li>
+<li><strong>[09-11 23:23]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Record U.S. cyclosporiasis outbreak is over, CDC says <code>cnbc</code></li>
+<li><strong>[09-11 23:23]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Forget the Fed. The Bank of Japan could deliver next week’s market shock. <code>marketwatch</code></li>
+<li><strong>[09-11 23:19]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 葉門青年運動攻佔紅海戰略要地 國際油價恐破百美元大關 - 民視新聞網 <code>google-news:油價</code></li>
+<li><strong>[09-11 23:18]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Fed rate-hike case builds as inflation fails to cool - Reuters <code>google-news:inflation CPI</code></li>
+<li><strong>[09-11 23:16]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Stocks Fall For Week As Oil Prices, Yields Soar, But End On High Note - Investor's Business Daily <code>google-news:inflation CPI</code></li>
+<li><strong>[09-11 23:10]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Iran, Russia condemn Western economic sanctions and urge BRICS bloc to deepen economic ties <code>cnbc</code></li>
+<li><strong>[09-11 23:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Dollar edges higher against Swiss franc after US inflation data - marketscreener.com <code>google-news:US CPI inflation data</code></li>
+<li><strong>[09-11 23:09]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> FMI releases statement on August 2026 CPI Food Price numbers - Mass Market Retailers <code>google-news:inflation CPI</code></li>
+<li><strong>[09-11 23:09]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Elevated Inflation Keeps Pressure on Fed to Raise Rates <code>nytbusiness</code></li>
+<li><strong>[09-11 23:08]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 胡塞武裝襲擊沙烏地油設施，國際油價飆升拖累美股 - 行銷人 <code>google-news:油價</code></li>
+<li><strong>[09-11 23:07]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Banks Hike Oil Price Forecasts on Prolonged Gulf Disruptions - EnergyNow.com <code>google-news:oil price crude</code></li>
+<li><strong>[09-11 23:04]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 伊朗封鎖荷姆茲海峽推升油價 將赴阿曼與波斯灣各國會談 - 民視新聞網 <code>google-news:油價</code></li>
+<li><strong>[09-11 23:02]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> #GSPC S&amp;P 500指數 - 羅賓漢八月資料顯示投資者仍有理由持續關注- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[09-11 23:01]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 通膨陰火再起：高油價、運費飆漲與AI資本競逐，美國經濟被「上層繁榮」撐住？ - CMoney投資網誌 <code>google-news:油價</code></li>
+<li><strong>[09-11 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 油價走跌只是喘口氣？中東危機仍推周線狂漲逾8% <code>yahoo-tw-finance</code></li>
+<li><strong>[09-11 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 油價走跌只是喘口氣？中東危機仍推周線狂漲逾8% - news.cnyes.com <code>google-news:油價</code></li>
+<li><strong>[09-11 22:57]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 台股重挫755點守住4萬6 專家曝美國CPI是短線小關卡：「它」才是真正大魔王 - Yahoo新聞 <code>google-news:美國 CPI 通膨</code></li>
+<li><strong>[09-11 22:54]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 5 Things That Investors Might Consider Ahead Of The Fed's Rate Decision (US2Y) - Seeking Alpha <code>google-news:Federal Reserve rate decision</code></li>
+<li><strong>[09-11 22:54]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Gasoline Rebound Lifts U.S. Consumer Inflation in August; Core Up 0.3% - Modern Distribution Management <code>google-news:inflation CPI</code></li>
+<li><strong>[09-11 22:52]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Canadian Dollar slides with Oil prices, US CPI fails to keep US Dollar higher - Mitrade <code>google-news:US CPI inflation data</code></li>
+<li><strong>[09-11 22:49]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Fed Chair Tries to Set the Record Straight - News at IU <code>google-news:Treasury yields</code></li>
+<li><strong>[09-11 22:47]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> US Consumer Inflation Picks up in August - gvwire.com <code>google-news:inflation CPI</code></li>
+<li><strong>[09-11 22:43]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 【美國】8 月核心 CPI 略超預期，9 月聯準會升息機率升至九成！ | 財經Ｍ平方短評 - LINE TODAY <code>google-news:美國 CPI 通膨</code></li>
+<li><strong>[09-11 22:42]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Oil tanker rates hit record highs following Iran, US shipping attacks <code>investing-com</code></li>
+<li><strong>[09-11 22:42]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 油價回落與科技股拉抬打贏CPI 美股開盤全面上漲 - Yahoo新聞 <code>google-news:油價</code></li>
+<li><strong>[09-11 22:42]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 油價回落與科技股拉抬打贏CPI 美股開盤全面上漲| 國際焦點 - 太報 TaiSounds <code>google-news:油價</code></li>
+<li><strong>[09-11 22:41]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Here’s the inflation breakdown for August 2026 — in one chart - CNBC <code>google-news:inflation CPI</code></li>
+<li><strong>[09-11 22:41]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> AARP Projects 2027 Social Security COLA at 3.6% <code>nytbusiness</code></li>
+<li><strong>[09-11 22:38]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 不懼升息壓力！美股開盤四大指數齊漲　台指期夜盤上漲234點 <code>yahoo-tw-stock</code></li>
+<li><strong>[09-11 22:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> August Consumer Inflation Hits Three-Month High as Core CPI Unexpectedly Accelerates - Yahoo Finance <code>google-news:inflation CPI</code></li>
+<li><strong>[09-11 22:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Stock Market Today: Dow, S&amp;P 500, Nasdaq Open Up After CPI Inflation Report; Micron, Oracle, Marvell, More Movers - Barron's <code>google-news:inflation CPI</code></li>
+<li><strong>[09-11 22:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 【即時新聞】8月CPI符合預期！美國10年期公債(US10Y)殖利率回跌，相關債券ETF一次看 - CMoney投資網誌 <code>google-news:美國 CPI 通膨</code></li>
+<li><strong>[09-11 22:36]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Stock Market Today: Dow Opens Higher; Odds of Rate Hike Jump After Inflation Report — Live Updates - WSJ <code>google-news:inflation CPI</code></li>
+<li><strong>[09-11 22:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> How Minnesota Became the Front Line in the Fight Over Prediction Markets <code>nytbusiness</code></li>
+<li><strong>[09-11 22:34]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Oil prices fall after double-digit weekly gains above $100 <code>cnbc</code></li>
+<li><strong>[09-11 22:33]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 國際油價回跌激勵美股早盤反彈三大指數齊步上揚 | 民視新聞網 - LINE TODAY <code>google-news:油價</code></li>
+<li><strong>[09-11 22:33]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 國際能源總署調降今年石油需求激勵　美股三大指數開盤上揚 <code>yahoo-tw-stock</code></li>
+<li><strong>[09-11 22:33]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> U.S. Stocks Rise, Treasury Yields Slip Despite Stubborn Inflation - WSJ <code>google-news:Treasury yields</code></li>
+<li><strong>[09-11 22:31]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Solana slips as Fed hike bets rise: could $90 become the next battleground? - Cryptonews.net <code>google-news:Federal Reserve rate decision</code></li>
+<li><strong>[09-11 22:31]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> CPI Report Live Updates: Elevated Inflation Keeps Pressure on Fed to Raise Interest Rates - The New York Times <code>google-news:inflation CPI</code></li>
+<li><strong>[09-11 22:31]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Trump dismisses AI extinction risks as more than a dozen OpenAI, Anthropic insiders call for a slowdown <code>cnbc</code></li>
+<li><strong>[09-11 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> US consumer sentiment deteriorates in September, inflation expectations rise <code>investing-com</code></li>
+<li><strong>[09-11 22:30]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 美8月CPI不冷不熱！美股道瓊大漲600點 | NOWNEWS今日新聞 - LINE TODAY <code>google-news:美國 CPI 通膨</code></li>
+<li><strong>[09-11 22:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> The iPhone Duo enters China’s crowded foldable market — and faces a price test <code>cnbc</code></li>
+<li><strong>[09-11 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> UAE Rethinks 5-Gigawatt AI Campus After Iran Targets US Assets in Gulf - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[09-11 22:30]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> ‘I’m the executor’: My two siblings and I inherited an IRA. Can we just cash it out? <code>marketwatch</code></li>
+<li><strong>[09-11 22:29]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 財經一週：油價再破百、歐洲央行升息1碼、蘋果正式參戰摺疊 - 天下雜誌 <code>google-news:油價</code></li>
+<li><strong>[09-11 22:28]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Trump says he has no regrets about starting the Iran war as U.S. dials up economic pressure <code>cnbc</code></li>
+<li><strong>[09-11 22:27]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 美股3大指數盤初漲逾1%　投資人評估美最新通膨數據 <code>yahoo-tw-stock</code></li>
+<li><strong>[09-11 22:27]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Sticky US inflation justifies a Fed rate hike - Forex Factory <code>google-news:US CPI inflation data</code></li>
+<li><strong>[09-11 22:26]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 今日最夯 ETF／美伊衝突再起、油價大漲 00715L 大漲12.1% | 基金天地 | 理財 - 經濟日報 <code>google-news:油價</code></li>
+<li><strong>[09-11 22:26]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 今日最夯 ETF／美伊衝突再起、油價大漲 00715L 大漲12.1% - 經濟日報 <code>google-news:油價</code></li>
+<li><strong>[09-11 22:25]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Bond yields near multi-year peaks, Wall Street surges on accelerating US prices <code>investing-com</code></li>
+<li><strong>[09-11 22:25]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> India's Central Bank to Pull $10.5 Billion From Banks to Curb Inflation Risk - finance.biggo.com <code>google-news:central bank policy</code></li>
+<li><strong>[09-11 22:24]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 國際油價回跌激勵美股早盤反彈三大指數齊步上揚 - finance.ftvnews.com.tw <code>google-news:油價</code></li>
+<li><strong>[09-11 22:22]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> US prices remain high as fuel costs squeeze household budgets <code>bbcbusiness</code></li>
+<li><strong>[09-11 22:22]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> US inflation holds steady as diesel prices pass $6 a gallon <code>bbcbusiness</code></li>
+<li><strong>[09-11 22:22]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 美國公布8月CPI「符合預期」主要指數強彈！道瓊開飆600點 台積電ADR、台指期夜盤齊揚 - Yahoo股市 <code>google-news:美國 CPI 通膨</code></li>
+<li><strong>[09-11 22:22]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> All the ways $6 diesel and rising gas prices are about to make your life more expensive — from commuting to grocery shopping <code>marketwatch</code></li>
+<li><strong>[09-11 22:22]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Nasdaq, Dow and S&amp;P 500 Rise as Oil Prices Retreat - FXEmpire <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[09-11 22:19]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 【即時新聞】美國8月CPI月增0.4%！能源價格狂飆推升通膨，這類物價卻意外持平 - CMoney投資網誌 <code>google-news:美國 CPI 通膨</code></li>
+<li><strong>[09-11 22:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> August consumer inflation cements Fed rate hike odds. What Wall Street is saying - CNBC <code>google-news:inflation CPI</code></li>
+<li><strong>[09-11 22:16]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> On my late husband’s birthday, I want to pay for every customer at his favorite restaurant. Is this a good idea? <code>marketwatch</code></li>
+<li><strong>[09-11 22:14]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> August CPI shows sticky core inflation ahead of Fed meeting - HousingWire <code>google-news:inflation CPI</code></li>
+</ul>
+    </article>
+  
+</div>
+<footer>由金融情報系統自動發佈 · 僅供參考，不構成投資建議</footer>
+<script>
+const WEEK = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function nowParts(tz){
+  const p = {};
+  new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short', month: 'short',
+    day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
+  }).formatToParts(new Date()).forEach(x => p[x.type] = x.value);
+  return p;
+}
+function marketOpen(tz, open, close){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  return wd>=1 && wd<=5 && m>=open && m<close;
+}
+// Taiwan index-futures night session 15:00 -> next-day 05:00 (crosses midnight):
+// 15:00-24:00 Mon-Fri, plus 00:00-05:00 Tue-Sat (Sat 00:00-05:00 is Fri night session).
+function nightOpen(tz){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  if (m >= 5*60 && m < 15*60) return false;   // 05:00-15:00 recess
+  if (m >= 15*60) return wd >= 1 && wd <= 5;   // 15:00-24:00 Mon-Fri
+  return wd >= 2 && wd <= 6;                   // 00:00-05:00 Tue-Sat
+}
+function pad(n){ return String(n).padStart(2,'0'); }
+function setMkt(id, open, label){
+  const el = document.getElementById(id);
+  el.className = 'mkt ' + (open ? 'open' : 'closed');
+  el.textContent = (label ? label + ' ' : '') + (open ? '開盤中' : '未開盤');
+}
+function tick(){
+  const tw = nowParts('Asia/Taipei');
+  const ny = nowParts('America/New_York');
+  document.getElementById('clk-tw').textContent = pad(tw.hour)+':'+pad(tw.minute)+':'+pad(tw.second);
+  document.getElementById('clk-ny').textContent = pad(ny.hour)+':'+pad(ny.minute)+':'+pad(ny.second);
+  // Taiwan: TWSE weighted index 09:00-13:30; TX futures day 08:45-13:45; TX night 15:00-05:00
+  setMkt('tw-idx',  marketOpen('Asia/Taipei', 9*60, 13*60+30), '加權');
+  setMkt('tx-day',  marketOpen('Asia/Taipei', 8*60+45, 13*60+45), '期日盤');
+  setMkt('tx-night', nightOpen('Asia/Taipei'), '期夜盤');
+  // US: regular session 09:30-16:00 ET; after-hours 16:00-20:00 ET
+  setMkt('ny-mkt',  marketOpen('America/New_York', 9*60+30, 16*60), '美股');
+  setMkt('ny-night', marketOpen('America/New_York', 16*60, 20*60), '美股夜');
+}
+tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>
