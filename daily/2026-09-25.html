@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日報告 2026-09-25</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; margin: 0;
+         background: #f5f6f8; color: #1c1e21; line-height: 1.7; }
+  header { background: #1b2a4a; color: #fff; padding: 14px 24px;
+           display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  header h1 { font-size: 18px; margin: 0; flex: 1; }
+  header nav a { color: #cdd8ee; text-decoration: none; margin-left: 14px; font-size: 14px; }
+  header nav a:hover, header nav a.active { color: #fff; text-decoration: underline; }
+  #clock { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; font-size: 13px; }
+  .clk { background: rgba(255,255,255,.08); border-radius: 6px; padding: 4px 10px; }
+  .clk-city { color: #9fb0cf; margin-right: 6px; }
+  .clk-time { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .mkt { margin-left: 8px; font-size: 12px; padding: 1px 7px; border-radius: 9px; }
+  .mkt.open { background: #2e7d32; color: #fff; }
+  .mkt.closed { background: #5a6474; color: #fff; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 20px; }
+  .card { background: #fff; border-radius: 8px; padding: 18px 22px; margin: 14px 0;
+          box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .card h3 { margin: 0 0 6px; }
+  .card a { color: #1b2a4a; text-decoration: none; }
+  .card a:hover { text-decoration: underline; }
+  .muted { color: #666; font-size: 13px; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px;
+           color: #fff; margin-left: 6px; }
+  .b-daily { background: #2e7d32; }
+  .b-deep { background: #b45309; }
+  .day-nav { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+  .day-nav a { font-size: 13px; padding: 3px 10px; background: #e8ecf3; border-radius: 12px;
+               color: #33415c; text-decoration: none; }
+  .day-nav a:hover { background: #d2dbea; }
+  article.card { line-height: 1.15; }
+  article.card p { margin: 3px 0; }
+  article.card ul, article.card ol { margin: 3px 0 6px; padding-left: 22px; }
+  article.card h1, article.card h2, article.card h3 { padding-bottom: 4px; }
+  article.card h1, article.card h2 { border-bottom: 2px solid #33415c; }
+  article.card h1 { font-size: 30px; margin-top: 8px; }
+  article.card h2 { font-size: 23px; margin-top: 12px; color: #1b2a4a;
+        border-left: 6px solid #1459c8; padding-left: 12px; }
+  article.card h3 { font-size: 19px; margin-top: 10px; color: #24365c;
+        background: #eef4fb; border-radius: 6px; padding: 4px 12px; }
+  article.card h4 { font-size: 17px; margin-top: 18px; color: #145c3a;
+        background: #e8f5ee; border-left: 4px solid #2e7d32;
+        padding: 5px 10px; border-radius: 4px; }
+  article.card h5 { font-size: 15px; margin-top: 14px; color: #4a5568;
+        font-weight: 600; }
+  article.card h4, article.card h5 { margin-bottom: 2px; }
+  article.card strong { font-weight: 700; }
+  article.card blockquote { border-left: 4px solid #9fb0cf; margin: 4px 0;
+        padding: 2px 12px; color: #4a5568; background: #f4f6fa; }
+  article.card hr { border: none; border-top: 1px dashed #c3ccdb; margin: 12px 0; }
+  article.card code { background: #eef0f4; padding: 1px 5px; border-radius: 4px;
+        font-size: 14px; font-family: Consolas, monospace; }
+  article.card pre { background: #1b2a4a; color: #e6ecf7; padding: 14px; border-radius: 8px; overflow-x: auto; }
+  article.card pre code { background: transparent; color: inherit; padding: 0; }
+  article.card table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+  article.card th, article.card td { border: 1px solid #d8dce3; padding: 6px 10px; }
+  article.card th { background: #eef1f6; }
+  article.card a { color: #1459c8; }
+  footer { text-align: center; color: #999; font-size: 12px; padding: 20px; }
+</style>
+</head>
+<body>
+  <header>
+  <h1>金融情報系統報告</h1>
+  <nav>
+    <a href="../index.html" class="">首頁</a>
+    <a href="../calendar.html" class="">行事曆</a>
+    <a href="../daily/2026-09-25.html" class="active">最新每日</a>
+    <a href="../deep/2026-09-24-pm.html" class="">最新深度</a>
+  </nav>
+  <div id="clock">
+    <span class="clk"><span class="clk-city">台北</span><span class="clk-time" id="clk-tw">--:--:--</span><span class="mkt closed" id="tw-idx">…</span><span class="mkt closed" id="tx-day">…</span><span class="mkt closed" id="tx-night">…</span></span>
+    <span class="clk"><span class="clk-city">紐約</span><span class="clk-time" id="clk-ny">--:--:--</span><span class="mkt closed" id="ny-mkt">…</span><span class="mkt closed" id="ny-night">…</span></span>
+  </div>
+</header>
+<div class="wrap">
+  
+    <div class="day-nav">
+      <a href="../index.html">← 首頁</a>
+      
+        
+        <a href="../daily/2026-09-25.html">2026-09-25</a>
+        
+        <a href="../daily/2026-09-24.html">2026-09-24</a>
+        
+        <a href="../daily/2026-09-23.html">2026-09-23</a>
+        
+        <a href="../daily/2026-09-22.html">2026-09-22</a>
+        
+        <a href="../daily/2026-09-21.html">2026-09-21</a>
+        
+        <a href="../daily/2026-09-20.html">2026-09-20</a>
+        
+        <a href="../daily/2026-09-19.html">2026-09-19</a>
+        
+        <a href="../daily/2026-09-18.html">2026-09-18</a>
+        
+        <a href="../daily/2026-09-17.html">2026-09-17</a>
+        
+        <a href="../daily/2026-09-16.html">2026-09-16</a>
+        
+        <a href="../daily/2026-09-15.html">2026-09-15</a>
+        
+        <a href="../daily/2026-09-14.html">2026-09-14</a>
+        
+        <a href="../daily/2026-09-13.html">2026-09-13</a>
+        
+        <a href="../daily/2026-09-12.html">2026-09-12</a>
+        
+        <a href="../daily/2026-09-11.html">2026-09-11</a>
+        
+        <a href="../daily/2026-09-10.html">2026-09-10</a>
+        
+        <a href="../daily/2026-09-09.html">2026-09-09</a>
+        
+        <a href="../daily/2026-09-08.html">2026-09-08</a>
+        
+        <a href="../daily/2026-09-07.html">2026-09-07</a>
+        
+        <a href="../daily/2026-09-06.html">2026-09-06</a>
+        
+        <a href="../daily/2026-09-05.html">2026-09-05</a>
+        
+        <a href="../daily/2026-09-04.html">2026-09-04</a>
+        
+        <a href="../daily/2026-09-03.html">2026-09-03</a>
+        
+        <a href="../daily/2026-09-02.html">2026-09-02</a>
+        
+        <a href="../daily/2026-09-01.html">2026-09-01</a>
+        
+        <a href="../daily/2026-08-31.html">2026-08-31</a>
+        
+        <a href="../daily/2026-08-30.html">2026-08-30</a>
+        
+        <a href="../daily/2026-08-29.html">2026-08-29</a>
+        
+        <a href="../daily/2026-08-28.html">2026-08-28</a>
+        
+        <a href="../daily/2026-08-27.html">2026-08-27</a>
+        
+        <a href="../daily/2026-08-26.html">2026-08-26</a>
+        
+        <a href="../daily/2026-08-25.html">2026-08-25</a>
+        
+        <a href="../daily/2026-08-24.html">2026-08-24</a>
+        
+        <a href="../daily/2026-08-23.html">2026-08-23</a>
+        
+        <a href="../daily/2026-08-22.html">2026-08-22</a>
+        
+        <a href="../daily/2026-08-21.html">2026-08-21</a>
+        
+        <a href="../daily/2026-08-20.html">2026-08-20</a>
+        
+        <a href="../daily/2026-08-19.html">2026-08-19</a>
+        
+        <a href="../daily/2026-08-18.html">2026-08-18</a>
+        
+        <a href="../daily/2026-08-17.html">2026-08-17</a>
+        
+        <a href="../daily/2026-08-16.html">2026-08-16</a>
+        
+        <a href="../daily/2026-08-15.html">2026-08-15</a>
+        
+        <a href="../daily/2026-08-14.html">2026-08-14</a>
+        
+        <a href="../daily/2026-08-13.html">2026-08-13</a>
+        
+        <a href="../daily/2026-08-12.html">2026-08-12</a>
+        
+        <a href="../daily/2026-08-11.html">2026-08-11</a>
+        
+        <a href="../daily/2026-08-10.html">2026-08-10</a>
+        
+        <a href="../daily/2026-08-09.html">2026-08-09</a>
+        
+        <a href="../daily/2026-08-08.html">2026-08-08</a>
+        
+        <a href="../daily/2026-08-07.html">2026-08-07</a>
+        
+        <a href="../daily/2026-08-06.html">2026-08-06</a>
+        
+        <a href="../daily/2026-08-05.html">2026-08-05</a>
+        
+        <a href="../daily/2026-08-04.html">2026-08-04</a>
+        
+        <a href="../daily/2026-08-03.html">2026-08-03</a>
+        
+        <a href="../daily/2026-08-02.html">2026-08-02</a>
+        
+      
+    </div>
+    <article class="card">
+      <div class="muted">2026-09-25
+        <span class="badge b-daily">
+          每日報告
+        </span>
+      </div>
+      <h1 id="2026-09-25">金融重點報告 2026-09-25</h1>
+<blockquote>
+<p>產出時間: 2026-09-25 00:52（台灣時間）
+資料截止: 09-25 00:26（收錄庫最新事件，若久久未前進代表蒐集上游疑中斷）
+品質儀表板: 資料新鮮度 ≤29min | 去重率 26.8% | 最大來源佔 15.2% | 驗證覆蓋 23.6% | ⚠️疑似誤殺 44
+本報告由 AI 自動生成，僅供參考，不構成投資建議。</p>
+</blockquote>
+<h2 id="_1">🆕 本次新增事件（置頂：最新產出）</h2>
+<blockquote>
+<p>本次新增 <strong>60 筆</strong>，重要 54 筆</p>
+</blockquote>
+<p><strong>重要事件（severity ≥ 1）</strong>：</p>
+<ul>
+<li><strong>[09-25 00:23]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> The S&amp;P 500’s newest tech stock is now its best performer <code>marketwatch</code></li>
+<li><strong style="color:#174ea6">影響</strong>: 資料儲存公司Everpure成為S&amp;P 500最新科技股中表現最佳者，帶動相關科技股氣氛。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>S&amp;P 500</code></p>
+</li>
+<li>
+<p><strong>[09-24 23:54]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> As diesel prices surge, Tesla makes its big play for the trucking market <code>marketwatch</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 柴油價格飆升為特斯拉重推重型電動卡車創造有利的市場切入時機。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TSLA</code></p>
+</li>
+<li>
+<p><strong>[09-24 22:57]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 3 things Micron investors need to watch as the stakes get higher <code>marketwatch</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美光即將公布財報，市場關注客戶協議、價格走勢與庫藏股，牽動半導體與台股記憶體供應鏈神經。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>MU,2330</code></p>
+</li>
+<li>
+<p><strong>[09-25 00:18]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][negative]</strong> Starbucks to Close 250 Stores in the US <code>nytbusiness</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 星巴克關閉美國250家未達預期的分店，對營運成本調整具短期陣痛，但長期有利利潤率。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SBUX</code></p>
+</li>
+<li>
+<p><strong>[09-25 00:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Mortgage Rates Hit 7% as Iran War Fallout Crushes a Weak Housing Market <code>nytbusiness</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 伊朗戰爭餘波推升美國30年期房貸利率突破7%，嚴重打擊美國房市與消費動能。</p>
+</li>
+<li>
+<p><strong>[09-25 00:15]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[其他][negative]</strong> More Than 167,000 Pounds of Meat With False Inspection Mark Are Recalled <code>nytbusiness</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國發生大規模肉品回收事件，影響食品供應鏈與相關食品安全檢驗。</p>
+</li>
+<li>
+<p><strong>[09-24 23:42]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[地緣政治][neutral]</strong> The court ordered Trump to restore access for CNN, MS Now and Politico last night. <code>nytbusiness</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 法院命令川普恢復特定媒體白宮採訪權，屬政治法律爭端，對金融市場無直接實質影響。</p>
+</li>
+<li>
+<p><strong>[09-24 23:08]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> 《強勢美股特報》P,BRKR,DUOL,MUSA等10檔 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Everpure股價強勢大漲，帶動個股與美股特定成長股投資情緒。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>P.US</code></p>
+</li>
+<li>
+<p><strong>[09-24 22:59]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][positive]</strong> 中國央行：繼續實施適度寬鬆貨幣政策 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 中國央行重申實施適度寬鬆貨幣政策並穩定匯率，有利於提振陸港股及大宗商品市場信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>人民幣</code></p>
+</li>
+<li>
+<p><strong>[09-24 22:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> A Weary Hollywood Celebrates the Prospect of Federal Funding <code>nytbusiness</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國國會研擬影視稅收補貼法案，利好美國本土影視製作與娛樂產業相關企業。</p>
+</li>
+<li>
+<p><strong>[09-24 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> 川普放話殲滅伊朗 伊朗總統痛批「霸凌心態」：絕不屈服 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 川普與伊朗總統在聯合國隔空交鋒，中東地緣政治緊張升溫，推升避險與能源價格波動預期。</p>
+</li>
+<li>
+<p><strong>[09-24 22:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][negative]</strong> 美債殖利率飆升 勾起投資人對金融海嘯的痛苦回憶 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美債10年期殖利率急升，對全球債市與風險資產評價構成重大壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[09-24 22:32]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> 陳建全：碩網全面打進AI建置 與伊藤忠合作創高成長飛輪 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 碩網全面打進AI客服建置並與伊藤忠合作，基本面表現強勁，吸引資金關注。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>7547</code></p>
+</li>
+<li>
+<p><strong>[09-25 00:02]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[地緣政治][neutral]</strong> White House blocks reporters despite judge’s order to restore access <code>cnbc</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 白宮與媒體禁令的司法衝突，對整體金融市場無直接實質影響。</p>
+</li>
+<li>
+<p><strong>[09-25 00:02]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> Oil prices rise sharply after Houthis fire missiles at Saudi Arabia <code>cnbc</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 胡塞武裝襲擊沙烏地引發地緣政治擔憂，推升原油價格走揚，增添通膨壓力。</p>
+</li>
+<li>
+<p><strong>[09-24 23:52]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Why US stock market crashes today? 3 reasons Dow Jones, Nasdaq and S&amp;P 500 are in deep red as tech stocks - The Economic Times <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股四大指數因科技股重挫收黑，市場面臨調節壓力與資金流出。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DJI,IXIC,SPX</code></p>
+</li>
+<li>
+<p><strong>[09-24 23:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> Hyundai expected to outsell Ford in third quarter as Detroit automakers lack hybrids <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 現代汽車因缺乏油電混合車布局，預期Q3銷量將超越福特，對底特律車廠傳統燃油車銷售形成警示。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>F,GM</code></p>
+</li>
+<li>
+<p><strong>[09-24 23:25]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][neutral]</strong> If There's a Stock Market Crash Ahead, History Highlights the Best Strategy for Investors - The Globe and Mail <code>google-news:stock market selloff</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 探討股市若面臨崩盤歷史上的最佳投資策略，屬教育性質評論，無實質市場衝擊。</p>
+</li>
+<li>
+<p><strong>[09-24 22:56]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> Stock Market Today: Dow Opens Lower on Global Bond Selloff — Live Updates - WSJ <code>google-news:stock market selloff</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 全球債市拋售潮引發美股道瓊指數開低，反映資金成本上升對股市評價的負面衝擊。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>道瓊指數,美債</code></p>
+</li>
+<li>
+<p><strong>[09-24 22:33]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Global Bond Selloff Drags Stocks - WSJ <code>google-news:stock market selloff</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 全球債券遭到拋售，進一步拖累歐美股市走低。</p>
+</li>
+<li>
+<p><strong>[09-25 00:01]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> 川普擬禁柴油出口抑通膨 專家示警恐推升汽油航空油價 - 民視財經網 <code>google-news:油價</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 川普擬禁柴油出口以壓抑國內通膨，但專家警告反將推升汽油與航空油價，增加能源成本。</p>
+</li>
+<li>
+<p><strong>[09-25 00:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[地緣政治][neutral]</strong> U.S. Invites Putin To G20 Summit In Miami - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國邀請普丁參與邁阿密G20峰會，釋放外交對話訊號，對大宗商品與地緣風險緩和有正面預期。</p>
+</li>
+<li>
+<p><strong>[09-24 23:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[商品(油金)][positive]</strong> Eni Wins 100% Stake in Indonesia's Sapukala Deepwater Block - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 義大利埃尼集團(Eni)獲得印尼深水區區塊100%權益，有利於其長期油氣產能與能源供應。</p>
+</li>
+<li>
+<p><strong>[09-24 23:05]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[商品(油金)][positive]</strong> Capricorn Energy Raises 2026 Output Expectations on Egypt Gains - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Capricorn Energy提高產量預期，對整體原油商品供給端有微幅推升壓力。</p>
+</li>
+<li>
+<p><strong>[09-24 23:03]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[匯市][positive]</strong> Analysts See US Dollar Resilience Despite Cheaper Crude Oil Prices - Exchange Rates UK <code>google-news:oil price crude</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 儘管原油價格走跌，美元展現韌性，支撐美元指數表現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[09-24 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> 油價、殖利率與聯準會升息預期壓抑金屬 黃金跌至4,265美元、白銀下挫1.34% - 新聞與統計 - IndexBox <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價、殖利率與聯準會升息預期壓抑，黃金跌至4,265美元，白銀下挫1.34%。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>黃金,白銀</code></p>
+</li>
+<li>
+<p><strong>[09-25 00:14]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> Rising Treasury yields could push car loan rates higher, experts say. What buyers need to know - CNBC <code>google-news:Treasury yields</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美債殖利率上升將推高車貸利率，進一步加重消費者財務負擔並壓抑汽車銷量。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美債</code></p>
+</li>
+<li>
+<p><strong>[09-25 00:09]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][negative]</strong> Bond Market Collapse Sends Yields to Decades-Old Highs. Dividend Stocks Are Most at Risk. - 24/7 Wall St. <code>google-news:Treasury yields</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 債市崩盤推升殖利率至數十年高點，高股息股票面臨資金磁吸效應與評價修正的最大風險。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美債</code></p>
+</li>
+<li>
+<p><strong>[09-25 00:05]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> The 'Magnificent Seven' is bucking the market trend. Why the jump in Treasury yields may be helping - CNBC <code>google-news:Treasury yields</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美債殖利率攀升反而支撐了科技巨頭Magnificent Seven的表現，吸引資金避險抗壓。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,AAPL,MSFT,GOOGL,AMZN,META,TSLA</code></p>
+</li>
+<li>
+<p><strong>[09-24 23:49]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> Midday Need to Know: Treasury yields climb, GoDaddy jumps &amp; more - TradingView <code>google-news:Treasury yields</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國公債殖利率攀升，對高估值科技股與債市構成壓抑，資金成本增加。</p>
+</li>
+<li>
+<p><strong>[09-24 23:44]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Stocks slide again as Treasury yields push higher, Oracle leads Nasdaq lower: Live updates - CNBC <code>google-news:Treasury yields</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 殖利率走高引發美股拉回，甲骨文(Oracle)等科技股領跌那斯達克。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>ORCL,NVDA,QQQ</code></p>
+</li>
+<li>
+<p><strong>[09-24 23:43]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][negative]</strong> Treasury yields hit highest since 2007, Bitcoin slides - Yahoo Finance <code>google-news:Treasury yields</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國公債殖利率創2007年以來新高，流動性收緊導致加密貨幣（比特幣）同步大跌。</p>
+</li>
+<li>
+<p><strong>[09-24 23:23]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[商品(油金)][negative]</strong> Bond yields surge to fresh two decade highs as oil prices hit $107 per barrel - NBC News <code>google-news:Treasury yields</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 債券殖利率創二十年新高且油價飆升至每桶107美元，對全球通膨與股市評價帶來雙重打擊。</p>
+</li>
+<li>
+<p><strong>[09-24 23:05]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][negative]</strong> Long-Term Treasury Yields Hit Highest Level Since 2004 - Newser <code>google-news:Treasury yields</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 長期美債殖利率創下2004年以來最高水準，引發全球債市拋售與美股評價面壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債</code></p>
+</li>
+<li>
+<p><strong>[09-24 22:55]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[匯市][neutral]</strong> USD/MXN (USDMXN) Moved Sharply on Sep 24: Are Central Bank Expectations Shifting? - tradingkey.com <code>google-news:central bank policy</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 墨西哥披索受央行預期轉變影響出現波動，對外匯市場影響侷限於新興市場貨幣。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>USD/MXN</code></p>
+</li>
+<li>
+<p><strong>[09-24 22:44]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> Dogecoin Falls 8% as Treasury Yields Hit 2007 High - Altcoin Buzz <code>google-news:Treasury yields</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美債殖利率創2007年高點，資金回流固定收益，引發高風險加密貨幣（如狗狗幣）下跌8%。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>狗狗幣</code></p>
+</li>
+<li>
+<p><strong>[09-24 22:32]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Why Palantir (PLTR) Can Still Outperform despite High Treasury Yields - TipRanks <code>google-news:Treasury yields</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Palantir在美債殖利率高漲環境下展現抗跌與優異表現潛力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>PLTR</code></p>
+</li>
+<li>
+<p><strong>[09-25 00:11]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 金管會重查CSM 壽險「未來獲利蓄水池」恐縮水 4大金控市值折價一次看 | 個人理財 | 理財 - 經濟日報 <code>google-news:金管會</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 金管會重查CSM（合約服務邊際），恐使壽險未來獲利蓄水池縮水，影響4大金控評價。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>金控</code></p>
+</li>
+<li>
+<p><strong>[09-24 22:40]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][negative]</strong> 台壽前員工A懸帳1653萬 金管會揭一條龍手法、官員直言「離譜」 - Yahoo新聞 <code>google-news:金管會</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台壽前員工懸帳案爆發，金管會揭露弊端，對金融股內控與合規要求形成警惕。</p>
+</li>
+<li>
+<p><strong>[09-24 22:39]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Google to test AI chips in space as Suncatcher project advances <code>seekingalpha</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Google推進Suncatcher專案將在太空測試AI晶片，展現技術前瞻性，對長線科技題材具正面宣示效果。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>GOOGL</code></p>
+</li>
+<li>
+<p><strong>[09-24 22:38]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> Surging bond yields mark end of decade-long TINA era <code>seekingalpha</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 債券殖利率飆升正式宣告長達十年的TINA（There Is No Alternative，股市無替代選擇）時代結束。</p>
+</li>
+<li>
+<p><strong>[09-24 22:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> Saudi oil exports surge to highest since start of Iran war on Hormuz ramp-up <code>seekingalpha</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 沙烏地阿拉伯石油出口創伊朗戰爭以來新高，有助於舒緩荷姆茲海峽的供應擔憂。</p>
+</li>
+<li>
+<p><strong>[09-24 22:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Oracle sends 'force majeure' notice about data center project — stock sinks 5% <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 甲骨文發出不可抗力通知延遲資料中心專案，引發市場對AI基礎建設資本支出回報與供應鏈進度的疑慮，重創股價。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>ORCL</code></p>
+</li>
+<li>
+<p><strong>[09-24 22:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Oil stocks drive TSX trading as energy shares extend gains, telecoms lag <code>investing-com</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 多倫多證券交易所受能源股強勢帶動續揚，電信股則相對落後，反映資金在景氣循環類股間輪動。</p>
+</li>
+<li>
+<p><strong>[09-24 22:44]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Meta wants to put its Muse AI assistant on your face — but will consumers buy in? <code>marketwatch</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Meta推出Muse AI助理獲摩根大通調升目標價，成為本週驅動科技股與AI應用題材的核心動能。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>META</code></p>
+</li>
+<li>
+<p><strong>[09-24 22:30]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 美債拋售加劇 那指慘跌200點 台指期夜盤翻黑下殺300點 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美債拋售加劇致美股那指大跌、台指期夜盤翻黑下殺，資金逃離風險資產。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>台指期</code></p>
+</li>
+<li>
+<p><strong>[09-24 22:28]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][neutral]</strong> Trump, Xi to talk Taiwan, AI, trade and Iran as DC summit kicks off <code>cnbc</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 川習會聚焦台灣、AI、貿易與伊朗等議題，峰會結果將左右美中關係與地緣政治走向。</p>
+</li>
+<li>
+<p><strong>[09-24 22:31]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> 中東局勢推升油價美債殖利率 美股三大指數全面走低 - 民視新聞網 <code>google-news:油價</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 中東局勢推升油價與美債殖利率，導致美股三大指數全面走低。</p>
+</li>
+<li>
+<p><strong>[09-24 22:49]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[匯市][positive]</strong> Bitcoin Rising Even As Treasury Yields Hover Near Multiyear Highs -- Market Talk - Moomoo <code>google-news:Treasury yields</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 在美國公債殖利率維持高檔之際，比特幣逆勢走強，顯示部分資金尋求避險或解構傳統資產相關性。</p>
+</li>
+<li>
+<p><strong>[09-24 22:44]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[匯市][negative]</strong> Dogecoin Falls 8% as Treasury Yields Hit 2007 High - altcoinbuzz.io <code>google-news:Treasury yields</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美債殖利率飆升至2007年高點，風險資產承受壓力，狗狗幣等高風險迷因幣跌幅顯著。</p>
+</li>
+<li>
+<p><strong>[09-24 22:41]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][negative]</strong> What the bond market is telling us as yields spike to 2-decade highs - Business Insider <code>google-news:Treasury yields</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國公債殖利率飆升至2十年高點，反映通膨與財政赤字擔憂，對全球股市評價與債市流動性構成嚴重擠壓。</p>
+</li>
+<li>
+<p><strong>[09-24 22:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> Money Moves Men Should Consider After the Fed’s September Decision - aol.com <code>google-news:Federal Reserve rate decision</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 聯準會9月決議後，市場重新評估資產配置與資金動向，影響股債市資金流向。</p>
+</li>
+<li>
+<p><strong>[09-24 22:47]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][negative]</strong> 新光人壽遭金管會重罰240萬元！台新新光金晚間發重訊回應 - 中天新聞網 <code>google-news:金管會</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 新光人壽遭金管會重罰240萬元，對台新新光金短期營運與合規形象帶來負面雜音。</p>
+</li>
+<li>
+<p><strong>[09-24 22:19]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][negative]</strong> Treasury Yields Near Multi-Decade Highs as Fed Eyes New Hike - La Voce di New York <code>google-news:Treasury yields</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國公債殖利率接近數十年高點，聯準會暗示可能進一步升息，壓抑全球股市估值並推升美元。</li>
+<li><strong style="color:#174ea6">標的</strong>: <code>TLT,美元指數</code></li>
+</ul>
+<p><strong>其他同時段收錄（未分析，共 6 筆）</strong>：</p>
+<ul>
+<li><strong>[09-25 00:00]</strong> I spend my time and money caring for my aging mother — yet she gave my brother $100,000. Should I pull back?（<code>marketwatch</code>）</li>
+<li><strong>[09-25 00:13]</strong> Brighthouse Financial deal spread and options flow decoded（<code>investing-com</code>）</li>
+<li><strong>[09-24 23:00]</strong> Federal Reserve Board issues enforcement action with former employee of Sandy Spring Bank（<code>fed</code>）</li>
+<li><strong>[09-24 22:23]</strong> Big business warns Trump against diesel export ban in joint letter（<code>cnbc</code>）</li>
+<li><strong>[09-24 22:17]</strong> White House Still Bars CNN, MS NOW and Politico Despite Court Blocking Trump’s Ban（<code>nytbusiness</code>）</li>
+<li><strong>[09-24 22:28]</strong> Everyone knows Social Security and Medicare are on the ropes. Here’s what to do instead of panicking.（<code>marketwatch</code>）</li>
+</ul>
+<hr />
+<h2 id="_2">市場行情快照</h2>
+<pre><code>加權指數            48,024.60    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-0.28%
+台積電              2,475.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-1.00%
+鴻海                 250.50  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-2.15%
+聯發科              5,285.00  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+1.93%
+台達電              1,910.00  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+0.53%
+富邦金                150.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-1.96%
+S&amp;P 500          7,711.85    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.08%
+納斯達克            26,941.07    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.02%
+費城半導體指數         12,481.24    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-0.42%
+道瓊              51,423.33    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-0.17%
+日經225           65,513.99    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.76%
+上證指數             3,888.37    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-1.22%
+Apple              338.14  USD <span style="color:#c0392b;font-weight:bold">▲</span>+0.33%
+Microsoft          496.82  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-0.75%
+NVIDIA             224.15  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-0.61%
+Amazon             248.76  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-0.21%
+Tesla              382.42  USD <span style="color:#c0392b;font-weight:bold">▲</span>+0.61%
+美元/日圓              158.75  JPY <span style="color:#c0392b;font-weight:bold">▲</span>+0.82%
+美元/台幣               31.77  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+0.29%
+歐元/美元                1.14  EUR <span style="color:#2e7d32;font-weight:bold">▼</span>-0.54%
+美元/人民幣               6.70  CNY <span style="color:#c0392b;font-weight:bold">▲</span>+0.05%
+WTI原油               93.46  USD <span style="color:#c0392b;font-weight:bold">▲</span>+1.41%
+布蘭特原油              104.38  USD <span style="color:#c0392b;font-weight:bold">▲</span>+1.26%
+黃金               4,319.60  USD <span style="color:#c0392b;font-weight:bold">▲</span>+0.03%
+美元指數DXY            101.17    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.07%
+美債10年殖利率             5.13    % <span style="color:#c0392b;font-weight:bold">▲</span>+0.37%
+</code></pre>
+<blockquote>
+<p>（快照資料時間：2026-09-25 00:52，台股收盤為最近一個交易日）</p>
+</blockquote>
+<h2 id="severity-2">重大事件（severity ≥ 2）</h2>
+<ul>
+<li><strong>[09-25 00:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Mortgage Rates Hit 7% as Iran War Fallout Crushes a Weak Housing Market</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 伊朗戰爭餘波推升美國30年期房貸利率突破7%，嚴重打擊美國房市與消費動能。</p>
+</li>
+<li>
+<p><strong>[09-25 00:14]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> Rising Treasury yields could push car loan rates higher, experts say. What buyers need to know - CNBC</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美債殖利率上升將推高車貸利率，進一步加重消費者財務負擔並壓抑汽車銷量。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美債</code></p>
+</li>
+<li>
+<p><strong>[09-25 00:11]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 金管會重查CSM 壽險「未來獲利蓄水池」恐縮水 4大金控市值折價一次看 | 個人理財 | 理財 - 經濟日報</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 金管會重查CSM（合約服務邊際），恐使壽險未來獲利蓄水池縮水，影響4大金控評價。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>金控</code></p>
+</li>
+<li>
+<p><strong>[09-25 00:09]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][negative]</strong> Bond Market Collapse Sends Yields to Decades-Old Highs. Dividend Stocks Are Most at Risk. - 24/7 Wall St.</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 債市崩盤推升殖利率至數十年高點，高股息股票面臨資金磁吸效應與評價修正的最大風險。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美債</code></p>
+</li>
+<li>
+<p><strong>[09-25 00:05]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> The 'Magnificent Seven' is bucking the market trend. Why the jump in Treasury yields may be helping - CNBC</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美債殖利率攀升反而支撐了科技巨頭Magnificent Seven的表現，吸引資金避險抗壓。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,AAPL,MSFT,GOOGL,AMZN,META,TSLA</code></p>
+</li>
+<li>
+<p><strong>[09-25 00:02]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> Oil prices rise sharply after Houthis fire missiles at Saudi Arabia</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 胡塞武裝襲擊沙烏地引發地緣政治擔憂，推升原油價格走揚，增添通膨壓力。</p>
+</li>
+<li>
+<p><strong>[09-25 00:01]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> 川普擬禁柴油出口抑通膨 專家示警恐推升汽油航空油價 - 民視財經網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 川普擬禁柴油出口以壓抑國內通膨，但專家警告反將推升汽油與航空油價，增加能源成本。</p>
+</li>
+<li>
+<p><strong>[09-24 23:52]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Why US stock market crashes today? 3 reasons Dow Jones, Nasdaq and S&amp;P 500 are in deep red as tech stocks - The Economic Times</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股四大指數因科技股重挫收黑，市場面臨調節壓力與資金流出。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DJI,IXIC,SPX</code></p>
+</li>
+<li>
+<p><strong>[09-24 23:49]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> Midday Need to Know: Treasury yields climb, GoDaddy jumps &amp; more - TradingView</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國公債殖利率攀升，對高估值科技股與債市構成壓抑，資金成本增加。</p>
+</li>
+<li>
+<p><strong>[09-24 23:44]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Stocks slide again as Treasury yields push higher, Oracle leads Nasdaq lower: Live updates - CNBC</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 殖利率走高引發美股拉回，甲骨文(Oracle)等科技股領跌那斯達克。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>ORCL,NVDA,QQQ</code></p>
+</li>
+<li>
+<p><strong>[09-24 23:43]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][negative]</strong> Treasury yields hit highest since 2007, Bitcoin slides - Yahoo Finance</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國公債殖利率創2007年以來新高，流動性收緊導致加密貨幣（比特幣）同步大跌。</p>
+</li>
+<li>
+<p><strong>[09-24 23:23]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[商品(油金)][negative]</strong> Bond yields surge to fresh two decade highs as oil prices hit $107 per barrel - NBC News</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 債券殖利率創二十年新高且油價飆升至每桶107美元，對全球通膨與股市評價帶來雙重打擊。</p>
+</li>
+<li>
+<p><strong>[09-24 23:05]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][negative]</strong> Long-Term Treasury Yields Hit Highest Level Since 2004 - Newser</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 長期美債殖利率創下2004年以來最高水準，引發全球債市拋售與美股評價面壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債</code></p>
+</li>
+<li>
+<p><strong>[09-24 22:59]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][positive]</strong> 中國央行：繼續實施適度寬鬆貨幣政策</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 中國央行重申實施適度寬鬆貨幣政策並穩定匯率，有利於提振陸港股及大宗商品市場信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>人民幣</code></p>
+</li>
+<li>
+<p><strong>[09-24 22:57]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 3 things Micron investors need to watch as the stakes get higher</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美光即將公布財報，市場關注客戶協議、價格走勢與庫藏股，牽動半導體與台股記憶體供應鏈神經。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>MU,2330</code></p>
+</li>
+<li>
+<p><strong>[09-24 22:56]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> Stock Market Today: Dow Opens Lower on Global Bond Selloff — Live Updates - WSJ</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 全球債市拋售潮引發美股道瓊指數開低，反映資金成本上升對股市評價的負面衝擊。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>道瓊指數,美債</code></p>
+</li>
+<li>
+<p><strong>[09-24 22:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Oracle sends 'force majeure' notice about data center project — stock sinks 5%</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 甲骨文發出不可抗力通知延遲資料中心專案，引發市場對AI基礎建設資本支出回報與供應鏈進度的疑慮，重創股價。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>ORCL</code></p>
+</li>
+<li>
+<p><strong>[09-24 22:44]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> Dogecoin Falls 8% as Treasury Yields Hit 2007 High - Altcoin Buzz</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美債殖利率創2007年高點，資金回流固定收益，引發高風險加密貨幣（如狗狗幣）下跌8%。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>狗狗幣</code></p>
+</li>
+<li>
+<p><strong>[09-24 22:44]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Meta wants to put its Muse AI assistant on your face — but will consumers buy in?</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Meta推出Muse AI助理獲摩根大通調升目標價，成為本週驅動科技股與AI應用題材的核心動能。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>META</code></p>
+</li>
+<li>
+<p><strong>[09-24 22:41]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][negative]</strong> What the bond market is telling us as yields spike to 2-decade highs - Business Insider</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國公債殖利率飆升至2十年高點，反映通膨與財政赤字擔憂，對全球股市評價與債市流動性構成嚴重擠壓。</p>
+</li>
+<li>
+<p><strong>[09-24 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> 油價、殖利率與聯準會升息預期壓抑金屬 黃金跌至4,265美元、白銀下挫1.34% - 新聞與統計 - IndexBox</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價、殖利率與聯準會升息預期壓抑，黃金跌至4,265美元，白銀下挫1.34%。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>黃金,白銀</code></p>
+</li>
+<li>
+<p><strong>[09-24 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> 川普放話殲滅伊朗 伊朗總統痛批「霸凌心態」：絕不屈服</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 川普與伊朗總統在聯合國隔空交鋒，中東地緣政治緊張升溫，推升避險與能源價格波動預期。</p>
+</li>
+<li>
+<p><strong>[09-24 22:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> Money Moves Men Should Consider After the Fed’s September Decision - aol.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 聯準會9月決議後，市場重新評估資產配置與資金動向，影響股債市資金流向。</p>
+</li>
+<li>
+<p><strong>[09-24 22:38]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> Surging bond yields mark end of decade-long TINA era</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 債券殖利率飆升正式宣告長達十年的TINA（There Is No Alternative，股市無替代選擇）時代結束。</p>
+</li>
+<li>
+<p><strong>[09-24 22:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][negative]</strong> 美債殖利率飆升 勾起投資人對金融海嘯的痛苦回憶</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美債10年期殖利率急升，對全球債市與風險資產評價構成重大壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[09-24 22:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> Saudi oil exports surge to highest since start of Iran war on Hormuz ramp-up</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 沙烏地阿拉伯石油出口創伊朗戰爭以來新高，有助於舒緩荷姆茲海峽的供應擔憂。</p>
+</li>
+<li>
+<p><strong>[09-24 22:33]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Global Bond Selloff Drags Stocks - WSJ</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 全球債券遭到拋售，進一步拖累歐美股市走低。</p>
+</li>
+<li>
+<p><strong>[09-24 22:31]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> 中東局勢推升油價美債殖利率 美股三大指數全面走低 - 民視新聞網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 中東局勢推升油價與美債殖利率，導致美股三大指數全面走低。</p>
+</li>
+<li>
+<p><strong>[09-24 22:30]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 美債拋售加劇 那指慘跌200點 台指期夜盤翻黑下殺300點</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美債拋售加劇致美股那指大跌、台指期夜盤翻黑下殺，資金逃離風險資產。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>台指期</code></p>
+</li>
+<li>
+<p><strong>[09-24 22:28]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][neutral]</strong> Trump, Xi to talk Taiwan, AI, trade and Iran as DC summit kicks off</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 川習會聚焦台灣、AI、貿易與伊朗等議題，峰會結果將左右美中關係與地緣政治走向。</p>
+</li>
+<li>
+<p><strong>[09-24 22:19]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][negative]</strong> Treasury Yields Near Multi-Decade Highs as Fed Eyes New Hike - La Voce di New York</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國公債殖利率接近數十年高點，聯準會暗示可能進一步升息，壓抑全球股市估值並推升美元。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TLT,美元指數</code></p>
+</li>
+<li>
+<p><strong>[09-24 22:16]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Oracle sends 'force majeure' notice about data center project — stock sinks 7%</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 甲骨文因資料中心專案發布不可抗力通知，股價大跌7%，連帶影響AI基礎設施供應鏈情緒。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>ORCL</code></p>
+</li>
+<li>
+<p><strong>[09-24 22:14]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> BlackRock Corporate High Yield Fund stock hits 52-week low at $7.77</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 高收益債券基金創下52週新低，反映在高利率環境下信用風險與融資成本攀升。</p>
+</li>
+<li>
+<p><strong>[09-24 22:03]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Investors turn defensive, bidding up Kroger and Dollar General</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 投資人轉趨防禦，推升克羅格與達樂等防禦性零售股，反映市場對總體經濟的戒心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>KR,DG</code></p>
+</li>
+<li>
+<p><strong>[09-24 22:00]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Norges Bank Hikes Rate to 4.50%, Signals Possible Further Tightening - News and Statistics - IndexBox</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 挪威央行升息至4.50%並暗示進一步緊縮，配合全球央行維持高利率的鷹派基調。</p>
+</li>
+<li>
+<p><strong>[09-24 21:53]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> 快新聞／中東局勢持續升溫推高國際油價 美股主要指數開盤走低 - 民視財經網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 中東局勢升溫推升國際油價，增加通膨壓力，導致美股開盤走低。</p>
+</li>
+<li>
+<p><strong>[09-24 21:53]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> 中東局勢持續升溫推高國際油價　美股主要指數開盤走低</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 中東局勢推高油價與美債殖利率，加上美國商務部GDP第二季終值公布在即與川習會前夕，市場趨於謹慎。</li>
+</ul>
+<hr />
+<h2 id="_3">分類彙整</h2>
+<h3 id="25">股市（25）</h3>
+<ul>
+<li><strong>[09-25 00:23]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> The S&amp;P 500’s newest tech stock is now its best performer</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 資料儲存公司Everpure成為S&amp;P 500最新科技股中表現最佳者，帶動相關科技股氣氛。</p>
+</li>
+<li>
+<p><strong>[09-25 00:18]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> Starbucks to Close 250 Stores in the US</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 星巴克關閉美國250家未達預期的分店，對營運成本調整具短期陣痛，但長期有利利潤率。</p>
+</li>
+<li>
+<p><strong>[09-25 00:13]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Brighthouse Financial deal spread and options flow decoded</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 資訊不足，無法評估具體市場影響。</p>
+</li>
+<li>
+<p><strong>[09-25 00:11]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 金管會重查CSM 壽險「未來獲利蓄水池」恐縮水 4大金控市值折價一次看 | 個人理財 | 理財 - 經濟日報</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 金管會重查CSM（合約服務邊際），恐使壽險未來獲利蓄水池縮水，影響4大金控評價。</p>
+</li>
+<li>
+<p><strong>[09-25 00:05]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> The 'Magnificent Seven' is bucking the market trend. Why the jump in Treasury yields may be helping - CNBC</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美債殖利率攀升反而支撐了科技巨頭Magnificent Seven的表現，吸引資金避險抗壓。</p>
+</li>
+<li>
+<p><strong>[09-24 23:54]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> As diesel prices surge, Tesla makes its big play for the trucking market</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 柴油價格飆升為特斯拉重推重型電動卡車創造有利的市場切入時機。</p>
+</li>
+<li>
+<p><strong>[09-24 23:52]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Why US stock market crashes today? 3 reasons Dow Jones, Nasdaq and S&amp;P 500 are in deep red as tech stocks - The Economic Times</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股四大指數因科技股重挫收黑，市場面臨調節壓力與資金流出。</p>
+</li>
+<li>
+<p><strong>[09-24 23:44]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Stocks slide again as Treasury yields push higher, Oracle leads Nasdaq lower: Live updates - CNBC</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 殖利率走高引發美股拉回，甲骨文(Oracle)等科技股領跌那斯達克。</p>
+</li>
+<li>
+<p><strong>[09-24 23:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Hyundai expected to outsell Ford in third quarter as Detroit automakers lack hybrids</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 現代汽車因缺乏油電混合車布局，預期Q3銷量將超越福特，對底特律車廠傳統燃油車銷售形成警示。</p>
+</li>
+<li>
+<p><strong>[09-24 23:08]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> 《強勢美股特報》P,BRKR,DUOL,MUSA等10檔</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Everpure股價強勢大漲，帶動個股與美股特定成長股投資情緒。</p>
+</li>
+<li>
+<p><strong>[09-24 22:57]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> 3 things Micron investors need to watch as the stakes get higher</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美光即將公布財報，市場關注客戶協議、價格走勢與庫藏股，牽動半導體與台股記憶體供應鏈神經。</p>
+</li>
+<li>
+<p><strong>[09-24 22:56]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Stock Market Today: Dow Opens Lower on Global Bond Selloff — Live Updates - WSJ</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 全球債市拋售潮引發美股道瓊指數開低，反映資金成本上升對股市評價的負面衝擊。</p>
+</li>
+<li>
+<p><strong>[09-24 22:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> A Weary Hollywood Celebrates the Prospect of Federal Funding</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國國會研擬影視稅收補貼法案，利好美國本土影視製作與娛樂產業相關企業。</p>
+</li>
+<li>
+<p><strong>[09-24 22:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Oracle sends 'force majeure' notice about data center project — stock sinks 5%</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 甲骨文發出不可抗力通知延遲資料中心專案，引發市場對AI基礎建設資本支出回報與供應鏈進度的疑慮，重創股價。</p>
+</li>
+<li>
+<p><strong>[09-24 22:47]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> 新光人壽遭金管會重罰240萬元！台新新光金晚間發重訊回應 - 中天新聞網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 新光人壽遭金管會重罰240萬元，對台新新光金短期營運與合規形象帶來負面雜音。</p>
+</li>
+<li>
+<p><strong>[09-24 22:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Oil stocks drive TSX trading as energy shares extend gains, telecoms lag</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 多倫多證券交易所受能源股強勢帶動續揚，電信股則相對落後，反映資金在景氣循環類股間輪動。</p>
+</li>
+<li>
+<p><strong>[09-24 22:44]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Meta wants to put its Muse AI assistant on your face — but will consumers buy in?</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Meta推出Muse AI助理獲摩根大通調升目標價，成為本週驅動科技股與AI應用題材的核心動能。</p>
+</li>
+<li>
+<p><strong>[09-24 22:40]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> 台壽前員工A懸帳1653萬 金管會揭一條龍手法、官員直言「離譜」 - Yahoo新聞</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台壽前員工懸帳案爆發，金管會揭露弊端，對金融股內控與合規要求形成警惕。</p>
+</li>
+<li>
+<p><strong>[09-24 22:39]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Google to test AI chips in space as Suncatcher project advances</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Google推進Suncatcher專案將在太空測試AI晶片，展現技術前瞻性，對長線科技題材具正面宣示效果。</p>
+</li>
+<li>
+<p><strong>[09-24 22:33]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Global Bond Selloff Drags Stocks - WSJ</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 全球債券遭到拋售，進一步拖累歐美股市走低。</p>
+</li>
+<li>
+<p><strong>[09-24 22:32]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> 陳建全：碩網全面打進AI建置 與伊藤忠合作創高成長飛輪</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 碩網全面打進AI客服建置並與伊藤忠合作，基本面表現強勁，吸引資金關注。</p>
+</li>
+<li>
+<p><strong>[09-24 22:32]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Why Palantir (PLTR) Can Still Outperform despite High Treasury Yields - TipRanks</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Palantir在美債殖利率高漲環境下展現抗跌與優異表現潛力。</p>
+</li>
+<li>
+<p><strong>[09-24 22:30]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 美債拋售加劇 那指慘跌200點 台指期夜盤翻黑下殺300點</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美債拋售加劇致美股那指大跌、台指期夜盤翻黑下殺，資金逃離風險資產。</p>
+</li>
+<li>
+<p><strong>[09-24 22:16]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Oracle sends 'force majeure' notice about data center project — stock sinks 7%</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 甲骨文因資料中心專案發布不可抗力通知，股價大跌7%，連帶影響AI基礎設施供應鏈情緒。</p>
+</li>
+<li>
+<p><strong>[09-24 22:03]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Investors turn defensive, bidding up Kroger and Dollar General</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 投資人轉趨防禦，推升克羅格與達樂等防禦性零售股，反映市場對總體經濟的戒心。</li>
+</ul>
+<h3 id="10">債市（10）</h3>
+<ul>
+<li><strong>[09-25 00:14]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Rising Treasury yields could push car loan rates higher, experts say. What buyers need to know - CNBC</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美債殖利率上升將推高車貸利率，進一步加重消費者財務負擔並壓抑汽車銷量。</p>
+</li>
+<li>
+<p><strong>[09-25 00:09]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Bond Market Collapse Sends Yields to Decades-Old Highs. Dividend Stocks Are Most at Risk. - 24/7 Wall St.</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 債市崩盤推升殖利率至數十年高點，高股息股票面臨資金磁吸效應與評價修正的最大風險。</p>
+</li>
+<li>
+<p><strong>[09-24 23:49]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Midday Need to Know: Treasury yields climb, GoDaddy jumps &amp; more - TradingView</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國公債殖利率攀升，對高估值科技股與債市構成壓抑，資金成本增加。</p>
+</li>
+<li>
+<p><strong>[09-24 23:43]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Treasury yields hit highest since 2007, Bitcoin slides - Yahoo Finance</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國公債殖利率創2007年以來新高，流動性收緊導致加密貨幣（比特幣）同步大跌。</p>
+</li>
+<li>
+<p><strong>[09-24 23:05]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Long-Term Treasury Yields Hit Highest Level Since 2004 - Newser</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 長期美債殖利率創下2004年以來最高水準，引發全球債市拋售與美股評價面壓力。</p>
+</li>
+<li>
+<p><strong>[09-24 22:41]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> What the bond market is telling us as yields spike to 2-decade highs - Business Insider</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國公債殖利率飆升至2十年高點，反映通膨與財政赤字擔憂，對全球股市評價與債市流動性構成嚴重擠壓。</p>
+</li>
+<li>
+<p><strong>[09-24 22:38]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Surging bond yields mark end of decade-long TINA era</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 債券殖利率飆升正式宣告長達十年的TINA（There Is No Alternative，股市無替代選擇）時代結束。</p>
+</li>
+<li>
+<p><strong>[09-24 22:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 美債殖利率飆升 勾起投資人對金融海嘯的痛苦回憶</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美債10年期殖利率急升，對全球債市與風險資產評價構成重大壓力。</p>
+</li>
+<li>
+<p><strong>[09-24 22:19]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Treasury Yields Near Multi-Decade Highs as Fed Eyes New Hike - La Voce di New York</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國公債殖利率接近數十年高點，聯準會暗示可能進一步升息，壓抑全球股市估值並推升美元。</p>
+</li>
+<li>
+<p><strong>[09-24 22:14]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> BlackRock Corporate High Yield Fund stock hits 52-week low at $7.77</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 高收益債券基金創下52週新低，反映在高利率環境下信用風險與融資成本攀升。</li>
+</ul>
+<h3 id="4">匯市（4）</h3>
+<ul>
+<li><strong>[09-24 23:03]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Analysts See US Dollar Resilience Despite Cheaper Crude Oil Prices - Exchange Rates UK</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 儘管原油價格走跌，美元展現韌性，支撐美元指數表現。</p>
+</li>
+<li>
+<p><strong>[09-24 22:55]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> USD/MXN (USDMXN) Moved Sharply on Sep 24: Are Central Bank Expectations Shifting? - tradingkey.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 墨西哥披索受央行預期轉變影響出現波動，對外匯市場影響侷限於新興市場貨幣。</p>
+</li>
+<li>
+<p><strong>[09-24 22:49]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Bitcoin Rising Even As Treasury Yields Hover Near Multiyear Highs -- Market Talk - Moomoo</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 在美國公債殖利率維持高檔之際，比特幣逆勢走強，顯示部分資金尋求避險或解構傳統資產相關性。</p>
+</li>
+<li>
+<p><strong>[09-24 22:44]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> Dogecoin Falls 8% as Treasury Yields Hit 2007 High - altcoinbuzz.io</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美債殖利率飆升至2007年高點，風險資產承受壓力，狗狗幣等高風險迷因幣跌幅顯著。</li>
+</ul>
+<h3 id="10_1">商品(油金)（10）</h3>
+<ul>
+<li><strong>[09-25 00:02]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Oil prices rise sharply after Houthis fire missiles at Saudi Arabia</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 胡塞武裝襲擊沙烏地引發地緣政治擔憂，推升原油價格走揚，增添通膨壓力。</p>
+</li>
+<li>
+<p><strong>[09-25 00:01]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 川普擬禁柴油出口抑通膨 專家示警恐推升汽油航空油價 - 民視財經網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 川普擬禁柴油出口以壓抑國內通膨，但專家警告反將推升汽油與航空油價，增加能源成本。</p>
+</li>
+<li>
+<p><strong>[09-24 23:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Eni Wins 100% Stake in Indonesia's Sapukala Deepwater Block - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 義大利埃尼集團(Eni)獲得印尼深水區區塊100%權益，有利於其長期油氣產能與能源供應。</p>
+</li>
+<li>
+<p><strong>[09-24 23:23]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Bond yields surge to fresh two decade highs as oil prices hit $107 per barrel - NBC News</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 債券殖利率創二十年新高且油價飆升至每桶107美元，對全球通膨與股市評價帶來雙重打擊。</p>
+</li>
+<li>
+<p><strong>[09-24 23:05]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Capricorn Energy Raises 2026 Output Expectations on Egypt Gains - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Capricorn Energy提高產量預期，對整體原油商品供給端有微幅推升壓力。</p>
+</li>
+<li>
+<p><strong>[09-24 22:44]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Dogecoin Falls 8% as Treasury Yields Hit 2007 High - Altcoin Buzz</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美債殖利率創2007年高點，資金回流固定收益，引發高風險加密貨幣（如狗狗幣）下跌8%。</p>
+</li>
+<li>
+<p><strong>[09-24 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 油價、殖利率與聯準會升息預期壓抑金屬 黃金跌至4,265美元、白銀下挫1.34% - 新聞與統計 - IndexBox</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價、殖利率與聯準會升息預期壓抑，黃金跌至4,265美元，白銀下挫1.34%。</p>
+</li>
+<li>
+<p><strong>[09-24 22:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Saudi oil exports surge to highest since start of Iran war on Hormuz ramp-up</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 沙烏地阿拉伯石油出口創伊朗戰爭以來新高，有助於舒緩荷姆茲海峽的供應擔憂。</p>
+</li>
+<li>
+<p><strong>[09-24 22:04]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Fervo Starts Power Generation at Utah Geothermal Flagship - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 地熱發電旗艦項目開始發電，對綠能與整體能源供應結構帶來正面長期助益。</p>
+</li>
+<li>
+<p><strong>[09-24 21:53]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 快新聞／中東局勢持續升溫推高國際油價 美股主要指數開盤走低 - 民視財經網</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 中東局勢升溫推升國際油價，增加通膨壓力，導致美股開盤走低。</li>
+</ul>
+<h3 id="7">地緣政治（7）</h3>
+<ul>
+<li><strong>[09-25 00:02]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> White House blocks reporters despite judge’s order to restore access</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 白宮與媒體禁令的司法衝突，對整體金融市場無直接實質影響。</p>
+</li>
+<li>
+<p><strong>[09-25 00:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> U.S. Invites Putin To G20 Summit In Miami - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國邀請普丁參與邁阿密G20峰會，釋放外交對話訊號，對大宗商品與地緣風險緩和有正面預期。</p>
+</li>
+<li>
+<p><strong>[09-24 23:42]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> The court ordered Trump to restore access for CNN, MS Now and Politico last night.</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 法院命令川普恢復特定媒體白宮採訪權，屬政治法律爭端，對金融市場無直接實質影響。</p>
+</li>
+<li>
+<p><strong>[09-24 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 川普放話殲滅伊朗 伊朗總統痛批「霸凌心態」：絕不屈服</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 川普與伊朗總統在聯合國隔空交鋒，中東地緣政治緊張升溫，推升避險與能源價格波動預期。</p>
+</li>
+<li>
+<p><strong>[09-24 22:28]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Trump, Xi to talk Taiwan, AI, trade and Iran as DC summit kicks off</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 川習會聚焦台灣、AI、貿易與伊朗等議題，峰會結果將左右美中關係與地緣政治走向。</p>
+</li>
+<li>
+<p><strong>[09-24 22:17]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> White House Still Bars CNN, MS NOW and Politico Despite Court Ruling</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 白宮與媒體禁令的司法衝突持續，對整體金融市場無直接實質影響。</p>
+</li>
+<li>
+<p><strong>[09-24 22:08]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> White House still blocks some reporters despite judge's order lifting Trump ban</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 白宮無視法院禁令限制部分記者採訪，屬政治新聞，對金融市場影響有限。</li>
+</ul>
+<h3 id="8">總體經濟（8）</h3>
+<ul>
+<li><strong>[09-25 00:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Mortgage Rates Hit 7% as Iran War Fallout Crushes a Weak Housing Market</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 伊朗戰爭餘波推升美國30年期房貸利率突破7%，嚴重打擊美國房市與消費動能。</p>
+</li>
+<li>
+<p><strong>[09-24 23:25]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> If There's a Stock Market Crash Ahead, History Highlights the Best Strategy for Investors - The Globe and Mail</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 探討股市若面臨崩盤歷史上的最佳投資策略，屬教育性質評論，無實質市場衝擊。</p>
+</li>
+<li>
+<p><strong>[09-24 23:00]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Federal Reserve Board issues enforcement action with former employee of Sandy Spring Bank</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 聯準會對前員工發布執法行動，屬於例行監管事件，對整體金融市場無重大系統性影響。</p>
+</li>
+<li>
+<p><strong>[09-24 22:59]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 中國央行：繼續實施適度寬鬆貨幣政策</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 中國央行重申實施適度寬鬆貨幣政策並穩定匯率，有利於提振陸港股及大宗商品市場信心。</p>
+</li>
+<li>
+<p><strong>[09-24 22:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Money Moves Men Should Consider After the Fed’s September Decision - aol.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 聯準會9月決議後，市場重新評估資產配置與資金動向，影響股債市資金流向。</p>
+</li>
+<li>
+<p><strong>[09-24 22:31]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 中東局勢推升油價美債殖利率 美股三大指數全面走低 - 民視新聞網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 中東局勢推升油價與美債殖利率，導致美股三大指數全面走低。</p>
+</li>
+<li>
+<p><strong>[09-24 22:00]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Norges Bank Hikes Rate to 4.50%, Signals Possible Further Tightening - News and Statistics - IndexBox</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 挪威央行升息至4.50%並暗示進一步緊縮，配合全球央行維持高利率的鷹派基調。</p>
+</li>
+<li>
+<p><strong>[09-24 21:53]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 中東局勢持續升溫推高國際油價　美股主要指數開盤走低</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 中東局勢推高油價與美債殖利率，加上美國商務部GDP第二季終值公布在即與川習會前夕，市場趨於謹慎。</li>
+</ul>
+<h3 id="16">其他（16）</h3>
+<ul>
+<li><strong>[09-25 00:15]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> More Than 167,000 Pounds of Meat With False Inspection Mark Are Recalled</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國發生大規模肉品回收事件，影響食品供應鏈與相關食品安全檢驗。</p>
+</li>
+<li>
+<p><strong>[09-25 00:00]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> I spend my time and money caring for my aging mother — yet she gave my brother $100,000. Should I pull back?</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 家庭財務與照護爭議之生活理財專欄，對總體金融與資本市場無影響。</p>
+</li>
+<li>
+<p><strong>[09-24 22:28]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Everyone knows Social Security and Medicare are on the ropes. Here’s what to do instead of panicking.</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[09-24 22:23]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Big business warns Trump against diesel export ban in joint letter</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[09-24 22:17]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> White House Still Bars CNN, MS NOW and Politico Despite Court Blocking Trump’s Ban</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[09-24 22:15]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Why rising treasury yields matter - Arizona Daily Star</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[09-24 22:11]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Oil Futures Gain With Little U.S.-Iran Diplomatic Progress Seen - WSJ</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[09-24 22:09]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> US stocks slip after the bond market keeps up the pressure and oil prices rise - San Diego Union-Tribune</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[09-24 22:04]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> TWA00 加權指數- 當沖散戶為何總慘賠？揭三大致命傷與避坑指南- 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[09-24 22:03]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> US stocks slip after the bond market keeps up the pressure and oil prices rise - Boston Herald</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[09-24 22:00]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Norges Bank Hikes Rate to 4.50%, Signals Possible Further Tightening - News and Statistics - indexbox.io</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[09-24 22:00]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Do this one thing to help prevent your parents from being scammed</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 防範詐騙相關報導，屬於社會安全與個人理財教育範疇，不影響總體金融市場。</p>
+</li>
+<li>
+<p><strong>[09-24 22:00]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> How is Gen Z investing their money? Over a dozen share their strategies for today’s market.</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 探討Z世代投資行為與策略，對當前金融市場無直接實質影響。</p>
+</li>
+<li>
+<p><strong>[09-24 21:59]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Bond yields surge to fresh two decade highs as oil prices hit $105 per barrel - NBC News</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[09-24 21:55]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Brazil central bank sees inflation near target, cuts growth outlook - Investing.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[09-24 21:53]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 中東局勢持續升溫推高國際油價 美股主要指數開盤走低 - Yahoo股市</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 無</li>
+</ul>
+<hr />
+<h2 id="_4">全部事件</h2>
+<ul>
+<li><strong>[09-25 00:23]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> The S&amp;P 500’s newest tech stock is now its best performer <code>marketwatch</code></li>
+<li><strong>[09-25 00:18]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Starbucks to Close 250 Stores in the US <code>nytbusiness</code></li>
+<li><strong>[09-25 00:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Mortgage Rates Hit 7% as Iran War Fallout Crushes a Weak Housing Market <code>nytbusiness</code></li>
+<li><strong>[09-25 00:15]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> More Than 167,000 Pounds of Meat With False Inspection Mark Are Recalled <code>nytbusiness</code></li>
+<li><strong>[09-25 00:14]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Rising Treasury yields could push car loan rates higher, experts say. What buyers need to know - CNBC <code>google-news:Treasury yields</code></li>
+<li><strong>[09-25 00:13]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Brighthouse Financial deal spread and options flow decoded <code>investing-com</code></li>
+<li><strong>[09-25 00:11]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 金管會重查CSM 壽險「未來獲利蓄水池」恐縮水 4大金控市值折價一次看 | 個人理財 | 理財 - 經濟日報 <code>google-news:金管會</code></li>
+<li><strong>[09-25 00:09]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Bond Market Collapse Sends Yields to Decades-Old Highs. Dividend Stocks Are Most at Risk. - 24/7 Wall St. <code>google-news:Treasury yields</code></li>
+<li><strong>[09-25 00:05]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> The 'Magnificent Seven' is bucking the market trend. Why the jump in Treasury yields may be helping - CNBC <code>google-news:Treasury yields</code></li>
+<li><strong>[09-25 00:02]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> White House blocks reporters despite judge’s order to restore access <code>cnbc</code></li>
+<li><strong>[09-25 00:02]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Oil prices rise sharply after Houthis fire missiles at Saudi Arabia <code>cnbc</code></li>
+<li><strong>[09-25 00:01]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 川普擬禁柴油出口抑通膨 專家示警恐推升汽油航空油價 - 民視財經網 <code>google-news:油價</code></li>
+<li><strong>[09-25 00:00]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> I spend my time and money caring for my aging mother — yet she gave my brother $100,000. Should I pull back? <code>marketwatch</code></li>
+<li><strong>[09-25 00:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> U.S. Invites Putin To G20 Summit In Miami - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[09-24 23:54]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> As diesel prices surge, Tesla makes its big play for the trucking market <code>marketwatch</code></li>
+<li><strong>[09-24 23:52]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Why US stock market crashes today? 3 reasons Dow Jones, Nasdaq and S&amp;P 500 are in deep red as tech stocks - The Economic Times <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[09-24 23:49]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Midday Need to Know: Treasury yields climb, GoDaddy jumps &amp; more - TradingView <code>google-news:Treasury yields</code></li>
+<li><strong>[09-24 23:44]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Stocks slide again as Treasury yields push higher, Oracle leads Nasdaq lower: Live updates - CNBC <code>google-news:Treasury yields</code></li>
+<li><strong>[09-24 23:43]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Treasury yields hit highest since 2007, Bitcoin slides - Yahoo Finance <code>google-news:Treasury yields</code></li>
+<li><strong>[09-24 23:42]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> The court ordered Trump to restore access for CNN, MS Now and Politico last night. <code>nytbusiness</code></li>
+<li><strong>[09-24 23:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Hyundai expected to outsell Ford in third quarter as Detroit automakers lack hybrids <code>cnbc</code></li>
+<li><strong>[09-24 23:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Eni Wins 100% Stake in Indonesia's Sapukala Deepwater Block - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[09-24 23:25]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> If There's a Stock Market Crash Ahead, History Highlights the Best Strategy for Investors - The Globe and Mail <code>google-news:stock market selloff</code></li>
+<li><strong>[09-24 23:23]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Bond yields surge to fresh two decade highs as oil prices hit $107 per barrel - NBC News <code>google-news:Treasury yields</code></li>
+<li><strong>[09-24 23:08]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 《強勢美股特報》P,BRKR,DUOL,MUSA等10檔 <code>yahoo-tw-finance</code></li>
+<li><strong>[09-24 23:05]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Capricorn Energy Raises 2026 Output Expectations on Egypt Gains - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[09-24 23:05]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Long-Term Treasury Yields Hit Highest Level Since 2004 - Newser <code>google-news:Treasury yields</code></li>
+<li><strong>[09-24 23:03]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Analysts See US Dollar Resilience Despite Cheaper Crude Oil Prices - Exchange Rates UK <code>google-news:oil price crude</code></li>
+<li><strong>[09-24 23:00]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Federal Reserve Board issues enforcement action with former employee of Sandy Spring Bank <code>fed</code></li>
+<li><strong>[09-24 22:59]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 中國央行：繼續實施適度寬鬆貨幣政策 <code>yahoo-tw-finance</code></li>
+<li><strong>[09-24 22:57]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 3 things Micron investors need to watch as the stakes get higher <code>marketwatch</code></li>
+<li><strong>[09-24 22:56]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Stock Market Today: Dow Opens Lower on Global Bond Selloff — Live Updates - WSJ <code>google-news:stock market selloff</code></li>
+<li><strong>[09-24 22:55]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> USD/MXN (USDMXN) Moved Sharply on Sep 24: Are Central Bank Expectations Shifting? - tradingkey.com <code>google-news:central bank policy</code></li>
+<li><strong>[09-24 22:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> A Weary Hollywood Celebrates the Prospect of Federal Funding <code>nytbusiness</code></li>
+<li><strong>[09-24 22:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Oracle sends 'force majeure' notice about data center project — stock sinks 5% <code>cnbc</code></li>
+<li><strong>[09-24 22:49]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Bitcoin Rising Even As Treasury Yields Hover Near Multiyear Highs -- Market Talk - Moomoo <code>google-news:Treasury yields</code></li>
+<li><strong>[09-24 22:47]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 新光人壽遭金管會重罰240萬元！台新新光金晚間發重訊回應 - 中天新聞網 <code>google-news:金管會</code></li>
+<li><strong>[09-24 22:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Oil stocks drive TSX trading as energy shares extend gains, telecoms lag <code>investing-com</code></li>
+<li><strong>[09-24 22:44]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Dogecoin Falls 8% as Treasury Yields Hit 2007 High - Altcoin Buzz <code>google-news:Treasury yields</code></li>
+<li><strong>[09-24 22:44]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Dogecoin Falls 8% as Treasury Yields Hit 2007 High - altcoinbuzz.io <code>google-news:Treasury yields</code></li>
+<li><strong>[09-24 22:44]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Meta wants to put its Muse AI assistant on your face — but will consumers buy in? <code>marketwatch</code></li>
+<li><strong>[09-24 22:41]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> What the bond market is telling us as yields spike to 2-decade highs - Business Insider <code>google-news:Treasury yields</code></li>
+<li><strong>[09-24 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 油價、殖利率與聯準會升息預期壓抑金屬 黃金跌至4,265美元、白銀下挫1.34% - 新聞與統計 - IndexBox <code>google-news:油價</code></li>
+<li><strong>[09-24 22:40]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 台壽前員工A懸帳1653萬 金管會揭一條龍手法、官員直言「離譜」 - Yahoo新聞 <code>google-news:金管會</code></li>
+<li><strong>[09-24 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 川普放話殲滅伊朗 伊朗總統痛批「霸凌心態」：絕不屈服 <code>yahoo-tw-finance</code></li>
+<li><strong>[09-24 22:39]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Google to test AI chips in space as Suncatcher project advances <code>seekingalpha</code></li>
+<li><strong>[09-24 22:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Money Moves Men Should Consider After the Fed’s September Decision - aol.com <code>google-news:Federal Reserve rate decision</code></li>
+<li><strong>[09-24 22:38]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Surging bond yields mark end of decade-long TINA era <code>seekingalpha</code></li>
+<li><strong>[09-24 22:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 美債殖利率飆升 勾起投資人對金融海嘯的痛苦回憶 <code>yahoo-tw-finance</code></li>
+<li><strong>[09-24 22:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Saudi oil exports surge to highest since start of Iran war on Hormuz ramp-up <code>seekingalpha</code></li>
+<li><strong>[09-24 22:33]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Global Bond Selloff Drags Stocks - WSJ <code>google-news:stock market selloff</code></li>
+<li><strong>[09-24 22:32]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 陳建全：碩網全面打進AI建置 與伊藤忠合作創高成長飛輪 <code>yahoo-tw-finance</code></li>
+<li><strong>[09-24 22:32]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Why Palantir (PLTR) Can Still Outperform despite High Treasury Yields - TipRanks <code>google-news:Treasury yields</code></li>
+<li><strong>[09-24 22:31]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 中東局勢推升油價美債殖利率 美股三大指數全面走低 - 民視新聞網 <code>google-news:油價</code></li>
+<li><strong>[09-24 22:30]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 美債拋售加劇 那指慘跌200點 台指期夜盤翻黑下殺300點 <code>yahoo-tw-finance</code></li>
+<li><strong>[09-24 22:28]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Trump, Xi to talk Taiwan, AI, trade and Iran as DC summit kicks off <code>cnbc</code></li>
+<li><strong>[09-24 22:28]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Everyone knows Social Security and Medicare are on the ropes. Here’s what to do instead of panicking. <code>marketwatch</code></li>
+<li><strong>[09-24 22:23]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Big business warns Trump against diesel export ban in joint letter <code>cnbc</code></li>
+<li><strong>[09-24 22:19]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Treasury Yields Near Multi-Decade Highs as Fed Eyes New Hike - La Voce di New York <code>google-news:Treasury yields</code></li>
+<li><strong>[09-24 22:17]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> White House Still Bars CNN, MS NOW and Politico Despite Court Blocking Trump’s Ban <code>nytbusiness</code></li>
+<li><strong>[09-24 22:17]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> White House Still Bars CNN, MS NOW and Politico Despite Court Ruling <code>nytbusiness</code></li>
+<li><strong>[09-24 22:16]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Oracle sends 'force majeure' notice about data center project — stock sinks 7% <code>cnbc</code></li>
+<li><strong>[09-24 22:15]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Why rising treasury yields matter - Arizona Daily Star <code>google-news:Treasury yields</code></li>
+<li><strong>[09-24 22:14]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> BlackRock Corporate High Yield Fund stock hits 52-week low at $7.77 <code>investing-com</code></li>
+<li><strong>[09-24 22:11]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Oil Futures Gain With Little U.S.-Iran Diplomatic Progress Seen - WSJ <code>google-news:oil price crude</code></li>
+<li><strong>[09-24 22:09]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> US stocks slip after the bond market keeps up the pressure and oil prices rise - San Diego Union-Tribune <code>google-news:Treasury yields</code></li>
+<li><strong>[09-24 22:08]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> White House still blocks some reporters despite judge's order lifting Trump ban <code>cnbc</code></li>
+<li><strong>[09-24 22:04]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> TWA00 加權指數- 當沖散戶為何總慘賠？揭三大致命傷與避坑指南- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[09-24 22:04]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Fervo Starts Power Generation at Utah Geothermal Flagship - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[09-24 22:03]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Investors turn defensive, bidding up Kroger and Dollar General <code>seekingalpha</code></li>
+<li><strong>[09-24 22:03]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> US stocks slip after the bond market keeps up the pressure and oil prices rise - Boston Herald <code>google-news:Treasury yields</code></li>
+<li><strong>[09-24 22:00]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Norges Bank Hikes Rate to 4.50%, Signals Possible Further Tightening - News and Statistics - indexbox.io <code>google-news:central bank policy</code></li>
+<li><strong>[09-24 22:00]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Norges Bank Hikes Rate to 4.50%, Signals Possible Further Tightening - News and Statistics - IndexBox <code>google-news:central bank policy</code></li>
+<li><strong>[09-24 22:00]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Do this one thing to help prevent your parents from being scammed <code>marketwatch</code></li>
+<li><strong>[09-24 22:00]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> How is Gen Z investing their money? Over a dozen share their strategies for today’s market. <code>marketwatch</code></li>
+<li><strong>[09-24 21:59]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Bond yields surge to fresh two decade highs as oil prices hit $105 per barrel - NBC News <code>google-news:Treasury yields</code></li>
+<li><strong>[09-24 21:55]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Brazil central bank sees inflation near target, cuts growth outlook - Investing.com <code>google-news:central bank policy</code></li>
+<li><strong>[09-24 21:53]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 中東局勢持續升溫推高國際油價 美股主要指數開盤走低 - Yahoo股市 <code>google-news:油價</code></li>
+<li><strong>[09-24 21:53]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 中東局勢持續升溫推高國際油價　美股主要指數開盤走低 <code>yahoo-tw-finance</code></li>
+<li><strong>[09-24 21:53]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 快新聞／中東局勢持續升溫推高國際油價 美股主要指數開盤走低 - 民視財經網 <code>google-news:油價</code></li>
+</ul>
+    </article>
+  
+</div>
+<footer>由金融情報系統自動發佈 · 僅供參考，不構成投資建議</footer>
+<script>
+const WEEK = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function nowParts(tz){
+  const p = {};
+  new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short', month: 'short',
+    day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
+  }).formatToParts(new Date()).forEach(x => p[x.type] = x.value);
+  return p;
+}
+function marketOpen(tz, open, close){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  return wd>=1 && wd<=5 && m>=open && m<close;
+}
+// Taiwan index-futures night session 15:00 -> next-day 05:00 (crosses midnight):
+// 15:00-24:00 Mon-Fri, plus 00:00-05:00 Tue-Sat (Sat 00:00-05:00 is Fri night session).
+function nightOpen(tz){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  if (m >= 5*60 && m < 15*60) return false;   // 05:00-15:00 recess
+  if (m >= 15*60) return wd >= 1 && wd <= 5;   // 15:00-24:00 Mon-Fri
+  return wd >= 2 && wd <= 6;                   // 00:00-05:00 Tue-Sat
+}
+function pad(n){ return String(n).padStart(2,'0'); }
+function setMkt(id, open, label){
+  const el = document.getElementById(id);
+  el.className = 'mkt ' + (open ? 'open' : 'closed');
+  el.textContent = (label ? label + ' ' : '') + (open ? '開盤中' : '未開盤');
+}
+function tick(){
+  const tw = nowParts('Asia/Taipei');
+  const ny = nowParts('America/New_York');
+  document.getElementById('clk-tw').textContent = pad(tw.hour)+':'+pad(tw.minute)+':'+pad(tw.second);
+  document.getElementById('clk-ny').textContent = pad(ny.hour)+':'+pad(ny.minute)+':'+pad(ny.second);
+  // Taiwan: TWSE weighted index 09:00-13:30; TX futures day 08:45-13:45; TX night 15:00-05:00
+  setMkt('tw-idx',  marketOpen('Asia/Taipei', 9*60, 13*60+30), '加權');
+  setMkt('tx-day',  marketOpen('Asia/Taipei', 8*60+45, 13*60+45), '期日盤');
+  setMkt('tx-night', nightOpen('Asia/Taipei'), '期夜盤');
+  // US: regular session 09:30-16:00 ET; after-hours 16:00-20:00 ET
+  setMkt('ny-mkt',  marketOpen('America/New_York', 9*60+30, 16*60), '美股');
+  setMkt('ny-night', marketOpen('America/New_York', 16*60, 20*60), '美股夜');
+}
+tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>
