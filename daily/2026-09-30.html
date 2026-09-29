@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日報告 2026-09-30</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; margin: 0;
+         background: #f5f6f8; color: #1c1e21; line-height: 1.7; }
+  header { background: #1b2a4a; color: #fff; padding: 14px 24px;
+           display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  header h1 { font-size: 18px; margin: 0; flex: 1; }
+  header nav a { color: #cdd8ee; text-decoration: none; margin-left: 14px; font-size: 14px; }
+  header nav a:hover, header nav a.active { color: #fff; text-decoration: underline; }
+  #clock { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; font-size: 13px; }
+  .clk { background: rgba(255,255,255,.08); border-radius: 6px; padding: 4px 10px; }
+  .clk-city { color: #9fb0cf; margin-right: 6px; }
+  .clk-time { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .mkt { margin-left: 8px; font-size: 12px; padding: 1px 7px; border-radius: 9px; }
+  .mkt.open { background: #2e7d32; color: #fff; }
+  .mkt.closed { background: #5a6474; color: #fff; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 20px; }
+  .card { background: #fff; border-radius: 8px; padding: 18px 22px; margin: 14px 0;
+          box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .card h3 { margin: 0 0 6px; }
+  .card a { color: #1b2a4a; text-decoration: none; }
+  .card a:hover { text-decoration: underline; }
+  .muted { color: #666; font-size: 13px; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px;
+           color: #fff; margin-left: 6px; }
+  .b-daily { background: #2e7d32; }
+  .b-deep { background: #b45309; }
+  .day-nav { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+  .day-nav a { font-size: 13px; padding: 3px 10px; background: #e8ecf3; border-radius: 12px;
+               color: #33415c; text-decoration: none; }
+  .day-nav a:hover { background: #d2dbea; }
+  article.card { line-height: 1.15; }
+  article.card p { margin: 3px 0; }
+  article.card ul, article.card ol { margin: 3px 0 6px; padding-left: 22px; }
+  article.card h1, article.card h2, article.card h3 { padding-bottom: 4px; }
+  article.card h1, article.card h2 { border-bottom: 2px solid #33415c; }
+  article.card h1 { font-size: 30px; margin-top: 8px; }
+  article.card h2 { font-size: 23px; margin-top: 12px; color: #1b2a4a;
+        border-left: 6px solid #1459c8; padding-left: 12px; }
+  article.card h3 { font-size: 19px; margin-top: 10px; color: #24365c;
+        background: #eef4fb; border-radius: 6px; padding: 4px 12px; }
+  article.card h4 { font-size: 17px; margin-top: 18px; color: #145c3a;
+        background: #e8f5ee; border-left: 4px solid #2e7d32;
+        padding: 5px 10px; border-radius: 4px; }
+  article.card h5 { font-size: 15px; margin-top: 14px; color: #4a5568;
+        font-weight: 600; }
+  article.card h4, article.card h5 { margin-bottom: 2px; }
+  article.card strong { font-weight: 700; }
+  article.card blockquote { border-left: 4px solid #9fb0cf; margin: 4px 0;
+        padding: 2px 12px; color: #4a5568; background: #f4f6fa; }
+  article.card hr { border: none; border-top: 1px dashed #c3ccdb; margin: 12px 0; }
+  article.card code { background: #eef0f4; padding: 1px 5px; border-radius: 4px;
+        font-size: 14px; font-family: Consolas, monospace; }
+  article.card pre { background: #1b2a4a; color: #e6ecf7; padding: 14px; border-radius: 8px; overflow-x: auto; }
+  article.card pre code { background: transparent; color: inherit; padding: 0; }
+  article.card table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+  article.card th, article.card td { border: 1px solid #d8dce3; padding: 6px 10px; }
+  article.card th { background: #eef1f6; }
+  article.card a { color: #1459c8; }
+  footer { text-align: center; color: #999; font-size: 12px; padding: 20px; }
+</style>
+</head>
+<body>
+  <header>
+  <h1>金融情報系統報告</h1>
+  <nav>
+    <a href="../index.html" class="">首頁</a>
+    <a href="../calendar.html" class="">行事曆</a>
+    <a href="../daily/2026-09-30.html" class="active">最新每日</a>
+    <a href="../deep/2026-09-29-pm.html" class="">最新深度</a>
+  </nav>
+  <div id="clock">
+    <span class="clk"><span class="clk-city">台北</span><span class="clk-time" id="clk-tw">--:--:--</span><span class="mkt closed" id="tw-idx">…</span><span class="mkt closed" id="tx-day">…</span><span class="mkt closed" id="tx-night">…</span></span>
+    <span class="clk"><span class="clk-city">紐約</span><span class="clk-time" id="clk-ny">--:--:--</span><span class="mkt closed" id="ny-mkt">…</span><span class="mkt closed" id="ny-night">…</span></span>
+  </div>
+</header>
+<div class="wrap">
+  
+    <div class="day-nav">
+      <a href="../index.html">← 首頁</a>
+      
+        
+        <a href="../daily/2026-09-30.html">2026-09-30</a>
+        
+        <a href="../daily/2026-09-29.html">2026-09-29</a>
+        
+        <a href="../daily/2026-09-28.html">2026-09-28</a>
+        
+        <a href="../daily/2026-09-27.html">2026-09-27</a>
+        
+        <a href="../daily/2026-09-26.html">2026-09-26</a>
+        
+        <a href="../daily/2026-09-25.html">2026-09-25</a>
+        
+        <a href="../daily/2026-09-24.html">2026-09-24</a>
+        
+        <a href="../daily/2026-09-23.html">2026-09-23</a>
+        
+        <a href="../daily/2026-09-22.html">2026-09-22</a>
+        
+        <a href="../daily/2026-09-21.html">2026-09-21</a>
+        
+        <a href="../daily/2026-09-20.html">2026-09-20</a>
+        
+        <a href="../daily/2026-09-19.html">2026-09-19</a>
+        
+        <a href="../daily/2026-09-18.html">2026-09-18</a>
+        
+        <a href="../daily/2026-09-17.html">2026-09-17</a>
+        
+        <a href="../daily/2026-09-16.html">2026-09-16</a>
+        
+        <a href="../daily/2026-09-15.html">2026-09-15</a>
+        
+        <a href="../daily/2026-09-14.html">2026-09-14</a>
+        
+        <a href="../daily/2026-09-13.html">2026-09-13</a>
+        
+        <a href="../daily/2026-09-12.html">2026-09-12</a>
+        
+        <a href="../daily/2026-09-11.html">2026-09-11</a>
+        
+        <a href="../daily/2026-09-10.html">2026-09-10</a>
+        
+        <a href="../daily/2026-09-09.html">2026-09-09</a>
+        
+        <a href="../daily/2026-09-08.html">2026-09-08</a>
+        
+        <a href="../daily/2026-09-07.html">2026-09-07</a>
+        
+        <a href="../daily/2026-09-06.html">2026-09-06</a>
+        
+        <a href="../daily/2026-09-05.html">2026-09-05</a>
+        
+        <a href="../daily/2026-09-04.html">2026-09-04</a>
+        
+        <a href="../daily/2026-09-03.html">2026-09-03</a>
+        
+        <a href="../daily/2026-09-02.html">2026-09-02</a>
+        
+        <a href="../daily/2026-09-01.html">2026-09-01</a>
+        
+        <a href="../daily/2026-08-31.html">2026-08-31</a>
+        
+        <a href="../daily/2026-08-30.html">2026-08-30</a>
+        
+        <a href="../daily/2026-08-29.html">2026-08-29</a>
+        
+        <a href="../daily/2026-08-28.html">2026-08-28</a>
+        
+        <a href="../daily/2026-08-27.html">2026-08-27</a>
+        
+        <a href="../daily/2026-08-26.html">2026-08-26</a>
+        
+        <a href="../daily/2026-08-25.html">2026-08-25</a>
+        
+        <a href="../daily/2026-08-24.html">2026-08-24</a>
+        
+        <a href="../daily/2026-08-23.html">2026-08-23</a>
+        
+        <a href="../daily/2026-08-22.html">2026-08-22</a>
+        
+        <a href="../daily/2026-08-21.html">2026-08-21</a>
+        
+        <a href="../daily/2026-08-20.html">2026-08-20</a>
+        
+        <a href="../daily/2026-08-19.html">2026-08-19</a>
+        
+        <a href="../daily/2026-08-18.html">2026-08-18</a>
+        
+        <a href="../daily/2026-08-17.html">2026-08-17</a>
+        
+        <a href="../daily/2026-08-16.html">2026-08-16</a>
+        
+        <a href="../daily/2026-08-15.html">2026-08-15</a>
+        
+        <a href="../daily/2026-08-14.html">2026-08-14</a>
+        
+        <a href="../daily/2026-08-13.html">2026-08-13</a>
+        
+        <a href="../daily/2026-08-12.html">2026-08-12</a>
+        
+        <a href="../daily/2026-08-11.html">2026-08-11</a>
+        
+        <a href="../daily/2026-08-10.html">2026-08-10</a>
+        
+        <a href="../daily/2026-08-09.html">2026-08-09</a>
+        
+        <a href="../daily/2026-08-08.html">2026-08-08</a>
+        
+        <a href="../daily/2026-08-07.html">2026-08-07</a>
+        
+        <a href="../daily/2026-08-06.html">2026-08-06</a>
+        
+        <a href="../daily/2026-08-05.html">2026-08-05</a>
+        
+        <a href="../daily/2026-08-04.html">2026-08-04</a>
+        
+        <a href="../daily/2026-08-03.html">2026-08-03</a>
+        
+        <a href="../daily/2026-08-02.html">2026-08-02</a>
+        
+      
+    </div>
+    <article class="card">
+      <div class="muted">2026-09-30
+        <span class="badge b-daily">
+          每日報告
+        </span>
+      </div>
+      <h1 id="2026-09-30">金融重點報告 2026-09-30</h1>
+<blockquote>
+<p>產出時間: 2026-09-30 00:20（台灣時間）
+資料截止: 09-29 23:56（收錄庫最新事件，若久久未前進代表蒐集上游疑中斷）
+品質儀表板: 資料新鮮度 ≤30min | 去重率 26.7% | 最大來源佔 15.2% | 驗證覆蓋 24.0% | ⚠️疑似誤殺 50
+本報告由 AI 自動生成，僅供參考，不構成投資建議。</p>
+</blockquote>
+<h2 id="_1">📅 行事曆排期事件</h2>
+<blockquote>
+<p>下列為今日／近期已排定、可能影響市場的重要事件（法人預期供參考）：</p>
+</blockquote>
+<ul>
+<li>⭐ 今天 [高]美國商務部 BEA：PCE 個人消費支出(8月)</li>
+</ul>
+<hr />
+<h2 id="_2">🆕 本次新增事件（置頂：最新產出）</h2>
+<blockquote>
+<p>本次新增 <strong>60 筆</strong>，重要 54 筆</p>
+</blockquote>
+<p><strong>重要事件（severity ≥ 1）</strong>：</p>
+<ul>
+<li><strong>[09-29 23:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Consumer optimism slides to lowest since 2014 as fears escalate over rising prices and jobs <code>cnbc</code></li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國大型企業聯合會消費者信心指數大跌至81.9，遠低於預期，顯示民眾對物價與就業憂慮升高，壓抑消費與經濟前景。</p>
+</li>
+<li>
+<p><strong>[09-29 23:29]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][negative]</strong> 30-year Treasury bond yield scales to highest level since 2002 <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 配合明(30)日美國商務部將公布的PCE個人消費支出通膨數據，市場提前擔憂通膨黏性與央行貨幣政策緊縮，30年期美債殖利率飆至2002年以來最高水準。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TLT,US30Y</code></p>
+</li>
+<li>
+<p><strong>[09-29 23:18]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> 升息風向要變了？ 10月押注升溫 瑞銀逆勢示警：歷史恐再重演 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 市場押注美國商務部將公佈的PCE數據與Fed 10月升息機率升至69%，債市承壓、美元偏強。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[09-29 23:36]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> Nasdaq Composite Holds 26,838 as Tech Stocks Lift Opening Session; S&amp;P 500 Flat, Dow Falls 0.13% - HDFC Sky <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股開盤科技股領漲帶動那斯達克指數走高，標普平盤，道瓊微跌，顯示市場在債息飆升下仍具備結構性分化與抗跌力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>QQQ,SPY,DIA</code></p>
+</li>
+<li>
+<p><strong>[09-29 23:08]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> US stock market today: Why Dow Jones falls while S&amp;P 500 and Nasdaq climb as Nvidia, Oracle and Intel gain - The Economic Times <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股現分化走勢，道瓊下跌而標普與那指因Nvidia、Oracle、Intel等科技巨頭帶動而上漲。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,ORCL,INTC,DJI</code></p>
+</li>
+<li>
+<p><strong>[09-29 22:21]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> US stock market today: NASDAQ 100 rises 100 pts; Dow Jones and S&amp;P 500 extend pullback on Tuesday - Upstox <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股現分化走勢，NASDAQ 100逆勢漲百點，而道瓊與S&amp;P 500則持續拉回，科技股展現相對韌性。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NDX,DJI,SPX</code></p>
+</li>
+<li>
+<p><strong>[09-29 22:13]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> Dow Tumbles 100 Points; Carnival Posts Upbeat Q3 Earnings - benzinga.com <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 道瓊指數下跌百點，嘉年華郵輪Q3財報表現亮眼但未能扭轉大盤修正氣氛。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DJI,CCL</code></p>
+</li>
+<li>
+<p><strong>[09-29 23:50]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][negative]</strong> 油價漲、Fed恐再升息！美債遭拋售 30年期公債殖利率創24年新高 - 鉅亨網 <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價上揚加劇通膨預期，推升Fed再升息機率，美債遭劇烈拋售，30年期公債殖利率創24年新高，債市走空壓力沉重。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TLT,US30Y</code></p>
+</li>
+<li>
+<p><strong>[09-29 23:04]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][neutral]</strong> Preview: Forecasters See Faster Inflation in Tokyo CPI Report for September - TradingView <code>google-news:inflation CPI</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 東京CPI預期加速上升，牽動日本央行後續貨幣政策正常化步伐與日圓走勢。</p>
+</li>
+<li>
+<p><strong>[09-29 22:33]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> 油價債市給予喘息空間、但消費信心不足 美股週二開盤平盤遊走 - tw.news.yahoo.com <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價與債市提供喘息，但消費信心不足使美股主指表現分化，道瓊與S&amp;P 500拉回，那斯達克相對抗跌。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DJI,SPX,NDX</code></p>
+</li>
+<li>
+<p><strong>[09-29 23:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Spain's Central Bank Chief Flags Concerns Over Rising Global Long-Term Yields and Elevated Energy Prices - finance.biggo.com <code>google-news:central bank policy</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 全球長天期殖利率上升與高能源價格引發西班牙央行關注，對債市與高估值股形成壓力。</p>
+</li>
+<li>
+<p><strong>[09-29 23:08]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> Global Bond Yields Hover Around Recent Highs - WSJ <code>google-news:Treasury yields</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 全球公債殖利率盤旋於近期高點，美國30年期公債殖利率逼近2002年以來最高水準。</p>
+</li>
+<li>
+<p><strong>[09-29 22:58]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> Stocks hold steady on Wall Street as oil prices ease, Treasury yields remain stable - AP News <code>google-news:Treasury yields</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價回落且美國公債殖利率持穩，華爾街股市表現平穩持平。</p>
+</li>
+<li>
+<p><strong>[09-29 22:57]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> TWA00 加權指數- 美國消費者信心跌至12年多來最低水平，對就業市場持更悲觀預期- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國消費者信心跌至12年多來最低，對就業市場悲觀，連動台股加權指數投資氣氛轉趨保守。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TWA00</code></p>
+</li>
+<li>
+<p><strong>[09-29 23:49]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][negative]</strong> 渣打銀行驚傳個資外洩 行員「傳錯簡訊」遭金管會罰200萬 - tw.news.yahoo.com <code>google-news:金管會</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 渣打銀行因個資外洩遭金管會裁罰200萬台幣，對母集團及整體金融股營運無系統性影響，但短期信譽受損。</p>
+</li>
+<li>
+<p><strong>[09-29 22:55]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][neutral]</strong> 金管會揭上半年金檢缺失 房貸壽險勸誘話術、人頭戶防詐破口列重點 - finance.biggo.com.tw <code>google-news:金管會</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 金管會揭露房貸壽險與人頭戶防詐缺失，對整體金融股合規營運短期有警示作用，但對大盤無系統性影響。</p>
+</li>
+<li>
+<p><strong>[09-29 22:31]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> 台股震盪劇烈！這3檔主動型ETF爆紅 專家曝差異「一表看懂」 - 三立新聞 <code>google-news:台股 大跌</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股震盪劇烈帶動主動型ETF熱度上升，資金轉向專業經理人操作以對抗波動，有助支撐內資動能。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TWA00</code></p>
+</li>
+<li>
+<p><strong>[09-29 23:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Job openings are low and hiring is weak. Why the U.S. labor market won’t get better soon. <code>marketwatch</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國勞動市場因高利率與AI等因素放緩，將牽動9/30將公布的PCE個人消費支出數據預期，壓抑股市評價面。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[09-29 23:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][negative]</strong> U.S. 30-year Treasury yield tags 5.6%, its highest reading since 2002 <code>seekingalpha</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國30年期公債殖利率攀升至5.59%（2002年以來最高），債券價格重挫，推升全市場無風險利率基準。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TLT,US30Y</code></p>
+</li>
+<li>
+<p><strong>[09-29 23:16]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Medicare Advantage plans will be cheaper next year. Here’s the new cost. <code>marketwatch</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Medicare Advantage計畫明年成本降低，有助於吸引更多保戶加入，對醫療保險商帶來結構性話題。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>UNH,CVS</code></p>
+</li>
+<li>
+<p><strong>[09-29 23:15]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[匯市][neutral]</strong> Banxico can chart rate path independently of Fed, Governor says - Bloomberg <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 墨西哥央行（Banxico）表示可獨立於聯準會制定利率路徑，有助於匯市與當地債市展現自身獨立定價能力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>USD,MXN</code></p>
+</li>
+<li>
+<p><strong>[09-29 23:14]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Burnham says public body will invest in electricity grid <code>bbcbusiness</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 英國公部門將投資電力網以降低能源成本，對基礎建設與綠能產業鏈帶來實質政策利多。</p>
+</li>
+<li>
+<p><strong>[09-29 23:01]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Utilities looking cheap after rising yields de-rating - SocGen <code>seekingalpha</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 殖利率上升導致公用事業股評價遭下修（de-rating），法銀索興認為目前估值已具吸引力。</p>
+</li>
+<li>
+<p><strong>[09-29 22:57]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][positive]</strong> 美官員：普丁特使訪華府 討論結束烏戰與能源合作 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 俄國特使訪華府討論結束烏戰與能源合作，地緣政治風險降溫，有利大宗商品與能源價格穩定。</p>
+</li>
+<li>
+<p><strong>[09-29 22:37]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> 傳台積電將在美國「這大城」設第2園區　國科會主委回應了 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 市場傳聞台積電可能於美國德州達拉斯設第2園區，凸顯全球擴產佈局持續推進。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TSM</code></p>
+</li>
+<li>
+<p><strong>[09-29 22:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Consumer optimism slides sharply as fears escalate over rising prices and jobs <code>cnbc</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國消費者信心指數跌至81.9，大幅低於預期，反映通膨與就業憂慮升高，恐壓抑未來消費動能。</p>
+</li>
+<li>
+<p><strong>[09-29 22:34]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> 貿易摩擦加劇 美國對近10億美元加拿大商品進口禁令正式生效 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國對加拿大商品進口禁令生效，加劇美加貿易摩擦與USMCA談判不確定性，不利相關商品出口與跨境供應鏈。</p>
+</li>
+<li>
+<p><strong>[09-29 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> 黃金、高收益債一起倒！交易員更看好誰反彈？ <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美債殖利率攀升（10年期5.3%、30年期5.4%）重挫黃金與高收益債，資金面臨緊縮壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>GLD,HYG</code></p>
+</li>
+<li>
+<p><strong>[09-29 22:29]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][neutral]</strong> 金管會揭上半年金檢四大缺失 房貸不當搭售壽險、人頭戶防詐漏洞成焦點 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 金管會公布上半年金檢缺失，針對房貸搭售壽險及人頭戶防詐提出警示，對金融業內控要求趨嚴。</p>
+</li>
+<li>
+<p><strong>[09-29 22:15]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][neutral]</strong> 美軍海上封鎖後 伊朗至中國鐵路貨運量增加十倍 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美軍海上封鎖促使伊朗至中國鐵路貨運量增十倍，陸路每日輸出約40萬桶石油，緩解部分能源運輸衝擊。</p>
+</li>
+<li>
+<p><strong>[09-29 22:33]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> 油價債市給予喘息空間、但消費信心不足 美股週二開盤平盤遊走 - Yahoo新聞 <code>google-news:油價</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價與債市回穩給予市場喘息，但消費信心不足使美股開盤平盤遊走，多空交織。</p>
+</li>
+<li>
+<p><strong>[09-29 23:20]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][negative]</strong> US 30-year Treasury yield hits highest since 2002 - Financial Times <code>google-news:Treasury yields</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國30年期公債殖利率觸及2002年以來最高（達5.6%），債市重挫，資金成本大幅攀升，股債雙殺壓力顯現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TLT,US30Y</code></p>
+</li>
+<li>
+<p><strong>[09-29 23:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[market][negative]</strong> Markets Struggle As Treasury Yields Climb And Oil Slips - Seeking Alpha <code>google-news:Treasury yields</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美債殖利率攀高與油價回落，加劇市場掙扎，風險資產面臨估值修正與總體經濟放緩的雙重壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,USO</code></p>
+</li>
+<li>
+<p><strong>[09-29 23:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][negative]</strong> U.S. 30-year Treasury yield tags 5.6%, its highest reading since 2002 (US30Y:) - Seeking Alpha <code>google-news:Treasury yields</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國30年期公債殖利率觸及5.6%，創2002年以來新高，反映長端融資成本惡化，對房市與股市估值構成重壓。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TLT,US30Y</code></p>
+</li>
+<li>
+<p><strong>[09-29 23:13]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[債市][neutral]</strong> Investors should stop panicking about the latest rise in bond yields. Here's why. - Business Insider <code>google-news:Treasury yields</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 分析認為無需對近期美債殖利率上升過度恐慌，有助於穩定債市投資人情緒。</p>
+</li>
+<li>
+<p><strong>[09-29 22:58]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][neutral]</strong> Stocks hold steady on Wall Street as oil prices ease, Treasury yields remain stable - Northeast Mississippi Daily Journal <code>google-news:Treasury yields</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價下跌與美債殖利率穩定抵消了市場不確定性，美股大盤維持盤整。</p>
+</li>
+<li>
+<p><strong>[09-29 22:58]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][neutral]</strong> Stocks hold steady on Wall Street as oil prices ease, Treasury yields remain stable - Union-Bulletin <code>google-news:Treasury yields</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價回落且美債殖利率持穩，支撐華爾街股市表現平穩，風險偏好維持。</p>
+</li>
+<li>
+<p><strong>[09-29 22:34]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> US 30-Year Treasury Yield Approaches Highest Level Since 2002 - bloomberg.com <code>google-news:Treasury yields</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國30年期公債殖利率逼近2002年以來最高水準，加重企業與政府融資成本壓力。</p>
+</li>
+<li>
+<p><strong>[09-29 22:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 美債與油價回落！美股開盤漲跌互見 台指期夜盤大漲609點 - Yahoo新聞 <code>google-news:台股 大漲</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美債與油價回落激勵美股，帶動台指期夜盤大漲609點，資金風險偏好短線回溫。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>台指期</code></p>
+</li>
+<li>
+<p><strong>[09-29 22:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> Wells Fargo lifts 2027 Fed Funds target and yield forecasts <code>seekingalpha</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 富國銀行上調2027年聯邦基金利率與美債殖利率預期，對債市形成賣壓，殖利率走高可能對美股高估值科技股帶來評價修正壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>US10Y,US2Y</code></p>
+</li>
+<li>
+<p><strong>[09-29 22:49]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> Trump to host Anthropic’s Amodei, Nvidia’s Huang, other execs, as AI fears mount <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 川普將與Anthropic、輝達等AI巨頭高層會面，探討AI監管與擔憂，政策不確定性可能使AI族群短線震盪。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,META</code></p>
+</li>
+<li>
+<p><strong>[09-29 22:40]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> 習川會後傳暖意　黃仁勳正式成為北京清華大學顧問委員 <code>yahoo-tw-stock</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 輝達執行長黃仁勳受聘為北京清華大學顧問委員，顯示美中科技巨頭在特定學術交流傳遞和緩訊號，對半導體族群心理面有利。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,AMD</code></p>
+</li>
+<li>
+<p><strong>[09-29 22:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 砸30億結盟中華化  台塑四寶搶進半導體布局  台美同步擴建新廠 <code>yahoo-tw-stock</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台塑四寶合資30億元進軍半導體化學品，轉型切入高附加價值領域，有利長線基本面與評價修復。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>1301,1303,1304,1308,4739</code></p>
+</li>
+<li>
+<p><strong>[09-29 22:34]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][negative]</strong> Michael Burry, Peter Schiff Flag S&amp;P 500 Risk: 5 ETFs to Consider - Invesco QQQ Trust, Series 1 (NASDAQ:Q - Benzinga <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 市場空頭名人Michael Burry與Peter Schiff再度對S&amp;P 500發出風險警示，提醒投資人注意估值過高與潛在回檔風險。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[09-29 22:44]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> 油價回落、科技股樂觀情緒提振標普和那指開高| 財經 - Newtalk新聞 <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價回落減輕通膨疑慮，加上科技股樂觀情緒推動標普與那斯達克開高，利好整體風險資產。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[09-29 22:31]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> 台股震盪劇烈！這3檔主動型ETF爆紅 專家曝差異「一表看懂」 - inews.setn.com <code>google-news:台股 大跌</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股主動型ETF受關注，反映市場震盪下資金尋求專業操盤配置，對大盤無直接結構性影響。</p>
+</li>
+<li>
+<p><strong>[09-29 22:29]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][negative]</strong> 金管會揭上半年金檢四大缺失 房貸不當搭售壽險、人頭戶防詐漏洞成焦點 - news.cnyes.com <code>google-news:金管會</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 金管會揭露上半年金檢缺失，針對房貸搭售與人頭戶防詐漏洞，將加強金融機構合規成本與授信審查。</p>
+</li>
+<li>
+<p><strong>[09-29 22:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> AI半導體供應鏈多空交錯！台指期夜盤大漲逾500點，資金急尋防禦型標的-財經焦點情報站 - CMoney投資網誌 <code>google-news:台股 大漲</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台指期夜盤大漲逾500點，反映美股科技股強勢與資金尋求防禦型標的，帶動台股短線情緒回溫。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>台指期,2330</code></p>
+</li>
+<li>
+<p><strong>[09-29 22:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 美債與油價回落！美股開盤漲跌互見 台指期夜盤大漲609點 - 中天新聞網 <code>google-news:台股 大漲</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美債與油價回落減輕通膨壓力，美股漲跌互見但台指期夜盤大漲609點，激勵台股隔日反彈氣勢。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>台指期</code></p>
+</li>
+<li>
+<p><strong>[09-29 22:14]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][negative]</strong> Meta’s Muse AI threatens Apple’s mobile commerce dominance <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Meta推出Muse AI可能威脅Apple在行動商務領域的宰制地位，加劇科技巨頭競爭。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>META,AAPL</code></p>
+</li>
+<li>
+<p><strong>[09-29 22:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][neutral]</strong> Treasury yields waver near multiyear highs <code>cnbc</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國公債殖利率在多重高點附近盤整，反映市場對通膨與央行政策路徑持續觀望。</p>
+</li>
+<li>
+<p><strong>[09-29 22:15]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][neutral]</strong> Trump Administration Prepares to Ask Tax Filers if They Are U.S. Citizens <code>nytbusiness</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國稅務局草案擬加入公民身分詢問，屬政策轉向，對宏觀金融市場直接實質影響有限。</p>
+</li>
+<li>
+<p><strong>[09-29 22:26]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Nasdaq 100 Forecast: NDX rises as oil eases and tech gains - stonex.com <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價下跌減緩通膨擔憂，科技股獲資金青睞，推升那斯達克100指數走揚。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NDX,QQQ</code></p>
+</li>
+<li>
+<p><strong>[09-29 22:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> Rising Treasury Yields Threaten to Increase Debt Costs for AI Infrastructure Providers - TIKR.com <code>google-news:Treasury yields</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 公債殖利率攀升推高AI基礎設施提供商的債務融資成本，壓縮資本密集型企業利潤率。</li>
+<li><strong style="color:#174ea6">標的</strong>: <code>NVDA,MSFT,GOOGL</code></li>
+</ul>
+<p><strong>其他同時段收錄（未分析，共 6 筆）</strong>：</p>
+<ul>
+<li><strong>[09-29 23:45]</strong> ‘I have $400,000 in equity’: I’m 80 years old. Should I move out of my house because of dangerous stairs?（<code>marketwatch</code>）</li>
+<li><strong>[09-29 23:42]</strong> JPMorgan banker renews defamation countersuit against sexual assault accuser Rana（<code>investing-com</code>）</li>
+<li><strong>[09-29 23:29]</strong> I don’t want to spend $800 on flights to see my family for Thanksgiving. Can I break this holiday tradition?（<code>marketwatch</code>）</li>
+<li><strong>[09-29 23:31]</strong> College Students Flex Their Power in A.I. Investment Frenzy（<code>nytbusiness</code>）</li>
+<li><strong>[09-29 22:37]</strong> Alaska Airlines unveils massive premium cabin overhaul in high-end travel race（<code>cnbc</code>）</li>
+<li><strong>[09-29 22:31]</strong> 辦房貸被暗示要搭壽險？金管會金檢抽聽錄音抓到了 - UDN（<code>google-news:金管會</code>）</li>
+</ul>
+<hr />
+<h2 id="_3">市場行情快照</h2>
+<pre><code>加權指數            47,631.96    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-0.82%
+台積電              2,475.00  TWD ―+0.00%
+鴻海                 250.50  TWD ―+0.00%
+聯發科              4,910.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-7.10%
+台達電              1,835.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-3.93%
+富邦金                151.50  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+1.00%
+S&amp;P 500          7,661.93    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-0.28%
+納斯達克            26,776.14    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-0.16%
+費城半導體指數         12,663.44    點 <span style="color:#c0392b;font-weight:bold">▲</span>+1.59%
+道瓊              51,172.50    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-0.60%
+日經225           65,481.27    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-0.60%
+上證指數             3,830.45    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.18%
+Apple              330.74  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-2.26%
+Microsoft          508.98  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-0.05%
+NVIDIA             230.28  USD <span style="color:#c0392b;font-weight:bold">▲</span>+0.62%
+Amazon             246.72  USD <span style="color:#c0392b;font-weight:bold">▲</span>+0.23%
+Tesla              353.56  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-1.09%
+美元/日圓              157.48  JPY <span style="color:#c0392b;font-weight:bold">▲</span>+0.01%
+美元/台幣               31.82  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+0.14%
+歐元/美元                1.13  EUR <span style="color:#2e7d32;font-weight:bold">▼</span>-0.40%
+美元/人民幣               6.70  CNY <span style="color:#2e7d32;font-weight:bold">▼</span>-0.23%
+WTI原油               90.50  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-2.27%
+布蘭特原油               96.68  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-8.17%
+黃金               4,183.40  USD <span style="color:#c0392b;font-weight:bold">▲</span>+0.36%
+美元指數DXY            101.47    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.27%
+美債10年殖利率             5.28    % <span style="color:#c0392b;font-weight:bold">▲</span>+0.82%
+</code></pre>
+<blockquote>
+<p>（快照資料時間：2026-09-30 00:20，台股收盤為最近一個交易日）</p>
+</blockquote>
+<h2 id="severity-2">重大事件（severity ≥ 2）</h2>
+<ul>
+<li><strong>[09-29 23:50]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][negative]</strong> 油價漲、Fed恐再升息！美債遭拋售 30年期公債殖利率創24年新高 - 鉅亨網</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價上揚加劇通膨預期，推升Fed再升息機率，美債遭劇烈拋售，30年期公債殖利率創24年新高，債市走空壓力沉重。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TLT,US30Y</code></p>
+</li>
+<li>
+<p><strong>[09-29 23:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Consumer optimism slides to lowest since 2014 as fears escalate over rising prices and jobs</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國大型企業聯合會消費者信心指數大跌至81.9，遠低於預期，顯示民眾對物價與就業憂慮升高，壓抑消費與經濟前景。</p>
+</li>
+<li>
+<p><strong>[09-29 23:29]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][negative]</strong> 30-year Treasury bond yield scales to highest level since 2002</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 配合明(30)日美國商務部將公布的PCE個人消費支出通膨數據，市場提前擔憂通膨黏性與央行貨幣政策緊縮，30年期美債殖利率飆至2002年以來最高水準。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TLT,US30Y</code></p>
+</li>
+<li>
+<p><strong>[09-29 23:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Spain's Central Bank Chief Flags Concerns Over Rising Global Long-Term Yields and Elevated Energy Prices - finance.biggo.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 全球長天期殖利率上升與高能源價格引發西班牙央行關注，對債市與高估值股形成壓力。</p>
+</li>
+<li>
+<p><strong>[09-29 23:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Job openings are low and hiring is weak. Why the U.S. labor market won’t get better soon.</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國勞動市場因高利率與AI等因素放緩，將牽動9/30將公布的PCE個人消費支出數據預期，壓抑股市評價面。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[09-29 23:20]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][negative]</strong> US 30-year Treasury yield hits highest since 2002 - Financial Times</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國30年期公債殖利率觸及2002年以來最高（達5.6%），債市重挫，資金成本大幅攀升，股債雙殺壓力顯現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TLT,US30Y</code></p>
+</li>
+<li>
+<p><strong>[09-29 23:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[market][negative]</strong> Markets Struggle As Treasury Yields Climb And Oil Slips - Seeking Alpha</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美債殖利率攀高與油價回落，加劇市場掙扎，風險資產面臨估值修正與總體經濟放緩的雙重壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,USO</code></p>
+</li>
+<li>
+<p><strong>[09-29 23:18]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> 升息風向要變了？ 10月押注升溫 瑞銀逆勢示警：歷史恐再重演</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 市場押注美國商務部將公佈的PCE數據與Fed 10月升息機率升至69%，債市承壓、美元偏強。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[09-29 23:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][negative]</strong> U.S. 30-year Treasury yield tags 5.6%, its highest reading since 2002</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國30年期公債殖利率攀升至5.59%（2002年以來最高），債券價格重挫，推升全市場無風險利率基準。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TLT,US30Y</code></p>
+</li>
+<li>
+<p><strong>[09-29 23:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][negative]</strong> U.S. 30-year Treasury yield tags 5.6%, its highest reading since 2002 (US30Y:) - Seeking Alpha</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國30年期公債殖利率觸及5.6%，創2002年以來新高，反映長端融資成本惡化，對房市與股市估值構成重壓。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TLT,US30Y</code></p>
+</li>
+<li>
+<p><strong>[09-29 23:08]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> Global Bond Yields Hover Around Recent Highs - WSJ</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 全球公債殖利率盤旋於近期高點，美國30年期公債殖利率逼近2002年以來最高水準。</p>
+</li>
+<li>
+<p><strong>[09-29 22:57]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> TWA00 加權指數- 美國消費者信心跌至12年多來最低水平，對就業市場持更悲觀預期- 股市爆料同學會 - CMoney</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國消費者信心跌至12年多來最低，對就業市場悲觀，連動台股加權指數投資氣氛轉趨保守。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TWA00</code></p>
+</li>
+<li>
+<p><strong>[09-29 22:57]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][positive]</strong> 美官員：普丁特使訪華府 討論結束烏戰與能源合作</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 俄國特使訪華府討論結束烏戰與能源合作，地緣政治風險降溫，有利大宗商品與能源價格穩定。</p>
+</li>
+<li>
+<p><strong>[09-29 22:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> Wells Fargo lifts 2027 Fed Funds target and yield forecasts</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 富國銀行上調2027年聯邦基金利率與美債殖利率預期，對債市形成賣壓，殖利率走高可能對美股高估值科技股帶來評價修正壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>US10Y,US2Y</code></p>
+</li>
+<li>
+<p><strong>[09-29 22:49]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> Trump to host Anthropic’s Amodei, Nvidia’s Huang, other execs, as AI fears mount</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 川普將與Anthropic、輝達等AI巨頭高層會面，探討AI監管與擔憂，政策不確定性可能使AI族群短線震盪。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,META</code></p>
+</li>
+<li>
+<p><strong>[09-29 22:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Consumer optimism slides sharply as fears escalate over rising prices and jobs</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國消費者信心指數跌至81.9，大幅低於預期，反映通膨與就業憂慮升高，恐壓抑未來消費動能。</p>
+</li>
+<li>
+<p><strong>[09-29 22:34]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> US 30-Year Treasury Yield Approaches Highest Level Since 2002 - bloomberg.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國30年期公債殖利率逼近2002年以來最高水準，加重企業與政府融資成本壓力。</p>
+</li>
+<li>
+<p><strong>[09-29 22:34]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> 貿易摩擦加劇 美國對近10億美元加拿大商品進口禁令正式生效</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國對加拿大商品進口禁令生效，加劇美加貿易摩擦與USMCA談判不確定性，不利相關商品出口與跨境供應鏈。</p>
+</li>
+<li>
+<p><strong>[09-29 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> 黃金、高收益債一起倒！交易員更看好誰反彈？</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美債殖利率攀升（10年期5.3%、30年期5.4%）重挫黃金與高收益債，資金面臨緊縮壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>GLD,HYG</code></p>
+</li>
+<li>
+<p><strong>[09-29 22:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 美債與油價回落！美股開盤漲跌互見 台指期夜盤大漲609點 - Yahoo新聞</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美債與油價回落激勵美股，帶動台指期夜盤大漲609點，資金風險偏好短線回溫。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>台指期</code></p>
+</li>
+<li>
+<p><strong>[09-29 22:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 美債與油價回落！美股開盤漲跌互見 台指期夜盤大漲609點 - 中天新聞網</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美債與油價回落減輕通膨壓力，美股漲跌互見但台指期夜盤大漲609點，激勵台股隔日反彈氣勢。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>台指期</code></p>
+</li>
+<li>
+<p><strong>[09-29 22:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 砸30億結盟中華化  台塑四寶搶進半導體布局  台美同步擴建新廠</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台塑四寶合資30億元進軍半導體化學品，轉型切入高附加價值領域，有利長線基本面與評價修復。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>1301,1303,1304,1308,4739</code></p>
+</li>
+<li>
+<p><strong>[09-29 22:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][neutral]</strong> Treasury yields waver near multiyear highs</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國公債殖利率在多重高點附近盤整，反映市場對通膨與央行政策路徑持續觀望。</p>
+</li>
+<li>
+<p><strong>[09-29 22:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> Rising Treasury Yields Threaten to Increase Debt Costs for AI Infrastructure Providers - TIKR.com</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 公債殖利率攀升推高AI基礎設施提供商的債務融資成本，壓縮資本密集型企業利潤率。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,MSFT,GOOGL</code></p>
+</li>
+<li>
+<p><strong>[09-29 22:15]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][neutral]</strong> 美軍海上封鎖後 伊朗至中國鐵路貨運量增加十倍</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美軍海上封鎖促使伊朗至中國鐵路貨運量增十倍，陸路每日輸出約40萬桶石油，緩解部分能源運輸衝擊。</p>
+</li>
+<li>
+<p><strong>[09-29 22:13]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> 10-year Treasury yields hit another 19-year high this week: Should you pick a T-note or a CD? - marketwatch.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10年期公債殖利率觸及19年來高點，對固定收益資產與股票估值構成持續壓力。</p>
+</li>
+<li>
+<p><strong>[09-29 22:13]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> 10-year Treasury yields hit another 19-year high this week: Should you pick a T-note or a CD? - MarketWatch</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 10年期美債殖利率創19年新高，排擠股市資金並推升借貸成本，債市賣壓對高估值資產構成壓力。</p>
+</li>
+<li>
+<p><strong>[09-29 22:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][neutral]</strong> 關聯性寫1990年之最！債蛙愈來愈看油價臉色 - UDN</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 債市與油價關聯性創1990年來最高，能源價格波動直接牽動債券殖利率與市場通膨預期。</p>
+</li>
+<li>
+<p><strong>[09-29 22:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> 關聯性寫1990年之最！債蛙愈來愈看油價臉色| 全球財經| 全球 - UDN</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 公債市場與油價連動達1990年來最高，油價波動直接牽動通膨預期與債券殖利率走勢，對債市形成壓抑。</p>
+</li>
+<li>
+<p><strong>[09-29 22:07]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> TWA00 加權指數- 快訊！好消息，剛剛晚上十點兩數據，都不利升息，有利股，債，比 - 股市爆料同學會 - CMoney</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 配合美國商務部BEA公布的PCE個人消費支出數據與相關經濟指標，數據顯示通膨降溫、不利升息，激勵美股、債市及台股期貨表現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TWA00</code></p>
+</li>
+<li>
+<p><strong>[09-29 22:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> Junk bonds are heading for worst month since 2022 after punishing global selloff</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國垃圾債面臨2022年以來最糟單月表現，全球市場拋售潮導致高收益債利差擴大、流動性緊縮。</p>
+</li>
+<li>
+<p><strong>[09-29 21:59]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 油價回落、科技股樂觀情緒提振　標普和那指開高</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價回落與科技股（如Anthropic上市題材）買氣提振，帶動標普500與那斯達克指數開高，緩解通膨與成本壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[09-29 21:58]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 美股平盤震盪！費半強勢漲逾200點</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美債殖利率與油價走低激勵半導體族群，費半強勢大漲逾200點，顯示資金重新回流高成長類股。</li>
+<li><strong style="color:#174ea6">標的</strong>: <code>SOX</code></li>
+</ul>
+<hr />
+<h2 id="_4">分類彙整</h2>
+<h3 id="37">股市（37）</h3>
+<ul>
+<li><strong>[09-29 23:49]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> 渣打銀行驚傳個資外洩 行員「傳錯簡訊」遭金管會罰200萬 - tw.news.yahoo.com</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 渣打銀行因個資外洩遭金管會裁罰200萬台幣，對母集團及整體金融股營運無系統性影響，但短期信譽受損。</p>
+</li>
+<li>
+<p><strong>[09-29 23:42]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> JPMorgan banker renews defamation countersuit against sexual assault accuser Rana</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 摩根大通銀行家反訴訟案，屬於法律訴訟個案，對JPM股價與整體金融市場無實質衝擊。</p>
+</li>
+<li>
+<p><strong>[09-29 23:36]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Nasdaq Composite Holds 26,838 as Tech Stocks Lift Opening Session; S&amp;P 500 Flat, Dow Falls 0.13% - HDFC Sky</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股開盤科技股領漲帶動那斯達克指數走高，標普平盤，道瓊微跌，顯示市場在債息飆升下仍具備結構性分化與抗跌力。</p>
+</li>
+<li>
+<p><strong>[09-29 23:31]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[positive]</strong> College Students Flex Their Power in A.I. Investment Frenzy</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 大學生創投基金籌集5000萬美元投入AI投資狂熱，顯示民間對AI創新熱度不減，但對整體宏觀市場影響有限。</p>
+</li>
+<li>
+<p><strong>[09-29 23:16]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Medicare Advantage plans will be cheaper next year. Here’s the new cost.</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Medicare Advantage計畫明年成本降低，有助於吸引更多保戶加入，對醫療保險商帶來結構性話題。</p>
+</li>
+<li>
+<p><strong>[09-29 23:14]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Burnham says public body will invest in electricity grid</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 英國公部門將投資電力網以降低能源成本，對基礎建設與綠能產業鏈帶來實質政策利多。</p>
+</li>
+<li>
+<p><strong>[09-29 23:08]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> US stock market today: Why Dow Jones falls while S&amp;P 500 and Nasdaq climb as Nvidia, Oracle and Intel gain - The Economic Times</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股現分化走勢，道瓊下跌而標普與那指因Nvidia、Oracle、Intel等科技巨頭帶動而上漲。</p>
+</li>
+<li>
+<p><strong>[09-29 23:01]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Utilities looking cheap after rising yields de-rating - SocGen</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 殖利率上升導致公用事業股評價遭下修（de-rating），法銀索興認為目前估值已具吸引力。</p>
+</li>
+<li>
+<p><strong>[09-29 22:58]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Stocks hold steady on Wall Street as oil prices ease, Treasury yields remain stable - AP News</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價回落且美國公債殖利率持穩，華爾街股市表現平穩持平。</p>
+</li>
+<li>
+<p><strong>[09-29 22:49]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Trump to host Anthropic’s Amodei, Nvidia’s Huang, other execs, as AI fears mount</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 川普將與Anthropic、輝達等AI巨頭高層會面，探討AI監管與擔憂，政策不確定性可能使AI族群短線震盪。</p>
+</li>
+<li>
+<p><strong>[09-29 22:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> AI半導體供應鏈多空交錯！台指期夜盤大漲逾500點，資金急尋防禦型標的-財經焦點情報站 - CMoney投資網誌</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台指期夜盤大漲逾500點，反映美股科技股強勢與資金尋求防禦型標的，帶動台股短線情緒回溫。</p>
+</li>
+<li>
+<p><strong>[09-29 22:44]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> 油價回落、科技股樂觀情緒提振標普和那指開高| 財經 - Newtalk新聞</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價回落減輕通膨疑慮，加上科技股樂觀情緒推動標普與那斯達克開高，利好整體風險資產。</p>
+</li>
+<li>
+<p><strong>[09-29 22:40]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> 習川會後傳暖意　黃仁勳正式成為北京清華大學顧問委員</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 輝達執行長黃仁勳受聘為北京清華大學顧問委員，顯示美中科技巨頭在特定學術交流傳遞和緩訊號，對半導體族群心理面有利。</p>
+</li>
+<li>
+<p><strong>[09-29 22:37]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> 傳台積電將在美國「這大城」設第2園區　國科會主委回應了</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 市場傳聞台積電可能於美國德州達拉斯設第2園區，凸顯全球擴產佈局持續推進。</p>
+</li>
+<li>
+<p><strong>[09-29 22:37]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Alaska Airlines unveils massive premium cabin overhaul in high-end travel race</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 阿拉斯加航空推出豪華客艙改裝計畫以爭奪高階旅遊市場，對整體大盤影響有限，僅限個股基本面。</p>
+</li>
+<li>
+<p><strong>[09-29 22:34]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> Michael Burry, Peter Schiff Flag S&amp;P 500 Risk: 5 ETFs to Consider - Invesco QQQ Trust, Series 1 (NASDAQ:Q - Benzinga</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 市場空頭名人Michael Burry與Peter Schiff再度對S&amp;P 500發出風險警示，提醒投資人注意估值過高與潛在回檔風險。</p>
+</li>
+<li>
+<p><strong>[09-29 22:33]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 油價債市給予喘息空間、但消費信心不足 美股週二開盤平盤遊走 - tw.news.yahoo.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價與債市提供喘息，但消費信心不足使美股主指表現分化，道瓊與S&amp;P 500拉回，那斯達克相對抗跌。</p>
+</li>
+<li>
+<p><strong>[09-29 22:33]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 油價債市給予喘息空間、但消費信心不足 美股週二開盤平盤遊走 - Yahoo新聞</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價與債市回穩給予市場喘息，但消費信心不足使美股開盤平盤遊走，多空交織。</p>
+</li>
+<li>
+<p><strong>[09-29 22:31]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 辦房貸被暗示要搭壽險？金管會金檢抽聽錄音抓到了 - UDN</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 金管會金檢抓到房貸綁壽險違規，為金融監理個案，對整體金融市場無系統性影響。</p>
+</li>
+<li>
+<p><strong>[09-29 22:31]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> 台股震盪劇烈！這3檔主動型ETF爆紅 專家曝差異「一表看懂」 - 三立新聞</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股震盪劇烈帶動主動型ETF熱度上升，資金轉向專業經理人操作以對抗波動，有助支撐內資動能。</p>
+</li>
+<li>
+<p><strong>[09-29 22:31]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 台股震盪劇烈！這3檔主動型ETF爆紅 專家曝差異「一表看懂」 - inews.setn.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股主動型ETF受關注，反映市場震盪下資金尋求專業操盤配置，對大盤無直接結構性影響。</p>
+</li>
+<li>
+<p><strong>[09-29 22:26]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Nasdaq 100 Forecast: NDX rises as oil eases and tech gains - stonex.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價下跌減緩通膨擔憂，科技股獲資金青睞，推升那斯達克100指數走揚。</p>
+</li>
+<li>
+<p><strong>[09-29 22:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 美債與油價回落！美股開盤漲跌互見 台指期夜盤大漲609點 - Yahoo新聞</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美債與油價回落激勵美股，帶動台指期夜盤大漲609點，資金風險偏好短線回溫。</p>
+</li>
+<li>
+<p><strong>[09-29 22:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 美債與油價回落！美股開盤漲跌互見 台指期夜盤大漲609點 - 中天新聞網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美債與油價回落減輕通膨壓力，美股漲跌互見但台指期夜盤大漲609點，激勵台股隔日反彈氣勢。</p>
+</li>
+<li>
+<p><strong>[09-29 22:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 砸30億結盟中華化  台塑四寶搶進半導體布局  台美同步擴建新廠</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台塑四寶合資30億元進軍半導體化學品，轉型切入高附加價值領域，有利長線基本面與評價修復。</p>
+</li>
+<li>
+<p><strong>[09-29 22:21]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> US stock market today: NASDAQ 100 rises 100 pts; Dow Jones and S&amp;P 500 extend pullback on Tuesday - Upstox</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股現分化走勢，NASDAQ 100逆勢漲百點，而道瓊與S&amp;P 500則持續拉回，科技股展現相對韌性。</p>
+</li>
+<li>
+<p><strong>[09-29 22:14]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> Meta’s Muse AI threatens Apple’s mobile commerce dominance</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Meta推出Muse AI可能威脅Apple在行動商務領域的宰制地位，加劇科技巨頭競爭。</p>
+</li>
+<li>
+<p><strong>[09-29 22:13]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Dow Tumbles 100 Points; Carnival Posts Upbeat Q3 Earnings - benzinga.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 道瓊指數下跌百點，嘉年華郵輪Q3財報表現亮眼但未能扭轉大盤修正氣氛。</p>
+</li>
+<li>
+<p><strong>[09-29 22:13]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Dow Tumbles 100 Points; Carnival Posts Upbeat Q3 Earnings - Benzinga</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 道瓊指數小幅下跌，嘉年華郵輪財報優於預期帶動個股表現，美股整體呈類股輪動。</p>
+</li>
+<li>
+<p><strong>[09-29 22:12]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Factbox-Who is John Waldron, long seen as next Goldman CEO?</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 高盛接班人選布局報導，屬於單一企業高層人事新聞，對整體金融市場影響輕微。</p>
+</li>
+<li>
+<p><strong>[09-29 22:11]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 美股3大指數早盤平靜 費半大漲逾2%、台積電ADR卻下跌 - 知新聞</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股大盤平靜、費半強彈逾2%，但台積電ADR逆勢下跌，反映個股籌碼調節與板塊輪動。</p>
+</li>
+<li>
+<p><strong>[09-29 21:59]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 油價回落、科技股樂觀情緒提振　標普和那指開高</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價回落與科技股（如Anthropic上市題材）買氣提振，帶動標普500與那斯達克指數開高，緩解通膨與成本壓力。</p>
+</li>
+<li>
+<p><strong>[09-29 21:58]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 美股平盤震盪！費半強勢漲逾200點</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美債殖利率與油價走低激勵半導體族群，費半強勢大漲逾200點，顯示資金重新回流高成長類股。</p>
+</li>
+<li>
+<p><strong>[09-29 21:57]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Tech stocks rise as Treasury yields and oil prices pull back - qz.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美債殖利率與油價同步回落，降低企業融資成本與成本壓力，推升科技股表現。</p>
+</li>
+<li>
+<p><strong>[09-29 21:57]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> U.S. Stocks Muted as Treasury Selloff Pauses - WSJ</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美債拋售暫歇，美股表現平穩，市場正等待美國商務部即將公布的8月PCE個人消費支出數據指引。</p>
+</li>
+<li>
+<p><strong>[09-29 21:55]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Earnings Snapshot: Carnival's Q3 revenue hits $8.44B; higher fuel costs bite margins</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 嘉年華郵輪Q3營收達84.4億美元但受高油價侵蝕毛利，對觀光與運輸類股帶來成本壓力。</p>
+</li>
+<li>
+<p><strong>[09-29 21:54]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> 美股早盤／油價下跌科技股回神費半攀漲1.7% 市場關注AI午餐會| 全球財經| 全球 - UDN</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價下跌和科技股買盤回溫，推升費半指數走強，助攻台指期夜盤。</li>
+</ul>
+<h3 id="17">債市（17）</h3>
+<ul>
+<li><strong>[09-29 23:50]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 油價漲、Fed恐再升息！美債遭拋售 30年期公債殖利率創24年新高 - 鉅亨網</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價上揚加劇通膨預期，推升Fed再升息機率，美債遭劇烈拋售，30年期公債殖利率創24年新高，債市走空壓力沉重。</p>
+</li>
+<li>
+<p><strong>[09-29 23:29]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 30-year Treasury bond yield scales to highest level since 2002</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 配合明(30)日美國商務部將公布的PCE個人消費支出通膨數據，市場提前擔憂通膨黏性與央行貨幣政策緊縮，30年期美債殖利率飆至2002年以來最高水準。</p>
+</li>
+<li>
+<p><strong>[09-29 23:20]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> US 30-year Treasury yield hits highest since 2002 - Financial Times</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國30年期公債殖利率觸及2002年以來最高（達5.6%），債市重挫，資金成本大幅攀升，股債雙殺壓力顯現。</p>
+</li>
+<li>
+<p><strong>[09-29 23:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> U.S. 30-year Treasury yield tags 5.6%, its highest reading since 2002</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國30年期公債殖利率攀升至5.59%（2002年以來最高），債券價格重挫，推升全市場無風險利率基準。</p>
+</li>
+<li>
+<p><strong>[09-29 23:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> U.S. 30-year Treasury yield tags 5.6%, its highest reading since 2002 (US30Y:) - Seeking Alpha</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國30年期公債殖利率觸及5.6%，創2002年以來新高，反映長端融資成本惡化，對房市與股市估值構成重壓。</p>
+</li>
+<li>
+<p><strong>[09-29 23:13]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Investors should stop panicking about the latest rise in bond yields. Here's why. - Business Insider</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 分析認為無需對近期美債殖利率上升過度恐慌，有助於穩定債市投資人情緒。</p>
+</li>
+<li>
+<p><strong>[09-29 23:08]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Global Bond Yields Hover Around Recent Highs - WSJ</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 全球公債殖利率盤旋於近期高點，美國30年期公債殖利率逼近2002年以來最高水準。</p>
+</li>
+<li>
+<p><strong>[09-29 22:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Wells Fargo lifts 2027 Fed Funds target and yield forecasts</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 富國銀行上調2027年聯邦基金利率與美債殖利率預期，對債市形成賣壓，殖利率走高可能對美股高估值科技股帶來評價修正壓力。</p>
+</li>
+<li>
+<p><strong>[09-29 22:34]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> US 30-Year Treasury Yield Approaches Highest Level Since 2002 - bloomberg.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國30年期公債殖利率逼近2002年以來最高水準，加重企業與政府融資成本壓力。</p>
+</li>
+<li>
+<p><strong>[09-29 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 黃金、高收益債一起倒！交易員更看好誰反彈？</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美債殖利率攀升（10年期5.3%、30年期5.4%）重挫黃金與高收益債，資金面臨緊縮壓力。</p>
+</li>
+<li>
+<p><strong>[09-29 22:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Treasury yields waver near multiyear highs</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國公債殖利率在多重高點附近盤整，反映市場對通膨與央行政策路徑持續觀望。</p>
+</li>
+<li>
+<p><strong>[09-29 22:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Rising Treasury Yields Threaten to Increase Debt Costs for AI Infrastructure Providers - TIKR.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 公債殖利率攀升推高AI基礎設施提供商的債務融資成本，壓縮資本密集型企業利潤率。</p>
+</li>
+<li>
+<p><strong>[09-29 22:13]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 10-year Treasury yields hit another 19-year high this week: Should you pick a T-note or a CD? - marketwatch.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10年期公債殖利率觸及19年來高點，對固定收益資產與股票估值構成持續壓力。</p>
+</li>
+<li>
+<p><strong>[09-29 22:13]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 10-year Treasury yields hit another 19-year high this week: Should you pick a T-note or a CD? - MarketWatch</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 10年期美債殖利率創19年新高，排擠股市資金並推升借貸成本，債市賣壓對高估值資產構成壓力。</p>
+</li>
+<li>
+<p><strong>[09-29 22:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> 關聯性寫1990年之最！債蛙愈來愈看油價臉色 - UDN</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 債市與油價關聯性創1990年來最高，能源價格波動直接牽動債券殖利率與市場通膨預期。</p>
+</li>
+<li>
+<p><strong>[09-29 22:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 關聯性寫1990年之最！債蛙愈來愈看油價臉色| 全球財經| 全球 - UDN</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 公債市場與油價連動達1990年來最高，油價波動直接牽動通膨預期與債券殖利率走勢，對債市形成壓抑。</p>
+</li>
+<li>
+<p><strong>[09-29 22:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Junk bonds are heading for worst month since 2022 after punishing global selloff</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國垃圾債面臨2022年以來最糟單月表現，全球市場拋售潮導致高收益債利差擴大、流動性緊縮。</li>
+</ul>
+<h3 id="2">匯市（2）</h3>
+<ul>
+<li><strong>[09-29 23:15]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Banxico can chart rate path independently of Fed, Governor says - Bloomberg</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 墨西哥央行（Banxico）表示可獨立於聯準會制定利率路徑，有助於匯市與當地債市展現自身獨立定價能力。</p>
+</li>
+<li>
+<p><strong>[09-29 22:07]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Bitcoin Hovers at $84K as Treasury Yields Hold Near Multi-Year Highs - Decrypt</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國公債殖利率維持在多年高檔，比特幣在84,000美元附近盤整，高利率環境對風險資產估值形成牽制。</li>
+</ul>
+<h3 id="1">商品(油金)（1）</h3>
+<ul>
+<li><strong>[09-29 21:56]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 美國頁岩油儲量補充趨緩 Kimmeridge指天然氣供應充裕</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國頁岩油儲量補充趨緩但天然氣供應充裕，對整體能源商品價格影響中性。</li>
+</ul>
+<h3 id="3">地緣政治（3）</h3>
+<ul>
+<li><strong>[09-29 22:57]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 美官員：普丁特使訪華府 討論結束烏戰與能源合作</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 俄國特使訪華府討論結束烏戰與能源合作，地緣政治風險降溫，有利大宗商品與能源價格穩定。</p>
+</li>
+<li>
+<p><strong>[09-29 22:34]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 貿易摩擦加劇 美國對近10億美元加拿大商品進口禁令正式生效</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國對加拿大商品進口禁令生效，加劇美加貿易摩擦與USMCA談判不確定性，不利相關商品出口與跨境供應鏈。</p>
+</li>
+<li>
+<p><strong>[09-29 22:15]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> 美軍海上封鎖後 伊朗至中國鐵路貨運量增加十倍</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美軍海上封鎖促使伊朗至中國鐵路貨運量增十倍，陸路每日輸出約40萬桶石油，緩解部分能源運輸衝擊。</li>
+</ul>
+<h3 id="14">總體經濟（14）</h3>
+<ul>
+<li><strong>[09-29 23:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Consumer optimism slides to lowest since 2014 as fears escalate over rising prices and jobs</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國大型企業聯合會消費者信心指數大跌至81.9，遠低於預期，顯示民眾對物價與就業憂慮升高，壓抑消費與經濟前景。</p>
+</li>
+<li>
+<p><strong>[09-29 23:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Spain's Central Bank Chief Flags Concerns Over Rising Global Long-Term Yields and Elevated Energy Prices - finance.biggo.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 全球長天期殖利率上升與高能源價格引發西班牙央行關注，對債市與高估值股形成壓力。</p>
+</li>
+<li>
+<p><strong>[09-29 23:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Job openings are low and hiring is weak. Why the U.S. labor market won’t get better soon.</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國勞動市場因高利率與AI等因素放緩，將牽動9/30將公布的PCE個人消費支出數據預期，壓抑股市評價面。</p>
+</li>
+<li>
+<p><strong>[09-29 23:18]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 升息風向要變了？ 10月押注升溫 瑞銀逆勢示警：歷史恐再重演</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 市場押注美國商務部將公佈的PCE數據與Fed 10月升息機率升至69%，債市承壓、美元偏強。</p>
+</li>
+<li>
+<p><strong>[09-29 23:04]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Preview: Forecasters See Faster Inflation in Tokyo CPI Report for September - TradingView</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 東京CPI預期加速上升，牽動日本央行後續貨幣政策正常化步伐與日圓走勢。</p>
+</li>
+<li>
+<p><strong>[09-29 22:58]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Stocks hold steady on Wall Street as oil prices ease, Treasury yields remain stable - Northeast Mississippi Daily Journal</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價下跌與美債殖利率穩定抵消了市場不確定性，美股大盤維持盤整。</p>
+</li>
+<li>
+<p><strong>[09-29 22:58]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Stocks hold steady on Wall Street as oil prices ease, Treasury yields remain stable - Union-Bulletin</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價回落且美債殖利率持穩，支撐華爾街股市表現平穩，風險偏好維持。</p>
+</li>
+<li>
+<p><strong>[09-29 22:57]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> TWA00 加權指數- 美國消費者信心跌至12年多來最低水平，對就業市場持更悲觀預期- 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國消費者信心跌至12年多來最低，對就業市場悲觀，連動台股加權指數投資氣氛轉趨保守。</p>
+</li>
+<li>
+<p><strong>[09-29 22:55]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 金管會揭上半年金檢缺失 房貸壽險勸誘話術、人頭戶防詐破口列重點 - finance.biggo.com.tw</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 金管會揭露房貸壽險與人頭戶防詐缺失，對整體金融股合規營運短期有警示作用，但對大盤無系統性影響。</p>
+</li>
+<li>
+<p><strong>[09-29 22:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Consumer optimism slides sharply as fears escalate over rising prices and jobs</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國消費者信心指數跌至81.9，大幅低於預期，反映通膨與就業憂慮升高，恐壓抑未來消費動能。</p>
+</li>
+<li>
+<p><strong>[09-29 22:29]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 金管會揭上半年金檢四大缺失 房貸不當搭售壽險、人頭戶防詐漏洞成焦點</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 金管會公布上半年金檢缺失，針對房貸搭售壽險及人頭戶防詐提出警示，對金融業內控要求趨嚴。</p>
+</li>
+<li>
+<p><strong>[09-29 22:29]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> 金管會揭上半年金檢四大缺失 房貸不當搭售壽險、人頭戶防詐漏洞成焦點 - news.cnyes.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 金管會揭露上半年金檢缺失，針對房貸搭售與人頭戶防詐漏洞，將加強金融機構合規成本與授信審查。</p>
+</li>
+<li>
+<p><strong>[09-29 22:15]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Trump Administration Prepares to Ask Tax Filers if They Are U.S. Citizens</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國稅務局草案擬加入公民身分詢問，屬政策轉向，對宏觀金融市場直接實質影響有限。</p>
+</li>
+<li>
+<p><strong>[09-29 22:07]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> TWA00 加權指數- 快訊！好消息，剛剛晚上十點兩數據，都不利升息，有利股，債，比 - 股市爆料同學會 - CMoney</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 配合美國商務部BEA公布的PCE個人消費支出數據與相關經濟指標，數據顯示通膨降溫、不利升息，激勵美股、債市及台股期貨表現。</li>
+</ul>
+<h3 id="5">其他（5）</h3>
+<ul>
+<li><strong>[09-29 23:45]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> ‘I have $400,000 in equity’: I’m 80 years old. Should I move out of my house because of dangerous stairs?</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 個人理財專欄問答，探討高齡者是否因房屋結構問題出售低房貸利率房屋，對整體金融市場無直接影響。</p>
+</li>
+<li>
+<p><strong>[09-29 23:29]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> I don’t want to spend $800 on flights to see my family for Thanksgiving. Can I break this holiday tradition?</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 個人消費旅遊預算考量，對宏觀金融市場無直接實質影響。</p>
+</li>
+<li>
+<p><strong>[09-29 22:13]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> The No. 1 mistake beginners make with travel cards, according to The Points Guy</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 旅遊信用卡消費與年費新手指南，屬於消費理財教育性質，對金融市場無重大影響。</p>
+</li>
+<li>
+<p><strong>[09-29 22:00]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> My kids don’t want my decades’ worth of stuff. Here’s how I’m learning to let go of it.</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 生活風格與家庭理財話題，對全球股債匯市無直接實質影響。</p>
+</li>
+<li>
+<p><strong>[09-29 21:55]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> TWA00 加權指數- 妳越是死盯著盤面，帳戶裡的錢，往往就虧得越快。 - 股市爆料同學會 - CMoney</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 投資心理面提醒，對實質股債市無直接影響。</li>
+</ul>
+<hr />
+<h2 id="_5">全部事件</h2>
+<ul>
+<li><strong>[09-29 23:50]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 油價漲、Fed恐再升息！美債遭拋售 30年期公債殖利率創24年新高 - 鉅亨網 <code>google-news:油價</code></li>
+<li><strong>[09-29 23:49]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 渣打銀行驚傳個資外洩 行員「傳錯簡訊」遭金管會罰200萬 - tw.news.yahoo.com <code>google-news:金管會</code></li>
+<li><strong>[09-29 23:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Consumer optimism slides to lowest since 2014 as fears escalate over rising prices and jobs <code>cnbc</code></li>
+<li><strong>[09-29 23:45]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> ‘I have $400,000 in equity’: I’m 80 years old. Should I move out of my house because of dangerous stairs? <code>marketwatch</code></li>
+<li><strong>[09-29 23:42]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> JPMorgan banker renews defamation countersuit against sexual assault accuser Rana <code>investing-com</code></li>
+<li><strong>[09-29 23:36]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Nasdaq Composite Holds 26,838 as Tech Stocks Lift Opening Session; S&amp;P 500 Flat, Dow Falls 0.13% - HDFC Sky <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[09-29 23:31]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> College Students Flex Their Power in A.I. Investment Frenzy <code>nytbusiness</code></li>
+<li><strong>[09-29 23:29]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 30-year Treasury bond yield scales to highest level since 2002 <code>cnbc</code></li>
+<li><strong>[09-29 23:29]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> I don’t want to spend $800 on flights to see my family for Thanksgiving. Can I break this holiday tradition? <code>marketwatch</code></li>
+<li><strong>[09-29 23:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Spain's Central Bank Chief Flags Concerns Over Rising Global Long-Term Yields and Elevated Energy Prices - finance.biggo.com <code>google-news:central bank policy</code></li>
+<li><strong>[09-29 23:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Job openings are low and hiring is weak. Why the U.S. labor market won’t get better soon. <code>marketwatch</code></li>
+<li><strong>[09-29 23:20]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> US 30-year Treasury yield hits highest since 2002 - Financial Times <code>google-news:Treasury yields</code></li>
+<li><strong>[09-29 23:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Markets Struggle As Treasury Yields Climb And Oil Slips - Seeking Alpha <code>google-news:Treasury yields</code></li>
+<li><strong>[09-29 23:18]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 升息風向要變了？ 10月押注升溫 瑞銀逆勢示警：歷史恐再重演 <code>yahoo-tw-finance</code></li>
+<li><strong>[09-29 23:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> U.S. 30-year Treasury yield tags 5.6%, its highest reading since 2002 <code>seekingalpha</code></li>
+<li><strong>[09-29 23:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> U.S. 30-year Treasury yield tags 5.6%, its highest reading since 2002 (US30Y:) - Seeking Alpha <code>google-news:Treasury yields</code></li>
+<li><strong>[09-29 23:16]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Medicare Advantage plans will be cheaper next year. Here’s the new cost. <code>marketwatch</code></li>
+<li><strong>[09-29 23:15]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Banxico can chart rate path independently of Fed, Governor says - Bloomberg <code>investing-com</code></li>
+<li><strong>[09-29 23:14]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Burnham says public body will invest in electricity grid <code>bbcbusiness</code></li>
+<li><strong>[09-29 23:13]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Investors should stop panicking about the latest rise in bond yields. Here's why. - Business Insider <code>google-news:Treasury yields</code></li>
+<li><strong>[09-29 23:08]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> US stock market today: Why Dow Jones falls while S&amp;P 500 and Nasdaq climb as Nvidia, Oracle and Intel gain - The Economic Times <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[09-29 23:08]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Global Bond Yields Hover Around Recent Highs - WSJ <code>google-news:Treasury yields</code></li>
+<li><strong>[09-29 23:04]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Preview: Forecasters See Faster Inflation in Tokyo CPI Report for September - TradingView <code>google-news:inflation CPI</code></li>
+<li><strong>[09-29 23:01]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Utilities looking cheap after rising yields de-rating - SocGen <code>seekingalpha</code></li>
+<li><strong>[09-29 22:58]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Stocks hold steady on Wall Street as oil prices ease, Treasury yields remain stable - Northeast Mississippi Daily Journal <code>google-news:Treasury yields</code></li>
+<li><strong>[09-29 22:58]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Stocks hold steady on Wall Street as oil prices ease, Treasury yields remain stable - Union-Bulletin <code>google-news:Treasury yields</code></li>
+<li><strong>[09-29 22:58]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Stocks hold steady on Wall Street as oil prices ease, Treasury yields remain stable - AP News <code>google-news:Treasury yields</code></li>
+<li><strong>[09-29 22:57]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> TWA00 加權指數- 美國消費者信心跌至12年多來最低水平，對就業市場持更悲觀預期- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[09-29 22:57]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 美官員：普丁特使訪華府 討論結束烏戰與能源合作 <code>yahoo-tw-finance</code></li>
+<li><strong>[09-29 22:55]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 金管會揭上半年金檢缺失 房貸壽險勸誘話術、人頭戶防詐破口列重點 - finance.biggo.com.tw <code>google-news:金管會</code></li>
+<li><strong>[09-29 22:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Wells Fargo lifts 2027 Fed Funds target and yield forecasts <code>seekingalpha</code></li>
+<li><strong>[09-29 22:49]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Trump to host Anthropic’s Amodei, Nvidia’s Huang, other execs, as AI fears mount <code>investing-com</code></li>
+<li><strong>[09-29 22:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> AI半導體供應鏈多空交錯！台指期夜盤大漲逾500點，資金急尋防禦型標的-財經焦點情報站 - CMoney投資網誌 <code>google-news:台股 大漲</code></li>
+<li><strong>[09-29 22:44]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 油價回落、科技股樂觀情緒提振標普和那指開高| 財經 - Newtalk新聞 <code>google-news:油價</code></li>
+<li><strong>[09-29 22:40]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 習川會後傳暖意　黃仁勳正式成為北京清華大學顧問委員 <code>yahoo-tw-stock</code></li>
+<li><strong>[09-29 22:37]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 傳台積電將在美國「這大城」設第2園區　國科會主委回應了 <code>yahoo-tw-finance</code></li>
+<li><strong>[09-29 22:37]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Alaska Airlines unveils massive premium cabin overhaul in high-end travel race <code>cnbc</code></li>
+<li><strong>[09-29 22:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Consumer optimism slides sharply as fears escalate over rising prices and jobs <code>cnbc</code></li>
+<li><strong>[09-29 22:34]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Michael Burry, Peter Schiff Flag S&amp;P 500 Risk: 5 ETFs to Consider - Invesco QQQ Trust, Series 1 (NASDAQ:Q - Benzinga <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[09-29 22:34]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> US 30-Year Treasury Yield Approaches Highest Level Since 2002 - bloomberg.com <code>google-news:Treasury yields</code></li>
+<li><strong>[09-29 22:34]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 貿易摩擦加劇 美國對近10億美元加拿大商品進口禁令正式生效 <code>yahoo-tw-finance</code></li>
+<li><strong>[09-29 22:33]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 油價債市給予喘息空間、但消費信心不足 美股週二開盤平盤遊走 - tw.news.yahoo.com <code>google-news:油價</code></li>
+<li><strong>[09-29 22:33]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 油價債市給予喘息空間、但消費信心不足 美股週二開盤平盤遊走 - Yahoo新聞 <code>google-news:油價</code></li>
+<li><strong>[09-29 22:31]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 辦房貸被暗示要搭壽險？金管會金檢抽聽錄音抓到了 - UDN <code>google-news:金管會</code></li>
+<li><strong>[09-29 22:31]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 台股震盪劇烈！這3檔主動型ETF爆紅 專家曝差異「一表看懂」 - 三立新聞 <code>google-news:台股 大跌</code></li>
+<li><strong>[09-29 22:31]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 台股震盪劇烈！這3檔主動型ETF爆紅 專家曝差異「一表看懂」 - inews.setn.com <code>google-news:台股 大跌</code></li>
+<li><strong>[09-29 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 黃金、高收益債一起倒！交易員更看好誰反彈？ <code>yahoo-tw-finance</code></li>
+<li><strong>[09-29 22:29]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 金管會揭上半年金檢四大缺失 房貸不當搭售壽險、人頭戶防詐漏洞成焦點 <code>yahoo-tw-finance</code></li>
+<li><strong>[09-29 22:29]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 金管會揭上半年金檢四大缺失 房貸不當搭售壽險、人頭戶防詐漏洞成焦點 - news.cnyes.com <code>google-news:金管會</code></li>
+<li><strong>[09-29 22:26]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Nasdaq 100 Forecast: NDX rises as oil eases and tech gains - stonex.com <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[09-29 22:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 美債與油價回落！美股開盤漲跌互見 台指期夜盤大漲609點 - Yahoo新聞 <code>google-news:台股 大漲</code></li>
+<li><strong>[09-29 22:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 美債與油價回落！美股開盤漲跌互見 台指期夜盤大漲609點 - 中天新聞網 <code>google-news:台股 大漲</code></li>
+<li><strong>[09-29 22:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 砸30億結盟中華化  台塑四寶搶進半導體布局  台美同步擴建新廠 <code>yahoo-tw-stock</code></li>
+<li><strong>[09-29 22:21]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> US stock market today: NASDAQ 100 rises 100 pts; Dow Jones and S&amp;P 500 extend pullback on Tuesday - Upstox <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[09-29 22:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Treasury yields waver near multiyear highs <code>cnbc</code></li>
+<li><strong>[09-29 22:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Rising Treasury Yields Threaten to Increase Debt Costs for AI Infrastructure Providers - TIKR.com <code>google-news:Treasury yields</code></li>
+<li><strong>[09-29 22:15]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Trump Administration Prepares to Ask Tax Filers if They Are U.S. Citizens <code>nytbusiness</code></li>
+<li><strong>[09-29 22:15]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 美軍海上封鎖後 伊朗至中國鐵路貨運量增加十倍 <code>yahoo-tw-finance</code></li>
+<li><strong>[09-29 22:14]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Meta’s Muse AI threatens Apple’s mobile commerce dominance <code>investing-com</code></li>
+<li><strong>[09-29 22:13]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Dow Tumbles 100 Points; Carnival Posts Upbeat Q3 Earnings - benzinga.com <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[09-29 22:13]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Dow Tumbles 100 Points; Carnival Posts Upbeat Q3 Earnings - Benzinga <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[09-29 22:13]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 10-year Treasury yields hit another 19-year high this week: Should you pick a T-note or a CD? - marketwatch.com <code>google-news:Treasury yields</code></li>
+<li><strong>[09-29 22:13]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 10-year Treasury yields hit another 19-year high this week: Should you pick a T-note or a CD? - MarketWatch <code>google-news:Treasury yields</code></li>
+<li><strong>[09-29 22:13]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> The No. 1 mistake beginners make with travel cards, according to The Points Guy <code>marketwatch</code></li>
+<li><strong>[09-29 22:12]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Factbox-Who is John Waldron, long seen as next Goldman CEO? <code>investing-com</code></li>
+<li><strong>[09-29 22:11]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 美股3大指數早盤平靜 費半大漲逾2%、台積電ADR卻下跌 - 知新聞 <code>google-news:台股 大漲</code></li>
+<li><strong>[09-29 22:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 關聯性寫1990年之最！債蛙愈來愈看油價臉色 - UDN <code>google-news:油價</code></li>
+<li><strong>[09-29 22:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 關聯性寫1990年之最！債蛙愈來愈看油價臉色| 全球財經| 全球 - UDN <code>google-news:油價</code></li>
+<li><strong>[09-29 22:07]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Bitcoin Hovers at $84K as Treasury Yields Hold Near Multi-Year Highs - Decrypt <code>google-news:Treasury yields</code></li>
+<li><strong>[09-29 22:07]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> TWA00 加權指數- 快訊！好消息，剛剛晚上十點兩數據，都不利升息，有利股，債，比 - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[09-29 22:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Junk bonds are heading for worst month since 2022 after punishing global selloff <code>marketwatch</code></li>
+<li><strong>[09-29 22:00]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> My kids don’t want my decades’ worth of stuff. Here’s how I’m learning to let go of it. <code>marketwatch</code></li>
+<li><strong>[09-29 21:59]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 油價回落、科技股樂觀情緒提振　標普和那指開高 <code>yahoo-tw-stock</code></li>
+<li><strong>[09-29 21:58]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 美股平盤震盪！費半強勢漲逾200點 <code>yahoo-tw-stock</code></li>
+<li><strong>[09-29 21:57]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Tech stocks rise as Treasury yields and oil prices pull back - qz.com <code>google-news:Treasury yields</code></li>
+<li><strong>[09-29 21:57]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> U.S. Stocks Muted as Treasury Selloff Pauses - WSJ <code>google-news:Treasury yields</code></li>
+<li><strong>[09-29 21:56]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 美國頁岩油儲量補充趨緩 Kimmeridge指天然氣供應充裕 <code>yahoo-tw-stock</code></li>
+<li><strong>[09-29 21:55]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> TWA00 加權指數- 妳越是死盯著盤面，帳戶裡的錢，往往就虧得越快。 - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[09-29 21:55]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Earnings Snapshot: Carnival's Q3 revenue hits $8.44B; higher fuel costs bite margins <code>seekingalpha</code></li>
+<li><strong>[09-29 21:54]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 美股早盤／油價下跌科技股回神費半攀漲1.7% 市場關注AI午餐會| 全球財經| 全球 - UDN <code>google-news:油價</code></li>
+</ul>
+    </article>
+  
+</div>
+<footer>由金融情報系統自動發佈 · 僅供參考，不構成投資建議</footer>
+<script>
+const WEEK = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function nowParts(tz){
+  const p = {};
+  new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short', month: 'short',
+    day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
+  }).formatToParts(new Date()).forEach(x => p[x.type] = x.value);
+  return p;
+}
+function marketOpen(tz, open, close){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  return wd>=1 && wd<=5 && m>=open && m<close;
+}
+// Taiwan index-futures night session 15:00 -> next-day 05:00 (crosses midnight):
+// 15:00-24:00 Mon-Fri, plus 00:00-05:00 Tue-Sat (Sat 00:00-05:00 is Fri night session).
+function nightOpen(tz){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  if (m >= 5*60 && m < 15*60) return false;   // 05:00-15:00 recess
+  if (m >= 15*60) return wd >= 1 && wd <= 5;   // 15:00-24:00 Mon-Fri
+  return wd >= 2 && wd <= 6;                   // 00:00-05:00 Tue-Sat
+}
+function pad(n){ return String(n).padStart(2,'0'); }
+function setMkt(id, open, label){
+  const el = document.getElementById(id);
+  el.className = 'mkt ' + (open ? 'open' : 'closed');
+  el.textContent = (label ? label + ' ' : '') + (open ? '開盤中' : '未開盤');
+}
+function tick(){
+  const tw = nowParts('Asia/Taipei');
+  const ny = nowParts('America/New_York');
+  document.getElementById('clk-tw').textContent = pad(tw.hour)+':'+pad(tw.minute)+':'+pad(tw.second);
+  document.getElementById('clk-ny').textContent = pad(ny.hour)+':'+pad(ny.minute)+':'+pad(ny.second);
+  // Taiwan: TWSE weighted index 09:00-13:30; TX futures day 08:45-13:45; TX night 15:00-05:00
+  setMkt('tw-idx',  marketOpen('Asia/Taipei', 9*60, 13*60+30), '加權');
+  setMkt('tx-day',  marketOpen('Asia/Taipei', 8*60+45, 13*60+45), '期日盤');
+  setMkt('tx-night', nightOpen('Asia/Taipei'), '期夜盤');
+  // US: regular session 09:30-16:00 ET; after-hours 16:00-20:00 ET
+  setMkt('ny-mkt',  marketOpen('America/New_York', 9*60+30, 16*60), '美股');
+  setMkt('ny-night', marketOpen('America/New_York', 16*60, 20*60), '美股夜');
+}
+tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>
