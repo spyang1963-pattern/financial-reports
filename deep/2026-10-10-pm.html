@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度分析報告 2026-10-10 傍晚</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; margin: 0;
+         background: #f5f6f8; color: #1c1e21; line-height: 1.7; }
+  header { background: #1b2a4a; color: #fff; padding: 14px 24px;
+           display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  header h1 { font-size: 18px; margin: 0; flex: 1; }
+  header nav a { color: #cdd8ee; text-decoration: none; margin-left: 14px; font-size: 14px; }
+  header nav a:hover, header nav a.active { color: #fff; text-decoration: underline; }
+  #clock { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; font-size: 13px; }
+  .clk { background: rgba(255,255,255,.08); border-radius: 6px; padding: 4px 10px; }
+  .clk-city { color: #9fb0cf; margin-right: 6px; }
+  .clk-time { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .mkt { margin-left: 8px; font-size: 12px; padding: 1px 7px; border-radius: 9px; }
+  .mkt.open { background: #2e7d32; color: #fff; }
+  .mkt.closed { background: #5a6474; color: #fff; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 20px; }
+  .card { background: #fff; border-radius: 8px; padding: 18px 22px; margin: 14px 0;
+          box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .card h3 { margin: 0 0 6px; }
+  .card a { color: #1b2a4a; text-decoration: none; }
+  .card a:hover { text-decoration: underline; }
+  .muted { color: #666; font-size: 13px; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px;
+           color: #fff; margin-left: 6px; }
+  .b-daily { background: #2e7d32; }
+  .b-deep { background: #b45309; }
+  .day-nav { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+  .day-nav a { font-size: 13px; padding: 3px 10px; background: #e8ecf3; border-radius: 12px;
+               color: #33415c; text-decoration: none; }
+  .day-nav a:hover { background: #d2dbea; }
+  article.card { line-height: 1.15; }
+  article.card p { margin: 3px 0; }
+  article.card ul, article.card ol { margin: 3px 0 6px; padding-left: 22px; }
+  article.card h1, article.card h2, article.card h3 { padding-bottom: 4px; }
+  article.card h1, article.card h2 { border-bottom: 2px solid #33415c; }
+  article.card h1 { font-size: 30px; margin-top: 8px; }
+  article.card h2 { font-size: 23px; margin-top: 12px; color: #1b2a4a;
+        border-left: 6px solid #1459c8; padding-left: 12px; }
+  article.card h3 { font-size: 19px; margin-top: 10px; color: #24365c;
+        background: #eef4fb; border-radius: 6px; padding: 4px 12px; }
+  article.card h4 { font-size: 17px; margin-top: 18px; color: #145c3a;
+        background: #e8f5ee; border-left: 4px solid #2e7d32;
+        padding: 5px 10px; border-radius: 4px; }
+  article.card h5 { font-size: 15px; margin-top: 14px; color: #4a5568;
+        font-weight: 600; }
+  article.card h4, article.card h5 { margin-bottom: 2px; }
+  article.card strong { font-weight: 700; }
+  article.card blockquote { border-left: 4px solid #9fb0cf; margin: 4px 0;
+        padding: 2px 12px; color: #4a5568; background: #f4f6fa; }
+  article.card hr { border: none; border-top: 1px dashed #c3ccdb; margin: 12px 0; }
+  article.card code { background: #eef0f4; padding: 1px 5px; border-radius: 4px;
+        font-size: 14px; font-family: Consolas, monospace; }
+  article.card pre { background: #1b2a4a; color: #e6ecf7; padding: 14px; border-radius: 8px; overflow-x: auto; }
+  article.card pre code { background: transparent; color: inherit; padding: 0; }
+  article.card table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+  article.card th, article.card td { border: 1px solid #d8dce3; padding: 6px 10px; }
+  article.card th { background: #eef1f6; }
+  article.card a { color: #1459c8; }
+  footer { text-align: center; color: #999; font-size: 12px; padding: 20px; }
+</style>
+</head>
+<body>
+  <header>
+  <h1>金融情報系統報告</h1>
+  <nav>
+    <a href="../index.html" class="">首頁</a>
+    <a href="../calendar.html" class="">行事曆</a>
+    <a href="../daily/2026-10-10.html" class="">最新每日</a>
+    <a href="../deep/2026-10-10-pm.html" class="active">最新深度</a>
+  </nav>
+  <div id="clock">
+    <span class="clk"><span class="clk-city">台北</span><span class="clk-time" id="clk-tw">--:--:--</span><span class="mkt closed" id="tw-idx">…</span><span class="mkt closed" id="tx-day">…</span><span class="mkt closed" id="tx-night">…</span></span>
+    <span class="clk"><span class="clk-city">紐約</span><span class="clk-time" id="clk-ny">--:--:--</span><span class="mkt closed" id="ny-mkt">…</span><span class="mkt closed" id="ny-night">…</span></span>
+  </div>
+</header>
+<div class="wrap">
+  
+    <div class="day-nav">
+      <a href="../index.html">← 首頁</a>
+      
+        
+        
+        <a href="../deep/2026-10-10-am.html">2026-10-10 早上</a>
+        
+        <a href="../deep/2026-10-10-pm.html">2026-10-10 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-09-am.html">2026-10-09 早上</a>
+        
+        <a href="../deep/2026-10-09-pm.html">2026-10-09 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-08-am.html">2026-10-08 早上</a>
+        
+        <a href="../deep/2026-10-08-pm.html">2026-10-08 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-07-am.html">2026-10-07 早上</a>
+        
+        <a href="../deep/2026-10-07-pm.html">2026-10-07 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-06-am.html">2026-10-06 早上</a>
+        
+        <a href="../deep/2026-10-06-pm.html">2026-10-06 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-05-am.html">2026-10-05 早上</a>
+        
+        <a href="../deep/2026-10-05-pm.html">2026-10-05 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-04-am.html">2026-10-04 早上</a>
+        
+        <a href="../deep/2026-10-04-pm.html">2026-10-04 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-03-am.html">2026-10-03 早上</a>
+        
+        <a href="../deep/2026-10-03-pm.html">2026-10-03 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-02-am.html">2026-10-02 早上</a>
+        
+        <a href="../deep/2026-10-02-pm.html">2026-10-02 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-01-am.html">2026-10-01 早上</a>
+        
+        <a href="../deep/2026-10-01-pm.html">2026-10-01 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-30-am.html">2026-09-30 早上</a>
+        
+        <a href="../deep/2026-09-30-pm.html">2026-09-30 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-29-am.html">2026-09-29 早上</a>
+        
+        <a href="../deep/2026-09-29-pm.html">2026-09-29 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-28-am.html">2026-09-28 早上</a>
+        
+        <a href="../deep/2026-09-28-pm.html">2026-09-28 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-27-am.html">2026-09-27 早上</a>
+        
+        <a href="../deep/2026-09-27-pm.html">2026-09-27 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-26-am.html">2026-09-26 早上</a>
+        
+        <a href="../deep/2026-09-26-pm.html">2026-09-26 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-25-am.html">2026-09-25 早上</a>
+        
+        <a href="../deep/2026-09-25-pm.html">2026-09-25 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-24-am.html">2026-09-24 早上</a>
+        
+        <a href="../deep/2026-09-24-pm.html">2026-09-24 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-23-am.html">2026-09-23 早上</a>
+        
+        <a href="../deep/2026-09-23-pm.html">2026-09-23 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-22-am.html">2026-09-22 早上</a>
+        
+        <a href="../deep/2026-09-22-pm.html">2026-09-22 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-21-am.html">2026-09-21 早上</a>
+        
+        <a href="../deep/2026-09-21-pm.html">2026-09-21 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-20-am.html">2026-09-20 早上</a>
+        
+        <a href="../deep/2026-09-20-pm.html">2026-09-20 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-19-am.html">2026-09-19 早上</a>
+        
+        <a href="../deep/2026-09-19-pm.html">2026-09-19 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-18-am.html">2026-09-18 早上</a>
+        
+        <a href="../deep/2026-09-18-pm.html">2026-09-18 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-17-am.html">2026-09-17 早上</a>
+        
+        <a href="../deep/2026-09-17-pm.html">2026-09-17 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-16-am.html">2026-09-16 早上</a>
+        
+        <a href="../deep/2026-09-16-pm.html">2026-09-16 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-15-am.html">2026-09-15 早上</a>
+        
+        <a href="../deep/2026-09-15-pm.html">2026-09-15 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-14-am.html">2026-09-14 早上</a>
+        
+        <a href="../deep/2026-09-14-pm.html">2026-09-14 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-13-am.html">2026-09-13 早上</a>
+        
+        <a href="../deep/2026-09-13-pm.html">2026-09-13 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-12-am.html">2026-09-12 早上</a>
+        
+        <a href="../deep/2026-09-12-pm.html">2026-09-12 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-11-am.html">2026-09-11 早上</a>
+        
+        <a href="../deep/2026-09-11-pm.html">2026-09-11 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-10-am.html">2026-09-10 早上</a>
+        
+        <a href="../deep/2026-09-10-pm.html">2026-09-10 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-09-am.html">2026-09-09 早上</a>
+        
+        <a href="../deep/2026-09-09-pm.html">2026-09-09 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-08-am.html">2026-09-08 早上</a>
+        
+        <a href="../deep/2026-09-08-pm.html">2026-09-08 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-07-am.html">2026-09-07 早上</a>
+        
+        <a href="../deep/2026-09-07-pm.html">2026-09-07 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-06-am.html">2026-09-06 早上</a>
+        
+        
+        
+        <a href="../deep/2026-09-05-am.html">2026-09-05 早上</a>
+        
+        <a href="../deep/2026-09-05-pm.html">2026-09-05 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-04-am.html">2026-09-04 早上</a>
+        
+        <a href="../deep/2026-09-04-pm.html">2026-09-04 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-03-am.html">2026-09-03 早上</a>
+        
+        <a href="../deep/2026-09-03-pm.html">2026-09-03 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-02-am.html">2026-09-02 早上</a>
+        
+        <a href="../deep/2026-09-02-pm.html">2026-09-02 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-01-am.html">2026-09-01 早上</a>
+        
+        <a href="../deep/2026-09-01-pm.html">2026-09-01 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-31-am.html">2026-08-31 早上</a>
+        
+        <a href="../deep/2026-08-31-pm.html">2026-08-31 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-30-am.html">2026-08-30 早上</a>
+        
+        <a href="../deep/2026-08-30-pm.html">2026-08-30 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-29-am.html">2026-08-29 早上</a>
+        
+        <a href="../deep/2026-08-29-pm.html">2026-08-29 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-28-am.html">2026-08-28 早上</a>
+        
+        <a href="../deep/2026-08-28-pm.html">2026-08-28 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-27-am.html">2026-08-27 早上</a>
+        
+        <a href="../deep/2026-08-27-pm.html">2026-08-27 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-26-am.html">2026-08-26 早上</a>
+        
+        <a href="../deep/2026-08-26-pm.html">2026-08-26 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-25-am.html">2026-08-25 早上</a>
+        
+        <a href="../deep/2026-08-25-pm.html">2026-08-25 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-24-am.html">2026-08-24 早上</a>
+        
+        <a href="../deep/2026-08-24-pm.html">2026-08-24 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-23-am.html">2026-08-23 早上</a>
+        
+        <a href="../deep/2026-08-23-pm.html">2026-08-23 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-22-am.html">2026-08-22 早上</a>
+        
+        <a href="../deep/2026-08-22-pm.html">2026-08-22 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-21-pm.html">2026-08-21 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-20-am.html">2026-08-20 早上</a>
+        
+        <a href="../deep/2026-08-20-pm.html">2026-08-20 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-19-am.html">2026-08-19 早上</a>
+        
+        <a href="../deep/2026-08-19-pm.html">2026-08-19 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-18-am.html">2026-08-18 早上</a>
+        
+        <a href="../deep/2026-08-18-pm.html">2026-08-18 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-17-am.html">2026-08-17 早上</a>
+        
+        <a href="../deep/2026-08-17-pm.html">2026-08-17 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-16-am.html">2026-08-16 早上</a>
+        
+        <a href="../deep/2026-08-16-pm.html">2026-08-16 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-15-am.html">2026-08-15 早上</a>
+        
+        <a href="../deep/2026-08-15-pm.html">2026-08-15 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-14-am.html">2026-08-14 早上</a>
+        
+        <a href="../deep/2026-08-14-pm.html">2026-08-14 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-13-am.html">2026-08-13 早上</a>
+        
+        <a href="../deep/2026-08-13-pm.html">2026-08-13 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-12-am.html">2026-08-12 早上</a>
+        
+        <a href="../deep/2026-08-12-pm.html">2026-08-12 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-11-am.html">2026-08-11 早上</a>
+        
+        <a href="../deep/2026-08-11-pm.html">2026-08-11 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-10-am.html">2026-08-10 早上</a>
+        
+        <a href="../deep/2026-08-10-pm.html">2026-08-10 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-09-am.html">2026-08-09 早上</a>
+        
+        <a href="../deep/2026-08-09-pm.html">2026-08-09 傍晚</a>
+        
+        
+      
+    </div>
+    <article class="card">
+      <div class="muted">2026-10-10
+        <span class="badge b-deep">
+          深度分析
+        </span>
+      </div>
+      <blockquote>
+<p>報告時間：2026-10-10 18:00（台灣時間）
+資料截止：10-10 17:56</p>
+</blockquote>
+<hr />
+<h2 id="_1">一、市場總覽</h2>
+<ul>
+<li><strong style="color:#000">全球市場方向與核心結論</strong></li>
+<li>股債匯商總體方向：美股四大指數維持韌性走揚，但債市面臨強烈拋售壓力，10年期美債殖利率（把錢借給政府每年能拿到的利息回報率）飆升至 5.24% 的 24 年高點，引發全球資金重組與估值修正。</li>
+<li>
+<p>一句話總結：<strong>AI 題材與科技巨頭財報支撐美股續強，但美債殖利率飆高與油價震盪正全面對全球風險資產與台股籌碼造成嚴峻考驗。</strong></p>
+</li>
+<li>
+<p><strong style="color:#000">費城半導體指數與台股連動解析</strong></p>
+</li>
+<li>費半點位與表現：費城半導體指數在最新交易日收在 12,572.42 點，下跌 <span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-0.41%</span>。</li>
+<li>對台股的意涵：費半作為全球半導體與台積電供應鏈的最強風向球，其逆勢收黑反映美股半導體族群短線受到高殖利率與評價調節的壓抑，直接導致台股近期面臨沉重的法人提款與籌碼調節壓力。</li>
+</ul>
+<h2 id="_2">二、行情快照與台股夜盤解析</h2>
+<ul>
+<li><strong style="color:#000">今日行情快照數據</strong></li>
+<li>加權指數：49,313.44 點（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-0.99%</span>）</li>
+<li>台積電：2,550.00 TWD（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-1.35%</span>）</li>
+<li>鴻海：249.00 TWD（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-1.19%</span>）</li>
+<li>聯發科：4,690.00 TWD（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-3.00%</span>）</li>
+<li>台達電：1,965.00 TWD（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-1.26%</span>）</li>
+<li>富邦金：153.00 TWD（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-1.61%</span>）</li>
+<li>S&amp;P 500：7,811.54 點（<span style="color:#c0392b"><span style="color:#c0392b;font-weight:bold">▲</span>+0.59%</span>）</li>
+<li>納斯達克：27,366.17 點（<span style="color:#c0392b"><span style="color:#c0392b;font-weight:bold">▲</span>+0.64%</span>）</li>
+<li>費城半導體指數：12,572.42 點（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-0.41%</span>）</li>
+<li>道瓊：51,654.95 點（<span style="color:#c0392b"><span style="color:#c0392b;font-weight:bold">▲</span>+0.83%</span>）</li>
+<li>日經225：69,030.92 點（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-0.02%</span>）</li>
+<li>상證指數（上證指數）：3,813.79 點（<span style="color:#c0392b"><span style="color:#c0392b;font-weight:bold">▲</span>+0.05%</span>）</li>
+<li>Apple：336.64 USD（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-1.11%</span>）</li>
+<li>Microsoft：535.07 USD（<span style="color:#c0392b"><span style="color:#c0392b;font-weight:bold">▲</span>+2.38%</span>）</li>
+<li>NVIDIA：229.28 USD（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-0.52%</span>）</li>
+<li>Amazon：262.43 USD（<span style="color:#c0392b"><span style="color:#c0392b;font-weight:bold">▲</span>+0.39%</span>，註：報告顯示大漲）</li>
+<li>Tesla：382.70 USD（<span style="color:#c0392b"><span style="color:#c0392b;font-weight:bold">▲</span>+2.05%</span>）</li>
+<li>美元/日圓：158.25 JPY（<span style="color:#c0392b"><span style="color:#c0392b;font-weight:bold">▲</span>+0.12%</span>）</li>
+<li>美元/台幣：31.92 TWD（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-0.03%</span>）</li>
+<li>歐元/美元：1.12 EUR（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-0.06%</span>）</li>
+<li>美元/人民幣：6.68 CNY（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-0.28%</span>）</li>
+<li>WTI原油：91.85 USD（<span style="color:#c0392b"><span style="color:#c0392b;font-weight:bold">▲</span>+0.39%</span>）</li>
+<li>布蘭特原油：104.72 USD（<span style="color:#c0392b"><span style="color:#c0392b;font-weight:bold">▲</span>+0.42%</span>）</li>
+<li>黃金：4,216.30 USD（<span style="color:#c0392b"><span style="color:#c0392b;font-weight:bold">▲</span>+1.43%</span>）</li>
+<li>美元指數DXY：102.21 點（<span style="color:#c0392b"><span style="color:#c0392b;font-weight:bold">▲</span>+0.07%</span>）</li>
+<li>
+<p>美債10年殖利率：5.24 %（<span style="color:#c0392b"><span style="color:#c0392b;font-weight:bold">▲</span>+0.25%</span>）</p>
+</li>
+<li>
+<p><strong style="color:#000">台股夜盤與美股連動解析</strong></p>
+</li>
+<li>台股現貨表現疲弱：加權指數在最近一個交易日下跌 <span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-0.99%</span> 收在 49,313.44 點，權值股如台積電下跌 <span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-1.35%</span>、聯發科重挫 <span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-3.00%</span>，顯示三大法人單日狂賣 899 億元的沉重籌碼壓力正在發酵。</li>
+<li>與美股表現背離：美股四大指數中道瓊大漲 <span style="color:#c0392b"><span style="color:#c0392b;font-weight:bold">▲</span>+0.83%</span>、標普與那斯達克分別上揚 <span style="color:#c0392b"><span style="color:#c0392b;font-weight:bold">▲</span>+0.59%</span> 與 <span style="color:#c0392b"><span style="color:#c0392b;font-weight:bold">▲</span>+0.64%</span>，微軟與亞馬遜等大型科技股表現強勁，但費城半導體指數逆勢下跌 <span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-0.41%</span>。台股夜盤與費半的連動性極高，半導體供應鏈的修正壓力使台指期夜盤難以跟隨美股全面反彈，呈現外資撤出與本土權值股承壓的背離格局。</li>
+</ul>
+<h2 id="_3">三、數據決戰焦點</h2>
+<ul>
+<li><strong style="color:#000">美國 9 月 CPI 通膨與利率決策預期</strong></li>
+<li>最新公布之結果：市場高度預期美國 9 月 CPI 將符合預期，聯準會（Fed）進一步大幅升息機率維持低檔。</li>
+<li>對市場的即時影響：通膨預期若如期放緩，有助於暫時緩解債市殖利率失控的恐慌，但目前 10 年期美債殖利率仍高達 5.24%，對高估值資產的壓抑尚未解除。</li>
+<li>後續觀察點：美國通膨數據將直接決定聯準會 10 月的利率決策走向，為全球匯市與債市提供下一個方向球。</li>
+</ul>
+<h2 id="_4">四、重大事件深度解讀</h2>
+<ul>
+<li><strong style="color:#000">美國 10 年期與 30 年期公債殖利率飆升至 24 年高點</strong></li>
+<li>事件核心：美國 10 年期公債殖利率攀升至 5.24% 至 5.36% 的 24 年高點，30 年期公債殖利率更達到 5.63%，反映市場對長期通膨與債務供給的強烈疑慮。</li>
+<li>對股/債/匯/商品的傳導路徑：債券遭到嚴重拋售導致殖利率飆高，拉高整體金融體系的融資成本，進而對全球股市估值構成致命壓抑，歐洲銀行股因此重挫 8%，資金加速轉向固定收益資產。</li>
+<li>關聯標的：<code>TLT</code>、<code>美元指數</code>、<code>EUFN</code></li>
+<li>
+<p>未來一週可能的走勢：若殖利率未能有效從 5.25% 附近回落，股市高檔震盪與成長股的估值修正壓力將持續加大。<a href="https://news.google.com/search?q=Ten-year+Treasury+yields+hit+5.36%25+amid+systemi...+-+Pluang">來源: google-news:Treasury yields</a></p>
+</li>
+<li>
+<p><strong style="color:#000">三大法人單日狂賣 899 億元與台積電籌碼鬆動</strong></p>
+</li>
+<li>事件核心：台股近期遭到三大法人單日狂賣 899 億元，外資大規模撤出台積電、南亞科、緯創及金像電等核心權值與科技股。</li>
+<li>對股/債/匯/商品的傳導路徑：外資匯出對新台幣匯率形成貶值壓力，並直接打擊台股加權指數跌破關卡，權值股全面回檔。</li>
+<li>關聯標的：<code>2330</code>、<code>2408</code>、<code>2383</code>、<code>2368</code></li>
+<li>未來一週可能的走勢：台股短線籌碼面凌亂，需觀察外資賣超力道是否趨緩，指數將在季線附近進行震盪測底。[來源: google-news:加權指數](https://news.google.com/search?q=2330+%E5%8F%B0%E7%A9%8D%E9%9B%BB+-+%E4%B8%89%E5%A4%A7%E6%B3%95%E4%BA%BA%E7%8B%82%E8%B3%A3899%E5%84%84%EF%BC%81%E5%A4%96%E8%B3%87%E6%92%A4%E5%87%BA%E6%AC%8A%E5%80%BC%E8%82%A1%E5%8D%97%E4%BA%9E%E7%A7%91%E3%80%81%E7%B7%AF%E5%89%B5%E3%80%81%E9%87%91%E5%83%8F%E9%9B%BB%E7%B1%8C...+-+%E8%82%A1%E5%8D%97%E4%B8%8%E5%87%91%E5%84%84%E5%84%84%E7%B1%8C+-+%E8%82%A1%E5%8%B9%E7%88%90%E5%88%B6%E5%8C%97%E5%84%84%E5%84%84%E7%B1%8C+-+%E8%82%A1%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E5%8C%97%E</li>
+</ul>
+    </article>
+  
+</div>
+<footer>由金融情報系統自動發佈 · 僅供參考，不構成投資建議</footer>
+<script>
+const WEEK = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function nowParts(tz){
+  const p = {};
+  new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short', month: 'short',
+    day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
+  }).formatToParts(new Date()).forEach(x => p[x.type] = x.value);
+  return p;
+}
+function marketOpen(tz, open, close){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  return wd>=1 && wd<=5 && m>=open && m<close;
+}
+// Taiwan index-futures night session 15:00 -> next-day 05:00 (crosses midnight):
+// 15:00-24:00 Mon-Fri, plus 00:00-05:00 Tue-Sat (Sat 00:00-05:00 is Fri night session).
+function nightOpen(tz){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  if (m >= 5*60 && m < 15*60) return false;   // 05:00-15:00 recess
+  if (m >= 15*60) return wd >= 1 && wd <= 5;   // 15:00-24:00 Mon-Fri
+  return wd >= 2 && wd <= 6;                   // 00:00-05:00 Tue-Sat
+}
+function pad(n){ return String(n).padStart(2,'0'); }
+function setMkt(id, open, label){
+  const el = document.getElementById(id);
+  el.className = 'mkt ' + (open ? 'open' : 'closed');
+  el.textContent = (label ? label + ' ' : '') + (open ? '開盤中' : '未開盤');
+}
+function tick(){
+  const tw = nowParts('Asia/Taipei');
+  const ny = nowParts('America/New_York');
+  document.getElementById('clk-tw').textContent = pad(tw.hour)+':'+pad(tw.minute)+':'+pad(tw.second);
+  document.getElementById('clk-ny').textContent = pad(ny.hour)+':'+pad(ny.minute)+':'+pad(ny.second);
+  // Taiwan: TWSE weighted index 09:00-13:30; TX futures day 08:45-13:45; TX night 15:00-05:00
+  setMkt('tw-idx',  marketOpen('Asia/Taipei', 9*60, 13*60+30), '加權');
+  setMkt('tx-day',  marketOpen('Asia/Taipei', 8*60+45, 13*60+45), '期日盤');
+  setMkt('tx-night', nightOpen('Asia/Taipei'), '期夜盤');
+  // US: regular session 09:30-16:00 ET; after-hours 16:00-20:00 ET
+  setMkt('ny-mkt',  marketOpen('America/New_York', 9*60+30, 16*60), '美股');
+  setMkt('ny-night', marketOpen('America/New_York', 16*60, 20*60), '美股夜');
+}
+tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>
