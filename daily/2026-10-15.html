@@ -1,0 +1,1618 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日報告 2026-10-15</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; margin: 0;
+         background: #f5f6f8; color: #1c1e21; line-height: 1.7; }
+  header { background: #1b2a4a; color: #fff; padding: 14px 24px;
+           display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  header h1 { font-size: 18px; margin: 0; flex: 1; }
+  header nav a { color: #cdd8ee; text-decoration: none; margin-left: 14px; font-size: 14px; }
+  header nav a:hover, header nav a.active { color: #fff; text-decoration: underline; }
+  #clock { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; font-size: 13px; }
+  .clk { background: rgba(255,255,255,.08); border-radius: 6px; padding: 4px 10px; }
+  .clk-city { color: #9fb0cf; margin-right: 6px; }
+  .clk-time { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .mkt { margin-left: 8px; font-size: 12px; padding: 1px 7px; border-radius: 9px; }
+  .mkt.open { background: #2e7d32; color: #fff; }
+  .mkt.closed { background: #5a6474; color: #fff; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 20px; }
+  .card { background: #fff; border-radius: 8px; padding: 18px 22px; margin: 14px 0;
+          box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .card h3 { margin: 0 0 6px; }
+  .card a { color: #1b2a4a; text-decoration: none; }
+  .card a:hover { text-decoration: underline; }
+  .muted { color: #666; font-size: 13px; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px;
+           color: #fff; margin-left: 6px; }
+  .b-daily { background: #2e7d32; }
+  .b-deep { background: #b45309; }
+  .day-nav { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+  .day-nav a { font-size: 13px; padding: 3px 10px; background: #e8ecf3; border-radius: 12px;
+               color: #33415c; text-decoration: none; }
+  .day-nav a:hover { background: #d2dbea; }
+  article.card { line-height: 1.15; }
+  article.card p { margin: 3px 0; }
+  article.card ul, article.card ol { margin: 3px 0 6px; padding-left: 22px; }
+  article.card h1, article.card h2, article.card h3 { padding-bottom: 4px; }
+  article.card h1, article.card h2 { border-bottom: 2px solid #33415c; }
+  article.card h1 { font-size: 30px; margin-top: 8px; }
+  article.card h2 { font-size: 23px; margin-top: 12px; color: #1b2a4a;
+        border-left: 6px solid #1459c8; padding-left: 12px; }
+  article.card h3 { font-size: 19px; margin-top: 10px; color: #24365c;
+        background: #eef4fb; border-radius: 6px; padding: 4px 12px; }
+  article.card h4 { font-size: 17px; margin-top: 18px; color: #145c3a;
+        background: #e8f5ee; border-left: 4px solid #2e7d32;
+        padding: 5px 10px; border-radius: 4px; }
+  article.card h5 { font-size: 15px; margin-top: 14px; color: #4a5568;
+        font-weight: 600; }
+  article.card h4, article.card h5 { margin-bottom: 2px; }
+  article.card strong { font-weight: 700; }
+  article.card blockquote { border-left: 4px solid #9fb0cf; margin: 4px 0;
+        padding: 2px 12px; color: #4a5568; background: #f4f6fa; }
+  article.card hr { border: none; border-top: 1px dashed #c3ccdb; margin: 12px 0; }
+  article.card code { background: #eef0f4; padding: 1px 5px; border-radius: 4px;
+        font-size: 14px; font-family: Consolas, monospace; }
+  article.card pre { background: #1b2a4a; color: #e6ecf7; padding: 14px; border-radius: 8px; overflow-x: auto; }
+  article.card pre code { background: transparent; color: inherit; padding: 0; }
+  article.card table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+  article.card th, article.card td { border: 1px solid #d8dce3; padding: 6px 10px; }
+  article.card th { background: #eef1f6; }
+  article.card a { color: #1459c8; }
+  footer { text-align: center; color: #999; font-size: 12px; padding: 20px; }
+</style>
+</head>
+<body>
+  <header>
+  <h1>金融情報系統報告</h1>
+  <nav>
+    <a href="../index.html" class="">首頁</a>
+    <a href="../calendar.html" class="">行事曆</a>
+    <a href="../daily/2026-10-15.html" class="active">最新每日</a>
+    <a href="../deep/2026-10-14-pm.html" class="">最新深度</a>
+  </nav>
+  <div id="clock">
+    <span class="clk"><span class="clk-city">台北</span><span class="clk-time" id="clk-tw">--:--:--</span><span class="mkt closed" id="tw-idx">…</span><span class="mkt closed" id="tx-day">…</span><span class="mkt closed" id="tx-night">…</span></span>
+    <span class="clk"><span class="clk-city">紐約</span><span class="clk-time" id="clk-ny">--:--:--</span><span class="mkt closed" id="ny-mkt">…</span><span class="mkt closed" id="ny-night">…</span></span>
+  </div>
+</header>
+<div class="wrap">
+  
+    <div class="day-nav">
+      <a href="../index.html">← 首頁</a>
+      
+        
+        <a href="../daily/2026-10-15.html">2026-10-15</a>
+        
+        <a href="../daily/2026-10-14.html">2026-10-14</a>
+        
+        <a href="../daily/2026-10-13.html">2026-10-13</a>
+        
+        <a href="../daily/2026-10-12.html">2026-10-12</a>
+        
+        <a href="../daily/2026-10-11.html">2026-10-11</a>
+        
+        <a href="../daily/2026-10-10.html">2026-10-10</a>
+        
+        <a href="../daily/2026-10-09.html">2026-10-09</a>
+        
+        <a href="../daily/2026-10-08.html">2026-10-08</a>
+        
+        <a href="../daily/2026-10-07.html">2026-10-07</a>
+        
+        <a href="../daily/2026-10-06.html">2026-10-06</a>
+        
+        <a href="../daily/2026-10-05.html">2026-10-05</a>
+        
+        <a href="../daily/2026-10-04.html">2026-10-04</a>
+        
+        <a href="../daily/2026-10-03.html">2026-10-03</a>
+        
+        <a href="../daily/2026-10-02.html">2026-10-02</a>
+        
+        <a href="../daily/2026-10-01.html">2026-10-01</a>
+        
+        <a href="../daily/2026-09-30.html">2026-09-30</a>
+        
+        <a href="../daily/2026-09-29.html">2026-09-29</a>
+        
+        <a href="../daily/2026-09-28.html">2026-09-28</a>
+        
+        <a href="../daily/2026-09-27.html">2026-09-27</a>
+        
+        <a href="../daily/2026-09-26.html">2026-09-26</a>
+        
+        <a href="../daily/2026-09-25.html">2026-09-25</a>
+        
+        <a href="../daily/2026-09-24.html">2026-09-24</a>
+        
+        <a href="../daily/2026-09-23.html">2026-09-23</a>
+        
+        <a href="../daily/2026-09-22.html">2026-09-22</a>
+        
+        <a href="../daily/2026-09-21.html">2026-09-21</a>
+        
+        <a href="../daily/2026-09-20.html">2026-09-20</a>
+        
+        <a href="../daily/2026-09-19.html">2026-09-19</a>
+        
+        <a href="../daily/2026-09-18.html">2026-09-18</a>
+        
+        <a href="../daily/2026-09-17.html">2026-09-17</a>
+        
+        <a href="../daily/2026-09-16.html">2026-09-16</a>
+        
+        <a href="../daily/2026-09-15.html">2026-09-15</a>
+        
+        <a href="../daily/2026-09-14.html">2026-09-14</a>
+        
+        <a href="../daily/2026-09-13.html">2026-09-13</a>
+        
+        <a href="../daily/2026-09-12.html">2026-09-12</a>
+        
+        <a href="../daily/2026-09-11.html">2026-09-11</a>
+        
+        <a href="../daily/2026-09-10.html">2026-09-10</a>
+        
+        <a href="../daily/2026-09-09.html">2026-09-09</a>
+        
+        <a href="../daily/2026-09-08.html">2026-09-08</a>
+        
+        <a href="../daily/2026-09-07.html">2026-09-07</a>
+        
+        <a href="../daily/2026-09-06.html">2026-09-06</a>
+        
+        <a href="../daily/2026-09-05.html">2026-09-05</a>
+        
+        <a href="../daily/2026-09-04.html">2026-09-04</a>
+        
+        <a href="../daily/2026-09-03.html">2026-09-03</a>
+        
+        <a href="../daily/2026-09-02.html">2026-09-02</a>
+        
+        <a href="../daily/2026-09-01.html">2026-09-01</a>
+        
+        <a href="../daily/2026-08-31.html">2026-08-31</a>
+        
+        <a href="../daily/2026-08-30.html">2026-08-30</a>
+        
+        <a href="../daily/2026-08-29.html">2026-08-29</a>
+        
+        <a href="../daily/2026-08-28.html">2026-08-28</a>
+        
+        <a href="../daily/2026-08-27.html">2026-08-27</a>
+        
+        <a href="../daily/2026-08-26.html">2026-08-26</a>
+        
+        <a href="../daily/2026-08-25.html">2026-08-25</a>
+        
+        <a href="../daily/2026-08-24.html">2026-08-24</a>
+        
+        <a href="../daily/2026-08-23.html">2026-08-23</a>
+        
+        <a href="../daily/2026-08-22.html">2026-08-22</a>
+        
+        <a href="../daily/2026-08-21.html">2026-08-21</a>
+        
+        <a href="../daily/2026-08-20.html">2026-08-20</a>
+        
+        <a href="../daily/2026-08-19.html">2026-08-19</a>
+        
+        <a href="../daily/2026-08-18.html">2026-08-18</a>
+        
+        <a href="../daily/2026-08-17.html">2026-08-17</a>
+        
+        <a href="../daily/2026-08-16.html">2026-08-16</a>
+        
+        <a href="../daily/2026-08-15.html">2026-08-15</a>
+        
+        <a href="../daily/2026-08-14.html">2026-08-14</a>
+        
+        <a href="../daily/2026-08-13.html">2026-08-13</a>
+        
+        <a href="../daily/2026-08-12.html">2026-08-12</a>
+        
+        <a href="../daily/2026-08-11.html">2026-08-11</a>
+        
+        <a href="../daily/2026-08-10.html">2026-08-10</a>
+        
+        <a href="../daily/2026-08-09.html">2026-08-09</a>
+        
+        <a href="../daily/2026-08-08.html">2026-08-08</a>
+        
+        <a href="../daily/2026-08-07.html">2026-08-07</a>
+        
+        <a href="../daily/2026-08-06.html">2026-08-06</a>
+        
+        <a href="../daily/2026-08-05.html">2026-08-05</a>
+        
+        <a href="../daily/2026-08-04.html">2026-08-04</a>
+        
+        <a href="../daily/2026-08-03.html">2026-08-03</a>
+        
+        <a href="../daily/2026-08-02.html">2026-08-02</a>
+        
+      
+    </div>
+    <article class="card">
+      <div class="muted">2026-10-15
+        <span class="badge b-daily">
+          每日報告
+        </span>
+      </div>
+      <h1 id="2026-10-15">金融重點報告 2026-10-15</h1>
+<blockquote>
+<p>產出時間: 2026-10-15 00:21（台灣時間）
+資料截止: 10-14 23:56（收錄庫最新事件，若久久未前進代表蒐集上游疑中斷）
+品質儀表板: 資料新鮮度 ≤25min | 去重率 27.4% | 最大來源佔 15.8% | 驗證覆蓋 24.8% | ⚠️疑似誤殺 62
+本報告由 AI 自動生成，僅供參考，不構成投資建議。</p>
+</blockquote>
+<h2 id="_1">📅 行事曆排期事件</h2>
+<blockquote>
+<p>下列為今日／近期已排定、可能影響市場的重要事件（法人預期供參考）：</p>
+</blockquote>
+<ul>
+<li>⭐ 今天 [高]台積電：Q3 法說會（台灣場）<blockquote>
+<p>法人預期：法說會與美股盤後ADR財報互為連動；法人聚焦AI/HPC營收比重與明年資本支出。</p>
+</blockquote>
+</li>
+<li>⭐ 今天 [中]美國商務部 Census：零售銷售(9月)</li>
+<li>⭐ 今天 [高]台積電 ADR / Netflix：美股盤後公布財報<blockquote>
+<p>法人預期：台積電為AI/HPC需求風向球，盤後公布後連動台股與費半走勢。</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h2 id="_2">🆕 本次新增事件（置頂：最新產出）</h2>
+<blockquote>
+<p>本次新增 <strong>60 筆</strong>，重要 52 筆</p>
+</blockquote>
+<p><strong>重要事件（severity ≥ 1）</strong>：</p>
+<ul>
+<li><strong>[10-14 23:33]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][neutral]</strong> Your Social Security check will rise 3.6% next year, but will it be able to keep up with inflation? <code>marketwatch</code></li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國社會安全生活調整(COLA)上調反映通膨現況，屬總體經濟滯後指標，對資本市場直接影響有限。</p>
+</li>
+<li>
+<p><strong>[10-14 23:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> SEC to hold committee meeting to discuss IPO modernization, crowdfunding <code>seekingalpha</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: SEC將舉行委員會會議討論IPO現代化與眾籌，對整體美股IPO市場具長期制度改革意義，短期影響有限。</p>
+</li>
+<li>
+<p><strong>[10-14 23:48]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Morgan Stanley Names Top Pick Amid 3Q26 Earnings <code>investing-com</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 摩根士丹利在第三季財報季期間點名首選標的，提供機構資金佈局方向，帶動個股題材動能。</p>
+</li>
+<li>
+<p><strong>[10-14 23:47]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[地緣政治][negative]</strong> Container ship sinks in Strait of Hormuz as Iran steps up attacks <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 荷姆茲海峽商船遭伊朗攻擊沉沒，中東地緣政治風險急遽升溫，推升原油供給擔憂與油價波動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>USO,BNO</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:44]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][neutral]</strong> Treasury says largest U.S. banks let politics influence who received banking services <code>cnbc</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國財政部調查指大型銀行因政治因素影響金融服務提供，涉及商譽與合規風險，對整體金融市場影響有限。</p>
+</li>
+<li>
+<p><strong>[10-14 23:25]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[地緣政治][neutral]</strong> Democrats Blame Trump After CPI Report Shows Energy Prices Drove Up Inflation <code>nytbusiness</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 能源價格推升通膨引發民主黨與川普陣營之政治口水戰，對中期期中選舉選情有影響，但對金融市場無直接衝擊。</p>
+</li>
+<li>
+<p><strong>[10-14 23:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> Fannie Mae sharply raises mortgage rate forecast for 2027 <code>cnbc</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 房利美大幅上調2027年房貸利率預測，反映高利率將長期化，對房地產市場與相關債券形成壓抑。</p>
+</li>
+<li>
+<p><strong>[10-14 23:11]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> 最後一家也轉鷹！花旗改估Fed年底升息1碼 明年6月才降息 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI高於預期使花旗轉鷹，預估Fed 12月升息1碼，推升市場對鷹派貨幣政策的定價。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][negative]</strong> 5 Costs Americans Are Paying More for as Inflation Rises <code>nytbusiness</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國消費者日常開銷（食品、電腦、串流服務等）全面上升，反映通膨黏著度高。</p>
+</li>
+<li>
+<p><strong>[10-14 23:31]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 甲骨文股價跌逾7%：9月CPI超預期推升升息機率，AI基建融資放大利率衝擊 - TradingKey <code>google-news:美國 CPI 通膨</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 受9月CPI超預期推升升息機率影響，甲骨文股價大跌逾7%，高利率加重AI基建融資成本壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>ORCL,NVDA</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:55]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Hot CPI Revives the Case for Sticky Inflation and Higher Fed Rate Risk - Investing.com Nigeria <code>google-news:US CPI inflation data</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI高於預期，顯示通膨僵固，增添聯準會升息風險，打壓美股與債市，美元指數走強。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,US10Y</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:51]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> CPI Report Live Updates: New Insights on Inflation, U.S. Economy and the Fed - The New York Times <code>google-news:inflation CPI</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI年增率升至3.7%高於預期，加劇聯準會升息壓力，股債雙殺，美元強彈。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:49]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> Nuclear stocks fall sharply as 10-year Treasury yield hits 5.26%, with Energy Fuels down 9%. - Pluang <code>google-news:Treasury yields</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10年期公債殖利率飆高至5.26%引發核能股重挫，資金加速撤出高本益比與資本密集產業。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>UUUU</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:45]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[匯市][positive]</strong> US Dollar Index roars towards 103 as hot CPI reignite Fed hike bets - FXStreet <code>google-news:dollar index DXY</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI超預期帶動Fed升息預期再起，美元指數強勢衝向103，非美貨幣與黃金承壓。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:43]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[商品(油金)][negative]</strong> 【加州新聞】加州油價為何全美最高 逐項原因為你解析（視頻） - KTSF.com <code>google-news:油價</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 加州油價偏高反映地方能源與稅賦結構，對整體國家商品原油期貨價格僅具區域性暗示，無直接重大外溢。</p>
+</li>
+<li>
+<p><strong>[10-14 23:34]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> 油價和雜貨漲價 美9月通脹率升至3.7% - 大紀元 <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI通膨率升至3.7%超乎預期，推升聯準會升息預期，帶動美元走強，股債雙雙承壓。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:30]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> September CPI: Inflation Momentum Turns In The Wrong Direction (NDX) - Seeking Alpha <code>google-news:inflation CPI</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 9月CPI顯示通膨動能轉向惡化，對那斯達克等高本益比科技股構成直接的估值下壓。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NDX,QQQ</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:07]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Hedgeye Risk Management | Hedgeye Inflation Nowcast Nails September CPI at 3.74% - Hedgeye <code>google-news:inflation CPI</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI年增率高達3.74%，通膨數據超預期升溫，打壓美股與債市，美元指數走強。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>US30,SPX,COMP</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:59]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Stock Market Today: Nasdaq Pressured Amid Hot Inflation Data; Super Micro Sinks (Live Coverage) - Investor's Business Daily <code>google-news:inflation CPI</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 受美國高通膨數據衝擊，那斯達克指數承壓，超級微電腦（Super Micro）等AI概念股股價下挫。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>COMP,SMCI</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:05]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> US inflation rises 3.7% in Sept, boosting odds of Fed rate hike and pressuring Bitcoin and stocks. - Pluang <code>google-news:Federal Reserve rate decision</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI上升至3.7%，推升Fed升息機率，股債齊跌並重挫加密貨幣如比特幣。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>BTC,SPX</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> TWA00 加權指數- 今天盤面資金明顯往PCB和玻纖布族群靠攏，敬鵬2355、建榮... - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股加權指數盤面資金流向PCB與玻纖布族群（如敬鵬、建榮），帶動部分個股表現強勢。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2355,TWA00</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:19]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> BlackRock's Larry Fink warns a data center moratorium could trigger a recession <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 貝萊德執行長芬克警告資料中心暫停興建可能引發經濟衰退，對AI基礎設施與科技股供應鏈帶來政策與基建隱憂。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,MSFT,GOOGL</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:07]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Micron wins praise from Elon Musk for not being too greedy <code>marketwatch</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美光（Micron）獲得馬斯克讚賞未過度哄抬記憶體價格，顯示其定價策略健康且需求強勁。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>MU</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:03]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[地緣政治][negative]</strong> Iran says it’s ‘counting the moments’ until it can strike U.S. warships; Saudi Aramco facilities attacked <code>cnbc</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 伊朗揚言攻擊美軍艦艇且沙烏地阿拉伯 Aramco 設施遇襲，中東地緣政治危機急遽升溫，引發能源供給恐慌。</p>
+</li>
+<li>
+<p><strong>[10-14 22:47]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][positive]</strong> 中國9月新增人民幣貸款高於預期  分析：刺激措施可能發揮作用 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 中國9月新增人民幣貸款高於預期，顯示貨幣政策刺激措施開始發揮成效，提振市場信心。</p>
+</li>
+<li>
+<p><strong>[10-14 23:23]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> What Is Starshield, SpaceX’s Military-Grade Satellite Internet Service Ukraine Relies On? <code>nytbusiness</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 烏克蘭對SpaceX軍用衛星通訊Starshield的依賴與限制，突顯地緣政治與關鍵基礎設施的脆弱性。</p>
+</li>
+<li>
+<p><strong>[10-14 23:12]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> Higher Energy Prices Lift U.S. Inflation Ahead of Midterm Elections <code>nytbusiness</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 高能源價格推升美國通膨，並對期中選舉與總體政策產生政治壓力，間接影響市場對財政與貨幣政策的預期。</p>
+</li>
+<li>
+<p><strong>[10-14 23:07]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[地緣政治][neutral]</strong> Democrats Put Blame for Higher Prices on Trump <code>nytbusiness</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 民主黨將高物價歸咎於川普政府，屬政治口水戰，對金融市場直接影響有限。</p>
+</li>
+<li>
+<p><strong>[10-14 22:53]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 美國通膨超預期！美股開盤4大指數齊跌 台積電ADR下挫1.68％ - 中天新聞網 <code>google-news:美國 CPI 通膨</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI通膨數據超預期升溫，導致美股四大指數齊跌，台積電ADR受創下挫1.68%。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TSM,NVDA</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:45]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> 美9月CPI年增3.7%超預期 能源飆漲恐衝擊期中選情 | 民視新聞網 - LINE TODAY <code>google-news:美國 CPI 通膨</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI年增3.7%超預期，能源飆漲引發市場對央行政策緊縮的擔憂。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:07]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Stock market today: S&amp;P 500, Dow Jones, Nasdaq futures fall as US inflation hits 3.7% in September | Hindustan Times - Hindustan Times <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國 9 月 CPI 年增率達 3.7%，高於預期，美股三大指數期貨全面下跌，風險資產承受賣壓。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>S&amp;P 500,Dow Jones,Nasdaq</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:16]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> U.S. Consumer Price Index: Energy and Core Pressures Keep Fed Tightening Debate Active - Haver Analytics <code>google-news:inflation CPI</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國 9 月 CPI 顯示能源與核心通膨壓力持續，加劇市場對聯準會（Fed）維持緊縮政策的辯論，對債市與風險資產構成壓抑。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:08]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> U.S. Crude Oil Prices Rise Amid Middle East Tensions; Colgate-Pa - GuruFocus <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 中東地緣政治緊張推升美國原油價格，增添總體通膨隱憂，利好能源類股但對大盤成本造成壓力。</p>
+</li>
+<li>
+<p><strong>[10-14 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> Power Prices Top $1,000 on PJM as Heat Collides With Fall Plant Maintenance - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: PJM電價飆破1000美元，反映能源需求吃緊與供應鏈瓶頸，推升天然氣與電力相關商品價格。</p>
+</li>
+<li>
+<p><strong>[10-14 22:48]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Inflation climbs in September as energy prices soar, CPI report shows - CBS News <code>google-news:inflation CPI</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI顯示能源價格飆漲帶動通膨升溫，聯準會短期內恐維持高利率抗通膨。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:38]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[債市][negative]</strong> Swiss Bond Yields Reach Two-Week High - TradingView <code>google-news:Treasury yields</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 瑞士債券殖利率升至兩週高點，呼應全球通膨升溫與債市遭到拋售的宏觀趨勢。</p>
+</li>
+<li>
+<p><strong>[10-14 22:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> Stock Market Today: Stocks Drop, Treasury Yields Surge After Hot Inflation Reading; Memory Stocks Extend Declines - Investopedia <code>google-news:Treasury yields</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國熱通膨數據公布後美股大跌、美債殖利率飆升，記憶體等科技股跌勢擴大。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,NVDA</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][negative]</strong> Earnings call transcript: Morgan Stanley beats Q3 2026 estimates, shares fall <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 摩根士丹利Q3財報優於預期但股價下跌，反映市場先前已高度預期並有利多出盡現象。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>MS</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:49]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Camtek sees Q3 revenue topping guidance, 2027 sales above $800M <code>seekingalpha</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Camtek Q3營收超越指引且2027展望強勁，激勵半導體設備與先進封裝供應鏈氣氛。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>CAMT</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:48]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Citi turns hawkish on Fed after inflation surprise, expects December rate hike <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 花旗因通膨意外轉趨鷹派並預期12月升息，衝擊債市並推升美元，對高估值股市構成壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債殖利率</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:48]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Netflix cuts about 6% of jobs in biggest layoff since 2022 <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Netflix最大規模裁員行動，利於降低營運成本並改善利潤率。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NFLX</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:48]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> Elevance Health options signal 6.8% move on Oct. 21 earnings <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 期權市場預期Elevance Health財報將帶來6.8%波動，對整體醫療板塊影響有限。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>ELV</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:52]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> 5 Costs That Jumped for Americans <code>nytbusiness</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國日常消費成本上升，呼應今日美國PPI生產者物價指數與通膨黏性壓力，利空債市並支撐美元。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Netflix to lay off roughly 1,000 employees, or 6% of workforce <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Netflix裁員6%以優化成本結構，對短期美股科技股的營運效率具正面激勵效果。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NFLX</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:39]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Bending Spoons skyrockets 35% as Berkshire Hathaway makes $330 million investment <code>cnbc</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 波克夏海瑟威注資Bending Spoons，激勵該股大漲，對整體科技股或價值投資風向具指標意義。</p>
+</li>
+<li>
+<p><strong>[10-14 22:47]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> Houthi attacks deepen Saudi stock market sell-off - Arabian Gulf Business Insight | AGBI <code>google-news:stock market selloff</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 胡塞組織攻擊加深沙烏地股市拋售壓力，中東地緣政治風險升溫，對區域股市與油價產生擾動。</p>
+</li>
+<li>
+<p><strong>[10-14 22:49]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> BlackRock Cuts US Stock Exposure, Says Fed Hike Bets Gone Too Far - BlackRock (NYSE:BLK) - Benzinga <code>google-news:Treasury yields</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 貝萊德調降美股部位並認為降息/升息預期過頭，對大盤資金面形成潛在壓抑。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>BLK,SPY</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:44]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Here's the inflation breakdown for September 2026 — in one chart - CNBC <code>google-news:inflation CPI</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI/PPI通膨數據高於預期，顯示通膨黏著度高，衝擊降息預期並打壓美股與加密貨幣。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,SPY</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:38]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> U.S. Fed rate hike call seen tight as inflation heats up - The Globe and Mail <code>google-news:Federal Reserve rate decision</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 受美國通膨升溫影響，市場對Fed重啟升息或長期維持高利率的討論升溫，推升美元與美債殖利率。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,UST</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[匯市][negative]</strong> Bitcoin, ETH, XRP Drop 1% Following Hot CPI Inflation Print - Benzinga <code>google-news:inflation CPI</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI通膨數據高於預期（Hot CPI），引發聯準會鷹派擔憂，比特幣與主流加密貨幣同步下跌約1%。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>BTC,ETH</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:29]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> Senator Warren Statement on September 2026 CPI and Updated Trumpflation Tracker Data - Senate Committee on Banking, Housing, and Urban Affairs (.gov) <code>google-news:inflation CPI</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國參議員針對9月CPI與川普經濟學通膨效應發表聲明，凸顯通膨議題高度政治化與市場關注度。</p>
+</li>
+<li>
+<p><strong>[10-14 22:27]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> 金融業前八月獲利創佳績，金管會三期許推動虛擬資產監理與穩定幣規範！-財經焦點情報站 - CMoney投資網誌 <code>google-news:金管會</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台灣金融業前八月獲利亮眼，金管會推動虛擬資產監理與穩定幣規範，有利金融股中長期發展。</li>
+<li><strong style="color:#174ea6">標的</strong>: <code>2881,2882,2891</code></li>
+</ul>
+<p><strong>其他同時段收錄（未分析，共 8 筆）</strong>：</p>
+<ul>
+<li><strong>[10-14 23:25]</strong> YieldMax GOOGL Option Income Strategy ETF announces weekly distribution of $0.0707（<code>seekingalpha</code>）</li>
+<li><strong>[10-14 23:24]</strong> YieldMax GME Option Income Strategy ETF announces weekly distribution of $0.3776（<code>seekingalpha</code>）</li>
+<li><strong>[10-14 23:23]</strong> YieldMax Gold Miners Option Income Strategy ETF announces weekly distribution of $0.0775（<code>seekingalpha</code>）</li>
+<li><strong>[10-14 23:22]</strong> YieldMax Short COIN Option Income Strategy ETF announces weekly distribution of $0.1658（<code>seekingalpha</code>）</li>
+<li><strong>[10-14 23:21]</strong> YieldMax META Option Income Strategy ETF announces weekly distribution of $0.0956（<code>seekingalpha</code>）</li>
+<li><strong>[10-14 23:20]</strong> YieldMax DKNG Option Income Strategy ETF announces weekly distribution of $0.1078（<code>seekingalpha</code>）</li>
+<li><strong>[10-14 23:18]</strong> My wife says we can’t afford to retire. I vetoed her $8,000 trip to Italy. We’re in our 60s and have $4 million. Do I keep working?（<code>marketwatch</code>）</li>
+<li><strong>[10-14 22:49]</strong> NextEra Energy options signal 3.1% move on earnings（<code>investing-com</code>）</li>
+</ul>
+<hr />
+<h2 id="_3">市場行情快照</h2>
+<pre><code>加權指數            48,625.83    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.59%
+台積電              2,490.00  TWD ―+0.00%
+鴻海                 243.00  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+1.25%
+聯發科              4,475.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-1.10%
+台達電              1,785.00  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+0.56%
+富邦金                160.50  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+0.31%
+S&amp;P 500          7,719.71    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-1.10%
+納斯達克            26,765.55    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-1.61%
+費城半導體指數         11,748.63    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-3.77%
+道瓊              51,505.56    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-0.32%
+日經225           67,744.29    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-0.05%
+上證指數             3,767.23    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-0.89%
+Apple              344.48  USD <span style="color:#c0392b;font-weight:bold">▲</span>+0.94%
+Microsoft          536.07  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-1.36%
+NVIDIA             221.97  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-2.87%
+Amazon             254.85  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-1.44%
+Tesla              364.89  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-2.76%
+美元/日圓              158.82  JPY <span style="color:#c0392b;font-weight:bold">▲</span>+0.19%
+美元/台幣               32.15  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+0.71%
+歐元/美元                1.11  EUR <span style="color:#2e7d32;font-weight:bold">▼</span>-0.37%
+美元/人民幣               6.69  CNY <span style="color:#2e7d32;font-weight:bold">▼</span>-0.08%
+WTI原油               95.39  USD <span style="color:#c0392b;font-weight:bold">▲</span>+1.33%
+布蘭特原油              106.16  USD <span style="color:#c0392b;font-weight:bold">▲</span>+0.44%
+黃金               4,101.30  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-1.82%
+美元指數DXY            102.84    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.65%
+美債10年殖利率             5.25    % <span style="color:#c0392b;font-weight:bold">▲</span>+0.56%
+</code></pre>
+<blockquote>
+<p>（快照資料時間：2026-10-15 00:21，台股收盤為最近一個交易日）</p>
+</blockquote>
+<h2 id="severity-2">重大事件（severity ≥ 2）</h2>
+<ul>
+<li><strong>[10-14 23:55]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Hot CPI Revives the Case for Sticky Inflation and Higher Fed Rate Risk - Investing.com Nigeria</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI高於預期，顯示通膨僵固，增添聯準會升息風險，打壓美股與債市，美元指數走強。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,US10Y</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:51]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> CPI Report Live Updates: New Insights on Inflation, U.S. Economy and the Fed - The New York Times</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI年增率升至3.7%高於預期，加劇聯準會升息壓力，股債雙殺，美元強彈。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:49]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> Nuclear stocks fall sharply as 10-year Treasury yield hits 5.26%, with Energy Fuels down 9%. - Pluang</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10年期公債殖利率飆高至5.26%引發核能股重挫，資金加速撤出高本益比與資本密集產業。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>UUUU</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:47]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[地緣政治][negative]</strong> Container ship sinks in Strait of Hormuz as Iran steps up attacks</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 荷姆茲海峽商船遭伊朗攻擊沉沒，中東地緣政治風險急遽升溫，推升原油供給擔憂與油價波動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>USO,BNO</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:45]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[匯市][positive]</strong> US Dollar Index roars towards 103 as hot CPI reignite Fed hike bets - FXStreet</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI超預期帶動Fed升息預期再起，美元指數強勢衝向103，非美貨幣與黃金承壓。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:34]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> 油價和雜貨漲價 美9月通脹率升至3.7% - 大紀元</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI通膨率升至3.7%超乎預期，推升聯準會升息預期，帶動美元走強，股債雙雙承壓。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:31]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 甲骨文股價跌逾7%：9月CPI超預期推升升息機率，AI基建融資放大利率衝擊 - TradingKey</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 受9月CPI超預期推升升息機率影響，甲骨文股價大跌逾7%，高利率加重AI基建融資成本壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>ORCL,NVDA</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:30]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> September CPI: Inflation Momentum Turns In The Wrong Direction (NDX) - Seeking Alpha</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 9月CPI顯示通膨動能轉向惡化，對那斯達克等高本益比科技股構成直接的估值下壓。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NDX,QQQ</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:23]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> What Is Starshield, SpaceX’s Military-Grade Satellite Internet Service Ukraine Relies On?</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 烏克蘭對SpaceX軍用衛星通訊Starshield的依賴與限制，突顯地緣政治與關鍵基礎設施的脆弱性。</p>
+</li>
+<li>
+<p><strong>[10-14 23:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> Fannie Mae sharply raises mortgage rate forecast for 2027</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 房利美大幅上調2027年房貸利率預測，反映高利率將長期化，對房地產市場與相關債券形成壓抑。</p>
+</li>
+<li>
+<p><strong>[10-14 23:19]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> BlackRock's Larry Fink warns a data center moratorium could trigger a recession</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 貝萊德執行長芬克警告資料中心暫停興建可能引發經濟衰退，對AI基礎設施與科技股供應鏈帶來政策與基建隱憂。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,MSFT,GOOGL</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:16]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> U.S. Consumer Price Index: Energy and Core Pressures Keep Fed Tightening Debate Active - Haver Analytics</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國 9 月 CPI 顯示能源與核心通膨壓力持續，加劇市場對聯準會（Fed）維持緊縮政策的辯論，對債市與風險資產構成壓抑。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:12]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> Higher Energy Prices Lift U.S. Inflation Ahead of Midterm Elections</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 高能源價格推升美國通膨，並對期中選舉與總體政策產生政治壓力，間接影響市場對財政與貨幣政策的預期。</p>
+</li>
+<li>
+<p><strong>[10-14 23:11]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> 最後一家也轉鷹！花旗改估Fed年底升息1碼 明年6月才降息</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI高於預期使花旗轉鷹，預估Fed 12月升息1碼，推升市場對鷹派貨幣政策的定價。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:08]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> U.S. Crude Oil Prices Rise Amid Middle East Tensions; Colgate-Pa - GuruFocus</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 中東地緣政治緊張推升美國原油價格，增添總體通膨隱憂，利好能源類股但對大盤成本造成壓力。</p>
+</li>
+<li>
+<p><strong>[10-14 23:07]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Hedgeye Risk Management | Hedgeye Inflation Nowcast Nails September CPI at 3.74% - Hedgeye</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI年增率高達3.74%，通膨數據超預期升溫，打壓美股與債市，美元指數走強。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>US30,SPX,COMP</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:07]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Stock market today: S&amp;P 500, Dow Jones, Nasdaq futures fall as US inflation hits 3.7% in September | Hindustan Times - Hindustan Times</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國 9 月 CPI 年增率達 3.7%，高於預期，美股三大指數期貨全面下跌，風險資產承受賣壓。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>S&amp;P 500,Dow Jones,Nasdaq</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:05]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> US inflation rises 3.7% in Sept, boosting odds of Fed rate hike and pressuring Bitcoin and stocks. - Pluang</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI上升至3.7%，推升Fed升息機率，股債齊跌並重挫加密貨幣如比特幣。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>BTC,SPX</code></p>
+</li>
+<li>
+<p><strong>[10-14 23:03]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[地緣政治][negative]</strong> Iran says it’s ‘counting the moments’ until it can strike U.S. warships; Saudi Aramco facilities attacked</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 伊朗揚言攻擊美軍艦艇且沙烏地阿拉伯 Aramco 設施遇襲，中東地緣政治危機急遽升溫，引發能源供給恐慌。</p>
+</li>
+<li>
+<p><strong>[10-14 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> Power Prices Top $1,000 on PJM as Heat Collides With Fall Plant Maintenance - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: PJM電價飆破1000美元，反映能源需求吃緊與供應鏈瓶頸，推升天然氣與電力相關商品價格。</p>
+</li>
+<li>
+<p><strong>[10-14 22:59]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Stock Market Today: Nasdaq Pressured Amid Hot Inflation Data; Super Micro Sinks (Live Coverage) - Investor's Business Daily</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 受美國高通膨數據衝擊，那斯達克指數承壓，超級微電腦（Super Micro）等AI概念股股價下挫。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>COMP,SMCI</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:53]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 美國通膨超預期！美股開盤4大指數齊跌 台積電ADR下挫1.68％ - 中天新聞網</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI通膨數據超預期升溫，導致美股四大指數齊跌，台積電ADR受創下挫1.68%。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TSM,NVDA</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:52]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> 5 Costs That Jumped for Americans</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國日常消費成本上升，呼應今日美國PPI生產者物價指數與通膨黏性壓力，利空債市並支撐美元。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:49]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> BlackRock Cuts US Stock Exposure, Says Fed Hike Bets Gone Too Far - BlackRock (NYSE:BLK) - Benzinga</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 貝萊德調降美股部位並認為降息/升息預期過頭，對大盤資金面形成潛在壓抑。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>BLK,SPY</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:48]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Citi turns hawkish on Fed after inflation surprise, expects December rate hike</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 花旗因通膨意外轉趨鷹派並預期12月升息，衝擊債市並推升美元，對高估值股市構成壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債殖利率</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:48]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Inflation climbs in September as energy prices soar, CPI report shows - CBS News</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI顯示能源價格飆漲帶動通膨升溫，聯準會短期內恐維持高利率抗通膨。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:47]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> Houthi attacks deepen Saudi stock market sell-off - Arabian Gulf Business Insight | AGBI</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 胡塞組織攻擊加深沙烏地股市拋售壓力，中東地緣政治風險升溫，對區域股市與油價產生擾動。</p>
+</li>
+<li>
+<p><strong>[10-14 22:45]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> 美9月CPI年增3.7%超預期 能源飆漲恐衝擊期中選情 | 民視新聞網 - LINE TODAY</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI年增3.7%超預期，能源飆漲引發市場對央行政策緊縮的擔憂。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:44]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Here's the inflation breakdown for September 2026 — in one chart - CNBC</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI/PPI通膨數據高於預期，顯示通膨黏著度高，衝擊降息預期並打壓美股與加密貨幣。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,SPY</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:38]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> U.S. Fed rate hike call seen tight as inflation heats up - The Globe and Mail</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 受美國通膨升溫影響，市場對Fed重啟升息或長期維持高利率的討論升溫，推升美元與美債殖利率。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,UST</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> Stock Market Today: Stocks Drop, Treasury Yields Surge After Hot Inflation Reading; Memory Stocks Extend Declines - Investopedia</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國熱通膨數據公布後美股大跌、美債殖利率飆升，記憶體等科技股跌勢擴大。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,NVDA</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[匯市][negative]</strong> Bitcoin, ETH, XRP Drop 1% Following Hot CPI Inflation Print - Benzinga</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI通膨數據高於預期（Hot CPI），引發聯準會鷹派擔憂，比特幣與主流加密貨幣同步下跌約1%。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>BTC,ETH</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:29]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> Senator Warren Statement on September 2026 CPI and Updated Trumpflation Tracker Data - Senate Committee on Banking, Housing, and Urban Affairs (.gov)</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國參議員針對9月CPI與川普經濟學通膨效應發表聲明，凸顯通膨議題高度政治化與市場關注度。</p>
+</li>
+<li>
+<p><strong>[10-14 22:26]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[地緣政治][negative]</strong> 胡塞飛彈直擊沙國阿美達蘭總部引發大火：油價與比特幣將何去何從？ - Yellow.com</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 胡塞飛彈攻擊沙國阿美總部引發大火，地緣政治風險急遽升高，直接激化油價與避險情緒。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>USO,BTC</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:25]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> U.S. September CPI: Inflation Is Back, And Stocks Are Not Ready (SPX) - Seeking Alpha</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI年增率升至3.7%超預期，引發Fed升息憂慮，美股科技股下挫、美元創新高。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPX,美元指數</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:24]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Bank of America shares drop 8% after third-quarter revenue miss and regulatory penalty</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國銀行因Q3營收不如預期及面臨監管罰款導致股價重挫8%，短期內拖累金融股氣氛。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>BAC</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:23]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> S&amp;P, Nasdaq slip after mostly hot CPI report; Dow buoyed by healthcare components</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 受美國9月CPI高於預期影響，標普與那斯達克指數走跌，通膨壓力壓抑科技股估值。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:22]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> 俄羅斯儲蓄銀行資料中心 也遭烏克蘭襲擊</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 俄羅斯銀行資料中心遭無人機攻擊，地緣政治風險升溫，對全球能源及區域金融市場情緒帶來短線干擾。</p>
+</li>
+<li>
+<p><strong>[10-14 22:22]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Bank of America Stock Slumps After Revenue Miss, $1.2B Treasury Fine - Investopedia</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國銀行（BofA）因營收不如預期並遭美國財政部處以12億美元罰款，股價重挫，拖累金融股氣氛。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>BAC</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Energy, gas costs push inflation higher. Paychecks are lagging behind - USA Today</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 能源與燃氣成本推升通膨，且薪資成長落後於物價漲幅，加劇美國民眾生活壓力與經濟隱憂。</p>
+</li>
+<li>
+<p><strong>[10-14 22:19]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> 9月CPI增速超預期！通膨隱憂浮現美股下探 | NOWNEWS今日新聞 - LINE TODAY</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 9月CPI增速超預期，通膨隱憂浮現導致美股下探、殖利率與美元走高。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPX,美元指數</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> Gas Prices Are Up 34% From a Year Ago, Adding to Inflation Pressures</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 受伊朗戰爭影響，能源價格自去年同期大漲34%，成美國通膨居高不下的主要推手。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>USO,CL=F</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:18]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[商品(油金)][negative]</strong> Gas Costs 34 Percent More Than a Year Ago</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美伊衝突推升能源價格，汽油成本較去年同期大增34%，成為美國通膨飆升的主因。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>USO</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:18]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> 9月CPI增速超預期！通膨隱憂浮現美股下探 - Yahoo新聞</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI通膨數據高於預期，顯示通膨黏著度高，引發聯準會可能維持高利率或重啟升息的擔憂，衝擊美股與債市。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,S&amp;P500</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:18]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 9月CPI增速超預期！通膨隱憂浮現美股下探</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI月增0.6%、年增3.7%高於預期，費半指數大跌300點，科技股走弱。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPX,費城半導體指數</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> 美9月CPI年增3.7%超預期 能源飆漲恐衝擊期中選情 - 民視財經網</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI年增3.7%超預期，能源飆漲帶動通膨升溫，推升美債殖利率並衝擊政治與市場預期。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,US10Y</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[地緣政治][negative]</strong> How Iran’s $2 trillion threat puts your AI stocks at risk</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 地緣政治風險與伊朗威脅引發市場擔憂，可能波及大型科技股與AI基建供應鏈。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,MSFT,AAPL</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][negative]</strong> Stock Market Today: Yields Jump, Nasdaq Opens Lower After Hot Inflation Reading — Live Updates - WSJ</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 熱絡的通膨數據發布後，美債殖利率跳升，那斯達克指數開盤走低。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>US10Y,QQQ</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:16]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> 美國9月CPI年增率3.7%　高出市場預期</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI年增率3.7%高於預期，主要受燃料成本推動，打擊降息期待並推升美債殖利率。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPX,美元指數</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 財報前夕先裁千人！Netflix成長放緩 2022年來最大裁員</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Netflix在財報前夕宣佈2022年來最大規模裁員（千人），反映用戶成長放緩，對串流媒體板塊情緒形成壓抑。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NFLX</code></p>
+</li>
+<li>
+<p><strong>[10-14 22:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> Gold Hits 10-Week Low as Bond Yields Soar Above Rising Inflation - BullionVault</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美債殖利率飆升與通膨升溫打壓金價，黃金跌至10週新低，資金流向美元與高殖利率債券。</li>
+<li><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></li>
+</ul>
+<hr />
+<h2 id="_4">分類彙整</h2>
+<h3 id="27">股市（27）</h3>
+<ul>
+<li><strong>[10-14 23:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> SEC to hold committee meeting to discuss IPO modernization, crowdfunding</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: SEC將舉行委員會會議討論IPO現代化與眾籌，對整體美股IPO市場具長期制度改革意義，短期影響有限。</p>
+</li>
+<li>
+<p><strong>[10-14 23:48]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Morgan Stanley Names Top Pick Amid 3Q26 Earnings</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 摩根士丹利在第三季財報季期間點名首選標的，提供機構資金佈局方向，帶動個股題材動能。</p>
+</li>
+<li>
+<p><strong>[10-14 23:31]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 甲骨文股價跌逾7%：9月CPI超預期推升升息機率，AI基建融資放大利率衝擊 - TradingKey</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 受9月CPI超預期推升升息機率影響，甲骨文股價大跌逾7%，高利率加重AI基建融資成本壓力。</p>
+</li>
+<li>
+<p><strong>[10-14 23:25]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> YieldMax GOOGL Option Income Strategy ETF announces weekly distribution of $0.0707</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: ETF配息公告屬例行性消息，對GOOGL股價與大盤無實質重大影響。</p>
+</li>
+<li>
+<p><strong>[10-14 23:24]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> YieldMax GME Option Income Strategy ETF announces weekly distribution of $0.3776</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: GME選擇權收益型ETF之每週配息公告，對正股市場流動性與價格無直接衝擊。</p>
+</li>
+<li>
+<p><strong>[10-14 23:22]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> YieldMax Short COIN Option Income Strategy ETF announces weekly distribution of $0.1658</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 放空COIN的選擇權ETF進行每週配息，反映加密貨幣衍生性商品市場的活絡度。</p>
+</li>
+<li>
+<p><strong>[10-14 23:21]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> YieldMax META Option Income Strategy ETF announces weekly distribution of $0.0956</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: META選擇權收益型ETF之每週配息公告，對META股價與科技股大盤無直接影響。</p>
+</li>
+<li>
+<p><strong>[10-14 23:20]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> YieldMax DKNG Option Income Strategy ETF announces weekly distribution of $0.1078</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: DKNG選擇權收益型ETF公告配息，對博弈類股股價無直接衝擊。</p>
+</li>
+<li>
+<p><strong>[10-14 23:07]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Micron wins praise from Elon Musk for not being too greedy</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美光（Micron）獲得馬斯克讚賞未過度哄抬記憶體價格，顯示其定價策略健康且需求強勁。</p>
+</li>
+<li>
+<p><strong>[10-14 23:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> TWA00 加權指數- 今天盤面資金明顯往PCB和玻纖布族群靠攏，敬鵬2355、建榮... - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股加權指數盤面資金流向PCB與玻纖布族群（如敬鵬、建榮），帶動部分個股表現強勢。</p>
+</li>
+<li>
+<p><strong>[10-14 22:59]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Stock Market Today: Nasdaq Pressured Amid Hot Inflation Data; Super Micro Sinks (Live Coverage) - Investor's Business Daily</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 受美國高通膨數據衝擊，那斯達克指數承壓，超級微電腦（Super Micro）等AI概念股股價下挫。</p>
+</li>
+<li>
+<p><strong>[10-14 22:53]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 美國通膨超預期！美股開盤4大指數齊跌 台積電ADR下挫1.68％ - 中天新聞網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國9月CPI通膨數據超預期升溫，導致美股四大指數齊跌，台積電ADR受創下挫1.68%。</p>
+</li>
+<li>
+<p><strong>[10-14 22:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Netflix to lay off roughly 1,000 employees, or 6% of workforce</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Netflix裁員6%以優化成本結構，對短期美股科技股的營運效率具正面激勵效果。</p>
+</li>
+<li>
+<p><strong>[10-14 22:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> Earnings call transcript: Morgan Stanley beats Q3 2026 estimates, shares fall</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 摩根士丹利Q3財報優於預期但股價下跌，反映市場先前已高度預期並有利多出盡現象。</p>
+</li>
+<li>
+<p><strong>[10-14 22:49]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Camtek sees Q3 revenue topping guidance, 2027 sales above $800M</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Camtek Q3營收超越指引且2027展望強勁，激勵半導體設備與先進封裝供應鏈氣氛。</p>
+</li>
+<li>
+<p><strong>[10-14 22:49]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> BlackRock Cuts US Stock Exposure, Says Fed Hike Bets Gone Too Far - BlackRock (NYSE:BLK) - Benzinga</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 貝萊德調降美股部位並認為降息/升息預期過頭，對大盤資金面形成潛在壓抑。</p>
+</li>
+<li>
+<p><strong>[10-14 22:49]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> NextEra Energy options signal 3.1% move on earnings</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 選擇權定價顯示NextEra Energy財報將有3.1%波動，屬常態性事件。</p>
+</li>
+<li>
+<p><strong>[10-14 22:48]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Netflix cuts about 6% of jobs in biggest layoff since 2022</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Netflix最大規模裁員行動，利於降低營運成本並改善利潤率。</p>
+</li>
+<li>
+<p><strong>[10-14 22:48]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Elevance Health options signal 6.8% move on Oct. 21 earnings</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 期權市場預期Elevance Health財報將帶來6.8%波動，對整體醫療板塊影響有限。</p>
+</li>
+<li>
+<p><strong>[10-14 22:39]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Bending Spoons skyrockets 35% as Berkshire Hathaway makes $330 million investment</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 波克夏海瑟威注資Bending Spoons，激勵該股大漲，對整體科技股或價值投資風向具指標意義。</p>
+</li>
+<li>
+<p><strong>[10-14 22:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Stock Market Today: Stocks Drop, Treasury Yields Surge After Hot Inflation Reading; Memory Stocks Extend Declines - Investopedia</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國熱通膨數據公布後美股大跌、美債殖利率飆升，記憶體等科技股跌勢擴大。</p>
+</li>
+<li>
+<p><strong>[10-14 22:27]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> 金融業前八月獲利創佳績，金管會三期許推動虛擬資產監理與穩定幣規範！-財經焦點情報站 - CMoney投資網誌</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台灣金融業前八月獲利亮眼，金管會推動虛擬資產監理與穩定幣規範，有利金融股中長期發展。</p>
+</li>
+<li>
+<p><strong>[10-14 22:24]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Bank of America shares drop 8% after third-quarter revenue miss and regulatory penalty</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國銀行因Q3營收不如預期及面臨監管罰款導致股價重挫8%，短期內拖累金融股氣氛。</p>
+</li>
+<li>
+<p><strong>[10-14 22:23]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Texas Instruments options signal 7.1% move on earnings</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 德州儀器選擇權定價暗示財報後將有7.1%的大幅波動，牽動半導體類股情緒。</p>
+</li>
+<li>
+<p><strong>[10-14 22:22]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Bank of America Stock Slumps After Revenue Miss, $1.2B Treasury Fine - Investopedia</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國銀行（BofA）因營收不如預期並遭美國財政部處以12億美元罰款，股價重挫，拖累金融股氣氛。</p>
+</li>
+<li>
+<p><strong>[10-14 22:18]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 9月CPI增速超預期！通膨隱憂浮現美股下探</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國9月CPI月增0.6%、年增3.7%高於預期，費半指數大跌300點，科技股走弱。</p>
+</li>
+<li>
+<p><strong>[10-14 22:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 財報前夕先裁千人！Netflix成長放緩 2022年來最大裁員</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Netflix在財報前夕宣佈2022年來最大規模裁員（千人），反映用戶成長放緩，對串流媒體板塊情緒形成壓抑。</li>
+</ul>
+<h3 id="3">債市（3）</h3>
+<ul>
+<li><strong>[10-14 23:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Fannie Mae sharply raises mortgage rate forecast for 2027</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 房利美大幅上調2027年房貸利率預測，反映高利率將長期化，對房地產市場與相關債券形成壓抑。</p>
+</li>
+<li>
+<p><strong>[10-14 22:38]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> Swiss Bond Yields Reach Two-Week High - TradingView</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 瑞士債券殖利率升至兩週高點，呼應全球通膨升溫與債市遭到拋售的宏觀趨勢。</p>
+</li>
+<li>
+<p><strong>[10-14 22:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Stock Market Today: Yields Jump, Nasdaq Opens Lower After Hot Inflation Reading — Live Updates - WSJ</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 熱絡的通膨數據發布後，美債殖利率跳升，那斯達克指數開盤走低。</li>
+</ul>
+<h3 id="2">匯市（2）</h3>
+<ul>
+<li><strong>[10-14 23:45]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> US Dollar Index roars towards 103 as hot CPI reignite Fed hike bets - FXStreet</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國9月CPI超預期帶動Fed升息預期再起，美元指數強勢衝向103，非美貨幣與黃金承壓。</p>
+</li>
+<li>
+<p><strong>[10-14 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Bitcoin, ETH, XRP Drop 1% Following Hot CPI Inflation Print - Benzinga</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI通膨數據高於預期（Hot CPI），引發聯準會鷹派擔憂，比特幣與主流加密貨幣同步下跌約1%。</li>
+</ul>
+<h3 id="8">商品(油金)（8）</h3>
+<ul>
+<li><strong>[10-14 23:49]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Nuclear stocks fall sharply as 10-year Treasury yield hits 5.26%, with Energy Fuels down 9%. - Pluang</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10年期公債殖利率飆高至5.26%引發核能股重挫，資金加速撤出高本益比與資本密集產業。</p>
+</li>
+<li>
+<p><strong>[10-14 23:43]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> 【加州新聞】加州油價為何全美最高 逐項原因為你解析（視頻） - KTSF.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 加州油價偏高反映地方能源與稅賦結構，對整體國家商品原油期貨價格僅具區域性暗示，無直接重大外溢。</p>
+</li>
+<li>
+<p><strong>[10-14 23:23]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> YieldMax Gold Miners Option Income Strategy ETF announces weekly distribution of $0.0775</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 黃金礦業ETF每週配息公告，對黃金期貨與實體金價無直接影響。</p>
+</li>
+<li>
+<p><strong>[10-14 23:08]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> U.S. Crude Oil Prices Rise Amid Middle East Tensions; Colgate-Pa - GuruFocus</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 中東地緣政治緊張推升美國原油價格，增添總體通膨隱憂，利好能源類股但對大盤成本造成壓力。</p>
+</li>
+<li>
+<p><strong>[10-14 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Power Prices Top $1,000 on PJM as Heat Collides With Fall Plant Maintenance - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: PJM電價飆破1000美元，反映能源需求吃緊與供應鏈瓶頸，推升天然氣與電力相關商品價格。</p>
+</li>
+<li>
+<p><strong>[10-14 22:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Gas Prices Are Up 34% From a Year Ago, Adding to Inflation Pressures</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 受伊朗戰爭影響，能源價格自去年同期大漲34%，成美國通膨居高不下的主要推手。</p>
+</li>
+<li>
+<p><strong>[10-14 22:18]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Gas Costs 34 Percent More Than a Year Ago</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美伊衝突推升能源價格，汽油成本較去年同期大增34%，成為美國通膨飆升的主因。</p>
+</li>
+<li>
+<p><strong>[10-14 22:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Gold Hits 10-Week Low as Bond Yields Soar Above Rising Inflation - BullionVault</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美債殖利率飆升與通膨升溫打壓金價，黃金跌至10週新低，資金流向美元與高殖利率債券。</li>
+</ul>
+<h3 id="9">地緣政治（9）</h3>
+<ul>
+<li><strong>[10-14 23:47]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Container ship sinks in Strait of Hormuz as Iran steps up attacks</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 荷姆茲海峽商船遭伊朗攻擊沉沒，中東地緣政治風險急遽升溫，推升原油供給擔憂與油價波動。</p>
+</li>
+<li>
+<p><strong>[10-14 23:25]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Democrats Blame Trump After CPI Report Shows Energy Prices Drove Up Inflation</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 能源價格推升通膨引發民主黨與川普陣營之政治口水戰，對中期期中選舉選情有影響，但對金融市場無直接衝擊。</p>
+</li>
+<li>
+<p><strong>[10-14 23:23]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> What Is Starshield, SpaceX’s Military-Grade Satellite Internet Service Ukraine Relies On?</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 烏克蘭對SpaceX軍用衛星通訊Starshield的依賴與限制，突顯地緣政治與關鍵基礎設施的脆弱性。</p>
+</li>
+<li>
+<p><strong>[10-14 23:07]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Democrats Put Blame for Higher Prices on Trump</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 民主黨將高物價歸咎於川普政府，屬政治口水戰，對金融市場直接影響有限。</p>
+</li>
+<li>
+<p><strong>[10-14 23:03]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Iran says it’s ‘counting the moments’ until it can strike U.S. warships; Saudi Aramco facilities attacked</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 伊朗揚言攻擊美軍艦艇且沙烏地阿拉伯 Aramco 設施遇襲，中東地緣政治危機急遽升溫，引發能源供給恐慌。</p>
+</li>
+<li>
+<p><strong>[10-14 22:47]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Houthi attacks deepen Saudi stock market sell-off - Arabian Gulf Business Insight | AGBI</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 胡塞組織攻擊加深沙烏地股市拋售壓力，中東地緣政治風險升溫，對區域股市與油價產生擾動。</p>
+</li>
+<li>
+<p><strong>[10-14 22:26]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 胡塞飛彈直擊沙國阿美達蘭總部引發大火：油價與比特幣將何去何從？ - Yellow.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 胡塞飛彈攻擊沙國阿美總部引發大火，地緣政治風險急遽升高，直接激化油價與避險情緒。</p>
+</li>
+<li>
+<p><strong>[10-14 22:22]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 俄羅斯儲蓄銀行資料中心 也遭烏克蘭襲擊</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 俄羅斯銀行資料中心遭無人機攻擊，地緣政治風險升溫，對全球能源及區域金融市場情緒帶來短線干擾。</p>
+</li>
+<li>
+<p><strong>[10-14 22:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> How Iran’s $2 trillion threat puts your AI stocks at risk</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 地緣政治風險與伊朗威脅引發市場擔憂，可能波及大型科技股與AI基建供應鏈。</li>
+</ul>
+<h3 id="30">總體經濟（30）</h3>
+<ul>
+<li><strong>[10-14 23:55]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Hot CPI Revives the Case for Sticky Inflation and Higher Fed Rate Risk - Investing.com Nigeria</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國9月CPI高於預期，顯示通膨僵固，增添聯準會升息風險，打壓美股與債市，美元指數走強。</p>
+</li>
+<li>
+<p><strong>[10-14 23:51]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> CPI Report Live Updates: New Insights on Inflation, U.S. Economy and the Fed - The New York Times</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國9月CPI年增率升至3.7%高於預期，加劇聯準會升息壓力，股債雙殺，美元強彈。</p>
+</li>
+<li>
+<p><strong>[10-14 23:44]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Treasury says largest U.S. banks let politics influence who received banking services</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國財政部調查指大型銀行因政治因素影響金融服務提供，涉及商譽與合規風險，對整體金融市場影響有限。</p>
+</li>
+<li>
+<p><strong>[10-14 23:34]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 油價和雜貨漲價 美9月通脹率升至3.7% - 大紀元</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國9月CPI通膨率升至3.7%超乎預期，推升聯準會升息預期，帶動美元走強，股債雙雙承壓。</p>
+</li>
+<li>
+<p><strong>[10-14 23:33]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Your Social Security check will rise 3.6% next year, but will it be able to keep up with inflation?</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國社會安全生活調整(COLA)上調反映通膨現況，屬總體經濟滯後指標，對資本市場直接影響有限。</p>
+</li>
+<li>
+<p><strong>[10-14 23:30]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> September CPI: Inflation Momentum Turns In The Wrong Direction (NDX) - Seeking Alpha</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 9月CPI顯示通膨動能轉向惡化，對那斯達克等高本益比科技股構成直接的估值下壓。</p>
+</li>
+<li>
+<p><strong>[10-14 23:19]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> BlackRock's Larry Fink warns a data center moratorium could trigger a recession</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 貝萊德執行長芬克警告資料中心暫停興建可能引發經濟衰退，對AI基礎設施與科技股供應鏈帶來政策與基建隱憂。</p>
+</li>
+<li>
+<p><strong>[10-14 23:16]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> U.S. Consumer Price Index: Energy and Core Pressures Keep Fed Tightening Debate Active - Haver Analytics</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國 9 月 CPI 顯示能源與核心通膨壓力持續，加劇市場對聯準會（Fed）維持緊縮政策的辯論，對債市與風險資產構成壓抑。</p>
+</li>
+<li>
+<p><strong>[10-14 23:12]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Higher Energy Prices Lift U.S. Inflation Ahead of Midterm Elections</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 高能源價格推升美國通膨，並對期中選舉與總體政策產生政治壓力，間接影響市場對財政與貨幣政策的預期。</p>
+</li>
+<li>
+<p><strong>[10-14 23:11]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 最後一家也轉鷹！花旗改估Fed年底升息1碼 明年6月才降息</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國9月CPI高於預期使花旗轉鷹，預估Fed 12月升息1碼，推升市場對鷹派貨幣政策的定價。</p>
+</li>
+<li>
+<p><strong>[10-14 23:07]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Hedgeye Risk Management | Hedgeye Inflation Nowcast Nails September CPI at 3.74% - Hedgeye</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國9月CPI年增率高達3.74%，通膨數據超預期升溫，打壓美股與債市，美元指數走強。</p>
+</li>
+<li>
+<p><strong>[10-14 23:07]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Stock market today: S&amp;P 500, Dow Jones, Nasdaq futures fall as US inflation hits 3.7% in September | Hindustan Times - Hindustan Times</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國 9 月 CPI 年增率達 3.7%，高於預期，美股三大指數期貨全面下跌，風險資產承受賣壓。</p>
+</li>
+<li>
+<p><strong>[10-14 23:05]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> US inflation rises 3.7% in Sept, boosting odds of Fed rate hike and pressuring Bitcoin and stocks. - Pluang</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國9月CPI上升至3.7%，推升Fed升息機率，股債齊跌並重挫加密貨幣如比特幣。</p>
+</li>
+<li>
+<p><strong>[10-14 22:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> 5 Costs Americans Are Paying More for as Inflation Rises</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國消費者日常開銷（食品、電腦、串流服務等）全面上升，反映通膨黏著度高。</p>
+</li>
+<li>
+<p><strong>[10-14 22:52]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 5 Costs That Jumped for Americans</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國日常消費成本上升，呼應今日美國PPI生產者物價指數與通膨黏性壓力，利空債市並支撐美元。</p>
+</li>
+<li>
+<p><strong>[10-14 22:48]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Citi turns hawkish on Fed after inflation surprise, expects December rate hike</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 花旗因通膨意外轉趨鷹派並預期12月升息，衝擊債市並推升美元，對高估值股市構成壓力。</p>
+</li>
+<li>
+<p><strong>[10-14 22:48]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Inflation climbs in September as energy prices soar, CPI report shows - CBS News</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國9月CPI顯示能源價格飆漲帶動通膨升溫，聯準會短期內恐維持高利率抗通膨。</p>
+</li>
+<li>
+<p><strong>[10-14 22:47]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> 中國9月新增人民幣貸款高於預期  分析：刺激措施可能發揮作用</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 中國9月新增人民幣貸款高於預期，顯示貨幣政策刺激措施開始發揮成效，提振市場信心。</p>
+</li>
+<li>
+<p><strong>[10-14 22:45]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 美9月CPI年增3.7%超預期 能源飆漲恐衝擊期中選情 | 民視新聞網 - LINE TODAY</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國9月CPI年增3.7%超預期，能源飆漲引發市場對央行政策緊縮的擔憂。</p>
+</li>
+<li>
+<p><strong>[10-14 22:44]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Here's the inflation breakdown for September 2026 — in one chart - CNBC</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國9月CPI/PPI通膨數據高於預期，顯示通膨黏著度高，衝擊降息預期並打壓美股與加密貨幣。</p>
+</li>
+<li>
+<p><strong>[10-14 22:38]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> U.S. Fed rate hike call seen tight as inflation heats up - The Globe and Mail</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 受美國通膨升溫影響，市場對Fed重啟升息或長期維持高利率的討論升溫，推升美元與美債殖利率。</p>
+</li>
+<li>
+<p><strong>[10-14 22:29]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Senator Warren Statement on September 2026 CPI and Updated Trumpflation Tracker Data - Senate Committee on Banking, Housing, and Urban Affairs (.gov)</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國參議員針對9月CPI與川普經濟學通膨效應發表聲明，凸顯通膨議題高度政治化與市場關注度。</p>
+</li>
+<li>
+<p><strong>[10-14 22:25]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> U.S. September CPI: Inflation Is Back, And Stocks Are Not Ready (SPX) - Seeking Alpha</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國9月CPI年增率升至3.7%超預期，引發Fed升息憂慮，美股科技股下挫、美元創新高。</p>
+</li>
+<li>
+<p><strong>[10-14 22:23]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> S&amp;P, Nasdaq slip after mostly hot CPI report; Dow buoyed by healthcare components</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 受美國9月CPI高於預期影響，標普與那斯達克指數走跌，通膨壓力壓抑科技股估值。</p>
+</li>
+<li>
+<p><strong>[10-14 22:21]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> 分析：油價高 推升中國9月CPI漲幅擴大 - 經濟日報</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 受國際油價高漲影響，中國9月CPI漲幅擴大，輸入性通膨壓力顯現。</p>
+</li>
+<li>
+<p><strong>[10-14 22:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Energy, gas costs push inflation higher. Paychecks are lagging behind - USA Today</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 能源與燃氣成本推升通膨，且薪資成長落後於物價漲幅，加劇美國民眾生活壓力與經濟隱憂。</p>
+</li>
+<li>
+<p><strong>[10-14 22:19]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 9月CPI增速超預期！通膨隱憂浮現美股下探 | NOWNEWS今日新聞 - LINE TODAY</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 9月CPI增速超預期，通膨隱憂浮現導致美股下探、殖利率與美元走高。</p>
+</li>
+<li>
+<p><strong>[10-14 22:18]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 9月CPI增速超預期！通膨隱憂浮現美股下探 - Yahoo新聞</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國9月CPI通膨數據高於預期，顯示通膨黏著度高，引發聯準會可能維持高利率或重啟升息的擔憂，衝擊美股與債市。</p>
+</li>
+<li>
+<p><strong>[10-14 22:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 美9月CPI年增3.7%超預期 能源飆漲恐衝擊期中選情 - 民視財經網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國9月CPI年增3.7%超預期，能源飆漲帶動通膨升溫，推升美債殖利率並衝擊政治與市場預期。</p>
+</li>
+<li>
+<p><strong>[10-14 22:16]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 美國9月CPI年增率3.7%　高出市場預期</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國9月CPI年增率3.7%高於預期，主要受燃料成本推動，打擊降息期待並推升美債殖利率。</li>
+</ul>
+<h3 id="1">其他（1）</h3>
+<ul>
+<li><strong>[10-14 23:18]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> My wife says we can’t afford to retire. I vetoed her $8,000 trip to Italy. We’re in our 60s and have $4 million. Do I keep working?</li>
+<li><strong style="color:#174ea6">影響</strong>: 個人理財與退休規劃短文，對整體金融市場無實質影響。</li>
+</ul>
+<hr />
+<h2 id="_5">全部事件</h2>
+<ul>
+<li><strong>[10-14 23:55]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Hot CPI Revives the Case for Sticky Inflation and Higher Fed Rate Risk - Investing.com Nigeria <code>google-news:US CPI inflation data</code></li>
+<li><strong>[10-14 23:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> SEC to hold committee meeting to discuss IPO modernization, crowdfunding <code>seekingalpha</code></li>
+<li><strong>[10-14 23:51]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> CPI Report Live Updates: New Insights on Inflation, U.S. Economy and the Fed - The New York Times <code>google-news:inflation CPI</code></li>
+<li><strong>[10-14 23:49]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Nuclear stocks fall sharply as 10-year Treasury yield hits 5.26%, with Energy Fuels down 9%. - Pluang <code>google-news:Treasury yields</code></li>
+<li><strong>[10-14 23:48]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Morgan Stanley Names Top Pick Amid 3Q26 Earnings <code>investing-com</code></li>
+<li><strong>[10-14 23:47]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Container ship sinks in Strait of Hormuz as Iran steps up attacks <code>cnbc</code></li>
+<li><strong>[10-14 23:45]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> US Dollar Index roars towards 103 as hot CPI reignite Fed hike bets - FXStreet <code>google-news:dollar index DXY</code></li>
+<li><strong>[10-14 23:44]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Treasury says largest U.S. banks let politics influence who received banking services <code>cnbc</code></li>
+<li><strong>[10-14 23:43]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 【加州新聞】加州油價為何全美最高 逐項原因為你解析（視頻） - KTSF.com <code>google-news:油價</code></li>
+<li><strong>[10-14 23:34]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 油價和雜貨漲價 美9月通脹率升至3.7% - 大紀元 <code>google-news:油價</code></li>
+<li><strong>[10-14 23:33]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Your Social Security check will rise 3.6% next year, but will it be able to keep up with inflation? <code>marketwatch</code></li>
+<li><strong>[10-14 23:31]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 甲骨文股價跌逾7%：9月CPI超預期推升升息機率，AI基建融資放大利率衝擊 - TradingKey <code>google-news:美國 CPI 通膨</code></li>
+<li><strong>[10-14 23:30]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> September CPI: Inflation Momentum Turns In The Wrong Direction (NDX) - Seeking Alpha <code>google-news:inflation CPI</code></li>
+<li><strong>[10-14 23:25]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> YieldMax GOOGL Option Income Strategy ETF announces weekly distribution of $0.0707 <code>seekingalpha</code></li>
+<li><strong>[10-14 23:25]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Democrats Blame Trump After CPI Report Shows Energy Prices Drove Up Inflation <code>nytbusiness</code></li>
+<li><strong>[10-14 23:24]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> YieldMax GME Option Income Strategy ETF announces weekly distribution of $0.3776 <code>seekingalpha</code></li>
+<li><strong>[10-14 23:23]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> What Is Starshield, SpaceX’s Military-Grade Satellite Internet Service Ukraine Relies On? <code>nytbusiness</code></li>
+<li><strong>[10-14 23:23]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> YieldMax Gold Miners Option Income Strategy ETF announces weekly distribution of $0.0775 <code>seekingalpha</code></li>
+<li><strong>[10-14 23:22]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> YieldMax Short COIN Option Income Strategy ETF announces weekly distribution of $0.1658 <code>seekingalpha</code></li>
+<li><strong>[10-14 23:21]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> YieldMax META Option Income Strategy ETF announces weekly distribution of $0.0956 <code>seekingalpha</code></li>
+<li><strong>[10-14 23:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Fannie Mae sharply raises mortgage rate forecast for 2027 <code>cnbc</code></li>
+<li><strong>[10-14 23:20]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> YieldMax DKNG Option Income Strategy ETF announces weekly distribution of $0.1078 <code>seekingalpha</code></li>
+<li><strong>[10-14 23:19]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> BlackRock's Larry Fink warns a data center moratorium could trigger a recession <code>cnbc</code></li>
+<li><strong>[10-14 23:18]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> My wife says we can’t afford to retire. I vetoed her $8,000 trip to Italy. We’re in our 60s and have $4 million. Do I keep working? <code>marketwatch</code></li>
+<li><strong>[10-14 23:16]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> U.S. Consumer Price Index: Energy and Core Pressures Keep Fed Tightening Debate Active - Haver Analytics <code>google-news:inflation CPI</code></li>
+<li><strong>[10-14 23:12]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Higher Energy Prices Lift U.S. Inflation Ahead of Midterm Elections <code>nytbusiness</code></li>
+<li><strong>[10-14 23:11]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 最後一家也轉鷹！花旗改估Fed年底升息1碼 明年6月才降息 <code>yahoo-tw-finance</code></li>
+<li><strong>[10-14 23:08]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> U.S. Crude Oil Prices Rise Amid Middle East Tensions; Colgate-Pa - GuruFocus <code>google-news:oil price crude</code></li>
+<li><strong>[10-14 23:07]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Hedgeye Risk Management | Hedgeye Inflation Nowcast Nails September CPI at 3.74% - Hedgeye <code>google-news:inflation CPI</code></li>
+<li><strong>[10-14 23:07]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Democrats Put Blame for Higher Prices on Trump <code>nytbusiness</code></li>
+<li><strong>[10-14 23:07]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Stock market today: S&amp;P 500, Dow Jones, Nasdaq futures fall as US inflation hits 3.7% in September | Hindustan Times - Hindustan Times <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[10-14 23:07]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Micron wins praise from Elon Musk for not being too greedy <code>marketwatch</code></li>
+<li><strong>[10-14 23:05]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> US inflation rises 3.7% in Sept, boosting odds of Fed rate hike and pressuring Bitcoin and stocks. - Pluang <code>google-news:Federal Reserve rate decision</code></li>
+<li><strong>[10-14 23:03]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Iran says it’s ‘counting the moments’ until it can strike U.S. warships; Saudi Aramco facilities attacked <code>cnbc</code></li>
+<li><strong>[10-14 23:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> TWA00 加權指數- 今天盤面資金明顯往PCB和玻纖布族群靠攏，敬鵬2355、建榮... - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[10-14 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Power Prices Top $1,000 on PJM as Heat Collides With Fall Plant Maintenance - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[10-14 22:59]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Stock Market Today: Nasdaq Pressured Amid Hot Inflation Data; Super Micro Sinks (Live Coverage) - Investor's Business Daily <code>google-news:inflation CPI</code></li>
+<li><strong>[10-14 22:53]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 美國通膨超預期！美股開盤4大指數齊跌 台積電ADR下挫1.68％ - 中天新聞網 <code>google-news:美國 CPI 通膨</code></li>
+<li><strong>[10-14 22:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 5 Costs Americans Are Paying More for as Inflation Rises <code>nytbusiness</code></li>
+<li><strong>[10-14 22:52]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 5 Costs That Jumped for Americans <code>nytbusiness</code></li>
+<li><strong>[10-14 22:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Netflix to lay off roughly 1,000 employees, or 6% of workforce <code>cnbc</code></li>
+<li><strong>[10-14 22:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Earnings call transcript: Morgan Stanley beats Q3 2026 estimates, shares fall <code>investing-com</code></li>
+<li><strong>[10-14 22:49]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Camtek sees Q3 revenue topping guidance, 2027 sales above $800M <code>seekingalpha</code></li>
+<li><strong>[10-14 22:49]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> BlackRock Cuts US Stock Exposure, Says Fed Hike Bets Gone Too Far - BlackRock (NYSE:BLK) - Benzinga <code>google-news:Treasury yields</code></li>
+<li><strong>[10-14 22:49]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> NextEra Energy options signal 3.1% move on earnings <code>investing-com</code></li>
+<li><strong>[10-14 22:48]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Citi turns hawkish on Fed after inflation surprise, expects December rate hike <code>investing-com</code></li>
+<li><strong>[10-14 22:48]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Netflix cuts about 6% of jobs in biggest layoff since 2022 <code>investing-com</code></li>
+<li><strong>[10-14 22:48]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Elevance Health options signal 6.8% move on Oct. 21 earnings <code>investing-com</code></li>
+<li><strong>[10-14 22:48]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Inflation climbs in September as energy prices soar, CPI report shows - CBS News <code>google-news:inflation CPI</code></li>
+<li><strong>[10-14 22:47]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Houthi attacks deepen Saudi stock market sell-off - Arabian Gulf Business Insight | AGBI <code>google-news:stock market selloff</code></li>
+<li><strong>[10-14 22:47]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 中國9月新增人民幣貸款高於預期  分析：刺激措施可能發揮作用 <code>yahoo-tw-finance</code></li>
+<li><strong>[10-14 22:45]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 美9月CPI年增3.7%超預期 能源飆漲恐衝擊期中選情 | 民視新聞網 - LINE TODAY <code>google-news:美國 CPI 通膨</code></li>
+<li><strong>[10-14 22:44]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Here's the inflation breakdown for September 2026 — in one chart - CNBC <code>google-news:inflation CPI</code></li>
+<li><strong>[10-14 22:39]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Bending Spoons skyrockets 35% as Berkshire Hathaway makes $330 million investment <code>cnbc</code></li>
+<li><strong>[10-14 22:38]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> U.S. Fed rate hike call seen tight as inflation heats up - The Globe and Mail <code>google-news:Federal Reserve rate decision</code></li>
+<li><strong>[10-14 22:38]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Swiss Bond Yields Reach Two-Week High - TradingView <code>google-news:Treasury yields</code></li>
+<li><strong>[10-14 22:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Stock Market Today: Stocks Drop, Treasury Yields Surge After Hot Inflation Reading; Memory Stocks Extend Declines - Investopedia <code>google-news:Treasury yields</code></li>
+<li><strong>[10-14 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Bitcoin, ETH, XRP Drop 1% Following Hot CPI Inflation Print - Benzinga <code>google-news:inflation CPI</code></li>
+<li><strong>[10-14 22:29]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Senator Warren Statement on September 2026 CPI and Updated Trumpflation Tracker Data - Senate Committee on Banking, Housing, and Urban Affairs (.gov) <code>google-news:inflation CPI</code></li>
+<li><strong>[10-14 22:27]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 金融業前八月獲利創佳績，金管會三期許推動虛擬資產監理與穩定幣規範！-財經焦點情報站 - CMoney投資網誌 <code>google-news:金管會</code></li>
+<li><strong>[10-14 22:26]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 胡塞飛彈直擊沙國阿美達蘭總部引發大火：油價與比特幣將何去何從？ - Yellow.com <code>google-news:油價</code></li>
+<li><strong>[10-14 22:25]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> U.S. September CPI: Inflation Is Back, And Stocks Are Not Ready (SPX) - Seeking Alpha <code>google-news:inflation CPI</code></li>
+<li><strong>[10-14 22:24]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Bank of America shares drop 8% after third-quarter revenue miss and regulatory penalty <code>cnbc</code></li>
+<li><strong>[10-14 22:23]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> S&amp;P, Nasdaq slip after mostly hot CPI report; Dow buoyed by healthcare components <code>investing-com</code></li>
+<li><strong>[10-14 22:23]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Texas Instruments options signal 7.1% move on earnings <code>investing-com</code></li>
+<li><strong>[10-14 22:22]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 俄羅斯儲蓄銀行資料中心 也遭烏克蘭襲擊 <code>yahoo-tw-finance</code></li>
+<li><strong>[10-14 22:22]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Bank of America Stock Slumps After Revenue Miss, $1.2B Treasury Fine - Investopedia <code>google-news:Treasury yields</code></li>
+<li><strong>[10-14 22:21]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 分析：油價高 推升中國9月CPI漲幅擴大 - 經濟日報 <code>google-news:油價</code></li>
+<li><strong>[10-14 22:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Energy, gas costs push inflation higher. Paychecks are lagging behind - USA Today <code>google-news:inflation CPI</code></li>
+<li><strong>[10-14 22:19]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 9月CPI增速超預期！通膨隱憂浮現美股下探 | NOWNEWS今日新聞 - LINE TODAY <code>google-news:美國 CPI 通膨</code></li>
+<li><strong>[10-14 22:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Gas Prices Are Up 34% From a Year Ago, Adding to Inflation Pressures <code>nytbusiness</code></li>
+<li><strong>[10-14 22:18]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Gas Costs 34 Percent More Than a Year Ago <code>nytbusiness</code></li>
+<li><strong>[10-14 22:18]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 9月CPI增速超預期！通膨隱憂浮現美股下探 - Yahoo新聞 <code>google-news:美國 CPI 通膨</code></li>
+<li><strong>[10-14 22:18]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 9月CPI增速超預期！通膨隱憂浮現美股下探 <code>yahoo-tw-finance</code></li>
+<li><strong>[10-14 22:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 美9月CPI年增3.7%超預期 能源飆漲恐衝擊期中選情 - 民視財經網 <code>google-news:美國 CPI 通膨</code></li>
+<li><strong>[10-14 22:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> How Iran’s $2 trillion threat puts your AI stocks at risk <code>marketwatch</code></li>
+<li><strong>[10-14 22:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Stock Market Today: Yields Jump, Nasdaq Opens Lower After Hot Inflation Reading — Live Updates - WSJ <code>google-news:US CPI inflation data</code></li>
+<li><strong>[10-14 22:16]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 美國9月CPI年增率3.7%　高出市場預期 <code>yahoo-tw-finance</code></li>
+<li><strong>[10-14 22:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 財報前夕先裁千人！Netflix成長放緩 2022年來最大裁員 <code>yahoo-tw-finance</code></li>
+<li><strong>[10-14 22:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Gold Hits 10-Week Low as Bond Yields Soar Above Rising Inflation - BullionVault <code>google-news:US CPI inflation data</code></li>
+</ul>
+    </article>
+  
+</div>
+<footer>由金融情報系統自動發佈 · 僅供參考，不構成投資建議</footer>
+<script>
+const WEEK = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function nowParts(tz){
+  const p = {};
+  new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short', month: 'short',
+    day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
+  }).formatToParts(new Date()).forEach(x => p[x.type] = x.value);
+  return p;
+}
+function marketOpen(tz, open, close){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  return wd>=1 && wd<=5 && m>=open && m<close;
+}
+// Taiwan index-futures night session 15:00 -> next-day 05:00 (crosses midnight):
+// 15:00-24:00 Mon-Fri, plus 00:00-05:00 Tue-Sat (Sat 00:00-05:00 is Fri night session).
+function nightOpen(tz){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  if (m >= 5*60 && m < 15*60) return false;   // 05:00-15:00 recess
+  if (m >= 15*60) return wd >= 1 && wd <= 5;   // 15:00-24:00 Mon-Fri
+  return wd >= 2 && wd <= 6;                   // 00:00-05:00 Tue-Sat
+}
+function pad(n){ return String(n).padStart(2,'0'); }
+function setMkt(id, open, label){
+  const el = document.getElementById(id);
+  el.className = 'mkt ' + (open ? 'open' : 'closed');
+  el.textContent = (label ? label + ' ' : '') + (open ? '開盤中' : '未開盤');
+}
+function tick(){
+  const tw = nowParts('Asia/Taipei');
+  const ny = nowParts('America/New_York');
+  document.getElementById('clk-tw').textContent = pad(tw.hour)+':'+pad(tw.minute)+':'+pad(tw.second);
+  document.getElementById('clk-ny').textContent = pad(ny.hour)+':'+pad(ny.minute)+':'+pad(ny.second);
+  // Taiwan: TWSE weighted index 09:00-13:30; TX futures day 08:45-13:45; TX night 15:00-05:00
+  setMkt('tw-idx',  marketOpen('Asia/Taipei', 9*60, 13*60+30), '加權');
+  setMkt('tx-day',  marketOpen('Asia/Taipei', 8*60+45, 13*60+45), '期日盤');
+  setMkt('tx-night', nightOpen('Asia/Taipei'), '期夜盤');
+  // US: regular session 09:30-16:00 ET; after-hours 16:00-20:00 ET
+  setMkt('ny-mkt',  marketOpen('America/New_York', 9*60+30, 16*60), '美股');
+  setMkt('ny-night', marketOpen('America/New_York', 16*60, 20*60), '美股夜');
+}
+tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>
