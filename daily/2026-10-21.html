@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日報告 2026-10-21</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; margin: 0;
+         background: #f5f6f8; color: #1c1e21; line-height: 1.7; }
+  header { background: #1b2a4a; color: #fff; padding: 14px 24px;
+           display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  header h1 { font-size: 18px; margin: 0; flex: 1; }
+  header nav a { color: #cdd8ee; text-decoration: none; margin-left: 14px; font-size: 14px; }
+  header nav a:hover, header nav a.active { color: #fff; text-decoration: underline; }
+  #clock { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; font-size: 13px; }
+  .clk { background: rgba(255,255,255,.08); border-radius: 6px; padding: 4px 10px; }
+  .clk-city { color: #9fb0cf; margin-right: 6px; }
+  .clk-time { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .mkt { margin-left: 8px; font-size: 12px; padding: 1px 7px; border-radius: 9px; }
+  .mkt.open { background: #2e7d32; color: #fff; }
+  .mkt.closed { background: #5a6474; color: #fff; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 20px; }
+  .card { background: #fff; border-radius: 8px; padding: 18px 22px; margin: 14px 0;
+          box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .card h3 { margin: 0 0 6px; }
+  .card a { color: #1b2a4a; text-decoration: none; }
+  .card a:hover { text-decoration: underline; }
+  .muted { color: #666; font-size: 13px; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px;
+           color: #fff; margin-left: 6px; }
+  .b-daily { background: #2e7d32; }
+  .b-deep { background: #b45309; }
+  .day-nav { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+  .day-nav a { font-size: 13px; padding: 3px 10px; background: #e8ecf3; border-radius: 12px;
+               color: #33415c; text-decoration: none; }
+  .day-nav a:hover { background: #d2dbea; }
+  article.card { line-height: 1.15; }
+  article.card p { margin: 3px 0; }
+  article.card ul, article.card ol { margin: 3px 0 6px; padding-left: 22px; }
+  article.card h1, article.card h2, article.card h3 { padding-bottom: 4px; }
+  article.card h1, article.card h2 { border-bottom: 2px solid #33415c; }
+  article.card h1 { font-size: 30px; margin-top: 8px; }
+  article.card h2 { font-size: 23px; margin-top: 12px; color: #1b2a4a;
+        border-left: 6px solid #1459c8; padding-left: 12px; }
+  article.card h3 { font-size: 19px; margin-top: 10px; color: #24365c;
+        background: #eef4fb; border-radius: 6px; padding: 4px 12px; }
+  article.card h4 { font-size: 17px; margin-top: 18px; color: #145c3a;
+        background: #e8f5ee; border-left: 4px solid #2e7d32;
+        padding: 5px 10px; border-radius: 4px; }
+  article.card h5 { font-size: 15px; margin-top: 14px; color: #4a5568;
+        font-weight: 600; }
+  article.card h4, article.card h5 { margin-bottom: 2px; }
+  article.card strong { font-weight: 700; }
+  article.card blockquote { border-left: 4px solid #9fb0cf; margin: 4px 0;
+        padding: 2px 12px; color: #4a5568; background: #f4f6fa; }
+  article.card hr { border: none; border-top: 1px dashed #c3ccdb; margin: 12px 0; }
+  article.card code { background: #eef0f4; padding: 1px 5px; border-radius: 4px;
+        font-size: 14px; font-family: Consolas, monospace; }
+  article.card pre { background: #1b2a4a; color: #e6ecf7; padding: 14px; border-radius: 8px; overflow-x: auto; }
+  article.card pre code { background: transparent; color: inherit; padding: 0; }
+  article.card table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+  article.card th, article.card td { border: 1px solid #d8dce3; padding: 6px 10px; }
+  article.card th { background: #eef1f6; }
+  article.card a { color: #1459c8; }
+  footer { text-align: center; color: #999; font-size: 12px; padding: 20px; }
+</style>
+</head>
+<body>
+  <header>
+  <h1>金融情報系統報告</h1>
+  <nav>
+    <a href="../index.html" class="">首頁</a>
+    <a href="../calendar.html" class="">行事曆</a>
+    <a href="../daily/2026-10-21.html" class="active">最新每日</a>
+    <a href="../deep/2026-10-20-pm.html" class="">最新深度</a>
+  </nav>
+  <div id="clock">
+    <span class="clk"><span class="clk-city">台北</span><span class="clk-time" id="clk-tw">--:--:--</span><span class="mkt closed" id="tw-idx">…</span><span class="mkt closed" id="tx-day">…</span><span class="mkt closed" id="tx-night">…</span></span>
+    <span class="clk"><span class="clk-city">紐約</span><span class="clk-time" id="clk-ny">--:--:--</span><span class="mkt closed" id="ny-mkt">…</span><span class="mkt closed" id="ny-night">…</span></span>
+  </div>
+</header>
+<div class="wrap">
+  
+    <div class="day-nav">
+      <a href="../index.html">← 首頁</a>
+      
+        
+        <a href="../daily/2026-10-21.html">2026-10-21</a>
+        
+        <a href="../daily/2026-10-20.html">2026-10-20</a>
+        
+        <a href="../daily/2026-10-19.html">2026-10-19</a>
+        
+        <a href="../daily/2026-10-18.html">2026-10-18</a>
+        
+        <a href="../daily/2026-10-17.html">2026-10-17</a>
+        
+        <a href="../daily/2026-10-16.html">2026-10-16</a>
+        
+        <a href="../daily/2026-10-15.html">2026-10-15</a>
+        
+        <a href="../daily/2026-10-14.html">2026-10-14</a>
+        
+        <a href="../daily/2026-10-13.html">2026-10-13</a>
+        
+        <a href="../daily/2026-10-12.html">2026-10-12</a>
+        
+        <a href="../daily/2026-10-11.html">2026-10-11</a>
+        
+        <a href="../daily/2026-10-10.html">2026-10-10</a>
+        
+        <a href="../daily/2026-10-09.html">2026-10-09</a>
+        
+        <a href="../daily/2026-10-08.html">2026-10-08</a>
+        
+        <a href="../daily/2026-10-07.html">2026-10-07</a>
+        
+        <a href="../daily/2026-10-06.html">2026-10-06</a>
+        
+        <a href="../daily/2026-10-05.html">2026-10-05</a>
+        
+        <a href="../daily/2026-10-04.html">2026-10-04</a>
+        
+        <a href="../daily/2026-10-03.html">2026-10-03</a>
+        
+        <a href="../daily/2026-10-02.html">2026-10-02</a>
+        
+        <a href="../daily/2026-10-01.html">2026-10-01</a>
+        
+        <a href="../daily/2026-09-30.html">2026-09-30</a>
+        
+        <a href="../daily/2026-09-29.html">2026-09-29</a>
+        
+        <a href="../daily/2026-09-28.html">2026-09-28</a>
+        
+        <a href="../daily/2026-09-27.html">2026-09-27</a>
+        
+        <a href="../daily/2026-09-26.html">2026-09-26</a>
+        
+        <a href="../daily/2026-09-25.html">2026-09-25</a>
+        
+        <a href="../daily/2026-09-24.html">2026-09-24</a>
+        
+        <a href="../daily/2026-09-23.html">2026-09-23</a>
+        
+        <a href="../daily/2026-09-22.html">2026-09-22</a>
+        
+        <a href="../daily/2026-09-21.html">2026-09-21</a>
+        
+        <a href="../daily/2026-09-20.html">2026-09-20</a>
+        
+        <a href="../daily/2026-09-19.html">2026-09-19</a>
+        
+        <a href="../daily/2026-09-18.html">2026-09-18</a>
+        
+        <a href="../daily/2026-09-17.html">2026-09-17</a>
+        
+        <a href="../daily/2026-09-16.html">2026-09-16</a>
+        
+        <a href="../daily/2026-09-15.html">2026-09-15</a>
+        
+        <a href="../daily/2026-09-14.html">2026-09-14</a>
+        
+        <a href="../daily/2026-09-13.html">2026-09-13</a>
+        
+        <a href="../daily/2026-09-12.html">2026-09-12</a>
+        
+        <a href="../daily/2026-09-11.html">2026-09-11</a>
+        
+        <a href="../daily/2026-09-10.html">2026-09-10</a>
+        
+        <a href="../daily/2026-09-09.html">2026-09-09</a>
+        
+        <a href="../daily/2026-09-08.html">2026-09-08</a>
+        
+        <a href="../daily/2026-09-07.html">2026-09-07</a>
+        
+        <a href="../daily/2026-09-06.html">2026-09-06</a>
+        
+        <a href="../daily/2026-09-05.html">2026-09-05</a>
+        
+        <a href="../daily/2026-09-04.html">2026-09-04</a>
+        
+        <a href="../daily/2026-09-03.html">2026-09-03</a>
+        
+        <a href="../daily/2026-09-02.html">2026-09-02</a>
+        
+        <a href="../daily/2026-09-01.html">2026-09-01</a>
+        
+        <a href="../daily/2026-08-31.html">2026-08-31</a>
+        
+        <a href="../daily/2026-08-30.html">2026-08-30</a>
+        
+        <a href="../daily/2026-08-29.html">2026-08-29</a>
+        
+        <a href="../daily/2026-08-28.html">2026-08-28</a>
+        
+        <a href="../daily/2026-08-27.html">2026-08-27</a>
+        
+        <a href="../daily/2026-08-26.html">2026-08-26</a>
+        
+        <a href="../daily/2026-08-25.html">2026-08-25</a>
+        
+        <a href="../daily/2026-08-24.html">2026-08-24</a>
+        
+        <a href="../daily/2026-08-23.html">2026-08-23</a>
+        
+        <a href="../daily/2026-08-22.html">2026-08-22</a>
+        
+        <a href="../daily/2026-08-21.html">2026-08-21</a>
+        
+        <a href="../daily/2026-08-20.html">2026-08-20</a>
+        
+        <a href="../daily/2026-08-19.html">2026-08-19</a>
+        
+        <a href="../daily/2026-08-18.html">2026-08-18</a>
+        
+        <a href="../daily/2026-08-17.html">2026-08-17</a>
+        
+        <a href="../daily/2026-08-16.html">2026-08-16</a>
+        
+        <a href="../daily/2026-08-15.html">2026-08-15</a>
+        
+        <a href="../daily/2026-08-14.html">2026-08-14</a>
+        
+        <a href="../daily/2026-08-13.html">2026-08-13</a>
+        
+        <a href="../daily/2026-08-12.html">2026-08-12</a>
+        
+        <a href="../daily/2026-08-11.html">2026-08-11</a>
+        
+        <a href="../daily/2026-08-10.html">2026-08-10</a>
+        
+        <a href="../daily/2026-08-09.html">2026-08-09</a>
+        
+        <a href="../daily/2026-08-08.html">2026-08-08</a>
+        
+        <a href="../daily/2026-08-07.html">2026-08-07</a>
+        
+        <a href="../daily/2026-08-06.html">2026-08-06</a>
+        
+        <a href="../daily/2026-08-05.html">2026-08-05</a>
+        
+        <a href="../daily/2026-08-04.html">2026-08-04</a>
+        
+        <a href="../daily/2026-08-03.html">2026-08-03</a>
+        
+        <a href="../daily/2026-08-02.html">2026-08-02</a>
+        
+      
+    </div>
+    <article class="card">
+      <div class="muted">2026-10-21
+        <span class="badge b-daily">
+          每日報告
+        </span>
+      </div>
+      <h1 id="2026-10-21">金融重點報告 2026-10-21</h1>
+<blockquote>
+<p>產出時間: 2026-10-21 00:19（台灣時間）
+資料截止: 10-20 23:56（收錄庫最新事件，若久久未前進代表蒐集上游疑中斷）
+品質儀表板: 資料新鮮度 ≤26min | 去重率 27.6% | 最大來源佔 16.0% | 驗證覆蓋 25.0% | ⚠️疑似誤殺 68
+本報告由 AI 自動生成，僅供參考，不構成投資建議。</p>
+</blockquote>
+<h2 id="_1">🆕 本次新增事件（置頂：最新產出）</h2>
+<blockquote>
+<p>本次新增 <strong>60 筆</strong>，重要 56 筆</p>
+</blockquote>
+<p><strong>重要事件（severity ≥ 1）</strong>：</p>
+<ul>
+<li><strong>[10-20 23:53]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> Earnings call transcript: RLI tops Q3 2026 profit forecast as revenue misses <code>investing-com</code></li>
+<li><strong style="color:#174ea6">影響</strong>: RLI Q3 2026 獲利優於預期但營收不如預期，個股財報表現互見，對大盤無系統性影響。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>RLI</code></p>
+</li>
+<li>
+<p><strong>[10-20 23:31]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> AI 科技股震盪引擔憂？專家：回修正屬牛市正常現象 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 專家定調美股AI科技股回檔為牛市正常震盪，有助於消化過熱籌碼。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM,2330</code></p>
+</li>
+<li>
+<p><strong>[10-20 23:27]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][negative]</strong> Salesforce’s stock falls as investors chafe at the cost of latest AI purchase <code>marketwatch</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Salesforce因溢價收購Braze引發投資人疑慮導致股價下跌，反映市場對高昂AI併購成本趨於保守。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>CRM</code></p>
+</li>
+<li>
+<p><strong>[10-20 23:06]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Markets Brief: Chip Stocks Sell Off, Investors Rotate Into Value, and What to Watch in Big Tech Earnings - Morningstar <code>google-news:stock market selloff</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 晶片股遭遇拋售，資金轉向價值股，科技股面臨修正壓力，連動半導體供應鏈表現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[10-20 23:37]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> Crude Oil Prices Erase an Early Rally on Unconfirmed Iran Peace Talks - Barchart.com <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 受未證實的伊朗和平談判傳聞影響，原油價格早盤漲幅回吐，壓抑能源商品價格。</p>
+</li>
+<li>
+<p><strong>[10-20 23:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[商品(油金)][negative]</strong> Brent, WTI Crude Oil Price Forecast: Cheaper Oil After A Difficult Winter? - Exchange Rates UK <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 分析預期冬季過後原油價格可能走跌，牽動能源類股與通膨預期降溫。</p>
+</li>
+<li>
+<p><strong>[10-20 23:17]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 美股｜道指最新漲近700點 納指先跌後回升 油價跌逾2.5% - 香港01 <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股道瓊大漲近700點、納指回升，同時油價跌逾2.5%，股債風險偏好改善。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[10-20 23:09]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Dow Jumps To One-Month High Amid Substantial Downturn By Crude Oil Prices - RTTNews <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價下跌提振道瓊指數創一個月新高，資金流向防禦與價值股，減緩企業成本壓力。</p>
+</li>
+<li>
+<p><strong>[10-20 23:08]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> U.S. crude oil hits more than $105 per barrel, international over $110 - upi <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國原油突破105美元、國際油價超過110美元，高油價加劇全球通膨隱憂，對股市評價面造成壓力。</p>
+</li>
+<li>
+<p><strong>[10-20 23:32]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> Foreign Investors Poured $1 Trillion Into U.S. Stocks - but a 59% Drop in Treasury Buying Could Make Your Next Home or Car Loan More Expensive - 24/7 Wall St. <code>google-news:Treasury yields</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 外資持續流入美股但美債買盤大減59%，恐推升美國長端殖利率與借貸成本。</p>
+</li>
+<li>
+<p><strong>[10-20 23:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> Trump Tariffs on Canada Spark Latest Lawsuit Over Trade Powers <code>nytbusiness</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 川普對加拿大加征關稅措施面臨最新法律訴訟，增添貿易政策的不確定性與國際貿易摩擦風險。</p>
+</li>
+<li>
+<p><strong>[10-20 23:17]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> SpaceX launches Starfall capsule for 2nd time as investors await earnings <code>seekingalpha</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: SpaceX成功進行Starfall太空艙二次發射，投資人正等待相關財報與業績結果揭曉。</p>
+</li>
+<li>
+<p><strong>[10-20 23:01]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> France to deploy military as it braces for fresh unrest this weekend <code>cnbc</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 法國部署軍隊應對週末示威抗議，歐洲政治不確定性升溫，對歐元與歐洲股市構成潛在壓力。</p>
+</li>
+<li>
+<p><strong>[10-20 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> 美制裁中國籍前Google工程師相關公司　北京促撤回措施 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美中科技與法律角力延續，美方制裁前Google工程師相關企業，北京反對，增添科技供應鏈地緣政治風險。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>GOOGL</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[商品(油金)][positive]</strong> 釋放「數位黃金」蘊含的7000億美元商機 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 世界黃金協會報告指出數位黃金潛在商機，提振市場對黃金及數位資產整合的關注與投資氣氛。</p>
+</li>
+<li>
+<p><strong>[10-20 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> 殖利率5%仍難吸引買盤 花旗直指美債避險效果減弱 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 花旗指出美債供給增、通膨頑固及中性利率上升，導致5%殖利率仍難吸買盤，避險效果減弱，恐推升政府融資成本。</p>
+</li>
+<li>
+<p><strong>[10-20 22:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> 連盈利的AI巨頭都要付10%利息 AI要融資愈來愈難了？ <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: AI巨頭融資成本高達10%次順位債票息，反映資金成本攀升，恐排擠後續資本支出動能。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>GOOGL,NVDA</code></p>
+</li>
+<li>
+<p><strong>[10-20 23:09]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> US Stocks Rise After Brent Crude Tumbles 3%: What Caused Oil Prices to Fall? - TradingKey <code>google-news:oil price crude</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 布蘭特原油大跌3%推動美股上漲，能源成本下滑提振市場對經濟軟著陸的樂觀預期。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>USO,BNO</code></p>
+</li>
+<li>
+<p><strong>[10-20 23:07]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> S&amp;P 500 Rebounds as Big Bank Stocks Climb, SpaceX Results Loom - Advisor Perspectives <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 大型銀行股走強與SpaceX財報前景預期帶動標普500指數反彈，市場風險胃納擴張。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY</code></p>
+</li>
+<li>
+<p><strong>[10-20 23:05]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[商品(油金)][neutral]</strong> Oil Prices Rise on U.S. Crude Draw, but Gasoline Stock Build Clouds Demand - FXEmpire <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國原油庫存下降支撐油價，但汽油庫存增加壓抑需求前景，能源商品價格維持震盪。</p>
+</li>
+<li>
+<p><strong>[10-20 22:55]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> S&amp;P 500 Index: Chip Stocks Slide Again as the Dow Leads Earnings Rotation - FXEmpire <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 晶片股再度回檔下滑，標普500指數受其拖累，資金轉向道瓊工業指數等防禦與價值型類股。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM,2330</code></p>
+</li>
+<li>
+<p><strong>[10-20 23:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 美股逆轉秀！企業財報助攻、國際油價跳水 道瓊盤中一度飆逾700點 - 鉅亨網 <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 企業財報表現強勁與國際油價跳水舒緩通膨壓力，帶動美股道瓊指數強勢反彈飆漲逾700點，有利於股市風險偏好回溫。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DIA,SPY</code></p>
+</li>
+<li>
+<p><strong>[10-20 23:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> 布蘭特原油急跌3%後美國股市上漲：什麼原因導致油價下跌？ - TradingKey <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 布蘭特原油急跌3%減輕輸入性通膨壓力，激勵美股同步走高，有利於消費與製造業成本下降。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>USO,BNO</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:11]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][negative]</strong> AI概念股疲弱、油價反彈拖累 美股主要指數開低 | 民視新聞網 - LINE TODAY <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: AI概念股疲弱與油價反彈引發通膨擔憂，拖累美股主要指數開低。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[10-20 23:19]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Dow jumps 500 points as solid earnings, falling crude oil stir rebound: Live updates - CNBC <code>google-news:Treasury yields</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 穩健的企業財報與原油價格下跌刺激美股大盤強勁反彈，道瓊大漲逾500點，提振市場投資信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DIA,SPY</code></p>
+</li>
+<li>
+<p><strong>[10-20 23:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[債市][positive]</strong> Treasury Yields Dip As AI Nerves Meet Weak Housing - Finimize <code>google-news:Treasury yields</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 受AI板塊疑慮與疲弱房市數據影響，避險資金流入美債，推動美債殖利率下滑。</p>
+</li>
+<li>
+<p><strong>[10-20 22:43]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[債市][positive]</strong> US Treasury Yields Fall on Tuesday - TradingView <code>google-news:Treasury yields</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國公債殖利率在週二走低，反映市場對經濟放緩或風險資產的避險情緒升溫。</p>
+</li>
+<li>
+<p><strong>[10-20 22:23]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> TWA00 加權指數- 千萬不要跟2330和正2作對，會被甩轎的，一甩完馬上噴🤣�... - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股受護國神山2330與槓桿ETF甩轎後買盤支撐，推升加權指數震盪走高。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TWA00</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:51]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[其他][neutral]</strong> Is your annuity really guaranteed? Read this before you buy one. <code>marketwatch</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 年金險實際收益與宣傳可能存在落差，屬個人理財與保險消費資訊，對整體金融市場無直接系統性影響。</p>
+</li>
+<li>
+<p><strong>[10-20 22:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Here’s why GM’s stock is having its worst day in over a year <code>marketwatch</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 通用汽車（GM）因下調全年利潤預期並暫停部分卡車生產，股價創一年來最大跌幅。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>GM</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:50]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> Union attacks NatWest plans to reduce working from home <code>bbcbusiness</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: NatWest要求員工回辦公室引發工會抗爭，屬企業內部勞資與營運管理議題，對股價影響有限。</p>
+</li>
+<li>
+<p><strong>[10-20 22:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> Meta Q3 Earnings Preview: Can ad growth offset AI’s free cash flow drain? <code>seekingalpha</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Meta Q3財報前瞻聚焦於廣告成長能否抵銷AI龐大資本支出對自由現金流的侵蝕，牽動科技巨頭AI投資情緒。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>META</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:37]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> 輝達RTX PRO 6000 Blackwell工作站問世，必恩威助攻專業AI創作 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 輝達推出RTX PRO 6000 Blackwell工作站，有利於推升專業AI硬體需求與相關供應鏈營運。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:29]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[商品(油金)][neutral]</strong> 全球油價飆漲 加拿大重質原油卻陷折價泥淖 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 全球原油價格上揚之際，加拿大重質原油面臨罕見折價困境，對加國能源企業獲利帶來壓力。</p>
+</li>
+<li>
+<p><strong>[10-20 22:24]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> A ‘Doom Loop’ Threatens France as Populism Confronts Markets <code>nytbusiness</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 法國面臨民粹主義與債券投資人對立的困境，恐引發歐債市場賣壓與法國公債殖利率攀升。</p>
+</li>
+<li>
+<p><strong>[10-20 22:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> 俄羅斯加強攻擊釀大斷電 烏國西部也未能倖免 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 俄羅斯擴大攻擊烏克蘭能源設施導致大斷電，加劇地緣政治緊張，對歐洲能源價格與通膨帶來上行壓力。</p>
+</li>
+<li>
+<p><strong>[10-20 22:10]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> 百名經濟學家全押12月升息！Fed本月料先按兵不動 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 市場預期Fed 10月按兵不動但12月可能升息，高利率維持更久將對全球股市與債市評價面形成壓抑。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:37]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][negative]</strong> 美股開盤／AI股腳軟、油價反彈！華爾街三大指數開低 - TVBS新聞網 <code>google-news:油價</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股開盤AI股拉回、油價反彈，拖累華爾街三大指數開低，影響全球風險偏好。</p>
+</li>
+<li>
+<p><strong>[10-20 22:29]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[商品(油金)][neutral]</strong> 全球油價飆漲 加拿大重質原油卻陷折價泥淖 - 商傳媒 - SUN MEDIA <code>google-news:油價</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 全球油價飆漲但加拿大重質原油陷入折價泥淖，反映地區供需與運輸限制的結構性差異。</p>
+</li>
+<li>
+<p><strong>[10-20 22:27]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> 【22:27 即時新聞】United Airlines (UAL) 飆漲逾5%：財報題材與油價壓力成多空拉鋸焦點 - CMoney投資網誌 <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 聯合航空(UAL)財報題材與油價壓力交織，股價仍逆勢飆漲逾5%，展現強韌基本面。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>UAL</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:54]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Fed Hiking Cycle May Run Longer Than Markets Expect - ETF Database <code>google-news:Treasury yields</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 聯The Fed升息循環可能比預期更長，對全球債市構成壓力，推升殖利率並支撐美元。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:53]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][neutral]</strong> Rates Hit Multi-Decade Highs. Will Growth and Earnings Keep the Rally Going? - ETF Database <code>google-news:Treasury yields</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 利率處於多十年高點，企業盈餘與成長動能將面臨高融資成本的嚴格檢驗，股債磁吸效應顯現。</p>
+</li>
+<li>
+<p><strong>[10-20 22:49]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Citi's Nathan Sheets Warns Markets Could Misread The Fed — Sees Fiscal, AI Financing Worries Pushing Up Treasury Yields - Stocktwits <code>google-news:Treasury yields</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 花旗警告財政赤字與AI融資需求推升美債殖利率，市場可能誤判Fed動向，壓抑風險資產表現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:45]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][negative]</strong> 9月獲利腰斬！凱基金獲法人逆挺40元目標價仍遭砍「這檔」卡位矽光子成自營商提款1.64億元重災區 - Yahoo股市 <code>google-news:加權指數</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 凱基金9月獲利下滑遭法人砍目標價，矽光子概念股成自營商提款機，影響台股相關族群短線籌碼面。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2883</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Dow jumps 700 points as solid earnings, falling crude oil stir rebound: Live updates - CNBC <code>google-news:Treasury yields</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 道瓊指數大漲700點，主要受扎實企業財報與原油下跌緩解通膨擔憂所帶動，提振美股反彈。</p>
+</li>
+<li>
+<p><strong>[10-20 22:45]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> 28家金融機構使用中港資系統 金管會：內控已有規範 - 東森新聞 <code>google-news:金管會</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 金管會指出28家金融機構使用中港資系統已有內控規範，屬例行資安與合規監管，對金融股無實質財務衝擊。</p>
+</li>
+<li>
+<p><strong>[10-20 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 台股反彈全看這波？Meta、特斯拉財報將出爐 分析師：「這情況」恐將繼續補跌 | 林子靖 | 新聞 - 風傳媒 <code>google-news:台股 大跌</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Meta與特斯拉財報將出爐，市場擔憂科技股若不如預期將牽動台股相關供應鏈補跌壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>Meta,TSLA,2330,TSM</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:22]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> S&amp;P and Nasdaq erase losses as health stocks surge, oil prices reverse course <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 醫療股強勢與油價反轉帶動美股S&amp;P500與那斯達克指數收復失土，跌幅縮小並反彈。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>S&amp;P 500,Nasdaq</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:21]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> Enphase Energy options signal 12% move on earnings day <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Enphase Energy選擇權定價暗示財報日將有12%的大幅波動，帶動市場對綠能個股的關注。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>ENPH</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:16]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> 台股飆漲掀出走潮 基金經理人辭職自操盤賺私房錢 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股大好引發基金經理人辭職自操風潮，顯示市場投機氣氛濃厚，對機構法人流動性影響輕微。</p>
+</li>
+<li>
+<p><strong>[10-20 22:12]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> BankUnited Q3 2026 Earnings Preview <code>seekingalpha</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: BankUnited Q3 2026財報前瞻，市場聚焦其獲利與資產品質表現，影響侷限於金融股個股。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>BKU</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:09]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][mixed]</strong> 美股早盤漲跌互見！美光跌破9百美元 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股早盤漲跌互見，道瓊走強而部分科技股如美光跌破900美元，反映資金板塊輪動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>MU</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> AI投資風險、油價雙重夾擊！台指期夜盤再戰47K 美股4大指數上演大反攻 - FTNN 新聞網 <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 面對AI投資風險與油價夾擊，美股四大指數反彈帶動台指期夜盤走強，重返高檔水準。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>台指期,NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:11]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][negative]</strong> AI類股走弱油價上揚 美股開低 - 聚財網 <code>google-news:油價</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: AI類股走弱與油價上揚導致美股開盤承壓，但後續已見緩解。</p>
+</li>
+<li>
+<p><strong>[10-20 22:09]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][negative]</strong> Stocks Pressured by Tech Stock Weakness and Higher Crude Oil Prices - Barchart.com <code>google-news:oil price crude</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 科技股走弱與原油價格上揚雙重夾擊，對美股科技類股造成短線壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:10]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[其他][neutral]</strong> 網路投資詐騙前三季破2萬件！台股熱絡成誘餌，金管會揭露四大社群陷阱-財經焦點情報站 - CMoney投資網誌 <code>google-news:金管會</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股熱絡導致詐騙案頻傳，金管會揭露社群陷阱，對實質金融市場資金面影響有限。</li>
+</ul>
+<p><strong>其他同時段收錄（未分析，共 4 筆）</strong>：</p>
+<ul>
+<li><strong>[10-20 23:54]</strong> It’s no secret what the best financial advice for retirement is — but most people ignore it anyway（<code>marketwatch</code>）</li>
+<li><strong>[10-20 22:50]</strong> Union attacks NatWest plans to get workers back to the office（<code>bbcbusiness</code>）</li>
+<li><strong>[10-20 23:17]</strong> Elon Musk promised a SpaceX share to every kid in America — don’t hold your breath（<code>marketwatch</code>）</li>
+<li><strong>[10-20 22:16]</strong> Should you dump your target-date funds when you retire?（<code>marketwatch</code>）</li>
+</ul>
+<hr />
+<h2 id="_2">市場行情快照</h2>
+<pre><code>加權指數            46,292.93    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-1.13%
+台積電              2,405.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-0.62%
+鴻海                 241.50  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+0.84%
+聯發科              4,150.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-1.31%
+台達電              1,605.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-2.13%
+富邦金                153.50  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-3.15%
+S&amp;P 500          7,711.23    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.27%
+納斯達克            26,441.51    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.04%
+費城半導體指數         11,333.78    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.15%
+道瓊              52,409.51    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.85%
+日經225           64,075.42    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-1.30%
+上證指數             3,735.37    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.12%
+Apple              340.52  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-0.71%
+Microsoft          531.73  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-0.33%
+NVIDIA             216.61  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-0.22%
+Amazon             262.98  USD <span style="color:#c0392b;font-weight:bold">▲</span>+0.20%
+Tesla              373.01  USD <span style="color:#c0392b;font-weight:bold">▲</span>+1.34%
+美元/日圓              158.24  JPY <span style="color:#c0392b;font-weight:bold">▲</span>+0.27%
+美元/台幣               32.62  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+0.73%
+歐元/美元                1.12  EUR <span style="color:#c0392b;font-weight:bold">▲</span>+0.04%
+美元/人民幣               6.67  CNY <span style="color:#2e7d32;font-weight:bold">▼</span>-0.37%
+WTI原油               97.67  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-5.78%
+布蘭特原油              108.51  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-0.95%
+黃金               4,147.60  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-0.30%
+美元指數DXY            101.75    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-0.22%
+美債10年殖利率             5.12    % <span style="color:#2e7d32;font-weight:bold">▼</span>-0.25%
+</code></pre>
+<blockquote>
+<p>（快照資料時間：2026-10-21 00:20，台股收盤為最近一個交易日）</p>
+</blockquote>
+<h2 id="severity-2">重大事件（severity ≥ 2）</h2>
+<ul>
+<li><strong>[10-20 23:37]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> Crude Oil Prices Erase an Early Rally on Unconfirmed Iran Peace Talks - Barchart.com</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 受未證實的伊朗和平談判傳聞影響，原油價格早盤漲幅回吐，壓抑能源商品價格。</p>
+</li>
+<li>
+<p><strong>[10-20 23:32]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> Foreign Investors Poured $1 Trillion Into U.S. Stocks - but a 59% Drop in Treasury Buying Could Make Your Next Home or Car Loan More Expensive - 24/7 Wall St.</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 外資持續流入美股但美債買盤大減59%，恐推升美國長端殖利率與借貸成本。</p>
+</li>
+<li>
+<p><strong>[10-20 23:31]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> AI 科技股震盪引擔憂？專家：回修正屬牛市正常現象</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 專家定調美股AI科技股回檔為牛市正常震盪，有助於消化過熱籌碼。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM,2330</code></p>
+</li>
+<li>
+<p><strong>[10-20 23:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 美股逆轉秀！企業財報助攻、國際油價跳水 道瓊盤中一度飆逾700點 - 鉅亨網</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 企業財報表現強勁與國際油價跳水舒緩通膨壓力，帶動美股道瓊指數強勢反彈飆漲逾700點，有利於股市風險偏好回溫。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DIA,SPY</code></p>
+</li>
+<li>
+<p><strong>[10-20 23:19]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Dow jumps 500 points as solid earnings, falling crude oil stir rebound: Live updates - CNBC</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 穩健的企業財報與原油價格下跌刺激美股大盤強勁反彈，道瓊大漲逾500點，提振市場投資信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DIA,SPY</code></p>
+</li>
+<li>
+<p><strong>[10-20 23:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> Trump Tariffs on Canada Spark Latest Lawsuit Over Trade Powers</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 川普對加拿大加征關稅措施面臨最新法律訴訟，增添貿易政策的不確定性與國際貿易摩擦風險。</p>
+</li>
+<li>
+<p><strong>[10-20 23:17]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 美股｜道指最新漲近700點 納指先跌後回升 油價跌逾2.5% - 香港01</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股道瓊大漲近700點、納指回升，同時油價跌逾2.5%，股債風險偏好改善。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[10-20 23:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> 布蘭特原油急跌3%後美國股市上漲：什麼原因導致油價下跌？ - TradingKey</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 布蘭特原油急跌3%減輕輸入性通膨壓力，激勵美股同步走高，有利於消費與製造業成本下降。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>USO,BNO</code></p>
+</li>
+<li>
+<p><strong>[10-20 23:09]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> US Stocks Rise After Brent Crude Tumbles 3%: What Caused Oil Prices to Fall? - TradingKey</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 布蘭特原油大跌3%推動美股上漲，能源成本下滑提振市場對經濟軟著陸的樂觀預期。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>USO,BNO</code></p>
+</li>
+<li>
+<p><strong>[10-20 23:08]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> U.S. crude oil hits more than $105 per barrel, international over $110 - upi</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國原油突破105美元、國際油價超過110美元，高油價加劇全球通膨隱憂，對股市評價面造成壓力。</p>
+</li>
+<li>
+<p><strong>[10-20 23:07]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> S&amp;P 500 Rebounds as Big Bank Stocks Climb, SpaceX Results Loom - Advisor Perspectives</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 大型銀行股走強與SpaceX財報前景預期帶動標普500指數反彈，市場風險胃納擴張。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY</code></p>
+</li>
+<li>
+<p><strong>[10-20 23:06]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Markets Brief: Chip Stocks Sell Off, Investors Rotate Into Value, and What to Watch in Big Tech Earnings - Morningstar</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 晶片股遭遇拋售，資金轉向價值股，科技股面臨修正壓力，連動半導體供應鏈表現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[10-20 23:01]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> France to deploy military as it braces for fresh unrest this weekend</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 法國部署軍隊應對週末示威抗議，歐洲政治不確定性升溫，對歐元與歐洲股市構成潛在壓力。</p>
+</li>
+<li>
+<p><strong>[10-20 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> 美制裁中國籍前Google工程師相關公司　北京促撤回措施</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美中科技與法律角力延續，美方制裁前Google工程師相關企業，北京反對，增添科技供應鏈地緣政治風險。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>GOOGL</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:55]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> S&amp;P 500 Index: Chip Stocks Slide Again as the Dow Leads Earnings Rotation - FXEmpire</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 晶片股再度回檔下滑，標普500指數受其拖累，資金轉向道瓊工業指數等防禦與價值型類股。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM,2330</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:54]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Fed Hiking Cycle May Run Longer Than Markets Expect - ETF Database</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 聯The Fed升息循環可能比預期更長，對全球債市構成壓力，推升殖利率並支撐美元。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:53]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][neutral]</strong> Rates Hit Multi-Decade Highs. Will Growth and Earnings Keep the Rally Going? - ETF Database</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 利率處於多十年高點，企業盈餘與成長動能將面臨高融資成本的嚴格檢驗，股債磁吸效應顯現。</p>
+</li>
+<li>
+<p><strong>[10-20 22:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> Meta Q3 Earnings Preview: Can ad growth offset AI’s free cash flow drain?</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Meta Q3財報前瞻聚焦於廣告成長能否抵銷AI龐大資本支出對自由現金流的侵蝕，牽動科技巨頭AI投資情緒。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>META</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:49]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Citi's Nathan Sheets Warns Markets Could Misread The Fed — Sees Fiscal, AI Financing Worries Pushing Up Treasury Yields - Stocktwits</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 花旗警告財政赤字與AI融資需求推升美債殖利率，市場可能誤判Fed動向，壓抑風險資產表現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 台股反彈全看這波？Meta、特斯拉財報將出爐 分析師：「這情況」恐將繼續補跌 | 林子靖 | 新聞 - 風傳媒</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Meta與特斯拉財報將出爐，市場擔憂科技股若不如預期將牽動台股相關供應鏈補跌壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>Meta,TSLA,2330,TSM</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Here’s why GM’s stock is having its worst day in over a year</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 通用汽車（GM）因下調全年利潤預期並暫停部分卡車生產，股價創一年來最大跌幅。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>GM</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> 殖利率5%仍難吸引買盤 花旗直指美債避險效果減弱</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 花旗指出美債供給增、通膨頑固及中性利率上升，導致5%殖利率仍難吸買盤，避險效果減弱，恐推升政府融資成本。</p>
+</li>
+<li>
+<p><strong>[10-20 22:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Dow jumps 700 points as solid earnings, falling crude oil stir rebound: Live updates - CNBC</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 道瓊指數大漲700點，主要受扎實企業財報與原油下跌緩解通膨擔憂所帶動，提振美股反彈。</p>
+</li>
+<li>
+<p><strong>[10-20 22:24]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> A ‘Doom Loop’ Threatens France as Populism Confronts Markets</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 法國面臨民粹主義與債券投資人對立的困境，恐引發歐債市場賣壓與法國公債殖利率攀升。</p>
+</li>
+<li>
+<p><strong>[10-20 22:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> 連盈利的AI巨頭都要付10%利息 AI要融資愈來愈難了？</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: AI巨頭融資成本高達10%次順位債票息，反映資金成本攀升，恐排擠後續資本支出動能。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>GOOGL,NVDA</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> 俄羅斯加強攻擊釀大斷電 烏國西部也未能倖免</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 俄羅斯擴大攻擊烏克蘭能源設施導致大斷電，加劇地緣政治緊張，對歐洲能源價格與通膨帶來上行壓力。</p>
+</li>
+<li>
+<p><strong>[10-20 22:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> AI投資風險、油價雙重夾擊！台指期夜盤再戰47K 美股4大指數上演大反攻 - FTNN 新聞網</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 面對AI投資風險與油價夾擊，美股四大指數反彈帶動台指期夜盤走強，重返高檔水準。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>台指期,NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:10]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> 百名經濟學家全押12月升息！Fed本月料先按兵不動</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 市場預期Fed 10月按兵不動但12月可能升息，高利率維持更久將對全球股市與債市評價面形成壓抑。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:06]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Pending home sales sink to 25-year low as buyers flee high mortgage rates</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 30年期房貸利率突破7%，導致美國待售房屋銷售降至25年來新低，房市急凍。</p>
+</li>
+<li>
+<p><strong>[10-20 22:05]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[匯市][negative]</strong> 匯價連4黑再探底！新台幣重貶1.72角　破32.6元創18個月新低</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 新台幣重貶1.72角收32.617元，創18個月新低，熱錢外流壓力顯現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[10-20 22:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Bitcoin Price Prediction: BTC Risks $80K Drop Ahead of October 28 Fed Decision - CryptoRank</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 比特幣面臨10月28日聯準會決策前夕的下跌風險，市場觀望氣氛濃厚。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>BTC</code></p>
+</li>
+<li>
+<p><strong>[10-20 21:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 美股早盤／油價登五個月高 AI 憂慮重燃 費半摔1% - 聚財網</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價創五個月高點加劇通膨隱憂，AI情緒重燃擔憂導致費半重挫1%，拖累台股半導體與美股科技股表現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM,費半</code></p>
+</li>
+<li>
+<p><strong>[10-20 21:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 快新聞／AI概念股疲弱、油價反彈拖累 美股主要指數開低 - 民視財經網</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: AI概念股疲弱與油價反彈引發通膨疑慮，拖累美股主要指數開低，對全球科技股與風險資產造成壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[10-20 21:51]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Bank of America Expects Fed Rate Hike in October Despite 20% Market Odds - News and Statistics - IndexBox</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國銀行預期Fed 10月可能升息，與市場多數預期按兵不動產生分歧，若成真將引發全球金融市場劇烈震盪。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[10-20 21:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> AAA: Gas Prices Climb in Pa. as Crude Oil Rises - exploreJefferson</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 原油價格走高推升汽油價格，增加消費者負擔並增添輸入性通膨壓力。</li>
+</ul>
+<hr />
+<h2 id="_3">分類彙整</h2>
+<h3 id="43">股市（43）</h3>
+<ul>
+<li><strong>[10-20 23:53]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Earnings call transcript: RLI tops Q3 2026 profit forecast as revenue misses</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: RLI Q3 2026 獲利優於預期但營收不如預期，個股財報表現互見，對大盤無系統性影響。</p>
+</li>
+<li>
+<p><strong>[10-20 23:31]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> AI 科技股震盪引擔憂？專家：回修正屬牛市正常現象</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 專家定調美股AI科技股回檔為牛市正常震盪，有助於消化過熱籌碼。</p>
+</li>
+<li>
+<p><strong>[10-20 23:27]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> Salesforce’s stock falls as investors chafe at the cost of latest AI purchase</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Salesforce因溢價收購Braze引發投資人疑慮導致股價下跌，反映市場對高昂AI併購成本趨於保守。</p>
+</li>
+<li>
+<p><strong>[10-20 23:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 美股逆轉秀！企業財報助攻、國際油價跳水 道瓊盤中一度飆逾700點 - 鉅亨網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 企業財報表現強勁與國際油價跳水舒緩通膨壓力，帶動美股道瓊指數強勢反彈飆漲逾700點，有利於股市風險偏好回溫。</p>
+</li>
+<li>
+<p><strong>[10-20 23:19]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Dow jumps 500 points as solid earnings, falling crude oil stir rebound: Live updates - CNBC</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 穩健的企業財報與原油價格下跌刺激美股大盤強勁反彈，道瓊大漲逾500點，提振市場投資信心。</p>
+</li>
+<li>
+<p><strong>[10-20 23:17]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 美股｜道指最新漲近700點 納指先跌後回升 油價跌逾2.5% - 香港01</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股道瓊大漲近700點、納指回升，同時油價跌逾2.5%，股債風險偏好改善。</p>
+</li>
+<li>
+<p><strong>[10-20 23:17]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> SpaceX launches Starfall capsule for 2nd time as investors await earnings</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: SpaceX成功進行Starfall太空艙二次發射，投資人正等待相關財報與業績結果揭曉。</p>
+</li>
+<li>
+<p><strong>[10-20 23:17]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Elon Musk promised a SpaceX share to every kid in America — don’t hold your breath</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 關於馬斯克的言論引發市場討論，對整體資本市場實質影響有限。</p>
+</li>
+<li>
+<p><strong>[10-20 23:09]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Dow Jumps To One-Month High Amid Substantial Downturn By Crude Oil Prices - RTTNews</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價下跌提振道瓊指數創一個月新高，資金流向防禦與價值股，減緩企業成本壓力。</p>
+</li>
+<li>
+<p><strong>[10-20 23:07]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> S&amp;P 500 Rebounds as Big Bank Stocks Climb, SpaceX Results Loom - Advisor Perspectives</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 大型銀行股走強與SpaceX財報前景預期帶動標普500指數反彈，市場風險胃納擴張。</p>
+</li>
+<li>
+<p><strong>[10-20 23:06]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Markets Brief: Chip Stocks Sell Off, Investors Rotate Into Value, and What to Watch in Big Tech Earnings - Morningstar</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 晶片股遭遇拋售，資金轉向價值股，科技股面臨修正壓力，連動半導體供應鏈表現。</p>
+</li>
+<li>
+<p><strong>[10-20 22:55]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> S&amp;P 500 Index: Chip Stocks Slide Again as the Dow Leads Earnings Rotation - FXEmpire</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 晶片股再度回檔下滑，標普500指數受其拖累，資金轉向道瓊工業指數等防禦與價值型類股。</p>
+</li>
+<li>
+<p><strong>[10-20 22:50]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Union attacks NatWest plans to reduce working from home</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: NatWest要求員工回辦公室引發工會抗爭，屬企業內部勞資與營運管理議題，對股價影響有限。</p>
+</li>
+<li>
+<p><strong>[10-20 22:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Meta Q3 Earnings Preview: Can ad growth offset AI’s free cash flow drain?</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Meta Q3財報前瞻聚焦於廣告成長能否抵銷AI龐大資本支出對自由現金流的侵蝕，牽動科技巨頭AI投資情緒。</p>
+</li>
+<li>
+<p><strong>[10-20 22:45]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> 9月獲利腰斬！凱基金獲法人逆挺40元目標價仍遭砍「這檔」卡位矽光子成自營商提款1.64億元重災區 - Yahoo股市</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 凱基金9月獲利下滑遭法人砍目標價，矽光子概念股成自營商提款機，影響台股相關族群短線籌碼面。</p>
+</li>
+<li>
+<p><strong>[10-20 22:45]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 28家金融機構使用中港資系統 金管會：內控已有規範 - 東森新聞</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 金管會指出28家金融機構使用中港資系統已有內控規範，屬例行資安與合規監管，對金融股無實質財務衝擊。</p>
+</li>
+<li>
+<p><strong>[10-20 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 台股反彈全看這波？Meta、特斯拉財報將出爐 分析師：「這情況」恐將繼續補跌 | 林子靖 | 新聞 - 風傳媒</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Meta與特斯拉財報將出爐，市場擔憂科技股若不如預期將牽動台股相關供應鏈補跌壓力。</p>
+</li>
+<li>
+<p><strong>[10-20 22:37]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> 輝達RTX PRO 6000 Blackwell工作站問世，必恩威助攻專業AI創作</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 輝達推出RTX PRO 6000 Blackwell工作站，有利於推升專業AI硬體需求與相關供應鏈營運。</p>
+</li>
+<li>
+<p><strong>[10-20 22:37]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> 美股開盤／AI股腳軟、油價反彈！華爾街三大指數開低 - TVBS新聞網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股開盤AI股拉回、油價反彈，拖累華爾街三大指數開低，影響全球風險偏好。</p>
+</li>
+<li>
+<p><strong>[10-20 22:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Here’s why GM’s stock is having its worst day in over a year</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 通用汽車（GM）因下調全年利潤預期並暫停部分卡車生產，股價創一年來最大跌幅。</p>
+</li>
+<li>
+<p><strong>[10-20 22:27]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> 【22:27 即時新聞】United Airlines (UAL) 飆漲逾5%：財報題材與油價壓力成多空拉鋸焦點 - CMoney投資網誌</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 聯合航空(UAL)財報題材與油價壓力交織，股價仍逆勢飆漲逾5%，展現強韌基本面。</p>
+</li>
+<li>
+<p><strong>[10-20 22:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Dow jumps 700 points as solid earnings, falling crude oil stir rebound: Live updates - CNBC</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 道瓊指數大漲700點，主要受扎實企業財報與原油下跌緩解通膨擔憂所帶動，提振美股反彈。</p>
+</li>
+<li>
+<p><strong>[10-20 22:23]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> TWA00 加權指數- 千萬不要跟2330和正2作對，會被甩轎的，一甩完馬上噴🤣�... - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股受護國神山2330與槓桿ETF甩轎後買盤支撐，推升加權指數震盪走高。</p>
+</li>
+<li>
+<p><strong>[10-20 22:22]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> S&amp;P and Nasdaq erase losses as health stocks surge, oil prices reverse course</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 醫療股強勢與油價反轉帶動美股S&amp;P500與那斯達克指數收復失土，跌幅縮小並反彈。</p>
+</li>
+<li>
+<p><strong>[10-20 22:21]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Enphase Energy options signal 12% move on earnings day</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Enphase Energy選擇權定價暗示財報日將有12%的大幅波動，帶動市場對綠能個股的關注。</p>
+</li>
+<li>
+<p><strong>[10-20 22:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> AI投資風險、油價雙重夾擊！台指期夜盤再戰47K 美股4大指數上演大反攻 - FTNN 新聞網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 面對AI投資風險與油價夾擊，美股四大指數反彈帶動台指期夜盤走強，重返高檔水準。</p>
+</li>
+<li>
+<p><strong>[10-20 22:16]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 台股飆漲掀出走潮 基金經理人辭職自操盤賺私房錢</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股大好引發基金經理人辭職自操風潮，顯示市場投機氣氛濃厚，對機構法人流動性影響輕微。</p>
+</li>
+<li>
+<p><strong>[10-20 22:12]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> BankUnited Q3 2026 Earnings Preview</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: BankUnited Q3 2026財報前瞻，市場聚焦其獲利與資產品質表現，影響侷限於金融股個股。</p>
+</li>
+<li>
+<p><strong>[10-20 22:11]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> AI類股走弱油價上揚 美股開低 - 聚財網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: AI類股走弱與油價上揚導致美股開盤承壓，但後續已見緩解。</p>
+</li>
+<li>
+<p><strong>[10-20 22:11]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> AI概念股疲弱、油價反彈拖累 美股主要指數開低 | 民視新聞網 - LINE TODAY</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: AI概念股疲弱與油價反彈引發通膨擔憂，拖累美股主要指數開低。</p>
+</li>
+<li>
+<p><strong>[10-20 22:09]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[mixed]</strong> 美股早盤漲跌互見！美光跌破9百美元</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股早盤漲跌互見，道瓊走強而部分科技股如美光跌破900美元，反映資金板塊輪動。</p>
+</li>
+<li>
+<p><strong>[10-20 22:09]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> Stocks Pressured by Tech Stock Weakness and Higher Crude Oil Prices - Barchart.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 科技股走弱與原油價格上揚雙重夾擊，對美股科技類股造成短線壓力。</p>
+</li>
+<li>
+<p><strong>[10-20 22:07]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> AI類股走弱油價上揚 美股開低 | 路透社 - LINE TODAY</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: AI類股走弱與油價上揚造成美股開低，市場轉趨保守。</p>
+</li>
+<li>
+<p><strong>[10-20 22:07]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> 《強勢美股特報》NOC,HAS,MMM,LLY等10檔</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 國防及醫療等強勢美股表現亮眼（如NOC大漲），資金在防禦性與特定題材股中尋找避風港。</p>
+</li>
+<li>
+<p><strong>[10-20 22:03]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> AI類股走弱油價上揚 美股開低 - 壹蘋新聞網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: AI類股走弱伴隨油價上揚，拖累美股開低，反映市場對高估值與成本上升的雙重擔憂。</p>
+</li>
+<li>
+<p><strong>[10-20 22:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 股價狂飆259%還被降評 戴爾AI營收翻倍為何不被買單？</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 戴爾財報創新高且AI營收翻倍，但遭到降評顯示市場對其毛利率與後續成長續航力抱持懷疑態度。</p>
+</li>
+<li>
+<p><strong>[10-20 21:58]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> TWA00 加權指數- 醫療後送- 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 討論區雜訊，無明確實質財務與總經影響。</p>
+</li>
+<li>
+<p><strong>[10-20 21:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> YieldMax NVDA Performance &amp; Distribution Target 25 ETF declares $0.2339 dividend</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: YieldMax NVDA ETF宣布配息，對NVDA正股價格無實質影響，僅為高收益衍生性工具的常規配息。</p>
+</li>
+<li>
+<p><strong>[10-20 21:51]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> YieldMax MSTR Performance &amp; Distribution Tg 25 ETF declares $0.1345 dividend</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: YieldMax MSTR ETF宣布配息，對微策略正股及比特幣連動無直接重大影響。</p>
+</li>
+<li>
+<p><strong>[10-20 21:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 美股早盤／油價登五個月高 AI 憂慮重燃 費半摔1% - 聚財網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價創五個月高點加劇通膨隱憂，AI情緒重燃擔憂導致費半重挫1%，拖累台股半導體與美股科技股表現。</p>
+</li>
+<li>
+<p><strong>[10-20 21:51]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> AI概念股疲弱、油價反彈拖累 美股主要指數開低 - Yahoo股市</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: AI概念股表現疲弱加上油價反彈，拖累美股主要指數開低。</p>
+</li>
+<li>
+<p><strong>[10-20 21:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 快新聞／AI概念股疲弱、油價反彈拖累 美股主要指數開低 - 民視財經網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: AI概念股疲弱與油價反彈引發通膨疑慮，拖累美股主要指數開低，對全球科技股與風險資產造成壓力。</p>
+</li>
+<li>
+<p><strong>[10-20 21:50]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> 阿里巴巴、騰訊與字節跳動力求在中國AI競爭中取勝</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 中國科技大廠積極搶購輝達晶片並擴大海外AI行銷，推升晶片需求與AI硬體鏈熱度。</li>
+</ul>
+<h3 id="7">債市（7）</h3>
+<ul>
+<li><strong>[10-20 23:32]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Foreign Investors Poured $1 Trillion Into U.S. Stocks - but a 59% Drop in Treasury Buying Could Make Your Next Home or Car Loan More Expensive - 24/7 Wall St.</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 外資持續流入美股但美債買盤大減59%，恐推升美國長端殖利率與借貸成本。</p>
+</li>
+<li>
+<p><strong>[10-20 23:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Treasury Yields Dip As AI Nerves Meet Weak Housing - Finimize</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 受AI板塊疑慮與疲弱房市數據影響，避險資金流入美債，推動美債殖利率下滑。</p>
+</li>
+<li>
+<p><strong>[10-20 22:53]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Rates Hit Multi-Decade Highs. Will Growth and Earnings Keep the Rally Going? - ETF Database</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 利率處於多十年高點，企業盈餘與成長動能將面臨高融資成本的嚴格檢驗，股債磁吸效應顯現。</p>
+</li>
+<li>
+<p><strong>[10-20 22:43]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> US Treasury Yields Fall on Tuesday - TradingView</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國公債殖利率在週二走低，反映市場對經濟放緩或風險資產的避險情緒升溫。</p>
+</li>
+<li>
+<p><strong>[10-20 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 殖利率5%仍難吸引買盤 花旗直指美債避險效果減弱</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 花旗指出美債供給增、通膨頑固及中性利率上升，導致5%殖利率仍難吸買盤，避險效果減弱，恐推升政府融資成本。</p>
+</li>
+<li>
+<p><strong>[10-20 22:24]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> A ‘Doom Loop’ Threatens France as Populism Confronts Markets</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 法國面臨民粹主義與債券投資人對立的困境，恐引發歐債市場賣壓與法國公債殖利率攀升。</p>
+</li>
+<li>
+<p><strong>[10-20 22:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 連盈利的AI巨頭都要付10%利息 AI要融資愈來愈難了？</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: AI巨頭融資成本高達10%次順位債票息，反映資金成本攀升，恐排擠後續資本支出動能。</li>
+</ul>
+<h3 id="1">匯市（1）</h3>
+<ul>
+<li><strong>[10-20 22:05]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 匯價連4黑再探底！新台幣重貶1.72角　破32.6元創18個月新低</li>
+<li><strong style="color:#174ea6">影響</strong>: 新台幣重貶1.72角收32.617元，創18個月新低，熱錢外流壓力顯現。</li>
+</ul>
+<h3 id="10">商品(油金)（10）</h3>
+<ul>
+<li><strong>[10-20 23:37]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Crude Oil Prices Erase an Early Rally on Unconfirmed Iran Peace Talks - Barchart.com</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 受未證實的伊朗和平談判傳聞影響，原油價格早盤漲幅回吐，壓抑能源商品價格。</p>
+</li>
+<li>
+<p><strong>[10-20 23:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> Brent, WTI Crude Oil Price Forecast: Cheaper Oil After A Difficult Winter? - Exchange Rates UK</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 分析預期冬季過後原油價格可能走跌，牽動能源類股與通膨預期降溫。</p>
+</li>
+<li>
+<p><strong>[10-20 23:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 布蘭特原油急跌3%後美國股市上漲：什麼原因導致油價下跌？ - TradingKey</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 布蘭特原油急跌3%減輕輸入性通膨壓力，激勵美股同步走高，有利於消費與製造業成本下降。</p>
+</li>
+<li>
+<p><strong>[10-20 23:09]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> US Stocks Rise After Brent Crude Tumbles 3%: What Caused Oil Prices to Fall? - TradingKey</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 布蘭特原油大跌3%推動美股上漲，能源成本下滑提振市場對經濟軟著陸的樂觀預期。</p>
+</li>
+<li>
+<p><strong>[10-20 23:08]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> U.S. crude oil hits more than $105 per barrel, international over $110 - upi</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國原油突破105美元、國際油價超過110美元，高油價加劇全球通膨隱憂，對股市評價面造成壓力。</p>
+</li>
+<li>
+<p><strong>[10-20 23:05]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Oil Prices Rise on U.S. Crude Draw, but Gasoline Stock Build Clouds Demand - FXEmpire</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國原油庫存下降支撐油價，但汽油庫存增加壓抑需求前景，能源商品價格維持震盪。</p>
+</li>
+<li>
+<p><strong>[10-20 22:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> 釋放「數位黃金」蘊含的7000億美元商機</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 世界黃金協會報告指出數位黃金潛在商機，提振市場對黃金及數位資產整合的關注與投資氣氛。</p>
+</li>
+<li>
+<p><strong>[10-20 22:29]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 全球油價飆漲 加拿大重質原油卻陷折價泥淖</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 全球原油價格上揚之際，加拿大重質原油面臨罕見折價困境，對加國能源企業獲利帶來壓力。</p>
+</li>
+<li>
+<p><strong>[10-20 22:29]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 全球油價飆漲 加拿大重質原油卻陷折價泥淖 - 商傳媒 - SUN MEDIA</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 全球油價飆漲但加拿大重質原油陷入折價泥淖，反映地區供需與運輸限制的結構性差異。</p>
+</li>
+<li>
+<p><strong>[10-20 21:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> AAA: Gas Prices Climb in Pa. as Crude Oil Rises - exploreJefferson</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 原油價格走高推升汽油價格，增加消費者負擔並增添輸入性通膨壓力。</li>
+</ul>
+<h3 id="4">地緣政治（4）</h3>
+<ul>
+<li><strong>[10-20 23:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Trump Tariffs on Canada Spark Latest Lawsuit Over Trade Powers</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 川普對加拿大加征關稅措施面臨最新法律訴訟，增添貿易政策的不確定性與國際貿易摩擦風險。</p>
+</li>
+<li>
+<p><strong>[10-20 23:01]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> France to deploy military as it braces for fresh unrest this weekend</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 法國部署軍隊應對週末示威抗議，歐洲政治不確定性升溫，對歐元與歐洲股市構成潛在壓力。</p>
+</li>
+<li>
+<p><strong>[10-20 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 美制裁中國籍前Google工程師相關公司　北京促撤回措施</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美中科技與法律角力延續，美方制裁前Google工程師相關企業，北京反對，增添科技供應鏈地緣政治風險。</p>
+</li>
+<li>
+<p><strong>[10-20 22:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 俄羅斯加強攻擊釀大斷電 烏國西部也未能倖免</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 俄羅斯擴大攻擊烏克蘭能源設施導致大斷電，加劇地緣政治緊張，對歐洲能源價格與通膨帶來上行壓力。</li>
+</ul>
+<h3 id="9">總體經濟（9）</h3>
+<ul>
+<li><strong>[10-20 23:54]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> It’s no secret what the best financial advice for retirement is — but most people ignore it anyway</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 探討退休理財規劃與投資人行為，對整體金融市場無直接實質影響。</p>
+</li>
+<li>
+<p><strong>[10-20 22:54]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Fed Hiking Cycle May Run Longer Than Markets Expect - ETF Database</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 聯The Fed升息循環可能比預期更長，對全球債市構成壓力，推升殖利率並支撐美元。</p>
+</li>
+<li>
+<p><strong>[10-20 22:49]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Citi's Nathan Sheets Warns Markets Could Misread The Fed — Sees Fiscal, AI Financing Worries Pushing Up Treasury Yields - Stocktwits</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 花旗警告財政赤字與AI融資需求推升美債殖利率，市場可能誤判Fed動向，壓抑風險資產表現。</p>
+</li>
+<li>
+<p><strong>[10-20 22:10]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 百名經濟學家全押12月升息！Fed本月料先按兵不動</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 市場預期Fed 10月按兵不動但12月可能升息，高利率維持更久將對全球股市與債市評價面形成壓抑。</p>
+</li>
+<li>
+<p><strong>[10-20 22:06]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Pending home sales sink to 25-year low as buyers flee high mortgage rates</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 30年期房貸利率突破7%，導致美國待售房屋銷售降至25年來新低，房市急凍。</p>
+</li>
+<li>
+<p><strong>[10-20 22:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Bitcoin Price Prediction: BTC Risks $80K Drop Ahead of October 28 Fed Decision - CryptoRank</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 比特幣面臨10月28日聯準會決策前夕的下跌風險，市場觀望氣氛濃厚。</p>
+</li>
+<li>
+<p><strong>[10-20 21:52]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Money-saving habits to cope with higher prices — from our readers</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 民眾因應物價高漲的生活習慣分享，反映通膨對基層消費者的持續影響。</p>
+</li>
+<li>
+<p><strong>[10-20 21:52]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Money-saving tips to cope with higher prices — from our readers</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 消費者省錢小撇步，反映通膨壓力下的民間行為，對整體金融市場無直接影響。</p>
+</li>
+<li>
+<p><strong>[10-20 21:51]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Bank of America Expects Fed Rate Hike in October Despite 20% Market Odds - News and Statistics - IndexBox</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國銀行預期Fed 10月可能升息，與市場多數預期按兵不動產生分歧，若成真將引發全球金融市場劇烈震盪。</li>
+</ul>
+<h3 id="6">其他（6）</h3>
+<ul>
+<li><strong>[10-20 22:51]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Is your annuity really guaranteed? Read this before you buy one.</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 年金險實際收益與宣傳可能存在落差，屬個人理財與保險消費資訊，對整體金融市場無直接系統性影響。</p>
+</li>
+<li>
+<p><strong>[10-20 22:50]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Union attacks NatWest plans to get workers back to the office</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 銀行推動員工返回辦公室引發工會抗議，對整體金融市場無直接實質財務影響。</p>
+</li>
+<li>
+<p><strong>[10-20 22:16]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Should you dump your target-date funds when you retire?</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 探討退休目標日期基金的局限性，屬於理財教育範疇，對實體金融市場無直接影響。</p>
+</li>
+<li>
+<p><strong>[10-20 22:10]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 網路投資詐騙前三季破2萬件！台股熱絡成誘餌，金管會揭露四大社群陷阱-財經焦點情報站 - CMoney投資網誌</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股熱絡導致詐騙案頻傳，金管會揭露社群陷阱，對實質金融市場資金面影響有限。</p>
+</li>
+<li>
+<p><strong>[10-20 21:57]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 台股愈熱詐騙愈多？第3季通報近9000件 金管會揭兩原因 - 經濟日報</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股熱絡伴隨詐騙案件增加，屬社會與監管議題，對大盤資金面無實質負面衝擊。</p>
+</li>
+<li>
+<p><strong>[10-20 21:57]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 台股愈熱詐騙愈多？第3季通報近9000件金管會揭兩原因| 股市要聞| 股市 - UDN</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 金管會統計台股相關詐騙通報件數增加，屬社會與監管新聞，對股市實質影響有限。</li>
+</ul>
+<hr />
+<h2 id="_4">全部事件</h2>
+<ul>
+<li><strong>[10-20 23:54]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> It’s no secret what the best financial advice for retirement is — but most people ignore it anyway <code>marketwatch</code></li>
+<li><strong>[10-20 23:53]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Earnings call transcript: RLI tops Q3 2026 profit forecast as revenue misses <code>investing-com</code></li>
+<li><strong>[10-20 23:37]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Crude Oil Prices Erase an Early Rally on Unconfirmed Iran Peace Talks - Barchart.com <code>google-news:oil price crude</code></li>
+<li><strong>[10-20 23:32]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Foreign Investors Poured $1 Trillion Into U.S. Stocks - but a 59% Drop in Treasury Buying Could Make Your Next Home or Car Loan More Expensive - 24/7 Wall St. <code>google-news:Treasury yields</code></li>
+<li><strong>[10-20 23:31]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> AI 科技股震盪引擔憂？專家：回修正屬牛市正常現象 <code>yahoo-tw-finance</code></li>
+<li><strong>[10-20 23:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Brent, WTI Crude Oil Price Forecast: Cheaper Oil After A Difficult Winter? - Exchange Rates UK <code>google-news:oil price crude</code></li>
+<li><strong>[10-20 23:27]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Salesforce’s stock falls as investors chafe at the cost of latest AI purchase <code>marketwatch</code></li>
+<li><strong>[10-20 23:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 美股逆轉秀！企業財報助攻、國際油價跳水 道瓊盤中一度飆逾700點 - 鉅亨網 <code>google-news:油價</code></li>
+<li><strong>[10-20 23:19]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Dow jumps 500 points as solid earnings, falling crude oil stir rebound: Live updates - CNBC <code>google-news:Treasury yields</code></li>
+<li><strong>[10-20 23:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Trump Tariffs on Canada Spark Latest Lawsuit Over Trade Powers <code>nytbusiness</code></li>
+<li><strong>[10-20 23:17]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 美股｜道指最新漲近700點 納指先跌後回升 油價跌逾2.5% - 香港01 <code>google-news:油價</code></li>
+<li><strong>[10-20 23:17]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> SpaceX launches Starfall capsule for 2nd time as investors await earnings <code>seekingalpha</code></li>
+<li><strong>[10-20 23:17]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Elon Musk promised a SpaceX share to every kid in America — don’t hold your breath <code>marketwatch</code></li>
+<li><strong>[10-20 23:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 布蘭特原油急跌3%後美國股市上漲：什麼原因導致油價下跌？ - TradingKey <code>google-news:油價</code></li>
+<li><strong>[10-20 23:09]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> US Stocks Rise After Brent Crude Tumbles 3%: What Caused Oil Prices to Fall? - TradingKey <code>google-news:oil price crude</code></li>
+<li><strong>[10-20 23:09]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Dow Jumps To One-Month High Amid Substantial Downturn By Crude Oil Prices - RTTNews <code>google-news:oil price crude</code></li>
+<li><strong>[10-20 23:08]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> U.S. crude oil hits more than $105 per barrel, international over $110 - upi <code>google-news:oil price crude</code></li>
+<li><strong>[10-20 23:07]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> S&amp;P 500 Rebounds as Big Bank Stocks Climb, SpaceX Results Loom - Advisor Perspectives <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[10-20 23:06]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Markets Brief: Chip Stocks Sell Off, Investors Rotate Into Value, and What to Watch in Big Tech Earnings - Morningstar <code>google-news:stock market selloff</code></li>
+<li><strong>[10-20 23:05]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Oil Prices Rise on U.S. Crude Draw, but Gasoline Stock Build Clouds Demand - FXEmpire <code>google-news:oil price crude</code></li>
+<li><strong>[10-20 23:01]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> France to deploy military as it braces for fresh unrest this weekend <code>cnbc</code></li>
+<li><strong>[10-20 23:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Treasury Yields Dip As AI Nerves Meet Weak Housing - Finimize <code>google-news:Treasury yields</code></li>
+<li><strong>[10-20 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 美制裁中國籍前Google工程師相關公司　北京促撤回措施 <code>yahoo-tw-finance</code></li>
+<li><strong>[10-20 22:55]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> S&amp;P 500 Index: Chip Stocks Slide Again as the Dow Leads Earnings Rotation - FXEmpire <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[10-20 22:54]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Fed Hiking Cycle May Run Longer Than Markets Expect - ETF Database <code>google-news:Treasury yields</code></li>
+<li><strong>[10-20 22:53]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Rates Hit Multi-Decade Highs. Will Growth and Earnings Keep the Rally Going? - ETF Database <code>google-news:Treasury yields</code></li>
+<li><strong>[10-20 22:51]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Is your annuity really guaranteed? Read this before you buy one. <code>marketwatch</code></li>
+<li><strong>[10-20 22:50]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Union attacks NatWest plans to get workers back to the office <code>bbcbusiness</code></li>
+<li><strong>[10-20 22:50]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Union attacks NatWest plans to reduce working from home <code>bbcbusiness</code></li>
+<li><strong>[10-20 22:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Meta Q3 Earnings Preview: Can ad growth offset AI’s free cash flow drain? <code>seekingalpha</code></li>
+<li><strong>[10-20 22:49]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Citi's Nathan Sheets Warns Markets Could Misread The Fed — Sees Fiscal, AI Financing Worries Pushing Up Treasury Yields - Stocktwits <code>google-news:Treasury yields</code></li>
+<li><strong>[10-20 22:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 釋放「數位黃金」蘊含的7000億美元商機 <code>yahoo-tw-finance</code></li>
+<li><strong>[10-20 22:45]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 9月獲利腰斬！凱基金獲法人逆挺40元目標價仍遭砍「這檔」卡位矽光子成自營商提款1.64億元重災區 - Yahoo股市 <code>google-news:加權指數</code></li>
+<li><strong>[10-20 22:45]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 28家金融機構使用中港資系統 金管會：內控已有規範 - 東森新聞 <code>google-news:金管會</code></li>
+<li><strong>[10-20 22:43]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> US Treasury Yields Fall on Tuesday - TradingView <code>google-news:Treasury yields</code></li>
+<li><strong>[10-20 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 台股反彈全看這波？Meta、特斯拉財報將出爐 分析師：「這情況」恐將繼續補跌 | 林子靖 | 新聞 - 風傳媒 <code>google-news:台股 大跌</code></li>
+<li><strong>[10-20 22:37]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 輝達RTX PRO 6000 Blackwell工作站問世，必恩威助攻專業AI創作 <code>yahoo-tw-finance</code></li>
+<li><strong>[10-20 22:37]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 美股開盤／AI股腳軟、油價反彈！華爾街三大指數開低 - TVBS新聞網 <code>google-news:油價</code></li>
+<li><strong>[10-20 22:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Here’s why GM’s stock is having its worst day in over a year <code>marketwatch</code></li>
+<li><strong>[10-20 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 殖利率5%仍難吸引買盤 花旗直指美債避險效果減弱 <code>yahoo-tw-finance</code></li>
+<li><strong>[10-20 22:29]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 全球油價飆漲 加拿大重質原油卻陷折價泥淖 <code>yahoo-tw-finance</code></li>
+<li><strong>[10-20 22:29]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 全球油價飆漲 加拿大重質原油卻陷折價泥淖 - 商傳媒 - SUN MEDIA <code>google-news:油價</code></li>
+<li><strong>[10-20 22:27]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 【22:27 即時新聞】United Airlines (UAL) 飆漲逾5%：財報題材與油價壓力成多空拉鋸焦點 - CMoney投資網誌 <code>google-news:油價</code></li>
+<li><strong>[10-20 22:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Dow jumps 700 points as solid earnings, falling crude oil stir rebound: Live updates - CNBC <code>google-news:Treasury yields</code></li>
+<li><strong>[10-20 22:24]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> A ‘Doom Loop’ Threatens France as Populism Confronts Markets <code>nytbusiness</code></li>
+<li><strong>[10-20 22:23]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> TWA00 加權指數- 千萬不要跟2330和正2作對，會被甩轎的，一甩完馬上噴🤣�... - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[10-20 22:22]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> S&amp;P and Nasdaq erase losses as health stocks surge, oil prices reverse course <code>investing-com</code></li>
+<li><strong>[10-20 22:21]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Enphase Energy options signal 12% move on earnings day <code>investing-com</code></li>
+<li><strong>[10-20 22:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 連盈利的AI巨頭都要付10%利息 AI要融資愈來愈難了？ <code>yahoo-tw-finance</code></li>
+<li><strong>[10-20 22:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 俄羅斯加強攻擊釀大斷電 烏國西部也未能倖免 <code>yahoo-tw-finance</code></li>
+<li><strong>[10-20 22:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> AI投資風險、油價雙重夾擊！台指期夜盤再戰47K 美股4大指數上演大反攻 - FTNN 新聞網 <code>google-news:油價</code></li>
+<li><strong>[10-20 22:16]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 台股飆漲掀出走潮 基金經理人辭職自操盤賺私房錢 <code>yahoo-tw-finance</code></li>
+<li><strong>[10-20 22:16]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Should you dump your target-date funds when you retire? <code>marketwatch</code></li>
+<li><strong>[10-20 22:12]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> BankUnited Q3 2026 Earnings Preview <code>seekingalpha</code></li>
+<li><strong>[10-20 22:11]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> AI類股走弱油價上揚 美股開低 - 聚財網 <code>google-news:油價</code></li>
+<li><strong>[10-20 22:11]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> AI概念股疲弱、油價反彈拖累 美股主要指數開低 | 民視新聞網 - LINE TODAY <code>google-news:油價</code></li>
+<li><strong>[10-20 22:10]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 網路投資詐騙前三季破2萬件！台股熱絡成誘餌，金管會揭露四大社群陷阱-財經焦點情報站 - CMoney投資網誌 <code>google-news:金管會</code></li>
+<li><strong>[10-20 22:10]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 百名經濟學家全押12月升息！Fed本月料先按兵不動 <code>yahoo-tw-finance</code></li>
+<li><strong>[10-20 22:09]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 美股早盤漲跌互見！美光跌破9百美元 <code>yahoo-tw-finance</code></li>
+<li><strong>[10-20 22:09]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Stocks Pressured by Tech Stock Weakness and Higher Crude Oil Prices - Barchart.com <code>google-news:oil price crude</code></li>
+<li><strong>[10-20 22:07]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> AI類股走弱油價上揚 美股開低 | 路透社 - LINE TODAY <code>google-news:油價</code></li>
+<li><strong>[10-20 22:07]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 《強勢美股特報》NOC,HAS,MMM,LLY等10檔 <code>yahoo-tw-finance</code></li>
+<li><strong>[10-20 22:06]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Pending home sales sink to 25-year low as buyers flee high mortgage rates <code>marketwatch</code></li>
+<li><strong>[10-20 22:05]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 匯價連4黑再探底！新台幣重貶1.72角　破32.6元創18個月新低 <code>yahoo-tw-finance</code></li>
+<li><strong>[10-20 22:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Bitcoin Price Prediction: BTC Risks $80K Drop Ahead of October 28 Fed Decision - CryptoRank <code>google-news:Federal Reserve rate decision</code></li>
+<li><strong>[10-20 22:03]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> AI類股走弱油價上揚 美股開低 - 壹蘋新聞網 <code>google-news:油價</code></li>
+<li><strong>[10-20 22:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 股價狂飆259%還被降評 戴爾AI營收翻倍為何不被買單？ <code>yahoo-tw-finance</code></li>
+<li><strong>[10-20 21:58]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> TWA00 加權指數- 醫療後送- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[10-20 21:57]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 台股愈熱詐騙愈多？第3季通報近9000件 金管會揭兩原因 - 經濟日報 <code>google-news:金管會</code></li>
+<li><strong>[10-20 21:57]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 台股愈熱詐騙愈多？第3季通報近9000件金管會揭兩原因| 股市要聞| 股市 - UDN <code>google-news:金管會</code></li>
+<li><strong>[10-20 21:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> YieldMax NVDA Performance &amp; Distribution Target 25 ETF declares $0.2339 dividend <code>seekingalpha</code></li>
+<li><strong>[10-20 21:52]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Money-saving habits to cope with higher prices — from our readers <code>marketwatch</code></li>
+<li><strong>[10-20 21:52]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Money-saving tips to cope with higher prices — from our readers <code>marketwatch</code></li>
+<li><strong>[10-20 21:51]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> YieldMax MSTR Performance &amp; Distribution Tg 25 ETF declares $0.1345 dividend <code>seekingalpha</code></li>
+<li><strong>[10-20 21:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 美股早盤／油價登五個月高 AI 憂慮重燃 費半摔1% - 聚財網 <code>google-news:油價</code></li>
+<li><strong>[10-20 21:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 快新聞／AI概念股疲弱、油價反彈拖累 美股主要指數開低 - 民視財經網 <code>google-news:油價</code></li>
+<li><strong>[10-20 21:51]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> AI概念股疲弱、油價反彈拖累 美股主要指數開低 - Yahoo股市 <code>google-news:油價</code></li>
+<li><strong>[10-20 21:51]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Bank of America Expects Fed Rate Hike in October Despite 20% Market Odds - News and Statistics - IndexBox <code>google-news:Federal Reserve rate decision</code></li>
+<li><strong>[10-20 21:50]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 阿里巴巴、騰訊與字節跳動力求在中國AI競爭中取勝 <code>yahoo-tw-finance</code></li>
+<li><strong>[10-20 21:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> AAA: Gas Prices Climb in Pa. as Crude Oil Rises - exploreJefferson <code>google-news:oil price crude</code></li>
+</ul>
+    </article>
+  
+</div>
+<footer>由金融情報系統自動發佈 · 僅供參考，不構成投資建議</footer>
+<script>
+const WEEK = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function nowParts(tz){
+  const p = {};
+  new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short', month: 'short',
+    day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
+  }).formatToParts(new Date()).forEach(x => p[x.type] = x.value);
+  return p;
+}
+function marketOpen(tz, open, close){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  return wd>=1 && wd<=5 && m>=open && m<close;
+}
+// Taiwan index-futures night session 15:00 -> next-day 05:00 (crosses midnight):
+// 15:00-24:00 Mon-Fri, plus 00:00-05:00 Tue-Sat (Sat 00:00-05:00 is Fri night session).
+function nightOpen(tz){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  if (m >= 5*60 && m < 15*60) return false;   // 05:00-15:00 recess
+  if (m >= 15*60) return wd >= 1 && wd <= 5;   // 15:00-24:00 Mon-Fri
+  return wd >= 2 && wd <= 6;                   // 00:00-05:00 Tue-Sat
+}
+function pad(n){ return String(n).padStart(2,'0'); }
+function setMkt(id, open, label){
+  const el = document.getElementById(id);
+  el.className = 'mkt ' + (open ? 'open' : 'closed');
+  el.textContent = (label ? label + ' ' : '') + (open ? '開盤中' : '未開盤');
+}
+function tick(){
+  const tw = nowParts('Asia/Taipei');
+  const ny = nowParts('America/New_York');
+  document.getElementById('clk-tw').textContent = pad(tw.hour)+':'+pad(tw.minute)+':'+pad(tw.second);
+  document.getElementById('clk-ny').textContent = pad(ny.hour)+':'+pad(ny.minute)+':'+pad(ny.second);
+  // Taiwan: TWSE weighted index 09:00-13:30; TX futures day 08:45-13:45; TX night 15:00-05:00
+  setMkt('tw-idx',  marketOpen('Asia/Taipei', 9*60, 13*60+30), '加權');
+  setMkt('tx-day',  marketOpen('Asia/Taipei', 8*60+45, 13*60+45), '期日盤');
+  setMkt('tx-night', nightOpen('Asia/Taipei'), '期夜盤');
+  // US: regular session 09:30-16:00 ET; after-hours 16:00-20:00 ET
+  setMkt('ny-mkt',  marketOpen('America/New_York', 9*60+30, 16*60), '美股');
+  setMkt('ny-night', marketOpen('America/New_York', 16*60, 20*60), '美股夜');
+}
+tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>
