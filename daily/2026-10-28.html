@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日報告 2026-10-28</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; margin: 0;
+         background: #f5f6f8; color: #1c1e21; line-height: 1.7; }
+  header { background: #1b2a4a; color: #fff; padding: 14px 24px;
+           display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  header h1 { font-size: 18px; margin: 0; flex: 1; }
+  header nav a { color: #cdd8ee; text-decoration: none; margin-left: 14px; font-size: 14px; }
+  header nav a:hover, header nav a.active { color: #fff; text-decoration: underline; }
+  #clock { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; font-size: 13px; }
+  .clk { background: rgba(255,255,255,.08); border-radius: 6px; padding: 4px 10px; }
+  .clk-city { color: #9fb0cf; margin-right: 6px; }
+  .clk-time { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .mkt { margin-left: 8px; font-size: 12px; padding: 1px 7px; border-radius: 9px; }
+  .mkt.open { background: #2e7d32; color: #fff; }
+  .mkt.closed { background: #5a6474; color: #fff; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 20px; }
+  .card { background: #fff; border-radius: 8px; padding: 18px 22px; margin: 14px 0;
+          box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .card h3 { margin: 0 0 6px; }
+  .card a { color: #1b2a4a; text-decoration: none; }
+  .card a:hover { text-decoration: underline; }
+  .muted { color: #666; font-size: 13px; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px;
+           color: #fff; margin-left: 6px; }
+  .b-daily { background: #2e7d32; }
+  .b-deep { background: #b45309; }
+  .day-nav { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+  .day-nav a { font-size: 13px; padding: 3px 10px; background: #e8ecf3; border-radius: 12px;
+               color: #33415c; text-decoration: none; }
+  .day-nav a:hover { background: #d2dbea; }
+  article.card { line-height: 1.15; }
+  article.card p { margin: 3px 0; }
+  article.card ul, article.card ol { margin: 3px 0 6px; padding-left: 22px; }
+  article.card h1, article.card h2, article.card h3 { padding-bottom: 4px; }
+  article.card h1, article.card h2 { border-bottom: 2px solid #33415c; }
+  article.card h1 { font-size: 30px; margin-top: 8px; }
+  article.card h2 { font-size: 23px; margin-top: 12px; color: #1b2a4a;
+        border-left: 6px solid #1459c8; padding-left: 12px; }
+  article.card h3 { font-size: 19px; margin-top: 10px; color: #24365c;
+        background: #eef4fb; border-radius: 6px; padding: 4px 12px; }
+  article.card h4 { font-size: 17px; margin-top: 18px; color: #145c3a;
+        background: #e8f5ee; border-left: 4px solid #2e7d32;
+        padding: 5px 10px; border-radius: 4px; }
+  article.card h5 { font-size: 15px; margin-top: 14px; color: #4a5568;
+        font-weight: 600; }
+  article.card h4, article.card h5 { margin-bottom: 2px; }
+  article.card strong { font-weight: 700; }
+  article.card blockquote { border-left: 4px solid #9fb0cf; margin: 4px 0;
+        padding: 2px 12px; color: #4a5568; background: #f4f6fa; }
+  article.card hr { border: none; border-top: 1px dashed #c3ccdb; margin: 12px 0; }
+  article.card code { background: #eef0f4; padding: 1px 5px; border-radius: 4px;
+        font-size: 14px; font-family: Consolas, monospace; }
+  article.card pre { background: #1b2a4a; color: #e6ecf7; padding: 14px; border-radius: 8px; overflow-x: auto; }
+  article.card pre code { background: transparent; color: inherit; padding: 0; }
+  article.card table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+  article.card th, article.card td { border: 1px solid #d8dce3; padding: 6px 10px; }
+  article.card th { background: #eef1f6; }
+  article.card a { color: #1459c8; }
+  footer { text-align: center; color: #999; font-size: 12px; padding: 20px; }
+</style>
+</head>
+<body>
+  <header>
+  <h1>金融情報系統報告</h1>
+  <nav>
+    <a href="../index.html" class="">首頁</a>
+    <a href="../calendar.html" class="">行事曆</a>
+    <a href="../daily/2026-10-28.html" class="active">最新每日</a>
+    <a href="../deep/2026-10-27-pm.html" class="">最新深度</a>
+  </nav>
+  <div id="clock">
+    <span class="clk"><span class="clk-city">台北</span><span class="clk-time" id="clk-tw">--:--:--</span><span class="mkt closed" id="tw-idx">…</span><span class="mkt closed" id="tx-day">…</span><span class="mkt closed" id="tx-night">…</span></span>
+    <span class="clk"><span class="clk-city">紐約</span><span class="clk-time" id="clk-ny">--:--:--</span><span class="mkt closed" id="ny-mkt">…</span><span class="mkt closed" id="ny-night">…</span></span>
+  </div>
+</header>
+<div class="wrap">
+  
+    <div class="day-nav">
+      <a href="../index.html">← 首頁</a>
+      
+        
+        <a href="../daily/2026-10-28.html">2026-10-28</a>
+        
+        <a href="../daily/2026-10-27.html">2026-10-27</a>
+        
+        <a href="../daily/2026-10-26.html">2026-10-26</a>
+        
+        <a href="../daily/2026-10-25.html">2026-10-25</a>
+        
+        <a href="../daily/2026-10-24.html">2026-10-24</a>
+        
+        <a href="../daily/2026-10-23.html">2026-10-23</a>
+        
+        <a href="../daily/2026-10-22.html">2026-10-22</a>
+        
+        <a href="../daily/2026-10-21.html">2026-10-21</a>
+        
+        <a href="../daily/2026-10-20.html">2026-10-20</a>
+        
+        <a href="../daily/2026-10-19.html">2026-10-19</a>
+        
+        <a href="../daily/2026-10-18.html">2026-10-18</a>
+        
+        <a href="../daily/2026-10-17.html">2026-10-17</a>
+        
+        <a href="../daily/2026-10-16.html">2026-10-16</a>
+        
+        <a href="../daily/2026-10-15.html">2026-10-15</a>
+        
+        <a href="../daily/2026-10-14.html">2026-10-14</a>
+        
+        <a href="../daily/2026-10-13.html">2026-10-13</a>
+        
+        <a href="../daily/2026-10-12.html">2026-10-12</a>
+        
+        <a href="../daily/2026-10-11.html">2026-10-11</a>
+        
+        <a href="../daily/2026-10-10.html">2026-10-10</a>
+        
+        <a href="../daily/2026-10-09.html">2026-10-09</a>
+        
+        <a href="../daily/2026-10-08.html">2026-10-08</a>
+        
+        <a href="../daily/2026-10-07.html">2026-10-07</a>
+        
+        <a href="../daily/2026-10-06.html">2026-10-06</a>
+        
+        <a href="../daily/2026-10-05.html">2026-10-05</a>
+        
+        <a href="../daily/2026-10-04.html">2026-10-04</a>
+        
+        <a href="../daily/2026-10-03.html">2026-10-03</a>
+        
+        <a href="../daily/2026-10-02.html">2026-10-02</a>
+        
+        <a href="../daily/2026-10-01.html">2026-10-01</a>
+        
+        <a href="../daily/2026-09-30.html">2026-09-30</a>
+        
+        <a href="../daily/2026-09-29.html">2026-09-29</a>
+        
+        <a href="../daily/2026-09-28.html">2026-09-28</a>
+        
+        <a href="../daily/2026-09-27.html">2026-09-27</a>
+        
+        <a href="../daily/2026-09-26.html">2026-09-26</a>
+        
+        <a href="../daily/2026-09-25.html">2026-09-25</a>
+        
+        <a href="../daily/2026-09-24.html">2026-09-24</a>
+        
+        <a href="../daily/2026-09-23.html">2026-09-23</a>
+        
+        <a href="../daily/2026-09-22.html">2026-09-22</a>
+        
+        <a href="../daily/2026-09-21.html">2026-09-21</a>
+        
+        <a href="../daily/2026-09-20.html">2026-09-20</a>
+        
+        <a href="../daily/2026-09-19.html">2026-09-19</a>
+        
+        <a href="../daily/2026-09-18.html">2026-09-18</a>
+        
+        <a href="../daily/2026-09-17.html">2026-09-17</a>
+        
+        <a href="../daily/2026-09-16.html">2026-09-16</a>
+        
+        <a href="../daily/2026-09-15.html">2026-09-15</a>
+        
+        <a href="../daily/2026-09-14.html">2026-09-14</a>
+        
+        <a href="../daily/2026-09-13.html">2026-09-13</a>
+        
+        <a href="../daily/2026-09-12.html">2026-09-12</a>
+        
+        <a href="../daily/2026-09-11.html">2026-09-11</a>
+        
+        <a href="../daily/2026-09-10.html">2026-09-10</a>
+        
+        <a href="../daily/2026-09-09.html">2026-09-09</a>
+        
+        <a href="../daily/2026-09-08.html">2026-09-08</a>
+        
+        <a href="../daily/2026-09-07.html">2026-09-07</a>
+        
+        <a href="../daily/2026-09-06.html">2026-09-06</a>
+        
+        <a href="../daily/2026-09-05.html">2026-09-05</a>
+        
+        <a href="../daily/2026-09-04.html">2026-09-04</a>
+        
+        <a href="../daily/2026-09-03.html">2026-09-03</a>
+        
+        <a href="../daily/2026-09-02.html">2026-09-02</a>
+        
+        <a href="../daily/2026-09-01.html">2026-09-01</a>
+        
+        <a href="../daily/2026-08-31.html">2026-08-31</a>
+        
+        <a href="../daily/2026-08-30.html">2026-08-30</a>
+        
+        <a href="../daily/2026-08-29.html">2026-08-29</a>
+        
+        <a href="../daily/2026-08-28.html">2026-08-28</a>
+        
+        <a href="../daily/2026-08-27.html">2026-08-27</a>
+        
+        <a href="../daily/2026-08-26.html">2026-08-26</a>
+        
+        <a href="../daily/2026-08-25.html">2026-08-25</a>
+        
+        <a href="../daily/2026-08-24.html">2026-08-24</a>
+        
+        <a href="../daily/2026-08-23.html">2026-08-23</a>
+        
+        <a href="../daily/2026-08-22.html">2026-08-22</a>
+        
+        <a href="../daily/2026-08-21.html">2026-08-21</a>
+        
+        <a href="../daily/2026-08-20.html">2026-08-20</a>
+        
+        <a href="../daily/2026-08-19.html">2026-08-19</a>
+        
+        <a href="../daily/2026-08-18.html">2026-08-18</a>
+        
+        <a href="../daily/2026-08-17.html">2026-08-17</a>
+        
+        <a href="../daily/2026-08-16.html">2026-08-16</a>
+        
+        <a href="../daily/2026-08-15.html">2026-08-15</a>
+        
+        <a href="../daily/2026-08-14.html">2026-08-14</a>
+        
+        <a href="../daily/2026-08-13.html">2026-08-13</a>
+        
+        <a href="../daily/2026-08-12.html">2026-08-12</a>
+        
+        <a href="../daily/2026-08-11.html">2026-08-11</a>
+        
+        <a href="../daily/2026-08-10.html">2026-08-10</a>
+        
+        <a href="../daily/2026-08-09.html">2026-08-09</a>
+        
+        <a href="../daily/2026-08-08.html">2026-08-08</a>
+        
+        <a href="../daily/2026-08-07.html">2026-08-07</a>
+        
+        <a href="../daily/2026-08-06.html">2026-08-06</a>
+        
+        <a href="../daily/2026-08-05.html">2026-08-05</a>
+        
+        <a href="../daily/2026-08-04.html">2026-08-04</a>
+        
+        <a href="../daily/2026-08-03.html">2026-08-03</a>
+        
+        <a href="../daily/2026-08-02.html">2026-08-02</a>
+        
+      
+    </div>
+    <article class="card">
+      <div class="muted">2026-10-28
+        <span class="badge b-daily">
+          每日報告
+        </span>
+      </div>
+      <h1 id="2026-10-28">金融重點報告 2026-10-28</h1>
+<blockquote>
+<p>產出時間: 2026-10-28 00:21（台灣時間）
+資料截止: 10-27 23:56（收錄庫最新事件，若久久未前進代表蒐集上游疑中斷）
+品質儀表板: 資料新鮮度 ≤30min | 去重率 27.7% | 最大來源佔 16.2% | 驗證覆蓋 25.7% | ⚠️疑似誤殺 81
+本報告由 AI 自動生成，僅供參考，不構成投資建議。</p>
+</blockquote>
+<h2 id="_1">📅 行事曆排期事件</h2>
+<blockquote>
+<p>下列為今日／近期已排定、可能影響市場的重要事件（法人預期供參考）：</p>
+</blockquote>
+<ul>
+<li>⭐ 今天 [高]聯準會 FOMC：利率決策（無SEP）<blockquote>
+<p>法人預期：本次不附SEP/點陣圖，市場聚焦聲明措辭與鮑爾記者會對降息步調的暗示。</p>
+</blockquote>
+</li>
+<li>⭐ 今天 [高]Tesla / Meta：美股盤後公布財報</li>
+<li>📅 2026-10-29 [高]美國商務部 BEA：GDP 第三季初值</li>
+<li>📅 2026-10-29 [高]Apple / Microsoft / Alphabet / Amazon：美股盤後公布財報（科技五巨頭）<blockquote>
+<p>法人預期：重量級科技股財報集中日，盤後波動大，連動台灣供應鏈與隔日台股。</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h2 id="_2">🆕 本次新增事件（置頂：最新產出）</h2>
+<blockquote>
+<p>本次新增 <strong>60 筆</strong>，重要 56 筆</p>
+</blockquote>
+<p><strong>重要事件（severity ≥ 1）</strong>：</p>
+<ul>
+<li><strong>[10-27 23:34]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][positive]</strong> U.S. economy is gathering steam. This is the chief reason why. <code>marketwatch</code></li>
+<li><strong style="color:#174ea6">影響</strong>: 美國經濟在AI熱潮與耐用品需求帶動下持續增溫，Anthropic準備上市進一步炒熱市場氛圍。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,MSFT</code></p>
+</li>
+<li>
+<p><strong>[10-27 23:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> Honda warns 50% Canada auto tariffs would be catastrophic for auto industry <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 川普警告若未達貿易協議將對加拿大汽車及零件關稅加倍至50%，對汽車產業造成嚴重打擊。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>7203.T,GM,F</code></p>
+</li>
+<li>
+<p><strong>[10-27 23:42]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[匯市][positive]</strong> Dollar edges higher as focus turns to central bank meetings <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 市場聚焦即將到來的央行會議（含聯準會FOMC），風險情緒推升美元走高，日圓走軟。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,USDJPY</code></p>
+</li>
+<li>
+<p><strong>[10-27 23:39]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Earnings call transcript: Avidbank tops Q3 2026 estimates as shares rise 3.9% <code>investing-com</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Avidbank第三季財報優於預期，激勵股價上漲3.9%，對整體銀行股板塊具溫和正面示範作用。</p>
+</li>
+<li>
+<p><strong>[10-27 23:38]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Supermicro-backed neocloud Argentum AI seeks $5B for chip financing: report <code>seekingalpha</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Supermicro支持的Argentum AI尋求50億美元晶片融資，有利推動AI基礎設施與伺服器需求。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SMCI,NVDA</code></p>
+</li>
+<li>
+<p><strong>[10-27 23:38]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> GE Vernova earnings up next: Can backlog growth offset revenue decline? <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: GE Vernova即將公布財報，市場聚焦訂單積壓能否彌補營收下滑，對重電與能源板塊具風向球意義。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>GEV</code></p>
+</li>
+<li>
+<p><strong>[10-27 23:36]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][negative]</strong> Deutsche Bank earnings on deck as analysts trim forecasts <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 德意志銀行財報將至，分析師紛紛下修預測，對歐洲金融股表現形成壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DB</code></p>
+</li>
+<li>
+<p><strong>[10-27 23:19]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[地緣政治][neutral]</strong> Ex-FBI official's lawyers slam unusual new criminal charge: 'Outrageous government conduct' <code>cnbc</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 前FBI官員面臨刑事指控，屬政治與法律爭端，對整體股債匯市影響極微。</p>
+</li>
+<li>
+<p><strong>[10-27 23:00]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][positive]</strong> 魔鬼藏在Anthropic招股書細節裡！逾5000億美元支出承諾、創辦人捐80%財富可撤回 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Anthropic遞交IPO招股書並承諾逾5000億美元AI硬體與資料中心支出，大幅點燃AI供應鏈信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM,AMD</code></p>
+</li>
+<li>
+<p><strong>[10-27 23:42]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][positive]</strong> S&amp;P 500 and Nasdaq Composite: Chipmakers Lift Indexes as Fed and Earnings Risks Loom - FXEmpire <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 標普500與那斯達克受晶片股帶動走高，但市場高度警戒聯準會FOMC利率決議與大型科技股財報風險。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM,META,TSLA,^GSPC,^IXIC</code></p>
+</li>
+<li>
+<p><strong>[10-27 23:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][positive]</strong> Stocks See Support as Crude Oil Prices Ease and FOMC Awaited - Barchart.com <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 原油價格回落舒緩通膨壓力，在聯準會FOMC決策前夕為美股提供支撐。</p>
+</li>
+<li>
+<p><strong>[10-27 23:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[商品(油金)][neutral]</strong> 18.4 TW by 2035 IRENA Raises Renewables Goal as Power Demand Climbs - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: IRENA上調2035年再生能源目標至18.4 TW，凸顯長期電力與綠能轉型需求殷切。</p>
+</li>
+<li>
+<p><strong>[10-27 23:44]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][positive]</strong> 油價漲勢趨緩！美國10月消費者信心指數反彈至91.7 - 民視新聞網 <code>google-news:油價</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月消費者信心指數反彈至91.7，油價漲勢趨緩，舒緩通膨憂慮並支持消費動能。</p>
+</li>
+<li>
+<p><strong>[10-27 23:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> 油價跌破每桶101美元，華爾街在聯準會決策前看法分歧 - BigGo 財經 <code>google-news:油價</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價跌破101美元但在聯準會FOMC決策前夕，華爾街對降息步調與經濟前景看法現分歧。</p>
+</li>
+<li>
+<p><strong>[10-27 23:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> 油價破百加上AI投資熱潮，全球通膨恐延燒至2027年 - BigGo 財經 <code>google-news:油價</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價高檔與AI龐大投資熱潮恐令全球通膨延燒至2027年，牽動債市殖利率與聯準會政策走向。</p>
+</li>
+<li>
+<p><strong>[10-27 22:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> 油價回落！美股3大指數漲跌互見 那指領跑漲0.45％ - Yahoo股市 <code>google-news:油價</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價回落減輕通膨壓力，美股三大指數漲跌互見，那斯達克領跑，市場靜待聯準會FOMC決策。</p>
+</li>
+<li>
+<p><strong>[10-27 23:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[匯市][negative]</strong> Euro under pressure as Fed and ECB interest rate decisions draw near - www.tmgm.com <code>google-news:Federal Reserve rate decision</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 隨聯準會FOMC與歐洲央行利率決議逼近，美元走強使歐元面臨下行壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>EURUSD</code></p>
+</li>
+<li>
+<p><strong>[10-27 23:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> $4,000 area: Gold struggles as US Dollar gains ahead of Fed decision - www.tmgm.com <code>google-news:Federal Reserve rate decision</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 受聯準會FOMC利率決議前美元走強影響，黃金價格於4000美元大關附近承壓掙扎。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,黃金</code></p>
+</li>
+<li>
+<p><strong>[10-27 23:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[商品(油金)][negative]</strong> Moody's sounds crypto crash alarm: Why Bitcoin investors should care - TheStreet <code>google-news:Federal Reserve rate decision</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 穆迪發出加密貨幣崩盤警示，比特幣跌破8萬美元，增添投機資產波動風險。</p>
+</li>
+<li>
+<p><strong>[10-27 22:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[匯市][negative]</strong> Crypto Market Faces Pressure As Bitcoin Slides Below $80,000 Before Fed Decision - News Agency of Nigeria <code>google-news:Federal Reserve rate decision</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 聯準會FOMC決策前夕比特幣失守8萬美元，顯示高風險投機資產在重大宏觀事件前夕資金撤離。</p>
+</li>
+<li>
+<p><strong>[10-27 23:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> AI交易點火晶片類股走強！台積電ADR漲近3％ 台股有望延續漲勢 - 自由財經 <code>google-news:台股 大漲</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: AI交易熱度推升台積電ADR漲近3%，連帶帶動台指期夜盤與台股現貨向上攻堅。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TSM</code></p>
+</li>
+<li>
+<p><strong>[10-27 23:02]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> How Broadcom’s stock can surge and overcome ‘the biggest dislocation in the market’ <code>marketwatch</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 分析師看好博通與優質晶片股估值補漲，有助於克服市場評價錯置現象。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>AVGO,NVDA</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:54]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][negative]</strong> 韓媒憂製造業優勢遭中國追趕 半導體成競爭關鍵 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 南韓製造業與半導體優勢面臨中國加速追趕壓力，對亞洲科技與半導體供應鏈長遠競爭帶來警示。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TSM</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 油價回落！美股3大指數漲跌互見　那指領跑漲0.45％ <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價回落減緩通膨擔憂，配合Tesla、Meta財報與聯準會FOMC會議前夕，投資人風險偏好回溫，那指領跑美股。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,AAPL</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][positive]</strong> 期中選前傳佳音！美國10月消費者信心升至91.7 終結連三月下滑 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月消費者信心指數升至91.7，終結連三月下滑，汽油價格回落改善景氣看法，支撐美股消費與經濟軟著陸預期。</p>
+</li>
+<li>
+<p><strong>[10-27 22:32]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> M6晶片加持　蘋果新MacBook Pro與iMac搶換機潮 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 蘋果發表搭載M6晶片的新MacBook Pro與iMac，有望激發新一波Mac換機潮，帶動供應鏈營運動能。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>AAPL</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:29]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> 約旦空襲敘利亞南部釀死傷　敘國批：侵犯主權 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 約旦空襲敘利亞南部釀死傷並遭控侵犯主權，中東地緣政治風險再度升溫，推升市場對區域衝突擴大的戒心。</p>
+</li>
+<li>
+<p><strong>[10-27 23:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Boeing stock sinks 9% as company says it won't significantly ramp up 737 Max production until late 2027 <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 波音宣布737 Max增產延至2027年晚期，股價暴跌9%，拖累航太供應鏈與工業類股表現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>BA</code></p>
+</li>
+<li>
+<p><strong>[10-27 23:11]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> Oil prices fall after Iran supreme leader and top security official discuss conditions to end war <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 伊朗高層討論結束戰爭條件，外交努力使地緣政治溢價消退，原油期貨價格顯著下跌。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>WTI,BRENT</code></p>
+</li>
+<li>
+<p><strong>[10-27 23:11]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Stock Market Today: Nasdaq, S&amp;P 500 Rise on Busy Earnings Day as Tech Stocks Extend Rally - Investopedia <code>google-news:stock market rally</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 財報季熱絡與科技股延續漲勢，推動那斯達克與標普500指數走高。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,AAPL,MSFT</code></p>
+</li>
+<li>
+<p><strong>[10-27 23:15]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> S&amp;P 500 and Nasdaq rise as oil prices retreat ahead of Federal Reserve decision - Share Talk <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價回落減輕通膨壓力，美股三大指數在聯準會FOMC利率決策前夕上漲，科技股領軍反彈。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:31]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][neutral]</strong> 能源格局全面重組：中東局勢、國際油價與全球資本流向 - Rti 中央廣播電臺 <code>google-news:油價</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 中東地緣政治與能源格局重組，持續牽動國際油價波動與全球資本流向，影響商品與匯市避險情緒。</p>
+</li>
+<li>
+<p><strong>[10-27 22:29]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][neutral]</strong> U.S. Treasury yields hover near multi-week lows ahead of Fed decision - Investing.com Australia <code>google-news:Treasury yields</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美債殖利率在聯準會FOMC利率決策與不含SEP的會議前夕於多週低點附近徘徊，市場普遍預期政策走向。</p>
+</li>
+<li>
+<p><strong>[10-27 23:03]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[匯市][neutral]</strong> Euro remains on the defensive ahead of Fed and ECB interest rate decisions - FXStreet <code>google-news:Federal Reserve rate decision</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 市場等待聯準會與歐洲央行(ECB)雙重利率決策，歐元兌美元維持防守盤整。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>EURUSD,美元指數</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:57]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][neutral]</strong> Fed Rate Decision: Inflation and weak hiring point in opposite directions - Stock Titan <code>google-news:Federal Reserve rate decision</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 聯準會FOMC前夕，通膨僵固與就業市場疲軟訊號分歧，增加政策決策與鮑爾說詞解讀難度。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,SPY</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:53]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Microsoft earnings will look funky — but an elusive number is finally arriving <code>marketwatch</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 微軟即將公布更清晰的Azure雲端營收數據，有助於釐清雲端成長動能，牽動科技股與AI概念股信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>MSFT</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:51]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Fortinet Q3 2026 earnings preview: Estimate revisions see upward moment <code>seekingalpha</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 資安大廠Fortinet財報前瞻獲預估上修，帶動網安類股買氣。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>FTNT</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Earnings call transcript: Itron tops Q3 2026 profit estimates as revenue grows <code>investing-com</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Itron獲利優於預期且營收成長，提振相關工業與基礎設施類股情緒。</p>
+</li>
+<li>
+<p><strong>[10-27 22:44]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> Crane earnings up next as investors eye Trillium deal integration <code>investing-com</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Crane財報將至且市場關注Trillium併購整合進度，屬於個股事件，對大盤影響有限。</p>
+</li>
+<li>
+<p><strong>[10-27 22:31]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> 美股開盤持續小幅反彈！費半勁揚170點 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股早盤跟進亞股反彈，費城半導體指數大漲，提振整體科技股氣勢。</p>
+</li>
+<li>
+<p><strong>[10-27 22:56]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Boeing narrows loss on higher defense sales, targets Max production increase for late 2027 <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 波音縮減虧損且國防銷售增加，並計畫提升Max產能，有利於航太供應鏈股價表現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>BA</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:37]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> S&amp;P 500, Nasdaq Lead As Tech Stocks Rebound - BusinessToday Malaysia <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 科技股反彈帶動標普500與那斯達克指數走高，市場風險偏好回溫。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,AMD,AVGO</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[商品(油金)][negative]</strong> Oil prices fall amid diplomatic push to de-escalate Saudi-Iran tensions <code>cnbc</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美伊戰爭外交緩和努力使油價回落，舒緩通膨壓力，對債市與股市偏正面。</p>
+</li>
+<li>
+<p><strong>[10-27 22:46]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> These 3 stocks could rally after the Fed decision - Invezz <code>google-news:stock market rally</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 搭配2026-10-28聯準會FOMC利率決策，市場聚焦降息步調與鮑爾談話，帶動特定標的布局行情。</p>
+</li>
+<li>
+<p><strong>[10-27 22:48]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> 油價回落！美股3大指數漲跌互見 那指領跑漲0.45 - 民視新聞網 <code>google-news:油價</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價回落減緩通膨壓力，美股漲跌互見但那斯達克領跑，有利於成長股估值修復。</p>
+</li>
+<li>
+<p><strong>[10-27 22:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> 油價又將震盪？葉門叛軍喊「射飛彈擊中沙烏地最大煉油廠」 - 三立新聞 <code>google-news:油價</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 葉門叛軍攻擊沙烏地煉油廠消息推升地緣政治風險，短線對油價造成上行壓力。</p>
+</li>
+<li>
+<p><strong>[10-27 22:33]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> 【美股開市】Anthropic效應持續 博通AMD再漲 西數揚近7%、美光漲2% 油價回落（不斷更新） - 香港經濟日報HKET <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Anthropic效應延續激勵半導體族群走高，博通、AMD與美光等個股表現強勢。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>AVGO,AMD,MU</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:33]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> 在美聯儲決議公布前，油價回落，標普500指數和納斯達克指數走高 - TradingView <code>google-news:油價</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 適逢2026-10-28聯準會FOMC利率決策公布前夕，油價回落使美股主要指數反彈走高。</p>
+</li>
+<li>
+<p><strong>[10-27 22:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[商品(油金)][neutral]</strong> OPEC Set to Keep Oil Quotas Unchanged - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: OPEC維持產油配額不變，供給端預期持穩，對原油價格無劇烈突發衝擊。</p>
+</li>
+<li>
+<p><strong>[10-27 22:18]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[商品(油金)][neutral]</strong> Summary of T-bonds, stocks and precious metals - Kitco <code>google-news:Treasury yields</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 常規資產走勢總結，市場整體在Fed決議前保持觀望。</p>
+</li>
+<li>
+<p><strong>[10-27 22:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 台積電ADR勁揚近2%！美股漲多跌少「費半噴2%、特斯拉飆3%」 台指期夜盤一度強漲600點 - FTNN 新聞網 <code>google-news:台股 大跌</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台積電ADR與費半大漲，激勵台指期夜盤強漲，有助於台股現貨開高走高並帶動科技股氣勢。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TSM,NVDA,TSLA</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:15]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> VICI Properties Q3 earnings preview: 8% yield, rate risks in focus <code>seekingalpha</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: VICI Properties Q3財報前瞻聚焦於8%高殖利率與利率風險，對不動產投資信託(REITs)板塊具指標意義。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>VICI</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:19]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Nvidia, AMD to invest $4 billion in Meta as tech giants deepen AI partnership <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Nvidia與AMD將投資40億美元於Meta，Meta並計畫籌資95億美元擴大AI基礎設施，強化AI硬體供應鏈動能。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,AMD,Meta</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:15]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> China Steps In to Rescue Stocks, But the Market Continues to Fall <code>nytbusiness</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 中國國家隊雖進場干預救市，但市場信心不足導致陸股持續下跌，政策底效果面臨考驗。</p>
+</li>
+<li>
+<p><strong>[10-27 22:13]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> Avis Budget options signal 10% move on Nov. 3 earnings <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Avis Budget選擇權定價暗示11月3日財報公布將有10%的大幅波動，市場預期轉趨劇烈。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>CAR</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][positive]</strong> US stocks: S&amp;P 500, Nasdaq open higher as oil pulls back ahead of Fed decision - The Business Times <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股四大指數因油價回落與聯準會 FOMC 決策前夕觀望而開高，反映通脹壓力緩解帶動風險偏好。</li>
+<li><strong style="color:#174ea6">標的</strong>: <code>S&amp;P 500,Nasdaq</code></li>
+</ul>
+<p><strong>其他同時段收錄（未分析，共 4 筆）</strong>：</p>
+<ul>
+<li><strong>[10-27 23:39]</strong> American Airlines hikes annual fees on rewards cards for first time since 2018（<code>cnbc</code>）</li>
+<li><strong>[10-27 23:25]</strong> How to use I-bonds to create guaranteed, inflation-proof income in retirement（<code>marketwatch</code>）</li>
+<li><strong>[10-27 22:35]</strong> How the beauty industry is boosting High Streets（<code>bbcbusiness</code>）</li>
+<li><strong>[10-27 22:30]</strong> My husband wants to sell our $1.5 million home and downsize. But this is where we raised our kids — and I can’t bear to leave.（<code>marketwatch</code>）</li>
+</ul>
+<hr />
+<h2 id="_3">市場行情快照</h2>
+<pre><code>加權指數            46,096.23    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.12%
+台積電              2,400.00  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+0.63%
+鴻海                 247.50  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+1.02%
+聯發科              3,960.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-1.25%
+台達電              1,510.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-3.21%
+富邦金                162.00  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+2.21%
+S&amp;P 500          7,728.39    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.67%
+納斯達克            26,511.36    點 <span style="color:#c0392b;font-weight:bold">▲</span>+1.31%
+費城半導體指數         11,447.14    點 <span style="color:#c0392b;font-weight:bold">▲</span>+3.28%
+道瓊              52,399.96    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.07%
+日經225           63,268.37    點 <span style="color:#c0392b;font-weight:bold">▲</span>+1.73%
+上證指數             3,648.30    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-1.33%
+Apple              346.03  USD <span style="color:#c0392b;font-weight:bold">▲</span>+0.62%
+Microsoft          533.80  USD <span style="color:#c0392b;font-weight:bold">▲</span>+0.23%
+NVIDIA             218.90  USD <span style="color:#c0392b;font-weight:bold">▲</span>+1.34%
+Amazon             253.59  USD <span style="color:#c0392b;font-weight:bold">▲</span>+1.81%
+Tesla              406.19  USD <span style="color:#c0392b;font-weight:bold">▲</span>+3.72%
+美元/日圓              157.89  JPY <span style="color:#c0392b;font-weight:bold">▲</span>+0.67%
+美元/台幣               32.40  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-0.52%
+歐元/美元                1.11  EUR <span style="color:#2e7d32;font-weight:bold">▼</span>-0.67%
+美元/人民幣               6.65  CNY <span style="color:#2e7d32;font-weight:bold">▼</span>-0.35%
+WTI原油              100.11  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-1.62%
+布蘭特原油              109.62  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-5.34%
+黃金               4,072.40  USD <span style="color:#c0392b;font-weight:bold">▲</span>+0.84%
+美元指數DXY            102.29    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.33%
+美債10年殖利率             4.99    % <span style="color:#c0392b;font-weight:bold">▲</span>+0.08%
+</code></pre>
+<blockquote>
+<p>（快照資料時間：2026-10-27 21:30，台股收盤為最近一個交易日）</p>
+</blockquote>
+<h2 id="severity-2">重大事件（severity ≥ 2）</h2>
+<ul>
+<li><strong>[10-27 23:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[匯市][negative]</strong> Euro under pressure as Fed and ECB interest rate decisions draw near - www.tmgm.com</li>
+<li><strong style="color:#174ea6">影響</strong>: 隨聯準會FOMC與歐洲央行利率決議逼近，美元走強使歐元面臨下行壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>EURUSD</code></p>
+</li>
+<li>
+<p><strong>[10-27 23:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> $4,000 area: Gold struggles as US Dollar gains ahead of Fed decision - www.tmgm.com</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 受聯準會FOMC利率決議前美元走強影響，黃金價格於4000美元大關附近承壓掙扎。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,黃金</code></p>
+</li>
+<li>
+<p><strong>[10-27 23:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> Honda warns 50% Canada auto tariffs would be catastrophic for auto industry</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 川普警告若未達貿易協議將對加拿大汽車及零件關稅加倍至50%，對汽車產業造成嚴重打擊。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>7203.T,GM,F</code></p>
+</li>
+<li>
+<p><strong>[10-27 23:44]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][positive]</strong> 油價漲勢趨緩！美國10月消費者信心指數反彈至91.7 - 民視新聞網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月消費者信心指數反彈至91.7，油價漲勢趨緩，舒緩通膨憂慮並支持消費動能。</p>
+</li>
+<li>
+<p><strong>[10-27 23:42]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[匯市][positive]</strong> Dollar edges higher as focus turns to central bank meetings</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 市場聚焦即將到來的央行會議（含聯準會FOMC），風險情緒推升美元走高，日圓走軟。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,USDJPY</code></p>
+</li>
+<li>
+<p><strong>[10-27 23:42]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][positive]</strong> S&amp;P 500 and Nasdaq Composite: Chipmakers Lift Indexes as Fed and Earnings Risks Loom - FXEmpire</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 標普500與那斯達克受晶片股帶動走高，但市場高度警戒聯準會FOMC利率決議與大型科技股財報風險。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM,META,TSLA,^GSPC,^IXIC</code></p>
+</li>
+<li>
+<p><strong>[10-27 23:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][positive]</strong> Stocks See Support as Crude Oil Prices Ease and FOMC Awaited - Barchart.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 原油價格回落舒緩通膨壓力，在聯準會FOMC決策前夕為美股提供支撐。</p>
+</li>
+<li>
+<p><strong>[10-27 23:34]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][positive]</strong> U.S. economy is gathering steam. This is the chief reason why.</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國經濟在AI熱潮與耐用品需求帶動下持續增溫，Anthropic準備上市進一步炒熱市場氛圍。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,MSFT</code></p>
+</li>
+<li>
+<p><strong>[10-27 23:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Boeing stock sinks 9% as company says it won't significantly ramp up 737 Max production until late 2027</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 波音宣布737 Max增產延至2027年晚期，股價暴跌9%，拖累航太供應鏈與工業類股表現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>BA</code></p>
+</li>
+<li>
+<p><strong>[10-27 23:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> 油價跌破每桶101美元，華爾街在聯準會決策前看法分歧 - BigGo 財經</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價跌破101美元但在聯準會FOMC決策前夕，華爾街對降息步調與經濟前景看法現分歧。</p>
+</li>
+<li>
+<p><strong>[10-27 23:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> 油價破百加上AI投資熱潮，全球通膨恐延燒至2027年 - BigGo 財經</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價高檔與AI龐大投資熱潮恐令全球通膨延燒至2027年，牽動債市殖利率與聯準會政策走向。</p>
+</li>
+<li>
+<p><strong>[10-27 23:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> AI交易點火晶片類股走強！台積電ADR漲近3％ 台股有望延續漲勢 - 自由財經</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: AI交易熱度推升台積電ADR漲近3%，連帶帶動台指期夜盤與台股現貨向上攻堅。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TSM</code></p>
+</li>
+<li>
+<p><strong>[10-27 23:15]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> S&amp;P 500 and Nasdaq rise as oil prices retreat ahead of Federal Reserve decision - Share Talk</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價回落減輕通膨壓力，美股三大指數在聯準會FOMC利率決策前夕上漲，科技股領軍反彈。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[10-27 23:11]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> Oil prices fall after Iran supreme leader and top security official discuss conditions to end war</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 伊朗高層討論結束戰爭條件，外交努力使地緣政治溢價消退，原油期貨價格顯著下跌。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>WTI,BRENT</code></p>
+</li>
+<li>
+<p><strong>[10-27 23:03]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[匯市][neutral]</strong> Euro remains on the defensive ahead of Fed and ECB interest rate decisions - FXStreet</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 市場等待聯準會與歐洲央行(ECB)雙重利率決策，歐元兌美元維持防守盤整。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>EURUSD,美元指數</code></p>
+</li>
+<li>
+<p><strong>[10-27 23:00]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][positive]</strong> 魔鬼藏在Anthropic招股書細節裡！逾5000億美元支出承諾、創辦人捐80%財富可撤回</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Anthropic遞交IPO招股書並承諾逾5000億美元AI硬體與資料中心支出，大幅點燃AI供應鏈信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM,AMD</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:57]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][neutral]</strong> Fed Rate Decision: Inflation and weak hiring point in opposite directions - Stock Titan</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 聯準會FOMC前夕，通膨僵固與就業市場疲軟訊號分歧，增加政策決策與鮑爾說詞解讀難度。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,SPY</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:53]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Microsoft earnings will look funky — but an elusive number is finally arriving</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 微軟即將公布更清晰的Azure雲端營收數據，有助於釐清雲端成長動能，牽動科技股與AI概念股信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>MSFT</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 台積電ADR勁揚近2%！美股漲多跌少「費半噴2%、特斯拉飆3%」 台指期夜盤一度強漲600點 - FTNN 新聞網</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台積電ADR與費半大漲，激勵台指期夜盤強漲，有助於台股現貨開高走高並帶動科技股氣勢。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TSM,NVDA,TSLA</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> 油價回落！美股3大指數漲跌互見 那指領跑漲0.45％ - Yahoo股市</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價回落減輕通膨壓力，美股三大指數漲跌互見，那斯達克領跑，市場靜待聯準會FOMC決策。</p>
+</li>
+<li>
+<p><strong>[10-27 22:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 油價回落！美股3大指數漲跌互見　那指領跑漲0.45％</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價回落減緩通膨擔憂，配合Tesla、Meta財報與聯準會FOMC會議前夕，投資人風險偏好回溫，那指領跑美股。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,AAPL</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:46]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> These 3 stocks could rally after the Fed decision - Invezz</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 搭配2026-10-28聯準會FOMC利率決策，市場聚焦降息步調與鮑爾談話，帶動特定標的布局行情。</p>
+</li>
+<li>
+<p><strong>[10-27 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][positive]</strong> 期中選前傳佳音！美國10月消費者信心升至91.7 終結連三月下滑</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月消費者信心指數升至91.7，終結連三月下滑，汽油價格回落改善景氣看法，支撐美股消費與經濟軟著陸預期。</p>
+</li>
+<li>
+<p><strong>[10-27 22:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> 油價又將震盪？葉門叛軍喊「射飛彈擊中沙烏地最大煉油廠」 - 三立新聞</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 葉門叛軍攻擊沙烏地煉油廠消息推升地緣政治風險，短線對油價造成上行壓力。</p>
+</li>
+<li>
+<p><strong>[10-27 22:33]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> 在美聯儲決議公布前，油價回落，標普500指數和納斯達克指數走高 - TradingView</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 適逢2026-10-28聯準會FOMC利率決策公布前夕，油價回落使美股主要指數反彈走高。</p>
+</li>
+<li>
+<p><strong>[10-27 22:31]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][neutral]</strong> 能源格局全面重組：中東局勢、國際油價與全球資本流向 - Rti 中央廣播電臺</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 中東地緣政治與能源格局重組，持續牽動國際油價波動與全球資本流向，影響商品與匯市避險情緒。</p>
+</li>
+<li>
+<p><strong>[10-27 22:29]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> 約旦空襲敘利亞南部釀死傷　敘國批：侵犯主權</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 約旦空襲敘利亞南部釀死傷並遭控侵犯主權，中東地緣政治風險再度升溫，推升市場對區域衝突擴大的戒心。</p>
+</li>
+<li>
+<p><strong>[10-27 22:29]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][neutral]</strong> U.S. Treasury yields hover near multi-week lows ahead of Fed decision - Investing.com Australia</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美債殖利率在聯準會FOMC利率決策與不含SEP的會議前夕於多週低點附近徘徊，市場普遍預期政策走向。</p>
+</li>
+<li>
+<p><strong>[10-27 22:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[匯市][negative]</strong> Crypto Market Faces Pressure As Bitcoin Slides Below $80,000 Before Fed Decision - News Agency of Nigeria</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 聯準會FOMC決策前夕比特幣失守8萬美元，顯示高風險投機資產在重大宏觀事件前夕資金撤離。</p>
+</li>
+<li>
+<p><strong>[10-27 22:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][positive]</strong> US stocks: S&amp;P 500, Nasdaq open higher as oil pulls back ahead of Fed decision - The Business Times</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股四大指數因油價回落與聯準會 FOMC 決策前夕觀望而開高，反映通脹壓力緩解帶動風險偏好。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>S&amp;P 500,Nasdaq</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:19]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Nvidia, AMD to invest $4 billion in Meta as tech giants deepen AI partnership</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Nvidia與AMD將投資40億美元於Meta，Meta並計畫籌資95億美元擴大AI基礎設施，強化AI硬體供應鏈動能。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,AMD,Meta</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:15]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> China Steps In to Rescue Stocks, But the Market Continues to Fall</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 中國國家隊雖進場干預救市，但市場信心不足導致陸股持續下跌，政策底效果面臨考驗。</p>
+</li>
+<li>
+<p><strong>[10-27 22:12]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> Stocks See Support as Crude Oil Prices Ease - Barchart.com</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 原油價格回落減輕輸入性通膨壓力，為美股與全球股市提供下方支撐，有利緩解Fed升息憂慮。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>原油</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:12]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][neutral]</strong> Central Bank communication is changing: How traders can navigate the Fed’s uncertainty - FXStreet</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 聯準會FOMC決議前夕，市場高度關注溝通方式轉變與降息步調暗示，影響匯市與全球資本流動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Tech rally lifts S&amp;P 500 and Nasdaq as Broadcom jumps - NewsBytes</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 科技股與半導體族群受博通等利多激勵走高，帶動標普500與那斯達克指數上揚，提振美台股市信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,AVGO</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:07]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][neutral]</strong> The Federal Reserve's decision is approaching... does it pave the way for a rate hike in December - المتداول العربي</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: FOMC決議逼近，市場揣測是否為12月升息或維持利率鋪路，牽動全球債市與匯市神經。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:06]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 晶片股飆漲！美股27日走高費半漲1.93%　台指期夜盤漲452點</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 晶片股大漲推升費半及台指期夜盤飆漲452點，油價回落進一步改善總體市場風險偏好。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TSM,NVDA</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:06]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][neutral]</strong> Gold prices hold near $4,000 as traders await Fed rate decision amid inflation concerns | Hindustan Times - Hindustan Times</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 通膨隱憂與Fed利率決議前夕，金價高檔持穩於4000美元附近，避險買盤提供支撐。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>黃金</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:02]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> Gold holds above $4,000 as traders brace for Fed interest rate decision - FXStreet</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 黃金持穩於4,000美元上方，主要因交易員正緊盯聯準會利率決議（FOMC）與政策走向，避險與抗通膨買盤支撐貴金屬。</p>
+</li>
+<li>
+<p><strong>[10-27 22:01]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 晶片股大漲帶動美股週二開高上揚| 國際焦點 - 太報 TaiSounds</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股受晶片股買盤湧入帶動開高，科技股走強有利全球電子類股氣氛。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> 原油價格下跌 以色列和美國選舉前圍繞伊朗問題的外交活動升溫 | 國際焦點 | 國際 - 經濟日報</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 地緣政治外交活動升溫但實質衝突未擴大，加上美國選舉前夕變數，導致原油價格回落。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>原油</code></p>
+</li>
+<li>
+<p><strong>[10-27 22:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 黃仁勳看旺、馬斯克卻示警倒閉潮 新雲端企業為何難賺錢？</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 馬斯克警告新雲端企業倒閉潮與黃仁勳看法分歧，相關融資過度與高利率壓力使供應鏈小股重挫，連動AI基礎設施融資成本疑慮。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[10-27 21:59]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[匯市][positive]</strong> US dollar climbs as investors brace for hawkish Federal Reserve decision - Economies.com</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美元指數攀升，反映投資人在2026-10-28聯準會FOMC利率決議前押注可能偏向鷹派的立場。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[10-27 21:55]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][neutral]</strong> What the Fed's interest rate decision means for your bank accounts, loans, credit cards, and investments - Yahoo Finance</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 市場聚焦2026-10-28聯準會FOMC利率決策，影響銀行存款、貸款及各類金融資產定價與資金成本。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[10-27 21:55]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][positive]</strong> Nasdaq opens higher as chip stocks rally, oil prices fall ahead of Fed decision - Invezz</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股因晶片股反彈與油價下跌上漲，市場等待2026-10-28聯準會決策與Tesla/Meta財報。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[10-27 21:52]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][positive]</strong> S&amp;P 500, Nasdaq open higher as oil pulls back ahead of Fed decision By Reuters - Investing.com</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價回落減緩通膨擔憂，聯準會FOMC決議前美股開高，市場交投正向。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[10-27 21:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Brazil Stock Market Crash Explained: Why Lula’s election win triggered a 13.88% plunge - The Financial Express</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 巴西股市因總統魯拉選舉勝出引發市場對財政紀律憂慮而單日暴跌13.88%，拖累新興市場情緒與拉美資產。</li>
+</ul>
+<hr />
+<h2 id="_4">分類彙整</h2>
+<h3 id="37">股市（37）</h3>
+<ul>
+<li><strong>[10-27 23:42]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> S&amp;P 500 and Nasdaq Composite: Chipmakers Lift Indexes as Fed and Earnings Risks Loom - FXEmpire</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 標普500與那斯達克受晶片股帶動走高，但市場高度警戒聯準會FOMC利率決議與大型科技股財報風險。</p>
+</li>
+<li>
+<p><strong>[10-27 23:39]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> American Airlines hikes annual fees on rewards cards for first time since 2018</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國航空調高聯名信用卡年費，對整體大盤股債匯市無直接宏觀影響，僅影響個股微觀營收。</p>
+</li>
+<li>
+<p><strong>[10-27 23:39]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Earnings call transcript: Avidbank tops Q3 2026 estimates as shares rise 3.9%</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Avidbank第三季財報優於預期，激勵股價上漲3.9%，對整體銀行股板塊具溫和正面示範作用。</p>
+</li>
+<li>
+<p><strong>[10-27 23:38]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Supermicro-backed neocloud Argentum AI seeks $5B for chip financing: report</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Supermicro支持的Argentum AI尋求50億美元晶片融資，有利推動AI基礎設施與伺服器需求。</p>
+</li>
+<li>
+<p><strong>[10-27 23:38]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> GE Vernova earnings up next: Can backlog growth offset revenue decline?</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: GE Vernova即將公布財報，市場聚焦訂單積壓能否彌補營收下滑，對重電與能源板塊具風向球意義。</p>
+</li>
+<li>
+<p><strong>[10-27 23:36]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> Deutsche Bank earnings on deck as analysts trim forecasts</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 德意志銀行財報將至，分析師紛紛下修預測，對歐洲金融股表現形成壓力。</p>
+</li>
+<li>
+<p><strong>[10-27 23:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Boeing stock sinks 9% as company says it won't significantly ramp up 737 Max production until late 2027</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 波音宣布737 Max增產延至2027年晚期，股價暴跌9%，拖累航太供應鏈與工業類股表現。</p>
+</li>
+<li>
+<p><strong>[10-27 23:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> AI交易點火晶片類股走強！台積電ADR漲近3％ 台股有望延續漲勢 - 自由財經</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: AI交易熱度推升台積電ADR漲近3%，連帶帶動台指期夜盤與台股現貨向上攻堅。</p>
+</li>
+<li>
+<p><strong>[10-27 23:11]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Stock Market Today: Nasdaq, S&amp;P 500 Rise on Busy Earnings Day as Tech Stocks Extend Rally - Investopedia</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 財報季熱絡與科技股延續漲勢，推動那斯達克與標普500指數走高。</p>
+</li>
+<li>
+<p><strong>[10-27 23:02]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> How Broadcom’s stock can surge and overcome ‘the biggest dislocation in the market’</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 分析師看好博通與優質晶片股估值補漲，有助於克服市場評價錯置現象。</p>
+</li>
+<li>
+<p><strong>[10-27 23:00]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> 魔鬼藏在Anthropic招股書細節裡！逾5000億美元支出承諾、創辦人捐80%財富可撤回</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Anthropic遞交IPO招股書並承諾逾5000億美元AI硬體與資料中心支出，大幅點燃AI供應鏈信心。</p>
+</li>
+<li>
+<p><strong>[10-27 22:56]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Boeing narrows loss on higher defense sales, targets Max production increase for late 2027</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 波音縮減虧損且國防銷售增加，並計畫提升Max產能，有利於航太供應鏈股價表現。</p>
+</li>
+<li>
+<p><strong>[10-27 22:54]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> 韓媒憂製造業優勢遭中國追趕 半導體成競爭關鍵</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 南韓製造業與半導體優勢面臨中國加速追趕壓力，對亞洲科技與半導體供應鏈長遠競爭帶來警示。</p>
+</li>
+<li>
+<p><strong>[10-27 22:53]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Microsoft earnings will look funky — but an elusive number is finally arriving</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 微軟即將公布更清晰的Azure雲端營收數據，有助於釐清雲端成長動能，牽動科技股與AI概念股信心。</p>
+</li>
+<li>
+<p><strong>[10-27 22:51]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Fortinet Q3 2026 earnings preview: Estimate revisions see upward moment</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 資安大廠Fortinet財報前瞻獲預估上修，帶動網安類股買氣。</p>
+</li>
+<li>
+<p><strong>[10-27 22:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 台積電ADR勁揚近2%！美股漲多跌少「費半噴2%、特斯拉飆3%」 台指期夜盤一度強漲600點 - FTNN 新聞網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台積電ADR與費半大漲，激勵台指期夜盤強漲，有助於台股現貨開高走高並帶動科技股氣勢。</p>
+</li>
+<li>
+<p><strong>[10-27 22:48]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 油價回落！美股3大指數漲跌互見 那指領跑漲0.45 - 民視新聞網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價回落減緩通膨壓力，美股漲跌互見但那斯達克領跑，有利於成長股估值修復。</p>
+</li>
+<li>
+<p><strong>[10-27 22:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 油價回落！美股3大指數漲跌互見　那指領跑漲0.45％</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價回落減緩通膨擔憂，配合Tesla、Meta財報與聯準會FOMC會議前夕，投資人風險偏好回溫，那指領跑美股。</p>
+</li>
+<li>
+<p><strong>[10-27 22:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Earnings call transcript: Itron tops Q3 2026 profit estimates as revenue grows</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Itron獲利優於預期且營收成長，提振相關工業與基礎設施類股情緒。</p>
+</li>
+<li>
+<p><strong>[10-27 22:44]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Crane earnings up next as investors eye Trillium deal integration</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Crane財報將至且市場關注Trillium併購整合進度，屬於個股事件，對大盤影響有限。</p>
+</li>
+<li>
+<p><strong>[10-27 22:37]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> S&amp;P 500, Nasdaq Lead As Tech Stocks Rebound - BusinessToday Malaysia</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 科技股反彈帶動標普500與那斯達克指數走高，市場風險偏好回溫。</p>
+</li>
+<li>
+<p><strong>[10-27 22:33]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> 【美股開市】Anthropic效應持續 博通AMD再漲 西數揚近7%、美光漲2% 油價回落（不斷更新） - 香港經濟日報HKET</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Anthropic效應延續激勵半導體族群走高，博通、AMD與美光等個股表現強勢。</p>
+</li>
+<li>
+<p><strong>[10-27 22:32]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> M6晶片加持　蘋果新MacBook Pro與iMac搶換機潮</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 蘋果發表搭載M6晶片的新MacBook Pro與iMac，有望激發新一波Mac換機潮，帶動供應鏈營運動能。</p>
+</li>
+<li>
+<p><strong>[10-27 22:31]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> 美股開盤持續小幅反彈！費半勁揚170點</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股早盤跟進亞股反彈，費城半導體指數大漲，提振整體科技股氣勢。</p>
+</li>
+<li>
+<p><strong>[10-27 22:19]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Nvidia, AMD to invest $4 billion in Meta as tech giants deepen AI partnership</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Nvidia與AMD將投資40億美元於Meta，Meta並計畫籌資95億美元擴大AI基礎設施，強化AI硬體供應鏈動能。</p>
+</li>
+<li>
+<p><strong>[10-27 22:15]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> VICI Properties Q3 earnings preview: 8% yield, rate risks in focus</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: VICI Properties Q3財報前瞻聚焦於8%高殖利率與利率風險，對不動產投資信託(REITs)板塊具指標意義。</p>
+</li>
+<li>
+<p><strong>[10-27 22:15]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> China Steps In to Rescue Stocks, But the Market Continues to Fall</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 中國國家隊雖進場干預救市，但市場信心不足導致陸股持續下跌，政策底效果面臨考驗。</p>
+</li>
+<li>
+<p><strong>[10-27 22:13]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Avis Budget options signal 10% move on Nov. 3 earnings</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Avis Budget選擇權定價暗示11月3日財報公布將有10%的大幅波動，市場預期轉趨劇烈。</p>
+</li>
+<li>
+<p><strong>[10-27 22:12]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> ServiceNow Q3 earnings preview: Investors eye AI momentum and cRPO growth</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: ServiceNow Q3財報前瞻聚焦AI變現動能與cRPO(合約剩餘履約價值)成長率，牽動軟體SaaS板塊情緒。</p>
+</li>
+<li>
+<p><strong>[10-27 22:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Tech rally lifts S&amp;P 500 and Nasdaq as Broadcom jumps - NewsBytes</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 科技股與半導體族群受博通等利多激勵走高，帶動標普500與那斯達克指數上揚，提振美台股市信心。</p>
+</li>
+<li>
+<p><strong>[10-27 22:06]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 晶片股飆漲！美股27日走高費半漲1.93%　台指期夜盤漲452點</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 晶片股大漲推升費半及台指期夜盤飆漲452點，油價回落進一步改善總體市場風險偏好。</p>
+</li>
+<li>
+<p><strong>[10-27 22:01]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 晶片股大漲帶動美股週二開高上揚| 國際焦點 - 太報 TaiSounds</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股受晶片股買盤湧入帶動開高，科技股走強有利全球電子類股氣氛。</p>
+</li>
+<li>
+<p><strong>[10-27 22:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 黃仁勳看旺、馬斯克卻示警倒閉潮 新雲端企業為何難賺錢？</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 馬斯克警告新雲端企業倒閉潮與黃仁勳看法分歧，相關融資過度與高利率壓力使供應鏈小股重挫，連動AI基礎設施融資成本疑慮。</p>
+</li>
+<li>
+<p><strong>[10-27 22:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> ‘When do I sell my stocks?’ Ignore the noise and focus on these things.</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 提醒投資人關注企業基本面前景而非短期價格雜音，對整體市場情緒影響中性。</p>
+</li>
+<li>
+<p><strong>[10-27 21:55]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Stock Market Today: Nasdaq Extends Gains After Anthropic Rally — Live Updates - WSJ</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Anthropic概念帶動AI熱潮，那斯達克指數延續漲勢，推升科技股多頭氣氛。</p>
+</li>
+<li>
+<p><strong>[10-27 21:55]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> Nasdaq opens higher as chip stocks rally, oil prices fall ahead of Fed decision - Invezz</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股因晶片股反彈與油價下跌上漲，市場等待2026-10-28聯準會決策與Tesla/Meta財報。</p>
+</li>
+<li>
+<p><strong>[10-27 21:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Brazil Stock Market Crash Explained: Why Lula’s election win triggered a 13.88% plunge - The Financial Express</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 巴西股市因總統魯拉選舉勝出引發市場對財政紀律憂慮而單日暴跌13.88%，拖累新興市場情緒與拉美資產。</li>
+</ul>
+<h3 id="2">債市（2）</h3>
+<ul>
+<li><strong>[10-27 23:25]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> How to use I-bonds to create guaranteed, inflation-proof income in retirement</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 探討美國I-bonds通膨連動債的退休理財應用，對整體金融市場無直接重大影響。</p>
+</li>
+<li>
+<p><strong>[10-27 22:29]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> U.S. Treasury yields hover near multi-week lows ahead of Fed decision - Investing.com Australia</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美債殖利率在聯準會FOMC利率決策與不含SEP的會議前夕於多週低點附近徘徊，市場普遍預期政策走向。</li>
+</ul>
+<h3 id="5">匯市（5）</h3>
+<ul>
+<li><strong>[10-27 23:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Euro under pressure as Fed and ECB interest rate decisions draw near - www.tmgm.com</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 隨聯準會FOMC與歐洲央行利率決議逼近，美元走強使歐元面臨下行壓力。</p>
+</li>
+<li>
+<p><strong>[10-27 23:42]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Dollar edges higher as focus turns to central bank meetings</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 市場聚焦即將到來的央行會議（含聯準會FOMC），風險情緒推升美元走高，日圓走軟。</p>
+</li>
+<li>
+<p><strong>[10-27 23:03]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Euro remains on the defensive ahead of Fed and ECB interest rate decisions - FXStreet</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 市場等待聯準會與歐洲央行(ECB)雙重利率決策，歐元兌美元維持防守盤整。</p>
+</li>
+<li>
+<p><strong>[10-27 22:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Crypto Market Faces Pressure As Bitcoin Slides Below $80,000 Before Fed Decision - News Agency of Nigeria</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 聯準會FOMC決策前夕比特幣失守8萬美元，顯示高風險投機資產在重大宏觀事件前夕資金撤離。</p>
+</li>
+<li>
+<p><strong>[10-27 21:59]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> US dollar climbs as investors brace for hawkish Federal Reserve decision - Economies.com</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美元指數攀升，反映投資人在2026-10-28聯準會FOMC利率決議前押注可能偏向鷹派的立場。</li>
+</ul>
+<h3 id="13">商品(油金)（13）</h3>
+<ul>
+<li><strong>[10-27 23:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> $4,000 area: Gold struggles as US Dollar gains ahead of Fed decision - www.tmgm.com</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 受聯準會FOMC利率決議前美元走強影響，黃金價格於4000美元大關附近承壓掙扎。</p>
+</li>
+<li>
+<p><strong>[10-27 23:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 18.4 TW by 2035 IRENA Raises Renewables Goal as Power Demand Climbs - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: IRENA上調2035年再生能源目標至18.4 TW，凸顯長期電力與綠能轉型需求殷切。</p>
+</li>
+<li>
+<p><strong>[10-27 23:11]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Oil prices fall after Iran supreme leader and top security official discuss conditions to end war</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 伊朗高層討論結束戰爭條件，外交努力使地緣政治溢價消退，原油期貨價格顯著下跌。</p>
+</li>
+<li>
+<p><strong>[10-27 23:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> Moody's sounds crypto crash alarm: Why Bitcoin investors should care - TheStreet</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 穆迪發出加密貨幣崩盤警示，比特幣跌破8萬美元，增添投機資產波動風險。</p>
+</li>
+<li>
+<p><strong>[10-27 22:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 油價又將震盪？葉門叛軍喊「射飛彈擊中沙烏地最大煉油廠」 - 三立新聞</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 葉門叛軍攻擊沙烏地煉油廠消息推升地緣政治風險，短線對油價造成上行壓力。</p>
+</li>
+<li>
+<p><strong>[10-27 22:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> Oil prices fall amid diplomatic push to de-escalate Saudi-Iran tensions</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美伊戰爭外交緩和努力使油價回落，舒緩通膨壓力，對債市與股市偏正面。</p>
+</li>
+<li>
+<p><strong>[10-27 22:31]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> 能源格局全面重組：中東局勢、國際油價與全球資本流向 - Rti 中央廣播電臺</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 中東地緣政治與能源格局重組，持續牽動國際油價波動與全球資本流向，影響商品與匯市避險情緒。</p>
+</li>
+<li>
+<p><strong>[10-27 22:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> OPEC Set to Keep Oil Quotas Unchanged - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: OPEC維持產油配額不變，供給端預期持穩，對原油價格無劇烈突發衝擊。</p>
+</li>
+<li>
+<p><strong>[10-27 22:18]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Summary of T-bonds, stocks and precious metals - Kitco</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 常規資產走勢總結，市場整體在Fed決議前保持觀望。</p>
+</li>
+<li>
+<p><strong>[10-27 22:12]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Stocks See Support as Crude Oil Prices Ease - Barchart.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 原油價格回落減輕輸入性通膨壓力，為美股與全球股市提供下方支撐，有利緩解Fed升息憂慮。</p>
+</li>
+<li>
+<p><strong>[10-27 22:06]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Gold prices hold near $4,000 as traders await Fed rate decision amid inflation concerns | Hindustan Times - Hindustan Times</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 通膨隱憂與Fed利率決議前夕，金價高檔持穩於4000美元附近，避險買盤提供支撐。</p>
+</li>
+<li>
+<p><strong>[10-27 22:02]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Gold holds above $4,000 as traders brace for Fed interest rate decision - FXStreet</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 黃金持穩於4,000美元上方，主要因交易員正緊盯聯準會利率決議（FOMC）與政策走向，避險與抗通膨買盤支撐貴金屬。</p>
+</li>
+<li>
+<p><strong>[10-27 22:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 原油價格下跌 以色列和美國選舉前圍繞伊朗問題的外交活動升溫 | 國際焦點 | 國際 - 經濟日報</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 地緣政治外交活動升溫但實質衝突未擴大，加上美國選舉前夕變數，導致原油價格回落。</li>
+</ul>
+<h3 id="4">地緣政治（4）</h3>
+<ul>
+<li><strong>[10-27 23:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Honda warns 50% Canada auto tariffs would be catastrophic for auto industry</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 川普警告若未達貿易協議將對加拿大汽車及零件關稅加倍至50%，對汽車產業造成嚴重打擊。</p>
+</li>
+<li>
+<p><strong>[10-27 23:19]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Ex-FBI official's lawyers slam unusual new criminal charge: 'Outrageous government conduct'</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 前FBI官員面臨刑事指控，屬政治與法律爭端，對整體股債匯市影響極微。</p>
+</li>
+<li>
+<p><strong>[10-27 22:29]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 約旦空襲敘利亞南部釀死傷　敘國批：侵犯主權</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 約旦空襲敘利亞南部釀死傷並遭控侵犯主權，中東地緣政治風險再度升溫，推升市場對區域衝突擴大的戒心。</p>
+</li>
+<li>
+<p><strong>[10-27 22:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Iran Turns to Russia for Nuclear Power as IAEA Oversight Falters - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 伊朗轉向俄羅斯尋求核能合作且IAEA監督減弱，中東地緣政治結構轉變，對能源與商品市場有潛在影響。</li>
+</ul>
+<h3 id="16">總體經濟（16）</h3>
+<ul>
+<li><strong>[10-27 23:44]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 油價漲勢趨緩！美國10月消費者信心指數反彈至91.7 - 民視新聞網</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月消費者信心指數反彈至91.7，油價漲勢趨緩，舒緩通膨憂慮並支持消費動能。</p>
+</li>
+<li>
+<p><strong>[10-27 23:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Stocks See Support as Crude Oil Prices Ease and FOMC Awaited - Barchart.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 原油價格回落舒緩通膨壓力，在聯準會FOMC決策前夕為美股提供支撐。</p>
+</li>
+<li>
+<p><strong>[10-27 23:34]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> U.S. economy is gathering steam. This is the chief reason why.</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國經濟在AI熱潮與耐用品需求帶動下持續增溫，Anthropic準備上市進一步炒熱市場氛圍。</p>
+</li>
+<li>
+<p><strong>[10-27 23:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> 油價跌破每桶101美元，華爾街在聯準會決策前看法分歧 - BigGo 財經</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價跌破101美元但在聯準會FOMC決策前夕，華爾街對降息步調與經濟前景看法現分歧。</p>
+</li>
+<li>
+<p><strong>[10-27 23:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 油價破百加上AI投資熱潮，全球通膨恐延燒至2027年 - BigGo 財經</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價高檔與AI龐大投資熱潮恐令全球通膨延燒至2027年，牽動債市殖利率與聯準會政策走向。</p>
+</li>
+<li>
+<p><strong>[10-27 23:15]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> S&amp;P 500 and Nasdaq rise as oil prices retreat ahead of Federal Reserve decision - Share Talk</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價回落減輕通膨壓力，美股三大指數在聯準會FOMC利率決策前夕上漲，科技股領軍反彈。</p>
+</li>
+<li>
+<p><strong>[10-27 22:57]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> Fed Rate Decision: Inflation and weak hiring point in opposite directions - Stock Titan</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 聯準會FOMC前夕，通膨僵固與就業市場疲軟訊號分歧，增加政策決策與鮑爾說詞解讀難度。</p>
+</li>
+<li>
+<p><strong>[10-27 22:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> 油價回落！美股3大指數漲跌互見 那指領跑漲0.45％ - Yahoo股市</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價回落減輕通膨壓力，美股三大指數漲跌互見，那斯達克領跑，市場靜待聯準會FOMC決策。</p>
+</li>
+<li>
+<p><strong>[10-27 22:46]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> These 3 stocks could rally after the Fed decision - Invezz</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 搭配2026-10-28聯準會FOMC利率決策，市場聚焦降息步調與鮑爾談話，帶動特定標的布局行情。</p>
+</li>
+<li>
+<p><strong>[10-27 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 期中選前傳佳音！美國10月消費者信心升至91.7 終結連三月下滑</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月消費者信心指數升至91.7，終結連三月下滑，汽油價格回落改善景氣看法，支撐美股消費與經濟軟著陸預期。</p>
+</li>
+<li>
+<p><strong>[10-27 22:33]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> 在美聯儲決議公布前，油價回落，標普500指數和納斯達克指數走高 - TradingView</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 適逢2026-10-28聯準會FOMC利率決策公布前夕，油價回落使美股主要指數反彈走高。</p>
+</li>
+<li>
+<p><strong>[10-27 22:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> US stocks: S&amp;P 500, Nasdaq open higher as oil pulls back ahead of Fed decision - The Business Times</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股四大指數因油價回落與聯準會 FOMC 決策前夕觀望而開高，反映通脹壓力緩解帶動風險偏好。</p>
+</li>
+<li>
+<p><strong>[10-27 22:12]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> Central Bank communication is changing: How traders can navigate the Fed’s uncertainty - FXStreet</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 聯準會FOMC決議前夕，市場高度關注溝通方式轉變與降息步調暗示，影響匯市與全球資本流動。</p>
+</li>
+<li>
+<p><strong>[10-27 22:07]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> The Federal Reserve's decision is approaching... does it pave the way for a rate hike in December - المتداول العربي</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: FOMC決議逼近，市場揣測是否為12月升息或維持利率鋪路，牽動全球債市與匯市神經。</p>
+</li>
+<li>
+<p><strong>[10-27 21:55]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> What the Fed's interest rate decision means for your bank accounts, loans, credit cards, and investments - Yahoo Finance</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 市場聚焦2026-10-28聯準會FOMC利率決策，影響銀行存款、貸款及各類金融資產定價與資金成本。</p>
+</li>
+<li>
+<p><strong>[10-27 21:52]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> S&amp;P 500, Nasdaq open higher as oil pulls back ahead of Fed decision By Reuters - Investing.com</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價回落減緩通膨擔憂，聯準會FOMC決議前美股開高，市場交投正向。</li>
+</ul>
+<h3 id="3">其他（3）</h3>
+<ul>
+<li><strong>[10-27 22:35]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> How the beauty industry is boosting High Streets</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 資訊不足，對宏觀金融市場影響有限。</p>
+</li>
+<li>
+<p><strong>[10-27 22:30]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> My husband wants to sell our $1.5 million home and downsize. But this is where we raised our kids — and I can’t bear to leave.</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 個人房產與生活抉擇，對整體金融市場無直接實質影響。</p>
+</li>
+<li>
+<p><strong>[10-27 22:12]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 日本超市原信公司高獲利秘訣：46年「改善」行動打造逾4%營業利益率</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 報導日本超市透過「改善」行動提升營業利益率，屬於個案經營管理分享，對總體金融市場無直接重大影響。</li>
+</ul>
+<hr />
+<h2 id="_5">全部事件</h2>
+<ul>
+<li><strong>[10-27 23:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Euro under pressure as Fed and ECB interest rate decisions draw near - www.tmgm.com <code>google-news:Federal Reserve rate decision</code></li>
+<li><strong>[10-27 23:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> $4,000 area: Gold struggles as US Dollar gains ahead of Fed decision - www.tmgm.com <code>google-news:Federal Reserve rate decision</code></li>
+<li><strong>[10-27 23:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Honda warns 50% Canada auto tariffs would be catastrophic for auto industry <code>cnbc</code></li>
+<li><strong>[10-27 23:44]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 油價漲勢趨緩！美國10月消費者信心指數反彈至91.7 - 民視新聞網 <code>google-news:油價</code></li>
+<li><strong>[10-27 23:42]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Dollar edges higher as focus turns to central bank meetings <code>investing-com</code></li>
+<li><strong>[10-27 23:42]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> S&amp;P 500 and Nasdaq Composite: Chipmakers Lift Indexes as Fed and Earnings Risks Loom - FXEmpire <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[10-27 23:39]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> American Airlines hikes annual fees on rewards cards for first time since 2018 <code>cnbc</code></li>
+<li><strong>[10-27 23:39]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Earnings call transcript: Avidbank tops Q3 2026 estimates as shares rise 3.9% <code>investing-com</code></li>
+<li><strong>[10-27 23:38]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Supermicro-backed neocloud Argentum AI seeks $5B for chip financing: report <code>seekingalpha</code></li>
+<li><strong>[10-27 23:38]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> GE Vernova earnings up next: Can backlog growth offset revenue decline? <code>investing-com</code></li>
+<li><strong>[10-27 23:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Stocks See Support as Crude Oil Prices Ease and FOMC Awaited - Barchart.com <code>google-news:oil price crude</code></li>
+<li><strong>[10-27 23:36]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Deutsche Bank earnings on deck as analysts trim forecasts <code>investing-com</code></li>
+<li><strong>[10-27 23:34]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> U.S. economy is gathering steam. This is the chief reason why. <code>marketwatch</code></li>
+<li><strong>[10-27 23:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 18.4 TW by 2035 IRENA Raises Renewables Goal as Power Demand Climbs - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[10-27 23:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Boeing stock sinks 9% as company says it won't significantly ramp up 737 Max production until late 2027 <code>cnbc</code></li>
+<li><strong>[10-27 23:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 油價跌破每桶101美元，華爾街在聯準會決策前看法分歧 - BigGo 財經 <code>google-news:油價</code></li>
+<li><strong>[10-27 23:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 油價破百加上AI投資熱潮，全球通膨恐延燒至2027年 - BigGo 財經 <code>google-news:油價</code></li>
+<li><strong>[10-27 23:25]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> How to use I-bonds to create guaranteed, inflation-proof income in retirement <code>marketwatch</code></li>
+<li><strong>[10-27 23:19]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Ex-FBI official's lawyers slam unusual new criminal charge: 'Outrageous government conduct' <code>cnbc</code></li>
+<li><strong>[10-27 23:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> AI交易點火晶片類股走強！台積電ADR漲近3％ 台股有望延續漲勢 - 自由財經 <code>google-news:台股 大漲</code></li>
+<li><strong>[10-27 23:15]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> S&amp;P 500 and Nasdaq rise as oil prices retreat ahead of Federal Reserve decision - Share Talk <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[10-27 23:11]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Oil prices fall after Iran supreme leader and top security official discuss conditions to end war <code>cnbc</code></li>
+<li><strong>[10-27 23:11]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Stock Market Today: Nasdaq, S&amp;P 500 Rise on Busy Earnings Day as Tech Stocks Extend Rally - Investopedia <code>google-news:stock market rally</code></li>
+<li><strong>[10-27 23:03]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Euro remains on the defensive ahead of Fed and ECB interest rate decisions - FXStreet <code>google-news:Federal Reserve rate decision</code></li>
+<li><strong>[10-27 23:02]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> How Broadcom’s stock can surge and overcome ‘the biggest dislocation in the market’ <code>marketwatch</code></li>
+<li><strong>[10-27 23:00]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 魔鬼藏在Anthropic招股書細節裡！逾5000億美元支出承諾、創辦人捐80%財富可撤回 <code>yahoo-tw-finance</code></li>
+<li><strong>[10-27 23:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Moody's sounds crypto crash alarm: Why Bitcoin investors should care - TheStreet <code>google-news:Federal Reserve rate decision</code></li>
+<li><strong>[10-27 22:57]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Fed Rate Decision: Inflation and weak hiring point in opposite directions - Stock Titan <code>google-news:Federal Reserve rate decision</code></li>
+<li><strong>[10-27 22:56]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Boeing narrows loss on higher defense sales, targets Max production increase for late 2027 <code>cnbc</code></li>
+<li><strong>[10-27 22:54]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 韓媒憂製造業優勢遭中國追趕 半導體成競爭關鍵 <code>yahoo-tw-finance</code></li>
+<li><strong>[10-27 22:53]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Microsoft earnings will look funky — but an elusive number is finally arriving <code>marketwatch</code></li>
+<li><strong>[10-27 22:51]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Fortinet Q3 2026 earnings preview: Estimate revisions see upward moment <code>seekingalpha</code></li>
+<li><strong>[10-27 22:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 台積電ADR勁揚近2%！美股漲多跌少「費半噴2%、特斯拉飆3%」 台指期夜盤一度強漲600點 - FTNN 新聞網 <code>google-news:台股 大跌</code></li>
+<li><strong>[10-27 22:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 油價回落！美股3大指數漲跌互見 那指領跑漲0.45％ - Yahoo股市 <code>google-news:油價</code></li>
+<li><strong>[10-27 22:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 油價回落！美股3大指數漲跌互見　那指領跑漲0.45％ <code>yahoo-tw-finance</code></li>
+<li><strong>[10-27 22:48]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 油價回落！美股3大指數漲跌互見 那指領跑漲0.45 - 民視新聞網 <code>google-news:油價</code></li>
+<li><strong>[10-27 22:46]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> These 3 stocks could rally after the Fed decision - Invezz <code>google-news:stock market rally</code></li>
+<li><strong>[10-27 22:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Earnings call transcript: Itron tops Q3 2026 profit estimates as revenue grows <code>investing-com</code></li>
+<li><strong>[10-27 22:44]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Crane earnings up next as investors eye Trillium deal integration <code>investing-com</code></li>
+<li><strong>[10-27 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 期中選前傳佳音！美國10月消費者信心升至91.7 終結連三月下滑 <code>yahoo-tw-finance</code></li>
+<li><strong>[10-27 22:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 油價又將震盪？葉門叛軍喊「射飛彈擊中沙烏地最大煉油廠」 - 三立新聞 <code>google-news:油價</code></li>
+<li><strong>[10-27 22:37]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> S&amp;P 500, Nasdaq Lead As Tech Stocks Rebound - BusinessToday Malaysia <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[10-27 22:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Oil prices fall amid diplomatic push to de-escalate Saudi-Iran tensions <code>cnbc</code></li>
+<li><strong>[10-27 22:35]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> How the beauty industry is boosting High Streets <code>bbcbusiness</code></li>
+<li><strong>[10-27 22:33]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 【美股開市】Anthropic效應持續 博通AMD再漲 西數揚近7%、美光漲2% 油價回落（不斷更新） - 香港經濟日報HKET <code>google-news:油價</code></li>
+<li><strong>[10-27 22:33]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 在美聯儲決議公布前，油價回落，標普500指數和納斯達克指數走高 - TradingView <code>google-news:油價</code></li>
+<li><strong>[10-27 22:32]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> M6晶片加持　蘋果新MacBook Pro與iMac搶換機潮 <code>yahoo-tw-finance</code></li>
+<li><strong>[10-27 22:31]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 能源格局全面重組：中東局勢、國際油價與全球資本流向 - Rti 中央廣播電臺 <code>google-news:油價</code></li>
+<li><strong>[10-27 22:31]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 美股開盤持續小幅反彈！費半勁揚170點 <code>yahoo-tw-finance</code></li>
+<li><strong>[10-27 22:30]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> My husband wants to sell our $1.5 million home and downsize. But this is where we raised our kids — and I can’t bear to leave. <code>marketwatch</code></li>
+<li><strong>[10-27 22:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> OPEC Set to Keep Oil Quotas Unchanged - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[10-27 22:29]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 約旦空襲敘利亞南部釀死傷　敘國批：侵犯主權 <code>yahoo-tw-finance</code></li>
+<li><strong>[10-27 22:29]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> U.S. Treasury yields hover near multi-week lows ahead of Fed decision - Investing.com Australia <code>google-news:Treasury yields</code></li>
+<li><strong>[10-27 22:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Crypto Market Faces Pressure As Bitcoin Slides Below $80,000 Before Fed Decision - News Agency of Nigeria <code>google-news:Federal Reserve rate decision</code></li>
+<li><strong>[10-27 22:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> US stocks: S&amp;P 500, Nasdaq open higher as oil pulls back ahead of Fed decision - The Business Times <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[10-27 22:19]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Nvidia, AMD to invest $4 billion in Meta as tech giants deepen AI partnership <code>cnbc</code></li>
+<li><strong>[10-27 22:18]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Summary of T-bonds, stocks and precious metals - Kitco <code>google-news:Treasury yields</code></li>
+<li><strong>[10-27 22:15]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> VICI Properties Q3 earnings preview: 8% yield, rate risks in focus <code>seekingalpha</code></li>
+<li><strong>[10-27 22:15]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> China Steps In to Rescue Stocks, But the Market Continues to Fall <code>nytbusiness</code></li>
+<li><strong>[10-27 22:13]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Avis Budget options signal 10% move on Nov. 3 earnings <code>investing-com</code></li>
+<li><strong>[10-27 22:12]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Stocks See Support as Crude Oil Prices Ease - Barchart.com <code>google-news:oil price crude</code></li>
+<li><strong>[10-27 22:12]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> ServiceNow Q3 earnings preview: Investors eye AI momentum and cRPO growth <code>seekingalpha</code></li>
+<li><strong>[10-27 22:12]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 日本超市原信公司高獲利秘訣：46年「改善」行動打造逾4%營業利益率 <code>yahoo-tw-finance</code></li>
+<li><strong>[10-27 22:12]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Central Bank communication is changing: How traders can navigate the Fed’s uncertainty - FXStreet <code>google-news:central bank policy</code></li>
+<li><strong>[10-27 22:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Tech rally lifts S&amp;P 500 and Nasdaq as Broadcom jumps - NewsBytes <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[10-27 22:07]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> The Federal Reserve's decision is approaching... does it pave the way for a rate hike in December - المتداول العربي <code>google-news:Federal Reserve rate decision</code></li>
+<li><strong>[10-27 22:06]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 晶片股飆漲！美股27日走高費半漲1.93%　台指期夜盤漲452點 <code>yahoo-tw-finance</code></li>
+<li><strong>[10-27 22:06]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Gold prices hold near $4,000 as traders await Fed rate decision amid inflation concerns | Hindustan Times - Hindustan Times <code>google-news:Federal Reserve rate decision</code></li>
+<li><strong>[10-27 22:02]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Gold holds above $4,000 as traders brace for Fed interest rate decision - FXStreet <code>google-news:Federal Reserve rate decision</code></li>
+<li><strong>[10-27 22:01]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 晶片股大漲帶動美股週二開高上揚| 國際焦點 - 太報 TaiSounds <code>google-news:台股 大漲</code></li>
+<li><strong>[10-27 22:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 原油價格下跌 以色列和美國選舉前圍繞伊朗問題的外交活動升溫 | 國際焦點 | 國際 - 經濟日報 <code>google-news:油價</code></li>
+<li><strong>[10-27 22:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 黃仁勳看旺、馬斯克卻示警倒閉潮 新雲端企業為何難賺錢？ <code>yahoo-tw-finance</code></li>
+<li><strong>[10-27 22:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> ‘When do I sell my stocks?’ Ignore the noise and focus on these things. <code>marketwatch</code></li>
+<li><strong>[10-27 22:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Iran Turns to Russia for Nuclear Power as IAEA Oversight Falters - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[10-27 21:59]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> US dollar climbs as investors brace for hawkish Federal Reserve decision - Economies.com <code>google-news:Federal Reserve rate decision</code></li>
+<li><strong>[10-27 21:55]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> What the Fed's interest rate decision means for your bank accounts, loans, credit cards, and investments - Yahoo Finance <code>google-news:Federal Reserve rate decision</code></li>
+<li><strong>[10-27 21:55]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Stock Market Today: Nasdaq Extends Gains After Anthropic Rally — Live Updates - WSJ <code>google-news:stock market rally</code></li>
+<li><strong>[10-27 21:55]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Nasdaq opens higher as chip stocks rally, oil prices fall ahead of Fed decision - Invezz <code>google-news:stock market rally</code></li>
+<li><strong>[10-27 21:52]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> S&amp;P 500, Nasdaq open higher as oil pulls back ahead of Fed decision By Reuters - Investing.com <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[10-27 21:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Brazil Stock Market Crash Explained: Why Lula’s election win triggered a 13.88% plunge - The Financial Express <code>google-news:stock market selloff</code></li>
+</ul>
+    </article>
+  
+</div>
+<footer>由金融情報系統自動發佈 · 僅供參考，不構成投資建議</footer>
+<script>
+const WEEK = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function nowParts(tz){
+  const p = {};
+  new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short', month: 'short',
+    day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
+  }).formatToParts(new Date()).forEach(x => p[x.type] = x.value);
+  return p;
+}
+function marketOpen(tz, open, close){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  return wd>=1 && wd<=5 && m>=open && m<close;
+}
+// Taiwan index-futures night session 15:00 -> next-day 05:00 (crosses midnight):
+// 15:00-24:00 Mon-Fri, plus 00:00-05:00 Tue-Sat (Sat 00:00-05:00 is Fri night session).
+function nightOpen(tz){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  if (m >= 5*60 && m < 15*60) return false;   // 05:00-15:00 recess
+  if (m >= 15*60) return wd >= 1 && wd <= 5;   // 15:00-24:00 Mon-Fri
+  return wd >= 2 && wd <= 6;                   // 00:00-05:00 Tue-Sat
+}
+function pad(n){ return String(n).padStart(2,'0'); }
+function setMkt(id, open, label){
+  const el = document.getElementById(id);
+  el.className = 'mkt ' + (open ? 'open' : 'closed');
+  el.textContent = (label ? label + ' ' : '') + (open ? '開盤中' : '未開盤');
+}
+function tick(){
+  const tw = nowParts('Asia/Taipei');
+  const ny = nowParts('America/New_York');
+  document.getElementById('clk-tw').textContent = pad(tw.hour)+':'+pad(tw.minute)+':'+pad(tw.second);
+  document.getElementById('clk-ny').textContent = pad(ny.hour)+':'+pad(ny.minute)+':'+pad(ny.second);
+  // Taiwan: TWSE weighted index 09:00-13:30; TX futures day 08:45-13:45; TX night 15:00-05:00
+  setMkt('tw-idx',  marketOpen('Asia/Taipei', 9*60, 13*60+30), '加權');
+  setMkt('tx-day',  marketOpen('Asia/Taipei', 8*60+45, 13*60+45), '期日盤');
+  setMkt('tx-night', nightOpen('Asia/Taipei'), '期夜盤');
+  // US: regular session 09:30-16:00 ET; after-hours 16:00-20:00 ET
+  setMkt('ny-mkt',  marketOpen('America/New_York', 9*60+30, 16*60), '美股');
+  setMkt('ny-night', marketOpen('America/New_York', 16*60, 20*60), '美股夜');
+}
+tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>
