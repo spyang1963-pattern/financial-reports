@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深度分析報告 2026-10-31 傍晚</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; margin: 0;
+         background: #f5f6f8; color: #1c1e21; line-height: 1.7; }
+  header { background: #1b2a4a; color: #fff; padding: 14px 24px;
+           display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  header h1 { font-size: 18px; margin: 0; flex: 1; }
+  header nav a { color: #cdd8ee; text-decoration: none; margin-left: 14px; font-size: 14px; }
+  header nav a:hover, header nav a.active { color: #fff; text-decoration: underline; }
+  #clock { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; font-size: 13px; }
+  .clk { background: rgba(255,255,255,.08); border-radius: 6px; padding: 4px 10px; }
+  .clk-city { color: #9fb0cf; margin-right: 6px; }
+  .clk-time { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .mkt { margin-left: 8px; font-size: 12px; padding: 1px 7px; border-radius: 9px; }
+  .mkt.open { background: #2e7d32; color: #fff; }
+  .mkt.closed { background: #5a6474; color: #fff; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 20px; }
+  .card { background: #fff; border-radius: 8px; padding: 18px 22px; margin: 14px 0;
+          box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .card h3 { margin: 0 0 6px; }
+  .card a { color: #1b2a4a; text-decoration: none; }
+  .card a:hover { text-decoration: underline; }
+  .muted { color: #666; font-size: 13px; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px;
+           color: #fff; margin-left: 6px; }
+  .b-daily { background: #2e7d32; }
+  .b-deep { background: #b45309; }
+  .day-nav { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+  .day-nav a { font-size: 13px; padding: 3px 10px; background: #e8ecf3; border-radius: 12px;
+               color: #33415c; text-decoration: none; }
+  .day-nav a:hover { background: #d2dbea; }
+  article.card { line-height: 1.15; }
+  article.card p { margin: 3px 0; }
+  article.card ul, article.card ol { margin: 3px 0 6px; padding-left: 22px; }
+  article.card h1, article.card h2, article.card h3 { padding-bottom: 4px; }
+  article.card h1, article.card h2 { border-bottom: 2px solid #33415c; }
+  article.card h1 { font-size: 30px; margin-top: 8px; }
+  article.card h2 { font-size: 23px; margin-top: 12px; color: #1b2a4a;
+        border-left: 6px solid #1459c8; padding-left: 12px; }
+  article.card h3 { font-size: 19px; margin-top: 10px; color: #24365c;
+        background: #eef4fb; border-radius: 6px; padding: 4px 12px; }
+  article.card h4 { font-size: 17px; margin-top: 18px; color: #145c3a;
+        background: #e8f5ee; border-left: 4px solid #2e7d32;
+        padding: 5px 10px; border-radius: 4px; }
+  article.card h5 { font-size: 15px; margin-top: 14px; color: #4a5568;
+        font-weight: 600; }
+  article.card h4, article.card h5 { margin-bottom: 2px; }
+  article.card strong { font-weight: 700; }
+  article.card blockquote { border-left: 4px solid #9fb0cf; margin: 4px 0;
+        padding: 2px 12px; color: #4a5568; background: #f4f6fa; }
+  article.card hr { border: none; border-top: 1px dashed #c3ccdb; margin: 12px 0; }
+  article.card code { background: #eef0f4; padding: 1px 5px; border-radius: 4px;
+        font-size: 14px; font-family: Consolas, monospace; }
+  article.card pre { background: #1b2a4a; color: #e6ecf7; padding: 14px; border-radius: 8px; overflow-x: auto; }
+  article.card pre code { background: transparent; color: inherit; padding: 0; }
+  article.card table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+  article.card th, article.card td { border: 1px solid #d8dce3; padding: 6px 10px; }
+  article.card th { background: #eef1f6; }
+  article.card a { color: #1459c8; }
+  footer { text-align: center; color: #999; font-size: 12px; padding: 20px; }
+</style>
+</head>
+<body>
+  <header>
+  <h1>金融情報系統報告</h1>
+  <nav>
+    <a href="../index.html" class="">首頁</a>
+    <a href="../calendar.html" class="">行事曆</a>
+    <a href="../daily/2026-10-31.html" class="">最新每日</a>
+    <a href="../deep/2026-10-31-pm.html" class="active">最新深度</a>
+  </nav>
+  <div id="clock">
+    <span class="clk"><span class="clk-city">台北</span><span class="clk-time" id="clk-tw">--:--:--</span><span class="mkt closed" id="tw-idx">…</span><span class="mkt closed" id="tx-day">…</span><span class="mkt closed" id="tx-night">…</span></span>
+    <span class="clk"><span class="clk-city">紐約</span><span class="clk-time" id="clk-ny">--:--:--</span><span class="mkt closed" id="ny-mkt">…</span><span class="mkt closed" id="ny-night">…</span></span>
+  </div>
+</header>
+<div class="wrap">
+  
+    <div class="day-nav">
+      <a href="../index.html">← 首頁</a>
+      
+        
+        
+        <a href="../deep/2026-10-31-am.html">2026-10-31 早上</a>
+        
+        <a href="../deep/2026-10-31-pm.html">2026-10-31 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-30-am.html">2026-10-30 早上</a>
+        
+        <a href="../deep/2026-10-30-pm.html">2026-10-30 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-29-am.html">2026-10-29 早上</a>
+        
+        <a href="../deep/2026-10-29-pm.html">2026-10-29 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-28-am.html">2026-10-28 早上</a>
+        
+        <a href="../deep/2026-10-28-pm.html">2026-10-28 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-27-am.html">2026-10-27 早上</a>
+        
+        <a href="../deep/2026-10-27-pm.html">2026-10-27 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-26-am.html">2026-10-26 早上</a>
+        
+        <a href="../deep/2026-10-26-pm.html">2026-10-26 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-25-am.html">2026-10-25 早上</a>
+        
+        <a href="../deep/2026-10-25-pm.html">2026-10-25 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-24-am.html">2026-10-24 早上</a>
+        
+        <a href="../deep/2026-10-24-pm.html">2026-10-24 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-23-am.html">2026-10-23 早上</a>
+        
+        <a href="../deep/2026-10-23-pm.html">2026-10-23 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-22-am.html">2026-10-22 早上</a>
+        
+        <a href="../deep/2026-10-22-pm.html">2026-10-22 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-21-am.html">2026-10-21 早上</a>
+        
+        <a href="../deep/2026-10-21-pm.html">2026-10-21 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-20-am.html">2026-10-20 早上</a>
+        
+        <a href="../deep/2026-10-20-pm.html">2026-10-20 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-19-am.html">2026-10-19 早上</a>
+        
+        <a href="../deep/2026-10-19-pm.html">2026-10-19 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-18-am.html">2026-10-18 早上</a>
+        
+        <a href="../deep/2026-10-18-pm.html">2026-10-18 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-17-am.html">2026-10-17 早上</a>
+        
+        <a href="../deep/2026-10-17-pm.html">2026-10-17 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-16-am.html">2026-10-16 早上</a>
+        
+        <a href="../deep/2026-10-16-pm.html">2026-10-16 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-15-am.html">2026-10-15 早上</a>
+        
+        <a href="../deep/2026-10-15-pm.html">2026-10-15 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-14-am.html">2026-10-14 早上</a>
+        
+        <a href="../deep/2026-10-14-pm.html">2026-10-14 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-13-am.html">2026-10-13 早上</a>
+        
+        <a href="../deep/2026-10-13-pm.html">2026-10-13 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-12-am.html">2026-10-12 早上</a>
+        
+        <a href="../deep/2026-10-12-pm.html">2026-10-12 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-11-am.html">2026-10-11 早上</a>
+        
+        <a href="../deep/2026-10-11-pm.html">2026-10-11 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-10-am.html">2026-10-10 早上</a>
+        
+        <a href="../deep/2026-10-10-pm.html">2026-10-10 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-09-am.html">2026-10-09 早上</a>
+        
+        <a href="../deep/2026-10-09-pm.html">2026-10-09 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-08-am.html">2026-10-08 早上</a>
+        
+        <a href="../deep/2026-10-08-pm.html">2026-10-08 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-07-am.html">2026-10-07 早上</a>
+        
+        <a href="../deep/2026-10-07-pm.html">2026-10-07 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-06-am.html">2026-10-06 早上</a>
+        
+        <a href="../deep/2026-10-06-pm.html">2026-10-06 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-05-am.html">2026-10-05 早上</a>
+        
+        <a href="../deep/2026-10-05-pm.html">2026-10-05 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-04-am.html">2026-10-04 早上</a>
+        
+        <a href="../deep/2026-10-04-pm.html">2026-10-04 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-03-am.html">2026-10-03 早上</a>
+        
+        <a href="../deep/2026-10-03-pm.html">2026-10-03 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-02-am.html">2026-10-02 早上</a>
+        
+        <a href="../deep/2026-10-02-pm.html">2026-10-02 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-10-01-am.html">2026-10-01 早上</a>
+        
+        <a href="../deep/2026-10-01-pm.html">2026-10-01 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-30-am.html">2026-09-30 早上</a>
+        
+        <a href="../deep/2026-09-30-pm.html">2026-09-30 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-29-am.html">2026-09-29 早上</a>
+        
+        <a href="../deep/2026-09-29-pm.html">2026-09-29 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-28-am.html">2026-09-28 早上</a>
+        
+        <a href="../deep/2026-09-28-pm.html">2026-09-28 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-27-am.html">2026-09-27 早上</a>
+        
+        <a href="../deep/2026-09-27-pm.html">2026-09-27 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-26-am.html">2026-09-26 早上</a>
+        
+        <a href="../deep/2026-09-26-pm.html">2026-09-26 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-25-am.html">2026-09-25 早上</a>
+        
+        <a href="../deep/2026-09-25-pm.html">2026-09-25 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-24-am.html">2026-09-24 早上</a>
+        
+        <a href="../deep/2026-09-24-pm.html">2026-09-24 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-23-am.html">2026-09-23 早上</a>
+        
+        <a href="../deep/2026-09-23-pm.html">2026-09-23 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-22-am.html">2026-09-22 早上</a>
+        
+        <a href="../deep/2026-09-22-pm.html">2026-09-22 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-21-am.html">2026-09-21 早上</a>
+        
+        <a href="../deep/2026-09-21-pm.html">2026-09-21 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-20-am.html">2026-09-20 早上</a>
+        
+        <a href="../deep/2026-09-20-pm.html">2026-09-20 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-19-am.html">2026-09-19 早上</a>
+        
+        <a href="../deep/2026-09-19-pm.html">2026-09-19 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-18-am.html">2026-09-18 早上</a>
+        
+        <a href="../deep/2026-09-18-pm.html">2026-09-18 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-17-am.html">2026-09-17 早上</a>
+        
+        <a href="../deep/2026-09-17-pm.html">2026-09-17 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-16-am.html">2026-09-16 早上</a>
+        
+        <a href="../deep/2026-09-16-pm.html">2026-09-16 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-15-am.html">2026-09-15 早上</a>
+        
+        <a href="../deep/2026-09-15-pm.html">2026-09-15 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-14-am.html">2026-09-14 早上</a>
+        
+        <a href="../deep/2026-09-14-pm.html">2026-09-14 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-13-am.html">2026-09-13 早上</a>
+        
+        <a href="../deep/2026-09-13-pm.html">2026-09-13 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-12-am.html">2026-09-12 早上</a>
+        
+        <a href="../deep/2026-09-12-pm.html">2026-09-12 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-11-am.html">2026-09-11 早上</a>
+        
+        <a href="../deep/2026-09-11-pm.html">2026-09-11 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-10-am.html">2026-09-10 早上</a>
+        
+        <a href="../deep/2026-09-10-pm.html">2026-09-10 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-09-am.html">2026-09-09 早上</a>
+        
+        <a href="../deep/2026-09-09-pm.html">2026-09-09 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-08-am.html">2026-09-08 早上</a>
+        
+        <a href="../deep/2026-09-08-pm.html">2026-09-08 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-07-am.html">2026-09-07 早上</a>
+        
+        <a href="../deep/2026-09-07-pm.html">2026-09-07 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-06-am.html">2026-09-06 早上</a>
+        
+        
+        
+        <a href="../deep/2026-09-05-am.html">2026-09-05 早上</a>
+        
+        <a href="../deep/2026-09-05-pm.html">2026-09-05 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-04-am.html">2026-09-04 早上</a>
+        
+        <a href="../deep/2026-09-04-pm.html">2026-09-04 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-03-am.html">2026-09-03 早上</a>
+        
+        <a href="../deep/2026-09-03-pm.html">2026-09-03 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-02-am.html">2026-09-02 早上</a>
+        
+        <a href="../deep/2026-09-02-pm.html">2026-09-02 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-09-01-am.html">2026-09-01 早上</a>
+        
+        <a href="../deep/2026-09-01-pm.html">2026-09-01 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-31-am.html">2026-08-31 早上</a>
+        
+        <a href="../deep/2026-08-31-pm.html">2026-08-31 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-30-am.html">2026-08-30 早上</a>
+        
+        <a href="../deep/2026-08-30-pm.html">2026-08-30 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-29-am.html">2026-08-29 早上</a>
+        
+        <a href="../deep/2026-08-29-pm.html">2026-08-29 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-28-am.html">2026-08-28 早上</a>
+        
+        <a href="../deep/2026-08-28-pm.html">2026-08-28 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-27-am.html">2026-08-27 早上</a>
+        
+        <a href="../deep/2026-08-27-pm.html">2026-08-27 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-26-am.html">2026-08-26 早上</a>
+        
+        <a href="../deep/2026-08-26-pm.html">2026-08-26 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-25-am.html">2026-08-25 早上</a>
+        
+        <a href="../deep/2026-08-25-pm.html">2026-08-25 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-24-am.html">2026-08-24 早上</a>
+        
+        <a href="../deep/2026-08-24-pm.html">2026-08-24 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-23-am.html">2026-08-23 早上</a>
+        
+        <a href="../deep/2026-08-23-pm.html">2026-08-23 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-22-am.html">2026-08-22 早上</a>
+        
+        <a href="../deep/2026-08-22-pm.html">2026-08-22 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-21-pm.html">2026-08-21 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-20-am.html">2026-08-20 早上</a>
+        
+        <a href="../deep/2026-08-20-pm.html">2026-08-20 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-19-am.html">2026-08-19 早上</a>
+        
+        <a href="../deep/2026-08-19-pm.html">2026-08-19 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-18-am.html">2026-08-18 早上</a>
+        
+        <a href="../deep/2026-08-18-pm.html">2026-08-18 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-17-am.html">2026-08-17 早上</a>
+        
+        <a href="../deep/2026-08-17-pm.html">2026-08-17 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-16-am.html">2026-08-16 早上</a>
+        
+        <a href="../deep/2026-08-16-pm.html">2026-08-16 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-15-am.html">2026-08-15 早上</a>
+        
+        <a href="../deep/2026-08-15-pm.html">2026-08-15 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-14-am.html">2026-08-14 早上</a>
+        
+        <a href="../deep/2026-08-14-pm.html">2026-08-14 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-13-am.html">2026-08-13 早上</a>
+        
+        <a href="../deep/2026-08-13-pm.html">2026-08-13 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-12-am.html">2026-08-12 早上</a>
+        
+        <a href="../deep/2026-08-12-pm.html">2026-08-12 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-11-am.html">2026-08-11 早上</a>
+        
+        <a href="../deep/2026-08-11-pm.html">2026-08-11 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-10-am.html">2026-08-10 早上</a>
+        
+        <a href="../deep/2026-08-10-pm.html">2026-08-10 傍晚</a>
+        
+        
+        
+        <a href="../deep/2026-08-09-am.html">2026-08-09 早上</a>
+        
+        <a href="../deep/2026-08-09-pm.html">2026-08-09 傍晚</a>
+        
+        
+      
+    </div>
+    <article class="card">
+      <div class="muted">2026-10-31
+        <span class="badge b-deep">
+          深度分析
+        </span>
+      </div>
+      <blockquote>
+<p>報告時間：2026-10-31 18:00（台灣時間）
+資料截止：10-31 17:56</p>
+</blockquote>
+<hr />
+<blockquote>
+<p>⚠️ <strong>AI 審稿疑點（自動核查發現，請人工確認）</strong></p>
+<p>【修正清單】
+</p>
+<p>【疑點】二、行情快照與台股夜盤解析 / 行情快照數據 - 美元指數DXY的跌幅描述前後矛盾，括號內同時出現「<span style="color:#2e7d32;font-weight:bold">▼</span>-2.86% 的相對穩定」與「<span style="color:#2e7d32;font-weight:bold">▼</span>-0.16%」，且「-2.86%」與報告第一段「匯市：美元指數微跌 -0.16%」及快照數值本身的漲跌幅定義不一致 - 建議將括號內的「<span style="color:#2e7d32;font-weight:bold">▼</span>-2.86% 的相對穩定／」刪除，僅保留「<span style="color:#2e7d32;font-weight:bold">▼</span>-0.16%」。</p>
+</blockquote>
+<hr />
+<h2 id="_1">一、市場總覽</h2>
+<ul>
+<li><strong style="color:#000">全球金融市場核心方向</strong></li>
+<li><strong style="color:#000">股市</strong>：美股與全球股市遭遇重挫，科技股因人工智慧（AI）變現疑慮與企業資本支出分化引發大規模拋售，那斯達克指數大跌 -2.86%，費城半導體指數更是暴跌 -7.20%，拖累亞洲股市全面走低。</li>
+<li><strong style="color:#000">債市</strong>：美債10年期殖利率（把錢借給政府10年每年能拿到的利息回報率）下滑 -1.20% 至 4.93%，顯示資金在股市大跌之際轉尋求固定收益與防禦配置。</li>
+<li><strong style="color:#000">匯市</strong>：美元指數（衡量美元對一籃子貨幣強弱的指標）微跌 -0.16% 至 101.88，美元兌台幣則升值 <span style="color:#c0392b;font-weight:bold">▲</span>+0.57% 至 32.57，反映外資匯出壓力。</li>
+<li>
+<p><strong style="color:#000">商品（油金）</strong>：中東戰火與霍爾木茲海峽遇襲推升國際油價至半年新高，WTI原油上漲 <span style="color:#c0392b;font-weight:bold">▲</span>+2.08% 報 104.12 美元；避險資金未青睞黃金，金價反而重挫 -3.29% 跌破 3,900 美元大關。</p>
+</li>
+<li>
+<p><strong style="color:#000">費城半導體指數關鍵意涵</strong>
+費城半導體指數大跌 <span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-7.20%</span> 報 10,688.80 點。費城半導體指數是全球半導體與 AI 供應鏈的絕對風向球，其暴跌直接反映美國晶片巨頭（如英特爾崩跌近 30%）遭遇重挫。這對高度連動台積電與 AI 供應鏈的台股而言，是極度沉重的外部利空，預告台股將面臨沉重的開盤賣壓與籌碼面修正。</p>
+</li>
+</ul>
+<hr />
+<h2 id="_2">二、行情快照與台股夜盤解析</h2>
+<ul>
+<li><strong style="color:#000">行情快照數據</strong></li>
+<li>加權指數：45,211.83 點（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-2.49%</span>）</li>
+<li>台積電：2,370.00 TWD（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-1.86%</span>）</li>
+<li>鴻海：245.50 TWD（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-1.01%</span>）</li>
+<li>聯發科：3,915.00 TWD（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-3.21%</span>）</li>
+<li>台達電：1,335.00 TWD（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-9.80%</span>）</li>
+<li>富邦金：161.50 TWD（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-0.31%</span>）</li>
+<li>S&amp;P 500：7,580.07 點（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-1.82%</span>）</li>
+<li>納斯達克：25,437.00 點（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-2.86%</span>）</li>
+<li>費城半導體指數：10,688.80 點（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-7.20%</span>）</li>
+<li>道瓊：51,770.31 點（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-1.09%</span>）</li>
+<li>日經225：63,290.11 點（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-2.12%</span>）</li>
+<li>上證指數：3,599.02 點（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-1.44%</span>）</li>
+<li>Apple：344.63 USD（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-1.23%</span>）</li>
+<li>Microsoft：521.91 USD（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-1.55%</span>）</li>
+<li>NVIDIA：204.64 USD（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-4.22%</span>）</li>
+<li>Amazon：240.35 USD（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-1.41%</span>）</li>
+<li>Tesla：399.81 USD（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-0.87%</span>）</li>
+<li>美元/日圓：157.80 JPY（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-0.02%</span>）</li>
+<li>美元/台幣：32.57 TWD（<span style="color:#c0392b"><span style="color:#c0392b;font-weight:bold">▲</span>+0.57%</span>）</li>
+<li>歐元/美元：1.12 EUR（<span style="color:#c0392b"><span style="color:#c0392b;font-weight:bold">▲</span>+0.24%</span>）</li>
+<li>美元/人民幣：6.65 CNY（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-0.11%</span>）</li>
+<li>WTI原油：104.12 USD（<span style="color:#c0392b"><span style="color:#c0392b;font-weight:bold">▲</span>+2.08%</span>）</li>
+<li>布蘭特原油：117.64 USD（<span style="color:#c0392b"><span style="color:#c0392b;font-weight:bold">▲</span>+2.40%</span>）</li>
+<li>黃金：3,898.90 USD（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-3.29%</span>）</li>
+<li>美元指數DXY：101.88 點（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-2.86% 的相對穩定／<span style="color:#2e7d32;font-weight:bold">▼</span>-0.16%</span>）</li>
+<li>
+<p>美債10年殖利率：4.93 %（<span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-1.20%</span>）</p>
+</li>
+<li>
+<p><strong style="color:#000">台股夜盤與美股連動解析</strong>
+美股科技股與費城半導體指數（重挫 <span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-7.20%</span>）的崩跌，直接連動台股夜盤與期貨市場出現劇烈殺盤。台積電 ADR 暴跌近 6%，導致台股在 10 月市值蒸發近 9 兆元後，籌碼面雪上加霜。費半的慘崩與台積電的弱勢表現高度同調，顯示外資與法人在美股財報季後對 AI 供應鏈實質獲利產生疑慮，全面透過期現貨進行避險與砍倉。</p>
+</li>
+</ul>
+<hr />
+<h2 id="_3">三、數據決戰焦點</h2>
+<ul>
+<li><strong style="color:#b02020">美國商務部 PCE 個人消費支出報告</strong></li>
+<li><strong style="color:#000">最新公布之結果</strong>：美國 9 月 PCE 年增率攀升至 3.6%，核心 PCE 年增率達 3.1%，皆高於市場原先預期，顯示通膨黏著度高於想像。</li>
+<li><strong style="color:#000">對市場的即時影響</strong>：高於預期的通膨數據直接推升聯準會（Fed）在 12 月再度升息的機率飆破八成，導致美股科技股與債市面臨雙重定價壓力，那斯達克指數單日重挫 -2.86%。</li>
+<li><strong style="color:#000">後續觀察點</strong>：需持續緊盯美國勞動成本與後續就業數據，評估高利率環境對企業融資成本與消費者實質購買力的進一步侵蝕程度。</li>
+</ul>
+<hr />
+<h2 id="_4">四、重大事件深度解讀</h2>
+<ul>
+<li><strong style="color:#b02020">科技股泡沫疑慮與那斯達克重挫</strong></li>
+<li><strong style="color:#000">事件核心</strong>：美股那斯達克指數單日重挫 -2.86%，10 月整體市值大幅蒸發，市場將當前科技股估值與 2000 年網路泡沫進行對比，擔憂 AI 資本支出無法有效轉化為對等營收。</li>
+<li><strong style="color:#000">對股/債/匯/商品的傳導路徑</strong>：科技股大跌引發全球風險性資產拋售潮，資金自高本益比股市撤出；部分資金短線流入美債尋求庇護，帶動 10 年期美債殖利率回落至 4.93%。</li>
+<li><strong style="color:#000">關聯標的</strong>：<code>QQQ, NVDA, AAPL, 2330, TSM</code> <a href="https://news.google.com/search?q=%E7%BE%8E%E7%A7%91%E6%8A%80%E8%82%A1%E9%87%8D%E6%8C%AB%E5%8F%B0%E7%A9%8D%E9%9B%BBADR%E8%B7%8C%E8%BF%916%25+%E6%B3%95%E4%BA%BA%EF%BC%9A%E5%8F%B0%E8%82%A1%E4%B8%8B%E9%80%B1%E9%96%8B%E7%9B%A4%E6%81%90%E6%89%BF%E5%A3%93%7C+%E8%AD%89%E5%8%B8+-+%E4%B8%AD%E5%A4%AE%E7%A4%BE+CNA">來源: 中央社 CNA</a></li>
+<li>
+<p><strong style="color:#000">未來一週可能的走勢</strong>：短線賣壓尚未宣洩完畢，美股與台股將在半年線與技術支撐區間進行殘酷的籌碼換手與壓力測試。</p>
+</li>
+<li>
+<p><strong style="color:#b02020">中東戰火推升國際油價與能源危機</strong></p>
+</li>
+<li><strong style="color:#000">事件核心</strong>：中東地緣政治衝突加劇及霍爾木茲海峽遇襲威脅，推動國際油價飆升至半年新高（WTI原油報 104.12 美元，<span style="color:#c0392b"><span style="color:#c0392b;font-weight:bold">▲</span>+2.08%</span>）。</li>
+<li><strong style="color:#000">對股/債/匯/商品的傳導路徑</strong>：高油價惡化全球輸入性通膨預期，迫使各國央行維持緊縮貨幣政策；國內中油雖連續凍漲吸收成本（累計達 318.6 億元），但總體能源成本上升仍對實體經濟與企業毛利構成壓抑。</li>
+<li><strong style="color:#000">關聯標的</strong>：<code>原油, XOM, CVX</code> <a href="https://tw.stock.yahoo.com/news/%E7%A7%91%E6%8A%80%E8%82%A1%E6%B3%A1%E6%B2%AB%E7%A0%B4%E8%A3%82%E5%80%92%E6%95%B8-%E9%82%A3%E6%96%AF%E9%81%94%E5%85%8B%E9%87%8D%E6%91%94%E6%B4%A9%E6%95%97%E8%B1%A1-%E8%88%872000%E5%B9%B4%E9%A9%9A%E4%BA%BA%E7%9B%B8%E4%BC%BC-081251746.html">來源: Yahoo股市</a></li>
+<li><strong style="color:#000">未來一週可能的走勢</strong>：若中東局勢未見緩和，油價將維持高檔震盪，能源股（如艾克森美孚、雪佛龍）受惠煉油利差有望逆勢抗跌。</li>
+</ul>
+<hr />
+<h2 id="_5">五、跨日相關性分析</h2>
+<ul>
+<li><strong style="color:#b02020">從總經通膨數據到科技股財報殺盤的因果閉環</strong></li>
+<li><strong style="color:#b02020">前兩日鋪陳（10月29日-30日）</strong>：美國公布 9 月 PCE 通膨數據高於預期，直接引發市場對聯準會 12 月可能再度升息的恐慌；隨後 Alphabet 等科技巨頭財報顯示 AI 資本支出過高但變現緩慢，引發華爾街第一波科技股拋售潮。</li>
+<li><strong style="color:#b02020">今日引爆點（10月31日）</strong>：恐慌情緒全面擴散至半導體板塊，英特爾財報慘崩近 30%，拖累費城半導體指數狂瀉 <span style="color:#2e7d32"><span style="color:#2e7d32;font-weight:bold">▼</span>-7.20%</span>。台股在此期間因外資大舉提款與融資散戶多殺多，單月市值蒸發近 9 兆元，形成從總經通膨升息預期 → 科技巨頭資本支出檢驗 → 半導體供應鏈骨牌式崩跌的完整因果鏈。</li>
+</ul>
+<hr />
+<h2 id="_6">六、分類展望</h2>
+<ul>
+<li><strong style="color:#b02020">股市展望</strong></li>
+<li><strong style="color:#b02020">短（1週）</strong>：悲觀。受美股費半大跌與台積電 ADR 重挫拖累，台股面臨沉重開盤壓力，短線技術面破底風險高。</li>
+<li><strong style="color:#b02020">中（1月）</strong>：震盪尋底。需視外資賣超力道是否趨緩及融資清掃程度，等待半年線附近築底。</li>
+<li>
+<p><strong style="color:#b02020">長（1季）</strong>：審慎樂觀。長線基本面強勁的 AI 權值與具 EPS 支撐的龍頭企業在消化籌碼後有望迎來元月行情。</p>
+</li>
+<li>
+<p><strong style="color:#b02020">債市展望</strong></p>
+</li>
+<li><strong style="color:#b02020">短（1週）</strong>：偏多。股市大跌帶動避險資金流入固定收益，10 年期美債殖利率回落至 4.93%。</li>
+<li><strong style="color:#b02020">中（1月）</strong>：高檔震盪。通膨黏著度使降息預期延後，殖利率將在 4.5%-5.0% 區間波動。</li>
+<li>
+<p><strong style="color:#b02020">長（1季）</strong>：中立。隨通膨逐步受控，長債將展現防禦與資本利得雙重吸引力。</p>
+</li>
+<li>
+<p><strong style="color:#b02020">匯市展望</strong></p>
+</li>
+<li><strong style="color:#b02020">短（1週）</strong>：美元偏強，新台幣走貶。美元兌台幣升至 32.57，外資匯出壓力顯現。</li>
+<li><strong style="color:#b02020">中（1月）</strong>：區間波動。取決於亞幣整體走勢與外資動向。</li>
+<li>
+<p><strong style="color:#b02020">長（1季）</strong>：中立。視聯準會最終利率決策而定。</p>
+</li>
+<li>
+<p><strong style="color:#b02020">商品（油金）展望</strong></p>
+</li>
+<li><strong style="color:#b02020">短（1週）</strong>：原油看多、黃金看空。中東戰火推升 WTI 原油至 104.12 美元；避險資金未青睞黃金，金價跌破 3,900 美元。</li>
+<li><strong style="color:#b02020">中（1月）</strong>：原油維持高檔。供應鏈受地緣政治干擾嚴重。</li>
+<li>
+<p><strong style="color:#b02020">長（1季）</strong>：油價視戰事發展而定，黃金隨實質利率回落有望重啟長線多頭。</p>
+</li>
+<li>
+<p><strong style="color:#b02020">地緣政治展望</strong></p>
+</li>
+<li><strong style="color:#b02020">短（1週）</strong>：高度緊張。中東衝突與霍爾木茲海峽安全威脅持續升溫。</li>
+<li><strong style="color:#b02020">中（1月）</strong>：變數仍多。美國大選後政局與中東情勢交織影響全球風險偏好。</li>
+<li><strong style="color:#b02020">長（1季）</strong>：持續干擾全球供應鏈與能源價格。</li>
+</ul>
+<hr />
+<h2 id="_7">七、風險與機會</h2>
+<ul>
+<li><strong style="color:#b02020">- <strong>風險（警示）</strong></strong></li>
+<li><strong style="color:#000">費半重挫與台積電 ADR 拖累</strong></li>
+<li><strong style="color:#4caf50">標的</strong>：<code>2330, TSM, 費城半導體指數</code></li>
+<li><strong style="color:#4caf50">理由</strong>：費半單日大跌 -7.20%，台積電 ADR 跌近 6%，將直接引發台股電子權值股開盤重挫與外資提款潮。</li>
+<li><strong style="color:#000">通膨反彈與升息預期升溫</strong></li>
+<li><strong style="color:#4caf50">標的</strong>：<code>美元指數, 美債</code></li>
+<li><strong style="color:#4caf50">理由</strong>：9 月 PCE 年增 3.6% 高於預期，聯準會 12 月升息機率飆逾八成，對全球股市估值構成嚴重擠壓。</li>
+<li><strong style="color:#000">中東戰火推升能源危機</strong></li>
+<li><strong style="color:#4caf50">標的</strong>：<code>WTI原油, 布蘭特原油</code></li>
+<li>
+<p><strong style="color:#4caf50">理由</strong>：WTI 原油飆升至 104.12 美元（<span style="color:#c0392b;font-weight:bold">▲</span>+2.08%），加重輸入性通膨與企業成本負擔。</p>
+</li>
+<li>
+<p><strong style="color:#b02020">- <strong>機會（看好）</strong></strong></p>
+</li>
+<li><strong style="color:#000">能源巨頭受惠煉油利差</strong></li>
+<li><strong style="color:#4caf50">標的</strong>：<code>XOM, CVX</code></li>
+<li><strong style="color:#4caf50">理由</strong>：地緣衝突導致柴油與燃料供應受阻，煉油利潤激增，推動艾克森美孚與雪佛龍財報與股價逆勢抗跌。</li>
+<li><strong style="color:#000">具實質 EPS 支撐的 AI 龍頭</strong></li>
+<li><strong style="color:#4caf50">標的</strong>：<code>台積電供應鏈, 具盈餘保護個股</code></li>
+<li><strong style="color:#4caf50">理由</strong>：市場從盲目追逐題材轉為獎勵克制開支與具備真實獲利（EPS）支撐的企業，短線殺盤後浮現長線價值買點。</li>
+<li><strong style="color:#000">防禦型高殖利率標的</strong></li>
+<li><strong style="color:#4caf50">標的</strong>：<code>貨櫃三雄（如 2603）、防禦型 REITs</code></li>
+<li><strong style="color:#4caf50">理由</strong>：大盤暴跌之際資金轉進具高殖利率與防禦特質的板塊（如長榮逆勢走揚），提供避風港效應。</li>
+</ul>
+<hr />
+<h2 id="_8">八: 操作建議摘要</h2>
+<ul>
+<li><strong style="color:#b02020">嚴控融資槓桿，等待籌碼沉澱</strong></li>
+<li><strong style="color:#b02020">觀察重點</strong>：台股 10 月市值蒸發近 9 兆元，融資散戶多殺多壓力沈重。投資人首要任務是降低融資槓桿，避免在破線下殺過程中遭到斷頭，靜待融資餘額大幅清洗後的落底訊號。</li>
+<li>
+<p><strong style="color:#b02020">盯盤關鍵指標</strong>：台指期夜盤走勢、外資現貨賣超金額與融資維持率變化。</p>
+</li>
+<li>
+<p><strong style="color:#b02020">緊盯美股科技股與費半止跌訊號</strong></p>
+</li>
+<li><strong style="color:#b02020">觀察重點</strong>：美股那斯達克與費半指數陷入修正，AI 資本支出效益遭受嚴格檢驗。在美股科技股止穩前，台股電子權值股恐難獨善其身，切勿過早猜底抄底。</li>
+<li>
+<p><strong style="color:#b02020">盯盤關鍵指標</strong>：費城半導體指數點位、NVIDIA 與台積電 ADR 股價表現。</p>
+</li>
+<li>
+<p><strong style="color:#b02020">關注國際油價與地緣政治動向</strong></p>
+</li>
+<li><strong style="color:#b02020">觀察重點</strong>：中東戰事推升 WTI 原油突破 104 美元，高油價對通膨與企業毛利的侵蝕效應正在擴大，若油價持續飆升將進一步壓抑全球股市估值。</li>
+<li><strong style="color:#b02020">盯盤關鍵指標</strong>：WTI 與布蘭特原油價格、霍爾木茲海峽相關地緣政治新聞。</li>
+</ul>
+<hr />
+<h2 id="_9">九、免責聲明</h2>
+<p>本報告由 AI 自動生成，僅供參考，不構成投資建議。</p>
+    </article>
+  
+</div>
+<footer>由金融情報系統自動發佈 · 僅供參考，不構成投資建議</footer>
+<script>
+const WEEK = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function nowParts(tz){
+  const p = {};
+  new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short', month: 'short',
+    day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
+  }).formatToParts(new Date()).forEach(x => p[x.type] = x.value);
+  return p;
+}
+function marketOpen(tz, open, close){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  return wd>=1 && wd<=5 && m>=open && m<close;
+}
+// Taiwan index-futures night session 15:00 -> next-day 05:00 (crosses midnight):
+// 15:00-24:00 Mon-Fri, plus 00:00-05:00 Tue-Sat (Sat 00:00-05:00 is Fri night session).
+function nightOpen(tz){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  if (m >= 5*60 && m < 15*60) return false;   // 05:00-15:00 recess
+  if (m >= 15*60) return wd >= 1 && wd <= 5;   // 15:00-24:00 Mon-Fri
+  return wd >= 2 && wd <= 6;                   // 00:00-05:00 Tue-Sat
+}
+function pad(n){ return String(n).padStart(2,'0'); }
+function setMkt(id, open, label){
+  const el = document.getElementById(id);
+  el.className = 'mkt ' + (open ? 'open' : 'closed');
+  el.textContent = (label ? label + ' ' : '') + (open ? '開盤中' : '未開盤');
+}
+function tick(){
+  const tw = nowParts('Asia/Taipei');
+  const ny = nowParts('America/New_York');
+  document.getElementById('clk-tw').textContent = pad(tw.hour)+':'+pad(tw.minute)+':'+pad(tw.second);
+  document.getElementById('clk-ny').textContent = pad(ny.hour)+':'+pad(ny.minute)+':'+pad(ny.second);
+  // Taiwan: TWSE weighted index 09:00-13:30; TX futures day 08:45-13:45; TX night 15:00-05:00
+  setMkt('tw-idx',  marketOpen('Asia/Taipei', 9*60, 13*60+30), '加權');
+  setMkt('tx-day',  marketOpen('Asia/Taipei', 8*60+45, 13*60+45), '期日盤');
+  setMkt('tx-night', nightOpen('Asia/Taipei'), '期夜盤');
+  // US: regular session 09:30-16:00 ET; after-hours 16:00-20:00 ET
+  setMkt('ny-mkt',  marketOpen('America/New_York', 9*60+30, 16*60), '美股');
+  setMkt('ny-night', marketOpen('America/New_York', 16*60, 20*60), '美股夜');
+}
+tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>
