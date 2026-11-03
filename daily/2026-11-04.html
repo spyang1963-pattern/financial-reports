@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日報告 2026-11-04</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; margin: 0;
+         background: #f5f6f8; color: #1c1e21; line-height: 1.7; }
+  header { background: #1b2a4a; color: #fff; padding: 14px 24px;
+           display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  header h1 { font-size: 18px; margin: 0; flex: 1; }
+  header nav a { color: #cdd8ee; text-decoration: none; margin-left: 14px; font-size: 14px; }
+  header nav a:hover, header nav a.active { color: #fff; text-decoration: underline; }
+  #clock { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; font-size: 13px; }
+  .clk { background: rgba(255,255,255,.08); border-radius: 6px; padding: 4px 10px; }
+  .clk-city { color: #9fb0cf; margin-right: 6px; }
+  .clk-time { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .mkt { margin-left: 8px; font-size: 12px; padding: 1px 7px; border-radius: 9px; }
+  .mkt.open { background: #2e7d32; color: #fff; }
+  .mkt.closed { background: #5a6474; color: #fff; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 20px; }
+  .card { background: #fff; border-radius: 8px; padding: 18px 22px; margin: 14px 0;
+          box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .card h3 { margin: 0 0 6px; }
+  .card a { color: #1b2a4a; text-decoration: none; }
+  .card a:hover { text-decoration: underline; }
+  .muted { color: #666; font-size: 13px; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px;
+           color: #fff; margin-left: 6px; }
+  .b-daily { background: #2e7d32; }
+  .b-deep { background: #b45309; }
+  .day-nav { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+  .day-nav a { font-size: 13px; padding: 3px 10px; background: #e8ecf3; border-radius: 12px;
+               color: #33415c; text-decoration: none; }
+  .day-nav a:hover { background: #d2dbea; }
+  article.card { line-height: 1.15; }
+  article.card p { margin: 3px 0; }
+  article.card ul, article.card ol { margin: 3px 0 6px; padding-left: 22px; }
+  article.card h1, article.card h2, article.card h3 { padding-bottom: 4px; }
+  article.card h1, article.card h2 { border-bottom: 2px solid #33415c; }
+  article.card h1 { font-size: 30px; margin-top: 8px; }
+  article.card h2 { font-size: 23px; margin-top: 12px; color: #1b2a4a;
+        border-left: 6px solid #1459c8; padding-left: 12px; }
+  article.card h3 { font-size: 19px; margin-top: 10px; color: #24365c;
+        background: #eef4fb; border-radius: 6px; padding: 4px 12px; }
+  article.card h4 { font-size: 17px; margin-top: 18px; color: #145c3a;
+        background: #e8f5ee; border-left: 4px solid #2e7d32;
+        padding: 5px 10px; border-radius: 4px; }
+  article.card h5 { font-size: 15px; margin-top: 14px; color: #4a5568;
+        font-weight: 600; }
+  article.card h4, article.card h5 { margin-bottom: 2px; }
+  article.card strong { font-weight: 700; }
+  article.card blockquote { border-left: 4px solid #9fb0cf; margin: 4px 0;
+        padding: 2px 12px; color: #4a5568; background: #f4f6fa; }
+  article.card hr { border: none; border-top: 1px dashed #c3ccdb; margin: 12px 0; }
+  article.card code { background: #eef0f4; padding: 1px 5px; border-radius: 4px;
+        font-size: 14px; font-family: Consolas, monospace; }
+  article.card pre { background: #1b2a4a; color: #e6ecf7; padding: 14px; border-radius: 8px; overflow-x: auto; }
+  article.card pre code { background: transparent; color: inherit; padding: 0; }
+  article.card table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+  article.card th, article.card td { border: 1px solid #d8dce3; padding: 6px 10px; }
+  article.card th { background: #eef1f6; }
+  article.card a { color: #1459c8; }
+  footer { text-align: center; color: #999; font-size: 12px; padding: 20px; }
+</style>
+</head>
+<body>
+  <header>
+  <h1>金融情報系統報告</h1>
+  <nav>
+    <a href="../index.html" class="">首頁</a>
+    <a href="../calendar.html" class="">行事曆</a>
+    <a href="../daily/2026-11-04.html" class="active">最新每日</a>
+    <a href="../deep/2026-11-03-pm.html" class="">最新深度</a>
+  </nav>
+  <div id="clock">
+    <span class="clk"><span class="clk-city">台北</span><span class="clk-time" id="clk-tw">--:--:--</span><span class="mkt closed" id="tw-idx">…</span><span class="mkt closed" id="tx-day">…</span><span class="mkt closed" id="tx-night">…</span></span>
+    <span class="clk"><span class="clk-city">紐約</span><span class="clk-time" id="clk-ny">--:--:--</span><span class="mkt closed" id="ny-mkt">…</span><span class="mkt closed" id="ny-night">…</span></span>
+  </div>
+</header>
+<div class="wrap">
+  
+    <div class="day-nav">
+      <a href="../index.html">← 首頁</a>
+      
+        
+        <a href="../daily/2026-11-04.html">2026-11-04</a>
+        
+        <a href="../daily/2026-11-03.html">2026-11-03</a>
+        
+        <a href="../daily/2026-11-02.html">2026-11-02</a>
+        
+        <a href="../daily/2026-11-01.html">2026-11-01</a>
+        
+        <a href="../daily/2026-10-31.html">2026-10-31</a>
+        
+        <a href="../daily/2026-10-30.html">2026-10-30</a>
+        
+        <a href="../daily/2026-10-29.html">2026-10-29</a>
+        
+        <a href="../daily/2026-10-28.html">2026-10-28</a>
+        
+        <a href="../daily/2026-10-27.html">2026-10-27</a>
+        
+        <a href="../daily/2026-10-26.html">2026-10-26</a>
+        
+        <a href="../daily/2026-10-25.html">2026-10-25</a>
+        
+        <a href="../daily/2026-10-24.html">2026-10-24</a>
+        
+        <a href="../daily/2026-10-23.html">2026-10-23</a>
+        
+        <a href="../daily/2026-10-22.html">2026-10-22</a>
+        
+        <a href="../daily/2026-10-21.html">2026-10-21</a>
+        
+        <a href="../daily/2026-10-20.html">2026-10-20</a>
+        
+        <a href="../daily/2026-10-19.html">2026-10-19</a>
+        
+        <a href="../daily/2026-10-18.html">2026-10-18</a>
+        
+        <a href="../daily/2026-10-17.html">2026-10-17</a>
+        
+        <a href="../daily/2026-10-16.html">2026-10-16</a>
+        
+        <a href="../daily/2026-10-15.html">2026-10-15</a>
+        
+        <a href="../daily/2026-10-14.html">2026-10-14</a>
+        
+        <a href="../daily/2026-10-13.html">2026-10-13</a>
+        
+        <a href="../daily/2026-10-12.html">2026-10-12</a>
+        
+        <a href="../daily/2026-10-11.html">2026-10-11</a>
+        
+        <a href="../daily/2026-10-10.html">2026-10-10</a>
+        
+        <a href="../daily/2026-10-09.html">2026-10-09</a>
+        
+        <a href="../daily/2026-10-08.html">2026-10-08</a>
+        
+        <a href="../daily/2026-10-07.html">2026-10-07</a>
+        
+        <a href="../daily/2026-10-06.html">2026-10-06</a>
+        
+        <a href="../daily/2026-10-05.html">2026-10-05</a>
+        
+        <a href="../daily/2026-10-04.html">2026-10-04</a>
+        
+        <a href="../daily/2026-10-03.html">2026-10-03</a>
+        
+        <a href="../daily/2026-10-02.html">2026-10-02</a>
+        
+        <a href="../daily/2026-10-01.html">2026-10-01</a>
+        
+        <a href="../daily/2026-09-30.html">2026-09-30</a>
+        
+        <a href="../daily/2026-09-29.html">2026-09-29</a>
+        
+        <a href="../daily/2026-09-28.html">2026-09-28</a>
+        
+        <a href="../daily/2026-09-27.html">2026-09-27</a>
+        
+        <a href="../daily/2026-09-26.html">2026-09-26</a>
+        
+        <a href="../daily/2026-09-25.html">2026-09-25</a>
+        
+        <a href="../daily/2026-09-24.html">2026-09-24</a>
+        
+        <a href="../daily/2026-09-23.html">2026-09-23</a>
+        
+        <a href="../daily/2026-09-22.html">2026-09-22</a>
+        
+        <a href="../daily/2026-09-21.html">2026-09-21</a>
+        
+        <a href="../daily/2026-09-20.html">2026-09-20</a>
+        
+        <a href="../daily/2026-09-19.html">2026-09-19</a>
+        
+        <a href="../daily/2026-09-18.html">2026-09-18</a>
+        
+        <a href="../daily/2026-09-17.html">2026-09-17</a>
+        
+        <a href="../daily/2026-09-16.html">2026-09-16</a>
+        
+        <a href="../daily/2026-09-15.html">2026-09-15</a>
+        
+        <a href="../daily/2026-09-14.html">2026-09-14</a>
+        
+        <a href="../daily/2026-09-13.html">2026-09-13</a>
+        
+        <a href="../daily/2026-09-12.html">2026-09-12</a>
+        
+        <a href="../daily/2026-09-11.html">2026-09-11</a>
+        
+        <a href="../daily/2026-09-10.html">2026-09-10</a>
+        
+        <a href="../daily/2026-09-09.html">2026-09-09</a>
+        
+        <a href="../daily/2026-09-08.html">2026-09-08</a>
+        
+        <a href="../daily/2026-09-07.html">2026-09-07</a>
+        
+        <a href="../daily/2026-09-06.html">2026-09-06</a>
+        
+        <a href="../daily/2026-09-05.html">2026-09-05</a>
+        
+        <a href="../daily/2026-09-04.html">2026-09-04</a>
+        
+        <a href="../daily/2026-09-03.html">2026-09-03</a>
+        
+        <a href="../daily/2026-09-02.html">2026-09-02</a>
+        
+        <a href="../daily/2026-09-01.html">2026-09-01</a>
+        
+        <a href="../daily/2026-08-31.html">2026-08-31</a>
+        
+        <a href="../daily/2026-08-30.html">2026-08-30</a>
+        
+        <a href="../daily/2026-08-29.html">2026-08-29</a>
+        
+        <a href="../daily/2026-08-28.html">2026-08-28</a>
+        
+        <a href="../daily/2026-08-27.html">2026-08-27</a>
+        
+        <a href="../daily/2026-08-26.html">2026-08-26</a>
+        
+        <a href="../daily/2026-08-25.html">2026-08-25</a>
+        
+        <a href="../daily/2026-08-24.html">2026-08-24</a>
+        
+        <a href="../daily/2026-08-23.html">2026-08-23</a>
+        
+        <a href="../daily/2026-08-22.html">2026-08-22</a>
+        
+        <a href="../daily/2026-08-21.html">2026-08-21</a>
+        
+        <a href="../daily/2026-08-20.html">2026-08-20</a>
+        
+        <a href="../daily/2026-08-19.html">2026-08-19</a>
+        
+        <a href="../daily/2026-08-18.html">2026-08-18</a>
+        
+        <a href="../daily/2026-08-17.html">2026-08-17</a>
+        
+        <a href="../daily/2026-08-16.html">2026-08-16</a>
+        
+        <a href="../daily/2026-08-15.html">2026-08-15</a>
+        
+        <a href="../daily/2026-08-14.html">2026-08-14</a>
+        
+        <a href="../daily/2026-08-13.html">2026-08-13</a>
+        
+        <a href="../daily/2026-08-12.html">2026-08-12</a>
+        
+        <a href="../daily/2026-08-11.html">2026-08-11</a>
+        
+        <a href="../daily/2026-08-10.html">2026-08-10</a>
+        
+        <a href="../daily/2026-08-09.html">2026-08-09</a>
+        
+        <a href="../daily/2026-08-08.html">2026-08-08</a>
+        
+        <a href="../daily/2026-08-07.html">2026-08-07</a>
+        
+        <a href="../daily/2026-08-06.html">2026-08-06</a>
+        
+        <a href="../daily/2026-08-05.html">2026-08-05</a>
+        
+        <a href="../daily/2026-08-04.html">2026-08-04</a>
+        
+        <a href="../daily/2026-08-03.html">2026-08-03</a>
+        
+        <a href="../daily/2026-08-02.html">2026-08-02</a>
+        
+      
+    </div>
+    <article class="card">
+      <div class="muted">2026-11-04
+        <span class="badge b-daily">
+          每日報告
+        </span>
+      </div>
+      <h1 id="2026-11-04">金融重點報告 2026-11-04</h1>
+<blockquote>
+<p>產出時間: 2026-11-04 00:23（台灣時間）
+資料截止: 11-03 23:56（收錄庫最新事件，若久久未前進代表蒐集上游疑中斷）
+品質儀表板: 資料新鮮度 ≤30min | 去重率 27.9% | 最大來源佔 16.4% | 驗證覆蓋 25.6% | ⚠️疑似誤殺 88
+本報告由 AI 自動生成，僅供參考，不構成投資建議。</p>
+</blockquote>
+<h2 id="_1">📅 行事曆排期事件</h2>
+<blockquote>
+<p>下列為今日／近期已排定、可能影響市場的重要事件（法人預期供參考）：</p>
+</blockquote>
+<ul>
+<li>📅 2026-11-05 [中]主計總處：台灣 CPI 消費者物價指數(10月)</li>
+</ul>
+<hr />
+<h2 id="_2">🆕 本次新增事件（置頂：最新產出）</h2>
+<blockquote>
+<p>本次新增 <strong>60 筆</strong>，重要 49 筆</p>
+</blockquote>
+<p><strong>重要事件（severity ≥ 1）</strong>：</p>
+<ul>
+<li><strong>[11-03 23:44]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][neutral]</strong> The Texas governor’s race might be a make-or-break contest for a wobbling AI trade <code>marketwatch</code></li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國期中選舉與德州州長選情牽動AI基礎設施與能源政策，對AI供應鏈情緒產生觀望波動。</p>
+</li>
+<li>
+<p><strong>[11-03 23:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> Hut 8 earnings on deck as AI pivot faces profitability test <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Hut 8 財報將檢驗其轉型AI的獲利能力，對加密與AI概念股短線情緒有示範效果。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>HUT</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:52]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Palantir sinks 3% after earnings as analysts point to slowdown in total contract value <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Palantir 因合約總價值成長放緩導致股價下挫，拖累高估值軟體股信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>PLTR,AAPL</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:45]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][negative]</strong> Spain's competition watchdog plans to sanction Apple, Amazon <code>seekingalpha</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 西班牙反壟斷監管機構計劃對蘋果與亞馬遜進行制裁，對大型科技股帶來政策面擾動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>AAPL,AMZN</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 美股真的能止跌？期中選舉日早盤費半開漲 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股適逢期中選舉日，早盤費半開漲且科技股試圖止跌，但尾盤常有下殺慣性，市場觀望氣氛濃厚。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM,費半</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:15]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> US Tech Stocks Rally Strongly With Nasdaq Composite Index Set to Snap Three-Day Losing Streak as Midterm Elections Conclude and Short Covering Expectations Rise - TradingKey <code>google-news:stock market rally</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國期中選舉落幕加上空頭回補預期升溫，美股科技股強勁反彈，那斯達克指數有望終結連續三日跌勢。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,AAPL,納斯達克</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:03]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> US stock markets cautious ahead of mid-term elections; Dow Jones drops 200 pts, S&amp;P 500 and NASDAQ rally - Upstox <code>google-news:stock market rally</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國期中選舉登場，市場觀望氣氛濃厚，道瓊指數小跌，但標普500與那斯達克指數展現韌性走揚。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DJI,SPX,IXIC</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> S&amp;P 500, Nasdaq edge higher ahead of midterm results; Apple falls - The Lufkin Daily News <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股四大指數微幅走高，期中選舉前夕資金觀望，蘋果回落壓抑漲勢。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ,AAPL</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:54]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> S&amp;P 500, Nasdaq open higher while Dow slips on U.S. midterm elections day By Investing.com - Investing.com India <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 期中選舉日美股早盤表現分歧，道瓊滑落而S&amp;P 500與那斯達克開高，反映資金自傳產轉向科技股。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPX,IXIC,DJI</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:37]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 標題 : 晶片股強彈、蘋果財報後股價回落、油價續挫—市場在AMD財報前出現短線震盪 - CMoney投資網誌 <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 晶片股強彈但蘋果回落、油價續挫，市場在AMD財報前夕呈現類股輪動與短線震盪。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>AMD,AAPL</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][neutral]</strong> Brent Flash Crashes $6 Before Rebounding Towards $104 - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 布蘭特原油價格出現6美元的閃崩後反彈至104美元附近，顯示市場波動劇烈，對能源類股與大宗商品市場帶來短期不安定感。</p>
+</li>
+<li>
+<p><strong>[11-03 23:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> Dubai Benchmark Slips Into Contango for the First Time Since July - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 杜拜原油基準自7月以來首次陷入順價差（Contango），反映短期供應充裕或需求疲弱，對原油期貨價格構成壓抑。</p>
+</li>
+<li>
+<p><strong>[11-03 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 標題 : 油價續挫、科技股利空衝擊 美股開盤走向分歧、蘋果拉回引市場憂慮 - CMoney投資網誌 <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價續挫雖有利通膨，但科技股面臨個別利空與蘋果股價拉回，導致美股開盤走勢分歧。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>AAPL,WTI</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:42]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][negative]</strong> Turkish inflation edges higher as downtrend stalls - ing think <code>google-news:inflation CPI</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 土耳其通膨率回升、降勢停滯，顯示新興市場通膨僵固性仍在，對土國資產與匯市構成壓力。</p>
+</li>
+<li>
+<p><strong>[11-03 23:37]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> France's Fiscal Crisis: No Central Bank to Print Money - 조선일보 <code>google-news:central bank policy</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 法國財政危機且無獨立央行可直接印鈔紓困，歐元區主權債信與歐債殖利率面臨壓力。</p>
+</li>
+<li>
+<p><strong>[11-03 23:32]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> TWA00 加權指數- 台股跌千點失守4.4萬，夜盤震盪急拉逾500點 - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股加權指數重挫千點失守4.4萬點，夜盤雖震盪急拉逾500點，但恐慌性殺盤對多頭信心打擊甚鉅。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TWA00,2330</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:27]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[匯市][positive]</strong> Bhutan’s Gelephu Central Bank cleared to hold crypto in its reserves - Crypto Briefing <code>google-news:central bank policy</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 不丹Gelephu央行獲准將加密貨幣納入國家儲備，為全球主權國家對數位資產應用的少數案例，對加密貨幣市場心理面有正面助益。</p>
+</li>
+<li>
+<p><strong>[11-03 23:22]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> TWA00 加權指數- 恐慌性殺盤，就不信融資撐得住不大減！ - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股面臨恐慌性殺盤，市場高度關注融資籌碼是否能藉此有效清理，對台股多頭短期流動性與信心形成考驗。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TWA00</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> TWA00 加權指數- 美國期中選舉正式登場結果將決定總統川普後半任期的政治命運- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國期中選舉正式投票，結果將牽動美國總統川普後半任期政策推行，間接影響全球股市與台股連動氣氛。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TWA00</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:23]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> Vishay faces earnings test as chip demand remains uneven <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 晶片需求不均，半導體類股波動，對整體大盤影響有限但個股分化。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>VSH</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:21]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> Investors brace for Scotts Miracle-Gro earnings, FY27 guidance <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 園藝消費類股財報與下一財年指引將牽動消費信心及相關零售股表現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SMG</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][neutral]</strong> Gold choppy as oil prices edge lower, U.S. midterms loom large <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價下跌與地緣政治和緩令黃金走勢震盪，期貨商品受美國期中選舉觀望氣氛濃厚影響。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>黃金,油價</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:16]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Bill Ackman warns of 'casino' stock market as speculative trading grows <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 避險基金大咖比爾阿克曼警告投機交易與槓桿過高，增添股市泡沫化與回檔疑慮。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>S&amp;P500,納斯達克</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:08]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> Stock market is mixed as investors await U.S. midterm results, tech trade pushes to recover <code>seekingalpha</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國期中選舉結果將出爐，美股盤勢混合，科技股企圖尋求反彈。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>S&amp;P500,納斯達克,道瓊斯</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 5 questions to ask if your boss offers you a buyout, as Microsoft did with 60,000 employees <code>marketwatch</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 微軟提供大規模買斷離職並維持高額AI資本支出，反映科技巨頭積極轉型AI結構。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>MSFT</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:02]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][positive]</strong> Job openings, hiring, and quits increase in September; layoffs tick down: JOLTS <code>seekingalpha</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: JOLTS顯示9月職缺、招募與離職增加而裁員減少，勞動市場韌性依舊，降低經濟硬著陸風險。</p>
+</li>
+<li>
+<p><strong>[11-03 22:55]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][positive]</strong> 美股開盤漲跌互見！費半漲逾3%　台指期夜盤飆漲超過700點 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 期中選舉與美伊談判進展帶動美股費半大漲逾3%，台指期夜盤飆漲逾700點，台積電ADR走揚。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TSM,費半</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:42]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 國際原油價格進一步下跌　美股標普500、納指雙雙開高 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 原油價格續跌配合美國期中選舉登場，美股標普500與納指雙雙開高，市場風險偏好回溫。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPX,IXIC,WTI</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 台指期夜盤震盪1100點 重新站上44K大關 費半漲2％ <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台指期夜盤隨美股費半大漲與美伊談判利多強彈，由跌轉升並重回44,000點大關，振奮多方信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>台指期,費半指數</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> S&amp;P 500 and Nasdaq climb as oil prices retreat - Share Talk <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價回落減輕通膨壓力，帶動美股標普500與那斯達克指數走高，有利風險資產表現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>S&amp;P 500,Nasdaq</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:10]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> 德銀示警全球市場恐「隨時崩潰」！揭五大「危險錯位」：油價、通膨與債市訊號背離 - 鉅亨網 <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 德銀示警全球市場油價、通膨與債市訊號嚴重背離，隱含系統性風險與資產價格隨時崩潰危機。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美債殖利率,美元指數,油價</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:01]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Stocks Rebound as Crude Oil Prices Fall and Chipmakers Recover - Barchart.com <code>google-news:oil price crude</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 原油價格下跌與晶片股反彈，帶動整體股市強勁回彈，科技與半導體族群買氣回溫。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SOX,NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:00]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[地緣政治][negative]</strong> U.S. Launches Secret Strikes on Iran Ahead of Midterm Elections - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國對伊朗進行秘密打擊加劇中東地緣政治風險，對原油價格與避險資產構成潛在波動壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,布蘭特原油</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:49]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> 油價下挫晶片股帶頭反攻 美股那斯達克週二開盤上揚 - Yahoo新聞 <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 國際油價下挫減緩通膨壓力，激勵科技股為主的那斯達克指數開盤上揚，股債市壓力獲釋放。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>IXIC,WTI</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][neutral]</strong> Federal Reserve Holds Rates as December Decision Comes Into Focus - kalkine.ca <code>google-news:Federal Reserve rate decision</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 聯準會維持利率不變，市場聚焦12月利率決策走向，債市與匯市震盪觀望。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債殖利率</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 晶片股回神激勵美股費半早盤反彈逾3% 台積電ADR漲2.3% - 知新聞 <code>google-news:台股 大漲</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 晶片股強勢反彈帶動費半指數大漲逾3%，台積電ADR同步漲逾2%，激勵台股科技類股氣勢。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TSM,NVDA,費半指數</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:55]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> Crude oil prices fall for second day as market hopes for diplomatic resolution to Iran war <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美伊雙方釋出外交解決訊號，油價連續兩天回落，舒緩通膨壓力，對商品市場與航空運輸類股有利。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>USO,CL=F</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:42]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> Ceribell earnings ahead: Can product expansion accelerate revenue? <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Ceribell即將公布財報，市場關注產品擴展對營收加速的貢獻，對個股股價波動有直接影響。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>CBLL</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:41]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][negative]</strong> SFL faces earnings test as revenue expected to decline sequentially <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: SFL面臨財報檢驗且預期營收將連續季減，短線面臨下行壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SFL</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 台股重挫1612點！四大利空衝擊市場 高股息ETF、AI產業洗牌成焦點 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股單日重挫1612點創史上第七大跌點，外資撤出與全球製造業放緩衝擊AI產業與高股息ETF信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 美股震盪後誰領風騷？AI改寫科技版圖 納指ETF布局受矚 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國期中選舉前夕增添美股震盪壓力，選後政治變數明朗有望重迎企業獲利與AI科技主導權。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>QQQ</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:31]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Palantir slumps 5% after earnings as analysts point to slowdown in total contract value <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Palantir財報後因總合約價值成長放緩引發失望性賣壓，股價重挫5%，連動軟體與高估值AI股情緒。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>PLTR</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:51]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> S&amp;P 500, Nasdaq open higher as oil prices extend declines, midterms on tap By Reuters - Investing.com <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價下跌降低成本壓力，激勵標普500與那斯達克指數開高，市場同時關注期中選舉發展。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:50]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][negative]</strong> Stock Market Today: Dow, S&amp;P 500 Futures Fall as AMD Earnings and US Elections Put Wall Street on Edge - Coinpaper <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: AMD財報與美國選舉逼近使華爾街轉趨觀望，道瓊與標普期指走跌，壓抑大盤多頭氣勢。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>AMD,DJI,SPY</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:38]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> US stocks today: S&amp;P 500, Nasdaq open higher as oil prices extend declines, midterms on tap - The Economic Times <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價續跌減緩通膨擔憂，加上期中選舉將至，美股主要指數開高走強。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> S&amp;P 500, Nasdaq open higher as oil prices extend declines, midterms on tap - marketscreener.com <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價持續下跌舒緩通膨疑慮，激勵標普500與那斯達克指數開高，市場聚焦期中選舉結果。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:49]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> 油價下挫晶片股帶頭反攻美股那斯達克週二開盤上揚| 國際焦點 - 太報 TaiSounds <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價下挫搭配晶片股領軍反攻，推升美股那斯達克開盤上揚，連動台股半導體供應鏈氣氛。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>QQQ,2330,NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:27]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> S&amp;P 500, Nasdaq set for higher open as oil prices extend declines, midterm results awaited - The Business Times <code>google-news:oil price crude</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價走跌與等待期中選舉結果預期，推動美股主要指數開盤走高，市場風險偏好回溫。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 台指期夜盤急彈600點！專家曝1關鍵：台股有好戲看了 - Yahoo股市 <code>google-news:台股 大跌</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台指期夜盤急彈600點帶動市場情緒回穩，有助於化解台股現貨市場的恐慌性賣壓。</li>
+<li><strong style="color:#174ea6">標的</strong>: <code>2330,TSM</code></li>
+</ul>
+<p><strong>其他同時段收錄（未分析，共 11 筆）</strong>：</p>
+<ul>
+<li><strong>[11-03 22:40]</strong> 台指期夜盤震盪1100點 重新站上44K大關 費半漲近4％（<code>yahoo-tw-finance</code>）</li>
+<li><strong>[11-03 23:31]</strong> CPI stages demo against inflation in Tirunelveli - The Hindu（<code>google-news:inflation CPI</code>）</li>
+<li><strong>[11-03 22:32]</strong> TWA00 加權指數- 半導體需求強勁，南亞科與牧德營收同創新高- 股市爆料同學會 - CMoney（<code>google-news:加權指數</code>）</li>
+<li><strong>[11-03 22:39]</strong> 〈美股早盤〉晶片股回神！那指反彈走高 蘋果卻拖累道瓊（<code>yahoo-tw-finance</code>）</li>
+<li><strong>[11-03 23:12]</strong> Asda hires ex-Morrisons boss in bid to grow firm（<code>bbcbusiness</code>）</li>
+<li><strong>[11-03 23:05]</strong> Mining giant joins fight to stop killer toad march across Australia（<code>bbcbusiness</code>）</li>
+<li><strong>[11-03 23:02]</strong> William Nordhaus Dies; Nobel Winner Influenced Climate Policy.（<code>nytbusiness</code>）</li>
+<li><strong>[11-03 22:27]</strong> S&amp;P 500, Nasdaq open higher as oil prices extend declines, midterms on tap - The Business Times（<code>google-news:S&amp;P 500 Nasdaq</code>）</li>
+<li><strong>[11-03 22:37]</strong> 台股重挫1612點！四大利空衝擊市場 高股息ETF、AI產業洗牌成焦點 - Yahoo股市（<code>google-news:台股 大跌</code>）</li>
+<li><strong>[11-03 22:46]</strong> Learning from ‘Love Is Blind’ money drama（<code>marketwatch</code>）</li>
+<li><strong>[11-03 22:34]</strong> 【公告】臻鼎-KY代子公司禮鼎半導體科技(深圳)股份有限公司公告取得機器設備（<code>yahoo-tw-finance</code>）</li>
+</ul>
+<hr />
+<h2 id="_3">市場行情快照</h2>
+<pre><code>加權指數            43,307.54    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-3.59%
+台積電              2,295.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-1.50%
+鴻海                 245.50  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-2.19%
+聯發科              3,675.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-7.43%
+台達電              1,270.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-6.27%
+富邦金                154.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-3.45%
+S&amp;P 500          7,577.46    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.48%
+納斯達克            25,377.19    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.85%
+費城半導體指數         10,672.37    點 <span style="color:#c0392b;font-weight:bold">▲</span>+3.33%
+道瓊              51,858.81    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-0.24%
+日經225           63,081.86    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-0.33%
+上證指數             3,608.10    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-0.82%
+Apple              330.70  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-2.25%
+Microsoft          515.79  USD <span style="color:#c0392b;font-weight:bold">▲</span>+1.71%
+NVIDIA             208.07  USD <span style="color:#c0392b;font-weight:bold">▲</span>+2.98%
+Amazon             247.63  USD <span style="color:#c0392b;font-weight:bold">▲</span>+0.82%
+Tesla              399.17  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-1.15%
+美元/日圓              158.45  JPY <span style="color:#c0392b;font-weight:bold">▲</span>+0.49%
+美元/台幣               32.79  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+0.57%
+歐元/美元                1.12  EUR <span style="color:#c0392b;font-weight:bold">▲</span>+0.36%
+美元/人民幣               6.66  CNY <span style="color:#2e7d32;font-weight:bold">▼</span>-0.03%
+WTI原油               95.79  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-0.69%
+布蘭特原油              103.05  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-1.64%
+黃金               3,945.20  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-0.61%
+美元指數DXY            101.84    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.09%
+美債10年殖利率             4.94    % <span style="color:#c0392b;font-weight:bold">▲</span>+0.88%
+</code></pre>
+<blockquote>
+<p>（快照資料時間：2026-11-03 22:30，台股收盤為最近一個交易日）</p>
+</blockquote>
+<h2 id="severity-2">重大事件（severity ≥ 2）</h2>
+<ul>
+<li><strong>[11-03 23:52]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Palantir sinks 3% after earnings as analysts point to slowdown in total contract value</li>
+<li><strong style="color:#174ea6">影響</strong>: Palantir 因合約總價值成長放緩導致股價下挫，拖累高估值軟體股信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>PLTR,AAPL</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:44]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][neutral]</strong> The Texas governor’s race might be a make-or-break contest for a wobbling AI trade</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國期中選舉與德州州長選情牽動AI基礎設施與能源政策，對AI供應鏈情緒產生觀望波動。</p>
+</li>
+<li>
+<p><strong>[11-03 23:37]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 標題 : 晶片股強彈、蘋果財報後股價回落、油價續挫—市場在AMD財報前出現短線震盪 - CMoney投資網誌</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 晶片股強彈但蘋果回落、油價續挫，市場在AMD財報前夕呈現類股輪動與短線震盪。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>AMD,AAPL</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:37]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> France's Fiscal Crisis: No Central Bank to Print Money - 조선일보</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 法國財政危機且無獨立央行可直接印鈔紓困，歐元區主權債信與歐債殖利率面臨壓力。</p>
+</li>
+<li>
+<p><strong>[11-03 23:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> S&amp;P 500, Nasdaq edge higher ahead of midterm results; Apple falls - The Lufkin Daily News</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股四大指數微幅走高，期中選舉前夕資金觀望，蘋果回落壓抑漲勢。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ,AAPL</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][neutral]</strong> Brent Flash Crashes $6 Before Rebounding Towards $104 - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 布蘭特原油價格出現6美元的閃崩後反彈至104美元附近，顯示市場波動劇烈，對能源類股與大宗商品市場帶來短期不安定感。</p>
+</li>
+<li>
+<p><strong>[11-03 23:32]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> TWA00 加權指數- 台股跌千點失守4.4萬，夜盤震盪急拉逾500點 - 股市爆料同學會 - CMoney</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股加權指數重挫千點失守4.4萬點，夜盤雖震盪急拉逾500點，但恐慌性殺盤對多頭信心打擊甚鉅。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TWA00,2330</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> Dubai Benchmark Slips Into Contango for the First Time Since July - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 杜拜原油基準自7月以來首次陷入順價差（Contango），反映短期供應充裕或需求疲弱，對原油期貨價格構成壓抑。</p>
+</li>
+<li>
+<p><strong>[11-03 23:22]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> TWA00 加權指數- 恐慌性殺盤，就不信融資撐得住不大減！ - 股市爆料同學會 - CMoney</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股面臨恐慌性殺盤，市場高度關注融資籌碼是否能藉此有效清理，對台股多頭短期流動性與信心形成考驗。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TWA00</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 美股真的能止跌？期中選舉日早盤費半開漲</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股適逢期中選舉日，早盤費半開漲且科技股試圖止跌，但尾盤常有下殺慣性，市場觀望氣氛濃厚。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM,費半</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][neutral]</strong> Gold choppy as oil prices edge lower, U.S. midterms loom large</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價下跌與地緣政治和緩令黃金走勢震盪，期貨商品受美國期中選舉觀望氣氛濃厚影響。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>黃金,油價</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][neutral]</strong> Federal Reserve Holds Rates as December Decision Comes Into Focus - kalkine.ca</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 聯準會維持利率不變，市場聚焦12月利率決策走向，債市與匯市震盪觀望。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債殖利率</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:16]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Bill Ackman warns of 'casino' stock market as speculative trading grows</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 避險基金大咖比爾阿克曼警告投機交易與槓桿過高，增添股市泡沫化與回檔疑慮。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>S&amp;P500,納斯達克</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:15]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> US Tech Stocks Rally Strongly With Nasdaq Composite Index Set to Snap Three-Day Losing Streak as Midterm Elections Conclude and Short Covering Expectations Rise - TradingKey</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國期中選舉落幕加上空頭回補預期升溫，美股科技股強勁反彈，那斯達克指數有望終結連續三日跌勢。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,AAPL,納斯達克</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:10]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> 德銀示警全球市場恐「隨時崩潰」！揭五大「危險錯位」：油價、通膨與債市訊號背離 - 鉅亨網</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 德銀示警全球市場油價、通膨與債市訊號嚴重背離，隱含系統性風險與資產價格隨時崩潰危機。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美債殖利率,美元指數,油價</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:08]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> Stock market is mixed as investors await U.S. midterm results, tech trade pushes to recover</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國期中選舉結果將出爐，美股盤勢混合，科技股企圖尋求反彈。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>S&amp;P500,納斯達克,道瓊斯</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> S&amp;P 500 and Nasdaq climb as oil prices retreat - Share Talk</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價回落減輕通膨壓力，帶動美股標普500與那斯達克指數走高，有利風險資產表現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>S&amp;P 500,Nasdaq</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 5 questions to ask if your boss offers you a buyout, as Microsoft did with 60,000 employees</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 微軟提供大規模買斷離職並維持高額AI資本支出，反映科技巨頭積極轉型AI結構。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>MSFT</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:03]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> US stock markets cautious ahead of mid-term elections; Dow Jones drops 200 pts, S&amp;P 500 and NASDAQ rally - Upstox</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國期中選舉登場，市場觀望氣氛濃厚，道瓊指數小跌，但標普500與那斯達克指數展現韌性走揚。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DJI,SPX,IXIC</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:02]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][positive]</strong> Job openings, hiring, and quits increase in September; layoffs tick down: JOLTS</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: JOLTS顯示9月職缺、招募與離職增加而裁員減少，勞動市場韌性依舊，降低經濟硬著陸風險。</p>
+</li>
+<li>
+<p><strong>[11-03 23:01]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Stocks Rebound as Crude Oil Prices Fall and Chipmakers Recover - Barchart.com</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 原油價格下跌與晶片股反彈，帶動整體股市強勁回彈，科技與半導體族群買氣回溫。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SOX,NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-03 23:00]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[地緣政治][negative]</strong> U.S. Launches Secret Strikes on Iran Ahead of Midterm Elections - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國對伊朗進行秘密打擊加劇中東地緣政治風險，對原油價格與避險資產構成潛在波動壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,布蘭特原油</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:55]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][positive]</strong> 美股開盤漲跌互見！費半漲逾3%　台指期夜盤飆漲超過700點</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 期中選舉與美伊談判進展帶動美股費半大漲逾3%，台指期夜盤飆漲逾700點，台積電ADR走揚。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TSM,費半</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:55]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> Crude oil prices fall for second day as market hopes for diplomatic resolution to Iran war</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美伊雙方釋出外交解決訊號，油價連續兩天回落，舒緩通膨壓力，對商品市場與航空運輸類股有利。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>USO,CL=F</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:54]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> S&amp;P 500, Nasdaq open higher while Dow slips on U.S. midterm elections day By Investing.com - Investing.com India</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 期中選舉日美股早盤表現分歧，道瓊滑落而S&amp;P 500與那斯達克開高，反映資金自傳產轉向科技股。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPX,IXIC,DJI</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> TWA00 加權指數- 美國期中選舉正式登場結果將決定總統川普後半任期的政治命運- 股市爆料同學會 - CMoney</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國期中選舉正式投票，結果將牽動美國總統川普後半任期政策推行，間接影響全球股市與台股連動氣氛。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TWA00</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 晶片股回神激勵美股費半早盤反彈逾3% 台積電ADR漲2.3% - 知新聞</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 晶片股強勢反彈帶動費半指數大漲逾3%，台積電ADR同步漲逾2%，激勵台股科技類股氣勢。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TSM,NVDA,費半指數</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:49]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> 油價下挫晶片股帶頭反攻 美股那斯達克週二開盤上揚 - Yahoo新聞</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 國際油價下挫減緩通膨壓力，激勵科技股為主的那斯達克指數開盤上揚，股債市壓力獲釋放。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>IXIC,WTI</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:42]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 國際原油價格進一步下跌　美股標普500、納指雙雙開高</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 原油價格續跌配合美國期中選舉登場，美股標普500與納指雙雙開高，市場風險偏好回溫。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPX,IXIC,WTI</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 標題 : 油價續挫、科技股利空衝擊 美股開盤走向分歧、蘋果拉回引市場憂慮 - CMoney投資網誌</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價續挫雖有利通膨，但科技股面臨個別利空與蘋果股價拉回，導致美股開盤走勢分歧。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>AAPL,WTI</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 台指期夜盤震盪1100點 重新站上44K大關 費半漲2％</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台指期夜盤隨美股費半大漲與美伊談判利多強彈，由跌轉升並重回44,000點大關，振奮多方信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>台指期,費半指數</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 台股重挫1612點！四大利空衝擊市場 高股息ETF、AI產業洗牌成焦點</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股單日重挫1612點創史上第七大跌點，外資撤出與全球製造業放緩衝擊AI產業與高股息ETF信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 美股震盪後誰領風騷？AI改寫科技版圖 納指ETF布局受矚</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國期中選舉前夕增添美股震盪壓力，選後政治變數明朗有望重迎企業獲利與AI科技主導權。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>QQQ</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 台指期夜盤急彈600點！專家曝1關鍵：台股有好戲看了 - Yahoo股市</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台指期夜盤急彈600點帶動市場情緒回穩，有助於化解台股現貨市場的恐慌性賣壓。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:31]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Palantir slumps 5% after earnings as analysts point to slowdown in total contract value</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Palantir財報後因總合約價值成長放緩引發失望性賣壓，股價重挫5%，連動軟體與高估值AI股情緒。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>PLTR</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:24]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Palantir slumps 6% after earnings as analysts point to slowdown in total contract value</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Palantir財報後因合約總值成長放緩重挫6%，連帶牽動AI軟體股估值修正。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>PLTR</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:23]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> U.S. crude oil falls below $95 per barrel as market hopes for diplomatic resolution to Iran war</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 地緣政治緊張緩解與外交解決曙光，使原油跌破95美元/桶，減緩全球通膨壓力。</p>
+</li>
+<li>
+<p><strong>[11-03 22:22]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 明天台股大反攻？台指期夜盤急拉「黑翻紅」漲逾400點 - Yahoo股市</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台指期夜盤急拉黑翻紅大漲逾400點，大幅緩解日間大跌1612點的恐慌氣氛，有利隔日台股開盤反攻。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> US Midterm Elections: Dow Falls Nearly 200 Points, S&amp;P 500 And Nasdaq Edge Higher As Polls Begin - Stocktwits</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美期中選舉開跑，道瓊微跌而標普與納斯達克走高，反映科技股尋求反彈與市場觀望選舉結果。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DJI,SPX,IXIC</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:16]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 三大利空開炸! 台股暴跌1612點創收盤第7大跌點｜#鏡新聞| Watch - MSN</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股受多重利空衝擊暴跌1612點，創歷史第7大跌點，電子權值股面臨龐大賣壓。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,台股</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:15]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> European shares edge lower as Apple margin warning trigger global tech rout</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 蘋果毛利率警示引發全球科技股拋售潮，歐股科技類股走低，連動美股及亞股科技板塊。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>AAPL</code></p>
+</li>
+<li>
+<p><strong>[11-03 22:13]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> Oil prices slide after Trump comment on stopping Israel aid</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國可能停止對以色列援助等言論降低中東衝突擴大疑慮，推動油價下行。</li>
+</ul>
+<hr />
+<h2 id="_4">分類彙整</h2>
+<h3 id="47">股市（47）</h3>
+<ul>
+<li><strong>[11-03 23:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Hut 8 earnings on deck as AI pivot faces profitability test</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Hut 8 財報將檢驗其轉型AI的獲利能力，對加密與AI概念股短線情緒有示範效果。</p>
+</li>
+<li>
+<p><strong>[11-03 23:52]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Palantir sinks 3% after earnings as analysts point to slowdown in total contract value</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Palantir 因合約總價值成長放緩導致股價下挫，拖累高估值軟體股信心。</p>
+</li>
+<li>
+<p><strong>[11-03 23:45]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> Spain's competition watchdog plans to sanction Apple, Amazon</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 西班牙反壟斷監管機構計劃對蘋果與亞馬遜進行制裁，對大型科技股帶來政策面擾動。</p>
+</li>
+<li>
+<p><strong>[11-03 23:37]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> 標題 : 晶片股強彈、蘋果財報後股價回落、油價續挫—市場在AMD財報前出現短線震盪 - CMoney投資網誌</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 晶片股強彈但蘋果回落、油價續挫，市場在AMD財報前夕呈現類股輪動與短線震盪。</p>
+</li>
+<li>
+<p><strong>[11-03 23:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> S&amp;P 500, Nasdaq edge higher ahead of midterm results; Apple falls - The Lufkin Daily News</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股四大指數微幅走高，期中選舉前夕資金觀望，蘋果回落壓抑漲勢。</p>
+</li>
+<li>
+<p><strong>[11-03 23:32]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> TWA00 加權指數- 台股跌千點失守4.4萬，夜盤震盪急拉逾500點 - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股加權指數重挫千點失守4.4萬點，夜盤雖震盪急拉逾500點，但恐慌性殺盤對多頭信心打擊甚鉅。</p>
+</li>
+<li>
+<p><strong>[11-03 23:23]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Vishay faces earnings test as chip demand remains uneven</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 晶片需求不均，半導體類股波動，對整體大盤影響有限但個股分化。</p>
+</li>
+<li>
+<p><strong>[11-03 23:22]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> TWA00 加權指數- 恐慌性殺盤，就不信融資撐得住不大減！ - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股面臨恐慌性殺盤，市場高度關注融資籌碼是否能藉此有效清理，對台股多頭短期流動性與信心形成考驗。</p>
+</li>
+<li>
+<p><strong>[11-03 23:21]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Investors brace for Scotts Miracle-Gro earnings, FY27 guidance</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 園藝消費類股財報與下一財年指引將牽動消費信心及相關零售股表現。</p>
+</li>
+<li>
+<p><strong>[11-03 23:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> 美股真的能止跌？期中選舉日早盤費半開漲</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股適逢期中選舉日，早盤費半開漲且科技股試圖止跌，但尾盤常有下殺慣性，市場觀望氣氛濃厚。</p>
+</li>
+<li>
+<p><strong>[11-03 23:16]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Bill Ackman warns of 'casino' stock market as speculative trading grows</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 避險基金大咖比爾阿克曼警告投機交易與槓桿過高，增添股市泡沫化與回檔疑慮。</p>
+</li>
+<li>
+<p><strong>[11-03 23:15]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> US Tech Stocks Rally Strongly With Nasdaq Composite Index Set to Snap Three-Day Losing Streak as Midterm Elections Conclude and Short Covering Expectations Rise - TradingKey</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國期中選舉落幕加上空頭回補預期升溫，美股科技股強勁反彈，那斯達克指數有望終結連續三日跌勢。</p>
+</li>
+<li>
+<p><strong>[11-03 23:12]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Asda hires ex-Morrisons boss in bid to grow firm</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 零售業高層人事異動，對整體宏觀與國際金融市場無直接重大影響。</p>
+</li>
+<li>
+<p><strong>[11-03 23:08]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Stock market is mixed as investors await U.S. midterm results, tech trade pushes to recover</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國期中選舉結果將出爐，美股盤勢混合，科技股企圖尋求反彈。</p>
+</li>
+<li>
+<p><strong>[11-03 23:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> S&amp;P 500 and Nasdaq climb as oil prices retreat - Share Talk</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價回落減輕通膨壓力，帶動美股標普500與那斯達克指數走高，有利風險資產表現。</p>
+</li>
+<li>
+<p><strong>[11-03 23:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 5 questions to ask if your boss offers you a buyout, as Microsoft did with 60,000 employees</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 微軟提供大規模買斷離職並維持高額AI資本支出，反映科技巨頭積極轉型AI結構。</p>
+</li>
+<li>
+<p><strong>[11-03 23:03]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> US stock markets cautious ahead of mid-term elections; Dow Jones drops 200 pts, S&amp;P 500 and NASDAQ rally - Upstox</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國期中選舉登場，市場觀望氣氛濃厚，道瓊指數小跌，但標普500與那斯達克指數展現韌性走揚。</p>
+</li>
+<li>
+<p><strong>[11-03 23:01]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Stocks Rebound as Crude Oil Prices Fall and Chipmakers Recover - Barchart.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 原油價格下跌與晶片股反彈，帶動整體股市強勁回彈，科技與半導體族群買氣回溫。</p>
+</li>
+<li>
+<p><strong>[11-03 22:55]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> 美股開盤漲跌互見！費半漲逾3%　台指期夜盤飆漲超過700點</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 期中選舉與美伊談判進展帶動美股費半大漲逾3%，台指期夜盤飆漲逾700點，台積電ADR走揚。</p>
+</li>
+<li>
+<p><strong>[11-03 22:54]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> S&amp;P 500, Nasdaq open higher while Dow slips on U.S. midterm elections day By Investing.com - Investing.com India</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 期中選舉日美股早盤表現分歧，道瓊滑落而S&amp;P 500與那斯達克開高，反映資金自傳產轉向科技股。</p>
+</li>
+<li>
+<p><strong>[11-03 22:51]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> S&amp;P 500, Nasdaq open higher as oil prices extend declines, midterms on tap By Reuters - Investing.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價下跌降低成本壓力，激勵標普500與那斯達克指數開高，市場同時關注期中選舉發展。</p>
+</li>
+<li>
+<p><strong>[11-03 22:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> TWA00 加權指數- 美國期中選舉正式登場結果將決定總統川普後半任期的政治命運- 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國期中選舉正式投票，結果將牽動美國總統川普後半任期政策推行，間接影響全球股市與台股連動氣氛。</p>
+</li>
+<li>
+<p><strong>[11-03 22:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 晶片股回神激勵美股費半早盤反彈逾3% 台積電ADR漲2.3% - 知新聞</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 晶片股強勢反彈帶動費半指數大漲逾3%，台積電ADR同步漲逾2%，激勵台股科技類股氣勢。</p>
+</li>
+<li>
+<p><strong>[11-03 22:50]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> Stock Market Today: Dow, S&amp;P 500 Futures Fall as AMD Earnings and US Elections Put Wall Street on Edge - Coinpaper</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: AMD財報與美國選舉逼近使華爾街轉趨觀望，道瓊與標普期指走跌，壓抑大盤多頭氣勢。</p>
+</li>
+<li>
+<p><strong>[11-03 22:49]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> 油價下挫晶片股帶頭反攻美股那斯達克週二開盤上揚| 國際焦點 - 太報 TaiSounds</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價下挫搭配晶片股領軍反攻，推升美股那斯達克開盤上揚，連動台股半導體供應鏈氣氛。</p>
+</li>
+<li>
+<p><strong>[11-03 22:42]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Ceribell earnings ahead: Can product expansion accelerate revenue?</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Ceribell即將公布財報，市場關注產品擴展對營收加速的貢獻，對個股股價波動有直接影響。</p>
+</li>
+<li>
+<p><strong>[11-03 22:42]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 國際原油價格進一步下跌　美股標普500、納指雙雙開高</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 原油價格續跌配合美國期中選舉登場，美股標普500與納指雙雙開高，市場風險偏好回溫。</p>
+</li>
+<li>
+<p><strong>[11-03 22:41]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> SFL faces earnings test as revenue expected to decline sequentially</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: SFL面臨財報檢驗且預期營收將連續季減，短線面臨下行壓力。</p>
+</li>
+<li>
+<p><strong>[11-03 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> 標題 : 油價續挫、科技股利空衝擊 美股開盤走向分歧、蘋果拉回引市場憂慮 - CMoney投資網誌</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價續挫雖有利通膨，但科技股面臨個別利空與蘋果股價拉回，導致美股開盤走勢分歧。</p>
+</li>
+<li>
+<p><strong>[11-03 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 台指期夜盤震盪1100點 重新站上44K大關 費半漲2％</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台指期夜盤隨美股費半大漲與美伊談判利多強彈，由跌轉升並重回44,000點大關，振奮多方信心。</p>
+</li>
+<li>
+<p><strong>[11-03 22:38]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> US stocks today: S&amp;P 500, Nasdaq open higher as oil prices extend declines, midterms on tap - The Economic Times</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價續跌減緩通膨擔憂，加上期中選舉將至，美股主要指數開高走強。</p>
+</li>
+<li>
+<p><strong>[11-03 22:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 台股重挫1612點！四大利空衝擊市場 高股息ETF、AI產業洗牌成焦點</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股單日重挫1612點創史上第七大跌點，外資撤出與全球製造業放緩衝擊AI產業與高股息ETF信心。</p>
+</li>
+<li>
+<p><strong>[11-03 22:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> 美股震盪後誰領風騷？AI改寫科技版圖 納指ETF布局受矚</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國期中選舉前夕增添美股震盪壓力，選後政治變數明朗有望重迎企業獲利與AI科技主導權。</p>
+</li>
+<li>
+<p><strong>[11-03 22:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> S&amp;P 500, Nasdaq open higher as oil prices extend declines, midterms on tap - marketscreener.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價持續下跌舒緩通膨疑慮，激勵標普500與那斯達克指數開高，市場聚焦期中選舉結果。</p>
+</li>
+<li>
+<p><strong>[11-03 22:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 台指期夜盤急彈600點！專家曝1關鍵：台股有好戲看了 - Yahoo股市</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台指期夜盤急彈600點帶動市場情緒回穩，有助於化解台股現貨市場的恐慌性賣壓。</p>
+</li>
+<li>
+<p><strong>[11-03 22:34]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 【公告】臻鼎-KY代子公司禮鼎半導體科技(深圳)股份有限公司公告取得機器設備</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 臻鼎-KY子公司取得機器設備為正常資本支出與擴廠行為，對整體大盤無顯著影響。</p>
+</li>
+<li>
+<p><strong>[11-03 22:31]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Palantir slumps 5% after earnings as analysts point to slowdown in total contract value</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Palantir財報後因總合約價值成長放緩引發失望性賣壓，股價重挫5%，連動軟體與高估值AI股情緒。</p>
+</li>
+<li>
+<p><strong>[11-03 22:27]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> S&amp;P 500, Nasdaq set for higher open as oil prices extend declines, midterm results awaited - The Business Times</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價走跌與等待期中選舉結果預期，推動美股主要指數開盤走高，市場風險偏好回溫。</p>
+</li>
+<li>
+<p><strong>[11-03 22:24]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> ProShares S&amp;P 500 High Income ETF declares monthly distribution of $0.2372</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 常規高股息ETF配息公告，對大盤無實質驅動效果。</p>
+</li>
+<li>
+<p><strong>[11-03 22:24]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Palantir slumps 6% after earnings as analysts point to slowdown in total contract value</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Palantir財報後因合約總值成長放緩重挫6%，連帶牽動AI軟體股估值修正。</p>
+</li>
+<li>
+<p><strong>[11-03 22:22]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 明天台股大反攻？台指期夜盤急拉「黑翻紅」漲逾400點 - Yahoo股市</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台指期夜盤急拉黑翻紅大漲逾400點，大幅緩解日間大跌1612點的恐慌氣氛，有利隔日台股開盤反攻。</p>
+</li>
+<li>
+<p><strong>[11-03 22:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> US Midterm Elections: Dow Falls Nearly 200 Points, S&amp;P 500 And Nasdaq Edge Higher As Polls Begin - Stocktwits</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美期中選舉開跑，道瓊微跌而標普與納斯達克走高，反映科技股尋求反彈與市場觀望選舉結果。</p>
+</li>
+<li>
+<p><strong>[11-03 22:16]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> US Stock Futures Climb as Investors Seek Tech Rebound Following Nasdaq Selloff: Dow Jones, S&amp;P, Nasdaq, Wall Street - Yahoo Finance UK</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 納斯達克先前遭逢賣壓後，投資人趁低買進科技股，推動期指回升，有助於修復科技類股信心。</p>
+</li>
+<li>
+<p><strong>[11-03 22:16]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 三大利空開炸! 台股暴跌1612點創收盤第7大跌點｜#鏡新聞| Watch - MSN</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股受多重利空衝擊暴跌1612點，創歷史第7大跌點，電子權值股面臨龐大賣壓。</p>
+</li>
+<li>
+<p><strong>[11-03 22:15]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> European shares edge lower as Apple margin warning trigger global tech rout</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 蘋果毛利率警示引發全球科技股拋售潮，歐股科技類股走低，連動美股及亞股科技板塊。</p>
+</li>
+<li>
+<p><strong>[11-03 22:12]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> TWA00 加權指數- 22:20首播！回頭再看一次如何抄底成功🏆。控價流程孤門獨市- 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股加權指數相關之技術分析與散戶討論內容，對整體實質國際金融市場無直接重大影響。</p>
+</li>
+<li>
+<p><strong>[11-03 22:08]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> 'Industry crisis': Germany's auto sector faces fresh cuts as Schaeffler axes 3,460 jobs and eyes defense</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 歐洲汽車大廠Schaeffler裁員並轉向國防與機器人，反映歐洲製造業面臨中國成本競爭的深層危機。</li>
+</ul>
+<h3 id="2">債市（2）</h3>
+<ul>
+<li><strong>[11-03 23:37]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> France's Fiscal Crisis: No Central Bank to Print Money - 조선일보</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 法國財政危機且無獨立央行可直接印鈔紓困，歐元區主權債信與歐債殖利率面臨壓力。</p>
+</li>
+<li>
+<p><strong>[11-03 22:24]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> JPMorgan BetaBuilders U.S. Aggregate Bond ETF declares monthly distribution of $0.1949</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 常規ETF配息公告，對整體債券市場無實質影響。</li>
+</ul>
+<h3 id="1">匯市（1）</h3>
+<ul>
+<li><strong>[11-03 23:27]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Bhutan’s Gelephu Central Bank cleared to hold crypto in its reserves - Crypto Briefing</li>
+<li><strong style="color:#174ea6">影響</strong>: 不丹Gelephu央行獲准將加密貨幣納入國家儲備，為全球主權國家對數位資產應用的少數案例，對加密貨幣市場心理面有正面助益。</li>
+</ul>
+<h3 id="7">商品(油金)（7）</h3>
+<ul>
+<li><strong>[11-03 23:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Brent Flash Crashes $6 Before Rebounding Towards $104 - Crude Oil Prices Today | OilPrice.com</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 布蘭特原油價格出現6美元的閃崩後反彈至104美元附近，顯示市場波動劇烈，對能源類股與大宗商品市場帶來短期不安定感。</p>
+</li>
+<li>
+<p><strong>[11-03 23:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Dubai Benchmark Slips Into Contango for the First Time Since July - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 杜拜原油基準自7月以來首次陷入順價差（Contango），反映短期供應充裕或需求疲弱，對原油期貨價格構成壓抑。</p>
+</li>
+<li>
+<p><strong>[11-03 23:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Gold choppy as oil prices edge lower, U.S. midterms loom large</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價下跌與地緣政治和緩令黃金走勢震盪，期貨商品受美國期中選舉觀望氣氛濃厚影響。</p>
+</li>
+<li>
+<p><strong>[11-03 22:55]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Crude oil prices fall for second day as market hopes for diplomatic resolution to Iran war</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美伊雙方釋出外交解決訊號，油價連續兩天回落，舒緩通膨壓力，對商品市場與航空運輸類股有利。</p>
+</li>
+<li>
+<p><strong>[11-03 22:49]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 油價下挫晶片股帶頭反攻 美股那斯達克週二開盤上揚 - Yahoo新聞</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 國際油價下挫減緩通膨壓力，激勵科技股為主的那斯達克指數開盤上揚，股債市壓力獲釋放。</p>
+</li>
+<li>
+<p><strong>[11-03 22:23]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> U.S. crude oil falls below $95 per barrel as market hopes for diplomatic resolution to Iran war</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 地緣政治緊張緩解與外交解決曙光，使原油跌破95美元/桶，減緩全球通膨壓力。</p>
+</li>
+<li>
+<p><strong>[11-03 22:13]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Oil prices slide after Trump comment on stopping Israel aid</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國可能停止對以色列援助等言論降低中東衝突擴大疑慮，推動油價下行。</li>
+</ul>
+<h3 id="2_1">地緣政治（2）</h3>
+<ul>
+<li><strong>[11-03 23:44]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> The Texas governor’s race might be a make-or-break contest for a wobbling AI trade</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國期中選舉與德州州長選情牽動AI基礎設施與能源政策，對AI供應鏈情緒產生觀望波動。</p>
+</li>
+<li>
+<p><strong>[11-03 23:00]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> U.S. Launches Secret Strikes on Iran Ahead of Midterm Elections - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國對伊朗進行秘密打擊加劇中東地緣政治風險，對原油價格與避險資產構成潛在波動壓力。</li>
+</ul>
+<h3 id="6">總體經濟（6）</h3>
+<ul>
+<li><strong>[11-03 23:42]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> Turkish inflation edges higher as downtrend stalls - ing think</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 土耳其通膨率回升、降勢停滯，顯示新興市場通膨僵固性仍在，對土國資產與匯市構成壓力。</p>
+</li>
+<li>
+<p><strong>[11-03 23:31]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> CPI stages demo against inflation in Tirunelveli - The Hindu</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 印度地方政黨或團體（CPI）發起抗議通膨示範，對全球金融與資本市場無直接實質影響。</p>
+</li>
+<li>
+<p><strong>[11-03 23:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> Federal Reserve Holds Rates as December Decision Comes Into Focus - kalkine.ca</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 聯準會維持利率不變，市場聚焦12月利率決策走向，債市與匯市震盪觀望。</p>
+</li>
+<li>
+<p><strong>[11-03 23:10]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 德銀示警全球市場恐「隨時崩潰」！揭五大「危險錯位」：油價、通膨與債市訊號背離 - 鉅亨網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 德銀示警全球市場油價、通膨與債市訊號嚴重背離，隱含系統性風險與資產價格隨時崩潰危機。</p>
+</li>
+<li>
+<p><strong>[11-03 23:02]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Job openings, hiring, and quits increase in September; layoffs tick down: JOLTS</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: JOLTS顯示9月職缺、招募與離職增加而裁員減少，勞動市場韌性依舊，降低經濟硬著陸風險。</p>
+</li>
+<li>
+<p><strong>[11-03 22:17]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 油價走跌美股期指漲跌互見 投資人靜待期中選舉結果 | 民視新聞網 - LINE TODAY</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價走跌減緩通膨壓力，美股期指漲跌互見，市場交投主要聚焦於期中選舉的最終開票結果。</li>
+</ul>
+<h3 id="15">其他（15）</h3>
+<ul>
+<li><strong>[11-03 23:05]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Mining giant joins fight to stop killer toad march across Australia</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 礦業巨頭Rio Tinto贊助澳洲生物防護計畫，對全球金融與資本市場無實質影響。</p>
+</li>
+<li>
+<p><strong>[11-03 23:02]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> William Nordhaus Dies; Nobel Winner Influenced Climate Policy.</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 諾貝爾獎得主William Nordhaus逝世，其氣候經濟學理論影響深遠但無即時市場衝擊。</p>
+</li>
+<li>
+<p><strong>[11-03 22:46]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Learning from ‘Love Is Blind’ money drama</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 娛樂實境秀相關的理財討論，對整體金融市場無實質影響。</p>
+</li>
+<li>
+<p><strong>[11-03 22:40]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 台指期夜盤震盪1100點 重新站上44K大關 費半漲近4％</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-03 22:39]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 〈美股早盤〉晶片股回神！那指反彈走高 蘋果卻拖累道瓊</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-03 22:37]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 台股重挫1612點！四大利空衝擊市場 高股息ETF、AI產業洗牌成焦點 - Yahoo股市</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-03 22:32]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> TWA00 加權指數- 半導體需求強勁，南亞科與牧德營收同創新高- 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-03 22:27]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> S&amp;P 500, Nasdaq open higher as oil prices extend declines, midterms on tap - The Business Times</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-03 22:24]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 臻鼎-KY 代子公司禮鼎半導體科技(深圳)股份有限公司公告取得機器設備</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-03 22:22]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 明天台股大反攻？台指期夜盤急拉「黑翻紅」漲逾400點 - Yahoo股市</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-03 22:17]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Wall Street Futures Rise as Nasdaq Attempts Recovery Following Three-Month Lows: Dow Jones, S&amp;P, Nasdaq - Yahoo Finance</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-03 22:17]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Nasdaq, S&amp;P 500 eminis rise early as oil falls; midterm results ahead - TradingView</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-03 22:12]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 2330 台積電 - 指數今天才跌出60分第五波,接下來反彈觀察周K是否收漲- 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-03 22:12]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> TWA00 加權指數 - 昨天上市-8e今天-229e otc維持率有點危險 今天營業... - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-03 22:10]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Treasury Yield Edges Higher Ahead of Midterm Election Results - TradingView</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 無</li>
+</ul>
+<hr />
+<h2 id="_5">全部事件</h2>
+<ul>
+<li><strong>[11-03 23:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Hut 8 earnings on deck as AI pivot faces profitability test <code>investing-com</code></li>
+<li><strong>[11-03 23:52]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Palantir sinks 3% after earnings as analysts point to slowdown in total contract value <code>cnbc</code></li>
+<li><strong>[11-03 23:45]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Spain's competition watchdog plans to sanction Apple, Amazon <code>seekingalpha</code></li>
+<li><strong>[11-03 23:44]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> The Texas governor’s race might be a make-or-break contest for a wobbling AI trade <code>marketwatch</code></li>
+<li><strong>[11-03 23:42]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Turkish inflation edges higher as downtrend stalls - ing think <code>google-news:inflation CPI</code></li>
+<li><strong>[11-03 23:37]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 標題 : 晶片股強彈、蘋果財報後股價回落、油價續挫—市場在AMD財報前出現短線震盪 - CMoney投資網誌 <code>google-news:油價</code></li>
+<li><strong>[11-03 23:37]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> France's Fiscal Crisis: No Central Bank to Print Money - 조선일보 <code>google-news:central bank policy</code></li>
+<li><strong>[11-03 23:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> S&amp;P 500, Nasdaq edge higher ahead of midterm results; Apple falls - The Lufkin Daily News <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-03 23:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Brent Flash Crashes $6 Before Rebounding Towards $104 - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[11-03 23:32]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> TWA00 加權指數- 台股跌千點失守4.4萬，夜盤震盪急拉逾500點 - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-03 23:31]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> CPI stages demo against inflation in Tirunelveli - The Hindu <code>google-news:inflation CPI</code></li>
+<li><strong>[11-03 23:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Dubai Benchmark Slips Into Contango for the First Time Since July - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[11-03 23:27]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Bhutan’s Gelephu Central Bank cleared to hold crypto in its reserves - Crypto Briefing <code>google-news:central bank policy</code></li>
+<li><strong>[11-03 23:23]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Vishay faces earnings test as chip demand remains uneven <code>investing-com</code></li>
+<li><strong>[11-03 23:22]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> TWA00 加權指數- 恐慌性殺盤，就不信融資撐得住不大減！ - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-03 23:21]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Investors brace for Scotts Miracle-Gro earnings, FY27 guidance <code>investing-com</code></li>
+<li><strong>[11-03 23:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 美股真的能止跌？期中選舉日早盤費半開漲 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-03 23:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Gold choppy as oil prices edge lower, U.S. midterms loom large <code>investing-com</code></li>
+<li><strong>[11-03 23:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Federal Reserve Holds Rates as December Decision Comes Into Focus - kalkine.ca <code>google-news:Federal Reserve rate decision</code></li>
+<li><strong>[11-03 23:16]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Bill Ackman warns of 'casino' stock market as speculative trading grows <code>cnbc</code></li>
+<li><strong>[11-03 23:15]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> US Tech Stocks Rally Strongly With Nasdaq Composite Index Set to Snap Three-Day Losing Streak as Midterm Elections Conclude and Short Covering Expectations Rise - TradingKey <code>google-news:stock market rally</code></li>
+<li><strong>[11-03 23:12]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Asda hires ex-Morrisons boss in bid to grow firm <code>bbcbusiness</code></li>
+<li><strong>[11-03 23:10]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 德銀示警全球市場恐「隨時崩潰」！揭五大「危險錯位」：油價、通膨與債市訊號背離 - 鉅亨網 <code>google-news:油價</code></li>
+<li><strong>[11-03 23:08]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Stock market is mixed as investors await U.S. midterm results, tech trade pushes to recover <code>seekingalpha</code></li>
+<li><strong>[11-03 23:05]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Mining giant joins fight to stop killer toad march across Australia <code>bbcbusiness</code></li>
+<li><strong>[11-03 23:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> S&amp;P 500 and Nasdaq climb as oil prices retreat - Share Talk <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-03 23:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 5 questions to ask if your boss offers you a buyout, as Microsoft did with 60,000 employees <code>marketwatch</code></li>
+<li><strong>[11-03 23:03]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> US stock markets cautious ahead of mid-term elections; Dow Jones drops 200 pts, S&amp;P 500 and NASDAQ rally - Upstox <code>google-news:stock market rally</code></li>
+<li><strong>[11-03 23:02]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Job openings, hiring, and quits increase in September; layoffs tick down: JOLTS <code>seekingalpha</code></li>
+<li><strong>[11-03 23:02]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> William Nordhaus Dies; Nobel Winner Influenced Climate Policy. <code>nytbusiness</code></li>
+<li><strong>[11-03 23:01]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Stocks Rebound as Crude Oil Prices Fall and Chipmakers Recover - Barchart.com <code>google-news:oil price crude</code></li>
+<li><strong>[11-03 23:00]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> U.S. Launches Secret Strikes on Iran Ahead of Midterm Elections - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[11-03 22:55]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 美股開盤漲跌互見！費半漲逾3%　台指期夜盤飆漲超過700點 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-03 22:55]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Crude oil prices fall for second day as market hopes for diplomatic resolution to Iran war <code>cnbc</code></li>
+<li><strong>[11-03 22:54]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> S&amp;P 500, Nasdaq open higher while Dow slips on U.S. midterm elections day By Investing.com - Investing.com India <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-03 22:51]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> S&amp;P 500, Nasdaq open higher as oil prices extend declines, midterms on tap By Reuters - Investing.com <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-03 22:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> TWA00 加權指數- 美國期中選舉正式登場結果將決定總統川普後半任期的政治命運- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-03 22:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 晶片股回神激勵美股費半早盤反彈逾3% 台積電ADR漲2.3% - 知新聞 <code>google-news:台股 大漲</code></li>
+<li><strong>[11-03 22:50]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Stock Market Today: Dow, S&amp;P 500 Futures Fall as AMD Earnings and US Elections Put Wall Street on Edge - Coinpaper <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-03 22:49]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 油價下挫晶片股帶頭反攻 美股那斯達克週二開盤上揚 - Yahoo新聞 <code>google-news:油價</code></li>
+<li><strong>[11-03 22:49]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 油價下挫晶片股帶頭反攻美股那斯達克週二開盤上揚| 國際焦點 - 太報 TaiSounds <code>google-news:油價</code></li>
+<li><strong>[11-03 22:46]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Learning from ‘Love Is Blind’ money drama <code>marketwatch</code></li>
+<li><strong>[11-03 22:42]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Ceribell earnings ahead: Can product expansion accelerate revenue? <code>investing-com</code></li>
+<li><strong>[11-03 22:42]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 國際原油價格進一步下跌　美股標普500、納指雙雙開高 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-03 22:41]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> SFL faces earnings test as revenue expected to decline sequentially <code>investing-com</code></li>
+<li><strong>[11-03 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 標題 : 油價續挫、科技股利空衝擊 美股開盤走向分歧、蘋果拉回引市場憂慮 - CMoney投資網誌 <code>google-news:油價</code></li>
+<li><strong>[11-03 22:40]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 台指期夜盤震盪1100點 重新站上44K大關 費半漲近4％ <code>yahoo-tw-finance</code></li>
+<li><strong>[11-03 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 台指期夜盤震盪1100點 重新站上44K大關 費半漲2％ <code>yahoo-tw-finance</code></li>
+<li><strong>[11-03 22:39]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 〈美股早盤〉晶片股回神！那指反彈走高 蘋果卻拖累道瓊 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-03 22:38]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> US stocks today: S&amp;P 500, Nasdaq open higher as oil prices extend declines, midterms on tap - The Economic Times <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-03 22:37]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 台股重挫1612點！四大利空衝擊市場 高股息ETF、AI產業洗牌成焦點 - Yahoo股市 <code>google-news:台股 大跌</code></li>
+<li><strong>[11-03 22:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 台股重挫1612點！四大利空衝擊市場 高股息ETF、AI產業洗牌成焦點 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-03 22:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 美股震盪後誰領風騷？AI改寫科技版圖 納指ETF布局受矚 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-03 22:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> S&amp;P 500, Nasdaq open higher as oil prices extend declines, midterms on tap - marketscreener.com <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-03 22:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 台指期夜盤急彈600點！專家曝1關鍵：台股有好戲看了 - Yahoo股市 <code>google-news:台股 大跌</code></li>
+<li><strong>[11-03 22:34]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 【公告】臻鼎-KY代子公司禮鼎半導體科技(深圳)股份有限公司公告取得機器設備 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-03 22:32]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> TWA00 加權指數- 半導體需求強勁，南亞科與牧德營收同創新高- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-03 22:31]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Palantir slumps 5% after earnings as analysts point to slowdown in total contract value <code>cnbc</code></li>
+<li><strong>[11-03 22:27]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> S&amp;P 500, Nasdaq open higher as oil prices extend declines, midterms on tap - The Business Times <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-03 22:27]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> S&amp;P 500, Nasdaq set for higher open as oil prices extend declines, midterm results awaited - The Business Times <code>google-news:oil price crude</code></li>
+<li><strong>[11-03 22:24]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> JPMorgan BetaBuilders U.S. Aggregate Bond ETF declares monthly distribution of $0.1949 <code>seekingalpha</code></li>
+<li><strong>[11-03 22:24]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> ProShares S&amp;P 500 High Income ETF declares monthly distribution of $0.2372 <code>seekingalpha</code></li>
+<li><strong>[11-03 22:24]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Palantir slumps 6% after earnings as analysts point to slowdown in total contract value <code>cnbc</code></li>
+<li><strong>[11-03 22:24]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 臻鼎-KY 代子公司禮鼎半導體科技(深圳)股份有限公司公告取得機器設備 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-03 22:23]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> U.S. crude oil falls below $95 per barrel as market hopes for diplomatic resolution to Iran war <code>cnbc</code></li>
+<li><strong>[11-03 22:22]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 明天台股大反攻？台指期夜盤急拉「黑翻紅」漲逾400點 - Yahoo股市 <code>google-news:台股 大漲</code></li>
+<li><strong>[11-03 22:22]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 明天台股大反攻？台指期夜盤急拉「黑翻紅」漲逾400點 - Yahoo股市 <code>google-news:台股 大跌</code></li>
+<li><strong>[11-03 22:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> US Midterm Elections: Dow Falls Nearly 200 Points, S&amp;P 500 And Nasdaq Edge Higher As Polls Begin - Stocktwits <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-03 22:17]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 油價走跌美股期指漲跌互見 投資人靜待期中選舉結果 | 民視新聞網 - LINE TODAY <code>google-news:油價</code></li>
+<li><strong>[11-03 22:17]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Wall Street Futures Rise as Nasdaq Attempts Recovery Following Three-Month Lows: Dow Jones, S&amp;P, Nasdaq - Yahoo Finance <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-03 22:17]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Nasdaq, S&amp;P 500 eminis rise early as oil falls; midterm results ahead - TradingView <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-03 22:16]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> US Stock Futures Climb as Investors Seek Tech Rebound Following Nasdaq Selloff: Dow Jones, S&amp;P, Nasdaq, Wall Street - Yahoo Finance UK <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-03 22:16]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 三大利空開炸! 台股暴跌1612點創收盤第7大跌點｜#鏡新聞| Watch - MSN <code>google-news:台股 收盤</code></li>
+<li><strong>[11-03 22:15]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> European shares edge lower as Apple margin warning trigger global tech rout <code>investing-com</code></li>
+<li><strong>[11-03 22:13]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Oil prices slide after Trump comment on stopping Israel aid <code>investing-com</code></li>
+<li><strong>[11-03 22:12]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 2330 台積電 - 指數今天才跌出60分第五波,接下來反彈觀察周K是否收漲- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-03 22:12]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> TWA00 加權指數 - 昨天上市-8e今天-229e otc維持率有點危險 今天營業... - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-03 22:12]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> TWA00 加權指數- 22:20首播！回頭再看一次如何抄底成功🏆。控價流程孤門獨市- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-03 22:10]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Treasury Yield Edges Higher Ahead of Midterm Election Results - TradingView <code>google-news:Treasury yields</code></li>
+<li><strong>[11-03 22:08]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 'Industry crisis': Germany's auto sector faces fresh cuts as Schaeffler axes 3,460 jobs and eyes defense <code>cnbc</code></li>
+</ul>
+    </article>
+  
+</div>
+<footer>由金融情報系統自動發佈 · 僅供參考，不構成投資建議</footer>
+<script>
+const WEEK = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function nowParts(tz){
+  const p = {};
+  new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short', month: 'short',
+    day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
+  }).formatToParts(new Date()).forEach(x => p[x.type] = x.value);
+  return p;
+}
+function marketOpen(tz, open, close){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  return wd>=1 && wd<=5 && m>=open && m<close;
+}
+// Taiwan index-futures night session 15:00 -> next-day 05:00 (crosses midnight):
+// 15:00-24:00 Mon-Fri, plus 00:00-05:00 Tue-Sat (Sat 00:00-05:00 is Fri night session).
+function nightOpen(tz){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  if (m >= 5*60 && m < 15*60) return false;   // 05:00-15:00 recess
+  if (m >= 15*60) return wd >= 1 && wd <= 5;   // 15:00-24:00 Mon-Fri
+  return wd >= 2 && wd <= 6;                   // 00:00-05:00 Tue-Sat
+}
+function pad(n){ return String(n).padStart(2,'0'); }
+function setMkt(id, open, label){
+  const el = document.getElementById(id);
+  el.className = 'mkt ' + (open ? 'open' : 'closed');
+  el.textContent = (label ? label + ' ' : '') + (open ? '開盤中' : '未開盤');
+}
+function tick(){
+  const tw = nowParts('Asia/Taipei');
+  const ny = nowParts('America/New_York');
+  document.getElementById('clk-tw').textContent = pad(tw.hour)+':'+pad(tw.minute)+':'+pad(tw.second);
+  document.getElementById('clk-ny').textContent = pad(ny.hour)+':'+pad(ny.minute)+':'+pad(ny.second);
+  // Taiwan: TWSE weighted index 09:00-13:30; TX futures day 08:45-13:45; TX night 15:00-05:00
+  setMkt('tw-idx',  marketOpen('Asia/Taipei', 9*60, 13*60+30), '加權');
+  setMkt('tx-day',  marketOpen('Asia/Taipei', 8*60+45, 13*60+45), '期日盤');
+  setMkt('tx-night', nightOpen('Asia/Taipei'), '期夜盤');
+  // US: regular session 09:30-16:00 ET; after-hours 16:00-20:00 ET
+  setMkt('ny-mkt',  marketOpen('America/New_York', 9*60+30, 16*60), '美股');
+  setMkt('ny-night', marketOpen('America/New_York', 16*60, 20*60), '美股夜');
+}
+tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>
