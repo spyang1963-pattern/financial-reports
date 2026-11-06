@@ -1,0 +1,1706 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日報告 2026-11-07</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; margin: 0;
+         background: #f5f6f8; color: #1c1e21; line-height: 1.7; }
+  header { background: #1b2a4a; color: #fff; padding: 14px 24px;
+           display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  header h1 { font-size: 18px; margin: 0; flex: 1; }
+  header nav a { color: #cdd8ee; text-decoration: none; margin-left: 14px; font-size: 14px; }
+  header nav a:hover, header nav a.active { color: #fff; text-decoration: underline; }
+  #clock { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; font-size: 13px; }
+  .clk { background: rgba(255,255,255,.08); border-radius: 6px; padding: 4px 10px; }
+  .clk-city { color: #9fb0cf; margin-right: 6px; }
+  .clk-time { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .mkt { margin-left: 8px; font-size: 12px; padding: 1px 7px; border-radius: 9px; }
+  .mkt.open { background: #2e7d32; color: #fff; }
+  .mkt.closed { background: #5a6474; color: #fff; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 20px; }
+  .card { background: #fff; border-radius: 8px; padding: 18px 22px; margin: 14px 0;
+          box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .card h3 { margin: 0 0 6px; }
+  .card a { color: #1b2a4a; text-decoration: none; }
+  .card a:hover { text-decoration: underline; }
+  .muted { color: #666; font-size: 13px; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px;
+           color: #fff; margin-left: 6px; }
+  .b-daily { background: #2e7d32; }
+  .b-deep { background: #b45309; }
+  .day-nav { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+  .day-nav a { font-size: 13px; padding: 3px 10px; background: #e8ecf3; border-radius: 12px;
+               color: #33415c; text-decoration: none; }
+  .day-nav a:hover { background: #d2dbea; }
+  article.card { line-height: 1.15; }
+  article.card p { margin: 3px 0; }
+  article.card ul, article.card ol { margin: 3px 0 6px; padding-left: 22px; }
+  article.card h1, article.card h2, article.card h3 { padding-bottom: 4px; }
+  article.card h1, article.card h2 { border-bottom: 2px solid #33415c; }
+  article.card h1 { font-size: 30px; margin-top: 8px; }
+  article.card h2 { font-size: 23px; margin-top: 12px; color: #1b2a4a;
+        border-left: 6px solid #1459c8; padding-left: 12px; }
+  article.card h3 { font-size: 19px; margin-top: 10px; color: #24365c;
+        background: #eef4fb; border-radius: 6px; padding: 4px 12px; }
+  article.card h4 { font-size: 17px; margin-top: 18px; color: #145c3a;
+        background: #e8f5ee; border-left: 4px solid #2e7d32;
+        padding: 5px 10px; border-radius: 4px; }
+  article.card h5 { font-size: 15px; margin-top: 14px; color: #4a5568;
+        font-weight: 600; }
+  article.card h4, article.card h5 { margin-bottom: 2px; }
+  article.card strong { font-weight: 700; }
+  article.card blockquote { border-left: 4px solid #9fb0cf; margin: 4px 0;
+        padding: 2px 12px; color: #4a5568; background: #f4f6fa; }
+  article.card hr { border: none; border-top: 1px dashed #c3ccdb; margin: 12px 0; }
+  article.card code { background: #eef0f4; padding: 1px 5px; border-radius: 4px;
+        font-size: 14px; font-family: Consolas, monospace; }
+  article.card pre { background: #1b2a4a; color: #e6ecf7; padding: 14px; border-radius: 8px; overflow-x: auto; }
+  article.card pre code { background: transparent; color: inherit; padding: 0; }
+  article.card table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+  article.card th, article.card td { border: 1px solid #d8dce3; padding: 6px 10px; }
+  article.card th { background: #eef1f6; }
+  article.card a { color: #1459c8; }
+  footer { text-align: center; color: #999; font-size: 12px; padding: 20px; }
+</style>
+</head>
+<body>
+  <header>
+  <h1>金融情報系統報告</h1>
+  <nav>
+    <a href="../index.html" class="">首頁</a>
+    <a href="../calendar.html" class="">行事曆</a>
+    <a href="../daily/2026-11-07.html" class="active">最新每日</a>
+    <a href="../deep/2026-11-06-pm.html" class="">最新深度</a>
+  </nav>
+  <div id="clock">
+    <span class="clk"><span class="clk-city">台北</span><span class="clk-time" id="clk-tw">--:--:--</span><span class="mkt closed" id="tw-idx">…</span><span class="mkt closed" id="tx-day">…</span><span class="mkt closed" id="tx-night">…</span></span>
+    <span class="clk"><span class="clk-city">紐約</span><span class="clk-time" id="clk-ny">--:--:--</span><span class="mkt closed" id="ny-mkt">…</span><span class="mkt closed" id="ny-night">…</span></span>
+  </div>
+</header>
+<div class="wrap">
+  
+    <div class="day-nav">
+      <a href="../index.html">← 首頁</a>
+      
+        
+        <a href="../daily/2026-11-07.html">2026-11-07</a>
+        
+        <a href="../daily/2026-11-06.html">2026-11-06</a>
+        
+        <a href="../daily/2026-11-05.html">2026-11-05</a>
+        
+        <a href="../daily/2026-11-04.html">2026-11-04</a>
+        
+        <a href="../daily/2026-11-03.html">2026-11-03</a>
+        
+        <a href="../daily/2026-11-02.html">2026-11-02</a>
+        
+        <a href="../daily/2026-11-01.html">2026-11-01</a>
+        
+        <a href="../daily/2026-10-31.html">2026-10-31</a>
+        
+        <a href="../daily/2026-10-30.html">2026-10-30</a>
+        
+        <a href="../daily/2026-10-29.html">2026-10-29</a>
+        
+        <a href="../daily/2026-10-28.html">2026-10-28</a>
+        
+        <a href="../daily/2026-10-27.html">2026-10-27</a>
+        
+        <a href="../daily/2026-10-26.html">2026-10-26</a>
+        
+        <a href="../daily/2026-10-25.html">2026-10-25</a>
+        
+        <a href="../daily/2026-10-24.html">2026-10-24</a>
+        
+        <a href="../daily/2026-10-23.html">2026-10-23</a>
+        
+        <a href="../daily/2026-10-22.html">2026-10-22</a>
+        
+        <a href="../daily/2026-10-21.html">2026-10-21</a>
+        
+        <a href="../daily/2026-10-20.html">2026-10-20</a>
+        
+        <a href="../daily/2026-10-19.html">2026-10-19</a>
+        
+        <a href="../daily/2026-10-18.html">2026-10-18</a>
+        
+        <a href="../daily/2026-10-17.html">2026-10-17</a>
+        
+        <a href="../daily/2026-10-16.html">2026-10-16</a>
+        
+        <a href="../daily/2026-10-15.html">2026-10-15</a>
+        
+        <a href="../daily/2026-10-14.html">2026-10-14</a>
+        
+        <a href="../daily/2026-10-13.html">2026-10-13</a>
+        
+        <a href="../daily/2026-10-12.html">2026-10-12</a>
+        
+        <a href="../daily/2026-10-11.html">2026-10-11</a>
+        
+        <a href="../daily/2026-10-10.html">2026-10-10</a>
+        
+        <a href="../daily/2026-10-09.html">2026-10-09</a>
+        
+        <a href="../daily/2026-10-08.html">2026-10-08</a>
+        
+        <a href="../daily/2026-10-07.html">2026-10-07</a>
+        
+        <a href="../daily/2026-10-06.html">2026-10-06</a>
+        
+        <a href="../daily/2026-10-05.html">2026-10-05</a>
+        
+        <a href="../daily/2026-10-04.html">2026-10-04</a>
+        
+        <a href="../daily/2026-10-03.html">2026-10-03</a>
+        
+        <a href="../daily/2026-10-02.html">2026-10-02</a>
+        
+        <a href="../daily/2026-10-01.html">2026-10-01</a>
+        
+        <a href="../daily/2026-09-30.html">2026-09-30</a>
+        
+        <a href="../daily/2026-09-29.html">2026-09-29</a>
+        
+        <a href="../daily/2026-09-28.html">2026-09-28</a>
+        
+        <a href="../daily/2026-09-27.html">2026-09-27</a>
+        
+        <a href="../daily/2026-09-26.html">2026-09-26</a>
+        
+        <a href="../daily/2026-09-25.html">2026-09-25</a>
+        
+        <a href="../daily/2026-09-24.html">2026-09-24</a>
+        
+        <a href="../daily/2026-09-23.html">2026-09-23</a>
+        
+        <a href="../daily/2026-09-22.html">2026-09-22</a>
+        
+        <a href="../daily/2026-09-21.html">2026-09-21</a>
+        
+        <a href="../daily/2026-09-20.html">2026-09-20</a>
+        
+        <a href="../daily/2026-09-19.html">2026-09-19</a>
+        
+        <a href="../daily/2026-09-18.html">2026-09-18</a>
+        
+        <a href="../daily/2026-09-17.html">2026-09-17</a>
+        
+        <a href="../daily/2026-09-16.html">2026-09-16</a>
+        
+        <a href="../daily/2026-09-15.html">2026-09-15</a>
+        
+        <a href="../daily/2026-09-14.html">2026-09-14</a>
+        
+        <a href="../daily/2026-09-13.html">2026-09-13</a>
+        
+        <a href="../daily/2026-09-12.html">2026-09-12</a>
+        
+        <a href="../daily/2026-09-11.html">2026-09-11</a>
+        
+        <a href="../daily/2026-09-10.html">2026-09-10</a>
+        
+        <a href="../daily/2026-09-09.html">2026-09-09</a>
+        
+        <a href="../daily/2026-09-08.html">2026-09-08</a>
+        
+        <a href="../daily/2026-09-07.html">2026-09-07</a>
+        
+        <a href="../daily/2026-09-06.html">2026-09-06</a>
+        
+        <a href="../daily/2026-09-05.html">2026-09-05</a>
+        
+        <a href="../daily/2026-09-04.html">2026-09-04</a>
+        
+        <a href="../daily/2026-09-03.html">2026-09-03</a>
+        
+        <a href="../daily/2026-09-02.html">2026-09-02</a>
+        
+        <a href="../daily/2026-09-01.html">2026-09-01</a>
+        
+        <a href="../daily/2026-08-31.html">2026-08-31</a>
+        
+        <a href="../daily/2026-08-30.html">2026-08-30</a>
+        
+        <a href="../daily/2026-08-29.html">2026-08-29</a>
+        
+        <a href="../daily/2026-08-28.html">2026-08-28</a>
+        
+        <a href="../daily/2026-08-27.html">2026-08-27</a>
+        
+        <a href="../daily/2026-08-26.html">2026-08-26</a>
+        
+        <a href="../daily/2026-08-25.html">2026-08-25</a>
+        
+        <a href="../daily/2026-08-24.html">2026-08-24</a>
+        
+        <a href="../daily/2026-08-23.html">2026-08-23</a>
+        
+        <a href="../daily/2026-08-22.html">2026-08-22</a>
+        
+        <a href="../daily/2026-08-21.html">2026-08-21</a>
+        
+        <a href="../daily/2026-08-20.html">2026-08-20</a>
+        
+        <a href="../daily/2026-08-19.html">2026-08-19</a>
+        
+        <a href="../daily/2026-08-18.html">2026-08-18</a>
+        
+        <a href="../daily/2026-08-17.html">2026-08-17</a>
+        
+        <a href="../daily/2026-08-16.html">2026-08-16</a>
+        
+        <a href="../daily/2026-08-15.html">2026-08-15</a>
+        
+        <a href="../daily/2026-08-14.html">2026-08-14</a>
+        
+        <a href="../daily/2026-08-13.html">2026-08-13</a>
+        
+        <a href="../daily/2026-08-12.html">2026-08-12</a>
+        
+        <a href="../daily/2026-08-11.html">2026-08-11</a>
+        
+        <a href="../daily/2026-08-10.html">2026-08-10</a>
+        
+        <a href="../daily/2026-08-09.html">2026-08-09</a>
+        
+        <a href="../daily/2026-08-08.html">2026-08-08</a>
+        
+        <a href="../daily/2026-08-07.html">2026-08-07</a>
+        
+        <a href="../daily/2026-08-06.html">2026-08-06</a>
+        
+        <a href="../daily/2026-08-05.html">2026-08-05</a>
+        
+        <a href="../daily/2026-08-04.html">2026-08-04</a>
+        
+        <a href="../daily/2026-08-03.html">2026-08-03</a>
+        
+        <a href="../daily/2026-08-02.html">2026-08-02</a>
+        
+      
+    </div>
+    <article class="card">
+      <div class="muted">2026-11-07
+        <span class="badge b-daily">
+          每日報告
+        </span>
+      </div>
+      <h1 id="2026-11-07">金融重點報告 2026-11-07</h1>
+<blockquote>
+<p>產出時間: 2026-11-07 00:21（台灣時間）
+資料截止: 11-06 23:56（收錄庫最新事件，若久久未前進代表蒐集上游疑中斷）
+品質儀表板: 資料新鮮度 ≤27min | 去重率 28.0% | 最大來源佔 16.5% | 驗證覆蓋 25.6% | ⚠️疑似誤殺 95
+本報告由 AI 自動生成，僅供參考，不構成投資建議。</p>
+</blockquote>
+<h2 id="_1">🆕 本次新增事件（置頂：最新產出）</h2>
+<blockquote>
+<p>本次新增 <strong>60 筆</strong>，重要 57 筆</p>
+</blockquote>
+<p><strong>重要事件（severity ≥ 1）</strong>：</p>
+<ul>
+<li><strong>[11-06 23:54]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Cloudflare climbs as analysts highlight its biggest earnings beat in years <code>seekingalpha</code></li>
+<li><strong style="color:#174ea6">影響</strong>: Cloudflare財報表現優異帶動股價攀升，有助於提振軟體與雲端族群的市場信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NET</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Nvidia, AMD and other chip stocks rebound. Is the ‘violent’ AI selloff over? <code>marketwatch</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 輝達與超微等晶片股強彈，顯示AI賣壓雖劇烈但資金逢低承接意願濃厚，有利半導體類股回穩。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,AMD,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][neutral]</strong> 響應亞洲資產管理中心政策　中信銀行舉辦影響力投資論壇　聚焦家族永續、影響力投資及資產布局 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 中信銀舉辦影響力投資論壇，呼應台灣亞洲資產管理中心政策，對金融股屬長期基本面利多。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2891</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:43]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Quantinuum lifts revenue outlook as analysts cite bookings, cloud deals <code>seekingalpha</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Quantinuum上調營收展望，受惠於訂單與雲端合作增長，對量子運算相關概念股形成正面激勵。</p>
+</li>
+<li>
+<p><strong>[11-06 23:42]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[匯市][positive]</strong> Dollar index jumps after US payrolls beat forecasts <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國非農就業(NFP)與失業率數據優於預期，推動美元指數跳升，打壓非美貨幣與黃金等商品，並加劇股市風險趨避情緒。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Could the US midterms put a pin in the AI bubble? <code>bbcbusiness</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國中期選舉與監管疑慮引發AI泡沫擔憂，壓抑科技股估值，資金轉向防禦型資產。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,MSFT,GOOGL</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Amazon's Alexa for Shopping now answers to texts <code>seekingalpha</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 亞馬遜推出Alexa for Shopping文字互動功能，強化電商生態系與AI應用。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>AMZN</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:27]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> These three stars need to align before investors rush back into stocks, Bank of America strategist says <code>marketwatch</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美銀策略師指出股市反彈前需等待跨資產市場訊號對齊，顯示市場底部尚未完全確立。</p>
+</li>
+<li>
+<p><strong>[11-06 22:39]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> 〈美股早盤〉AI股跌出買盤！晶片股帶動那指反彈 Fed升息陰影仍在 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農就業新增16.5萬人、失業率降至4.1%（NFP與就業數據公布），強化Fed 12月升息預期（機率約70%）；同時晶片股與台積電ADR強彈帶動那指反彈。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TSM,NVDA,NDX</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:44]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[匯市][positive]</strong> 美國非農就業大增16.5萬人 美元指數強彈創7週最大漲幅 - 民視財經網 <code>google-news:非農就業 就業報告</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農就業大增16.5萬人，推動美元指數強彈並創7週最大漲幅，非美貨幣與黃金面臨下行壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:34]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 晶片股強勁反彈帶動那斯達克回升 美股三大指數走勢分歧 - 民視財經網 <code>google-news:非農就業 就業報告</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 晶片股強勁反彈帶動那斯達克指數回升，顯示半導體族群在殺估值後仍有強勁買盤支撐。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM,2330</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> Nasdaq pares losses as chips recover, rate-hike fears linger - The Detroit News <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 那斯達克收斂跌幅因晶片股反彈，但升息憂慮仍存，抑制整體股市漲幅。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,2330</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:01]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Nasdaq, S&amp;P 500 aim higher, attempting to move past tech selloff - TradingView <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股四大指數試圖擺脫先前科技股賣壓，那斯達克與標普500指數早盤走高。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NDX,SPX</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:54]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> US stock market today: Why is the Nasdaq up 1% while the Dow Jones falls? S&amp;P 500 turns green amid tech st - The Economic Times <code>google-news:stock market selloff</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股表現分化，那斯達克上漲1%而道瓊工業指數下跌，反映資金在科技股與傳統產業間輪動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NDX,DJI,SPX</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:28]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> The Iran War Isn't Over, but Oil Traders Are Already Pricing In Peace - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 伊朗戰爭未歇但原油交易商已開始計入和平預期，導致原油價格承壓下跌。</p>
+</li>
+<li>
+<p><strong>[11-06 23:04]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> TWA00 加權指數- 台股重挫失守四萬，政院聯手國安基金急救市- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股重挫失守四萬點大關，政院與國安基金緊急進場救市，反映外資匯出與系統性恐慌情緒。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TWA00</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:44]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Blowout October Jobs Number Complicates Federal Reserve’s December Rate Decision - London Insider <code>google-news:Federal Reserve rate decision</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農就業報告大增16.5萬人表現超預期，使聯準會(Fed)12月降息決策變得複雜，美債殖利率與美元走強，股市承壓。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,S&amp;P500</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:19]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][positive]</strong> Canada’s Ivey PMI edges higher in October as employment rises <code>investing-com</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 加拿大10月Ivey PMI微升且就業改善，顯示經濟具韌性，對加幣匯率與當地資產微幅正面。</p>
+</li>
+<li>
+<p><strong>[11-06 23:09]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Moderna raises its revenue outlook — but all eyes are on what happens next with its cancer vaccine <code>marketwatch</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Moderna調高2026年營收預期達25%並聚焦癌症疫苗進展，激勵生技類股股價上揚，對整體大盤影響有限。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>MRNA</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> AI stocks climb after trillions wiped from market values <code>bbcbusiness</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: AI概念股在經歷市值蒸發後回穩反彈，投資人消化政治選舉對AI發展政策的不確定性，科技股跌深反彈。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:59]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 美股科技大咖吹反攻號角！費半指數上揚5％　台積電ADR強彈7% <code>yahoo-tw-stock</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股科技大咖與費半指數大漲逾5%，台積電ADR強彈逾7%，激勵台指期夜盤大漲，台股面臨絕地反攻。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TSM,費半</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:56]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 美股開盤漲跌互見！晶片股跌深反彈　那指逆勢走高1.23％ <code>yahoo-tw-stock</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農就業報告強勁推升殖利率與升息預期，道瓊下挫，但科技與晶片股因超跌迎來強彈，那斯達克逆勢走高1.23%。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:52]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][neutral]</strong> 美股開盤晶片股強勢反彈！費半狂飆500點 <code>yahoo-tw-stock</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農就業數據優於預期，帶動美債殖利率飆升並強化聯準會升息預期，壓抑傳統類股，但晶片股跌深強彈激勵費半狂飆500點。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TSM,NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:18]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> US Job Growth Surges in October, Unemployment Rate Falls - NTD News <code>google-news:US unemployment rate</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農就業大增16.5萬人且失業率降至4.1%，數據強勁超出預期，推升美元與美債殖利率，打壓降息預期。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債10年期</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:14]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> 美國10月非農就業大增16.5萬人 失業率降至4.1%遠優預期 - 民視新聞網 <code>google-news:非農就業 就業報告</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農大增16.5萬人、失業率降至4.1%，強勁就業報告導致債券殖利率跳升，美股承壓。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,S&amp;P 500,Nasdaq</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:14]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> Live Updates: U.S. Jobs Report Shows Strength After Stock Market Falls - The New York Times <code>google-news:US unemployment rate</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農就業報告強勁，加劇市場對聯準會維持高利率的擔憂，美股延續賣壓。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>S&amp;P 500,Nasdaq</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:08]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> US job growth surges in October; unemployment rate falls to 4.1% - Reuters <code>google-news:nonfarm payrolls jobs report</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國勞工部公布10月非農就業NFP大增，失業率降至4.1%，顯示美國勞動市場極具韌性，可能緩解經濟衰退擔憂但強化聯準會鷹派預期。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> Dow Jones Shrugs Off Optimistic Jobs Report - TipRanks <code>google-news:nonfarm payrolls jobs report</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 道瓊指數對強勁的10月非農就業報告反應冷淡，顯示市場對高利率環境的擔憂開始反映在傳統藍籌股上。</p>
+</li>
+<li>
+<p><strong>[11-06 23:12]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> What to do with your retirement savings in a stock market sell-off - Yahoo Finance <code>google-news:stock market selloff</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 股市賣壓引發退休資產配置討論，屬市場情緒教育性質，對實質金融市場無直接衝擊。</p>
+</li>
+<li>
+<p><strong>[11-06 23:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Stocks rebound after tech selloff that pushed Nasdaq into correction - CBS News <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 科技股經歷修正後出現反彈，帶動整體美股止跌回穩，對台股電子權值股有正向情緒傳導。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>Nasdaq,2330</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:01]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Nasdaq, S&amp;P 500 aim higher, attempting to move past tech selloff (COMP:IND:) - Seeking Alpha <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 那斯達克指數與標普500指數嘗試甩開先前科技股拋售陰霾，帶動美股大盤企圖止跌回升。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>QQQ,SPY</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:57]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> The worldwide sell-off for AI stocks halts, but other US stocks are still struggling - New Haven Register <code>google-news:stock market selloff</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 全球AI股票拋售潮暫告一段落，但美國其他傳統板塊股票仍舊表現掙扎，市場呈現分化格局。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:54]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> US stock market today: Why is the Nasdaq up 1% today while the Dow Jones falls? S&amp;P 500 turns green amid t - The Economic Times <code>google-news:stock market selloff</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 報導探討那斯達克指數與道瓊工業指數走勢分歧的原因，反映資金在科技股超跌後的輪動與選擇性買盤。</p>
+</li>
+<li>
+<p><strong>[11-06 22:47]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Oversold AI and chip stocks after the Nasdaq’s worst day since 2020 - Yahoo Finance Singapore <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 那斯達克經歷2020年以來最大跌幅後，AI與晶片股出現技術性超跌反彈，吸引資金回補。</p>
+</li>
+<li>
+<p><strong>[11-06 22:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> Nasdaq opens higher as chips pare losses, rate-hike fears linger - Yahoo Finance <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 那斯達克開高反映晶片股削減跌幅，但強勁就業數據引發的升息擔憂持續壟罩市場，增添盤勢變數。</p>
+</li>
+<li>
+<p><strong>[11-06 23:15]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> Week Ahead: US CPI, UK GDP and Market Outlook - www.equiti.com <code>google-news:inflation CPI</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 市場聚焦即將公布的美國CPI與英國GDP數據，預期將牽動全球股市與匯市波動。</p>
+</li>
+<li>
+<p><strong>[11-06 23:14]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][negative]</strong> Treasury Yields Jump After Hot Jobs Report - Briefs Finance <code>google-news:Treasury yields</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國強勁的非農就業報告公布後，美債殖利率全面跳升，反映市場對降息預期大幅降溫。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美債10年期,美元指數</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][neutral]</strong> Trump's Iran Strategy Reaches a Critical Crossroads After Midterm Defeat - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國期中選舉失利後，川普的伊朗戰略面臨關鍵十字路口，地緣政治風險升溫可能牽動原油價格劇烈波動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>原油</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:34]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> TWA00 加權指數- AI政策急轉致台股失守四萬，融資暴減五百億- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 受AI政策轉變與賣壓衝擊，台股加權指數失守四萬點大關，融資大幅大減五百億元，籌碼面進行劇烈清理。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TWA00</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:09]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 台股史詩級暴跌 金管會出手祭限空令、融券保證金提高至130% - 新頭條 <code>google-news:金管會</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股面臨史詩級暴跌，金管會祭出限空令與提高融券保證金至130%，短期有助於遏止恐慌性殺盤，但市場信心修復需時間。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,台指期</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 美股強勢回彈！川普挺AI高喊「只有蠢蛋才拒絕財富」助攻費半大漲6％ 台積電ADR狂漲7％ - FTNN 新聞網 <code>google-news:台股 大漲</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 川普公開表態力挺AI產業助攻，疊加晶片股超跌反彈，帶動費半大漲6%、台積電ADR狂飆7%，提振台股半導體信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TSM,NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 【快訊／美股開盤「費半大漲逾5％」！台積電ADR回魂上攻逾7％】 可以不用睡路邊了QQ （#起啵） - Facebook <code>google-news:台股 大漲</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股開盤費半大漲逾5%、台積電ADR回魂上攻逾7%，化解了前一日重挫的恐慌情緒，對台股開盤具有高度正面指引。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TSM</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:51]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> The S&amp;P 500 has become a big AI bet. Here are some simple alternatives. <code>marketwatch</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 標普500指數高度集中於AI相關類股，凸顯分散投資的重要性與單一產業風險。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:54]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Analysis-Trader angst pivots from inflation to growth as tech rout deepens <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 市場擔憂焦點從通膨轉向經濟成長放緩，科技股修正加劇，壓抑整體股市風險偏好。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,SPY</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][neutral]</strong> Workers' rights 'second place' to economic growth <code>bbcbusiness</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 地方官員言論凸顯政策優先順序轉向經濟成長，對特定區域勞動市場政策可能產生影響，宏觀直接衝擊有限。</p>
+</li>
+<li>
+<p><strong>[11-06 22:32]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Dow slides, Nasdaq gains as Wall Street reels from tech selloff <code>seekingalpha</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 華爾街面臨科技股拋售潮，導致道瓊指數與那斯達克指數表現分化，資金自高位科技股流出。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,AAPL,MSFT</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:48]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Stock Market Today (Nov. 6, 2026): S&amp;P 500 edges higher following AI tech rout - Yahoo Finance Singapore <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股在經歷史詩級AI晶片股殺盤後試圖跌深回穩，標普500微幅收高。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:44]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> 美國10月非農就業遠超預期！美債收益率全線上升 市場押注美聯儲12月加息 作者 智通財經 - Investing.com 香港 - 股市報價&amp; 財經新聞 <code>google-news:非農就業 就業報告</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農就業遠超預期，帶動美債收益率全線上升，市場重新押注美聯準會(Fed)12月升息與緊縮路徑。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債收益率</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:40]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> 〈分析〉10月非農令聯準會可繼續聚焦抗通膨 但存在三大不確定性 - 鉅亨網 <code>google-news:非農就業 就業報告</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 10月非農與失業率數據顯示美國就業市場健康，讓聯準會能持續聚焦抗通膨，推動美元與美債收益率震盪。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:33]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> U.S. Unemployment Rate Falls Slightly to 4.1 Percent in October - blue News <code>google-news:US unemployment rate</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農就業新增16.5萬人，失業率微降至4.1%，展現經濟韌性，舒緩經濟衰退疑慮。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:27]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> U.S. Economy Adds 165,000 Jobs in October as Unemployment Rate Edges Down to 4.1 Percent - Hunt Scanlon Media <code>google-news:US unemployment rate</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農新增16.5萬人、失業率4.1%，兼顧就業成長與通膨降溫，屬於股市健康的「金髮女孩」經濟數據。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>S&amp;P500</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:24]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> Nasdaq eyes higher open as chips pare losses, rate-hike fears linger - BNN Bloomberg <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 那斯達克期指預期開高，晶片股收斂跌幅，但市場對升息的隱憂仍在，壓抑反彈力度。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][neutral]</strong> Correction vs bear market vs crash vs recession explained - qz.com <code>google-news:stock market selloff</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 市場教育性質資訊，釐清修正、熊市、崩盤與衰退定義，反映投資人對市場回檔的焦慮情緒。</p>
+</li>
+<li>
+<p><strong>[11-06 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> US Stock Market Today: Nasdaq, S&amp;P 500 Open Slightly Higher, After Rebound Post Chip Stocks Selloff, US Jobs Report - NDTV Profit <code>google-news:stock market selloff</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 那斯達克與標普500在晶片股賣壓後開高反彈，市場消化非農就業報告與科技股超跌修復。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[商品(油金)][positive]</strong> Europe's Grid Spending Is Up 155% Since 2019 - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 歐洲電網支出自2019年以來大幅成長155%，反映能源轉型與電網現代化需求強勁。</p>
+</li>
+<li>
+<p><strong>[11-06 22:46]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 美股回穩費城半導體大漲 台積電ADR狂飆7.57％ - 壹蘋新聞網 <code>google-news:台股 大漲</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股回穩帶動費城半導體指數大漲，台積電ADR狂飆7.57%，強力支撐台股半導體供應鏈信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:23]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 台股重挫！卓榮泰急向賴清德報告 國安基金進場...金管會祭5措施 - Yahoo股市 <code>google-news:金管會</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股面臨重挫，政府高層關注並祭出國安基金進場與金管會5大穩定措施，力抗系統性賣壓。</li>
+<li><strong style="color:#174ea6">標的</strong>: <code>2330,台股</code></li>
+</ul>
+<p><strong>其他同時段收錄（未分析，共 3 筆）</strong>：</p>
+<ul>
+<li><strong>[11-06 23:47]</strong> 4 tools that can help you cope any market selloff - TheStreet（<code>google-news:stock market selloff</code>）</li>
+<li><strong>[11-06 23:44]</strong> Stock futures explained: how Dow, S&amp;P 500 and Nasdaq-100 contracts work - qz.com（<code>google-news:S&amp;P 500 Nasdaq</code>）</li>
+<li><strong>[11-06 22:27]</strong> AKITA Drilling Ltd. GAAP EPS of CAD -0.05, revenue of CAD69.2M（<code>seekingalpha</code>）</li>
+</ul>
+<hr />
+<h2 id="_2">市場行情快照</h2>
+<pre><code>加權指數            39,701.64    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-4.51%
+台積電              2,135.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-4.69%
+鴻海                 224.50  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-4.47%
+聯發科              3,390.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-2.02%
+台達電              1,055.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-6.64%
+富邦金                148.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-4.82%
+S&amp;P 500          7,405.75    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.71%
+納斯達克            24,632.89    點 <span style="color:#c0392b;font-weight:bold">▲</span>+1.31%
+費城半導體指數          9,324.00    點 <span style="color:#c0392b;font-weight:bold">▲</span>+3.47%
+道瓊              51,504.79    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-0.04%
+日經225           57,434.77    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-5.96%
+上證指數             3,649.18    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-1.10%
+Apple              344.66  USD <span style="color:#c0392b;font-weight:bold">▲</span>+0.14%
+Microsoft          535.32  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-0.11%
+NVIDIA             187.80  USD <span style="color:#c0392b;font-weight:bold">▲</span>+3.41%
+Amazon             262.71  USD <span style="color:#c0392b;font-weight:bold">▲</span>+0.96%
+Tesla              358.44  USD <span style="color:#c0392b;font-weight:bold">▲</span>+4.29%
+美元/日圓              158.31  JPY <span style="color:#2e7d32;font-weight:bold">▼</span>-0.03%
+美元/台幣               32.76  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-0.20%
+歐元/美元                1.12  EUR <span style="color:#2e7d32;font-weight:bold">▼</span>-0.74%
+美元/人民幣               6.66  CNY <span style="color:#2e7d32;font-weight:bold">▼</span>-0.13%
+WTI原油               90.12  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-0.44%
+布蘭特原油               97.10  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-1.21%
+黃金               4,071.60  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-1.02%
+美元指數DXY            102.18    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.62%
+美債10年殖利率             4.85    % <span style="color:#c0392b;font-weight:bold">▲</span>+0.29%
+</code></pre>
+<blockquote>
+<p>（快照資料時間：2026-11-06 22:30，台股收盤為最近一個交易日）</p>
+</blockquote>
+<h2 id="severity-2">重大事件（severity ≥ 2）</h2>
+<ul>
+<li><strong>[11-06 23:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Nvidia, AMD and other chip stocks rebound. Is the ‘violent’ AI selloff over?</li>
+<li><strong style="color:#174ea6">影響</strong>: 輝達與超微等晶片股強彈，顯示AI賣壓雖劇烈但資金逢低承接意願濃厚，有利半導體類股回穩。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,AMD,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:44]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Blowout October Jobs Number Complicates Federal Reserve’s December Rate Decision - London Insider</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農就業報告大增16.5萬人表現超預期，使聯準會(Fed)12月降息決策變得複雜，美債殖利率與美元走強，股市承壓。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,S&amp;P500</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:44]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[匯市][positive]</strong> 美國非農就業大增16.5萬人 美元指數強彈創7週最大漲幅 - 民視財經網</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農就業大增16.5萬人，推動美元指數強彈並創7週最大漲幅，非美貨幣與黃金面臨下行壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:42]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[匯市][positive]</strong> Dollar index jumps after US payrolls beat forecasts</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國非農就業(NFP)與失業率數據優於預期，推動美元指數跳升，打壓非美貨幣與黃金等商品，並加劇股市風險趨避情緒。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Could the US midterms put a pin in the AI bubble?</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國中期選舉與監管疑慮引發AI泡沫擔憂，壓抑科技股估值，資金轉向防禦型資產。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,MSFT,GOOGL</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:34]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 晶片股強勁反彈帶動那斯達克回升 美股三大指數走勢分歧 - 民視財經網</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 晶片股強勁反彈帶動那斯達克指數回升，顯示半導體族群在殺估值後仍有強勁買盤支撐。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM,2330</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:28]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> The Iran War Isn't Over, but Oil Traders Are Already Pricing In Peace - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 伊朗戰爭未歇但原油交易商已開始計入和平預期，導致原油價格承壓下跌。</p>
+</li>
+<li>
+<p><strong>[11-06 23:27]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> These three stars need to align before investors rush back into stocks, Bank of America strategist says</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美銀策略師指出股市反彈前需等待跨資產市場訊號對齊，顯示市場底部尚未完全確立。</p>
+</li>
+<li>
+<p><strong>[11-06 23:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> Nasdaq pares losses as chips recover, rate-hike fears linger - The Detroit News</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 那斯達克收斂跌幅因晶片股反彈，但升息憂慮仍存，抑制整體股市漲幅。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,2330</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:18]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> US Job Growth Surges in October, Unemployment Rate Falls - NTD News</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農就業大增16.5萬人且失業率降至4.1%，數據強勁超出預期，推升美元與美債殖利率，打壓降息預期。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債10年期</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:15]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> Week Ahead: US CPI, UK GDP and Market Outlook - www.equiti.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 市場聚焦即將公布的美國CPI與英國GDP數據，預期將牽動全球股市與匯市波動。</p>
+</li>
+<li>
+<p><strong>[11-06 23:14]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> 美國10月非農就業大增16.5萬人 失業率降至4.1%遠優預期 - 民視新聞網</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農大增16.5萬人、失業率降至4.1%，強勁就業報告導致債券殖利率跳升，美股承壓。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,S&amp;P 500,Nasdaq</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:14]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][negative]</strong> Treasury Yields Jump After Hot Jobs Report - Briefs Finance</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國強勁的非農就業報告公布後，美債殖利率全面跳升，反映市場對降息預期大幅降溫。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美債10年期,美元指數</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:14]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> Live Updates: U.S. Jobs Report Shows Strength After Stock Market Falls - The New York Times</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農就業報告強勁，加劇市場對聯準會維持高利率的擔憂，美股延續賣壓。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>S&amp;P 500,Nasdaq</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Stocks rebound after tech selloff that pushed Nasdaq into correction - CBS News</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 科技股經歷修正後出現反彈，帶動整體美股止跌回穩，對台股電子權值股有正向情緒傳導。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>Nasdaq,2330</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:09]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 台股史詩級暴跌 金管會出手祭限空令、融券保證金提高至130% - 新頭條</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股面臨史詩級暴跌，金管會祭出限空令與提高融券保證金至130%，短期有助於遏止恐慌性殺盤，但市場信心修復需時間。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,台指期</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:08]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> US job growth surges in October; unemployment rate falls to 4.1% - Reuters</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國勞工部公布10月非農就業NFP大增，失業率降至4.1%，顯示美國勞動市場極具韌性，可能緩解經濟衰退擔憂但強化聯準會鷹派預期。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> AI stocks climb after trillions wiped from market values</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: AI概念股在經歷市值蒸發後回穩反彈，投資人消化政治選舉對AI發展政策的不確定性，科技股跌深反彈。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:04]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> TWA00 加權指數- 台股重挫失守四萬，政院聯手國安基金急救市- 股市爆料同學會 - CMoney</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股重挫失守四萬點大關，政院與國安基金緊急進場救市，反映外資匯出與系統性恐慌情緒。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TWA00</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:01]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Nasdaq, S&amp;P 500 aim higher, attempting to move past tech selloff (COMP:IND:) - Seeking Alpha</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 那斯達克指數與標普500指數嘗試甩開先前科技股拋售陰霾，帶動美股大盤企圖止跌回升。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>QQQ,SPY</code></p>
+</li>
+<li>
+<p><strong>[11-06 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][neutral]</strong> Trump's Iran Strategy Reaches a Critical Crossroads After Midterm Defeat - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國期中選舉失利後，川普的伊朗戰略面臨關鍵十字路口，地緣政治風險升溫可能牽動原油價格劇烈波動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>原油</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:59]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 美股科技大咖吹反攻號角！費半指數上揚5％　台積電ADR強彈7%</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股科技大咖與費半指數大漲逾5%，台積電ADR強彈逾7%，激勵台指期夜盤大漲，台股面臨絕地反攻。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TSM,費半</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:56]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 美股開盤漲跌互見！晶片股跌深反彈　那指逆勢走高1.23％</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農就業報告強勁推升殖利率與升息預期，道瓊下挫，但科技與晶片股因超跌迎來強彈，那斯達克逆勢走高1.23%。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:54]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Analysis-Trader angst pivots from inflation to growth as tech rout deepens</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 市場擔憂焦點從通膨轉向經濟成長放緩，科技股修正加劇，壓抑整體股市風險偏好。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,SPY</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:52]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][neutral]</strong> 美股開盤晶片股強勢反彈！費半狂飆500點</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農就業數據優於預期，帶動美債殖利率飆升並強化聯準會升息預期，壓抑傳統類股，但晶片股跌深強彈激勵費半狂飆500點。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TSM,NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 美股強勢回彈！川普挺AI高喊「只有蠢蛋才拒絕財富」助攻費半大漲6％ 台積電ADR狂漲7％ - FTNN 新聞網</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 川普公開表態力挺AI產業助攻，疊加晶片股超跌反彈，帶動費半大漲6%、台積電ADR狂飆7%，提振台股半導體信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TSM,NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:46]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 美股回穩費城半導體大漲 台積電ADR狂飆7.57％ - 壹蘋新聞網</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股回穩帶動費城半導體指數大漲，台積電ADR狂飆7.57%，強力支撐台股半導體供應鏈信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:44]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> 美國10月非農就業遠超預期！美債收益率全線上升 市場押注美聯儲12月加息 作者 智通財經 - Investing.com 香港 - 股市報價&amp; 財經新聞</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農就業遠超預期，帶動美債收益率全線上升，市場重新押注美聯準會(Fed)12月升息與緊縮路徑。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債收益率</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> Dow Jones Shrugs Off Optimistic Jobs Report - TipRanks</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 道瓊指數對強勁的10月非農就業報告反應冷淡，顯示市場對高利率環境的擔憂開始反映在傳統藍籌股上。</p>
+</li>
+<li>
+<p><strong>[11-06 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> US Stock Market Today: Nasdaq, S&amp;P 500 Open Slightly Higher, After Rebound Post Chip Stocks Selloff, US Jobs Report - NDTV Profit</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 那斯達克與標普500在晶片股賣壓後開高反彈，市場消化非農就業報告與科技股超跌修復。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:40]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> 〈分析〉10月非農令聯準會可繼續聚焦抗通膨 但存在三大不確定性 - 鉅亨網</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 10月非農與失業率數據顯示美國就業市場健康，讓聯準會能持續聚焦抗通膨，推動美元與美債收益率震盪。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 【快訊／美股開盤「費半大漲逾5％」！台積電ADR回魂上攻逾7％】 可以不用睡路邊了QQ （#起啵） - Facebook</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股開盤費半大漲逾5%、台積電ADR回魂上攻逾7%，化解了前一日重挫的恐慌情緒，對台股開盤具有高度正面指引。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TSM</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> Nasdaq opens higher as chips pare losses, rate-hike fears linger - Yahoo Finance</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 那斯達克開高反映晶片股削減跌幅，但強勁就業數據引發的升息擔憂持續壟罩市場，增添盤勢變數。</p>
+</li>
+<li>
+<p><strong>[11-06 22:39]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> 〈美股早盤〉AI股跌出買盤！晶片股帶動那指反彈 Fed升息陰影仍在</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農就業新增16.5萬人、失業率降至4.1%（NFP與就業數據公布），強化Fed 12月升息預期（機率約70%）；同時晶片股與台積電ADR強彈帶動那指反彈。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TSM,NVDA,NDX</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:34]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> TWA00 加權指數- AI政策急轉致台股失守四萬，融資暴減五百億- 股市爆料同學會 - CMoney</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 受AI政策轉變與賣壓衝擊，台股加權指數失守四萬點大關，融資大幅大減五百億元，籌碼面進行劇烈清理。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TWA00</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:33]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> U.S. Unemployment Rate Falls Slightly to 4.1 Percent in October - blue News</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農就業新增16.5萬人，失業率微降至4.1%，展現經濟韌性，舒緩經濟衰退疑慮。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:32]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Dow slides, Nasdaq gains as Wall Street reels from tech selloff</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 華爾街面臨科技股拋售潮，導致道瓊指數與那斯達克指數表現分化，資金自高位科技股流出。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,AAPL,MSFT</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:27]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> U.S. Economy Adds 165,000 Jobs in October as Unemployment Rate Edges Down to 4.1 Percent - Hunt Scanlon Media</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農新增16.5萬人、失業率4.1%，兼顧就業成長與通膨降溫，屬於股市健康的「金髮女孩」經濟數據。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>S&amp;P500</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:23]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 台股重挫！卓榮泰急向賴清德報告 國安基金進場...金管會祭5措施 - Yahoo股市</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股面臨重挫，政府高層關注並祭出國安基金進場與金管會5大穩定措施，力抗系統性賣壓。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,台股</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:19]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> United States Unemployment Rate below forecasts (4.2%) in October: Actual (4.1%) - www.tmgm.com</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月失業率降至4.1%低於預期，顯示勞動市場強韌，支撐美元與美股多頭情緒。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,S&amp;P500</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:15]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Trump blames 'Dumocrats' for $2.5 trillion stock market crash after losing midterm elections - The News International</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 川普將股市2.5兆美元崩盤歸咎於民主黨期中選舉失利，政治口水加劇美股短期波動與市場恐慌情緒。</p>
+</li>
+<li>
+<p><strong>[11-06 22:14]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 國安基金出手護盤！台指期夜盤受激勵飆漲1100點 | 太報 - LINE TODAY</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 傳出國安基金出手護盤激勵台指期夜盤大漲1100點，有助於舒緩台股現貨市場的恐慌情緒。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TWA00</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:13]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][neutral]</strong> Nasdaq Futures Rebound After Wall Street Rout as Strong US Jobs Report Divides Investors: Dow Jones, S&amp;P - Yahoo Finance UK</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國強勁就業報告（Non-Farm Payrolls）出爐，令投資人對聯準會政策分歧，美股期貨在經歷賣壓後反彈。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NDX,DJI,SPX</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:13]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Retail inflation may breach 6% in October amid rising food prices - TradingView</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 10月零售通膨因食品價格上漲恐突破6%，加劇生活成本壓力與通膨僵固性疑慮。</p>
+</li>
+<li>
+<p><strong>[11-06 22:13]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][neutral]</strong> US Stock Futures Mixed After Wall Street Sell-Off as Strong Jobs Data Fails to Ease AI Concerns: Dow Jones, S&amp;P, Nasdaq - Yahoo Finance</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國強勁就業數據未能完全消弭市場對AI產業疑慮，美股期貨呈現混合走勢。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NDX,DJI,SPX</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:11]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Canada Inflation Watch: 3.1% CPI and Higher Energy Costs Keep Price Pressures Elevated - kalkine.ca</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 加拿大10月CPI維持在3.1%偏高水位且能源成本推升物價，壓抑加拿大央行寬鬆預期。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>加幣</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:10]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> October US Unemployment Rate 4.1% Vs. Expected 4.2%, Prior 4.2% - marketscreener.com</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月失業率4.1%優於預期的4.2%，激勵美元走強，美債殖利率面臨上升壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:08]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][negative]</strong> 美國國債下跌 因強勁非農就業報告提振加息預期 - Yahoo 財經</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農就業報告強勁（新增16.5萬人遠超預期），引發聯準會升息預期升溫，導致美國國債價格下跌、殖利率攀升。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美國國債</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:05]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> 美國10月非農就業超強！新增16.5萬人遠超預期　Fed升息更加鞏固 - NOWnews今日新聞</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月非農就業新增16.5萬人遠超預期，經濟過熱鞏固了Fed進一步升息或維持高利率的預期。</p>
+</li>
+<li>
+<p><strong>[11-06 22:05]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> 美國10月非農就業超強！增16.5萬人遠超預期 - Yahoo新聞</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農就業大增16.5萬人遠超預期，顯示經濟極具韌性，股匯市同步反應利多。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>S&amp;P500,Nasdaq,美元指數</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Nasdaq 100 and S&amp;P500: Tech Stocks Rally as Short-Covering Tests Bearish Trend - FXEmpire</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股受非農與空頭回補帶動，科技股迎來反彈並測試空方趨勢，連帶有利台積電ADR及台股表現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>Nasdaq,S&amp;P500,NVDA,2330</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:03]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][neutral]</strong> BREAKING: US Non-Farm Payrolls and Unemployment Data Released! What Was Bitcoin’s (BTC) Initial Reaction? - Cryptonews.net</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國非農就業與失業率數據公布後引發美元波動，加密貨幣市場對強勁數據進行初步多空交織的反應。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>BTC,美元指數</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:02]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> US job growth beats expectations in October; unemployment rate falls to 4.1% - RTE.ie</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農就業(NFP)優於預期且失業率降至4.1%，推升美元與美債殖利率飆升，壓抑股市與非美資產表現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,US10Y</code></p>
+</li>
+<li>
+<p><strong>[11-06 22:02]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][neutral]</strong> 美期中選舉後首次就業數據曝、非農新增16.5萬遠高於預期 不影響聯準會12月升息 - Yahoo新聞</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農就業新增16.5萬遠高於預期，市場消化期中選舉後政策變數，並評估聯準會12月利率動向。</li>
+</ul>
+<hr />
+<h2 id="_3">分類彙整</h2>
+<h3 id="43">股市（43）</h3>
+<ul>
+<li><strong>[11-06 23:54]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Cloudflare climbs as analysts highlight its biggest earnings beat in years</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Cloudflare財報表現優異帶動股價攀升，有助於提振軟體與雲端族群的市場信心。</p>
+</li>
+<li>
+<p><strong>[11-06 23:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Nvidia, AMD and other chip stocks rebound. Is the ‘violent’ AI selloff over?</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 輝達與超微等晶片股強彈，顯示AI賣壓雖劇烈但資金逢低承接意願濃厚，有利半導體類股回穩。</p>
+</li>
+<li>
+<p><strong>[11-06 23:44]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Stock futures explained: how Dow, S&amp;P 500 and Nasdaq-100 contracts work - qz.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 科普性質文章，解釋股價指數期貨運作原理，對市場行情無直接影響。</p>
+</li>
+<li>
+<p><strong>[11-06 23:43]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Quantinuum lifts revenue outlook as analysts cite bookings, cloud deals</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Quantinuum上調營收展望，受惠於訂單與雲端合作增長，對量子運算相關概念股形成正面激勵。</p>
+</li>
+<li>
+<p><strong>[11-06 23:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Could the US midterms put a pin in the AI bubble?</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國中期選舉與監管疑慮引發AI泡沫擔憂，壓抑科技股估值，資金轉向防禦型資產。</p>
+</li>
+<li>
+<p><strong>[11-06 23:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Amazon's Alexa for Shopping now answers to texts</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 亞馬遜推出Alexa for Shopping文字互動功能，強化電商生態系與AI應用。</p>
+</li>
+<li>
+<p><strong>[11-06 23:34]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 晶片股強勁反彈帶動那斯達克回升 美股三大指數走勢分歧 - 民視財經網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 晶片股強勁反彈帶動那斯達克指數回升，顯示半導體族群在殺估值後仍有強勁買盤支撐。</p>
+</li>
+<li>
+<p><strong>[11-06 23:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Nasdaq pares losses as chips recover, rate-hike fears linger - The Detroit News</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 那斯達克收斂跌幅因晶片股反彈，但升息憂慮仍存，抑制整體股市漲幅。</p>
+</li>
+<li>
+<p><strong>[11-06 23:14]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Live Updates: U.S. Jobs Report Shows Strength After Stock Market Falls - The New York Times</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月非農就業報告強勁，加劇市場對聯準會維持高利率的擔憂，美股延續賣壓。</p>
+</li>
+<li>
+<p><strong>[11-06 23:12]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> What to do with your retirement savings in a stock market sell-off - Yahoo Finance</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 股市賣壓引發退休資產配置討論，屬市場情緒教育性質，對實質金融市場無直接衝擊。</p>
+</li>
+<li>
+<p><strong>[11-06 23:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Stocks rebound after tech selloff that pushed Nasdaq into correction - CBS News</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 科技股經歷修正後出現反彈，帶動整體美股止跌回穩，對台股電子權值股有正向情緒傳導。</p>
+</li>
+<li>
+<p><strong>[11-06 23:09]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 台股史詩級暴跌 金管會出手祭限空令、融券保證金提高至130% - 新頭條</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股面臨史詩級暴跌，金管會祭出限空令與提高融券保證金至130%，短期有助於遏止恐慌性殺盤，但市場信心修復需時間。</p>
+</li>
+<li>
+<p><strong>[11-06 23:09]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Moderna raises its revenue outlook — but all eyes are on what happens next with its cancer vaccine</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Moderna調高2026年營收預期達25%並聚焦癌症疫苗進展，激勵生技類股股價上揚，對整體大盤影響有限。</p>
+</li>
+<li>
+<p><strong>[11-06 23:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> AI stocks climb after trillions wiped from market values</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: AI概念股在經歷市值蒸發後回穩反彈，投資人消化政治選舉對AI發展政策的不確定性，科技股跌深反彈。</p>
+</li>
+<li>
+<p><strong>[11-06 23:04]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> TWA00 加權指數- 台股重挫失守四萬，政院聯手國安基金急救市- 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股重挫失守四萬點大關，政院與國安基金緊急進場救市，反映外資匯出與系統性恐慌情緒。</p>
+</li>
+<li>
+<p><strong>[11-06 23:01]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Nasdaq, S&amp;P 500 aim higher, attempting to move past tech selloff - TradingView</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股四大指數試圖擺脫先前科技股賣壓，那斯達克與標普500指數早盤走高。</p>
+</li>
+<li>
+<p><strong>[11-06 23:01]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Nasdaq, S&amp;P 500 aim higher, attempting to move past tech selloff (COMP:IND:) - Seeking Alpha</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 那斯達克指數與標普500指數嘗試甩開先前科技股拋售陰霾，帶動美股大盤企圖止跌回升。</p>
+</li>
+<li>
+<p><strong>[11-06 22:59]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 美股科技大咖吹反攻號角！費半指數上揚5％　台積電ADR強彈7%</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股科技大咖與費半指數大漲逾5%，台積電ADR強彈逾7%，激勵台指期夜盤大漲，台股面臨絕地反攻。</p>
+</li>
+<li>
+<p><strong>[11-06 22:57]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> The worldwide sell-off for AI stocks halts, but other US stocks are still struggling - New Haven Register</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 全球AI股票拋售潮暫告一段落，但美國其他傳統板塊股票仍舊表現掙扎，市場呈現分化格局。</p>
+</li>
+<li>
+<p><strong>[11-06 22:56]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> 美股開盤漲跌互見！晶片股跌深反彈　那指逆勢走高1.23％</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月非農就業報告強勁推升殖利率與升息預期，道瓊下挫，但科技與晶片股因超跌迎來強彈，那斯達克逆勢走高1.23%。</p>
+</li>
+<li>
+<p><strong>[11-06 22:54]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> US stock market today: Why is the Nasdaq up 1% while the Dow Jones falls? S&amp;P 500 turns green amid tech st - The Economic Times</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股表現分化，那斯達克上漲1%而道瓊工業指數下跌，反映資金在科技股與傳統產業間輪動。</p>
+</li>
+<li>
+<p><strong>[11-06 22:54]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> US stock market today: Why is the Nasdaq up 1% today while the Dow Jones falls? S&amp;P 500 turns green amid t - The Economic Times</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 報導探討那斯達克指數與道瓊工業指數走勢分歧的原因，反映資金在科技股超跌後的輪動與選擇性買盤。</p>
+</li>
+<li>
+<p><strong>[11-06 22:52]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> 美股開盤晶片股強勢反彈！費半狂飆500點</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月非農就業數據優於預期，帶動美債殖利率飆升並強化聯準會升息預期，壓抑傳統類股，但晶片股跌深強彈激勵費半狂飆500點。</p>
+</li>
+<li>
+<p><strong>[11-06 22:51]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> The S&amp;P 500 has become a big AI bet. Here are some simple alternatives.</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 標普500指數高度集中於AI相關類股，凸顯分散投資的重要性與單一產業風險。</p>
+</li>
+<li>
+<p><strong>[11-06 22:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 美股強勢回彈！川普挺AI高喊「只有蠢蛋才拒絕財富」助攻費半大漲6％ 台積電ADR狂漲7％ - FTNN 新聞網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 川普公開表態力挺AI產業助攻，疊加晶片股超跌反彈，帶動費半大漲6%、台積電ADR狂飆7%，提振台股半導體信心。</p>
+</li>
+<li>
+<p><strong>[11-06 22:48]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Stock Market Today (Nov. 6, 2026): S&amp;P 500 edges higher following AI tech rout - Yahoo Finance Singapore</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股在經歷史詩級AI晶片股殺盤後試圖跌深回穩，標普500微幅收高。</p>
+</li>
+<li>
+<p><strong>[11-06 22:47]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Oversold AI and chip stocks after the Nasdaq’s worst day since 2020 - Yahoo Finance Singapore</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 那斯達克經歷2020年以來最大跌幅後，AI與晶片股出現技術性超跌反彈，吸引資金回補。</p>
+</li>
+<li>
+<p><strong>[11-06 22:46]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 美股回穩費城半導體大漲 台積電ADR狂飆7.57％ - 壹蘋新聞網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股回穩帶動費城半導體指數大漲，台積電ADR狂飆7.57%，強力支撐台股半導體供應鏈信心。</p>
+</li>
+<li>
+<p><strong>[11-06 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Dow Jones Shrugs Off Optimistic Jobs Report - TipRanks</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 道瓊指數對強勁的10月非農就業報告反應冷淡，顯示市場對高利率環境的擔憂開始反映在傳統藍籌股上。</p>
+</li>
+<li>
+<p><strong>[11-06 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> US Stock Market Today: Nasdaq, S&amp;P 500 Open Slightly Higher, After Rebound Post Chip Stocks Selloff, US Jobs Report - NDTV Profit</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 那斯達克與標普500在晶片股賣壓後開高反彈，市場消化非農就業報告與科技股超跌修復。</p>
+</li>
+<li>
+<p><strong>[11-06 22:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 【快訊／美股開盤「費半大漲逾5％」！台積電ADR回魂上攻逾7％】 可以不用睡路邊了QQ （#起啵） - Facebook</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股開盤費半大漲逾5%、台積電ADR回魂上攻逾7%，化解了前一日重挫的恐慌情緒，對台股開盤具有高度正面指引。</p>
+</li>
+<li>
+<p><strong>[11-06 22:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Nasdaq opens higher as chips pare losses, rate-hike fears linger - Yahoo Finance</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 那斯達克開高反映晶片股削減跌幅，但強勁就業數據引發的升息擔憂持續壟罩市場，增添盤勢變數。</p>
+</li>
+<li>
+<p><strong>[11-06 22:34]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> TWA00 加權指數- AI政策急轉致台股失守四萬，融資暴減五百億- 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 受AI政策轉變與賣壓衝擊，台股加權指數失守四萬點大關，融資大幅大減五百億元，籌碼面進行劇烈清理。</p>
+</li>
+<li>
+<p><strong>[11-06 22:32]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Dow slides, Nasdaq gains as Wall Street reels from tech selloff</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 華爾街面臨科技股拋售潮，導致道瓊指數與那斯達克指數表現分化，資金自高位科技股流出。</p>
+</li>
+<li>
+<p><strong>[11-06 22:27]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> AKITA Drilling Ltd. GAAP EPS of CAD -0.05, revenue of CAD69.2M</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: AKITA Drilling公佈財報，GAAP每股虧損CAD -0.05，營收CAD 69.2M，對整體宏觀與大盤影響有限。</p>
+</li>
+<li>
+<p><strong>[11-06 22:24]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Nasdaq eyes higher open as chips pare losses, rate-hike fears linger - BNN Bloomberg</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 那斯達克期指預期開高，晶片股收斂跌幅，但市場對升息的隱憂仍在，壓抑反彈力度。</p>
+</li>
+<li>
+<p><strong>[11-06 22:23]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 台股重挫！卓榮泰急向賴清德報告 國安基金進場...金管會祭5措施 - Yahoo股市</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股面臨重挫，政府高層關注並祭出國安基金進場與金管會5大穩定措施，力抗系統性賣壓。</p>
+</li>
+<li>
+<p><strong>[11-06 22:19]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> TWA00 加權指數 - 不要信國安基金 缺口41,574封閉才是真的 夜盤綠的時候... - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 市場投資人對台股夜盤與國安基金護盤訊息產生分歧，關注41,574點缺口是否封閉。</p>
+</li>
+<li>
+<p><strong>[11-06 22:15]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Trump blames 'Dumocrats' for $2.5 trillion stock market crash after losing midterm elections - The News International</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 川普將股市2.5兆美元崩盤歸咎於民主黨期中選舉失利，政治口水加劇美股短期波動與市場恐慌情緒。</p>
+</li>
+<li>
+<p><strong>[11-06 22:14]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 國安基金出手護盤！台指期夜盤受激勵飆漲1100點 | 太報 - LINE TODAY</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 傳出國安基金出手護盤激勵台指期夜盤大漲1100點，有助於舒緩台股現貨市場的恐慌情緒。</p>
+</li>
+<li>
+<p><strong>[11-06 22:10]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Moderna raises its revenue outlook — but all eyes are on what happens next with its experimental cancer vaccine</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Moderna調升全年營收展望並預期2026年營收成長高達25%，激勵生技股買盤。</p>
+</li>
+<li>
+<p><strong>[11-06 22:09]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Forget pricey JPMorgan: Is this turnaround bank the better rebound bet?</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 探討轉型銀行與摩根大通的投資價值比較，對整體金融股實質影響有限。</p>
+</li>
+<li>
+<p><strong>[11-06 22:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Nasdaq 100 and S&amp;P500: Tech Stocks Rally as Short-Covering Tests Bearish Trend - FXEmpire</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股受非農與空頭回補帶動，科技股迎來反彈並測試空方趨勢，連帶有利台積電ADR及台股表現。</li>
+</ul>
+<h3 id="2">債市（2）</h3>
+<ul>
+<li><strong>[11-06 23:14]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Treasury Yields Jump After Hot Jobs Report - Briefs Finance</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國強勁的非農就業報告公布後，美債殖利率全面跳升，反映市場對降息預期大幅降溫。</p>
+</li>
+<li>
+<p><strong>[11-06 22:08]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 美國國債下跌 因強勁非農就業報告提振加息預期 - Yahoo 財經</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農就業報告強勁（新增16.5萬人遠超預期），引發聯準會升息預期升溫，導致美國國債價格下跌、殖利率攀升。</li>
+</ul>
+<h3 id="2_1">匯市（2）</h3>
+<ul>
+<li><strong>[11-06 23:44]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> 美國非農就業大增16.5萬人 美元指數強彈創7週最大漲幅 - 民視財經網</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月非農就業大增16.5萬人，推動美元指數強彈並創7週最大漲幅，非美貨幣與黃金面臨下行壓力。</p>
+</li>
+<li>
+<p><strong>[11-06 23:42]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> Dollar index jumps after US payrolls beat forecasts</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國非農就業(NFP)與失業率數據優於預期，推動美元指數跳升，打壓非美貨幣與黃金等商品，並加劇股市風險趨避情緒。</li>
+</ul>
+<h3 id="3">商品(油金)（3）</h3>
+<ul>
+<li><strong>[11-06 23:28]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> The Iran War Isn't Over, but Oil Traders Are Already Pricing In Peace - Crude Oil Prices Today | OilPrice.com</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 伊朗戰爭未歇但原油交易商已開始計入和平預期，導致原油價格承壓下跌。</p>
+</li>
+<li>
+<p><strong>[11-06 22:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Europe's Grid Spending Is Up 155% Since 2019 - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 歐洲電網支出自2019年以來大幅成長155%，反映能源轉型與電網現代化需求強勁。</p>
+</li>
+<li>
+<p><strong>[11-06 22:03]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> BREAKING: US Non-Farm Payrolls and Unemployment Data Released! What Was Bitcoin’s (BTC) Initial Reaction? - Cryptonews.net</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國非農就業與失業率數據公布後引發美元波動，加密貨幣市場對強勁數據進行初步多空交織的反應。</li>
+</ul>
+<h3 id="2_2">地緣政治（2）</h3>
+<ul>
+<li><strong>[11-06 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Trump's Iran Strategy Reaches a Critical Crossroads After Midterm Defeat - Crude Oil Prices Today | OilPrice.com</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國期中選舉失利後，川普的伊朗戰略面臨關鍵十字路口，地緣政治風險升溫可能牽動原油價格劇烈波動。</p>
+</li>
+<li>
+<p><strong>[11-06 22:11]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> 抗議大規模興建資料中心 示威者闖荷蘭微軟工地</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 示威者闖入荷蘭微軟資料中心工地，反映全球對AI高速發展與龐大運算中心耗能的抵制浪潮擴大。</li>
+</ul>
+<h3 id="26">總體經濟（26）</h3>
+<ul>
+<li><strong>[11-06 23:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 響應亞洲資產管理中心政策　中信銀行舉辦影響力投資論壇　聚焦家族永續、影響力投資及資產布局</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 中信銀舉辦影響力投資論壇，呼應台灣亞洲資產管理中心政策，對金融股屬長期基本面利多。</p>
+</li>
+<li>
+<p><strong>[11-06 23:44]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Blowout October Jobs Number Complicates Federal Reserve’s December Rate Decision - London Insider</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月非農就業報告大增16.5萬人表現超預期，使聯準會(Fed)12月降息決策變得複雜，美債殖利率與美元走強，股市承壓。</p>
+</li>
+<li>
+<p><strong>[11-06 23:27]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> These three stars need to align before investors rush back into stocks, Bank of America strategist says</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美銀策略師指出股市反彈前需等待跨資產市場訊號對齊，顯示市場底部尚未完全確立。</p>
+</li>
+<li>
+<p><strong>[11-06 23:19]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Canada’s Ivey PMI edges higher in October as employment rises</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 加拿大10月Ivey PMI微升且就業改善，顯示經濟具韌性，對加幣匯率與當地資產微幅正面。</p>
+</li>
+<li>
+<p><strong>[11-06 23:18]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> US Job Growth Surges in October, Unemployment Rate Falls - NTD News</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月非農就業大增16.5萬人且失業率降至4.1%，數據強勁超出預期，推升美元與美債殖利率，打壓降息預期。</p>
+</li>
+<li>
+<p><strong>[11-06 23:15]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Week Ahead: US CPI, UK GDP and Market Outlook - www.equiti.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 市場聚焦即將公布的美國CPI與英國GDP數據，預期將牽動全球股市與匯市波動。</p>
+</li>
+<li>
+<p><strong>[11-06 23:14]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 美國10月非農就業大增16.5萬人 失業率降至4.1%遠優預期 - 民視新聞網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月非農大增16.5萬人、失業率降至4.1%，強勁就業報告導致債券殖利率跳升，美股承壓。</p>
+</li>
+<li>
+<p><strong>[11-06 23:08]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> US job growth surges in October; unemployment rate falls to 4.1% - Reuters</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國勞工部公布10月非農就業NFP大增，失業率降至4.1%，顯示美國勞動市場極具韌性，可能緩解經濟衰退擔憂但強化聯準會鷹派預期。</p>
+</li>
+<li>
+<p><strong>[11-06 22:54]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Analysis-Trader angst pivots from inflation to growth as tech rout deepens</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 市場擔憂焦點從通膨轉向經濟成長放緩，科技股修正加劇，壓抑整體股市風險偏好。</p>
+</li>
+<li>
+<p><strong>[11-06 22:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Workers' rights 'second place' to economic growth</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 地方官員言論凸顯政策優先順序轉向經濟成長，對特定區域勞動市場政策可能產生影響，宏觀直接衝擊有限。</p>
+</li>
+<li>
+<p><strong>[11-06 22:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Correction vs bear market vs crash vs recession explained - qz.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 市場教育性質資訊，釐清修正、熊市、崩盤與衰退定義，反映投資人對市場回檔的焦慮情緒。</p>
+</li>
+<li>
+<p><strong>[11-06 22:44]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 美國10月非農就業遠超預期！美債收益率全線上升 市場押注美聯儲12月加息 作者 智通財經 - Investing.com 香港 - 股市報價&amp; 財經新聞</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月非農就業遠超預期，帶動美債收益率全線上升，市場重新押注美聯準會(Fed)12月升息與緊縮路徑。</p>
+</li>
+<li>
+<p><strong>[11-06 22:40]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> 〈分析〉10月非農令聯準會可繼續聚焦抗通膨 但存在三大不確定性 - 鉅亨網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 10月非農與失業率數據顯示美國就業市場健康，讓聯準會能持續聚焦抗通膨，推動美元與美債收益率震盪。</p>
+</li>
+<li>
+<p><strong>[11-06 22:39]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> 〈美股早盤〉AI股跌出買盤！晶片股帶動那指反彈 Fed升息陰影仍在</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月非農就業新增16.5萬人、失業率降至4.1%（NFP與就業數據公布），強化Fed 12月升息預期（機率約70%）；同時晶片股與台積電ADR強彈帶動那指反彈。</p>
+</li>
+<li>
+<p><strong>[11-06 22:33]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> U.S. Unemployment Rate Falls Slightly to 4.1 Percent in October - blue News</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月非農就業新增16.5萬人，失業率微降至4.1%，展現經濟韌性，舒緩經濟衰退疑慮。</p>
+</li>
+<li>
+<p><strong>[11-06 22:27]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> U.S. Economy Adds 165,000 Jobs in October as Unemployment Rate Edges Down to 4.1 Percent - Hunt Scanlon Media</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月非農新增16.5萬人、失業率4.1%，兼顧就業成長與通膨降溫，屬於股市健康的「金髮女孩」經濟數據。</p>
+</li>
+<li>
+<p><strong>[11-06 22:19]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> United States Unemployment Rate below forecasts (4.2%) in October: Actual (4.1%) - www.tmgm.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月失業率降至4.1%低於預期，顯示勞動市場強韌，支撐美元與美股多頭情緒。</p>
+</li>
+<li>
+<p><strong>[11-06 22:13]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> Nasdaq Futures Rebound After Wall Street Rout as Strong US Jobs Report Divides Investors: Dow Jones, S&amp;P - Yahoo Finance UK</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國強勁就業報告（Non-Farm Payrolls）出爐，令投資人對聯準會政策分歧，美股期貨在經歷賣壓後反彈。</p>
+</li>
+<li>
+<p><strong>[11-06 22:13]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Retail inflation may breach 6% in October amid rising food prices - TradingView</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 10月零售通膨因食品價格上漲恐突破6%，加劇生活成本壓力與通膨僵固性疑慮。</p>
+</li>
+<li>
+<p><strong>[11-06 22:13]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> US Stock Futures Mixed After Wall Street Sell-Off as Strong Jobs Data Fails to Ease AI Concerns: Dow Jones, S&amp;P, Nasdaq - Yahoo Finance</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國強勁就業數據未能完全消弭市場對AI產業疑慮，美股期貨呈現混合走勢。</p>
+</li>
+<li>
+<p><strong>[11-06 22:11]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Canada Inflation Watch: 3.1% CPI and Higher Energy Costs Keep Price Pressures Elevated - kalkine.ca</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 加拿大10月CPI維持在3.1%偏高水位且能源成本推升物價，壓抑加拿大央行寬鬆預期。</p>
+</li>
+<li>
+<p><strong>[11-06 22:10]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> October US Unemployment Rate 4.1% Vs. Expected 4.2%, Prior 4.2% - marketscreener.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月失業率4.1%優於預期的4.2%，激勵美元走強，美債殖利率面臨上升壓力。</p>
+</li>
+<li>
+<p><strong>[11-06 22:05]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 美國10月非農就業超強！新增16.5萬人遠超預期　Fed升息更加鞏固 - NOWnews今日新聞</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月非農就業新增16.5萬人遠超預期，經濟過熱鞏固了Fed進一步升息或維持高利率的預期。</p>
+</li>
+<li>
+<p><strong>[11-06 22:05]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> 美國10月非農就業超強！增16.5萬人遠超預期 - Yahoo新聞</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月非農就業大增16.5萬人遠超預期，顯示經濟極具韌性，股匯市同步反應利多。</p>
+</li>
+<li>
+<p><strong>[11-06 22:02]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> US job growth beats expectations in October; unemployment rate falls to 4.1% - RTE.ie</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月非農就業(NFP)優於預期且失業率降至4.1%，推升美元與美債殖利率飆升，壓抑股市與非美資產表現。</p>
+</li>
+<li>
+<p><strong>[11-06 22:02]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> 美期中選舉後首次就業數據曝、非農新增16.5萬遠高於預期 不影響聯準會12月升息 - Yahoo新聞</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月非農就業新增16.5萬遠高於預期，市場消化期中選舉後政策變數，並評估聯準會12月利率動向。</li>
+</ul>
+<h3 id="2_3">其他（2）</h3>
+<ul>
+<li><strong>[11-06 23:47]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 4 tools that can help you cope any market selloff - TheStreet</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 教學性質報導，探討應對市場拉回的工具，對實質金融市場無直接影響。</p>
+</li>
+<li>
+<p><strong>[11-06 22:05]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Strong US Jobs Report Pushed Treasury Yields Higher - Finimize</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 無</li>
+</ul>
+<hr />
+<h2 id="_4">全部事件</h2>
+<ul>
+<li><strong>[11-06 23:54]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Cloudflare climbs as analysts highlight its biggest earnings beat in years <code>seekingalpha</code></li>
+<li><strong>[11-06 23:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Nvidia, AMD and other chip stocks rebound. Is the ‘violent’ AI selloff over? <code>marketwatch</code></li>
+<li><strong>[11-06 23:47]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 4 tools that can help you cope any market selloff - TheStreet <code>google-news:stock market selloff</code></li>
+<li><strong>[11-06 23:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 響應亞洲資產管理中心政策　中信銀行舉辦影響力投資論壇　聚焦家族永續、影響力投資及資產布局 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-06 23:44]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Stock futures explained: how Dow, S&amp;P 500 and Nasdaq-100 contracts work - qz.com <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-06 23:44]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Blowout October Jobs Number Complicates Federal Reserve’s December Rate Decision - London Insider <code>google-news:Federal Reserve rate decision</code></li>
+<li><strong>[11-06 23:44]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 美國非農就業大增16.5萬人 美元指數強彈創7週最大漲幅 - 民視財經網 <code>google-news:非農就業 就業報告</code></li>
+<li><strong>[11-06 23:43]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Quantinuum lifts revenue outlook as analysts cite bookings, cloud deals <code>seekingalpha</code></li>
+<li><strong>[11-06 23:42]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Dollar index jumps after US payrolls beat forecasts <code>investing-com</code></li>
+<li><strong>[11-06 23:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Could the US midterms put a pin in the AI bubble? <code>bbcbusiness</code></li>
+<li><strong>[11-06 23:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Amazon's Alexa for Shopping now answers to texts <code>seekingalpha</code></li>
+<li><strong>[11-06 23:34]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 晶片股強勁反彈帶動那斯達克回升 美股三大指數走勢分歧 - 民視財經網 <code>google-news:非農就業 就業報告</code></li>
+<li><strong>[11-06 23:28]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> The Iran War Isn't Over, but Oil Traders Are Already Pricing In Peace - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[11-06 23:27]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> These three stars need to align before investors rush back into stocks, Bank of America strategist says <code>marketwatch</code></li>
+<li><strong>[11-06 23:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Nasdaq pares losses as chips recover, rate-hike fears linger - The Detroit News <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-06 23:19]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Canada’s Ivey PMI edges higher in October as employment rises <code>investing-com</code></li>
+<li><strong>[11-06 23:18]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> US Job Growth Surges in October, Unemployment Rate Falls - NTD News <code>google-news:US unemployment rate</code></li>
+<li><strong>[11-06 23:15]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Week Ahead: US CPI, UK GDP and Market Outlook - www.equiti.com <code>google-news:inflation CPI</code></li>
+<li><strong>[11-06 23:14]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 美國10月非農就業大增16.5萬人 失業率降至4.1%遠優預期 - 民視新聞網 <code>google-news:非農就業 就業報告</code></li>
+<li><strong>[11-06 23:14]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Treasury Yields Jump After Hot Jobs Report - Briefs Finance <code>google-news:Treasury yields</code></li>
+<li><strong>[11-06 23:14]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Live Updates: U.S. Jobs Report Shows Strength After Stock Market Falls - The New York Times <code>google-news:US unemployment rate</code></li>
+<li><strong>[11-06 23:12]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> What to do with your retirement savings in a stock market sell-off - Yahoo Finance <code>google-news:stock market selloff</code></li>
+<li><strong>[11-06 23:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Stocks rebound after tech selloff that pushed Nasdaq into correction - CBS News <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-06 23:09]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 台股史詩級暴跌 金管會出手祭限空令、融券保證金提高至130% - 新頭條 <code>google-news:金管會</code></li>
+<li><strong>[11-06 23:09]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Moderna raises its revenue outlook — but all eyes are on what happens next with its cancer vaccine <code>marketwatch</code></li>
+<li><strong>[11-06 23:08]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> US job growth surges in October; unemployment rate falls to 4.1% - Reuters <code>google-news:nonfarm payrolls jobs report</code></li>
+<li><strong>[11-06 23:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> AI stocks climb after trillions wiped from market values <code>bbcbusiness</code></li>
+<li><strong>[11-06 23:04]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> TWA00 加權指數- 台股重挫失守四萬，政院聯手國安基金急救市- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-06 23:01]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Nasdaq, S&amp;P 500 aim higher, attempting to move past tech selloff - TradingView <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-06 23:01]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Nasdaq, S&amp;P 500 aim higher, attempting to move past tech selloff (COMP:IND:) - Seeking Alpha <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-06 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Trump's Iran Strategy Reaches a Critical Crossroads After Midterm Defeat - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[11-06 22:59]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 美股科技大咖吹反攻號角！費半指數上揚5％　台積電ADR強彈7% <code>yahoo-tw-stock</code></li>
+<li><strong>[11-06 22:57]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> The worldwide sell-off for AI stocks halts, but other US stocks are still struggling - New Haven Register <code>google-news:stock market selloff</code></li>
+<li><strong>[11-06 22:56]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 美股開盤漲跌互見！晶片股跌深反彈　那指逆勢走高1.23％ <code>yahoo-tw-stock</code></li>
+<li><strong>[11-06 22:54]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> US stock market today: Why is the Nasdaq up 1% while the Dow Jones falls? S&amp;P 500 turns green amid tech st - The Economic Times <code>google-news:stock market selloff</code></li>
+<li><strong>[11-06 22:54]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> US stock market today: Why is the Nasdaq up 1% today while the Dow Jones falls? S&amp;P 500 turns green amid t - The Economic Times <code>google-news:stock market selloff</code></li>
+<li><strong>[11-06 22:54]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Analysis-Trader angst pivots from inflation to growth as tech rout deepens <code>investing-com</code></li>
+<li><strong>[11-06 22:52]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 美股開盤晶片股強勢反彈！費半狂飆500點 <code>yahoo-tw-stock</code></li>
+<li><strong>[11-06 22:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Workers' rights 'second place' to economic growth <code>bbcbusiness</code></li>
+<li><strong>[11-06 22:51]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> The S&amp;P 500 has become a big AI bet. Here are some simple alternatives. <code>marketwatch</code></li>
+<li><strong>[11-06 22:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 美股強勢回彈！川普挺AI高喊「只有蠢蛋才拒絕財富」助攻費半大漲6％ 台積電ADR狂漲7％ - FTNN 新聞網 <code>google-news:台股 大漲</code></li>
+<li><strong>[11-06 22:48]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Stock Market Today (Nov. 6, 2026): S&amp;P 500 edges higher following AI tech rout - Yahoo Finance Singapore <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-06 22:47]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Oversold AI and chip stocks after the Nasdaq’s worst day since 2020 - Yahoo Finance Singapore <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-06 22:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Correction vs bear market vs crash vs recession explained - qz.com <code>google-news:stock market selloff</code></li>
+<li><strong>[11-06 22:46]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 美股回穩費城半導體大漲 台積電ADR狂飆7.57％ - 壹蘋新聞網 <code>google-news:台股 大漲</code></li>
+<li><strong>[11-06 22:44]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 美國10月非農就業遠超預期！美債收益率全線上升 市場押注美聯儲12月加息 作者 智通財經 - Investing.com 香港 - 股市報價&amp; 財經新聞 <code>google-news:非農就業 就業報告</code></li>
+<li><strong>[11-06 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Dow Jones Shrugs Off Optimistic Jobs Report - TipRanks <code>google-news:nonfarm payrolls jobs report</code></li>
+<li><strong>[11-06 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> US Stock Market Today: Nasdaq, S&amp;P 500 Open Slightly Higher, After Rebound Post Chip Stocks Selloff, US Jobs Report - NDTV Profit <code>google-news:stock market selloff</code></li>
+<li><strong>[11-06 22:40]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 〈分析〉10月非農令聯準會可繼續聚焦抗通膨 但存在三大不確定性 - 鉅亨網 <code>google-news:非農就業 就業報告</code></li>
+<li><strong>[11-06 22:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 【快訊／美股開盤「費半大漲逾5％」！台積電ADR回魂上攻逾7％】 可以不用睡路邊了QQ （#起啵） - Facebook <code>google-news:台股 大漲</code></li>
+<li><strong>[11-06 22:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Nasdaq opens higher as chips pare losses, rate-hike fears linger - Yahoo Finance <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-06 22:39]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 〈美股早盤〉AI股跌出買盤！晶片股帶動那指反彈 Fed升息陰影仍在 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-06 22:34]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> TWA00 加權指數- AI政策急轉致台股失守四萬，融資暴減五百億- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-06 22:33]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> U.S. Unemployment Rate Falls Slightly to 4.1 Percent in October - blue News <code>google-news:US unemployment rate</code></li>
+<li><strong>[11-06 22:32]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Dow slides, Nasdaq gains as Wall Street reels from tech selloff <code>seekingalpha</code></li>
+<li><strong>[11-06 22:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Europe's Grid Spending Is Up 155% Since 2019 - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[11-06 22:27]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> U.S. Economy Adds 165,000 Jobs in October as Unemployment Rate Edges Down to 4.1 Percent - Hunt Scanlon Media <code>google-news:US unemployment rate</code></li>
+<li><strong>[11-06 22:27]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> AKITA Drilling Ltd. GAAP EPS of CAD -0.05, revenue of CAD69.2M <code>seekingalpha</code></li>
+<li><strong>[11-06 22:24]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Nasdaq eyes higher open as chips pare losses, rate-hike fears linger - BNN Bloomberg <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-06 22:23]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 台股重挫！卓榮泰急向賴清德報告 國安基金進場...金管會祭5措施 - Yahoo股市 <code>google-news:金管會</code></li>
+<li><strong>[11-06 22:19]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> United States Unemployment Rate below forecasts (4.2%) in October: Actual (4.1%) - www.tmgm.com <code>google-news:US unemployment rate</code></li>
+<li><strong>[11-06 22:19]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> TWA00 加權指數 - 不要信國安基金 缺口41,574封閉才是真的 夜盤綠的時候... - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-06 22:15]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Trump blames 'Dumocrats' for $2.5 trillion stock market crash after losing midterm elections - The News International <code>google-news:stock market selloff</code></li>
+<li><strong>[11-06 22:14]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 國安基金出手護盤！台指期夜盤受激勵飆漲1100點 | 太報 - LINE TODAY <code>google-news:台股 大漲</code></li>
+<li><strong>[11-06 22:13]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Nasdaq Futures Rebound After Wall Street Rout as Strong US Jobs Report Divides Investors: Dow Jones, S&amp;P - Yahoo Finance UK <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-06 22:13]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Retail inflation may breach 6% in October amid rising food prices - TradingView <code>google-news:inflation CPI</code></li>
+<li><strong>[11-06 22:13]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> US Stock Futures Mixed After Wall Street Sell-Off as Strong Jobs Data Fails to Ease AI Concerns: Dow Jones, S&amp;P, Nasdaq - Yahoo Finance <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-06 22:11]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 抗議大規模興建資料中心 示威者闖荷蘭微軟工地 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-06 22:11]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Canada Inflation Watch: 3.1% CPI and Higher Energy Costs Keep Price Pressures Elevated - kalkine.ca <code>google-news:inflation CPI</code></li>
+<li><strong>[11-06 22:10]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> October US Unemployment Rate 4.1% Vs. Expected 4.2%, Prior 4.2% - marketscreener.com <code>google-news:US unemployment rate</code></li>
+<li><strong>[11-06 22:10]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Moderna raises its revenue outlook — but all eyes are on what happens next with its experimental cancer vaccine <code>marketwatch</code></li>
+<li><strong>[11-06 22:09]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Forget pricey JPMorgan: Is this turnaround bank the better rebound bet? <code>investing-com</code></li>
+<li><strong>[11-06 22:08]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 美國國債下跌 因強勁非農就業報告提振加息預期 - Yahoo 財經 <code>google-news:非農就業 就業報告</code></li>
+<li><strong>[11-06 22:05]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Strong US Jobs Report Pushed Treasury Yields Higher - Finimize <code>google-news:Treasury yields</code></li>
+<li><strong>[11-06 22:05]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 美國10月非農就業超強！新增16.5萬人遠超預期　Fed升息更加鞏固 - NOWnews今日新聞 <code>google-news:非農就業 就業報告</code></li>
+<li><strong>[11-06 22:05]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 美國10月非農就業超強！增16.5萬人遠超預期 - Yahoo新聞 <code>google-news:非農就業 就業報告</code></li>
+<li><strong>[11-06 22:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Nasdaq 100 and S&amp;P500: Tech Stocks Rally as Short-Covering Tests Bearish Trend - FXEmpire <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-06 22:03]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> BREAKING: US Non-Farm Payrolls and Unemployment Data Released! What Was Bitcoin’s (BTC) Initial Reaction? - Cryptonews.net <code>google-news:US unemployment rate</code></li>
+<li><strong>[11-06 22:02]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> US job growth beats expectations in October; unemployment rate falls to 4.1% - RTE.ie <code>google-news:US unemployment rate</code></li>
+<li><strong>[11-06 22:02]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 美期中選舉後首次就業數據曝、非農新增16.5萬遠高於預期 不影響聯準會12月升息 - Yahoo新聞 <code>google-news:非農就業 就業報告</code></li>
+</ul>
+    </article>
+  
+</div>
+<footer>由金融情報系統自動發佈 · 僅供參考，不構成投資建議</footer>
+<script>
+const WEEK = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function nowParts(tz){
+  const p = {};
+  new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short', month: 'short',
+    day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
+  }).formatToParts(new Date()).forEach(x => p[x.type] = x.value);
+  return p;
+}
+function marketOpen(tz, open, close){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  return wd>=1 && wd<=5 && m>=open && m<close;
+}
+// Taiwan index-futures night session 15:00 -> next-day 05:00 (crosses midnight):
+// 15:00-24:00 Mon-Fri, plus 00:00-05:00 Tue-Sat (Sat 00:00-05:00 is Fri night session).
+function nightOpen(tz){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  if (m >= 5*60 && m < 15*60) return false;   // 05:00-15:00 recess
+  if (m >= 15*60) return wd >= 1 && wd <= 5;   // 15:00-24:00 Mon-Fri
+  return wd >= 2 && wd <= 6;                   // 00:00-05:00 Tue-Sat
+}
+function pad(n){ return String(n).padStart(2,'0'); }
+function setMkt(id, open, label){
+  const el = document.getElementById(id);
+  el.className = 'mkt ' + (open ? 'open' : 'closed');
+  el.textContent = (label ? label + ' ' : '') + (open ? '開盤中' : '未開盤');
+}
+function tick(){
+  const tw = nowParts('Asia/Taipei');
+  const ny = nowParts('America/New_York');
+  document.getElementById('clk-tw').textContent = pad(tw.hour)+':'+pad(tw.minute)+':'+pad(tw.second);
+  document.getElementById('clk-ny').textContent = pad(ny.hour)+':'+pad(ny.minute)+':'+pad(ny.second);
+  // Taiwan: TWSE weighted index 09:00-13:30; TX futures day 08:45-13:45; TX night 15:00-05:00
+  setMkt('tw-idx',  marketOpen('Asia/Taipei', 9*60, 13*60+30), '加權');
+  setMkt('tx-day',  marketOpen('Asia/Taipei', 8*60+45, 13*60+45), '期日盤');
+  setMkt('tx-night', nightOpen('Asia/Taipei'), '期夜盤');
+  // US: regular session 09:30-16:00 ET; after-hours 16:00-20:00 ET
+  setMkt('ny-mkt',  marketOpen('America/New_York', 9*60+30, 16*60), '美股');
+  setMkt('ny-night', marketOpen('America/New_York', 16*60, 20*60), '美股夜');
+}
+tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>
