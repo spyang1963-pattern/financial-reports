@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日報告 2026-11-10</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; margin: 0;
+         background: #f5f6f8; color: #1c1e21; line-height: 1.7; }
+  header { background: #1b2a4a; color: #fff; padding: 14px 24px;
+           display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  header h1 { font-size: 18px; margin: 0; flex: 1; }
+  header nav a { color: #cdd8ee; text-decoration: none; margin-left: 14px; font-size: 14px; }
+  header nav a:hover, header nav a.active { color: #fff; text-decoration: underline; }
+  #clock { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; font-size: 13px; }
+  .clk { background: rgba(255,255,255,.08); border-radius: 6px; padding: 4px 10px; }
+  .clk-city { color: #9fb0cf; margin-right: 6px; }
+  .clk-time { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .mkt { margin-left: 8px; font-size: 12px; padding: 1px 7px; border-radius: 9px; }
+  .mkt.open { background: #2e7d32; color: #fff; }
+  .mkt.closed { background: #5a6474; color: #fff; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 20px; }
+  .card { background: #fff; border-radius: 8px; padding: 18px 22px; margin: 14px 0;
+          box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .card h3 { margin: 0 0 6px; }
+  .card a { color: #1b2a4a; text-decoration: none; }
+  .card a:hover { text-decoration: underline; }
+  .muted { color: #666; font-size: 13px; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px;
+           color: #fff; margin-left: 6px; }
+  .b-daily { background: #2e7d32; }
+  .b-deep { background: #b45309; }
+  .day-nav { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+  .day-nav a { font-size: 13px; padding: 3px 10px; background: #e8ecf3; border-radius: 12px;
+               color: #33415c; text-decoration: none; }
+  .day-nav a:hover { background: #d2dbea; }
+  article.card { line-height: 1.15; }
+  article.card p { margin: 3px 0; }
+  article.card ul, article.card ol { margin: 3px 0 6px; padding-left: 22px; }
+  article.card h1, article.card h2, article.card h3 { padding-bottom: 4px; }
+  article.card h1, article.card h2 { border-bottom: 2px solid #33415c; }
+  article.card h1 { font-size: 30px; margin-top: 8px; }
+  article.card h2 { font-size: 23px; margin-top: 12px; color: #1b2a4a;
+        border-left: 6px solid #1459c8; padding-left: 12px; }
+  article.card h3 { font-size: 19px; margin-top: 10px; color: #24365c;
+        background: #eef4fb; border-radius: 6px; padding: 4px 12px; }
+  article.card h4 { font-size: 17px; margin-top: 18px; color: #145c3a;
+        background: #e8f5ee; border-left: 4px solid #2e7d32;
+        padding: 5px 10px; border-radius: 4px; }
+  article.card h5 { font-size: 15px; margin-top: 14px; color: #4a5568;
+        font-weight: 600; }
+  article.card h4, article.card h5 { margin-bottom: 2px; }
+  article.card strong { font-weight: 700; }
+  article.card blockquote { border-left: 4px solid #9fb0cf; margin: 4px 0;
+        padding: 2px 12px; color: #4a5568; background: #f4f6fa; }
+  article.card hr { border: none; border-top: 1px dashed #c3ccdb; margin: 12px 0; }
+  article.card code { background: #eef0f4; padding: 1px 5px; border-radius: 4px;
+        font-size: 14px; font-family: Consolas, monospace; }
+  article.card pre { background: #1b2a4a; color: #e6ecf7; padding: 14px; border-radius: 8px; overflow-x: auto; }
+  article.card pre code { background: transparent; color: inherit; padding: 0; }
+  article.card table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+  article.card th, article.card td { border: 1px solid #d8dce3; padding: 6px 10px; }
+  article.card th { background: #eef1f6; }
+  article.card a { color: #1459c8; }
+  footer { text-align: center; color: #999; font-size: 12px; padding: 20px; }
+</style>
+</head>
+<body>
+  <header>
+  <h1>金融情報系統報告</h1>
+  <nav>
+    <a href="../index.html" class="">首頁</a>
+    <a href="../calendar.html" class="">行事曆</a>
+    <a href="../daily/2026-11-10.html" class="active">最新每日</a>
+    <a href="../deep/2026-11-09-pm.html" class="">最新深度</a>
+  </nav>
+  <div id="clock">
+    <span class="clk"><span class="clk-city">台北</span><span class="clk-time" id="clk-tw">--:--:--</span><span class="mkt closed" id="tw-idx">…</span><span class="mkt closed" id="tx-day">…</span><span class="mkt closed" id="tx-night">…</span></span>
+    <span class="clk"><span class="clk-city">紐約</span><span class="clk-time" id="clk-ny">--:--:--</span><span class="mkt closed" id="ny-mkt">…</span><span class="mkt closed" id="ny-night">…</span></span>
+  </div>
+</header>
+<div class="wrap">
+  
+    <div class="day-nav">
+      <a href="../index.html">← 首頁</a>
+      
+        
+        <a href="../daily/2026-11-10.html">2026-11-10</a>
+        
+        <a href="../daily/2026-11-09.html">2026-11-09</a>
+        
+        <a href="../daily/2026-11-08.html">2026-11-08</a>
+        
+        <a href="../daily/2026-11-07.html">2026-11-07</a>
+        
+        <a href="../daily/2026-11-06.html">2026-11-06</a>
+        
+        <a href="../daily/2026-11-05.html">2026-11-05</a>
+        
+        <a href="../daily/2026-11-04.html">2026-11-04</a>
+        
+        <a href="../daily/2026-11-03.html">2026-11-03</a>
+        
+        <a href="../daily/2026-11-02.html">2026-11-02</a>
+        
+        <a href="../daily/2026-11-01.html">2026-11-01</a>
+        
+        <a href="../daily/2026-10-31.html">2026-10-31</a>
+        
+        <a href="../daily/2026-10-30.html">2026-10-30</a>
+        
+        <a href="../daily/2026-10-29.html">2026-10-29</a>
+        
+        <a href="../daily/2026-10-28.html">2026-10-28</a>
+        
+        <a href="../daily/2026-10-27.html">2026-10-27</a>
+        
+        <a href="../daily/2026-10-26.html">2026-10-26</a>
+        
+        <a href="../daily/2026-10-25.html">2026-10-25</a>
+        
+        <a href="../daily/2026-10-24.html">2026-10-24</a>
+        
+        <a href="../daily/2026-10-23.html">2026-10-23</a>
+        
+        <a href="../daily/2026-10-22.html">2026-10-22</a>
+        
+        <a href="../daily/2026-10-21.html">2026-10-21</a>
+        
+        <a href="../daily/2026-10-20.html">2026-10-20</a>
+        
+        <a href="../daily/2026-10-19.html">2026-10-19</a>
+        
+        <a href="../daily/2026-10-18.html">2026-10-18</a>
+        
+        <a href="../daily/2026-10-17.html">2026-10-17</a>
+        
+        <a href="../daily/2026-10-16.html">2026-10-16</a>
+        
+        <a href="../daily/2026-10-15.html">2026-10-15</a>
+        
+        <a href="../daily/2026-10-14.html">2026-10-14</a>
+        
+        <a href="../daily/2026-10-13.html">2026-10-13</a>
+        
+        <a href="../daily/2026-10-12.html">2026-10-12</a>
+        
+        <a href="../daily/2026-10-11.html">2026-10-11</a>
+        
+        <a href="../daily/2026-10-10.html">2026-10-10</a>
+        
+        <a href="../daily/2026-10-09.html">2026-10-09</a>
+        
+        <a href="../daily/2026-10-08.html">2026-10-08</a>
+        
+        <a href="../daily/2026-10-07.html">2026-10-07</a>
+        
+        <a href="../daily/2026-10-06.html">2026-10-06</a>
+        
+        <a href="../daily/2026-10-05.html">2026-10-05</a>
+        
+        <a href="../daily/2026-10-04.html">2026-10-04</a>
+        
+        <a href="../daily/2026-10-03.html">2026-10-03</a>
+        
+        <a href="../daily/2026-10-02.html">2026-10-02</a>
+        
+        <a href="../daily/2026-10-01.html">2026-10-01</a>
+        
+        <a href="../daily/2026-09-30.html">2026-09-30</a>
+        
+        <a href="../daily/2026-09-29.html">2026-09-29</a>
+        
+        <a href="../daily/2026-09-28.html">2026-09-28</a>
+        
+        <a href="../daily/2026-09-27.html">2026-09-27</a>
+        
+        <a href="../daily/2026-09-26.html">2026-09-26</a>
+        
+        <a href="../daily/2026-09-25.html">2026-09-25</a>
+        
+        <a href="../daily/2026-09-24.html">2026-09-24</a>
+        
+        <a href="../daily/2026-09-23.html">2026-09-23</a>
+        
+        <a href="../daily/2026-09-22.html">2026-09-22</a>
+        
+        <a href="../daily/2026-09-21.html">2026-09-21</a>
+        
+        <a href="../daily/2026-09-20.html">2026-09-20</a>
+        
+        <a href="../daily/2026-09-19.html">2026-09-19</a>
+        
+        <a href="../daily/2026-09-18.html">2026-09-18</a>
+        
+        <a href="../daily/2026-09-17.html">2026-09-17</a>
+        
+        <a href="../daily/2026-09-16.html">2026-09-16</a>
+        
+        <a href="../daily/2026-09-15.html">2026-09-15</a>
+        
+        <a href="../daily/2026-09-14.html">2026-09-14</a>
+        
+        <a href="../daily/2026-09-13.html">2026-09-13</a>
+        
+        <a href="../daily/2026-09-12.html">2026-09-12</a>
+        
+        <a href="../daily/2026-09-11.html">2026-09-11</a>
+        
+        <a href="../daily/2026-09-10.html">2026-09-10</a>
+        
+        <a href="../daily/2026-09-09.html">2026-09-09</a>
+        
+        <a href="../daily/2026-09-08.html">2026-09-08</a>
+        
+        <a href="../daily/2026-09-07.html">2026-09-07</a>
+        
+        <a href="../daily/2026-09-06.html">2026-09-06</a>
+        
+        <a href="../daily/2026-09-05.html">2026-09-05</a>
+        
+        <a href="../daily/2026-09-04.html">2026-09-04</a>
+        
+        <a href="../daily/2026-09-03.html">2026-09-03</a>
+        
+        <a href="../daily/2026-09-02.html">2026-09-02</a>
+        
+        <a href="../daily/2026-09-01.html">2026-09-01</a>
+        
+        <a href="../daily/2026-08-31.html">2026-08-31</a>
+        
+        <a href="../daily/2026-08-30.html">2026-08-30</a>
+        
+        <a href="../daily/2026-08-29.html">2026-08-29</a>
+        
+        <a href="../daily/2026-08-28.html">2026-08-28</a>
+        
+        <a href="../daily/2026-08-27.html">2026-08-27</a>
+        
+        <a href="../daily/2026-08-26.html">2026-08-26</a>
+        
+        <a href="../daily/2026-08-25.html">2026-08-25</a>
+        
+        <a href="../daily/2026-08-24.html">2026-08-24</a>
+        
+        <a href="../daily/2026-08-23.html">2026-08-23</a>
+        
+        <a href="../daily/2026-08-22.html">2026-08-22</a>
+        
+        <a href="../daily/2026-08-21.html">2026-08-21</a>
+        
+        <a href="../daily/2026-08-20.html">2026-08-20</a>
+        
+        <a href="../daily/2026-08-19.html">2026-08-19</a>
+        
+        <a href="../daily/2026-08-18.html">2026-08-18</a>
+        
+        <a href="../daily/2026-08-17.html">2026-08-17</a>
+        
+        <a href="../daily/2026-08-16.html">2026-08-16</a>
+        
+        <a href="../daily/2026-08-15.html">2026-08-15</a>
+        
+        <a href="../daily/2026-08-14.html">2026-08-14</a>
+        
+        <a href="../daily/2026-08-13.html">2026-08-13</a>
+        
+        <a href="../daily/2026-08-12.html">2026-08-12</a>
+        
+        <a href="../daily/2026-08-11.html">2026-08-11</a>
+        
+        <a href="../daily/2026-08-10.html">2026-08-10</a>
+        
+        <a href="../daily/2026-08-09.html">2026-08-09</a>
+        
+        <a href="../daily/2026-08-08.html">2026-08-08</a>
+        
+        <a href="../daily/2026-08-07.html">2026-08-07</a>
+        
+        <a href="../daily/2026-08-06.html">2026-08-06</a>
+        
+        <a href="../daily/2026-08-05.html">2026-08-05</a>
+        
+        <a href="../daily/2026-08-04.html">2026-08-04</a>
+        
+        <a href="../daily/2026-08-03.html">2026-08-03</a>
+        
+        <a href="../daily/2026-08-02.html">2026-08-02</a>
+        
+      
+    </div>
+    <article class="card">
+      <div class="muted">2026-11-10
+        <span class="badge b-daily">
+          每日報告
+        </span>
+      </div>
+      <h1 id="2026-11-10">金融重點報告 2026-11-10</h1>
+<blockquote>
+<p>產出時間: 2026-11-10 00:20（台灣時間）
+資料截止: 11-09 23:56（收錄庫最新事件，若久久未前進代表蒐集上游疑中斷）
+品質儀表板: 資料新鮮度 ≤26min | 去重率 28.0% | 最大來源佔 16.6% | 驗證覆蓋 25.4% | ⚠️疑似誤殺 101
+本報告由 AI 自動生成，僅供參考，不構成投資建議。</p>
+</blockquote>
+<h2 id="_1">📅 行事曆排期事件</h2>
+<blockquote>
+<p>下列為今日／近期已排定、可能影響市場的重要事件（法人預期供參考）：</p>
+</blockquote>
+<ul>
+<li>⭐ 今天 [高]美國勞工部 BLS：CPI 消費者物價指數(10月)</li>
+</ul>
+<hr />
+<h2 id="_2">🆕 本次新增事件（置頂：最新產出）</h2>
+<blockquote>
+<p>本次新增 <strong>60 筆</strong>，重要 52 筆</p>
+</blockquote>
+<p><strong>重要事件（severity ≥ 1）</strong>：</p>
+<ul>
+<li><strong>[11-09 23:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> How SpaceX was able to avert one of the market’s biggest fears about its stock <code>marketwatch</code></li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: SpaceX採用分階段鎖倉計畫（staggered lockup schedule），成功化解市場對其股票解禁可能衝擊整體指數的擔憂。</p>
+</li>
+<li>
+<p><strong>[11-09 23:54]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Moody’s and S&amp;P downgrade Akamai on debt-fueled AI infrastructure buildout <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 穆迪與標普調降Akamai評級，因其透過債務融資擴建AI基礎設施，引發市場對科技股槓桿風險的擔憂。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>AKAM</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:52]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> Fed needs to 'come to terms' with inflation, Chicago Fed's Goolsbee says <code>seekingalpha</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 芝加哥聯準銀行總裁古斯爾指Fed需正視通膨問題，呼應市場對明日(11/10)美國10月CPI數據的關注。</p>
+</li>
+<li>
+<p><strong>[11-09 23:49]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Earnings call transcript: Virtus tops revenue in Q3 2026 as shares jump 7.7% <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Virtus Q3營收超預期激勵股價大漲7.7%，提振資產管理與金融股投資情緒。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>VRTS</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:45]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Hedge funds cut tech exposure at near-record pace as Nasdaq drops 6.4% <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 那斯達克指數大跌6.4%，避險對沖基金以近乎紀錄的速度削減科技股曝險，引發籌碼鬆動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>QQQ,NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:43]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> Oil Prices Fall on Hopes for Peace Between U.S. and Iran <code>nytbusiness</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美伊和平希望升溫使油價自10月高點大跌約20美元，顯著減輕全球輸入性通膨壓力。</p>
+</li>
+<li>
+<p><strong>[11-09 23:42]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Disney steps up generative AI push with expanded Adobe collaboration <code>seekingalpha</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 迪士尼擴大與Adobe合作加速生成式AI應用開發，有利於主題樂園內容創新與AI商業化落地。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DIS,ADBE</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:33]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][neutral]</strong> 金融時報：新加坡超越愛爾蘭　成為蘋果最大避稅地 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 蘋果將獲利轉入新加坡以實現避稅，超越愛爾inental成為最大避稅地，反映跨國企業稅務規劃調整，對市場實質財務衝擊有限。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>AAPL</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:31]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> Weekend trading of Nvidia scandal shines light on new financial products <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 輝達相關爭議引發週末永續期貨與衍生性金融商品交易量激增，凸顯新型金融工具在非正規交易時段的風險與流動性特性。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:17]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 美股早盤反彈！黃仁勳外遇領輝達獨自重挫6% <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股大盤受低接買盤與油價下跌激勵反彈，但輝達因執行長黃仁勳私人爭議逆勢重挫6%，拖累AI族群情緒。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 黃仁勳婚外情重創股價！美股3大指數齊漲「輝達逆勢跌8％」 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股三大指數齊揚，惟輝達逆勢下跌高達8%，凸顯單一個股管理層事件對重量級科技股的獨立衝擊大於整體大盤趨勢。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:47]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][neutral]</strong> 道瓊狂漲700點！科技股回神費半反彈逾4％ 台指期夜盤收復4萬2大關 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 輝達執行長消息引發個股重挫7%與台指期夜盤劇烈震盪，隨後隨美股大漲收復4萬2大關，凸顯AI龍頭消息面對台美股的劇烈牽動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,台指期,2330</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[地緣政治][positive]</strong> 敘約外長空襲後首度會談  盼和解並擴大政經合作 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 敘利亞與約旦外長會談並尋求和解與政經合作，中東地緣政治緊張局部緩解，對商品與匯市影響有限。</p>
+</li>
+<li>
+<p><strong>[11-09 22:59]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Three Reasons Why US Stock Market Is Rallying: Dow Up 700 Points, Nasdaq Surges 2% - NDTV Profit <code>google-news:stock market rally</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股四大指數強勁反彈，道瓊大漲700點、那斯達克飆升2%，帶動全球風險偏好回暖。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DJI,IXIC</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:53]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> A股晚間熱點 | 伊朗釋放談判信號！油價大跌，黃金拉昇 作者 智通財經 - Investing.com 香港 - 股市報價&amp; 財經新聞 <code>google-news:油價</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 伊朗釋放談判信號緩解中東地緣政治緊張，帶動國際油價大跌，避險資金則推升黃金價格。</p>
+</li>
+<li>
+<p><strong>[11-09 23:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[匯市][positive]</strong> British Pound reclaims 1.3400 as Iran war fears ease ahead of US CPI - FXStreet <code>google-news:inflation CPI</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 中東局勢緩解與美國10月CPI公布前夕，英鎊反彈收復1.3400關卡，非美貨幣普遍獲支撐。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>GBPUSD</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:39]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][neutral]</strong> US CPI Preview: Will Inflation Fall Enough to Put a Fed Hike in Doubt? - FOREX.com <code>google-news:inflation CPI</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月CPI數據公布在即，通膨數據將直接左右聯準會(Fed)是否進一步升息或維持高利率的決策，牽動美債殖利率與匯市走向。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[商品(油金)][neutral]</strong> COP31 Opens in Antalya With a UN Push for Faster Climate Action - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: COP31氣候峰會開幕並推動加速氣候行動，短期對傳統化石能源與原油價格帶來政策面與情緒面的干擾。</p>
+</li>
+<li>
+<p><strong>[11-09 23:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> Gold Price Outlook: High Real Yields Pose a Risk Ahead of US CPI - FXEmpire <code>google-news:inflation CPI</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月CPI公布前夕，高實質利率對無孳息的黃金價格構成顯著下檔風險與壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:55]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][neutral]</strong> Goldman Sachs Sees U.S. Treasury Yields Settling Into 4.75%-5% Range as Global Bond Markets Stabilize - BigGo Finance <code>google-news:Treasury yields</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 高盛預期美國公債殖利率將穩定在4.75%-5%區間，債市波動趨穩，有利於抑制利率過度飆升的恐慌。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>US10Y</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:42]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 美股4大指數開盤大漲「道瓊飆漲500點」 輝達重跌7％ - 中時新聞網 <code>google-news:台股 大漲</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股開盤全面大漲但輝達逆勢重挫7%，反映資金在總體經濟數據前進行板塊輪動與個股利空消化。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DJI,NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:38]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> TWA00 加權指數- 開盤兩分鐘就120e的爆量去挑戰四月低點我就不信出軌會... - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股加權指數爆量測試關鍵支撐位，市場情緒在利空與美股反彈間拉鋸，交投極為熱絡。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TWA00,2330</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:12]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Earnings call transcript: BRAC Bank posts strong Q3 2026 profit growth <code>investing-com</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: BRAC Bank發布2026年Q3強勁獲利成長，對區域性銀行股有正面激勵。</p>
+</li>
+<li>
+<p><strong>[11-09 23:11]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[商品(油金)][neutral]</strong> Equinox Gold earnings up next: Can merger boost offset costs? <code>investing-com</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Equinox Gold財報將至，合併效益能否抵消成本壓力為市場關注焦點，影響金礦類股走勢。</p>
+</li>
+<li>
+<p><strong>[11-09 23:11]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][negative]</strong> Uniti Group earnings missed by $0.45, revenue fell short of estimates <code>investing-com</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Uniti Group財報表現不如預期，EPS低於0.45美元且營收遜於預期，對其股價造成重壓。</p>
+</li>
+<li>
+<p><strong>[11-09 23:11]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> Vivid Seats earnings beat by $0.07, revenue fell short of estimates <code>investing-com</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Vivid Seats財報盈餘優於預期但營收不如預期，個股影響有限，對整體美股無顯著連動。</p>
+</li>
+<li>
+<p><strong>[11-09 22:47]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 美股4大指數開盤大漲「道瓊飆漲500點」 輝達重跌7％ <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股大漲但輝達受執行長私事影響重跌7%，連帶使台指期夜盤一度劇烈震盪後收斂跌幅。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,台指期</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:43]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> 黃仁勳陷爭議風暴背後有玄機？ 陸行之曝美方「3大盤算」 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美方可能藉輝達爭議推動更嚴格晶片管制，對半導體供應鏈股價形成心理壓抑。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:05]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> US stock market today: Dow, S&amp;P 500, Nasdaq rise as investors return to AI shares; oil slides - CNBC TV18 <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 資金回流AI相關科技股，推動道瓊、標普500與那斯達克指數走揚，油價下滑提供成本支撐。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,AAPL,MSFT</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:57]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Stock Market Today (Nov. 9, 2026): Nasdaq futures climb as Wall Street watches AI stocks - Yahoo Finance <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股盤前那斯達克期貨走高，市場持續關注AI類股動向，帶動科技股風險胃納。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,AMD</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:56]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Stock Market Today: Dow Jumps 540 Points, S&amp;P 500 Rallies as Oil Crashes 5% - Coinpaper <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價大跌5%緩解通膨疑慮，美股四大指數強勁大漲，道瓊飆升逾500點，資金回流股市。</p>
+</li>
+<li>
+<p><strong>[11-09 22:43]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Stock Market Today: S&amp;P 500 Rises 1.3% and Nasdaq 1.6% at the Open as Oil Slides and AMD Jumps - JournalArta <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價下滑與半導體個股AMD強勢大漲，帶動S&amp;P 500與那斯達克開盤走高。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>AMD</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:22]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Tech stocks rally as Nvidia stock and oil prices fall: AlphaCheck - Yahoo Finance <code>google-news:stock market rally</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 科技股反彈，雖輝達股價下跌，但整體科技板塊受到油價下跌帶動成本減輕而上揚。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][neutral]</strong> Russia Targets Ukraine's Power Grid Ahead of Crucial Abu Dhabi Peace Talks - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 俄烏局勢與阿布達比和平談話牽動能源供應，俄軍攻擊電網使原油價格波動加劇，影響商品市場避險情緒。</p>
+</li>
+<li>
+<p><strong>[11-09 22:56]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][positive]</strong> Bond yields decline as crude oil prices ease amid geopolitical optimism - Business Standard <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 地緣政治樂觀情緒使油價走低，帶動通膨預期降溫，美債殖利率隨之下滑。</p>
+</li>
+<li>
+<p><strong>[11-09 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> US stocks rally as crude oil prices drop, even as Nvidia sinks - Toronto Star <code>google-news:stock market rally</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價下跌舒緩通膨疑慮，推動美股大盤走高，抵銷輝達逆勢下挫的負面影響。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,DJI</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:05]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> U.S. Stock Futures Climb as Crude Retreat Eases Inflation Fears Ahead of CPI - BigGo Finance <code>google-news:inflation CPI</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 原油價格下跌化解部分通膨疑慮，美股期指走高，市場聚焦美國10月CPI發布。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:05]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> 油價回落緩解通膨憂慮，美股期指走高靜待CPI - BigGo 財經 <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價回落減緩通膨憂慮，美股期指走高，市場正靜待美國10月CPI消費者物價指數數據公布。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:02]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][neutral]</strong> Treasury Yields Wobbled As Markets Waited On CPI - Finimize <code>google-news:Treasury yields</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國公債殖利率震盪擺動，市場高度觀望即將公布的美國10月CPI數據以尋找降息線索。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TLT,US10Y</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:56]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][neutral]</strong> Monthly Bulletin for Consumer Price Index and Inflation in Syria - April 2026 [EN/AR] - ReliefWeb <code>google-news:inflation CPI</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 敘利亞公布通膨與CPI月報，對全球主要金融市場影響有限。</p>
+</li>
+<li>
+<p><strong>[11-09 22:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> 〈美股早盤〉買盤回來了！油價下跌助攻 道瓊漲600點 - 鉅亨網 <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價自高檔回落化解通膨壓力，激勵美股道瓊指數大漲，帶動風險偏好回溫。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DJI</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:43]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 獨家》台股「史詩級」震盪壽險爆保單解約與借款潮單日大增六成- 金融 - 工商時報 <code>google-news:台股 大漲</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股劇烈震盪引發壽險保單解約與借款潮大增，反映民間流動性緊縮與市場信心脆弱。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TWA00</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:50]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> Nvidia’s Stock Price Drops After Investigation Into CEO Jensen Huang <code>nytbusiness</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 輝達執行長黃仁勳坦承與疑似中國間諜有關聯並遭調查，引發市場對AI巨頭地緣政治與合規風險的擔憂。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[商品(油金)][positive]</strong> Oil prices are set to decline, benefiting equities into 2027 – Morgan Stanley’s Mike Wilson <code>seekingalpha</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 摩根士丹利預期油價下跌將延續至2027年，有助於降低企業成本並利好整體股市。</p>
+</li>
+<li>
+<p><strong>[11-09 22:44]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> MARA Holdings earnings in focus as AI pivot awaits first tenant <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: MARA Holdings轉型AI資料中心業務的成效受市場關注，等待首批租戶進駐以驗證營運模式。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>MARA</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:43]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Stock market climbs despite pressure from Nvidia drop <code>seekingalpha</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股指數期貨在輝達下跌的壓力下仍逆勢走高，顯示整體市場買盤依然強韌。</p>
+</li>
+<li>
+<p><strong>[11-09 22:43]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[其他][negative]</strong> A Country’s President Led to a Bank’s Stunning Rise, and Its Fall <code>nytbusiness</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 巴拉圭總統被控將政府資金輸送到特定銀行並涉及違法放貸，屬地緣政治與地方金融弊案，對全球市場影響有限。</p>
+</li>
+<li>
+<p><strong>[11-09 22:42]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][negative]</strong> Earnings call transcript: EVgo posts mixed Q3 2026 results as revenue misses forecast <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: EVgo Q3 20th財報營收遜於預期，表現混合，對電動車充電樁個股短線股價形成壓抑。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>EVGO</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:42]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Wall St brokerages say AI selloff overdone, downplay Democrat regulation risks <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 華爾街券商認為AI族群賣壓過度，淡化民主黨監管風險，有利支撐科技股與AI概念股反彈。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,MSFT,GOOGL</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 油價又暴跌！美股主要指數開盤均漲逾1% 輝達卻下殺逾6% - 知新聞 <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價暴跌推升整體美股大盤上漲逾1%，但輝達因執行長涉入調查重挫逾6%，拖累AI概念股表現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:44]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 【美股開市】油價跌、美股升 黃仁勳獨憔悴、英偉達跌6%（不斷更新） - 香港經濟日報HKET <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價下跌激勵美股大盤走高，唯獨輝達因執行長負面消息重挫6%，呈現個股表現分化。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:43]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Stock Market Today: S&amp;P 500 +1.3%, Nasdaq +1.6% as Oil Falls - JournalArta <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 受油價下跌激勵，標普500與那斯達克指數分別大漲1.3%與1.6%，風險偏好改善。</li>
+</ul>
+<p><strong>其他同時段收錄（未分析，共 8 筆）</strong>：</p>
+<ul>
+<li><strong>[11-09 23:14]</strong> GoFundMe籌款總額突破500億美元，展現了這場全球運動中人與人之間強大的互助精神（<code>yahoo-tw-finance</code>）</li>
+<li><strong>[11-09 23:24]</strong> Civil servant who juggled five jobs found guilty of fraud（<code>bbcbusiness</code>）</li>
+<li><strong>[11-09 23:14]</strong> Monthly Bulletin for Consumer Price Index and Inflation in Syria - September 2026 [EN/AR] - ReliefWeb（<code>google-news:inflation CPI</code>）</li>
+<li><strong>[11-09 23:12]</strong> Monthly Bulletin for Consumer Price Index and Inflation in Syria - August 2026 [EN/AR] - ReliefWeb（<code>google-news:inflation CPI</code>）</li>
+<li><strong>[11-09 23:09]</strong> Monthly Bulletin for Consumer Price Index and Inflation in Syria - July 2026 [EN/AR] - ReliefWeb（<code>google-news:inflation CPI</code>）</li>
+<li><strong>[11-09 23:05]</strong> Monthly Bulletin for Consumer Price Index and Inflation in Syria - June 2026 [EN/AR] - ReliefWeb（<code>google-news:inflation CPI</code>）</li>
+<li><strong>[11-09 23:02]</strong> Monthly Bulletin for Consumer Price Index and Inflation in Syria - May 2026 [EN/AR] - ReliefWeb（<code>google-news:inflation CPI</code>）</li>
+<li><strong>[11-09 22:44]</strong> TWA00 加權指數- 2026年11月最新選股- 股市爆料同學會 - CMoney（<code>google-news:加權指數</code>）</li>
+</ul>
+<hr />
+<h2 id="_3">市場行情快照</h2>
+<pre><code>加權指數            41,661.70    點 <span style="color:#c0392b;font-weight:bold">▲</span>+4.94%
+台積電              2,235.00  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+4.68%
+鴻海                 239.00  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+6.46%
+聯發科              3,725.00  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+9.88%
+台達電              1,160.00  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+9.95%
+富邦金                153.50  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+3.72%
+S&amp;P 500          7,524.51    點 <span style="color:#c0392b;font-weight:bold">▲</span>+2.00%
+納斯達克            25,147.05    點 <span style="color:#c0392b;font-weight:bold">▲</span>+2.31%
+費城半導體指數          9,954.19    點 <span style="color:#c0392b;font-weight:bold">▲</span>+6.01%
+道瓊              52,186.20    點 <span style="color:#c0392b;font-weight:bold">▲</span>+1.76%
+日經225           58,775.50    點 <span style="color:#c0392b;font-weight:bold">▲</span>+2.33%
+上證指數             3,660.79    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.32%
+Apple              349.98  USD <span style="color:#c0392b;font-weight:bold">▲</span>+2.22%
+Microsoft          539.61  USD <span style="color:#c0392b;font-weight:bold">▲</span>+1.70%
+NVIDIA             176.23  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-5.58%
+Amazon             267.86  USD <span style="color:#c0392b;font-weight:bold">▲</span>+3.30%
+Tesla              377.72  USD <span style="color:#c0392b;font-weight:bold">▲</span>+5.44%
+美元/日圓              158.01  JPY <span style="color:#c0392b;font-weight:bold">▲</span>+0.33%
+美元/台幣               32.80  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-0.94%
+歐元/美元                1.12  EUR <span style="color:#2e7d32;font-weight:bold">▼</span>-0.19%
+美元/人民幣               6.66  CNY <span style="color:#2e7d32;font-weight:bold">▼</span>-0.40%
+WTI原油               88.07  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-3.04%
+布蘭特原油               94.52  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-3.86%
+黃金               4,134.70  USD <span style="color:#c0392b;font-weight:bold">▲</span>+1.47%
+美元指數DXY            101.86    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-0.43%
+美債10年殖利率             4.88    % <span style="color:#c0392b;font-weight:bold">▲</span>+0.35%
+</code></pre>
+<blockquote>
+<p>（快照資料時間：2026-11-10 00:20，台股收盤為最近一個交易日）</p>
+</blockquote>
+<h2 id="severity-2">重大事件（severity ≥ 2）</h2>
+<ul>
+<li><strong>[11-09 23:54]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Moody’s and S&amp;P downgrade Akamai on debt-fueled AI infrastructure buildout</li>
+<li><strong style="color:#174ea6">影響</strong>: 穆迪與標普調降Akamai評級，因其透過債務融資擴建AI基礎設施，引發市場對科技股槓桿風險的擔憂。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>AKAM</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:53]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> A股晚間熱點 | 伊朗釋放談判信號！油價大跌，黃金拉昇 作者 智通財經 - Investing.com 香港 - 股市報價&amp; 財經新聞</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 伊朗釋放談判信號緩解中東地緣政治緊張，帶動國際油價大跌，避險資金則推升黃金價格。</p>
+</li>
+<li>
+<p><strong>[11-09 23:52]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> Fed needs to 'come to terms' with inflation, Chicago Fed's Goolsbee says</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 芝加哥聯準銀行總裁古斯爾指Fed需正視通膨問題，呼應市場對明日(11/10)美國10月CPI數據的關注。</p>
+</li>
+<li>
+<p><strong>[11-09 23:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[匯市][positive]</strong> British Pound reclaims 1.3400 as Iran war fears ease ahead of US CPI - FXStreet</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 中東局勢緩解與美國10月CPI公布前夕，英鎊反彈收復1.3400關卡，非美貨幣普遍獲支撐。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>GBPUSD</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:45]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Hedge funds cut tech exposure at near-record pace as Nasdaq drops 6.4%</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 那斯達克指數大跌6.4%，避險對沖基金以近乎紀錄的速度削減科技股曝險，引發籌碼鬆動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>QQQ,NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:43]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> Oil Prices Fall on Hopes for Peace Between U.S. and Iran</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美伊和平希望升溫使油價自10月高點大跌約20美元，顯著減輕全球輸入性通膨壓力。</p>
+</li>
+<li>
+<p><strong>[11-09 23:39]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][neutral]</strong> US CPI Preview: Will Inflation Fall Enough to Put a Fed Hike in Doubt? - FOREX.com</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月CPI數據公布在即，通膨數據將直接左右聯準會(Fed)是否進一步升息或維持高利率的決策，牽動美債殖利率與匯市走向。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> Gold Price Outlook: High Real Yields Pose a Risk Ahead of US CPI - FXEmpire</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10月CPI公布前夕，高實質利率對無孳息的黃金價格構成顯著下檔風險與壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:17]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 美股早盤反彈！黃仁勳外遇領輝達獨自重挫6%</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股大盤受低接買盤與油價下跌激勵反彈，但輝達因執行長黃仁勳私人爭議逆勢重挫6%，拖累AI族群情緒。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 黃仁勳婚外情重創股價！美股3大指數齊漲「輝達逆勢跌8％」</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股三大指數齊揚，惟輝達逆勢下跌高達8%，凸顯單一個股管理層事件對重量級科技股的獨立衝擊大於整體大盤趨勢。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:05]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> US stock market today: Dow, S&amp;P 500, Nasdaq rise as investors return to AI shares; oil slides - CNBC TV18</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 資金回流AI相關科技股，推動道瓊、標普500與那斯達克指數走揚，油價下滑提供成本支撐。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,AAPL,MSFT</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:05]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> U.S. Stock Futures Climb as Crude Retreat Eases Inflation Fears Ahead of CPI - BigGo Finance</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 原油價格下跌化解部分通膨疑慮，美股期指走高，市場聚焦美國10月CPI發布。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:05]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][positive]</strong> 油價回落緩解通膨憂慮，美股期指走高靜待CPI - BigGo 財經</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價回落減緩通膨憂慮，美股期指走高，市場正靜待美國10月CPI消費者物價指數數據公布。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:02]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][neutral]</strong> Treasury Yields Wobbled As Markets Waited On CPI - Finimize</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國公債殖利率震盪擺動，市場高度觀望即將公布的美國10月CPI數據以尋找降息線索。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TLT,US10Y</code></p>
+</li>
+<li>
+<p><strong>[11-09 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][neutral]</strong> Russia Targets Ukraine's Power Grid Ahead of Crucial Abu Dhabi Peace Talks - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 俄烏局勢與阿布達比和平談話牽動能源供應，俄軍攻擊電網使原油價格波動加劇，影響商品市場避險情緒。</p>
+</li>
+<li>
+<p><strong>[11-09 22:59]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Three Reasons Why US Stock Market Is Rallying: Dow Up 700 Points, Nasdaq Surges 2% - NDTV Profit</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股四大指數強勁反彈，道瓊大漲700點、那斯達克飆升2%，帶動全球風險偏好回暖。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DJI,IXIC</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:56]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Stock Market Today: Dow Jumps 540 Points, S&amp;P 500 Rallies as Oil Crashes 5% - Coinpaper</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價大跌5%緩解通膨疑慮，美股四大指數強勁大漲，道瓊飆升逾500點，資金回流股市。</p>
+</li>
+<li>
+<p><strong>[11-09 22:56]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][positive]</strong> Bond yields decline as crude oil prices ease amid geopolitical optimism - Business Standard</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 地緣政治樂觀情緒使油價走低，帶動通膨預期降溫，美債殖利率隨之下滑。</p>
+</li>
+<li>
+<p><strong>[11-09 22:55]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][neutral]</strong> Goldman Sachs Sees U.S. Treasury Yields Settling Into 4.75%-5% Range as Global Bond Markets Stabilize - BigGo Finance</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 高盛預期美國公債殖利率將穩定在4.75%-5%區間，債市波動趨穩，有利於抑制利率過度飆升的恐慌。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>US10Y</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 油價又暴跌！美股主要指數開盤均漲逾1% 輝達卻下殺逾6% - 知新聞</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價暴跌推升整體美股大盤上漲逾1%，但輝達因執行長涉入調查重挫逾6%，拖累AI概念股表現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:50]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> Nvidia’s Stock Price Drops After Investigation Into CEO Jensen Huang</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 輝達執行長黃仁勳坦承與疑似中國間諜有關聯並遭調查，引發市場對AI巨頭地緣政治與合規風險的擔憂。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:47]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 美股4大指數開盤大漲「道瓊飆漲500點」 輝達重跌7％</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股大漲但輝達受執行長私事影響重跌7%，連帶使台指期夜盤一度劇烈震盪後收斂跌幅。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,台指期</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:47]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][neutral]</strong> 道瓊狂漲700點！科技股回神費半反彈逾4％ 台指期夜盤收復4萬2大關</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 輝達執行長消息引發個股重挫7%與台指期夜盤劇烈震盪，隨後隨美股大漲收復4萬2大關，凸顯AI龍頭消息面對台美股的劇烈牽動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,台指期,2330</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:44]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 【美股開市】油價跌、美股升 黃仁勳獨憔悴、英偉達跌6%（不斷更新） - 香港經濟日報HKET</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價下跌激勵美股大盤走高，唯獨輝達因執行長負面消息重挫6%，呈現個股表現分化。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:43]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> 黃仁勳陷爭議風暴背後有玄機？ 陸行之曝美方「3大盤算」</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美方可能藉輝達爭議推動更嚴格晶片管制，對半導體供應鏈股價形成心理壓抑。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:43]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 獨家》台股「史詩級」震盪壽險爆保單解約與借款潮單日大增六成- 金融 - 工商時報</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股劇烈震盪引發壽險保單解約與借款潮大增，反映民間流動性緊縮與市場信心脆弱。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TWA00</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:42]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 美股4大指數開盤大漲「道瓊飆漲500點」 輝達重跌7％ - 中時新聞網</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股開盤全面大漲但輝達逆勢重挫7%，反映資金在總體經濟數據前進行板塊輪動與個股利空消化。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DJI,NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> US stocks rally as crude oil prices drop, even as Nvidia sinks - Toronto Star</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價下跌舒緩通膨疑慮，推動美股大盤走高，抵銷輝達逆勢下挫的負面影響。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,DJI</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> 〈美股早盤〉買盤回來了！油價下跌助攻 道瓊漲600點 - 鉅亨網</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價自高檔回落化解通膨壓力，激勵美股道瓊指數大漲，帶動風險偏好回溫。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DJI</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:38]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> TWA00 加權指數- 開盤兩分鐘就120e的爆量去挑戰四月低點我就不信出軌會... - 股市爆料同學會 - CMoney</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股加權指數爆量測試關鍵支撐位，市場情緒在利空與美股反彈間拉鋸，交投極為熱絡。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TWA00,2330</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:33]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> 中國10月CPI年增0.7%　近3個月低點</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 中國10月CPI年增0.7%低於預期，顯示內需消費動能依然疲弱，通縮壓力持續。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:24]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> US stock market outlook: AI sell-off, Anthropic IPO and Nvidia earnings keep investors on alert | Hindustan Times - Hindustan Times</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: AI板塊拋售壓力和輝達財報將主導短線科技股走勢，牽動美股情緒。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,Anthropic</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:19]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][positive]</strong> US Stock Futures Advance as Oil Prices Slide and Investors Await Inflation Report: Dow Jones, S&amp;P, Nasdaq, Wall Street - Yahoo Finance UK</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 油價下跌舒緩通膨壓力，美股期指走揚，市場聚焦即將公布的美國10月CPI報告。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DJI,SPX,IXIC</code></p>
+</li>
+<li>
+<p><strong>[11-09 22:11]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][neutral]</strong> Crypto Week Ahead: US CPI Seen Cooling to 0.2% After September’s 3.7% Spike as MARA and CoreWeave Report Earnings - Binance</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 市場聚焦美國勞工部即將公布的10月CPI消費者物價指數(預期降溫至0.2%)，牽動聯準會降息預期與加密貨幣、債市波動。</li>
+<li><strong style="color:#174ea6">標的</strong>: <code>MARA,美元指數</code></li>
+</ul>
+<hr />
+<h2 id="_4">分類彙整</h2>
+<h3 id="42">股市（42）</h3>
+<ul>
+<li><strong>[11-09 23:54]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Moody’s and S&amp;P downgrade Akamai on debt-fueled AI infrastructure buildout</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 穆迪與標普調降Akamai評級，因其透過債務融資擴建AI基礎設施，引發市場對科技股槓桿風險的擔憂。</p>
+</li>
+<li>
+<p><strong>[11-09 23:49]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Earnings call transcript: Virtus tops revenue in Q3 2026 as shares jump 7.7%</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Virtus Q3營收超預期激勵股價大漲7.7%，提振資產管理與金融股投資情緒。</p>
+</li>
+<li>
+<p><strong>[11-09 23:45]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Hedge funds cut tech exposure at near-record pace as Nasdaq drops 6.4%</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 那斯達克指數大跌6.4%，避險對沖基金以近乎紀錄的速度削減科技股曝險，引發籌碼鬆動。</p>
+</li>
+<li>
+<p><strong>[11-09 23:42]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Disney steps up generative AI push with expanded Adobe collaboration</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 迪士尼擴大與Adobe合作加速生成式AI應用開發，有利於主題樂園內容創新與AI商業化落地。</p>
+</li>
+<li>
+<p><strong>[11-09 23:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> How SpaceX was able to avert one of the market’s biggest fears about its stock</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: SpaceX採用分階段鎖倉計畫（staggered lockup schedule），成功化解市場對其股票解禁可能衝擊整體指數的擔憂。</p>
+</li>
+<li>
+<p><strong>[11-09 23:31]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Weekend trading of Nvidia scandal shines light on new financial products</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 輝達相關爭議引發週末永續期貨與衍生性金融商品交易量激增，凸顯新型金融工具在非正規交易時段的風險與流動性特性。</p>
+</li>
+<li>
+<p><strong>[11-09 23:22]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Tech stocks rally as Nvidia stock and oil prices fall: AlphaCheck - Yahoo Finance</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 科技股反彈，雖輝達股價下跌，但整體科技板塊受到油價下跌帶動成本減輕而上揚。</p>
+</li>
+<li>
+<p><strong>[11-09 23:17]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 美股早盤反彈！黃仁勳外遇領輝達獨自重挫6%</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股大盤受低接買盤與油價下跌激勵反彈，但輝達因執行長黃仁勳私人爭議逆勢重挫6%，拖累AI族群情緒。</p>
+</li>
+<li>
+<p><strong>[11-09 23:12]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Earnings call transcript: BRAC Bank posts strong Q3 2026 profit growth</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: BRAC Bank發布2026年Q3強勁獲利成長，對區域性銀行股有正面激勵。</p>
+</li>
+<li>
+<p><strong>[11-09 23:11]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> Uniti Group earnings missed by $0.45, revenue fell short of estimates</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Uniti Group財報表現不如預期，EPS低於0.45美元且營收遜於預期，對其股價造成重壓。</p>
+</li>
+<li>
+<p><strong>[11-09 23:11]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Vivid Seats earnings beat by $0.07, revenue fell short of estimates</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Vivid Seats財報盈餘優於預期但營收不如預期，個股影響有限，對整體美股無顯著連動。</p>
+</li>
+<li>
+<p><strong>[11-09 23:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 黃仁勳婚外情重創股價！美股3大指數齊漲「輝達逆勢跌8％」</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股三大指數齊揚，惟輝達逆勢下跌高達8%，凸顯單一個股管理層事件對重量級科技股的獨立衝擊大於整體大盤趨勢。</p>
+</li>
+<li>
+<p><strong>[11-09 23:05]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> US stock market today: Dow, S&amp;P 500, Nasdaq rise as investors return to AI shares; oil slides - CNBC TV18</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 資金回流AI相關科技股，推動道瓊、標普500與那斯達克指數走揚，油價下滑提供成本支撐。</p>
+</li>
+<li>
+<p><strong>[11-09 22:59]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Three Reasons Why US Stock Market Is Rallying: Dow Up 700 Points, Nasdaq Surges 2% - NDTV Profit</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股四大指數強勁反彈，道瓊大漲700點、那斯達克飆升2%，帶動全球風險偏好回暖。</p>
+</li>
+<li>
+<p><strong>[11-09 22:57]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Stock Market Today (Nov. 9, 2026): Nasdaq futures climb as Wall Street watches AI stocks - Yahoo Finance</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股盤前那斯達克期貨走高，市場持續關注AI類股動向，帶動科技股風險胃納。</p>
+</li>
+<li>
+<p><strong>[11-09 22:56]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Stock Market Today: Dow Jumps 540 Points, S&amp;P 500 Rallies as Oil Crashes 5% - Coinpaper</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價大跌5%緩解通膨疑慮，美股四大指數強勁大漲，道瓊飆升逾500點，資金回流股市。</p>
+</li>
+<li>
+<p><strong>[11-09 22:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 油價又暴跌！美股主要指數開盤均漲逾1% 輝達卻下殺逾6% - 知新聞</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價暴跌推升整體美股大盤上漲逾1%，但輝達因執行長涉入調查重挫逾6%，拖累AI概念股表現。</p>
+</li>
+<li>
+<p><strong>[11-09 22:50]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Nvidia’s Stock Price Drops After Investigation Into CEO Jensen Huang</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 輝達執行長黃仁勳坦承與疑似中國間諜有關聯並遭調查，引發市場對AI巨頭地緣政治與合規風險的擔憂。</p>
+</li>
+<li>
+<p><strong>[11-09 22:47]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> 美股4大指數開盤大漲「道瓊飆漲500點」 輝達重跌7％</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股大漲但輝達受執行長私事影響重跌7%，連帶使台指期夜盤一度劇烈震盪後收斂跌幅。</p>
+</li>
+<li>
+<p><strong>[11-09 22:47]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> 道瓊狂漲700點！科技股回神費半反彈逾4％ 台指期夜盤收復4萬2大關</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 輝達執行長消息引發個股重挫7%與台指期夜盤劇烈震盪，隨後隨美股大漲收復4萬2大關，凸顯AI龍頭消息面對台美股的劇烈牽動。</p>
+</li>
+<li>
+<p><strong>[11-09 22:44]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> MARA Holdings earnings in focus as AI pivot awaits first tenant</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: MARA Holdings轉型AI資料中心業務的成效受市場關注，等待首批租戶進駐以驗證營運模式。</p>
+</li>
+<li>
+<p><strong>[11-09 22:44]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 【美股開市】油價跌、美股升 黃仁勳獨憔悴、英偉達跌6%（不斷更新） - 香港經濟日報HKET</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價下跌激勵美股大盤走高，唯獨輝達因執行長負面消息重挫6%，呈現個股表現分化。</p>
+</li>
+<li>
+<p><strong>[11-09 22:44]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> TWA00 加權指數- 2026年11月最新選股- 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股加權指數11月選股討論，屬於常態性投資社群資訊，對大盤無直接重大影響。</p>
+</li>
+<li>
+<p><strong>[11-09 22:43]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Stock market climbs despite pressure from Nvidia drop</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股指數期貨在輝達下跌的壓力下仍逆勢走高，顯示整體市場買盤依然強韌。</p>
+</li>
+<li>
+<p><strong>[11-09 22:43]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Stock Market Today: S&amp;P 500 Rises 1.3% and Nasdaq 1.6% at the Open as Oil Slides and AMD Jumps - JournalArta</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價下滑與半導體個股AMD強勢大漲，帶動S&amp;P 500與那斯達克開盤走高。</p>
+</li>
+<li>
+<p><strong>[11-09 22:43]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Stock Market Today: S&amp;P 500 +1.3%, Nasdaq +1.6% as Oil Falls - JournalArta</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 受油價下跌激勵，標普500與那斯達克指數分別大漲1.3%與1.6%，風險偏好改善。</p>
+</li>
+<li>
+<p><strong>[11-09 22:43]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 獨家》台股「史詩級」震盪壽險爆保單解約與借款潮單日大增六成- 金融 - 工商時報</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股劇烈震盪引發壽險保單解約與借款潮大增，反映民間流動性緊縮與市場信心脆弱。</p>
+</li>
+<li>
+<p><strong>[11-09 22:42]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> Earnings call transcript: EVgo posts mixed Q3 2026 results as revenue misses forecast</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: EVgo Q3 20th財報營收遜於預期，表現混合，對電動車充電樁個股短線股價形成壓抑。</p>
+</li>
+<li>
+<p><strong>[11-09 22:42]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Wall St brokerages say AI selloff overdone, downplay Democrat regulation risks</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 華爾街券商認為AI族群賣壓過度，淡化民主黨監管風險，有利支撐科技股與AI概念股反彈。</p>
+</li>
+<li>
+<p><strong>[11-09 22:42]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> 美股4大指數開盤大漲「道瓊飆漲500點」 輝達重跌7％ - 中時新聞網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股開盤全面大漲但輝達逆勢重挫7%，反映資金在總體經濟數據前進行板塊輪動與個股利空消化。</p>
+</li>
+<li>
+<p><strong>[11-09 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> US stocks rally as crude oil prices drop, even as Nvidia sinks - Toronto Star</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價下跌舒緩通膨疑慮，推動美股大盤走高，抵銷輝達逆勢下挫的負面影響。</p>
+</li>
+<li>
+<p><strong>[11-09 22:38]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> TWA00 加權指數- 開盤兩分鐘就120e的爆量去挑戰四月低點我就不信出軌會... - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股加權指數爆量測試關鍵支撐位，市場情緒在利空與美股反彈間拉鋸，交投極為熱絡。</p>
+</li>
+<li>
+<p><strong>[11-09 22:37]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> TWA00 加權指數- CCL四雄營收無懈可擊- 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: CCL（銅箔基板）四雄營收表現強勁，展現AI與高速傳輸相關實質基本面支撐。</p>
+</li>
+<li>
+<p><strong>[11-09 22:36]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> US stocks rally as crude oil prices drop, even as Nvidia sinks - couriernews.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 重複報導油價下跌與美股走勢，市場情緒轉趨樂觀。</p>
+</li>
+<li>
+<p><strong>[11-09 22:36]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> US stocks rally as crude oil prices drop, even as Nvidia sinks - Yakima Herald-Republic</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 重複報導油價下跌激勵美股漲勢，抵銷部分科技股回檔壓力。</p>
+</li>
+<li>
+<p><strong>[11-09 22:36]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> US stocks rally as crude oil prices drop, even as Nvidia sinks - The Killeen Daily Herald</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 原油價格下跌降低通膨與成本壓力，推動美股大盤與多數科技股走揚，僅輝達逆勢下跌。</p>
+</li>
+<li>
+<p><strong>[11-09 22:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> US Stock Market Today: Dow, S&amp;P Gain As Oil Cools; Barring Nvidia, All Tech Stocks Jump - NDTV Profit</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價冷卻激勵道瓊與S&amp;P 500上漲，除輝達外多數科技股走強，反映資金由極端集中轉向全面。</p>
+</li>
+<li>
+<p><strong>[11-09 22:33]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Stock Market S&amp;P 500 - JournalArta</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 常規標普500指數相關市場報導，無具體新驅動因子，對盤勢影響中性。</p>
+</li>
+<li>
+<p><strong>[11-09 22:25]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Morgan Stanley says S&amp;P 500 correction is nearing an end, with a likely year-end rally ahead - Quartz</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 摩根士丹利指出標普500修正接近尾聲，預期年底將迎來一波反彈行情，提振市場信心。</p>
+</li>
+<li>
+<p><strong>[11-09 22:24]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> US stock market outlook: AI sell-off, Anthropic IPO and Nvidia earnings keep investors on alert | Hindustan Times - Hindustan Times</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: AI板塊拋售壓力和輝達財報將主導短線科技股走勢，牽動美股情緒。</p>
+</li>
+<li>
+<p><strong>[11-09 22:16]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> As AI trade falters, Goldman Sachs says this lagging region is now positioned to outperform</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 高盛認為歐洲股市將受惠於AI帶來的生產力提升與成本削減，有望迎頭趕上美股，對歐股資金配置偏正面。</p>
+</li>
+<li>
+<p><strong>[11-09 22:15]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Why tech workers are flocking to NYC</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 紐約市科技就業人口超越灣區，顯示美國科技人才與企業地理分佈轉移，對整體宏觀股市無直接重大衝擊。</li>
+</ul>
+<h3 id="4">債市（4）</h3>
+<ul>
+<li><strong>[11-09 23:02]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> Treasury Yields Wobbled As Markets Waited On CPI - Finimize</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國公債殖利率震盪擺動，市場高度觀望即將公布的美國10月CPI數據以尋找降息線索。</p>
+</li>
+<li>
+<p><strong>[11-09 22:56]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Bond yields decline as crude oil prices ease amid geopolitical optimism - Business Standard</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 地緣政治樂觀情緒使油價走低，帶動通膨預期降溫，美債殖利率隨之下滑。</p>
+</li>
+<li>
+<p><strong>[11-09 22:55]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Goldman Sachs Sees U.S. Treasury Yields Settling Into 4.75%-5% Range as Global Bond Markets Stabilize - BigGo Finance</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 高盛預期美國公債殖利率將穩定在4.75%-5%區間，債市波動趨穩，有利於抑制利率過度飆升的恐慌。</p>
+</li>
+<li>
+<p><strong>[11-09 22:20]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> November 9, 2026: 2-year U.S. Treasury yield 15 min · 9:15–9:30 AM EST Prediction Market - Robinhood</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國2年期公債殖利率期貨與預測市場反映短率預期，牽動債市與匯市敏感神經。</li>
+</ul>
+<h3 id="1">匯市（1）</h3>
+<ul>
+<li><strong>[11-09 23:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> British Pound reclaims 1.3400 as Iran war fears ease ahead of US CPI - FXStreet</li>
+<li><strong style="color:#174ea6">影響</strong>: 中東局勢緩解與美國10月CPI公布前夕，英鎊反彈收復1.3400關卡，非美貨幣普遍獲支撐。</li>
+</ul>
+<h3 id="10">商品(油金)（10）</h3>
+<ul>
+<li><strong>[11-09 23:53]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> A股晚間熱點 | 伊朗釋放談判信號！油價大跌，黃金拉昇 作者 智通財經 - Investing.com 香港 - 股市報價&amp; 財經新聞</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 伊朗釋放談判信號緩解中東地緣政治緊張，帶動國際油價大跌，避險資金則推升黃金價格。</p>
+</li>
+<li>
+<p><strong>[11-09 23:43]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Oil Prices Fall on Hopes for Peace Between U.S. and Iran</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美伊和平希望升溫使油價自10月高點大跌約20美元，顯著減輕全球輸入性通膨壓力。</p>
+</li>
+<li>
+<p><strong>[11-09 23:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> COP31 Opens in Antalya With a UN Push for Faster Climate Action - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: COP31氣候峰會開幕並推動加速氣候行動，短期對傳統化石能源與原油價格帶來政策面與情緒面的干擾。</p>
+</li>
+<li>
+<p><strong>[11-09 23:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Gold Price Outlook: High Real Yields Pose a Risk Ahead of US CPI - FXEmpire</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月CPI公布前夕，高實質利率對無孳息的黃金價格構成顯著下檔風險與壓力。</p>
+</li>
+<li>
+<p><strong>[11-09 23:11]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Equinox Gold earnings up next: Can merger boost offset costs?</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Equinox Gold財報將至，合併效益能否抵消成本壓力為市場關注焦點，影響金礦類股走勢。</p>
+</li>
+<li>
+<p><strong>[11-09 22:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Oil prices are set to decline, benefiting equities into 2027 – Morgan Stanley’s Mike Wilson</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 摩根士丹利預期油價下跌將延續至2027年，有助於降低企業成本並利好整體股市。</p>
+</li>
+<li>
+<p><strong>[11-09 22:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 〈美股早盤〉買盤回來了！油價下跌助攻 道瓊漲600點 - 鉅亨網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價自高檔回落化解通膨壓力，激勵美股道瓊指數大漲，帶動風險偏好回溫。</p>
+</li>
+<li>
+<p><strong>[11-09 22:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Iran Moves to Control Oil Terminals in China, Leak Shows - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 伊朗試圖控制中國境內油槽的報導，可能干擾部分原油供應鏈，對油價結構帶來局部變數。</p>
+</li>
+<li>
+<p><strong>[11-09 22:26]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> 油價飆漲被迫停航 美郵輪遭新加坡扣押</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價高漲導致企業資金耗盡與郵輪被扣押，反映高能源成本對特定產業帶來的流動性與營運危機。</p>
+</li>
+<li>
+<p><strong>[11-09 22:12]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 今日英股：礦業股領漲推動指數上揚，油價因伊朗協議希望而下滑 作者 Investing.com - Investing.com 香港 - 股市報價&amp; 財經新聞</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 伊朗協議希望推動油價下滑，礦業股領漲帶動英股走揚，商品與能源板塊受壓。</li>
+</ul>
+<h3 id="3">地緣政治（3）</h3>
+<ul>
+<li><strong>[11-09 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Russia Targets Ukraine's Power Grid Ahead of Crucial Abu Dhabi Peace Talks - Crude Oil Prices Today | OilPrice.com</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 俄烏局勢與阿布達比和平談話牽動能源供應，俄軍攻擊電網使原油價格波動加劇，影響商品市場避險情緒。</p>
+</li>
+<li>
+<p><strong>[11-09 22:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> 敘約外長空襲後首度會談  盼和解並擴大政經合作</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 敘利亞與約旦外長會談並尋求和解與政經合作，中東地緣政治緊張局部緩解，對商品與匯市影響有限。</p>
+</li>
+<li>
+<p><strong>[11-09 22:43]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 黃仁勳陷爭議風暴背後有玄機？ 陸行之曝美方「3大盤算」</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美方可能藉輝達爭議推動更嚴格晶片管制，對半導體供應鏈股價形成心理壓抑。</li>
+</ul>
+<h3 id="14">總體經濟（14）</h3>
+<ul>
+<li><strong>[11-09 23:52]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Fed needs to 'come to terms' with inflation, Chicago Fed's Goolsbee says</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 芝加哥聯準銀行總裁古斯爾指Fed需正視通膨問題，呼應市場對明日(11/10)美國10月CPI數據的關注。</p>
+</li>
+<li>
+<p><strong>[11-09 23:39]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> US CPI Preview: Will Inflation Fall Enough to Put a Fed Hike in Doubt? - FOREX.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月CPI數據公布在即，通膨數據將直接左右聯準會(Fed)是否進一步升息或維持高利率的決策，牽動美債殖利率與匯市走向。</p>
+</li>
+<li>
+<p><strong>[11-09 23:33]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 金融時報：新加坡超越愛爾蘭　成為蘋果最大避稅地</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 蘋果將獲利轉入新加坡以實現避稅，超越愛爾inental成為最大避稅地，反映跨國企業稅務規劃調整，對市場實質財務衝擊有限。</p>
+</li>
+<li>
+<p><strong>[11-09 23:14]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Monthly Bulletin for Consumer Price Index and Inflation in Syria - September 2026 [EN/AR] - ReliefWeb</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 敘利亞9月CPI與通膨報告，屬地區性經濟數據，對國際主流金融市場影響微乎其微。</p>
+</li>
+<li>
+<p><strong>[11-09 23:12]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Monthly Bulletin for Consumer Price Index and Inflation in Syria - August 2026 [EN/AR] - ReliefWeb</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 敘利亞8月CPI報告，屬於過期且局部的通膨資訊，對全球宏觀市場無實質影響。</p>
+</li>
+<li>
+<p><strong>[11-09 23:09]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Monthly Bulletin for Consumer Price Index and Inflation in Syria - July 2026 [EN/AR] - ReliefWeb</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 敘利亞7月CPI與通膨報告，對全球金融市場與台美股無實質影響。</p>
+</li>
+<li>
+<p><strong>[11-09 23:05]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Monthly Bulletin for Consumer Price Index and Inflation in Syria - June 2026 [EN/AR] - ReliefWeb</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 敘利亞6月CPI與通膨報告，屬地區性統計，對全球資本市場無影響。</p>
+</li>
+<li>
+<p><strong>[11-09 23:05]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> U.S. Stock Futures Climb as Crude Retreat Eases Inflation Fears Ahead of CPI - BigGo Finance</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 原油價格下跌化解部分通膨疑慮，美股期指走高，市場聚焦美國10月CPI發布。</p>
+</li>
+<li>
+<p><strong>[11-09 23:05]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> 油價回落緩解通膨憂慮，美股期指走高靜待CPI - BigGo 財經</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價回落減緩通膨憂慮，美股期指走高，市場正靜待美國10月CPI消費者物價指數數據公布。</p>
+</li>
+<li>
+<p><strong>[11-09 23:02]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Monthly Bulletin for Consumer Price Index and Inflation in Syria - May 2026 [EN/AR] - ReliefWeb</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 敘利亞5月CPI與通膨報告，對國際金融市場無實質關聯。</p>
+</li>
+<li>
+<p><strong>[11-09 22:56]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Monthly Bulletin for Consumer Price Index and Inflation in Syria - April 2026 [EN/AR] - ReliefWeb</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 敘利亞公布通膨與CPI月報，對全球主要金融市場影響有限。</p>
+</li>
+<li>
+<p><strong>[11-09 22:33]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> 中國10月CPI年增0.7%　近3個月低點</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 中國10月CPI年增0.7%低於預期，顯示內需消費動能依然疲弱，通縮壓力持續。</p>
+</li>
+<li>
+<p><strong>[11-09 22:19]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> US Stock Futures Advance as Oil Prices Slide and Investors Await Inflation Report: Dow Jones, S&amp;P, Nasdaq, Wall Street - Yahoo Finance UK</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 油價下跌舒緩通膨壓力，美股期指走揚，市場聚焦即將公布的美國10月CPI報告。</p>
+</li>
+<li>
+<p><strong>[11-09 22:11]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> Crypto Week Ahead: US CPI Seen Cooling to 0.2% After September’s 3.7% Spike as MARA and CoreWeave Report Earnings - Binance</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 市場聚焦美國勞工部即將公布的10月CPI消費者物價指數(預期降溫至0.2%)，牽動聯準會降息預期與加密貨幣、債市波動。</li>
+</ul>
+<h3 id="6">其他（6）</h3>
+<ul>
+<li><strong>[11-09 23:24]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Civil servant who juggled five jobs found guilty of fraud</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 公務員詐欺案件，屬社會與法律新聞，對全球金融市場無直接影響。</p>
+</li>
+<li>
+<p><strong>[11-09 23:14]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> GoFundMe籌款總額突破500億美元，展現了這場全球運動中人與人之間強大的互助精神</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: GoFundMe籌款總額突破500億美元，為非營利募資平台里程碑，無直接總體金融影響。</p>
+</li>
+<li>
+<p><strong>[11-09 22:43]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> A Country’s President Led to a Bank’s Stunning Rise, and Its Fall</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 巴拉圭總統被控將政府資金輸送到特定銀行並涉及違法放貸，屬地緣政治與地方金融弊案，對全球市場影響有限。</p>
+</li>
+<li>
+<p><strong>[11-09 22:30]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Should a widow leave her late partner’s home to her stepkids — or cut off contact with them?</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 資訊不足，屬於個人理財與法律諮詢範疇，對金融市場無實質影響。</p>
+</li>
+<li>
+<p><strong>[11-09 22:30]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> ‘She can always change her mind’: Should a widow leave the family home to her stepchildren?</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 個人理財與房產繼承的消費專欄內容，對總體金融市場無直接影響。</p>
+</li>
+<li>
+<p><strong>[11-09 22:19]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Wall Street Futures Rise as Oil Prices Fall Ahead of US Inflation Data: Dow Jones, S&amp;P, Nasdaq - Yahoo Finance</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 無</li>
+</ul>
+<hr />
+<h2 id="_5">全部事件</h2>
+<ul>
+<li><strong>[11-09 23:54]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Moody’s and S&amp;P downgrade Akamai on debt-fueled AI infrastructure buildout <code>investing-com</code></li>
+<li><strong>[11-09 23:53]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> A股晚間熱點 | 伊朗釋放談判信號！油價大跌，黃金拉昇 作者 智通財經 - Investing.com 香港 - 股市報價&amp; 財經新聞 <code>google-news:油價</code></li>
+<li><strong>[11-09 23:52]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Fed needs to 'come to terms' with inflation, Chicago Fed's Goolsbee says <code>seekingalpha</code></li>
+<li><strong>[11-09 23:49]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Earnings call transcript: Virtus tops revenue in Q3 2026 as shares jump 7.7% <code>investing-com</code></li>
+<li><strong>[11-09 23:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> British Pound reclaims 1.3400 as Iran war fears ease ahead of US CPI - FXStreet <code>google-news:inflation CPI</code></li>
+<li><strong>[11-09 23:45]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Hedge funds cut tech exposure at near-record pace as Nasdaq drops 6.4% <code>investing-com</code></li>
+<li><strong>[11-09 23:43]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Oil Prices Fall on Hopes for Peace Between U.S. and Iran <code>nytbusiness</code></li>
+<li><strong>[11-09 23:42]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Disney steps up generative AI push with expanded Adobe collaboration <code>seekingalpha</code></li>
+<li><strong>[11-09 23:39]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> US CPI Preview: Will Inflation Fall Enough to Put a Fed Hike in Doubt? - FOREX.com <code>google-news:inflation CPI</code></li>
+<li><strong>[11-09 23:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> How SpaceX was able to avert one of the market’s biggest fears about its stock <code>marketwatch</code></li>
+<li><strong>[11-09 23:33]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 金融時報：新加坡超越愛爾蘭　成為蘋果最大避稅地 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-09 23:31]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Weekend trading of Nvidia scandal shines light on new financial products <code>cnbc</code></li>
+<li><strong>[11-09 23:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> COP31 Opens in Antalya With a UN Push for Faster Climate Action - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[11-09 23:24]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Civil servant who juggled five jobs found guilty of fraud <code>bbcbusiness</code></li>
+<li><strong>[11-09 23:22]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Tech stocks rally as Nvidia stock and oil prices fall: AlphaCheck - Yahoo Finance <code>google-news:stock market rally</code></li>
+<li><strong>[11-09 23:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Gold Price Outlook: High Real Yields Pose a Risk Ahead of US CPI - FXEmpire <code>google-news:inflation CPI</code></li>
+<li><strong>[11-09 23:17]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 美股早盤反彈！黃仁勳外遇領輝達獨自重挫6% <code>yahoo-tw-finance</code></li>
+<li><strong>[11-09 23:14]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Monthly Bulletin for Consumer Price Index and Inflation in Syria - September 2026 [EN/AR] - ReliefWeb <code>google-news:inflation CPI</code></li>
+<li><strong>[11-09 23:14]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> GoFundMe籌款總額突破500億美元，展現了這場全球運動中人與人之間強大的互助精神 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-09 23:12]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Earnings call transcript: BRAC Bank posts strong Q3 2026 profit growth <code>investing-com</code></li>
+<li><strong>[11-09 23:12]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Monthly Bulletin for Consumer Price Index and Inflation in Syria - August 2026 [EN/AR] - ReliefWeb <code>google-news:inflation CPI</code></li>
+<li><strong>[11-09 23:11]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Equinox Gold earnings up next: Can merger boost offset costs? <code>investing-com</code></li>
+<li><strong>[11-09 23:11]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Uniti Group earnings missed by $0.45, revenue fell short of estimates <code>investing-com</code></li>
+<li><strong>[11-09 23:11]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Vivid Seats earnings beat by $0.07, revenue fell short of estimates <code>investing-com</code></li>
+<li><strong>[11-09 23:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 黃仁勳婚外情重創股價！美股3大指數齊漲「輝達逆勢跌8％」 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-09 23:09]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Monthly Bulletin for Consumer Price Index and Inflation in Syria - July 2026 [EN/AR] - ReliefWeb <code>google-news:inflation CPI</code></li>
+<li><strong>[11-09 23:05]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Monthly Bulletin for Consumer Price Index and Inflation in Syria - June 2026 [EN/AR] - ReliefWeb <code>google-news:inflation CPI</code></li>
+<li><strong>[11-09 23:05]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> US stock market today: Dow, S&amp;P 500, Nasdaq rise as investors return to AI shares; oil slides - CNBC TV18 <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-09 23:05]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> U.S. Stock Futures Climb as Crude Retreat Eases Inflation Fears Ahead of CPI - BigGo Finance <code>google-news:inflation CPI</code></li>
+<li><strong>[11-09 23:05]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 油價回落緩解通膨憂慮，美股期指走高靜待CPI - BigGo 財經 <code>google-news:油價</code></li>
+<li><strong>[11-09 23:02]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Treasury Yields Wobbled As Markets Waited On CPI - Finimize <code>google-news:Treasury yields</code></li>
+<li><strong>[11-09 23:02]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Monthly Bulletin for Consumer Price Index and Inflation in Syria - May 2026 [EN/AR] - ReliefWeb <code>google-news:inflation CPI</code></li>
+<li><strong>[11-09 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Russia Targets Ukraine's Power Grid Ahead of Crucial Abu Dhabi Peace Talks - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[11-09 22:59]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Three Reasons Why US Stock Market Is Rallying: Dow Up 700 Points, Nasdaq Surges 2% - NDTV Profit <code>google-news:stock market rally</code></li>
+<li><strong>[11-09 22:57]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Stock Market Today (Nov. 9, 2026): Nasdaq futures climb as Wall Street watches AI stocks - Yahoo Finance <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-09 22:56]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Stock Market Today: Dow Jumps 540 Points, S&amp;P 500 Rallies as Oil Crashes 5% - Coinpaper <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-09 22:56]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Bond yields decline as crude oil prices ease amid geopolitical optimism - Business Standard <code>google-news:oil price crude</code></li>
+<li><strong>[11-09 22:56]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Monthly Bulletin for Consumer Price Index and Inflation in Syria - April 2026 [EN/AR] - ReliefWeb <code>google-news:inflation CPI</code></li>
+<li><strong>[11-09 22:55]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Goldman Sachs Sees U.S. Treasury Yields Settling Into 4.75%-5% Range as Global Bond Markets Stabilize - BigGo Finance <code>google-news:Treasury yields</code></li>
+<li><strong>[11-09 22:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 油價又暴跌！美股主要指數開盤均漲逾1% 輝達卻下殺逾6% - 知新聞 <code>google-news:油價</code></li>
+<li><strong>[11-09 22:50]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Nvidia’s Stock Price Drops After Investigation Into CEO Jensen Huang <code>nytbusiness</code></li>
+<li><strong>[11-09 22:47]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 道瓊狂漲700點！科技股回神費半反彈逾4％ 台指期夜盤收復4萬2大關 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-09 22:47]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 美股4大指數開盤大漲「道瓊飆漲500點」 輝達重跌7％ <code>yahoo-tw-finance</code></li>
+<li><strong>[11-09 22:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 敘約外長空襲後首度會談  盼和解並擴大政經合作 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-09 22:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Oil prices are set to decline, benefiting equities into 2027 – Morgan Stanley’s Mike Wilson <code>seekingalpha</code></li>
+<li><strong>[11-09 22:44]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> MARA Holdings earnings in focus as AI pivot awaits first tenant <code>investing-com</code></li>
+<li><strong>[11-09 22:44]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 【美股開市】油價跌、美股升 黃仁勳獨憔悴、英偉達跌6%（不斷更新） - 香港經濟日報HKET <code>google-news:油價</code></li>
+<li><strong>[11-09 22:44]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> TWA00 加權指數- 2026年11月最新選股- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-09 22:43]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Stock market climbs despite pressure from Nvidia drop <code>seekingalpha</code></li>
+<li><strong>[11-09 22:43]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Stock Market Today: S&amp;P 500 Rises 1.3% and Nasdaq 1.6% at the Open as Oil Slides and AMD Jumps - JournalArta <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-09 22:43]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Stock Market Today: S&amp;P 500 +1.3%, Nasdaq +1.6% as Oil Falls - JournalArta <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-09 22:43]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 黃仁勳陷爭議風暴背後有玄機？ 陸行之曝美方「3大盤算」 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-09 22:43]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> A Country’s President Led to a Bank’s Stunning Rise, and Its Fall <code>nytbusiness</code></li>
+<li><strong>[11-09 22:43]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 獨家》台股「史詩級」震盪壽險爆保單解約與借款潮單日大增六成- 金融 - 工商時報 <code>google-news:台股 大漲</code></li>
+<li><strong>[11-09 22:42]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Earnings call transcript: EVgo posts mixed Q3 2026 results as revenue misses forecast <code>investing-com</code></li>
+<li><strong>[11-09 22:42]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Wall St brokerages say AI selloff overdone, downplay Democrat regulation risks <code>investing-com</code></li>
+<li><strong>[11-09 22:42]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 美股4大指數開盤大漲「道瓊飆漲500點」 輝達重跌7％ - 中時新聞網 <code>google-news:台股 大漲</code></li>
+<li><strong>[11-09 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> US stocks rally as crude oil prices drop, even as Nvidia sinks - Toronto Star <code>google-news:stock market rally</code></li>
+<li><strong>[11-09 22:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 〈美股早盤〉買盤回來了！油價下跌助攻 道瓊漲600點 - 鉅亨網 <code>google-news:油價</code></li>
+<li><strong>[11-09 22:38]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> TWA00 加權指數- 開盤兩分鐘就120e的爆量去挑戰四月低點我就不信出軌會... - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-09 22:37]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> TWA00 加權指數- CCL四雄營收無懈可擊- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-09 22:36]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> US stocks rally as crude oil prices drop, even as Nvidia sinks - couriernews.com <code>google-news:oil price crude</code></li>
+<li><strong>[11-09 22:36]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> US stocks rally as crude oil prices drop, even as Nvidia sinks - Yakima Herald-Republic <code>google-news:oil price crude</code></li>
+<li><strong>[11-09 22:36]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> US stocks rally as crude oil prices drop, even as Nvidia sinks - The Killeen Daily Herald <code>google-news:oil price crude</code></li>
+<li><strong>[11-09 22:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> US Stock Market Today: Dow, S&amp;P Gain As Oil Cools; Barring Nvidia, All Tech Stocks Jump - NDTV Profit <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-09 22:33]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 中國10月CPI年增0.7%　近3個月低點 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-09 22:33]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Stock Market S&amp;P 500 - JournalArta <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-09 22:30]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Should a widow leave her late partner’s home to her stepkids — or cut off contact with them? <code>marketwatch</code></li>
+<li><strong>[11-09 22:30]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> ‘She can always change her mind’: Should a widow leave the family home to her stepchildren? <code>marketwatch</code></li>
+<li><strong>[11-09 22:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Iran Moves to Control Oil Terminals in China, Leak Shows - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[11-09 22:26]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 油價飆漲被迫停航 美郵輪遭新加坡扣押 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-09 22:25]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Morgan Stanley says S&amp;P 500 correction is nearing an end, with a likely year-end rally ahead - Quartz <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-09 22:24]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> US stock market outlook: AI sell-off, Anthropic IPO and Nvidia earnings keep investors on alert | Hindustan Times - Hindustan Times <code>google-news:stock market selloff</code></li>
+<li><strong>[11-09 22:20]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> November 9, 2026: 2-year U.S. Treasury yield 15 min · 9:15–9:30 AM EST Prediction Market - Robinhood <code>google-news:Treasury yields</code></li>
+<li><strong>[11-09 22:19]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Wall Street Futures Rise as Oil Prices Fall Ahead of US Inflation Data: Dow Jones, S&amp;P, Nasdaq - Yahoo Finance <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-09 22:19]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> US Stock Futures Advance as Oil Prices Slide and Investors Await Inflation Report: Dow Jones, S&amp;P, Nasdaq, Wall Street - Yahoo Finance UK <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-09 22:16]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> As AI trade falters, Goldman Sachs says this lagging region is now positioned to outperform <code>marketwatch</code></li>
+<li><strong>[11-09 22:15]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Why tech workers are flocking to NYC <code>cnbc</code></li>
+<li><strong>[11-09 22:12]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 今日英股：礦業股領漲推動指數上揚，油價因伊朗協議希望而下滑 作者 Investing.com - Investing.com 香港 - 股市報價&amp; 財經新聞 <code>google-news:油價</code></li>
+<li><strong>[11-09 22:11]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Crypto Week Ahead: US CPI Seen Cooling to 0.2% After September’s 3.7% Spike as MARA and CoreWeave Report Earnings - Binance <code>google-news:inflation CPI</code></li>
+</ul>
+    </article>
+  
+</div>
+<footer>由金融情報系統自動發佈 · 僅供參考，不構成投資建議</footer>
+<script>
+const WEEK = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function nowParts(tz){
+  const p = {};
+  new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short', month: 'short',
+    day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
+  }).formatToParts(new Date()).forEach(x => p[x.type] = x.value);
+  return p;
+}
+function marketOpen(tz, open, close){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  return wd>=1 && wd<=5 && m>=open && m<close;
+}
+// Taiwan index-futures night session 15:00 -> next-day 05:00 (crosses midnight):
+// 15:00-24:00 Mon-Fri, plus 00:00-05:00 Tue-Sat (Sat 00:00-05:00 is Fri night session).
+function nightOpen(tz){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  if (m >= 5*60 && m < 15*60) return false;   // 05:00-15:00 recess
+  if (m >= 15*60) return wd >= 1 && wd <= 5;   // 15:00-24:00 Mon-Fri
+  return wd >= 2 && wd <= 6;                   // 00:00-05:00 Tue-Sat
+}
+function pad(n){ return String(n).padStart(2,'0'); }
+function setMkt(id, open, label){
+  const el = document.getElementById(id);
+  el.className = 'mkt ' + (open ? 'open' : 'closed');
+  el.textContent = (label ? label + ' ' : '') + (open ? '開盤中' : '未開盤');
+}
+function tick(){
+  const tw = nowParts('Asia/Taipei');
+  const ny = nowParts('America/New_York');
+  document.getElementById('clk-tw').textContent = pad(tw.hour)+':'+pad(tw.minute)+':'+pad(tw.second);
+  document.getElementById('clk-ny').textContent = pad(ny.hour)+':'+pad(ny.minute)+':'+pad(ny.second);
+  // Taiwan: TWSE weighted index 09:00-13:30; TX futures day 08:45-13:45; TX night 15:00-05:00
+  setMkt('tw-idx',  marketOpen('Asia/Taipei', 9*60, 13*60+30), '加權');
+  setMkt('tx-day',  marketOpen('Asia/Taipei', 8*60+45, 13*60+45), '期日盤');
+  setMkt('tx-night', nightOpen('Asia/Taipei'), '期夜盤');
+  // US: regular session 09:30-16:00 ET; after-hours 16:00-20:00 ET
+  setMkt('ny-mkt',  marketOpen('America/New_York', 9*60+30, 16*60), '美股');
+  setMkt('ny-night', marketOpen('America/New_York', 16*60, 20*60), '美股夜');
+}
+tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>
