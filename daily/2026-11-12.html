@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日報告 2026-11-12</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; margin: 0;
+         background: #f5f6f8; color: #1c1e21; line-height: 1.7; }
+  header { background: #1b2a4a; color: #fff; padding: 14px 24px;
+           display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  header h1 { font-size: 18px; margin: 0; flex: 1; }
+  header nav a { color: #cdd8ee; text-decoration: none; margin-left: 14px; font-size: 14px; }
+  header nav a:hover, header nav a.active { color: #fff; text-decoration: underline; }
+  #clock { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; font-size: 13px; }
+  .clk { background: rgba(255,255,255,.08); border-radius: 6px; padding: 4px 10px; }
+  .clk-city { color: #9fb0cf; margin-right: 6px; }
+  .clk-time { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .mkt { margin-left: 8px; font-size: 12px; padding: 1px 7px; border-radius: 9px; }
+  .mkt.open { background: #2e7d32; color: #fff; }
+  .mkt.closed { background: #5a6474; color: #fff; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 20px; }
+  .card { background: #fff; border-radius: 8px; padding: 18px 22px; margin: 14px 0;
+          box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .card h3 { margin: 0 0 6px; }
+  .card a { color: #1b2a4a; text-decoration: none; }
+  .card a:hover { text-decoration: underline; }
+  .muted { color: #666; font-size: 13px; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px;
+           color: #fff; margin-left: 6px; }
+  .b-daily { background: #2e7d32; }
+  .b-deep { background: #b45309; }
+  .day-nav { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+  .day-nav a { font-size: 13px; padding: 3px 10px; background: #e8ecf3; border-radius: 12px;
+               color: #33415c; text-decoration: none; }
+  .day-nav a:hover { background: #d2dbea; }
+  article.card { line-height: 1.15; }
+  article.card p { margin: 3px 0; }
+  article.card ul, article.card ol { margin: 3px 0 6px; padding-left: 22px; }
+  article.card h1, article.card h2, article.card h3 { padding-bottom: 4px; }
+  article.card h1, article.card h2 { border-bottom: 2px solid #33415c; }
+  article.card h1 { font-size: 30px; margin-top: 8px; }
+  article.card h2 { font-size: 23px; margin-top: 12px; color: #1b2a4a;
+        border-left: 6px solid #1459c8; padding-left: 12px; }
+  article.card h3 { font-size: 19px; margin-top: 10px; color: #24365c;
+        background: #eef4fb; border-radius: 6px; padding: 4px 12px; }
+  article.card h4 { font-size: 17px; margin-top: 18px; color: #145c3a;
+        background: #e8f5ee; border-left: 4px solid #2e7d32;
+        padding: 5px 10px; border-radius: 4px; }
+  article.card h5 { font-size: 15px; margin-top: 14px; color: #4a5568;
+        font-weight: 600; }
+  article.card h4, article.card h5 { margin-bottom: 2px; }
+  article.card strong { font-weight: 700; }
+  article.card blockquote { border-left: 4px solid #9fb0cf; margin: 4px 0;
+        padding: 2px 12px; color: #4a5568; background: #f4f6fa; }
+  article.card hr { border: none; border-top: 1px dashed #c3ccdb; margin: 12px 0; }
+  article.card code { background: #eef0f4; padding: 1px 5px; border-radius: 4px;
+        font-size: 14px; font-family: Consolas, monospace; }
+  article.card pre { background: #1b2a4a; color: #e6ecf7; padding: 14px; border-radius: 8px; overflow-x: auto; }
+  article.card pre code { background: transparent; color: inherit; padding: 0; }
+  article.card table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+  article.card th, article.card td { border: 1px solid #d8dce3; padding: 6px 10px; }
+  article.card th { background: #eef1f6; }
+  article.card a { color: #1459c8; }
+  footer { text-align: center; color: #999; font-size: 12px; padding: 20px; }
+</style>
+</head>
+<body>
+  <header>
+  <h1>金融情報系統報告</h1>
+  <nav>
+    <a href="../index.html" class="">首頁</a>
+    <a href="../calendar.html" class="">行事曆</a>
+    <a href="../daily/2026-11-12.html" class="active">最新每日</a>
+    <a href="../deep/2026-11-11-pm.html" class="">最新深度</a>
+  </nav>
+  <div id="clock">
+    <span class="clk"><span class="clk-city">台北</span><span class="clk-time" id="clk-tw">--:--:--</span><span class="mkt closed" id="tw-idx">…</span><span class="mkt closed" id="tx-day">…</span><span class="mkt closed" id="tx-night">…</span></span>
+    <span class="clk"><span class="clk-city">紐約</span><span class="clk-time" id="clk-ny">--:--:--</span><span class="mkt closed" id="ny-mkt">…</span><span class="mkt closed" id="ny-night">…</span></span>
+  </div>
+</header>
+<div class="wrap">
+  
+    <div class="day-nav">
+      <a href="../index.html">← 首頁</a>
+      
+        
+        <a href="../daily/2026-11-12.html">2026-11-12</a>
+        
+        <a href="../daily/2026-11-11.html">2026-11-11</a>
+        
+        <a href="../daily/2026-11-10.html">2026-11-10</a>
+        
+        <a href="../daily/2026-11-09.html">2026-11-09</a>
+        
+        <a href="../daily/2026-11-08.html">2026-11-08</a>
+        
+        <a href="../daily/2026-11-07.html">2026-11-07</a>
+        
+        <a href="../daily/2026-11-06.html">2026-11-06</a>
+        
+        <a href="../daily/2026-11-05.html">2026-11-05</a>
+        
+        <a href="../daily/2026-11-04.html">2026-11-04</a>
+        
+        <a href="../daily/2026-11-03.html">2026-11-03</a>
+        
+        <a href="../daily/2026-11-02.html">2026-11-02</a>
+        
+        <a href="../daily/2026-11-01.html">2026-11-01</a>
+        
+        <a href="../daily/2026-10-31.html">2026-10-31</a>
+        
+        <a href="../daily/2026-10-30.html">2026-10-30</a>
+        
+        <a href="../daily/2026-10-29.html">2026-10-29</a>
+        
+        <a href="../daily/2026-10-28.html">2026-10-28</a>
+        
+        <a href="../daily/2026-10-27.html">2026-10-27</a>
+        
+        <a href="../daily/2026-10-26.html">2026-10-26</a>
+        
+        <a href="../daily/2026-10-25.html">2026-10-25</a>
+        
+        <a href="../daily/2026-10-24.html">2026-10-24</a>
+        
+        <a href="../daily/2026-10-23.html">2026-10-23</a>
+        
+        <a href="../daily/2026-10-22.html">2026-10-22</a>
+        
+        <a href="../daily/2026-10-21.html">2026-10-21</a>
+        
+        <a href="../daily/2026-10-20.html">2026-10-20</a>
+        
+        <a href="../daily/2026-10-19.html">2026-10-19</a>
+        
+        <a href="../daily/2026-10-18.html">2026-10-18</a>
+        
+        <a href="../daily/2026-10-17.html">2026-10-17</a>
+        
+        <a href="../daily/2026-10-16.html">2026-10-16</a>
+        
+        <a href="../daily/2026-10-15.html">2026-10-15</a>
+        
+        <a href="../daily/2026-10-14.html">2026-10-14</a>
+        
+        <a href="../daily/2026-10-13.html">2026-10-13</a>
+        
+        <a href="../daily/2026-10-12.html">2026-10-12</a>
+        
+        <a href="../daily/2026-10-11.html">2026-10-11</a>
+        
+        <a href="../daily/2026-10-10.html">2026-10-10</a>
+        
+        <a href="../daily/2026-10-09.html">2026-10-09</a>
+        
+        <a href="../daily/2026-10-08.html">2026-10-08</a>
+        
+        <a href="../daily/2026-10-07.html">2026-10-07</a>
+        
+        <a href="../daily/2026-10-06.html">2026-10-06</a>
+        
+        <a href="../daily/2026-10-05.html">2026-10-05</a>
+        
+        <a href="../daily/2026-10-04.html">2026-10-04</a>
+        
+        <a href="../daily/2026-10-03.html">2026-10-03</a>
+        
+        <a href="../daily/2026-10-02.html">2026-10-02</a>
+        
+        <a href="../daily/2026-10-01.html">2026-10-01</a>
+        
+        <a href="../daily/2026-09-30.html">2026-09-30</a>
+        
+        <a href="../daily/2026-09-29.html">2026-09-29</a>
+        
+        <a href="../daily/2026-09-28.html">2026-09-28</a>
+        
+        <a href="../daily/2026-09-27.html">2026-09-27</a>
+        
+        <a href="../daily/2026-09-26.html">2026-09-26</a>
+        
+        <a href="../daily/2026-09-25.html">2026-09-25</a>
+        
+        <a href="../daily/2026-09-24.html">2026-09-24</a>
+        
+        <a href="../daily/2026-09-23.html">2026-09-23</a>
+        
+        <a href="../daily/2026-09-22.html">2026-09-22</a>
+        
+        <a href="../daily/2026-09-21.html">2026-09-21</a>
+        
+        <a href="../daily/2026-09-20.html">2026-09-20</a>
+        
+        <a href="../daily/2026-09-19.html">2026-09-19</a>
+        
+        <a href="../daily/2026-09-18.html">2026-09-18</a>
+        
+        <a href="../daily/2026-09-17.html">2026-09-17</a>
+        
+        <a href="../daily/2026-09-16.html">2026-09-16</a>
+        
+        <a href="../daily/2026-09-15.html">2026-09-15</a>
+        
+        <a href="../daily/2026-09-14.html">2026-09-14</a>
+        
+        <a href="../daily/2026-09-13.html">2026-09-13</a>
+        
+        <a href="../daily/2026-09-12.html">2026-09-12</a>
+        
+        <a href="../daily/2026-09-11.html">2026-09-11</a>
+        
+        <a href="../daily/2026-09-10.html">2026-09-10</a>
+        
+        <a href="../daily/2026-09-09.html">2026-09-09</a>
+        
+        <a href="../daily/2026-09-08.html">2026-09-08</a>
+        
+        <a href="../daily/2026-09-07.html">2026-09-07</a>
+        
+        <a href="../daily/2026-09-06.html">2026-09-06</a>
+        
+        <a href="../daily/2026-09-05.html">2026-09-05</a>
+        
+        <a href="../daily/2026-09-04.html">2026-09-04</a>
+        
+        <a href="../daily/2026-09-03.html">2026-09-03</a>
+        
+        <a href="../daily/2026-09-02.html">2026-09-02</a>
+        
+        <a href="../daily/2026-09-01.html">2026-09-01</a>
+        
+        <a href="../daily/2026-08-31.html">2026-08-31</a>
+        
+        <a href="../daily/2026-08-30.html">2026-08-30</a>
+        
+        <a href="../daily/2026-08-29.html">2026-08-29</a>
+        
+        <a href="../daily/2026-08-28.html">2026-08-28</a>
+        
+        <a href="../daily/2026-08-27.html">2026-08-27</a>
+        
+        <a href="../daily/2026-08-26.html">2026-08-26</a>
+        
+        <a href="../daily/2026-08-25.html">2026-08-25</a>
+        
+        <a href="../daily/2026-08-24.html">2026-08-24</a>
+        
+        <a href="../daily/2026-08-23.html">2026-08-23</a>
+        
+        <a href="../daily/2026-08-22.html">2026-08-22</a>
+        
+        <a href="../daily/2026-08-21.html">2026-08-21</a>
+        
+        <a href="../daily/2026-08-20.html">2026-08-20</a>
+        
+        <a href="../daily/2026-08-19.html">2026-08-19</a>
+        
+        <a href="../daily/2026-08-18.html">2026-08-18</a>
+        
+        <a href="../daily/2026-08-17.html">2026-08-17</a>
+        
+        <a href="../daily/2026-08-16.html">2026-08-16</a>
+        
+        <a href="../daily/2026-08-15.html">2026-08-15</a>
+        
+        <a href="../daily/2026-08-14.html">2026-08-14</a>
+        
+        <a href="../daily/2026-08-13.html">2026-08-13</a>
+        
+        <a href="../daily/2026-08-12.html">2026-08-12</a>
+        
+        <a href="../daily/2026-08-11.html">2026-08-11</a>
+        
+        <a href="../daily/2026-08-10.html">2026-08-10</a>
+        
+        <a href="../daily/2026-08-09.html">2026-08-09</a>
+        
+        <a href="../daily/2026-08-08.html">2026-08-08</a>
+        
+        <a href="../daily/2026-08-07.html">2026-08-07</a>
+        
+        <a href="../daily/2026-08-06.html">2026-08-06</a>
+        
+        <a href="../daily/2026-08-05.html">2026-08-05</a>
+        
+        <a href="../daily/2026-08-04.html">2026-08-04</a>
+        
+        <a href="../daily/2026-08-03.html">2026-08-03</a>
+        
+        <a href="../daily/2026-08-02.html">2026-08-02</a>
+        
+      
+    </div>
+    <article class="card">
+      <div class="muted">2026-11-12
+        <span class="badge b-daily">
+          每日報告
+        </span>
+      </div>
+      <h1 id="2026-11-12">金融重點報告 2026-11-12</h1>
+<blockquote>
+<p>產出時間: 2026-11-12 00:25（台灣時間）
+資料截止: 11-11 23:56（收錄庫最新事件，若久久未前進代表蒐集上游疑中斷）
+品質儀表板: 資料新鮮度 ≤32min | 去重率 28.1% | 最大來源佔 16.7% | 驗證覆蓋 25.4% | ⚠️疑似誤殺 110
+本報告由 AI 自動生成，僅供參考，不構成投資建議。</p>
+</blockquote>
+<h2 id="_1">📅 行事曆排期事件</h2>
+<blockquote>
+<p>下列為今日／近期已排定、可能影響市場的重要事件（法人預期供參考）：</p>
+</blockquote>
+<ul>
+<li>⭐ 今天 [高]美國勞工部 BLS：PPI 生產者物價指數(10月)</li>
+</ul>
+<hr />
+<h2 id="_2">🆕 本次新增事件（置頂：最新產出）</h2>
+<blockquote>
+<p>本次新增 <strong>60 筆</strong>，重要 45 筆</p>
+</blockquote>
+<p><strong>重要事件（severity ≥ 1）</strong>：</p>
+<ul>
+<li><strong>[11-11 23:53]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> Democrats could snarl Trump administration stakes in companies; Watch U.S. Steel CEO speak <code>cnbc</code></li>
+<li><strong style="color:#174ea6">影響</strong>: 川普政府持有企業股權引發民主黨關切，對個股與市場政策帶來不確定性，整體影響有限。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>X</code></p>
+</li>
+<li>
+<p><strong>[11-11 23:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[地緣政治][neutral]</strong> Mississippi Senate: Scott Colom leads Hyde-Smith by more than 3,000 votes <code>cnbc</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 密西西比州參議員選情膠著，對全國宏觀經濟與金融市場無直接影響。</p>
+</li>
+<li>
+<p><strong>[11-11 23:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Silicon Valley Tech Allies Support Jensen Huang <code>nytbusiness</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 矽谷科技巨頭力挺輝達執行長黃仁勳，化解市場對安全問題的擔憂，利於維持AI龍頭股價穩定。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-11 23:26]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> CoreWeave財報超猛！美股開盤費半飆4.74%　台積電ADR大漲4.10%、輝達強彈2.62% <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: CoreWeave財報強勁帶動費半大漲4.74%、台積電ADR大漲4.10%，提振全球AI供應鏈信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM,2330</code></p>
+</li>
+<li>
+<p><strong>[11-11 23:26]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> CoreWeave just gave a shot in the arm to Micron, Lumentum and the rest of the AI trade <code>marketwatch</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: CoreWeave財報化解市場對AI泡沫與債務疑慮，激勵美光等記憶體與晶片股全面大漲。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>MU</code></p>
+</li>
+<li>
+<p><strong>[11-11 23:19]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 黃仁勳跌倒誰受惠？分析師點名這兩家 認對台不利 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 輝達執行長黃仁勳私生活與涉諜爭議延燒，股價下跌且分析師擔憂對台廠供應鏈不利。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,2330,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-11 23:21]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> US stock market today: S&amp;P 500 and Nasdaq race towards record highs as Nvidia leads AI stock comeback, Cor - The Economic Times <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股S&amp;P 500與那斯達克指數衝向歷史新高，輝達領軍AI概念股反彈。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,S&amp;P 500,Nasdaq</code></p>
+</li>
+<li>
+<p><strong>[11-11 23:10]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> S&amp;P 500, Nasdaq rise as CoreWeave results ease AI spending worries - TradingView <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 重複報導CoreWeave財報帶動S&amp;P 500與Nasdaq走高，反映市場對AI支出的信心修復。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-11 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Dow, S&amp;P 500, NASDAQ Futures Rise as CoreWeave Earnings Spark Tech Stock Rebound - Analytics Insight <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: CoreWeave財報強勁緩解AI過度支出疑慮，帶動美股期貨與科技股全面反彈。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-11 23:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> Inflation Fears Push Treasury Yields Further Above Fair Value - Seeking Alpha <code>google-news:Treasury yields</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 通膨擔憂推升美債殖利率高於公允價值，壓抑債市表現並支撐美元走勢，對股市評價帶來壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債殖利率</code></p>
+</li>
+<li>
+<p><strong>[11-11 23:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> Saudi Crude Output Jumps 26% as Riyadh Reports Near Pre-War Production - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 沙烏地原油產量大增26%接近戰前水準，供給增加壓抑國際油價，舒緩全球通膨壓力。</p>
+</li>
+<li>
+<p><strong>[11-11 23:26]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> CoreWeave CEO Intrator tells CNBC he has canceled his planned share sale program <code>cnbc</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: CoreWeave執行長取消股票出售計畫並上修財報預測，強化市場對雲端與資料中心建設的信心。</p>
+</li>
+<li>
+<p><strong>[11-11 23:24]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Earnings call transcript: DCM tops revenue forecasts in Q3 2026 as shares rise <code>investing-com</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: DCM Q3 2026 營收優於預期，推動股價上漲，對個股屬正面激勵。</p>
+</li>
+<li>
+<p><strong>[11-11 23:20]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][negative]</strong> UBS cuts Aramark stock price target on datacenter revenue timing <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 瑞銀因資料中心營收時程問題調降Aramark目標價，對個股股價造成壓抑。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>ARMK</code></p>
+</li>
+<li>
+<p><strong>[11-11 23:20]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> Palo Alto Networks options suggest 8.7% move on earnings <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Palo Alto Networks選擇權隱含財報公布後將有8.7%的大幅波動，市場觀望氣氛濃。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>PANW</code></p>
+</li>
+<li>
+<p><strong>[11-11 23:14]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> 黃仁勳醜聞恐衝擊台積電？分析師：不受影響 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 分析師認為黃仁勳醜聞對台積電實質影響有限，台廠供應鏈基本面暫安。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,2330,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-11 23:13]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> CoreWeave soars 20% as CEO reaffirms AI compute demand after strong Q3 report <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: CoreWeave財報強勁並重申AI算力需求強勁，化解市場對AI資本支出可持續性的疑慮，推升美股科技股與相關供應鏈表現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-11 23:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Goldman Sachs, HSBC partner for $150M financing to United Saudi Company - report <code>seekingalpha</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 高盛與匯豐聯手提供1.5億美元融資給United Saudi Company，有利中東地區企業資本運作與金融機構利息收入。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>GS,HSBC</code></p>
+</li>
+<li>
+<p><strong>[11-11 23:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> JetBlue's CEO has pushed back on creditor fears and is betting on premium to return to profitability <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 捷藍航空執行長透過推動高端座位策略以應對債權人擔憂並重返獲利，對航空股個別公司營運具指標意義。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>JBLU</code></p>
+</li>
+<li>
+<p><strong>[11-11 22:58]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> AI疑慮暫緩！CoreWeave財報報喜　美股3大指數齊揚 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: CoreWeave財報報喜消弭市場對AI支出的疑慮，推升美股3大指數開盤走揚。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-11 22:57]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> CoreWeave財報超猛！美股開盤費半飆升4.74%　台積電ADR大漲4.10% <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: CoreWeave營收超越預期，激勵費城半導體指數大漲4.74%，台積電ADR大漲4.10%。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TSM,NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-11 22:57]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> CoreWeave財報提振AI交易　美國股市開盤走揚 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: AI雲端業者財報強勁提振信心，美股開盤走高，降低市場恐慌情緒。</p>
+</li>
+<li>
+<p><strong>[11-11 22:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 輝達反彈領漲科技股！美股開盤費半漲300點 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 輝達反彈領漲科技股，配合CoreWeave財報利多，推升美股費半強勢上攻。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-11 22:49]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][neutral]</strong> 輝達回彈3％！ 費半飆漲逾400點 台指期夜盤漲159點 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 結合美國10月CPI高於預期與CoreWeave強勁財報，費半飆漲逾400點，台指期夜盤大漲159點。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>台指期</code></p>
+</li>
+<li>
+<p><strong>[11-11 23:25]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Why Is the Stock Market Up Today? S&amp;P 500 Rises as Nvidia and CoreWeave Rally - Coinpaper <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股受輝達與CoreWeave反彈帶動，S&amp;P 500走高，提振科技股信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,S&amp;P 500</code></p>
+</li>
+<li>
+<p><strong>[11-11 23:16]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> US Stock Market Today: Nasdaq Jumps 1.60%, S&amp;P 500 Up - HDFC Sky <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股今日那斯達克大漲1.60%，S&amp;P 500同步走揚，市場風險偏好升溫。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>Nasdaq,S&amp;P 500</code></p>
+</li>
+<li>
+<p><strong>[11-11 23:11]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> S&amp;P 500, Nasdaq rise as CoreWeave results ease AI spending worries - Reuters <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: CoreWeave財報佳緩解AI支出擔憂，帶動S&amp;P 500與Nasdaq指數上揚，資金回流科技股。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,MSFT,GOOGL</code></p>
+</li>
+<li>
+<p><strong>[11-11 23:07]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> S&amp;P 500 Opens Up 0.8% as Nasdaq Surges and Dow Lags - 24/7 Wall St. <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 科技股領軍推動Nasdaq飆升、S&amp;P 500上開0.8%，道瓊相對落後，反映資金集中於成長型科技股。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>QQQ,DIA</code></p>
+</li>
+<li>
+<p><strong>[11-11 23:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[商品(油金)][negative]</strong> 油價飆、高風險共振！高柴油時代逼車隊把「每一滴油」都榨成獲利 - CMoney投資網誌 <code>google-news:油價</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 高油價與高柴油時代增加運輸業成本壓抑獲利，對物流與實體經濟形成通膨與成本壓力。</p>
+</li>
+<li>
+<p><strong>[11-11 22:57]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 台股明天要噴了？CoreWeave營收暴增168%點燃AI行情美股費半狂飆3.42%、台積電ADR也大漲3.40% - Yahoo股市 <code>google-news:台股 大漲</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: CoreWeave營收暴增點燃AI行情，美股費半大漲，有利台股隔日開高。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TSM</code></p>
+</li>
+<li>
+<p><strong>[11-11 22:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> CoreWeave CEO says 'new political reality' after midterms won't slow buildout <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: CoreWeave財報佳且上調財測，顯示AI基礎設施需求依舊強勁，對美股AI供應鏈帶來正面情緒。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>CRWV</code></p>
+</li>
+<li>
+<p><strong>[11-11 22:49]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> CFTC investigates if Kalshi improperly self-certified event contracts <code>cnbc</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: CFTC調查Kalshi事件合約，對整體預測市場與新創金融合規帶來短暫觀望氣氛。</p>
+</li>
+<li>
+<p><strong>[11-11 22:44]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> Cellebrite earnings ahead as investors eye ARR rebound <code>investing-com</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Cellebrite即將公布財報，市場聚焦ARR（年度經常性收入）回彈表現，影響侷限於個股。</p>
+</li>
+<li>
+<p><strong>[11-11 22:40]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> CoreWeave stock pops 12% after outlook raise eases AI slowdown concerns <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: CoreWeave財報大好帶動股價飆升，緩解市場對AI泡沫與雲端支出放緩的疑慮。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>CRWV,NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-11 22:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> Chinese university on US blacklist bought Nvidia H200 AI chips: report <code>seekingalpha</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 遭美國列入黑名單的中國大學仍取得輝達H200晶片，恐引發美方對出口管制的進一步審查與收緊，對半導體設備及AI晶片股帶來短線地緣政治壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-11 22:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> Nvidia shares rebound as Jensen Huang faces scrutiny ahead of earnings <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 執行長黃仁勳面臨私生活審查，投資人評估其對輝達業務的潛在連動，股價雖反彈但仍受消息面擾動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-11 22:26]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Anthropic啟動兆元IPO AI工具問世微軟股價承壓 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Anthropic啟動兆元規模IPO並推出新AI工具，加劇市場競爭，對微軟等現有AI巨頭股價形成估值與市佔率的承壓。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>MSFT,AI</code></p>
+</li>
+<li>
+<p><strong>[11-11 22:14]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Wall Street Futures Rise as CoreWeave Earnings Support Technology Stocks Ahead of US Market Open: Dow Jones, S&amp;P, Nasdaq - Yahoo Finance <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: CoreWeave財報表現優於預期，支撐美股盤前科技股與期貨走勢，顯示AI基礎設施需求依舊強勁。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,MSFT</code></p>
+</li>
+<li>
+<p><strong>[11-11 22:45]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Fed officials signal faster rate hikes after hot October inflation - Quartz <code>google-news:inflation CPI</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 受10月通膨數據高於預期影響（預告明日PPI與通膨走勢），Fed官員釋出加快升息訊號，推升美債殖利率並打壓全球股市評價。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債殖利率</code></p>
+</li>
+<li>
+<p><strong>[11-11 22:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[商品(油金)][positive]</strong> India Approves $7.3 Billion High-Capacity Power Link to Back Renewables - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 印度批准73億美元高容量電網建設以支持再生能源，有利於綠能基建供應鏈，對傳統原油需求中長線有替代壓抑效果。</p>
+</li>
+<li>
+<p><strong>[11-11 22:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> China's central bank vows to step up support and keep stock markets stable after state-backed funds poured 76.7 billion yuan into ETFs - MLQ.ai <code>google-news:central bank policy</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 中國央行與國家隊持續投入資金支撐陸股ETF，有助於穩定市場信心並支撐中港股市。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>ASHR</code></p>
+</li>
+<li>
+<p><strong>[11-11 22:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> A 50 basis points rate hike? Warsh’s Fed has a communication problem - The Globe and Mail <code>google-news:Fed Powell</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 市場討論聯準會潛在的升息動向與溝通問題，牽動全球債市殖利率與美元匯率波動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[11-11 22:25]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Earnings call transcript: Cury Construtora tops revenue in Q3 2026, shares rise <code>investing-com</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Cury Construtora Q3營收超預期帶動股價上漲，對區域營建類股具正面激勵效果。</p>
+</li>
+<li>
+<p><strong>[11-11 22:06]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> Spain sees widespread disruption in first general strike for 14 years <code>bbcbusiness</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 西班牙14年來首次大罷工引發社會與運輸干擾，對歐洲區域經濟與西班牙股市造成短期壓力。</p>
+</li>
+<li>
+<p><strong>[11-11 22:06]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> October 2026 CPI Report: Inflation Beats Forecasts - Hoodline <code>google-news:inflation CPI</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 10月CPI通膨數據超預期升溫，加大Fed利率路徑壓力，美債殖利率與美元上揚，對美股科技及風險資產形成賣壓，並牽動次日PPI生產者物價指數預期。</li>
+<li><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債殖利率,SPY</code></li>
+</ul>
+<p><strong>其他同時段收錄（未分析，共 15 筆）</strong>：</p>
+<ul>
+<li><strong>[11-11 22:42]</strong> Stock Market Today: Nasdaq, S&amp;P 500 Jump as Chip Stocks Rally, CoreWeave Soars After Earnings; Nvidia Rebounds After Steep Losses - Investopedia（<code>google-news:stock market rally</code>）</li>
+<li><strong>[11-11 22:39]</strong> Stock market today: S&amp;P 500, Nasdaq rise as Nvidia stock recovers, chip stocks rally after CoreWeave earnings - Yahoo Finance（<code>google-news:stock market rally</code>）</li>
+<li><strong>[11-11 23:08]</strong> From living in his car to a 756 credit score: How one veteran rebuilt his finances（<code>marketwatch</code>）</li>
+<li><strong>[11-11 22:46]</strong> Nvidia Scandal Puts Lori Huang, Jensen Huang’s Wife, In the Spotlight（<code>nytbusiness</code>）</li>
+<li><strong>[11-11 22:40]</strong> 〈美股早盤〉CoreWeave財報助攻！那指領漲 台積電ADR漲逾4%（<code>yahoo-tw-finance</code>）</li>
+<li><strong>[11-11 22:37]</strong> 雙鴻第3季毛利率降　每股純益11.59元寫歷史次高（<code>yahoo-tw-finance</code>）</li>
+<li><strong>[11-11 22:35]</strong> 美NGO：瓦格納非法掠奪中非伐木收益 資助俄烏戰爭（<code>yahoo-tw-finance</code>）</li>
+<li><strong>[11-11 22:11]</strong> 美光看起來超便宜？高盛：挑記憶體股別只看本益比（<code>yahoo-tw-finance</code>）</li>
+<li><strong>[11-11 22:15]</strong> US Stock Futures Advance as CoreWeave Earnings Lift Technology Shares Despite Inflation Concerns: Dow Jones, S&amp;P, Nasdaq, Wall Street - Yahoo Finance UK（<code>google-news:S&amp;P 500 Nasdaq</code>）</li>
+<li><strong>[11-11 22:45]</strong> Fed officials signal faster rate hikes as October inflation runs hot - Quartz（<code>google-news:inflation CPI</code>）</li>
+<li><strong>[11-11 22:44]</strong> Indonesia Sets October Crude Oil Price at US$117.24 per Barrel - Tempo.co English（<code>google-news:oil price crude</code>）</li>
+<li><strong>[11-11 22:46]</strong> Jensen Huang’s Affair Puts His Wife, Lori Huang, In the Spotlight（<code>nytbusiness</code>）</li>
+<li><strong>[11-11 22:38]</strong> TWA00 加權指數- 今天打開看盤軟體，看到台郡、南茂、尖點這三檔，我心裡第一個念... - 股市爆料同學會 - CMoney（<code>google-news:加權指數</code>）</li>
+<li><strong>[11-11 22:18]</strong> TWA00 加權指數- 每天收盤後，我都會泡一杯茶，再靜下心來看看今天的線型和籌碼。... - 股市爆料同學會 - CMoney（<code>google-news:加權指數</code>）</li>
+<li><strong>[11-11 22:24]</strong> My friend hates her job but shuts down when I give her advice. How can I help her?（<code>marketwatch</code>）</li>
+</ul>
+<hr />
+<h2 id="_3">市場行情快照</h2>
+<pre><code>加權指數            44,257.15    點 <span style="color:#c0392b;font-weight:bold">▲</span>+3.62%
+台積電              2,395.00  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+4.81%
+鴻海                 242.00  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+0.21%
+聯發科              3,990.00  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+4.18%
+台達電              1,295.00  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+1.57%
+富邦金                159.50  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+4.25%
+S&amp;P 500          7,612.13    點 <span style="color:#c0392b;font-weight:bold">▲</span>+1.21%
+納斯達克            25,536.77    點 <span style="color:#c0392b;font-weight:bold">▲</span>+1.88%
+費城半導體指數         10,652.99    點 <span style="color:#c0392b;font-weight:bold">▲</span>+6.55%
+道瓊              52,254.92    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.04%
+日經225           61,248.59    點 <span style="color:#c0392b;font-weight:bold">▲</span>+1.31%
+上證指數             3,680.64    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.46%
+Apple              354.21  USD <span style="color:#c0392b;font-weight:bold">▲</span>+1.64%
+Microsoft          520.46  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-2.38%
+NVIDIA             175.73  USD <span style="color:#c0392b;font-weight:bold">▲</span>+4.05%
+Amazon             267.08  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-1.40%
+Tesla              392.81  USD <span style="color:#c0392b;font-weight:bold">▲</span>+3.43%
+美元/日圓              159.82  JPY <span style="color:#c0392b;font-weight:bold">▲</span>+1.16%
+美元/台幣               32.89  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+0.32%
+歐元/美元                1.11  EUR <span style="color:#2e7d32;font-weight:bold">▼</span>-1.09%
+美元/人民幣               6.66  CNY <span style="color:#2e7d32;font-weight:bold">▼</span>-0.16%
+WTI原油               88.09  USD <span style="color:#c0392b;font-weight:bold">▲</span>+2.38%
+布蘭特原油               93.92  USD <span style="color:#c0392b;font-weight:bold">▲</span>+2.66%
+黃金               4,013.10  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-0.42%
+美元指數DXY            102.86    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.62%
+美債10年殖利率             5.00    % <span style="color:#c0392b;font-weight:bold">▲</span>+0.30%
+</code></pre>
+<blockquote>
+<p>（快照資料時間：2026-11-11 22:30，台股收盤為最近一個交易日）</p>
+</blockquote>
+<h2 id="severity-2">重大事件（severity ≥ 2）</h2>
+<ul>
+<li><strong>[11-11 23:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> Inflation Fears Push Treasury Yields Further Above Fair Value - Seeking Alpha</li>
+<li><strong style="color:#174ea6">影響</strong>: 通膨擔憂推升美債殖利率高於公允價值，壓抑債市表現並支撐美元走勢，對股市評價帶來壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債殖利率</code></p>
+</li>
+<li>
+<p><strong>[11-11 23:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> Saudi Crude Output Jumps 26% as Riyadh Reports Near Pre-War Production - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 沙烏地原油產量大增26%接近戰前水準，供給增加壓抑國際油價，舒緩全球通膨壓力。</p>
+</li>
+<li>
+<p><strong>[11-11 23:26]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> CoreWeave財報超猛！美股開盤費半飆4.74%　台積電ADR大漲4.10%、輝達強彈2.62%</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: CoreWeave財報強勁帶動費半大漲4.74%、台積電ADR大漲4.10%，提振全球AI供應鏈信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM,2330</code></p>
+</li>
+<li>
+<p><strong>[11-11 23:26]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> CoreWeave just gave a shot in the arm to Micron, Lumentum and the rest of the AI trade</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: CoreWeave財報化解市場對AI泡沫與債務疑慮，激勵美光等記憶體與晶片股全面大漲。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>MU</code></p>
+</li>
+<li>
+<p><strong>[11-11 23:19]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 黃仁勳跌倒誰受惠？分析師點名這兩家 認對台不利</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 輝達執行長黃仁勳私生活與涉諜爭議延燒，股價下跌且分析師擔憂對台廠供應鏈不利。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,2330,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-11 23:13]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> CoreWeave soars 20% as CEO reaffirms AI compute demand after strong Q3 report</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: CoreWeave財報強勁並重申AI算力需求強勁，化解市場對AI資本支出可持續性的疑慮，推升美股科技股與相關供應鏈表現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-11 23:11]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> S&amp;P 500, Nasdaq rise as CoreWeave results ease AI spending worries - Reuters</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: CoreWeave財報佳緩解AI支出擔憂，帶動S&amp;P 500與Nasdaq指數上揚，資金回流科技股。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,MSFT,GOOGL</code></p>
+</li>
+<li>
+<p><strong>[11-11 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Dow, S&amp;P 500, NASDAQ Futures Rise as CoreWeave Earnings Spark Tech Stock Rebound - Analytics Insight</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: CoreWeave財報強勁緩解AI過度支出疑慮，帶動美股期貨與科技股全面反彈。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-11 22:58]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> AI疑慮暫緩！CoreWeave財報報喜　美股3大指數齊揚</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: CoreWeave財報報喜消弭市場對AI支出的疑慮，推升美股3大指數開盤走揚。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-11 22:57]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> CoreWeave財報超猛！美股開盤費半飆升4.74%　台積電ADR大漲4.10%</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: CoreWeave營收超越預期，激勵費城半導體指數大漲4.74%，台積電ADR大漲4.10%。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TSM,NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-11 22:57]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> CoreWeave財報提振AI交易　美國股市開盤走揚</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: AI雲端業者財報強勁提振信心，美股開盤走高，降低市場恐慌情緒。</p>
+</li>
+<li>
+<p><strong>[11-11 22:57]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 台股明天要噴了？CoreWeave營收暴增168%點燃AI行情美股費半狂飆3.42%、台積電ADR也大漲3.40% - Yahoo股市</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: CoreWeave營收暴增點燃AI行情，美股費半大漲，有利台股隔日開高。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TSM</code></p>
+</li>
+<li>
+<p><strong>[11-11 22:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 輝達反彈領漲科技股！美股開盤費半漲300點</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 輝達反彈領漲科技股，配合CoreWeave財報利多，推升美股費半強勢上攻。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-11 22:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> China's central bank vows to step up support and keep stock markets stable after state-backed funds poured 76.7 billion yuan into ETFs - MLQ.ai</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 中國央行與國家隊持續投入資金支撐陸股ETF，有助於穩定市場信心並支撐中港股市。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>ASHR</code></p>
+</li>
+<li>
+<p><strong>[11-11 22:49]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][neutral]</strong> 輝達回彈3％！ 費半飆漲逾400點 台指期夜盤漲159點</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 結合美國10月CPI高於預期與CoreWeave強勁財報，費半飆漲逾400點，台指期夜盤大漲159點。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>台指期</code></p>
+</li>
+<li>
+<p><strong>[11-11 22:45]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Fed officials signal faster rate hikes after hot October inflation - Quartz</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 受10月通膨數據高於預期影響（預告明日PPI與通膨走勢），Fed官員釋出加快升息訊號，推升美債殖利率並打壓全球股市評價。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債殖利率</code></p>
+</li>
+<li>
+<p><strong>[11-11 22:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> Chinese university on US blacklist bought Nvidia H200 AI chips: report</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 遭美國列入黑名單的中國大學仍取得輝達H200晶片，恐引發美方對出口管制的進一步審查與收緊，對半導體設備及AI晶片股帶來短線地緣政治壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-11 22:26]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Anthropic啟動兆元IPO AI工具問世微軟股價承壓</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Anthropic啟動兆元規模IPO並推出新AI工具，加劇市場競爭，對微軟等現有AI巨頭股價形成估值與市佔率的承壓。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>MSFT,AI</code></p>
+</li>
+<li>
+<p><strong>[11-11 22:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> A 50 basis points rate hike? Warsh’s Fed has a communication problem - The Globe and Mail</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 市場討論聯準會潛在的升息動向與溝通問題，牽動全球債市殖利率與美元匯率波動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[11-11 22:06]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> Spain sees widespread disruption in first general strike for 14 years</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 西班牙14年來首次大罷工引發社會與運輸干擾，對歐洲區域經濟與西班牙股市造成短期壓力。</p>
+</li>
+<li>
+<p><strong>[11-11 22:06]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> October 2026 CPI Report: Inflation Beats Forecasts - Hoodline</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 10月CPI通膨數據超預期升溫，加大Fed利率路徑壓力，美債殖利率與美元上揚，對美股科技及風險資產形成賣壓，並牽動次日PPI生產者物價指數預期。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債殖利率,SPY</code></p>
+</li>
+<li>
+<p><strong>[11-11 22:03]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][positive]</strong> Vanguard says inflation is closer to 2% than Tuesday’s CPI suggests - TheStreet</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Vanguard指出實際通膨接近2%緩解部分市場恐慌，對平衡CPI過熱的悲觀情緒有正面作用。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,美債殖利率</code></p>
+</li>
+<li>
+<p><strong>[11-11 21:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Fed's Goolsbee calls October inflation 'borderline disturbing' - Quartz</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 聯準會官員 Goolsbee 稱 10 月通膨數據邊緣令人不安，呼應隨後登場的 PPI 生產者物價指數壓力，壓抑降息預期並支撐美元。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[11-11 21:51]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> Chicago Fed chief calls October inflation 'borderline disturbing' - Quartz</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 芝加哥聯準銀行總裁稱10月CPI通膨數據「邊緣令人不安」，強化鷹派預期，加速美股賣壓並打壓台股等亞股氣氛。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,SPY,2330</code></p>
+</li>
+<li>
+<p><strong>[11-11 21:37]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Micron and other AI stocks surge as CoreWeave calms Wall Street’s worst fears</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: CoreWeave 財測超預期並釋出債務紀律訊號，化解市場對 AI 泡沫疑慮，帶動美光及整體晶片股強勁反彈。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>MU,NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-11 21:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> CoreWeave stock pops 15% after outlook raise eases AI slowdown concerns</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: CoreWeave 財測大增 15%，有效緩解投資人對 AI 放緩與新雲端服務商（Neoclouds）財務健康度的疑慮。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-11 21:33]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][neutral]</strong> Gold, silver rebound after CPI-driven selloff, Hormuz tensions lift crude oil - Kitco AM Report - Kitco</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 金銀價格在 CPI 引發的賣壓後反彈，荷姆茲海峽與地緣政治緊張則推升原油價格，商品市場分化。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[11-11 21:32]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][negative]</strong> US Stock Market Today: S&amp;P 500 Futures Firm On Hot CPI Fed Repricing - Simply Wall St</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 受 10 月 CPI 與緊接而來的 PPI 排期數據影響，市場對 Fed 降息預期重新定價，美股期貨韌性展現但在高利率壓力下承壓。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>S&amp;P 500,美元指數</code></p>
+</li>
+<li>
+<p><strong>[11-11 21:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][positive]</strong> 俄外交官：莫斯科可與北約成員國締結互不侵犯條約</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 俄羅斯考慮與北約簽署互不侵犯條約，若成行有助緩解歐洲地緣政治緊張，對歐股與全球風險情緒屬正面。</p>
+</li>
+<li>
+<p><strong>[11-11 21:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][positive]</strong> Ukrainian Drone Attack Sparks Fire at Russia's Key Baltic Oil Export Hub - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 烏克蘭無人機襲擊俄羅斯波羅的海關鍵石油出口樞紐引發火災，直接推升原油供應中斷疑慮與油價。</p>
+</li>
+<li>
+<p><strong>[11-11 21:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 國家核心關鍵技術將增4項 高階AI載板、無人機、低軌衛星通訊、腸病毒疫苗製造入列</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台灣將高階AI載板、無人機與低軌衛星列入國家核心關鍵技術，強化半導體與航太供應鏈保護與政策利多。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,3231,2382</code></p>
+</li>
+<li>
+<p><strong>[11-11 21:19]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[債市][negative]</strong> Global bonds reel as hot U.S. CPI and hawkish Fed revive 50-bp hike fears</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國通膨高於預期與聯準會鷹派言論引發全球債市重挫，市場擔憂50個基點升息，美債殖利率跳升。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>US10Y,美元指數</code></p>
+</li>
+<li>
+<p><strong>[11-11 21:19]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Anthropic’s I.P.O. and the Clubby Business of A.I.</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Anthropic即將進行IPO，大型AI投資人與合作夥伴（如Nvidia）連動深，帶動AI板塊關注度。</li>
+<li><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></li>
+</ul>
+<hr />
+<h2 id="_4">分類彙整</h2>
+<h3 id="47">股市（47）</h3>
+<ul>
+<li><strong>[11-11 23:53]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Democrats could snarl Trump administration stakes in companies; Watch U.S. Steel CEO speak</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 川普政府持有企業股權引發民主黨關切，對個股與市場政策帶來不確定性，整體影響有限。</p>
+</li>
+<li>
+<p><strong>[11-11 23:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Silicon Valley Tech Allies Support Jensen Huang</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 矽谷科技巨頭力挺輝達執行長黃仁勳，化解市場對安全問題的擔憂，利於維持AI龍頭股價穩定。</p>
+</li>
+<li>
+<p><strong>[11-11 23:26]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> CoreWeave財報超猛！美股開盤費半飆4.74%　台積電ADR大漲4.10%、輝達強彈2.62%</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: CoreWeave財報強勁帶動費半大漲4.74%、台積電ADR大漲4.10%，提振全球AI供應鏈信心。</p>
+</li>
+<li>
+<p><strong>[11-11 23:26]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> CoreWeave CEO Intrator tells CNBC he has canceled his planned share sale program</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: CoreWeave執行長取消股票出售計畫並上修財報預測，強化市場對雲端與資料中心建設的信心。</p>
+</li>
+<li>
+<p><strong>[11-11 23:26]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> CoreWeave just gave a shot in the arm to Micron, Lumentum and the rest of the AI trade</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: CoreWeave財報化解市場對AI泡沫與債務疑慮，激勵美光等記憶體與晶片股全面大漲。</p>
+</li>
+<li>
+<p><strong>[11-11 23:25]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Why Is the Stock Market Up Today? S&amp;P 500 Rises as Nvidia and CoreWeave Rally - Coinpaper</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股受輝達與CoreWeave反彈帶動，S&amp;P 500走高，提振科技股信心。</p>
+</li>
+<li>
+<p><strong>[11-11 23:24]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Earnings call transcript: DCM tops revenue forecasts in Q3 2026 as shares rise</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: DCM Q3 2026 營收優於預期，推動股價上漲，對個股屬正面激勵。</p>
+</li>
+<li>
+<p><strong>[11-11 23:21]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> US stock market today: S&amp;P 500 and Nasdaq race towards record highs as Nvidia leads AI stock comeback, Cor - The Economic Times</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股S&amp;P 500與那斯達克指數衝向歷史新高，輝達領軍AI概念股反彈。</p>
+</li>
+<li>
+<p><strong>[11-11 23:20]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> UBS cuts Aramark stock price target on datacenter revenue timing</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 瑞銀因資料中心營收時程問題調降Aramark目標價，對個股股價造成壓抑。</p>
+</li>
+<li>
+<p><strong>[11-11 23:20]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Palo Alto Networks options suggest 8.7% move on earnings</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Palo Alto Networks選擇權隱含財報公布後將有8.7%的大幅波動，市場觀望氣氛濃。</p>
+</li>
+<li>
+<p><strong>[11-11 23:19]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 黃仁勳跌倒誰受惠？分析師點名這兩家 認對台不利</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 輝達執行長黃仁勳私生活與涉諜爭議延燒，股價下跌且分析師擔憂對台廠供應鏈不利。</p>
+</li>
+<li>
+<p><strong>[11-11 23:16]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> US Stock Market Today: Nasdaq Jumps 1.60%, S&amp;P 500 Up - HDFC Sky</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股今日那斯達克大漲1.60%，S&amp;P 500同步走揚，市場風險偏好升溫。</p>
+</li>
+<li>
+<p><strong>[11-11 23:14]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 黃仁勳醜聞恐衝擊台積電？分析師：不受影響</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 分析師認為黃仁勳醜聞對台積電實質影響有限，台廠供應鏈基本面暫安。</p>
+</li>
+<li>
+<p><strong>[11-11 23:13]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> CoreWeave soars 20% as CEO reaffirms AI compute demand after strong Q3 report</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: CoreWeave財報強勁並重申AI算力需求強勁，化解市場對AI資本支出可持續性的疑慮，推升美股科技股與相關供應鏈表現。</p>
+</li>
+<li>
+<p><strong>[11-11 23:11]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> S&amp;P 500, Nasdaq rise as CoreWeave results ease AI spending worries - Reuters</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: CoreWeave財報佳緩解AI支出擔憂，帶動S&amp;P 500與Nasdaq指數上揚，資金回流科技股。</p>
+</li>
+<li>
+<p><strong>[11-11 23:10]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> S&amp;P 500, Nasdaq rise as CoreWeave results ease AI spending worries - TradingView</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 重複報導CoreWeave財報帶動S&amp;P 500與Nasdaq走高，反映市場對AI支出的信心修復。</p>
+</li>
+<li>
+<p><strong>[11-11 23:07]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> S&amp;P 500 Opens Up 0.8% as Nasdaq Surges and Dow Lags - 24/7 Wall St.</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 科技股領軍推動Nasdaq飆升、S&amp;P 500上開0.8%，道瓊相對落後，反映資金集中於成長型科技股。</p>
+</li>
+<li>
+<p><strong>[11-11 23:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Goldman Sachs, HSBC partner for $150M financing to United Saudi Company - report</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 高盛與匯豐聯手提供1.5億美元融資給United Saudi Company，有利中東地區企業資本運作與金融機構利息收入。</p>
+</li>
+<li>
+<p><strong>[11-11 23:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> JetBlue's CEO has pushed back on creditor fears and is betting on premium to return to profitability</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 捷藍航空執行長透過推動高端座位策略以應對債權人擔憂並重返獲利，對航空股個別公司營運具指標意義。</p>
+</li>
+<li>
+<p><strong>[11-11 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Dow, S&amp;P 500, NASDAQ Futures Rise as CoreWeave Earnings Spark Tech Stock Rebound - Analytics Insight</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: CoreWeave財報強勁緩解AI過度支出疑慮，帶動美股期貨與科技股全面反彈。</p>
+</li>
+<li>
+<p><strong>[11-11 22:58]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> AI疑慮暫緩！CoreWeave財報報喜　美股3大指數齊揚</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: CoreWeave財報報喜消弭市場對AI支出的疑慮，推升美股3大指數開盤走揚。</p>
+</li>
+<li>
+<p><strong>[11-11 22:57]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> CoreWeave財報超猛！美股開盤費半飆升4.74%　台積電ADR大漲4.10%</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: CoreWeave營收超越預期，激勵費城半導體指數大漲4.74%，台積電ADR大漲4.10%。</p>
+</li>
+<li>
+<p><strong>[11-11 22:57]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> CoreWeave財報提振AI交易　美國股市開盤走揚</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: AI雲端業者財報強勁提振信心，美股開盤走高，降低市場恐慌情緒。</p>
+</li>
+<li>
+<p><strong>[11-11 22:57]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 台股明天要噴了？CoreWeave營收暴增168%點燃AI行情美股費半狂飆3.42%、台積電ADR也大漲3.40% - Yahoo股市</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: CoreWeave營收暴增點燃AI行情，美股費半大漲，有利台股隔日開高。</p>
+</li>
+<li>
+<p><strong>[11-11 22:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> CoreWeave CEO says 'new political reality' after midterms won't slow buildout</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: CoreWeave財報佳且上調財測，顯示AI基礎設施需求依舊強勁，對美股AI供應鏈帶來正面情緒。</p>
+</li>
+<li>
+<p><strong>[11-11 22:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 輝達反彈領漲科技股！美股開盤費半漲300點</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 輝達反彈領漲科技股，配合CoreWeave財報利多，推升美股費半強勢上攻。</p>
+</li>
+<li>
+<p><strong>[11-11 22:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> China's central bank vows to step up support and keep stock markets stable after state-backed funds poured 76.7 billion yuan into ETFs - MLQ.ai</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 中國央行與國家隊持續投入資金支撐陸股ETF，有助於穩定市場信心並支撐中港股市。</p>
+</li>
+<li>
+<p><strong>[11-11 22:49]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> 輝達回彈3％！ 費半飆漲逾400點 台指期夜盤漲159點</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 結合美國10月CPI高於預期與CoreWeave強勁財報，費半飆漲逾400點，台指期夜盤大漲159點。</p>
+</li>
+<li>
+<p><strong>[11-11 22:49]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> CFTC investigates if Kalshi improperly self-certified event contracts</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: CFTC調查Kalshi事件合約，對整體預測市場與新創金融合規帶來短暫觀望氣氛。</p>
+</li>
+<li>
+<p><strong>[11-11 22:44]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Cellebrite earnings ahead as investors eye ARR rebound</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Cellebrite即將公布財報，市場聚焦ARR（年度經常性收入）回彈表現，影響侷限於個股。</p>
+</li>
+<li>
+<p><strong>[11-11 22:40]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> CoreWeave stock pops 12% after outlook raise eases AI slowdown concerns</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: CoreWeave財報大好帶動股價飆升，緩解市場對AI泡沫與雲端支出放緩的疑慮。</p>
+</li>
+<li>
+<p><strong>[11-11 22:38]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> TWA00 加權指數- 今天打開看盤軟體，看到台郡、南茂、尖點這三檔，我心裡第一個念... - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 散戶投資人對台股特定個股（台郡、南茂、尖點）的討論，屬零售情緒，對大盤無系統性影響。</p>
+</li>
+<li>
+<p><strong>[11-11 22:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Nvidia shares rebound as Jensen Huang faces scrutiny ahead of earnings</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 執行長黃仁勳面臨私生活審查，投資人評估其對輝達業務的潛在連動，股價雖反彈但仍受消息面擾動。</p>
+</li>
+<li>
+<p><strong>[11-11 22:26]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Anthropic啟動兆元IPO AI工具問世微軟股價承壓</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Anthropic啟動兆元規模IPO並推出新AI工具，加劇市場競爭，對微軟等現有AI巨頭股價形成估值與市佔率的承壓。</p>
+</li>
+<li>
+<p><strong>[11-11 22:25]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Earnings call transcript: Cury Construtora tops revenue in Q3 2026, shares rise</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Cury Construtora Q3營收超預期帶動股價上漲，對區域營建類股具正面激勵效果。</p>
+</li>
+<li>
+<p><strong>[11-11 22:18]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> TWA00 加權指數- 每天收盤後，我都會泡一杯茶，再靜下心來看看今天的線型和籌碼。... - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 散戶投資心得分享，屬個人社群言論，對台股加權指數無實質市場影響。</p>
+</li>
+<li>
+<p><strong>[11-11 22:14]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Wall Street Futures Rise as CoreWeave Earnings Support Technology Stocks Ahead of US Market Open: Dow Jones, S&amp;P, Nasdaq - Yahoo Finance</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: CoreWeave財報表現優於預期，支撐美股盤前科技股與期貨走勢，顯示AI基礎設施需求依舊強勁。</p>
+</li>
+<li>
+<p><strong>[11-11 21:53]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> TWA00 加權指數- PC NB市場算什麼，放眼整個機器人世界- 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 網路論壇對機器人產業的泛論，資訊不足，對台股加權指數無直接影響。</p>
+</li>
+<li>
+<p><strong>[11-11 21:50]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Stock Market Sell-Off: The 5 Best Stocks to Buy in November - AOL.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股大盤賣後尋找佈局機會，提供投資者11月逢低承接優質標的的指引。</p>
+</li>
+<li>
+<p><strong>[11-11 21:40]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> How Democrats could snarl Trump administration stakes in private sector companies</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 探討川普政府在民間企業持股之政治與法律風險，對特定企業治理與監管帶來不確定性，但對大盤無直接系統性影響。</p>
+</li>
+<li>
+<p><strong>[11-11 21:37]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Micron and other AI stocks surge as CoreWeave calms Wall Street’s worst fears</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: CoreWeave 財測超預期並釋出債務紀律訊號，化解市場對 AI 泡沫疑慮，帶動美光及整體晶片股強勁反彈。</p>
+</li>
+<li>
+<p><strong>[11-11 21:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> CoreWeave stock pops 15% after outlook raise eases AI slowdown concerns</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: CoreWeave 財測大增 15%，有效緩解投資人對 AI 放緩與新雲端服務商（Neoclouds）財務健康度的疑慮。</p>
+</li>
+<li>
+<p><strong>[11-11 21:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Stock Market Sell-Off: The 5 Best Stocks to Buy in November - The Motley Fool</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 市場近期賣壓為投資人提供 11 月優質股票的逢低承接機會，提振長線資金進場信心。</p>
+</li>
+<li>
+<p><strong>[11-11 21:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 國家核心關鍵技術將增4項 高階AI載板、無人機、低軌衛星通訊、腸病毒疫苗製造入列</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台灣將高階AI載板、無人機與低軌衛星列入國家核心關鍵技術，強化半導體與航太供應鏈保護與政策利多。</p>
+</li>
+<li>
+<p><strong>[11-11 21:20]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> TWA00 加權指數- 今天打開看盤軟體，看到華經、南亞科、泰鼎-KY這三檔，我心裡... - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 散戶投資討論文章，無實質宏觀或產業重大利多利空數據，對市場影響有限。</p>
+</li>
+<li>
+<p><strong>[11-11 21:20]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> EuroDry earnings beat by $0.93, revenue fell short of estimates</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: EuroDry每股盈餘優於預期但營收不如預期，散裝航運個股財報分化，對大盤聯動有限。</p>
+</li>
+<li>
+<p><strong>[11-11 21:19]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Anthropic’s I.P.O. and the Clubby Business of A.I.</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Anthropic即將進行IPO，大型AI投資人與合作夥伴（如Nvidia）連動深，帶動AI板塊關注度。</li>
+</ul>
+<h3 id="3">債市（3）</h3>
+<ul>
+<li><strong>[11-11 23:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Inflation Fears Push Treasury Yields Further Above Fair Value - Seeking Alpha</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 通膨擔憂推升美債殖利率高於公允價值，壓抑債市表現並支撐美元走勢，對股市評價帶來壓力。</p>
+</li>
+<li>
+<p><strong>[11-11 21:20]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Central Bank of Nigeria Allots N3.85 Trillion in OMO Bills Amid High Investor Demand - streamlinefeed.co.ke</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 奈及利亞央行發行OMO票據吸引強勁需求，對全球主要金融市場影響極為有限。</p>
+</li>
+<li>
+<p><strong>[11-11 21:19]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Global bonds reel as hot U.S. CPI and hawkish Fed revive 50-bp hike fears</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國通膨高於預期與聯準會鷹派言論引發全球債市重挫，市場擔憂50個基點升息，美債殖利率跳升。</li>
+</ul>
+<h3 id="5">商品(油金)（5）</h3>
+<ul>
+<li><strong>[11-11 23:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Saudi Crude Output Jumps 26% as Riyadh Reports Near Pre-War Production - Crude Oil Prices Today | OilPrice.com</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 沙烏地原油產量大增26%接近戰前水準，供給增加壓抑國際油價，舒緩全球通膨壓力。</p>
+</li>
+<li>
+<p><strong>[11-11 23:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> 油價飆、高風險共振！高柴油時代逼車隊把「每一滴油」都榨成獲利 - CMoney投資網誌</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 高油價與高柴油時代增加運輸業成本壓抑獲利，對物流與實體經濟形成通膨與成本壓力。</p>
+</li>
+<li>
+<p><strong>[11-11 22:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> India Approves $7.3 Billion High-Capacity Power Link to Back Renewables - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 印度批准73億美元高容量電網建設以支持再生能源，有利於綠能基建供應鏈，對傳統原油需求中長線有替代壓抑效果。</p>
+</li>
+<li>
+<p><strong>[11-11 21:33]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Gold, silver rebound after CPI-driven selloff, Hormuz tensions lift crude oil - Kitco AM Report - Kitco</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 金銀價格在 CPI 引發的賣壓後反彈，荷姆茲海峽與地緣政治緊張則推升原油價格，商品市場分化。</p>
+</li>
+<li>
+<p><strong>[11-11 21:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Ukrainian Drone Attack Sparks Fire at Russia's Key Baltic Oil Export Hub - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 烏克蘭無人機襲擊俄羅斯波羅的海關鍵石油出口樞紐引發火災，直接推升原油供應中斷疑慮與油價。</li>
+</ul>
+<h3 id="4">地緣政治（4）</h3>
+<ul>
+<li><strong>[11-11 23:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Mississippi Senate: Scott Colom leads Hyde-Smith by more than 3,000 votes</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 密西西比州參議員選情膠著，對全國宏觀經濟與金融市場無直接影響。</p>
+</li>
+<li>
+<p><strong>[11-11 22:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Chinese university on US blacklist bought Nvidia H200 AI chips: report</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 遭美國列入黑名單的中國大學仍取得輝達H200晶片，恐引發美方對出口管制的進一步審查與收緊，對半導體設備及AI晶片股帶來短線地緣政治壓力。</p>
+</li>
+<li>
+<p><strong>[11-11 22:06]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Spain sees widespread disruption in first general strike for 14 years</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 西班牙14年來首次大罷工引發社會與運輸干擾，對歐洲區域經濟與西班牙股市造成短期壓力。</p>
+</li>
+<li>
+<p><strong>[11-11 21:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 俄外交官：莫斯科可與北約成員國締結互不侵犯條約</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 俄羅斯考慮與北約簽署互不侵犯條約，若成行有助緩解歐洲地緣政治緊張，對歐股與全球風險情緒屬正面。</li>
+</ul>
+<h3 id="7">總體經濟（7）</h3>
+<ul>
+<li><strong>[11-11 22:45]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Fed officials signal faster rate hikes after hot October inflation - Quartz</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 受10月通膨數據高於預期影響（預告明日PPI與通膨走勢），Fed官員釋出加快升息訊號，推升美債殖利率並打壓全球股市評價。</p>
+</li>
+<li>
+<p><strong>[11-11 22:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> A 50 basis points rate hike? Warsh’s Fed has a communication problem - The Globe and Mail</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 市場討論聯準會潛在的升息動向與溝通問題，牽動全球債市殖利率與美元匯率波動。</p>
+</li>
+<li>
+<p><strong>[11-11 22:06]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> October 2026 CPI Report: Inflation Beats Forecasts - Hoodline</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 10月CPI通膨數據超預期升溫，加大Fed利率路徑壓力，美債殖利率與美元上揚，對美股科技及風險資產形成賣壓，並牽動次日PPI生產者物價指數預期。</p>
+</li>
+<li>
+<p><strong>[11-11 22:03]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Vanguard says inflation is closer to 2% than Tuesday’s CPI suggests - TheStreet</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Vanguard指出實際通膨接近2%緩解部分市場恐慌，對平衡CPI過熱的悲觀情緒有正面作用。</p>
+</li>
+<li>
+<p><strong>[11-11 21:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Fed's Goolsbee calls October inflation 'borderline disturbing' - Quartz</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 聯準會官員 Goolsbee 稱 10 月通膨數據邊緣令人不安，呼應隨後登場的 PPI 生產者物價指數壓力，壓抑降息預期並支撐美元。</p>
+</li>
+<li>
+<p><strong>[11-11 21:51]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Chicago Fed chief calls October inflation 'borderline disturbing' - Quartz</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 芝加哥聯準銀行總裁稱10月CPI通膨數據「邊緣令人不安」，強化鷹派預期，加速美股賣壓並打壓台股等亞股氣氛。</p>
+</li>
+<li>
+<p><strong>[11-11 21:32]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> US Stock Market Today: S&amp;P 500 Futures Firm On Hot CPI Fed Repricing - Simply Wall St</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 受 10 月 CPI 與緊接而來的 PPI 排期數據影響，市場對 Fed 降息預期重新定價，美股期貨韌性展現但在高利率壓力下承壓。</li>
+</ul>
+<h3 id="14">其他（14）</h3>
+<ul>
+<li><strong>[11-11 23:08]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> From living in his car to a 756 credit score: How one veteran rebuilt his finances</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 個人信用與財務重建故事，屬於社會人文與個人理財範疇，對總體金融市場無實質影響。</p>
+</li>
+<li>
+<p><strong>[11-11 22:46]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Nvidia Scandal Puts Lori Huang, Jensen Huang’s Wife, In the Spotlight</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 執行長家務事新聞，對實質金融市場無直接重大影響。</p>
+</li>
+<li>
+<p><strong>[11-11 22:46]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Jensen Huang’s Affair Puts His Wife, Lori Huang, In the Spotlight</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 執行長個人新聞，對公司基本面與財務無直接實質影響。</p>
+</li>
+<li>
+<p><strong>[11-11 22:45]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Fed officials signal faster rate hikes as October inflation runs hot - Quartz</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-11 22:44]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Indonesia Sets October Crude Oil Price at US$117.24 per Barrel - Tempo.co English</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-11 22:42]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Stock Market Today: Nasdaq, S&amp;P 500 Jump as Chip Stocks Rally, CoreWeave Soars After Earnings; Nvidia Rebounds After Steep Losses - Investopedia</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-11 22:40]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 〈美股早盤〉CoreWeave財報助攻！那指領漲 台積電ADR漲逾4%</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-11 22:39]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Stock market today: S&amp;P 500, Nasdaq rise as Nvidia stock recovers, chip stocks rally after CoreWeave earnings - Yahoo Finance</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-11 22:37]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 雙鴻第3季毛利率降　每股純益11.59元寫歷史次高</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-11 22:35]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 美NGO：瓦格納非法掠奪中非伐木收益 資助俄烏戰爭</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-11 22:24]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> My friend hates her job but shuts down when I give her advice. How can I help her?</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 職場諮商與人際互動建議，對全球金融市場無直接實質影響。</p>
+</li>
+<li>
+<p><strong>[11-11 22:15]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> US Stock Futures Advance as CoreWeave Earnings Lift Technology Shares Despite Inflation Concerns: Dow Jones, S&amp;P, Nasdaq, Wall Street - Yahoo Finance UK</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-11 22:11]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 美光看起來超便宜？高盛：挑記憶體股別只看本益比</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-11 21:58]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> TWA00 加權指數- ✨️短線跟著趨勢衝🚀 - 股市爆料同學會 - CMoney</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 無</li>
+</ul>
+<hr />
+<h2 id="_5">全部事件</h2>
+<ul>
+<li><strong>[11-11 23:53]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Democrats could snarl Trump administration stakes in companies; Watch U.S. Steel CEO speak <code>cnbc</code></li>
+<li><strong>[11-11 23:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Inflation Fears Push Treasury Yields Further Above Fair Value - Seeking Alpha <code>google-news:Treasury yields</code></li>
+<li><strong>[11-11 23:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Mississippi Senate: Scott Colom leads Hyde-Smith by more than 3,000 votes <code>cnbc</code></li>
+<li><strong>[11-11 23:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Silicon Valley Tech Allies Support Jensen Huang <code>nytbusiness</code></li>
+<li><strong>[11-11 23:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Saudi Crude Output Jumps 26% as Riyadh Reports Near Pre-War Production - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[11-11 23:26]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> CoreWeave財報超猛！美股開盤費半飆4.74%　台積電ADR大漲4.10%、輝達強彈2.62% <code>yahoo-tw-finance</code></li>
+<li><strong>[11-11 23:26]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> CoreWeave CEO Intrator tells CNBC he has canceled his planned share sale program <code>cnbc</code></li>
+<li><strong>[11-11 23:26]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> CoreWeave just gave a shot in the arm to Micron, Lumentum and the rest of the AI trade <code>marketwatch</code></li>
+<li><strong>[11-11 23:25]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Why Is the Stock Market Up Today? S&amp;P 500 Rises as Nvidia and CoreWeave Rally - Coinpaper <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-11 23:24]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Earnings call transcript: DCM tops revenue forecasts in Q3 2026 as shares rise <code>investing-com</code></li>
+<li><strong>[11-11 23:21]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> US stock market today: S&amp;P 500 and Nasdaq race towards record highs as Nvidia leads AI stock comeback, Cor - The Economic Times <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-11 23:20]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> UBS cuts Aramark stock price target on datacenter revenue timing <code>investing-com</code></li>
+<li><strong>[11-11 23:20]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Palo Alto Networks options suggest 8.7% move on earnings <code>investing-com</code></li>
+<li><strong>[11-11 23:19]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 黃仁勳跌倒誰受惠？分析師點名這兩家 認對台不利 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-11 23:16]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> US Stock Market Today: Nasdaq Jumps 1.60%, S&amp;P 500 Up - HDFC Sky <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-11 23:14]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 黃仁勳醜聞恐衝擊台積電？分析師：不受影響 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-11 23:13]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> CoreWeave soars 20% as CEO reaffirms AI compute demand after strong Q3 report <code>cnbc</code></li>
+<li><strong>[11-11 23:11]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> S&amp;P 500, Nasdaq rise as CoreWeave results ease AI spending worries - Reuters <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-11 23:10]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> S&amp;P 500, Nasdaq rise as CoreWeave results ease AI spending worries - TradingView <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-11 23:08]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> From living in his car to a 756 credit score: How one veteran rebuilt his finances <code>marketwatch</code></li>
+<li><strong>[11-11 23:07]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> S&amp;P 500 Opens Up 0.8% as Nasdaq Surges and Dow Lags - 24/7 Wall St. <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-11 23:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 油價飆、高風險共振！高柴油時代逼車隊把「每一滴油」都榨成獲利 - CMoney投資網誌 <code>google-news:油價</code></li>
+<li><strong>[11-11 23:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Goldman Sachs, HSBC partner for $150M financing to United Saudi Company - report <code>seekingalpha</code></li>
+<li><strong>[11-11 23:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> JetBlue's CEO has pushed back on creditor fears and is betting on premium to return to profitability <code>cnbc</code></li>
+<li><strong>[11-11 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Dow, S&amp;P 500, NASDAQ Futures Rise as CoreWeave Earnings Spark Tech Stock Rebound - Analytics Insight <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-11 22:58]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> AI疑慮暫緩！CoreWeave財報報喜　美股3大指數齊揚 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-11 22:57]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> CoreWeave財報超猛！美股開盤費半飆升4.74%　台積電ADR大漲4.10% <code>yahoo-tw-finance</code></li>
+<li><strong>[11-11 22:57]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> CoreWeave財報提振AI交易　美國股市開盤走揚 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-11 22:57]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 台股明天要噴了？CoreWeave營收暴增168%點燃AI行情美股費半狂飆3.42%、台積電ADR也大漲3.40% - Yahoo股市 <code>google-news:台股 大漲</code></li>
+<li><strong>[11-11 22:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> CoreWeave CEO says 'new political reality' after midterms won't slow buildout <code>cnbc</code></li>
+<li><strong>[11-11 22:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 輝達反彈領漲科技股！美股開盤費半漲300點 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-11 22:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> China's central bank vows to step up support and keep stock markets stable after state-backed funds poured 76.7 billion yuan into ETFs - MLQ.ai <code>google-news:central bank policy</code></li>
+<li><strong>[11-11 22:49]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 輝達回彈3％！ 費半飆漲逾400點 台指期夜盤漲159點 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-11 22:49]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> CFTC investigates if Kalshi improperly self-certified event contracts <code>cnbc</code></li>
+<li><strong>[11-11 22:46]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Nvidia Scandal Puts Lori Huang, Jensen Huang’s Wife, In the Spotlight <code>nytbusiness</code></li>
+<li><strong>[11-11 22:46]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Jensen Huang’s Affair Puts His Wife, Lori Huang, In the Spotlight <code>nytbusiness</code></li>
+<li><strong>[11-11 22:45]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Fed officials signal faster rate hikes as October inflation runs hot - Quartz <code>google-news:inflation CPI</code></li>
+<li><strong>[11-11 22:45]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Fed officials signal faster rate hikes after hot October inflation - Quartz <code>google-news:inflation CPI</code></li>
+<li><strong>[11-11 22:44]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Indonesia Sets October Crude Oil Price at US$117.24 per Barrel - Tempo.co English <code>google-news:oil price crude</code></li>
+<li><strong>[11-11 22:44]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Cellebrite earnings ahead as investors eye ARR rebound <code>investing-com</code></li>
+<li><strong>[11-11 22:42]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Stock Market Today: Nasdaq, S&amp;P 500 Jump as Chip Stocks Rally, CoreWeave Soars After Earnings; Nvidia Rebounds After Steep Losses - Investopedia <code>google-news:stock market rally</code></li>
+<li><strong>[11-11 22:40]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> CoreWeave stock pops 12% after outlook raise eases AI slowdown concerns <code>cnbc</code></li>
+<li><strong>[11-11 22:40]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 〈美股早盤〉CoreWeave財報助攻！那指領漲 台積電ADR漲逾4% <code>yahoo-tw-finance</code></li>
+<li><strong>[11-11 22:39]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Stock market today: S&amp;P 500, Nasdaq rise as Nvidia stock recovers, chip stocks rally after CoreWeave earnings - Yahoo Finance <code>google-news:stock market rally</code></li>
+<li><strong>[11-11 22:38]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> TWA00 加權指數- 今天打開看盤軟體，看到台郡、南茂、尖點這三檔，我心裡第一個念... - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-11 22:37]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 雙鴻第3季毛利率降　每股純益11.59元寫歷史次高 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-11 22:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Chinese university on US blacklist bought Nvidia H200 AI chips: report <code>seekingalpha</code></li>
+<li><strong>[11-11 22:35]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 美NGO：瓦格納非法掠奪中非伐木收益 資助俄烏戰爭 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-11 22:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Nvidia shares rebound as Jensen Huang faces scrutiny ahead of earnings <code>cnbc</code></li>
+<li><strong>[11-11 22:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> India Approves $7.3 Billion High-Capacity Power Link to Back Renewables - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[11-11 22:26]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Anthropic啟動兆元IPO AI工具問世微軟股價承壓 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-11 22:25]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Earnings call transcript: Cury Construtora tops revenue in Q3 2026, shares rise <code>investing-com</code></li>
+<li><strong>[11-11 22:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> A 50 basis points rate hike? Warsh’s Fed has a communication problem - The Globe and Mail <code>google-news:Fed Powell</code></li>
+<li><strong>[11-11 22:24]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> My friend hates her job but shuts down when I give her advice. How can I help her? <code>marketwatch</code></li>
+<li><strong>[11-11 22:18]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> TWA00 加權指數- 每天收盤後，我都會泡一杯茶，再靜下心來看看今天的線型和籌碼。... - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-11 22:15]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> US Stock Futures Advance as CoreWeave Earnings Lift Technology Shares Despite Inflation Concerns: Dow Jones, S&amp;P, Nasdaq, Wall Street - Yahoo Finance UK <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-11 22:14]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Wall Street Futures Rise as CoreWeave Earnings Support Technology Stocks Ahead of US Market Open: Dow Jones, S&amp;P, Nasdaq - Yahoo Finance <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-11 22:11]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 美光看起來超便宜？高盛：挑記憶體股別只看本益比 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-11 22:06]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Spain sees widespread disruption in first general strike for 14 years <code>bbcbusiness</code></li>
+<li><strong>[11-11 22:06]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> October 2026 CPI Report: Inflation Beats Forecasts - Hoodline <code>google-news:inflation CPI</code></li>
+<li><strong>[11-11 22:03]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Vanguard says inflation is closer to 2% than Tuesday’s CPI suggests - TheStreet <code>google-news:inflation CPI</code></li>
+<li><strong>[11-11 21:58]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> TWA00 加權指數- ✨️短線跟著趨勢衝🚀 - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-11 21:53]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> TWA00 加權指數- PC NB市場算什麼，放眼整個機器人世界- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-11 21:51]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Chicago Fed chief calls October inflation 'borderline disturbing' - Quartz <code>google-news:inflation CPI</code></li>
+<li><strong>[11-11 21:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Fed's Goolsbee calls October inflation 'borderline disturbing' - Quartz <code>google-news:inflation CPI</code></li>
+<li><strong>[11-11 21:50]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Stock Market Sell-Off: The 5 Best Stocks to Buy in November - AOL.com <code>google-news:stock market selloff</code></li>
+<li><strong>[11-11 21:40]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> How Democrats could snarl Trump administration stakes in private sector companies <code>cnbc</code></li>
+<li><strong>[11-11 21:37]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Micron and other AI stocks surge as CoreWeave calms Wall Street’s worst fears <code>marketwatch</code></li>
+<li><strong>[11-11 21:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> CoreWeave stock pops 15% after outlook raise eases AI slowdown concerns <code>cnbc</code></li>
+<li><strong>[11-11 21:33]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Gold, silver rebound after CPI-driven selloff, Hormuz tensions lift crude oil - Kitco AM Report - Kitco <code>google-news:inflation CPI</code></li>
+<li><strong>[11-11 21:32]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> US Stock Market Today: S&amp;P 500 Futures Firm On Hot CPI Fed Repricing - Simply Wall St <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-11 21:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 俄外交官：莫斯科可與北約成員國締結互不侵犯條約 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-11 21:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Stock Market Sell-Off: The 5 Best Stocks to Buy in November - The Motley Fool <code>google-news:stock market selloff</code></li>
+<li><strong>[11-11 21:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Ukrainian Drone Attack Sparks Fire at Russia's Key Baltic Oil Export Hub - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[11-11 21:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 國家核心關鍵技術將增4項 高階AI載板、無人機、低軌衛星通訊、腸病毒疫苗製造入列 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-11 21:20]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> TWA00 加權指數- 今天打開看盤軟體，看到華經、南亞科、泰鼎-KY這三檔，我心裡... - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-11 21:20]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Central Bank of Nigeria Allots N3.85 Trillion in OMO Bills Amid High Investor Demand - streamlinefeed.co.ke <code>google-news:central bank policy</code></li>
+<li><strong>[11-11 21:20]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> EuroDry earnings beat by $0.93, revenue fell short of estimates <code>investing-com</code></li>
+<li><strong>[11-11 21:19]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Global bonds reel as hot U.S. CPI and hawkish Fed revive 50-bp hike fears <code>investing-com</code></li>
+<li><strong>[11-11 21:19]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Anthropic’s I.P.O. and the Clubby Business of A.I. <code>nytbusiness</code></li>
+</ul>
+    </article>
+  
+</div>
+<footer>由金融情報系統自動發佈 · 僅供參考，不構成投資建議</footer>
+<script>
+const WEEK = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function nowParts(tz){
+  const p = {};
+  new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short', month: 'short',
+    day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
+  }).formatToParts(new Date()).forEach(x => p[x.type] = x.value);
+  return p;
+}
+function marketOpen(tz, open, close){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  return wd>=1 && wd<=5 && m>=open && m<close;
+}
+// Taiwan index-futures night session 15:00 -> next-day 05:00 (crosses midnight):
+// 15:00-24:00 Mon-Fri, plus 00:00-05:00 Tue-Sat (Sat 00:00-05:00 is Fri night session).
+function nightOpen(tz){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  if (m >= 5*60 && m < 15*60) return false;   // 05:00-15:00 recess
+  if (m >= 15*60) return wd >= 1 && wd <= 5;   // 15:00-24:00 Mon-Fri
+  return wd >= 2 && wd <= 6;                   // 00:00-05:00 Tue-Sat
+}
+function pad(n){ return String(n).padStart(2,'0'); }
+function setMkt(id, open, label){
+  const el = document.getElementById(id);
+  el.className = 'mkt ' + (open ? 'open' : 'closed');
+  el.textContent = (label ? label + ' ' : '') + (open ? '開盤中' : '未開盤');
+}
+function tick(){
+  const tw = nowParts('Asia/Taipei');
+  const ny = nowParts('America/New_York');
+  document.getElementById('clk-tw').textContent = pad(tw.hour)+':'+pad(tw.minute)+':'+pad(tw.second);
+  document.getElementById('clk-ny').textContent = pad(ny.hour)+':'+pad(ny.minute)+':'+pad(ny.second);
+  // Taiwan: TWSE weighted index 09:00-13:30; TX futures day 08:45-13:45; TX night 15:00-05:00
+  setMkt('tw-idx',  marketOpen('Asia/Taipei', 9*60, 13*60+30), '加權');
+  setMkt('tx-day',  marketOpen('Asia/Taipei', 8*60+45, 13*60+45), '期日盤');
+  setMkt('tx-night', nightOpen('Asia/Taipei'), '期夜盤');
+  // US: regular session 09:30-16:00 ET; after-hours 16:00-20:00 ET
+  setMkt('ny-mkt',  marketOpen('America/New_York', 9*60+30, 16*60), '美股');
+  setMkt('ny-night', marketOpen('America/New_York', 16*60, 20*60), '美股夜');
+}
+tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>
