@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日報告 2026-11-18</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; margin: 0;
+         background: #f5f6f8; color: #1c1e21; line-height: 1.7; }
+  header { background: #1b2a4a; color: #fff; padding: 14px 24px;
+           display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  header h1 { font-size: 18px; margin: 0; flex: 1; }
+  header nav a { color: #cdd8ee; text-decoration: none; margin-left: 14px; font-size: 14px; }
+  header nav a:hover, header nav a.active { color: #fff; text-decoration: underline; }
+  #clock { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; font-size: 13px; }
+  .clk { background: rgba(255,255,255,.08); border-radius: 6px; padding: 4px 10px; }
+  .clk-city { color: #9fb0cf; margin-right: 6px; }
+  .clk-time { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .mkt { margin-left: 8px; font-size: 12px; padding: 1px 7px; border-radius: 9px; }
+  .mkt.open { background: #2e7d32; color: #fff; }
+  .mkt.closed { background: #5a6474; color: #fff; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 20px; }
+  .card { background: #fff; border-radius: 8px; padding: 18px 22px; margin: 14px 0;
+          box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .card h3 { margin: 0 0 6px; }
+  .card a { color: #1b2a4a; text-decoration: none; }
+  .card a:hover { text-decoration: underline; }
+  .muted { color: #666; font-size: 13px; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px;
+           color: #fff; margin-left: 6px; }
+  .b-daily { background: #2e7d32; }
+  .b-deep { background: #b45309; }
+  .day-nav { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+  .day-nav a { font-size: 13px; padding: 3px 10px; background: #e8ecf3; border-radius: 12px;
+               color: #33415c; text-decoration: none; }
+  .day-nav a:hover { background: #d2dbea; }
+  article.card { line-height: 1.15; }
+  article.card p { margin: 3px 0; }
+  article.card ul, article.card ol { margin: 3px 0 6px; padding-left: 22px; }
+  article.card h1, article.card h2, article.card h3 { padding-bottom: 4px; }
+  article.card h1, article.card h2 { border-bottom: 2px solid #33415c; }
+  article.card h1 { font-size: 30px; margin-top: 8px; }
+  article.card h2 { font-size: 23px; margin-top: 12px; color: #1b2a4a;
+        border-left: 6px solid #1459c8; padding-left: 12px; }
+  article.card h3 { font-size: 19px; margin-top: 10px; color: #24365c;
+        background: #eef4fb; border-radius: 6px; padding: 4px 12px; }
+  article.card h4 { font-size: 17px; margin-top: 18px; color: #145c3a;
+        background: #e8f5ee; border-left: 4px solid #2e7d32;
+        padding: 5px 10px; border-radius: 4px; }
+  article.card h5 { font-size: 15px; margin-top: 14px; color: #4a5568;
+        font-weight: 600; }
+  article.card h4, article.card h5 { margin-bottom: 2px; }
+  article.card strong { font-weight: 700; }
+  article.card blockquote { border-left: 4px solid #9fb0cf; margin: 4px 0;
+        padding: 2px 12px; color: #4a5568; background: #f4f6fa; }
+  article.card hr { border: none; border-top: 1px dashed #c3ccdb; margin: 12px 0; }
+  article.card code { background: #eef0f4; padding: 1px 5px; border-radius: 4px;
+        font-size: 14px; font-family: Consolas, monospace; }
+  article.card pre { background: #1b2a4a; color: #e6ecf7; padding: 14px; border-radius: 8px; overflow-x: auto; }
+  article.card pre code { background: transparent; color: inherit; padding: 0; }
+  article.card table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+  article.card th, article.card td { border: 1px solid #d8dce3; padding: 6px 10px; }
+  article.card th { background: #eef1f6; }
+  article.card a { color: #1459c8; }
+  footer { text-align: center; color: #999; font-size: 12px; padding: 20px; }
+</style>
+</head>
+<body>
+  <header>
+  <h1>金融情報系統報告</h1>
+  <nav>
+    <a href="../index.html" class="">首頁</a>
+    <a href="../calendar.html" class="">行事曆</a>
+    <a href="../daily/2026-11-18.html" class="active">最新每日</a>
+    <a href="../deep/2026-11-16-pm.html" class="">最新深度</a>
+  </nav>
+  <div id="clock">
+    <span class="clk"><span class="clk-city">台北</span><span class="clk-time" id="clk-tw">--:--:--</span><span class="mkt closed" id="tw-idx">…</span><span class="mkt closed" id="tx-day">…</span><span class="mkt closed" id="tx-night">…</span></span>
+    <span class="clk"><span class="clk-city">紐約</span><span class="clk-time" id="clk-ny">--:--:--</span><span class="mkt closed" id="ny-mkt">…</span><span class="mkt closed" id="ny-night">…</span></span>
+  </div>
+</header>
+<div class="wrap">
+  
+    <div class="day-nav">
+      <a href="../index.html">← 首頁</a>
+      
+        
+        <a href="../daily/2026-11-18.html">2026-11-18</a>
+        
+        <a href="../daily/2026-11-17.html">2026-11-17</a>
+        
+        <a href="../daily/2026-11-16.html">2026-11-16</a>
+        
+        <a href="../daily/2026-11-15.html">2026-11-15</a>
+        
+        <a href="../daily/2026-11-14.html">2026-11-14</a>
+        
+        <a href="../daily/2026-11-13.html">2026-11-13</a>
+        
+        <a href="../daily/2026-11-12.html">2026-11-12</a>
+        
+        <a href="../daily/2026-11-11.html">2026-11-11</a>
+        
+        <a href="../daily/2026-11-10.html">2026-11-10</a>
+        
+        <a href="../daily/2026-11-09.html">2026-11-09</a>
+        
+        <a href="../daily/2026-11-08.html">2026-11-08</a>
+        
+        <a href="../daily/2026-11-07.html">2026-11-07</a>
+        
+        <a href="../daily/2026-11-06.html">2026-11-06</a>
+        
+        <a href="../daily/2026-11-05.html">2026-11-05</a>
+        
+        <a href="../daily/2026-11-04.html">2026-11-04</a>
+        
+        <a href="../daily/2026-11-03.html">2026-11-03</a>
+        
+        <a href="../daily/2026-11-02.html">2026-11-02</a>
+        
+        <a href="../daily/2026-11-01.html">2026-11-01</a>
+        
+        <a href="../daily/2026-10-31.html">2026-10-31</a>
+        
+        <a href="../daily/2026-10-30.html">2026-10-30</a>
+        
+        <a href="../daily/2026-10-29.html">2026-10-29</a>
+        
+        <a href="../daily/2026-10-28.html">2026-10-28</a>
+        
+        <a href="../daily/2026-10-27.html">2026-10-27</a>
+        
+        <a href="../daily/2026-10-26.html">2026-10-26</a>
+        
+        <a href="../daily/2026-10-25.html">2026-10-25</a>
+        
+        <a href="../daily/2026-10-24.html">2026-10-24</a>
+        
+        <a href="../daily/2026-10-23.html">2026-10-23</a>
+        
+        <a href="../daily/2026-10-22.html">2026-10-22</a>
+        
+        <a href="../daily/2026-10-21.html">2026-10-21</a>
+        
+        <a href="../daily/2026-10-20.html">2026-10-20</a>
+        
+        <a href="../daily/2026-10-19.html">2026-10-19</a>
+        
+        <a href="../daily/2026-10-18.html">2026-10-18</a>
+        
+        <a href="../daily/2026-10-17.html">2026-10-17</a>
+        
+        <a href="../daily/2026-10-16.html">2026-10-16</a>
+        
+        <a href="../daily/2026-10-15.html">2026-10-15</a>
+        
+        <a href="../daily/2026-10-14.html">2026-10-14</a>
+        
+        <a href="../daily/2026-10-13.html">2026-10-13</a>
+        
+        <a href="../daily/2026-10-12.html">2026-10-12</a>
+        
+        <a href="../daily/2026-10-11.html">2026-10-11</a>
+        
+        <a href="../daily/2026-10-10.html">2026-10-10</a>
+        
+        <a href="../daily/2026-10-09.html">2026-10-09</a>
+        
+        <a href="../daily/2026-10-08.html">2026-10-08</a>
+        
+        <a href="../daily/2026-10-07.html">2026-10-07</a>
+        
+        <a href="../daily/2026-10-06.html">2026-10-06</a>
+        
+        <a href="../daily/2026-10-05.html">2026-10-05</a>
+        
+        <a href="../daily/2026-10-04.html">2026-10-04</a>
+        
+        <a href="../daily/2026-10-03.html">2026-10-03</a>
+        
+        <a href="../daily/2026-10-02.html">2026-10-02</a>
+        
+        <a href="../daily/2026-10-01.html">2026-10-01</a>
+        
+        <a href="../daily/2026-09-30.html">2026-09-30</a>
+        
+        <a href="../daily/2026-09-29.html">2026-09-29</a>
+        
+        <a href="../daily/2026-09-28.html">2026-09-28</a>
+        
+        <a href="../daily/2026-09-27.html">2026-09-27</a>
+        
+        <a href="../daily/2026-09-26.html">2026-09-26</a>
+        
+        <a href="../daily/2026-09-25.html">2026-09-25</a>
+        
+        <a href="../daily/2026-09-24.html">2026-09-24</a>
+        
+        <a href="../daily/2026-09-23.html">2026-09-23</a>
+        
+        <a href="../daily/2026-09-22.html">2026-09-22</a>
+        
+        <a href="../daily/2026-09-21.html">2026-09-21</a>
+        
+        <a href="../daily/2026-09-20.html">2026-09-20</a>
+        
+        <a href="../daily/2026-09-19.html">2026-09-19</a>
+        
+        <a href="../daily/2026-09-18.html">2026-09-18</a>
+        
+        <a href="../daily/2026-09-17.html">2026-09-17</a>
+        
+        <a href="../daily/2026-09-16.html">2026-09-16</a>
+        
+        <a href="../daily/2026-09-15.html">2026-09-15</a>
+        
+        <a href="../daily/2026-09-14.html">2026-09-14</a>
+        
+        <a href="../daily/2026-09-13.html">2026-09-13</a>
+        
+        <a href="../daily/2026-09-12.html">2026-09-12</a>
+        
+        <a href="../daily/2026-09-11.html">2026-09-11</a>
+        
+        <a href="../daily/2026-09-10.html">2026-09-10</a>
+        
+        <a href="../daily/2026-09-09.html">2026-09-09</a>
+        
+        <a href="../daily/2026-09-08.html">2026-09-08</a>
+        
+        <a href="../daily/2026-09-07.html">2026-09-07</a>
+        
+        <a href="../daily/2026-09-06.html">2026-09-06</a>
+        
+        <a href="../daily/2026-09-05.html">2026-09-05</a>
+        
+        <a href="../daily/2026-09-04.html">2026-09-04</a>
+        
+        <a href="../daily/2026-09-03.html">2026-09-03</a>
+        
+        <a href="../daily/2026-09-02.html">2026-09-02</a>
+        
+        <a href="../daily/2026-09-01.html">2026-09-01</a>
+        
+        <a href="../daily/2026-08-31.html">2026-08-31</a>
+        
+        <a href="../daily/2026-08-30.html">2026-08-30</a>
+        
+        <a href="../daily/2026-08-29.html">2026-08-29</a>
+        
+        <a href="../daily/2026-08-28.html">2026-08-28</a>
+        
+        <a href="../daily/2026-08-27.html">2026-08-27</a>
+        
+        <a href="../daily/2026-08-26.html">2026-08-26</a>
+        
+        <a href="../daily/2026-08-25.html">2026-08-25</a>
+        
+        <a href="../daily/2026-08-24.html">2026-08-24</a>
+        
+        <a href="../daily/2026-08-23.html">2026-08-23</a>
+        
+        <a href="../daily/2026-08-22.html">2026-08-22</a>
+        
+        <a href="../daily/2026-08-21.html">2026-08-21</a>
+        
+        <a href="../daily/2026-08-20.html">2026-08-20</a>
+        
+        <a href="../daily/2026-08-19.html">2026-08-19</a>
+        
+        <a href="../daily/2026-08-18.html">2026-08-18</a>
+        
+        <a href="../daily/2026-08-17.html">2026-08-17</a>
+        
+        <a href="../daily/2026-08-16.html">2026-08-16</a>
+        
+        <a href="../daily/2026-08-15.html">2026-08-15</a>
+        
+        <a href="../daily/2026-08-14.html">2026-08-14</a>
+        
+        <a href="../daily/2026-08-13.html">2026-08-13</a>
+        
+        <a href="../daily/2026-08-12.html">2026-08-12</a>
+        
+        <a href="../daily/2026-08-11.html">2026-08-11</a>
+        
+        <a href="../daily/2026-08-10.html">2026-08-10</a>
+        
+        <a href="../daily/2026-08-09.html">2026-08-09</a>
+        
+        <a href="../daily/2026-08-08.html">2026-08-08</a>
+        
+        <a href="../daily/2026-08-07.html">2026-08-07</a>
+        
+        <a href="../daily/2026-08-06.html">2026-08-06</a>
+        
+        <a href="../daily/2026-08-05.html">2026-08-05</a>
+        
+        <a href="../daily/2026-08-04.html">2026-08-04</a>
+        
+        <a href="../daily/2026-08-03.html">2026-08-03</a>
+        
+        <a href="../daily/2026-08-02.html">2026-08-02</a>
+        
+      
+    </div>
+    <article class="card">
+      <div class="muted">2026-11-18
+        <span class="badge b-daily">
+          每日報告
+        </span>
+      </div>
+      <h1 id="2026-11-18">金融重點報告 2026-11-18</h1>
+<blockquote>
+<p>產出時間: 2026-11-18 00:22（台灣時間）
+資料截止: 11-17 23:56（收錄庫最新事件，若久久未前進代表蒐集上游疑中斷）
+品質儀表板: 資料新鮮度 ≤26min | 去重率 28.2% | 最大來源佔 16.9% | 驗證覆蓋 25.5% | ⚠️疑似誤殺 118
+本報告由 AI 自動生成，僅供參考，不構成投資建議。</p>
+</blockquote>
+<h2 id="_1">📅 行事曆排期事件</h2>
+<blockquote>
+<p>下列為今日／近期已排定、可能影響市場的重要事件（法人預期供參考）：</p>
+</blockquote>
+<ul>
+<li>⭐ 今天 [高]NVIDIA：美股盤後公布財報<blockquote>
+<p>法人預期：AI題材核心指標，指引將牽動全球AI供應鏈與台股權值股。</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h2 id="_2">🆕 本次新增事件（置頂：最新產出）</h2>
+<blockquote>
+<p>本次新增 <strong>60 筆</strong>，重要 55 筆</p>
+</blockquote>
+<p><strong>重要事件（severity ≥ 1）</strong>：</p>
+<ul>
+<li><strong>[11-17 23:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Coherent and Lumentum stocks climb as potential U.S. import ban threatens Chinese rivals <code>marketwatch</code></li>
+<li><strong style="color:#174ea6">影響</strong>: 美國擬禁止進口中國光收發器，本土網通光通訊供應商受益於轉單效應，股價走揚。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>COHR,LITE</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:56]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][neutral]</strong> We can't afford to hire under-25s, say firms. Will Milburn plans help? <code>bbcbusiness</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 企業稅負與青年就業政策討論，對整體總經市場直接影響有限，偏向英國勞動市場結構話題。</p>
+</li>
+<li>
+<p><strong>[11-17 23:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Jensen Huang slated to appear before House panels Dec. 1; Nvidia lawyer due to testify Dec. 2 <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 黃仁勳將出席美國眾議院聽證會並面臨傳喚壓力，可能增加AI產業監管雜音與短線股價波動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:43]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][negative]</strong> Earnings call transcript: Nauticus Robotics posts Q3 2026 revenue growth, shares sink <code>investing-com</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 資訊不足，營收成長但股價重挫，顯示市場對其獲利品質或未來指引有疑慮。</p>
+</li>
+<li>
+<p><strong>[11-17 23:42]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> Analog Devices options signal 5.3% move on Nov. 24 earnings <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 選擇權市場預期ADI財報將引發顯著波動，牽動類比晶片與半導體族群情緒。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>ADI</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][neutral]</strong> Treasury yields moderate as investors parse retail sales data <code>cnbc</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國公債殖利率因零售銷售數據與聯準會官員談話而溫和走勢調整，債市多空交錯。</p>
+</li>
+<li>
+<p><strong>[11-17 23:12]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 《大賣空》艾斯曼示警！輝達風波延燒 AI新興雲端股「麻煩大了」 <code>yahoo-tw-stock</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 大賣空艾斯曼示警輝達風波將重創仰賴融資擴張的新興雲端股，衝擊相關AI概念股評價。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 堵中國算力繞道！美BIS晶片禁令19日生效 經部表態了！曝台廠代工申請關鍵 <code>yahoo-tw-stock</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美BIS晶片禁令19日生效防堵中國算力繞道，台廠依訂單代工並由客戶申請許可，影響可控。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:41]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> 俄羅斯證實克里米亞大橋「結構損壞」已向普丁匯報 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 克里米亞大橋結構受損，俄烏地緣政治衝突升溫，可能牽動天然氣與能源價格波動。</p>
+</li>
+<li>
+<p><strong>[11-17 23:36]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> US stock market today: Dow, S&amp;P 500, Nasdaq slip ahead of Nvidia earnings - CNBC TV18 <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股四大指數在NVIDIA財報前夕拉回整理，市場觀望氣氛濃厚，連動台股AI供應鏈與權值股表現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM,2330</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[商品(油金)][neutral]</strong> Kazakhstan Unveils $85 Million Oil and Gas Manufacturing Push - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 哈薩克推動8500萬美元油氣製造計畫，對全球整體油價影響有限。</p>
+</li>
+<li>
+<p><strong>[11-17 23:21]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> US markets edge lower on Tuesday ahead of Nvidia earnings; bond yields surge after fed official's hawkish comments - Upstox <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股因NVIDIA財報前夕及聯準會官員鷹派言論導致殖利率飆升而收低，連動台股與全球AI供應鏈。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:52]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Inflation set to have risen amid energy bill increases and tobacco duty hike - The Northern Echo <code>google-news:inflation CPI</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 能源帳單與菸草稅調升推升通膨預期，增添央行貨幣政策壓力，對債市與匯市具潛在壓抑效果。</p>
+</li>
+<li>
+<p><strong>[11-17 23:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> US 10-year treasury yield signals major bullish breakout toward 6.15% - FXStreet <code>google-news:Treasury yields</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10年期公債殖利率飆升，對全球債市與高估值股市構成壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>US10Y</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:28]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> Cleveland Fed's Hammack proposes guidelines for Treasury market interventions - TradingView <code>google-news:central bank policy</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 克里夫蘭聯準會官員研擬公債市場干預指引，牽動債市流動性與預期。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>US10Y</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:55]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> TWA00 加權指數 - 不是吧！明天還要修整嗎！？ - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股加權指數投資人議論盤勢修整，反映市場觀望氣氛濃厚。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>加權指數</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> Three stocks with the highest exposure to Nvidia earnings <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 市場聚焦NVDA財報前夕，高度連動台積電與整體AI供應鏈表現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,2330,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:17]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> U.S. equities drift lower as investors brace for Nvidia results <code>seekingalpha</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股因NVIDIA財報前夕與高層動盪而走低，資金轉趨保守。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:15]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> ‘Nvidia’s turmoil has me spooked’: Should I sell my stocks and invest in real estate? <code>marketwatch</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 反映散戶投資人因個股動盪產生焦慮與資產配置轉移情緒。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:01]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][negative]</strong> Nearly half of home builders are cutting prices and offering lower mortgage rates as they struggle to find buyers <code>marketwatch</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 近半數美國房屋建商降價並提供低房貸利率以刺激買氣，反映高建造成本與高利率壓抑房市需求，對總體經濟復甦增添變數。</p>
+</li>
+<li>
+<p><strong>[11-17 23:01]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> Anthropic wants everyday investors to be part of its IPO. Some are not buying it. <code>marketwatch</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Anthropic推動散戶參與IPO引發市場對高估值與炒作的疑慮，對整體美股大盤影響有限，僅限AI初創板塊情緒面干擾。</p>
+</li>
+<li>
+<p><strong>[11-17 22:55]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][neutral]</strong> 輝達財報前夕！美股開盤漲跌不一觀望氣氛濃 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 輝達財報前夕美股開盤漲跌互見，市場高度聚焦首次沒有黃仁勳親自主持的財報會議所帶來的心理與實質指引效應。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:44]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 快訊》輝達財報將登場！台指期夜盤震盪逾900點 費半逆勢小漲 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 配合 NVIDIA 財報將登場及台股重挫947點，台指期夜盤震盪逾900點，牽動全球AI供應鏈與台股4萬點保衛戰。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,台指期,費半</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> 以色列攻擊加薩釀4死 6歲男童命喪砲火 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 以色列攻擊加薩造成傷亡，中東地緣政治持續緊繃，對國際油價與市場風險情緒帶來擾動。</p>
+</li>
+<li>
+<p><strong>[11-17 22:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> 克里米亞大橋被炸斷 烏克蘭疑似動用巨型巡弋飛彈 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 刻赤海峽大橋遭無人機與巡弋飛彈攻擊受損，俄烏戰事加劇，影響區域運輸與地緣風險升溫。</p>
+</li>
+<li>
+<p><strong>[11-17 22:14]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 台股續跌險守4萬關 證交所連二日信心喊話：基本面穩健、追繳風險可控 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股重挫險守4萬點，證交所信心喊話強調基本面與追繳風險可控，短線融資維持率壓力仍存。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,台股</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:22]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[地緣政治][negative]</strong> Jensen Huang to appear before House Foreign Affairs panel Dec. 1; Nvidia lawyer slated for Dec. 2 <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 前執行長黃仁勳辭職及國會听證會將加劇NVDA監管與地緣政治風險，衝擊AI板塊信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:20]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][neutral]</strong> It's too expensive to hire under-25s, say firms. Will Milburn plans help? <code>bbcbusiness</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 探討英國勞動市場與年輕人就業成本，對全球金融市場直接影響有限。</p>
+</li>
+<li>
+<p><strong>[11-17 23:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> Nvidia shares try to rebound ahead of earnings as company reels from Huang resignation <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 黃仁勳辭職事件引發市場震動，NVDA股價面臨劇烈修正與信心危機。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> US bank services returning to normal after major outage <code>bbcbusiness</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國大銀行系統短暫故障修復，確認非系統性風險，對金融股衝擊解除。</p>
+</li>
+<li>
+<p><strong>[11-17 23:01]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> Nvidia Crisis Hits Wall Street: Dow, S&amp;P 500 and Nasdaq Fall as Chip and A.I. Stocks Slump - www.trendingtopics.eu <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: NVIDIA財報前夕引發科技股與AI概念股全面修正，道瓊、S&amp;P 500與那斯達克指數下挫，連動台股與台積電ADR面臨修正壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM,2330</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:14]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> US Stock Futures Mixed as Nasdaq Looks to Recover While Dow Faces Pressure From Home Depot: Dow Jones, S&amp;P, Wall Street - Yahoo Finance <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股期指表現分歧，那斯達克期指試圖反彈，道瓊則受Home Depot等個股表現壓抑。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DJI,IXIC,HD</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:58]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> Stock Market Today: S&amp;P 500 Struggles Ahead of Nvidia Earnings After $2 Trillion Stock Rout - Coinpaper <code>google-news:stock market selloff</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 在經歷2兆美元市值蒸發的修正後，S&amp;P 500指數全面受制於NVIDIA即將公布的財報結果，市場觀望與避險情緒濃厚。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,S&amp;P 500</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:35]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][neutral]</strong> Nvidia and other AI stocks hold steadier following their latest sell-off - Boston Herald <code>google-news:stock market selloff</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: NVIDIA及AI概念股在經歷前期拋售後跌勢暫時持穩，市場聚焦即將公布的財報指引。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:02]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> 銀行熱推FCN 金管會：最大損失為本金，風險比TRF小 | 陳怡慈 | 新聞 - 風傳媒 <code>google-news:金管會</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 金管會針對銀行FCN商品的風險提示，規範國內財管市場與投資人保護。</p>
+</li>
+<li>
+<p><strong>[11-17 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 黃仁勳事件衝擊台美股市？阮慕驊3大假說驗證AI基本面：市場只是「換標的」 - Yahoo股市 <code>google-news:台股 大跌</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 市場探討AI基本面與資金換股效應，台美股市受NVIDIA事件與高檔震盪影響，資金在類股間快速輪動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:58]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 美股三大指數開盤續跌！費半逆勢小漲0.68% 台指期夜盤守住4萬大關 - Yahoo新聞 <code>google-news:台股 大跌</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股三大指數開盤續跌但費半逆勢小漲，台指期夜盤展現韌性守住4萬大關，顯示台股期貨市場具備一定的抗跌防線。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>台指期</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:53]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 快訊／台股明天再挨衝擊波？美股開盤三大指數齊跌！道瓊挫近300點 輝達、台積電ADR受挫 - Yahoo股市 <code>google-news:台股 大跌</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股開盤三大指數齊跌、道瓊挫近300點，輝達與台積電ADR同步受挫，預期將對次日台股開盤構成沉重的沉壓與衝擊波。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TSM,NVDA,2330</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:47]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][neutral]</strong> Wall Street mixed as investors brace for Nvidia results <code>seekingalpha</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 面臨輝達財報與黃仁勳辭職衝擊，美股期貨震盪，牽動全球AI供應鏈與台股權值股動向。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,QQQ</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> SpaceX got a vote of confidence from Nvidia ahead of Jensen Huang’s exit <code>marketwatch</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 輝達於Q3增持SpaceX股份，展現對太空與衛星通訊領域的佈局與信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:44]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][negative]</strong> Golub Capital BDC earnings on deck as revenue pressures mount <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: Golub Capital BDC即將公布財報，面臨營收壓力，影響信贷與私募借貸市場情緒。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>GBDC</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:40]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> Nvidia shares try to rebound ahead of earnings as company company reels from Huang resignation <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 輝達面臨執行長黃仁勳辭職衝擊與財報雙重考驗，股價試圖反彈但賣壓沈重。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 台指期深夜震盪守住4萬大關！網友曝跌破2萬5慘狀 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股現貨重挫947點後台指期夜盤持續震盪，引發市場對高檔回檔及ETF資金動向的恐慌情緒。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>台指期</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:30]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 憂美選後AI支出放緩　美銀調查經理人減碼科技股創20年最劇 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美銀調查顯示基金經理人減碼科技股創20年最大單月幅度，反映市場高度憂慮AI支出放緩。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:26]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][neutral]</strong> 美10月零售銷售月增0.2%　扣除加油站後微增0.1% <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月零售銷售月增0.2%，扣除加油站後僅微增0.1%，顯示扣除能源後的實質零售動能平淡。</p>
+</li>
+<li>
+<p><strong>[11-17 22:45]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][neutral]</strong> Nasdaq opens higher in choppy trading; Nvidia earnings in focus - The Edge Malaysia <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 納斯達克開高後震盪，市場高度聚焦輝達財報前夕的觀望氣氛。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>QQQ,NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> US Stock Market Today: Dow Sheds 330 Points; Nasdaq, S&amp;P 500 In Red As Wall Street Stays Under Pressure - NDTV Profit <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 道瓊大跌、美股三大指數收黑，市場賣壓沈重並反映輝達執行長辭職與財報前的焦慮。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DJI,SPX,IXIC</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][neutral]</strong> 美國10月零售銷售月增0.2%，油價上漲成家庭負擔 - BigGo 財經 <code>google-news:油價</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月零售銷售月增0.2%低於前值，油價上漲成為家庭負擔，顯示消費動能微幅放緩。</p>
+</li>
+<li>
+<p><strong>[11-17 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> U.S. Opens New Front in Campaign to Cut Off Iran's Supply Routes - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國針對伊朗供應鏈開闢新制裁戰線，升高地緣政治緊張並直接衝擊中東原油及航運供應。</p>
+</li>
+<li>
+<p><strong>[11-17 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> TTF Gas Bounces Back to 86 Euros as Hormuz Risks Resurface - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 荷蘭TTF天然氣價格因荷姆茲海峽地緣政治風險升溫而反彈至86歐元，增添歐洲能源成本壓力。</p>
+</li>
+<li>
+<p><strong>[11-17 22:41]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][neutral]</strong> 〈美股早盤〉AI股能否翻身？主要指數漲跌互現 市場屏息等輝達財報 - 鉅亨網 <code>google-news:台股 大跌</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股早盤AI股漲跌互現，市場屏息等待輝達財報，牽動台股AI供應鏈神經。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,2330,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:24]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][neutral]</strong> Nvidia investors will be clamoring for these answers during today’s historic earnings call <code>marketwatch</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 正逢NVIDIA財報公布前夕，市場高度關注後黃仁勳時代的營運接班與AI晶片需求指引，牽動全球AI供應鏈神經。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,2330</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> How new US chip restrictions on South East Asia will hit China <code>bbcbusiness</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國對東南亞祭出新晶片出口與算力限制，打擊中國繞道取得AI晶片，利空台積電與整體AI供應鏈外銷動能。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,2330,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:24]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Anthropic likely to price IPO above the current range of $70 to $78, sources tell CNBC <code>cnbc</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Anthropic IPO訂價預期高於原區間（70-78美元），顯示一級市場對頂尖AI新創需求強勁，間接提振美股科技投資氣氛。</p>
+</li>
+<li>
+<p><strong>[11-17 22:12]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][neutral]</strong> Fed's Waller says central bank will work with private sector on digital finance - Yahoo Finance <code>google-news:central bank policy</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 聯準會理事沃勒表示將與民間合作推動數位金融，屬於中長期政策發展，對短期金融市場無立即衝擊。</li>
+</ul>
+<p><strong>其他同時段收錄（未分析，共 5 筆）</strong>：</p>
+<ul>
+<li><strong>[11-17 23:30]</strong> ‘It is heartbreaking’: My brother took over our ailing mother’s life and finances. What can I do?（<code>marketwatch</code>）</li>
+<li><strong>[11-17 22:48]</strong> 中油公告本週油價不調整 92無鉛31.2元 汽柴油各吸收6.0元和5.8元 - 蕃新聞（<code>google-news:油價</code>）</li>
+<li><strong>[11-17 22:11]</strong> 美國消費還撐得住！10月零售銷售增0.2% 核心數據優於預期（<code>yahoo-tw-finance</code>）</li>
+<li><strong>[11-17 22:41]</strong> I tried TikTok’s viral ‘corporate slop lunch hacks’ — and finally escaped the $20 desk salad（<code>marketwatch</code>）</li>
+<li><strong>[11-17 22:14]</strong> Accelerate Diversified Credit Income Fund Hedged ETF declares CAD 0.13 dividend（<code>seekingalpha</code>）</li>
+</ul>
+<hr />
+<h2 id="_3">市場行情快照</h2>
+<pre><code>加權指數            40,092.11    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-2.31%
+台積電              2,170.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-2.03%
+鴻海                 219.00  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+0.23%
+聯發科              3,840.00  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+1.19%
+台達電              1,055.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-5.80%
+富邦金                150.50  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-0.99%
+S&amp;P 500          7,332.17    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-1.14%
+納斯達克            24,223.92    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-1.17%
+費城半導體指數          9,513.10    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-1.02%
+道瓊              50,843.37    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-1.48%
+日經225           58,860.43    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-1.34%
+上證指數             3,584.58    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-0.50%
+Apple              352.23  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-0.16%
+Microsoft          499.46  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-3.58%
+NVIDIA             154.79  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-0.86%
+Amazon             255.17  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-1.00%
+Tesla              379.46  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-0.07%
+美元/日圓              159.26  JPY <span style="color:#2e7d32;font-weight:bold">▼</span>-0.32%
+美元/台幣               32.91  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+0.11%
+歐元/美元                1.10  EUR <span style="color:#2e7d32;font-weight:bold">▼</span>-0.09%
+美元/人民幣               6.65  CNY <span style="color:#2e7d32;font-weight:bold">▼</span>-0.25%
+WTI原油               86.97  USD <span style="color:#c0392b;font-weight:bold">▲</span>+1.46%
+布蘭特原油               93.58  USD <span style="color:#c0392b;font-weight:bold">▲</span>+1.23%
+黃金               3,873.50  USD <span style="color:#c0392b;font-weight:bold">▲</span>+0.53%
+美元指數DXY            103.47    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-0.08%
+美債10年殖利率             5.12    % <span style="color:#2e7d32;font-weight:bold">▼</span>-0.12%
+</code></pre>
+<blockquote>
+<p>（快照資料時間：2026-11-17 22:30，台股收盤為最近一個交易日）</p>
+</blockquote>
+<h2 id="severity-2">重大事件（severity ≥ 2）</h2>
+<ul>
+<li><strong>[11-17 23:52]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Inflation set to have risen amid energy bill increases and tobacco duty hike - The Northern Echo</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 能源帳單與菸草稅調升推升通膨預期，增添央行貨幣政策壓力，對債市與匯市具潛在壓抑效果。</p>
+</li>
+<li>
+<p><strong>[11-17 23:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Jensen Huang slated to appear before House panels Dec. 1; Nvidia lawyer due to testify Dec. 2</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 黃仁勳將出席美國眾議院聽證會並面臨傳喚壓力，可能增加AI產業監管雜音與短線股價波動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> Coherent and Lumentum stocks climb as potential U.S. import ban threatens Chinese rivals</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國擬禁止進口中國光收發器，本土網通光通訊供應商受益於轉單效應，股價走揚。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>COHR,LITE</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:36]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> US stock market today: Dow, S&amp;P 500, Nasdaq slip ahead of Nvidia earnings - CNBC TV18</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股四大指數在NVIDIA財報前夕拉回整理，市場觀望氣氛濃厚，連動台股AI供應鏈與權值股表現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM,2330</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][neutral]</strong> Treasury yields moderate as investors parse retail sales data</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國公債殖利率因零售銷售數據與聯準會官員談話而溫和走勢調整，債市多空交錯。</p>
+</li>
+<li>
+<p><strong>[11-17 23:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> US 10-year treasury yield signals major bullish breakout toward 6.15% - FXStreet</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國10年期公債殖利率飆升，對全球債市與高估值股市構成壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>US10Y</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:28]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> Cleveland Fed's Hammack proposes guidelines for Treasury market interventions - TradingView</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 克里夫蘭聯準會官員研擬公債市場干預指引，牽動債市流動性與預期。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>US10Y</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:22]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[地緣政治][negative]</strong> Jensen Huang to appear before House Foreign Affairs panel Dec. 1; Nvidia lawyer slated for Dec. 2</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 前執行長黃仁勳辭職及國會听證會將加劇NVDA監管與地緣政治風險，衝擊AI板塊信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> Three stocks with the highest exposure to Nvidia earnings</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 市場聚焦NVDA財報前夕，高度連動台積電與整體AI供應鏈表現。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,2330,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:21]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> US markets edge lower on Tuesday ahead of Nvidia earnings; bond yields surge after fed official's hawkish comments - Upstox</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股因NVIDIA財報前夕及聯準會官員鷹派言論導致殖利率飆升而收低，連動台股與全球AI供應鏈。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:17]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> U.S. equities drift lower as investors brace for Nvidia results</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股因NVIDIA財報前夕與高層動盪而走低，資金轉趨保守。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> Nvidia shares try to rebound ahead of earnings as company reels from Huang resignation</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 黃仁勳辭職事件引發市場震動，NVDA股價面臨劇烈修正與信心危機。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:12]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 《大賣空》艾斯曼示警！輝達風波延燒 AI新興雲端股「麻煩大了」</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 大賣空艾斯曼示警輝達風波將重創仰賴融資擴張的新興雲端股，衝擊相關AI概念股評價。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 堵中國算力繞道！美BIS晶片禁令19日生效 經部表態了！曝台廠代工申請關鍵</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美BIS晶片禁令19日生效防堵中國算力繞道，台廠依訂單代工並由客戶申請許可，影響可控。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> US bank services returning to normal after major outage</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國大銀行系統短暫故障修復，確認非系統性風險，對金融股衝擊解除。</p>
+</li>
+<li>
+<p><strong>[11-17 23:01]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> Nvidia Crisis Hits Wall Street: Dow, S&amp;P 500 and Nasdaq Fall as Chip and A.I. Stocks Slump - www.trendingtopics.eu</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: NVIDIA財報前夕引發科技股與AI概念股全面修正，道瓊、S&amp;P 500與那斯達克指數下挫，連動台股與台積電ADR面臨修正壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM,2330</code></p>
+</li>
+<li>
+<p><strong>[11-17 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 黃仁勳事件衝擊台美股市？阮慕驊3大假說驗證AI基本面：市場只是「換標的」 - Yahoo股市</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 市場探討AI基本面與資金換股效應，台美股市受NVIDIA事件與高檔震盪影響，資金在類股間快速輪動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:58]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> Stock Market Today: S&amp;P 500 Struggles Ahead of Nvidia Earnings After $2 Trillion Stock Rout - Coinpaper</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 在經歷2兆美元市值蒸發的修正後，S&amp;P 500指數全面受制於NVIDIA即將公布的財報結果，市場觀望與避險情緒濃厚。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,S&amp;P 500</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:58]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 美股三大指數開盤續跌！費半逆勢小漲0.68% 台指期夜盤守住4萬大關 - Yahoo新聞</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股三大指數開盤續跌但費半逆勢小漲，台指期夜盤展現韌性守住4萬大關，顯示台股期貨市場具備一定的抗跌防線。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>台指期</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:55]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][neutral]</strong> 輝達財報前夕！美股開盤漲跌不一觀望氣氛濃</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 輝達財報前夕美股開盤漲跌互見，市場高度聚焦首次沒有黃仁勳親自主持的財報會議所帶來的心理與實質指引效應。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:53]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 快訊／台股明天再挨衝擊波？美股開盤三大指數齊跌！道瓊挫近300點 輝達、台積電ADR受挫 - Yahoo股市</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股開盤三大指數齊跌、道瓊挫近300點，輝達與台積電ADR同步受挫，預期將對次日台股開盤構成沉重的沉壓與衝擊波。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TSM,NVDA,2330</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:47]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][neutral]</strong> Wall Street mixed as investors brace for Nvidia results</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 面臨輝達財報與黃仁勳辭職衝擊，美股期貨震盪，牽動全球AI供應鏈與台股權值股動向。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,QQQ</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:45]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][neutral]</strong> Nasdaq opens higher in choppy trading; Nvidia earnings in focus - The Edge Malaysia</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 納斯達克開高後震盪，市場高度聚焦輝達財報前夕的觀望氣氛。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>QQQ,NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:44]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 快訊》輝達財報將登場！台指期夜盤震盪逾900點 費半逆勢小漲</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 配合 NVIDIA 財報將登場及台股重挫947點，台指期夜盤震盪逾900點，牽動全球AI供應鏈與台股4萬點保衛戰。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,台指期,費半</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:41]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][neutral]</strong> 〈美股早盤〉AI股能否翻身？主要指數漲跌互現 市場屏息等輝達財報 - 鉅亨網</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股早盤AI股漲跌互現，市場屏息等待輝達財報，牽動台股AI供應鏈神經。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,2330,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:41]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> 俄羅斯證實克里米亞大橋「結構損壞」已向普丁匯報</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 克里米亞大橋結構受損，俄烏地緣政治衝突升溫，可能牽動天然氣與能源價格波動。</p>
+</li>
+<li>
+<p><strong>[11-17 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> US Stock Market Today: Dow Sheds 330 Points; Nasdaq, S&amp;P 500 In Red As Wall Street Stays Under Pressure - NDTV Profit</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 道瓊大跌、美股三大指數收黑，市場賣壓沈重並反映輝達執行長辭職與財報前的焦慮。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DJI,SPX,IXIC</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:40]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> Nvidia shares try to rebound ahead of earnings as company company reels from Huang resignation</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 輝達面臨執行長黃仁勳辭職衝擊與財報雙重考驗，股價試圖反彈但賣壓沈重。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 台指期深夜震盪守住4萬大關！網友曝跌破2萬5慘狀</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股現貨重挫947點後台指期夜盤持續震盪，引發市場對高檔回檔及ETF資金動向的恐慌情緒。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>台指期</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:35]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][neutral]</strong> Nvidia and other AI stocks hold steadier following their latest sell-off - Boston Herald</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: NVIDIA及AI概念股在經歷前期拋售後跌勢暫時持穩，市場聚焦即將公布的財報指引。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:30]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 憂美選後AI支出放緩　美銀調查經理人減碼科技股創20年最劇</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美銀調查顯示基金經理人減碼科技股創20年最大單月幅度，反映市場高度憂慮AI支出放緩。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> 以色列攻擊加薩釀4死 6歲男童命喪砲火</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 以色列攻擊加薩造成傷亡，中東地緣政治持續緊繃，對國際油價與市場風險情緒帶來擾動。</p>
+</li>
+<li>
+<p><strong>[11-17 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> U.S. Opens New Front in Campaign to Cut Off Iran's Supply Routes - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國針對伊朗供應鏈開闢新制裁戰線，升高地緣政治緊張並直接衝擊中東原油及航運供應。</p>
+</li>
+<li>
+<p><strong>[11-17 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> TTF Gas Bounces Back to 86 Euros as Hormuz Risks Resurface - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 荷蘭TTF天然氣價格因荷姆茲海峽地緣政治風險升溫而反彈至86歐元，增添歐洲能源成本壓力。</p>
+</li>
+<li>
+<p><strong>[11-17 22:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> How new US chip restrictions on South East Asia will hit China</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國對東南亞祭出新晶片出口與算力限制，打擊中國繞道取得AI晶片，利空台積電與整體AI供應鏈外銷動能。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,2330,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:24]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][neutral]</strong> Nvidia investors will be clamoring for these answers during today’s historic earnings call</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 正逢NVIDIA財報公布前夕，市場高度關注後黃仁勳時代的營運接班與AI晶片需求指引，牽動全球AI供應鏈神經。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,2330</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> 克里米亞大橋被炸斷 烏克蘭疑似動用巨型巡弋飛彈</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 刻赤海峽大橋遭無人機與巡弋飛彈攻擊受損，俄烏戰事加劇，影響區域運輸與地緣風險升溫。</p>
+</li>
+<li>
+<p><strong>[11-17 22:14]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 台股續跌險守4萬關 證交所連二日信心喊話：基本面穩健、追繳風險可控</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股重挫險守4萬點，證交所信心喊話強調基本面與追繳風險可控，短線融資維持率壓力仍存。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,台股</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:09]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 黃仁勳誤判政治！謝金河揭台股下個地雷區</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: NVIDIA創辦人黃仁勳傳出醜聞並卸任執行長，引發市場對AI龍頭領導層變動及地緣政治合規的疑慮，衝擊台股相關供應鏈信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,2330</code></p>
+</li>
+<li>
+<p><strong>[11-17 22:05]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Fed Governor Cook Won’t Attend White House Hearing Without Changes</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Fed理事Lisa Cook拒絕白宮聽證會，凸顯行政部門與聯準會獨立性之間的政治角力加劇，增添美股與債市政策不確定性。</p>
+</li>
+<li>
+<p><strong>[11-17 22:03]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> The Mecca Alliance’s Deterrence Paradox: How Collective Defence Could Invite Conflict with Israel - Geopolitical Monitor</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 中東地緣政治緊張情勢升溫，可能對全球原油供應與風險資產偏好造成壓力，避險資金或將流向黃金與美元。</p>
+</li>
+<li>
+<p><strong>[11-17 22:02]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[債市][negative]</strong> Treasury Yields Rise Amid Resilient U.S. Sales, Prices -- Market Talk - Moomoo</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國零售銷售與價格數據展現韌性，推升美債殖利率走高，對債市形成價格下壓，並對股市評價面帶來壓力。</p>
+</li>
+<li>
+<p><strong>[11-17 21:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> AI股大跌、資金尋避風港！4檔海外基金創新高 這檔單週漲近3% - Yahoo股市</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: AI股大跌引發資金轉向避風港，顯示高位AI板塊面臨籌碼鬆動與獲利了結賣壓，連帶牽動台股AI供應鏈。</li>
+<li><strong style="color:#174ea6">標的</strong>: <code>NVDA,2330</code></li>
+</ul>
+<hr />
+<h2 id="_4">分類彙整</h2>
+<h3 id="44">股市（44）</h3>
+<ul>
+<li><strong>[11-17 23:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Jensen Huang slated to appear before House panels Dec. 1; Nvidia lawyer due to testify Dec. 2</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 黃仁勳將出席美國眾議院聽證會並面臨傳喚壓力，可能增加AI產業監管雜音與短線股價波動。</p>
+</li>
+<li>
+<p><strong>[11-17 23:43]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> Earnings call transcript: Nauticus Robotics posts Q3 2026 revenue growth, shares sink</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 資訊不足，營收成長但股價重挫，顯示市場對其獲利品質或未來指引有疑慮。</p>
+</li>
+<li>
+<p><strong>[11-17 23:42]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Analog Devices options signal 5.3% move on Nov. 24 earnings</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 選擇權市場預期ADI財報將引發顯著波動，牽動類比晶片與半導體族群情緒。</p>
+</li>
+<li>
+<p><strong>[11-17 23:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> Coherent and Lumentum stocks climb as potential U.S. import ban threatens Chinese rivals</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國擬禁止進口中國光收發器，本土網通光通訊供應商受益於轉單效應，股價走揚。</p>
+</li>
+<li>
+<p><strong>[11-17 23:36]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> US stock market today: Dow, S&amp;P 500, Nasdaq slip ahead of Nvidia earnings - CNBC TV18</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股四大指數在NVIDIA財報前夕拉回整理，市場觀望氣氛濃厚，連動台股AI供應鏈與權值股表現。</p>
+</li>
+<li>
+<p><strong>[11-17 23:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Three stocks with the highest exposure to Nvidia earnings</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 市場聚焦NVDA財報前夕，高度連動台積電與整體AI供應鏈表現。</p>
+</li>
+<li>
+<p><strong>[11-17 23:21]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> US markets edge lower on Tuesday ahead of Nvidia earnings; bond yields surge after fed official's hawkish comments - Upstox</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股因NVIDIA財報前夕及聯準會官員鷹派言論導致殖利率飆升而收低，連動台股與全球AI供應鏈。</p>
+</li>
+<li>
+<p><strong>[11-17 23:17]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> U.S. equities drift lower as investors brace for Nvidia results</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股因NVIDIA財報前夕與高層動盪而走低，資金轉趨保守。</p>
+</li>
+<li>
+<p><strong>[11-17 23:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Nvidia shares try to rebound ahead of earnings as company reels from Huang resignation</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 黃仁勳辭職事件引發市場震動，NVDA股價面臨劇烈修正與信心危機。</p>
+</li>
+<li>
+<p><strong>[11-17 23:15]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> ‘Nvidia’s turmoil has me spooked’: Should I sell my stocks and invest in real estate?</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 反映散戶投資人因個股動盪產生焦慮與資產配置轉移情緒。</p>
+</li>
+<li>
+<p><strong>[11-17 23:12]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 《大賣空》艾斯曼示警！輝達風波延燒 AI新興雲端股「麻煩大了」</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 大賣空艾斯曼示警輝達風波將重創仰賴融資擴張的新興雲端股，衝擊相關AI概念股評價。</p>
+</li>
+<li>
+<p><strong>[11-17 23:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> 堵中國算力繞道！美BIS晶片禁令19日生效 經部表態了！曝台廠代工申請關鍵</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美BIS晶片禁令19日生效防堵中國算力繞道，台廠依訂單代工並由客戶申請許可，影響可控。</p>
+</li>
+<li>
+<p><strong>[11-17 23:02]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 銀行熱推FCN 金管會：最大損失為本金，風險比TRF小 | 陳怡慈 | 新聞 - 風傳媒</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 金管會針對銀行FCN商品的風險提示，規範國內財管市場與投資人保護。</p>
+</li>
+<li>
+<p><strong>[11-17 23:01]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Nvidia Crisis Hits Wall Street: Dow, S&amp;P 500 and Nasdaq Fall as Chip and A.I. Stocks Slump - www.trendingtopics.eu</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: NVIDIA財報前夕引發科技股與AI概念股全面修正，道瓊、S&amp;P 500與那斯達克指數下挫，連動台股與台積電ADR面臨修正壓力。</p>
+</li>
+<li>
+<p><strong>[11-17 23:01]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Anthropic wants everyday investors to be part of its IPO. Some are not buying it.</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Anthropic推動散戶參與IPO引發市場對高估值與炒作的疑慮，對整體美股大盤影響有限，僅限AI初創板塊情緒面干擾。</p>
+</li>
+<li>
+<p><strong>[11-17 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> 黃仁勳事件衝擊台美股市？阮慕驊3大假說驗證AI基本面：市場只是「換標的」 - Yahoo股市</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 市場探討AI基本面與資金換股效應，台美股市受NVIDIA事件與高檔震盪影響，資金在類股間快速輪動。</p>
+</li>
+<li>
+<p><strong>[11-17 22:58]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Stock Market Today: S&amp;P 500 Struggles Ahead of Nvidia Earnings After $2 Trillion Stock Rout - Coinpaper</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 在經歷2兆美元市值蒸發的修正後，S&amp;P 500指數全面受制於NVIDIA即將公布的財報結果，市場觀望與避險情緒濃厚。</p>
+</li>
+<li>
+<p><strong>[11-17 22:58]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> 美股三大指數開盤續跌！費半逆勢小漲0.68% 台指期夜盤守住4萬大關 - Yahoo新聞</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股三大指數開盤續跌但費半逆勢小漲，台指期夜盤展現韌性守住4萬大關，顯示台股期貨市場具備一定的抗跌防線。</p>
+</li>
+<li>
+<p><strong>[11-17 22:55]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> 輝達財報前夕！美股開盤漲跌不一觀望氣氛濃</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 輝達財報前夕美股開盤漲跌互見，市場高度聚焦首次沒有黃仁勳親自主持的財報會議所帶來的心理與實質指引效應。</p>
+</li>
+<li>
+<p><strong>[11-17 22:55]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> TWA00 加權指數 - 不是吧！明天還要修整嗎！？ - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股加權指數投資人議論盤勢修整，反映市場觀望氣氛濃厚。</p>
+</li>
+<li>
+<p><strong>[11-17 22:53]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 快訊／台股明天再挨衝擊波？美股開盤三大指數齊跌！道瓊挫近300點 輝達、台積電ADR受挫 - Yahoo股市</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股開盤三大指數齊跌、道瓊挫近300點，輝達與台積電ADR同步受挫，預期將對次日台股開盤構成沉重的沉壓與衝擊波。</p>
+</li>
+<li>
+<p><strong>[11-17 22:47]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> Wall Street mixed as investors brace for Nvidia results</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 面臨輝達財報與黃仁勳辭職衝擊，美股期貨震盪，牽動全球AI供應鏈與台股權值股動向。</p>
+</li>
+<li>
+<p><strong>[11-17 22:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> SpaceX got a vote of confidence from Nvidia ahead of Jensen Huang’s exit</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 輝達於Q3增持SpaceX股份，展現對太空與衛星通訊領域的佈局與信心。</p>
+</li>
+<li>
+<p><strong>[11-17 22:45]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> Nasdaq opens higher in choppy trading; Nvidia earnings in focus - The Edge Malaysia</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 納斯達克開高後震盪，市場高度聚焦輝達財報前夕的觀望氣氛。</p>
+</li>
+<li>
+<p><strong>[11-17 22:44]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> Golub Capital BDC earnings on deck as revenue pressures mount</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Golub Capital BDC即將公布財報，面臨營收壓力，影響信贷與私募借貸市場情緒。</p>
+</li>
+<li>
+<p><strong>[11-17 22:44]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 快訊》輝達財報將登場！台指期夜盤震盪逾900點 費半逆勢小漲</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 配合 NVIDIA 財報將登場及台股重挫947點，台指期夜盤震盪逾900點，牽動全球AI供應鏈與台股4萬點保衛戰。</p>
+</li>
+<li>
+<p><strong>[11-17 22:41]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> 〈美股早盤〉AI股能否翻身？主要指數漲跌互現 市場屏息等輝達財報 - 鉅亨網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股早盤AI股漲跌互現，市場屏息等待輝達財報，牽動台股AI供應鏈神經。</p>
+</li>
+<li>
+<p><strong>[11-17 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> US Stock Market Today: Dow Sheds 330 Points; Nasdaq, S&amp;P 500 In Red As Wall Street Stays Under Pressure - NDTV Profit</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 道瓊大跌、美股三大指數收黑，市場賣壓沈重並反映輝達執行長辭職與財報前的焦慮。</p>
+</li>
+<li>
+<p><strong>[11-17 22:40]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Nvidia shares try to rebound ahead of earnings as company company reels from Huang resignation</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 輝達面臨執行長黃仁勳辭職衝擊與財報雙重考驗，股價試圖反彈但賣壓沈重。</p>
+</li>
+<li>
+<p><strong>[11-17 22:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 台指期深夜震盪守住4萬大關！網友曝跌破2萬5慘狀</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股現貨重挫947點後台指期夜盤持續震盪，引發市場對高檔回檔及ETF資金動向的恐慌情緒。</p>
+</li>
+<li>
+<p><strong>[11-17 22:35]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> Nvidia and other AI stocks hold steadier following their latest sell-off - Boston Herald</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: NVIDIA及AI概念股在經歷前期拋售後跌勢暫時持穩，市場聚焦即將公布的財報指引。</p>
+</li>
+<li>
+<p><strong>[11-17 22:30]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 憂美選後AI支出放緩　美銀調查經理人減碼科技股創20年最劇</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美銀調查顯示基金經理人減碼科技股創20年最大單月幅度，反映市場高度憂慮AI支出放緩。</p>
+</li>
+<li>
+<p><strong>[11-17 22:24]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Anthropic likely to price IPO above the current range of $70 to $78, sources tell CNBC</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Anthropic IPO訂價預期高於原區間（70-78美元），顯示一級市場對頂尖AI新創需求強勁，間接提振美股科技投資氣氛。</p>
+</li>
+<li>
+<p><strong>[11-17 22:24]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> Nvidia investors will be clamoring for these answers during today’s historic earnings call</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 正逢NVIDIA財報公布前夕，市場高度關注後黃仁勳時代的營運接班與AI晶片需求指引，牽動全球AI供應鏈神經。</p>
+</li>
+<li>
+<p><strong>[11-17 22:14]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 台股續跌險守4萬關 證交所連二日信心喊話：基本面穩健、追繳風險可控</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股重挫險守4萬點，證交所信心喊話強調基本面與追繳風險可控，短線融資維持率壓力仍存。</p>
+</li>
+<li>
+<p><strong>[11-17 22:14]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> US Stock Futures Mixed as Nasdaq Looks to Recover While Dow Faces Pressure From Home Depot: Dow Jones, S&amp;P, Wall Street - Yahoo Finance</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股期指表現分歧，那斯達克期指試圖反彈，道瓊則受Home Depot等個股表現壓抑。</p>
+</li>
+<li>
+<p><strong>[11-17 22:09]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 黃仁勳誤判政治！謝金河揭台股下個地雷區</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: NVIDIA創辦人黃仁勳傳出醜聞並卸任執行長，引發市場對AI龍頭領導層變動及地緣政治合規的疑慮，衝擊台股相關供應鏈信心。</p>
+</li>
+<li>
+<p><strong>[11-17 22:05]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> 亞資中心政策加持　全台金融業AUM達48.5兆大增近16兆</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 受亞資中心政策加持，全台金融業AUM達48.5兆大增近16兆，對金融股中長期資產管理業務利多。</p>
+</li>
+<li>
+<p><strong>[11-17 22:04]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[negative]</strong> 【公告】力銘上市有價證券經證交所通知繼續列為變更交易方法併加採行分盤集合競價交易方式</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 力銘上市有價證券繼續列為變更交易方法並加採行分盤集合競價交易，屬於個股財務危機處置。</p>
+</li>
+<li>
+<p><strong>[11-17 22:04]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> 證交所Q3財報審閱出爐：力銘、正峰11/19起列全額交割 台揚12/21下市</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 正峰列為變更交割，台揚下市，對台股大盤影響極微，僅限個股風險。</p>
+</li>
+<li>
+<p><strong>[11-17 21:58]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Demis Hassabis’ AI company raises $5 billion, months after he left as Google DeepMind CEO</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: AI藥物研發公司Isomorphic Labs獲得巨額融資，顯示AI應用在醫療領域的商業化進程加速，激勵生技AI板塊。</p>
+</li>
+<li>
+<p><strong>[11-17 21:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Science Corp valuation hits $3.5B on retina chip funding - Bloomberg</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 視網膜晶片融資推動Science Corp估值上升，顯示前瞻性醫療硬體與腦機介面領域持續獲得資本青睞。</p>
+</li>
+<li>
+<p><strong>[11-17 21:51]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> AI股大跌、資金尋避風港！4檔海外基金創新高 這檔單週漲近3% - Yahoo股市</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: AI股短線拉回，資金轉入防禦型標的，反映市場對高估值的暫時性調整。</p>
+</li>
+<li>
+<p><strong>[11-17 21:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> AI股大跌、資金尋避風港！4檔海外基金創新高 這檔單週漲近3% - Yahoo股市</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: AI股大跌引發資金轉向避風港，顯示高位AI板塊面臨籌碼鬆動與獲利了結賣壓，連帶牽動台股AI供應鏈。</li>
+</ul>
+<h3 id="5">債市（5）</h3>
+<ul>
+<li><strong>[11-17 23:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Treasury yields moderate as investors parse retail sales data</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國公債殖利率因零售銷售數據與聯準會官員談話而溫和走勢調整，債市多空交錯。</p>
+</li>
+<li>
+<p><strong>[11-17 23:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> US 10-year treasury yield signals major bullish breakout toward 6.15% - FXStreet</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10年期公債殖利率飆升，對全球債市與高估值股市構成壓力。</p>
+</li>
+<li>
+<p><strong>[11-17 22:14]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Accelerate Diversified Credit Income Fund Hedged ETF declares CAD 0.13 dividend</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 單一ETF配息公告，對整體資本市場無實質影響。</p>
+</li>
+<li>
+<p><strong>[11-17 22:02]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Treasury Yields Rise Amid Resilient U.S. Sales, Prices -- Market Talk - Moomoo</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國零售銷售與價格數據展現韌性，推升美債殖利率走高，對債市形成價格下壓，並對股市評價面帶來壓力。</p>
+</li>
+<li>
+<p><strong>[11-17 21:53]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Treasury yields rise as investors parse retail sales data</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 投資人消化零售銷售數據並等待聯準會官員談話，美債殖利率微幅波動，觀望氣氛濃厚。</li>
+</ul>
+<h3 id="3">商品(油金)（3）</h3>
+<ul>
+<li><strong>[11-17 23:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Kazakhstan Unveils $85 Million Oil and Gas Manufacturing Push - Crude Oil Prices Today | OilPrice.com</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 哈薩克推動8500萬美元油氣製造計畫，對全球整體油價影響有限。</p>
+</li>
+<li>
+<p><strong>[11-17 22:48]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 中油公告本週油價不調整 92無鉛31.2元 汽柴油各吸收6.0元和5.8元 - 蕃新聞</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 中油吸收油價漲幅，國內油價維持不變，對總體通膨與實體商品市場影響有限。</p>
+</li>
+<li>
+<p><strong>[11-17 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> TTF Gas Bounces Back to 86 Euros as Hormuz Risks Resurface - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 荷蘭TTF天然氣價格因荷姆茲海峽地緣政治風險升溫而反彈至86歐元，增添歐洲能源成本壓力。</li>
+</ul>
+<h3 id="7">地緣政治（7）</h3>
+<ul>
+<li><strong>[11-17 23:22]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Jensen Huang to appear before House Foreign Affairs panel Dec. 1; Nvidia lawyer slated for Dec. 2</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 前執行長黃仁勳辭職及國會听證會將加劇NVDA監管與地緣政治風險，衝擊AI板塊信心。</p>
+</li>
+<li>
+<p><strong>[11-17 22:41]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 俄羅斯證實克里米亞大橋「結構損壞」已向普丁匯報</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 克里米亞大橋結構受損，俄烏地緣政治衝突升溫，可能牽動天然氣與能源價格波動。</p>
+</li>
+<li>
+<p><strong>[11-17 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 以色列攻擊加薩釀4死 6歲男童命喪砲火</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 以色列攻擊加薩造成傷亡，中東地緣政治持續緊繃，對國際油價與市場風險情緒帶來擾動。</p>
+</li>
+<li>
+<p><strong>[11-17 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> U.S. Opens New Front in Campaign to Cut Off Iran's Supply Routes - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國針對伊朗供應鏈開闢新制裁戰線，升高地緣政治緊張並直接衝擊中東原油及航運供應。</p>
+</li>
+<li>
+<p><strong>[11-17 22:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> How new US chip restrictions on South East Asia will hit China</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國對東南亞祭出新晶片出口與算力限制，打擊中國繞道取得AI晶片，利空台積電與整體AI供應鏈外銷動能。</p>
+</li>
+<li>
+<p><strong>[11-17 22:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 克里米亞大橋被炸斷 烏克蘭疑似動用巨型巡弋飛彈</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 刻赤海峽大橋遭無人機與巡弋飛彈攻擊受損，俄烏戰事加劇，影響區域運輸與地緣風險升溫。</p>
+</li>
+<li>
+<p><strong>[11-17 22:03]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> The Mecca Alliance’s Deterrence Paradox: How Collective Defence Could Invite Conflict with Israel - Geopolitical Monitor</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 中東地緣政治緊張情勢升溫，可能對全球原油供應與風險資產偏好造成壓力，避險資金或將流向黃金與美元。</li>
+</ul>
+<h3 id="11">總體經濟（11）</h3>
+<ul>
+<li><strong>[11-17 23:56]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> We can't afford to hire under-25s, say firms. Will Milburn plans help?</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 企業稅負與青年就業政策討論，對整體總經市場直接影響有限，偏向英國勞動市場結構話題。</p>
+</li>
+<li>
+<p><strong>[11-17 23:52]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Inflation set to have risen amid energy bill increases and tobacco duty hike - The Northern Echo</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 能源帳單與菸草稅調升推升通膨預期，增添央行貨幣政策壓力，對債市與匯市具潛在壓抑效果。</p>
+</li>
+<li>
+<p><strong>[11-17 23:28]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Cleveland Fed's Hammack proposes guidelines for Treasury market interventions - TradingView</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 克里夫蘭聯準會官員研擬公債市場干預指引，牽動債市流動性與預期。</p>
+</li>
+<li>
+<p><strong>[11-17 23:20]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> It's too expensive to hire under-25s, say firms. Will Milburn plans help?</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 探討英國勞動市場與年輕人就業成本，對全球金融市場直接影響有限。</p>
+</li>
+<li>
+<p><strong>[11-17 23:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> US bank services returning to normal after major outage</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國大銀行系統短暫故障修復，確認非系統性風險，對金融股衝擊解除。</p>
+</li>
+<li>
+<p><strong>[11-17 23:01]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> Nearly half of home builders are cutting prices and offering lower mortgage rates as they struggle to find buyers</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 近半數美國房屋建商降價並提供低房貸利率以刺激買氣，反映高建造成本與高利率壓抑房市需求，對總體經濟復甦增添變數。</p>
+</li>
+<li>
+<p><strong>[11-17 22:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 美國10月零售銷售月增0.2%，油價上漲成家庭負擔 - BigGo 財經</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月零售銷售月增0.2%低於前值，油價上漲成為家庭負擔，顯示消費動能微幅放緩。</p>
+</li>
+<li>
+<p><strong>[11-17 22:26]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 美10月零售銷售月增0.2%　扣除加油站後微增0.1%</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國10月零售銷售月增0.2%，扣除加油站後僅微增0.1%，顯示扣除能源後的實質零售動能平淡。</p>
+</li>
+<li>
+<p><strong>[11-17 22:12]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Fed's Waller says central bank will work with private sector on digital finance - Yahoo Finance</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 聯準會理事沃勒表示將與民間合作推動數位金融，屬於中長期政策發展，對短期金融市場無立即衝擊。</p>
+</li>
+<li>
+<p><strong>[11-17 22:05]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Fed Governor Cook Won’t Attend White House Hearing Without Changes</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: Fed理事Lisa Cook拒絕白宮聽證會，凸顯行政部門與聯準會獨立性之間的政治角力加劇，增添美股與債市政策不確定性。</p>
+</li>
+<li>
+<p><strong>[11-17 21:50]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 六家「大到不能倒」銀行連七年不變！金管會揭名單 - UDN</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 金管會公布國內「大到不能倒」銀行名單維持不變，對金融股營運與資本適足率要求無直接超預期衝擊。</li>
+</ul>
+<h3 id="10">其他（10）</h3>
+<ul>
+<li><strong>[11-17 23:30]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> ‘It is heartbreaking’: My brother took over our ailing mother’s life and finances. What can I do?</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 個人理財與家庭糾紛新聞，對金融市場無直接影響。</p>
+</li>
+<li>
+<p><strong>[11-17 22:41]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> I tried TikTok’s viral ‘corporate slop lunch hacks’ — and finally escaped the $20 desk salad</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 消費生活話題，對金融市場無實質影響。</p>
+</li>
+<li>
+<p><strong>[11-17 22:11]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 美國消費還撐得住！10月零售銷售增0.2% 核心數據優於預期</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-17 22:10]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> The biggest financial decision of your life isn’t an investment — it’s your spouse</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 個人理財與生活觀點專欄，對金融市場無影響。</p>
+</li>
+<li>
+<p><strong>[11-17 22:07]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> TWA00 加權指數- 🔥台股失守4萬又拉回！收4萬點上，大區間下緣保衛戰⚠️🔎 - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-17 22:06]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Hungary's central bank says Dec CPI report key for assessment of room of policy manoeuvre - TradingView</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-17 22:05]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> U.S. Treasury yields catch their breath near one-month highs - Investing.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-17 22:00]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Japanese Equities ETFs Top S&amp;P 500 in 2026: Further Rally Ahead? - Yahoo Finance</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-17 21:54]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 力銘 公告本公司上市有價證券經證交所通知繼續列為變更交易方法併加採行分盤集合競價交易方式</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-17 21:50]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 六家「大到不能倒」銀行連七年不變！ 金管會揭名單 - UDN</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 無</li>
+</ul>
+<hr />
+<h2 id="_5">全部事件</h2>
+<ul>
+<li><strong>[11-17 23:56]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> We can't afford to hire under-25s, say firms. Will Milburn plans help? <code>bbcbusiness</code></li>
+<li><strong>[11-17 23:52]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Inflation set to have risen amid energy bill increases and tobacco duty hike - The Northern Echo <code>google-news:inflation CPI</code></li>
+<li><strong>[11-17 23:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Jensen Huang slated to appear before House panels Dec. 1; Nvidia lawyer due to testify Dec. 2 <code>cnbc</code></li>
+<li><strong>[11-17 23:43]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Earnings call transcript: Nauticus Robotics posts Q3 2026 revenue growth, shares sink <code>investing-com</code></li>
+<li><strong>[11-17 23:42]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Analog Devices options signal 5.3% move on Nov. 24 earnings <code>investing-com</code></li>
+<li><strong>[11-17 23:39]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Coherent and Lumentum stocks climb as potential U.S. import ban threatens Chinese rivals <code>marketwatch</code></li>
+<li><strong>[11-17 23:36]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> US stock market today: Dow, S&amp;P 500, Nasdaq slip ahead of Nvidia earnings - CNBC TV18 <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-17 23:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Treasury yields moderate as investors parse retail sales data <code>cnbc</code></li>
+<li><strong>[11-17 23:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> US 10-year treasury yield signals major bullish breakout toward 6.15% - FXStreet <code>google-news:Treasury yields</code></li>
+<li><strong>[11-17 23:30]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> ‘It is heartbreaking’: My brother took over our ailing mother’s life and finances. What can I do? <code>marketwatch</code></li>
+<li><strong>[11-17 23:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Kazakhstan Unveils $85 Million Oil and Gas Manufacturing Push - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[11-17 23:28]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Cleveland Fed's Hammack proposes guidelines for Treasury market interventions - TradingView <code>google-news:central bank policy</code></li>
+<li><strong>[11-17 23:22]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Jensen Huang to appear before House Foreign Affairs panel Dec. 1; Nvidia lawyer slated for Dec. 2 <code>cnbc</code></li>
+<li><strong>[11-17 23:21]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Three stocks with the highest exposure to Nvidia earnings <code>investing-com</code></li>
+<li><strong>[11-17 23:21]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> US markets edge lower on Tuesday ahead of Nvidia earnings; bond yields surge after fed official's hawkish comments - Upstox <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-17 23:20]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> It's too expensive to hire under-25s, say firms. Will Milburn plans help? <code>bbcbusiness</code></li>
+<li><strong>[11-17 23:17]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> U.S. equities drift lower as investors brace for Nvidia results <code>seekingalpha</code></li>
+<li><strong>[11-17 23:17]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Nvidia shares try to rebound ahead of earnings as company reels from Huang resignation <code>cnbc</code></li>
+<li><strong>[11-17 23:15]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> ‘Nvidia’s turmoil has me spooked’: Should I sell my stocks and invest in real estate? <code>marketwatch</code></li>
+<li><strong>[11-17 23:12]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 《大賣空》艾斯曼示警！輝達風波延燒 AI新興雲端股「麻煩大了」 <code>yahoo-tw-stock</code></li>
+<li><strong>[11-17 23:10]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 堵中國算力繞道！美BIS晶片禁令19日生效 經部表態了！曝台廠代工申請關鍵 <code>yahoo-tw-stock</code></li>
+<li><strong>[11-17 23:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> US bank services returning to normal after major outage <code>bbcbusiness</code></li>
+<li><strong>[11-17 23:02]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 銀行熱推FCN 金管會：最大損失為本金，風險比TRF小 | 陳怡慈 | 新聞 - 風傳媒 <code>google-news:金管會</code></li>
+<li><strong>[11-17 23:01]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Nvidia Crisis Hits Wall Street: Dow, S&amp;P 500 and Nasdaq Fall as Chip and A.I. Stocks Slump - www.trendingtopics.eu <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-17 23:01]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Nearly half of home builders are cutting prices and offering lower mortgage rates as they struggle to find buyers <code>marketwatch</code></li>
+<li><strong>[11-17 23:01]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Anthropic wants everyday investors to be part of its IPO. Some are not buying it. <code>marketwatch</code></li>
+<li><strong>[11-17 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 黃仁勳事件衝擊台美股市？阮慕驊3大假說驗證AI基本面：市場只是「換標的」 - Yahoo股市 <code>google-news:台股 大跌</code></li>
+<li><strong>[11-17 22:58]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Stock Market Today: S&amp;P 500 Struggles Ahead of Nvidia Earnings After $2 Trillion Stock Rout - Coinpaper <code>google-news:stock market selloff</code></li>
+<li><strong>[11-17 22:58]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 美股三大指數開盤續跌！費半逆勢小漲0.68% 台指期夜盤守住4萬大關 - Yahoo新聞 <code>google-news:台股 大跌</code></li>
+<li><strong>[11-17 22:55]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 輝達財報前夕！美股開盤漲跌不一觀望氣氛濃 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-17 22:55]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> TWA00 加權指數 - 不是吧！明天還要修整嗎！？ - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-17 22:53]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 快訊／台股明天再挨衝擊波？美股開盤三大指數齊跌！道瓊挫近300點 輝達、台積電ADR受挫 - Yahoo股市 <code>google-news:台股 大跌</code></li>
+<li><strong>[11-17 22:48]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 中油公告本週油價不調整 92無鉛31.2元 汽柴油各吸收6.0元和5.8元 - 蕃新聞 <code>google-news:油價</code></li>
+<li><strong>[11-17 22:47]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Wall Street mixed as investors brace for Nvidia results <code>seekingalpha</code></li>
+<li><strong>[11-17 22:46]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> SpaceX got a vote of confidence from Nvidia ahead of Jensen Huang’s exit <code>marketwatch</code></li>
+<li><strong>[11-17 22:45]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Nasdaq opens higher in choppy trading; Nvidia earnings in focus - The Edge Malaysia <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-17 22:44]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Golub Capital BDC earnings on deck as revenue pressures mount <code>investing-com</code></li>
+<li><strong>[11-17 22:44]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 快訊》輝達財報將登場！台指期夜盤震盪逾900點 費半逆勢小漲 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-17 22:41]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 〈美股早盤〉AI股能否翻身？主要指數漲跌互現 市場屏息等輝達財報 - 鉅亨網 <code>google-news:台股 大跌</code></li>
+<li><strong>[11-17 22:41]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 俄羅斯證實克里米亞大橋「結構損壞」已向普丁匯報 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-17 22:41]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> I tried TikTok’s viral ‘corporate slop lunch hacks’ — and finally escaped the $20 desk salad <code>marketwatch</code></li>
+<li><strong>[11-17 22:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> US Stock Market Today: Dow Sheds 330 Points; Nasdaq, S&amp;P 500 In Red As Wall Street Stays Under Pressure - NDTV Profit <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-17 22:40]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Nvidia shares try to rebound ahead of earnings as company company reels from Huang resignation <code>cnbc</code></li>
+<li><strong>[11-17 22:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 台指期深夜震盪守住4萬大關！網友曝跌破2萬5慘狀 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-17 22:35]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Nvidia and other AI stocks hold steadier following their latest sell-off - Boston Herald <code>google-news:stock market selloff</code></li>
+<li><strong>[11-17 22:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 美國10月零售銷售月增0.2%，油價上漲成家庭負擔 - BigGo 財經 <code>google-news:油價</code></li>
+<li><strong>[11-17 22:30]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 憂美選後AI支出放緩　美銀調查經理人減碼科技股創20年最劇 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-17 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 以色列攻擊加薩釀4死 6歲男童命喪砲火 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-17 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> U.S. Opens New Front in Campaign to Cut Off Iran's Supply Routes - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[11-17 22:30]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> TTF Gas Bounces Back to 86 Euros as Hormuz Risks Resurface - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[11-17 22:26]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 美10月零售銷售月增0.2%　扣除加油站後微增0.1% <code>yahoo-tw-finance</code></li>
+<li><strong>[11-17 22:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> How new US chip restrictions on South East Asia will hit China <code>bbcbusiness</code></li>
+<li><strong>[11-17 22:24]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Anthropic likely to price IPO above the current range of $70 to $78, sources tell CNBC <code>cnbc</code></li>
+<li><strong>[11-17 22:24]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Nvidia investors will be clamoring for these answers during today’s historic earnings call <code>marketwatch</code></li>
+<li><strong>[11-17 22:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 克里米亞大橋被炸斷 烏克蘭疑似動用巨型巡弋飛彈 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-17 22:14]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 台股續跌險守4萬關 證交所連二日信心喊話：基本面穩健、追繳風險可控 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-17 22:14]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Accelerate Diversified Credit Income Fund Hedged ETF declares CAD 0.13 dividend <code>seekingalpha</code></li>
+<li><strong>[11-17 22:14]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> US Stock Futures Mixed as Nasdaq Looks to Recover While Dow Faces Pressure From Home Depot: Dow Jones, S&amp;P, Wall Street - Yahoo Finance <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-17 22:12]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Fed's Waller says central bank will work with private sector on digital finance - Yahoo Finance <code>google-news:central bank policy</code></li>
+<li><strong>[11-17 22:11]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 美國消費還撐得住！10月零售銷售增0.2% 核心數據優於預期 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-17 22:10]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> The biggest financial decision of your life isn’t an investment — it’s your spouse <code>marketwatch</code></li>
+<li><strong>[11-17 22:09]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 黃仁勳誤判政治！謝金河揭台股下個地雷區 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-17 22:07]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> TWA00 加權指數- 🔥台股失守4萬又拉回！收4萬點上，大區間下緣保衛戰⚠️🔎 - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-17 22:06]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Hungary's central bank says Dec CPI report key for assessment of room of policy manoeuvre - TradingView <code>google-news:central bank policy</code></li>
+<li><strong>[11-17 22:05]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 亞資中心政策加持　全台金融業AUM達48.5兆大增近16兆 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-17 22:05]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> U.S. Treasury yields catch their breath near one-month highs - Investing.com <code>google-news:Treasury yields</code></li>
+<li><strong>[11-17 22:05]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Fed Governor Cook Won’t Attend White House Hearing Without Changes <code>nytbusiness</code></li>
+<li><strong>[11-17 22:04]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 【公告】力銘上市有價證券經證交所通知繼續列為變更交易方法併加採行分盤集合競價交易方式 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-17 22:04]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 證交所Q3財報審閱出爐：力銘、正峰11/19起列全額交割 台揚12/21下市 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-17 22:03]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> The Mecca Alliance’s Deterrence Paradox: How Collective Defence Could Invite Conflict with Israel - Geopolitical Monitor <code>google-news:geopolitical conflict</code></li>
+<li><strong>[11-17 22:02]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Treasury Yields Rise Amid Resilient U.S. Sales, Prices -- Market Talk - Moomoo <code>google-news:Treasury yields</code></li>
+<li><strong>[11-17 22:00]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Japanese Equities ETFs Top S&amp;P 500 in 2026: Further Rally Ahead? - Yahoo Finance <code>google-news:stock market rally</code></li>
+<li><strong>[11-17 21:58]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Demis Hassabis’ AI company raises $5 billion, months after he left as Google DeepMind CEO <code>cnbc</code></li>
+<li><strong>[11-17 21:54]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 力銘 公告本公司上市有價證券經證交所通知繼續列為變更交易方法併加採行分盤集合競價交易方式 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-17 21:53]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Treasury yields rise as investors parse retail sales data <code>cnbc</code></li>
+<li><strong>[11-17 21:52]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Science Corp valuation hits $3.5B on retina chip funding - Bloomberg <code>investing-com</code></li>
+<li><strong>[11-17 21:51]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> AI股大跌、資金尋避風港！4檔海外基金創新高 這檔單週漲近3% - Yahoo股市 <code>google-news:台股 大漲</code></li>
+<li><strong>[11-17 21:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> AI股大跌、資金尋避風港！4檔海外基金創新高 這檔單週漲近3% - Yahoo股市 <code>google-news:台股 大跌</code></li>
+<li><strong>[11-17 21:50]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 六家「大到不能倒」銀行連七年不變！ 金管會揭名單 - UDN <code>google-news:金管會</code></li>
+<li><strong>[11-17 21:50]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 六家「大到不能倒」銀行連七年不變！金管會揭名單 - UDN <code>google-news:金管會</code></li>
+</ul>
+    </article>
+  
+</div>
+<footer>由金融情報系統自動發佈 · 僅供參考，不構成投資建議</footer>
+<script>
+const WEEK = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function nowParts(tz){
+  const p = {};
+  new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short', month: 'short',
+    day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
+  }).formatToParts(new Date()).forEach(x => p[x.type] = x.value);
+  return p;
+}
+function marketOpen(tz, open, close){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  return wd>=1 && wd<=5 && m>=open && m<close;
+}
+// Taiwan index-futures night session 15:00 -> next-day 05:00 (crosses midnight):
+// 15:00-24:00 Mon-Fri, plus 00:00-05:00 Tue-Sat (Sat 00:00-05:00 is Fri night session).
+function nightOpen(tz){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  if (m >= 5*60 && m < 15*60) return false;   // 05:00-15:00 recess
+  if (m >= 15*60) return wd >= 1 && wd <= 5;   // 15:00-24:00 Mon-Fri
+  return wd >= 2 && wd <= 6;                   // 00:00-05:00 Tue-Sat
+}
+function pad(n){ return String(n).padStart(2,'0'); }
+function setMkt(id, open, label){
+  const el = document.getElementById(id);
+  el.className = 'mkt ' + (open ? 'open' : 'closed');
+  el.textContent = (label ? label + ' ' : '') + (open ? '開盤中' : '未開盤');
+}
+function tick(){
+  const tw = nowParts('Asia/Taipei');
+  const ny = nowParts('America/New_York');
+  document.getElementById('clk-tw').textContent = pad(tw.hour)+':'+pad(tw.minute)+':'+pad(tw.second);
+  document.getElementById('clk-ny').textContent = pad(ny.hour)+':'+pad(ny.minute)+':'+pad(ny.second);
+  // Taiwan: TWSE weighted index 09:00-13:30; TX futures day 08:45-13:45; TX night 15:00-05:00
+  setMkt('tw-idx',  marketOpen('Asia/Taipei', 9*60, 13*60+30), '加權');
+  setMkt('tx-day',  marketOpen('Asia/Taipei', 8*60+45, 13*60+45), '期日盤');
+  setMkt('tx-night', nightOpen('Asia/Taipei'), '期夜盤');
+  // US: regular session 09:30-16:00 ET; after-hours 16:00-20:00 ET
+  setMkt('ny-mkt',  marketOpen('America/New_York', 9*60+30, 16*60), '美股');
+  setMkt('ny-night', marketOpen('America/New_York', 16*60, 20*60), '美股夜');
+}
+tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>
