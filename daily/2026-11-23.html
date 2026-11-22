@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日報告 2026-11-23</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; margin: 0;
+         background: #f5f6f8; color: #1c1e21; line-height: 1.7; }
+  header { background: #1b2a4a; color: #fff; padding: 14px 24px;
+           display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  header h1 { font-size: 18px; margin: 0; flex: 1; }
+  header nav a { color: #cdd8ee; text-decoration: none; margin-left: 14px; font-size: 14px; }
+  header nav a:hover, header nav a.active { color: #fff; text-decoration: underline; }
+  #clock { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; font-size: 13px; }
+  .clk { background: rgba(255,255,255,.08); border-radius: 6px; padding: 4px 10px; }
+  .clk-city { color: #9fb0cf; margin-right: 6px; }
+  .clk-time { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .mkt { margin-left: 8px; font-size: 12px; padding: 1px 7px; border-radius: 9px; }
+  .mkt.open { background: #2e7d32; color: #fff; }
+  .mkt.closed { background: #5a6474; color: #fff; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 20px; }
+  .card { background: #fff; border-radius: 8px; padding: 18px 22px; margin: 14px 0;
+          box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .card h3 { margin: 0 0 6px; }
+  .card a { color: #1b2a4a; text-decoration: none; }
+  .card a:hover { text-decoration: underline; }
+  .muted { color: #666; font-size: 13px; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px;
+           color: #fff; margin-left: 6px; }
+  .b-daily { background: #2e7d32; }
+  .b-deep { background: #b45309; }
+  .day-nav { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+  .day-nav a { font-size: 13px; padding: 3px 10px; background: #e8ecf3; border-radius: 12px;
+               color: #33415c; text-decoration: none; }
+  .day-nav a:hover { background: #d2dbea; }
+  article.card { line-height: 1.15; }
+  article.card p { margin: 3px 0; }
+  article.card ul, article.card ol { margin: 3px 0 6px; padding-left: 22px; }
+  article.card h1, article.card h2, article.card h3 { padding-bottom: 4px; }
+  article.card h1, article.card h2 { border-bottom: 2px solid #33415c; }
+  article.card h1 { font-size: 30px; margin-top: 8px; }
+  article.card h2 { font-size: 23px; margin-top: 12px; color: #1b2a4a;
+        border-left: 6px solid #1459c8; padding-left: 12px; }
+  article.card h3 { font-size: 19px; margin-top: 10px; color: #24365c;
+        background: #eef4fb; border-radius: 6px; padding: 4px 12px; }
+  article.card h4 { font-size: 17px; margin-top: 18px; color: #145c3a;
+        background: #e8f5ee; border-left: 4px solid #2e7d32;
+        padding: 5px 10px; border-radius: 4px; }
+  article.card h5 { font-size: 15px; margin-top: 14px; color: #4a5568;
+        font-weight: 600; }
+  article.card h4, article.card h5 { margin-bottom: 2px; }
+  article.card strong { font-weight: 700; }
+  article.card blockquote { border-left: 4px solid #9fb0cf; margin: 4px 0;
+        padding: 2px 12px; color: #4a5568; background: #f4f6fa; }
+  article.card hr { border: none; border-top: 1px dashed #c3ccdb; margin: 12px 0; }
+  article.card code { background: #eef0f4; padding: 1px 5px; border-radius: 4px;
+        font-size: 14px; font-family: Consolas, monospace; }
+  article.card pre { background: #1b2a4a; color: #e6ecf7; padding: 14px; border-radius: 8px; overflow-x: auto; }
+  article.card pre code { background: transparent; color: inherit; padding: 0; }
+  article.card table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+  article.card th, article.card td { border: 1px solid #d8dce3; padding: 6px 10px; }
+  article.card th { background: #eef1f6; }
+  article.card a { color: #1459c8; }
+  footer { text-align: center; color: #999; font-size: 12px; padding: 20px; }
+</style>
+</head>
+<body>
+  <header>
+  <h1>金融情報系統報告</h1>
+  <nav>
+    <a href="../index.html" class="">首頁</a>
+    <a href="../calendar.html" class="">行事曆</a>
+    <a href="../daily/2026-11-23.html" class="active">最新每日</a>
+    <a href="../deep/2026-11-22-pm.html" class="">最新深度</a>
+  </nav>
+  <div id="clock">
+    <span class="clk"><span class="clk-city">台北</span><span class="clk-time" id="clk-tw">--:--:--</span><span class="mkt closed" id="tw-idx">…</span><span class="mkt closed" id="tx-day">…</span><span class="mkt closed" id="tx-night">…</span></span>
+    <span class="clk"><span class="clk-city">紐約</span><span class="clk-time" id="clk-ny">--:--:--</span><span class="mkt closed" id="ny-mkt">…</span><span class="mkt closed" id="ny-night">…</span></span>
+  </div>
+</header>
+<div class="wrap">
+  
+    <div class="day-nav">
+      <a href="../index.html">← 首頁</a>
+      
+        
+        <a href="../daily/2026-11-23.html">2026-11-23</a>
+        
+        <a href="../daily/2026-11-22.html">2026-11-22</a>
+        
+        <a href="../daily/2026-11-21.html">2026-11-21</a>
+        
+        <a href="../daily/2026-11-20.html">2026-11-20</a>
+        
+        <a href="../daily/2026-11-19.html">2026-11-19</a>
+        
+        <a href="../daily/2026-11-18.html">2026-11-18</a>
+        
+        <a href="../daily/2026-11-17.html">2026-11-17</a>
+        
+        <a href="../daily/2026-11-16.html">2026-11-16</a>
+        
+        <a href="../daily/2026-11-15.html">2026-11-15</a>
+        
+        <a href="../daily/2026-11-14.html">2026-11-14</a>
+        
+        <a href="../daily/2026-11-13.html">2026-11-13</a>
+        
+        <a href="../daily/2026-11-12.html">2026-11-12</a>
+        
+        <a href="../daily/2026-11-11.html">2026-11-11</a>
+        
+        <a href="../daily/2026-11-10.html">2026-11-10</a>
+        
+        <a href="../daily/2026-11-09.html">2026-11-09</a>
+        
+        <a href="../daily/2026-11-08.html">2026-11-08</a>
+        
+        <a href="../daily/2026-11-07.html">2026-11-07</a>
+        
+        <a href="../daily/2026-11-06.html">2026-11-06</a>
+        
+        <a href="../daily/2026-11-05.html">2026-11-05</a>
+        
+        <a href="../daily/2026-11-04.html">2026-11-04</a>
+        
+        <a href="../daily/2026-11-03.html">2026-11-03</a>
+        
+        <a href="../daily/2026-11-02.html">2026-11-02</a>
+        
+        <a href="../daily/2026-11-01.html">2026-11-01</a>
+        
+        <a href="../daily/2026-10-31.html">2026-10-31</a>
+        
+        <a href="../daily/2026-10-30.html">2026-10-30</a>
+        
+        <a href="../daily/2026-10-29.html">2026-10-29</a>
+        
+        <a href="../daily/2026-10-28.html">2026-10-28</a>
+        
+        <a href="../daily/2026-10-27.html">2026-10-27</a>
+        
+        <a href="../daily/2026-10-26.html">2026-10-26</a>
+        
+        <a href="../daily/2026-10-25.html">2026-10-25</a>
+        
+        <a href="../daily/2026-10-24.html">2026-10-24</a>
+        
+        <a href="../daily/2026-10-23.html">2026-10-23</a>
+        
+        <a href="../daily/2026-10-22.html">2026-10-22</a>
+        
+        <a href="../daily/2026-10-21.html">2026-10-21</a>
+        
+        <a href="../daily/2026-10-20.html">2026-10-20</a>
+        
+        <a href="../daily/2026-10-19.html">2026-10-19</a>
+        
+        <a href="../daily/2026-10-18.html">2026-10-18</a>
+        
+        <a href="../daily/2026-10-17.html">2026-10-17</a>
+        
+        <a href="../daily/2026-10-16.html">2026-10-16</a>
+        
+        <a href="../daily/2026-10-15.html">2026-10-15</a>
+        
+        <a href="../daily/2026-10-14.html">2026-10-14</a>
+        
+        <a href="../daily/2026-10-13.html">2026-10-13</a>
+        
+        <a href="../daily/2026-10-12.html">2026-10-12</a>
+        
+        <a href="../daily/2026-10-11.html">2026-10-11</a>
+        
+        <a href="../daily/2026-10-10.html">2026-10-10</a>
+        
+        <a href="../daily/2026-10-09.html">2026-10-09</a>
+        
+        <a href="../daily/2026-10-08.html">2026-10-08</a>
+        
+        <a href="../daily/2026-10-07.html">2026-10-07</a>
+        
+        <a href="../daily/2026-10-06.html">2026-10-06</a>
+        
+        <a href="../daily/2026-10-05.html">2026-10-05</a>
+        
+        <a href="../daily/2026-10-04.html">2026-10-04</a>
+        
+        <a href="../daily/2026-10-03.html">2026-10-03</a>
+        
+        <a href="../daily/2026-10-02.html">2026-10-02</a>
+        
+        <a href="../daily/2026-10-01.html">2026-10-01</a>
+        
+        <a href="../daily/2026-09-30.html">2026-09-30</a>
+        
+        <a href="../daily/2026-09-29.html">2026-09-29</a>
+        
+        <a href="../daily/2026-09-28.html">2026-09-28</a>
+        
+        <a href="../daily/2026-09-27.html">2026-09-27</a>
+        
+        <a href="../daily/2026-09-26.html">2026-09-26</a>
+        
+        <a href="../daily/2026-09-25.html">2026-09-25</a>
+        
+        <a href="../daily/2026-09-24.html">2026-09-24</a>
+        
+        <a href="../daily/2026-09-23.html">2026-09-23</a>
+        
+        <a href="../daily/2026-09-22.html">2026-09-22</a>
+        
+        <a href="../daily/2026-09-21.html">2026-09-21</a>
+        
+        <a href="../daily/2026-09-20.html">2026-09-20</a>
+        
+        <a href="../daily/2026-09-19.html">2026-09-19</a>
+        
+        <a href="../daily/2026-09-18.html">2026-09-18</a>
+        
+        <a href="../daily/2026-09-17.html">2026-09-17</a>
+        
+        <a href="../daily/2026-09-16.html">2026-09-16</a>
+        
+        <a href="../daily/2026-09-15.html">2026-09-15</a>
+        
+        <a href="../daily/2026-09-14.html">2026-09-14</a>
+        
+        <a href="../daily/2026-09-13.html">2026-09-13</a>
+        
+        <a href="../daily/2026-09-12.html">2026-09-12</a>
+        
+        <a href="../daily/2026-09-11.html">2026-09-11</a>
+        
+        <a href="../daily/2026-09-10.html">2026-09-10</a>
+        
+        <a href="../daily/2026-09-09.html">2026-09-09</a>
+        
+        <a href="../daily/2026-09-08.html">2026-09-08</a>
+        
+        <a href="../daily/2026-09-07.html">2026-09-07</a>
+        
+        <a href="../daily/2026-09-06.html">2026-09-06</a>
+        
+        <a href="../daily/2026-09-05.html">2026-09-05</a>
+        
+        <a href="../daily/2026-09-04.html">2026-09-04</a>
+        
+        <a href="../daily/2026-09-03.html">2026-09-03</a>
+        
+        <a href="../daily/2026-09-02.html">2026-09-02</a>
+        
+        <a href="../daily/2026-09-01.html">2026-09-01</a>
+        
+        <a href="../daily/2026-08-31.html">2026-08-31</a>
+        
+        <a href="../daily/2026-08-30.html">2026-08-30</a>
+        
+        <a href="../daily/2026-08-29.html">2026-08-29</a>
+        
+        <a href="../daily/2026-08-28.html">2026-08-28</a>
+        
+        <a href="../daily/2026-08-27.html">2026-08-27</a>
+        
+        <a href="../daily/2026-08-26.html">2026-08-26</a>
+        
+        <a href="../daily/2026-08-25.html">2026-08-25</a>
+        
+        <a href="../daily/2026-08-24.html">2026-08-24</a>
+        
+        <a href="../daily/2026-08-23.html">2026-08-23</a>
+        
+        <a href="../daily/2026-08-22.html">2026-08-22</a>
+        
+        <a href="../daily/2026-08-21.html">2026-08-21</a>
+        
+        <a href="../daily/2026-08-20.html">2026-08-20</a>
+        
+        <a href="../daily/2026-08-19.html">2026-08-19</a>
+        
+        <a href="../daily/2026-08-18.html">2026-08-18</a>
+        
+        <a href="../daily/2026-08-17.html">2026-08-17</a>
+        
+        <a href="../daily/2026-08-16.html">2026-08-16</a>
+        
+        <a href="../daily/2026-08-15.html">2026-08-15</a>
+        
+        <a href="../daily/2026-08-14.html">2026-08-14</a>
+        
+        <a href="../daily/2026-08-13.html">2026-08-13</a>
+        
+        <a href="../daily/2026-08-12.html">2026-08-12</a>
+        
+        <a href="../daily/2026-08-11.html">2026-08-11</a>
+        
+        <a href="../daily/2026-08-10.html">2026-08-10</a>
+        
+        <a href="../daily/2026-08-09.html">2026-08-09</a>
+        
+        <a href="../daily/2026-08-08.html">2026-08-08</a>
+        
+        <a href="../daily/2026-08-07.html">2026-08-07</a>
+        
+        <a href="../daily/2026-08-06.html">2026-08-06</a>
+        
+        <a href="../daily/2026-08-05.html">2026-08-05</a>
+        
+        <a href="../daily/2026-08-04.html">2026-08-04</a>
+        
+        <a href="../daily/2026-08-03.html">2026-08-03</a>
+        
+        <a href="../daily/2026-08-02.html">2026-08-02</a>
+        
+      
+    </div>
+    <article class="card">
+      <div class="muted">2026-11-23
+        <span class="badge b-daily">
+          每日報告
+        </span>
+      </div>
+      <h1 id="2026-11-23">金融重點報告 2026-11-23</h1>
+<blockquote>
+<p>產出時間: 2026-11-23 00:22（台灣時間）
+資料截止: 11-22 23:56（收錄庫最新事件，若久久未前進代表蒐集上游疑中斷）
+品質儀表板: 資料新鮮度 ≤57min | 去重率 28.2% | 最大來源佔 17.0% | 驗證覆蓋 25.3% | ⚠️疑似誤殺 123
+本報告由 AI 自動生成，僅供參考，不構成投資建議。</p>
+</blockquote>
+<h2 id="_1">🆕 本次新增事件（置頂：最新產出）</h2>
+<blockquote>
+<p>本次新增 <strong>60 筆</strong>，重要 55 筆</p>
+</blockquote>
+<p><strong>重要事件（severity ≥ 1）</strong>：</p>
+<ul>
+<li><strong>[11-22 23:15]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][positive]</strong> 維護投資人對國內經濟信心  卓揆明邀金融業、科技業、產業界座談 <code>yahoo-tw-finance</code></li>
+<li><strong style="color:#174ea6">影響</strong>: 行政院長卓榮泰將邀集金融與科技產業界座談，展現國家隊強力維穩台股與國內經濟信心的決心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330</code></p>
+</li>
+<li>
+<p><strong>[11-22 23:08]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> 股災後第一波肥肉來了？ 分析師押寶「5檔ETF」卡位大反彈 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 分析師建議透過ETF卡位台股大反彈，顯示市場資金轉向防禦與分散風險的被動投資工具。</p>
+</li>
+<li>
+<p><strong>[11-22 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Investors Brave Stock Market ‘Fragility’ as AI Trade Falters - Bloomberg.com <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: AI交易熱潮降溫，投資人面臨市場脆弱性，科技股估值面臨修正壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-22 21:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 2330 台積電 - 下周再崩敢上車？外資暗中吃貨友達16檔竟與國家隊同步抄底- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 外資與國家隊同步在台股大跌時暗中吃貨台積電與友達等16檔股票，顯示法人開始逢低承接。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,2409</code></p>
+</li>
+<li>
+<p><strong>[11-22 23:25]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][positive]</strong> 台股暴跌後券商爭取放寬融資維持率至120%，台灣證交所與金管會研議中 - BigGo 財經 <code>google-news:台股 大跌</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股暴跌引發骨牌效應，證交所與金管會研議放寬融資維持率至120%，有助於緩解斷頭賣壓，穩定台股信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330</code></p>
+</li>
+<li>
+<p><strong>[11-22 23:01]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Corporate America hunts for ‘generational’ growth in AI, trading cards and the L.A. airport <code>marketwatch</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 企業界持續尋找AI等長線成長動能，有助於支撐美股科技巨頭的長期估值與題材延續性。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-22 23:12]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Asian countries take steps to aid stock markets after AI rout <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 亞洲國家採取措施救市以應對AI類股回檔，反映科技股短線修正壓力蔓延至區域市場，短期 sentiment 偏弱。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TSM,NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-22 22:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[匯市][negative]</strong> 加密貨幣失寵 昔日支持者加速認賠出場 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 比特幣跌破57,742美元創2024年9月來新低，美元走強及Fed升息押注升溫導致加密貨幣資金加速外流。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,比特幣</code></p>
+</li>
+<li>
+<p><strong>[11-22 23:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> Dow Jones and S&amp;P 500 Outlook: Top Stock Market Headlines and Data This Week - Benzinga <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股道瓊與標普500指數本週面臨關鍵數據與財報考驗，預期市場波動度將維持高檔。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,DIA</code></p>
+</li>
+<li>
+<p><strong>[11-22 19:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 台股暴跌！他問「比金融海嘯慘？」 網揭2008年慘況：更刺激 - TVBS新聞網 <code>google-news:台股 大跌</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股出現顯著暴跌賣壓，引發市場對流動性與重挫行情的恐慌，短線籌碼鬆動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TWA00</code></p>
+</li>
+<li>
+<p><strong>[11-22 22:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> ChipMOS earnings up next: Can packaging specialist sustain growth? <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 封測廠南茂即將公布財報，市場關注其半導體封裝成長動能是否持續。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>8150</code></p>
+</li>
+<li>
+<p><strong>[11-22 22:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 全球蒸發10兆美元！黃仁勳回歸有望？謝金河曝關鍵：世界發現不能沒有他 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 全球AI與金融市場修正引發關注，輝達及黃仁勳動向仍是全球AI族群的核心風向球。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,2330</code></p>
+</li>
+<li>
+<p><strong>[11-22 22:10]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][negative]</strong> iPhone Duo上市滿月　中國市場降價幅度續擴大 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 蘋果摺疊機iPhone Duo中國市場降價擴大，顯示當地需求疲軟與競爭激烈。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>AAPL</code></p>
+</li>
+<li>
+<p><strong>[11-22 22:07]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][neutral]</strong> 本週操盤筆記：美國10月PCE、Q3 GDP修正值及南韓央行利率決議 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 本週迎來美國10月PCE通膨數據、Q3 GDP修正值與南韓央行利率決議，將直接左右全球降息預期與匯市走向。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[11-22 22:26]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 韓國防股災　準備啟動護盤基金放寬庫藏股嚴管放空 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 韓國金融當局擬啟動護盤基金、放寬庫藏股並強化放空管制，有助於穩定韓股跌勢。</p>
+</li>
+<li>
+<p><strong>[11-22 19:24]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> S&amp;P 500 Falls Into Correction as AI Stocks Slide - JournalArta <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 標普500因AI類股回檔而進入修正區，顯示高估值科技股面臨獲利了結與籌碼鬆動壓力，美股及全球科技股短期震盪加劇。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,AAPL,MSFT,S&amp;P500</code></p>
+</li>
+<li>
+<p><strong>[11-22 18:50]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> S&amp;P 500 Valuations Fuel Crash Concerns, but Timing Is Unclear - JournalArta <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 標普500高估值引發市場對潛在崩盤的擔憂，但 timing 不明，主要對投資人情緒與風險偏好造成壓抑。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>S&amp;P500</code></p>
+</li>
+<li>
+<p><strong>[11-22 21:45]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> TWA00 加權指數- 【點靈週更｜台股哀鴻遍野，短時間內恐怕還看不到止跌】 - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股加權指數哀鴻遍野、短線止跌訊號不明，反映外資調節與技術面轉弱。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330</code></p>
+</li>
+<li>
+<p><strong>[11-22 22:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Stocks are in a correction heading into the Thanksgiving holiday. What to brace for next. <code>marketwatch</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股在感恩節假期前夕進入修正與熊市區間，影響市場風險偏好與假期零售消費心理。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ,DJI</code></p>
+</li>
+<li>
+<p><strong>[11-22 22:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> AI泡沫要爆了？馬斯克示警2027年數千億美元資金黑洞　逾200家企業恐倒閉 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 馬斯克示警AI產業2027年面臨數千億資金黑洞，打擊市場對AI資本支出的信心，牽動相關供應鏈與科技股評價。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM,2330</code></p>
+</li>
+<li>
+<p><strong>[11-22 21:54]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> US Stock Market Next Week: Will Stocks Crash Again After Nasdaq’s 10% Plunge? - Stocks Down Under <code>google-news:stock market selloff</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 那斯達克指數近期重挫10%，科技股面臨沉重賣壓，引發市場對於是否會再次崩盤的恐慌。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>QQQ,NVDA,AAPL</code></p>
+</li>
+<li>
+<p><strong>[11-22 21:50]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][negative]</strong> Centrica boss says he is 'hugely concerned' over impact of soaring energy bills <code>bbcbusiness</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 英國能源巨頭 Centrica 擔憂能源帳單飆升導致民眾無力支付，加重歐洲民生經濟壓力。</p>
+</li>
+<li>
+<p><strong>[11-22 21:39]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> US Stock Market Forecast: Will the S&amp;P 500 hit 10,000 as Dow Jones and Nasdaq slide? What Morgan Stanley, - The Economic Times <code>google-news:stock market rally</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 探討美股大盤走勢與長期目標（如標普500萬點想像），反映市場在指數回檔之際對長期基本面的辯論。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,DJI,QQQ</code></p>
+</li>
+<li>
+<p><strong>[11-22 21:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> Saudi Arabia, Bahrain report new attacks as Iran says it remains open to a deal with U.S. <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 沙烏地與巴林遭受無人機與飛彈攻擊，中東地緣政治緊張升溫，牽動原油供應風險與油價波動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>USO,BNO</code></p>
+</li>
+<li>
+<p><strong>[11-22 21:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][negative]</strong> Pizza chains are under pressure. GLP-1 use is only one part of the problem <code>cnbc</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 披薩連鎖業者面臨需求減弱、競爭加劇及GLP-1減肥藥改變飲食習慣的結構性壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>DPZ</code></p>
+</li>
+<li>
+<p><strong>[11-22 21:28]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][negative]</strong> TWA00 加權指數- 所有利空全部操之在外人手中，要小心應對- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股加權指數受制於國際利空與外資動向，市場情緒偏向保守警惕。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TWA00</code></p>
+</li>
+<li>
+<p><strong>[11-22 19:56]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> TWA00 加權指數- 貝森特談中美：H200晶片出口政策不變- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國晶片出口政策維持不變，減輕AI晶片供應鏈的不確定性，利好台美半導體與AI概念股。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-22 21:50]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[總體經濟][negative]</strong> Centrica boss 'hugely concerned' over impact of soaring energy bills <code>bbcbusiness</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 能源帳單飆升加重民生負擔，可能抑制英國及歐洲地區消費動能與總體經濟復甦。</p>
+</li>
+<li>
+<p><strong>[11-22 21:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> Taiwan Tightens Short-Selling Rules as AI Stock Crash Wipes 28% Off Market Peak - Coinpaper <code>google-news:stock market selloff</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: AI股泡沫破裂致台股自高點重挫28%，台灣證交所緊縮融券與短空規則以穩定市場信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TWA00,2330,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-22 21:10]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 【即時新聞】標普500指數重挫逾11%陷修正，美光(MU)財報將成AI股止跌關鍵！ - CMoney投資網誌 <code>google-news:台股 大跌</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 標普500指數跌逾11%陷入修正，美光(MU)財報成為AI硬體需求與族群止跌的關鍵風向球。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>MU,NVDA,SPY</code></p>
+</li>
+<li>
+<p><strong>[11-22 21:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> Zohran Mamdani on Trump, Wall Street and Wealth Taxes <code>nytbusiness</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 紐約市長談論華爾街與富人稅議題，對整體美股市場影響偏向議題面，無立即性資金衝擊。</p>
+</li>
+<li>
+<p><strong>[11-22 20:33]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 股市穩定基金上膛！南韓祭出穩市三箭 嚴打非法放空三個月 <code>yahoo-tw-finance</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 南韓祭出穩市三箭並準備股市穩定基金，KOSPI上週重挫5.21%，顯示亞股系統性修正壓力沉重。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>KOSPI</code></p>
+</li>
+<li>
+<p><strong>[11-22 21:14]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 【救市措施】台灣金管會推限空令 韓國準備動用股市穩定基金 - 香港經濟日報HKET <code>google-news:金管會</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台灣與韓國相繼推出限空令與股市穩定基金等救市措施，顯示亞洲股市面臨劇烈下檔壓力，台股與韓股短線恐持續波動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,KOSPI</code></p>
+</li>
+<li>
+<p><strong>[11-22 21:05]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> Gold Slides to 14-Month Low on Dollar Strength - Wisevoter <code>google-news:Federal Reserve rate decision</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美元指數強勢走高，打壓金價跌至14個月低點，商品市場承壓。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,黃金</code></p>
+</li>
+<li>
+<p><strong>[11-22 18:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Only 5% of Cryptocurrencies Are Rising as Fed Rate Hike Fears Grow - BeInCrypto <code>google-news:Federal Reserve rate decision</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 聯準會升息恐慌再起，加密貨幣市場僅5%上漲，資金風險偏好顯著降溫。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>BTC,ETH</code></p>
+</li>
+<li>
+<p><strong>[11-22 20:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> Can stocks bounce back after a brutal week? This timing model says history is on the market’s side. <code>marketwatch</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 歷史季節性計量模型顯示美股在經歷近期大跌後，未來兩週具備向上反彈的偏好，有助於穩定市場信心。</p>
+</li>
+<li>
+<p><strong>[11-22 19:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> 月配年配都有！聯博首創ETF傘型基金開募中中國大陸財報季！嗶哩嗶哩BILI、理想汽車LI同周交卷Dell財報＋PCE同天出爐中油油價連10不漲！中油累計吸收357億撐住油價｜投資早知道 - Yahoo股市 <code>google-news:油價</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 本週將迎來美股Dell財報與美國PCE通膨數據公布，市場正密切關注通膨走勢與科技股財報以定調Fed降息路徑。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>BILI,LI,DELL</code></p>
+</li>
+<li>
+<p><strong>[11-22 20:05]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> TWA00 加權指數- 俄戰場攻防不斷!澤倫斯基家鄉連遇3波攻擊烏拒示弱猛轟俄羅斯... - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 俄烏衝突持續升溫且波及本土，地緣政治風險維持高檔，對全球風險資產評價與能源供應帶來潛在壓力。</p>
+</li>
+<li>
+<p><strong>[11-22 19:26]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][positive]</strong> TWA00 加權指數- 勿恐慌！有利多！國安基金進場了！外資賣壓已收斂- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股單週重挫後引發國安基金進場與外資賣壓收斂，政策面護盤動作有助於減緩恐慌性拋售。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TWA00</code></p>
+</li>
+<li>
+<p><strong>[11-22 20:04]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][negative]</strong> The associate of Alice Huang who funneled Nvidia chips to China - WSJ <code>seekingalpha</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 輝達晶片走私中國事件再度引發監管與地緣政治疑慮，對半導體供應鏈情緒帶來干擾。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-22 20:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> Gold and silver prices plunge amid strong US dollar and rising Treasury yields - News On AIR <code>google-news:Treasury yields</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美元走強與美債殖利率攀升，對無息資產黃金與白銀構成強大拋售壓力，金銀價格顯著下挫。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,黃金</code></p>
+</li>
+<li>
+<p><strong>[11-22 19:43]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> TWA00 加權指數- 看到一堆看空的文章原本忐忑的心也舒適了開始期待下半周囉... - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 市場情緒指標顯示散戶與投資人對於台股加權指數多空看法分歧，情緒由恐慌轉為觀望。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TWA00</code></p>
+</li>
+<li>
+<p><strong>[11-22 20:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> AI美股領跌全球資產，Anthropic加劇流動性壓力，比特幣失守6萬美元大關 - 鉅亨網 <code>google-news:台股 大跌</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: AI美股領跌並拖累全球風險資產，加密貨幣流動性壓力升溫，比特幣失守6萬美元，市場避險情緒濃厚。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,BTC</code></p>
+</li>
+<li>
+<p><strong>[11-22 19:28]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 台股測底還沒完？ 冠軍分析師亮出5檔抗跌股 雙主軸曝光 <code>yahoo-tw-stock</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股權值股與半導體遭外資提款，資金轉向軟體服務與資訊安全等抗跌族群。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,台股</code></p>
+</li>
+<li>
+<p><strong>[11-22 19:42]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> Dow, S&amp;P 500 and Nasdaq hit record highs in 2026 before AI-fueled selloff - Crypto Briefing <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股四大指數創高後因AI族群引發拋售潮，科技股重挫，連動全球風險資產下跌。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM,AAPL,MSFT</code></p>
+</li>
+<li>
+<p><strong>[11-22 19:39]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> S&amp;P 500, Nasdaq 100 Drive into Correction Territory - FOREX.com <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: S&amp;P 500與Nasdaq 100雙雙跌入修正領域，技術面走弱，資金轉向防禦型資產。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPX,NDX</code></p>
+</li>
+<li>
+<p><strong>[11-22 18:56]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> U.S. AI Stock Sell-Off Triggers South Korea Market Plunge - 조선일보 <code>google-news:stock market selloff</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國AI股殺盤骨牌效應擴大，引發南韓股市等亞洲半導體重鎮同步重挫。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SK Hynix,Samsung,費半</code></p>
+</li>
+<li>
+<p><strong>[11-22 19:08]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> TWA00 加權指數- 會不會根本還沒結束- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股加權指數修正壓力大增，市場擔憂跌勢未歇，散戶與法人觀望情緒濃厚。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TWA00</code></p>
+</li>
+<li>
+<p><strong>[11-22 19:01]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][neutral]</strong> 台股重挫連買4天！樂活大叔豪砸308萬掃貨2檔ETF 淡定喊：大不了套牢 - 三立新聞 <code>google-news:台股 大跌</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股大跌引發存股族進場承接ETF，市場展現逢低買盤，但短線仍受國際股市拖累。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>台股</code></p>
+</li>
+<li>
+<p><strong>[11-22 18:54]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> South Korea prepares stock market stabilization fund after Kospi plunges 5.2% <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 南韓KOSPI指數暴跌5.2%，促使當局緊急籌備股市穩定基金，反映亞股資金流出壓力沉重。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>KOSPI</code></p>
+</li>
+<li>
+<p><strong>[11-22 18:42]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[地緣政治][negative]</strong> 約旦河西岸4村莊遭縱火塗鴉 疑以色列屯墾者所為 <code>yahoo-tw-finance</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 約旦河西岸發生屯墾者暴力事件，中東地緣政治緊張局勢持續，對金融市場直接衝擊有限。</p>
+</li>
+<li>
+<p><strong>[11-22 19:02]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[匯市][neutral]</strong> AUD/USD Outlook: Macro Forces Collide Ahead of US, AU Inflation - FOREX.com <code>google-news:inflation CPI</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 澳幣兌美元受美澳即將公布的通膨數據與全球總經變數交織影響，匯價波動加劇。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>AUD/USD</code></p>
+</li>
+<li>
+<p><strong>[11-22 19:06]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 台股暴跌只是開始？專家曝3風險骨牌：連續倒下恐不只影響科技業- 金融 - 工商時報 <code>google-news:台股 大跌</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股面臨系統性修正與連鎖風險，科技股與整體供應鏈評價面臨下修壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TWA00</code></p>
+</li>
+<li>
+<p><strong>[11-22 18:36]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 美股暴跌尋底？Anthropic 首日暴漲回落、GTA VI 熱銷創紀錄、Nvidia 面臨中國風險 - CMoney投資網誌 <code>google-news:美股 大跌 暴漲</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股面臨暴跌尋底壓力，Nvidia 面臨中國市場風險且 AI 新創首日暴漲回落，加劇科技股震盪。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,Anthropic</code></p>
+</li>
+<li>
+<p><strong>[11-22 18:41]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[債市][negative]</strong> Philippine Treasury bill, bond yields may rise as retail dollar bond offer drains liquidity - Traders Union <code>google-news:Treasury yields</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 菲律賓發行零售美元債券吸納流動性，推升當地公債與國庫券殖利率，對區域債市流動性有緊縮效果。</li>
+</ul>
+<p><strong>其他同時段收錄（未分析，共 5 筆）</strong>：</p>
+<ul>
+<li><strong>[11-22 20:00]</strong> 快訊｜中油公布11/23至11/29油價不調整 95無鉛維持32.7元、柴油29.9元 - 墨新聞-MORE News（<code>google-news:油價</code>）</li>
+<li><strong>[11-22 23:10]</strong> I’ve studied over 200 kids—parents who do 6 things accidentally raise people pleasers: It starts in ‘ordinary, well-intentioned moments’（<code>cnbc</code>）</li>
+<li><strong>[11-22 22:49]</strong> I’ve studied over 200 kids: Parents who do 6 things accidentally raise people pleasers—what to do instead（<code>cnbc</code>）</li>
+<li><strong>[11-22 22:28]</strong> 陳自瑤傅嘉莉解構《玫瑰戰爭》衝突戲 掌摑場面背後的默契與挑戰 - Singtaousa（<code>google-news:戰爭 衝突</code>）</li>
+<li><strong>[11-22 18:38]</strong> TWA00 加權指數- 最後決定明天還是看多！ - 股市爆料同學會 - CMoney（<code>google-news:加權指數</code>）</li>
+</ul>
+<hr />
+<h2 id="_2">市場行情快照</h2>
+<pre><code>加權指數            36,033.29    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-6.23%
+台積電              2,000.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-4.76%
+鴻海                 210.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-4.76%
+聯發科              3,350.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-9.95%
+台達電                900.00  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-10.00%
+富邦金                136.50  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-7.77%
+S&amp;P 500          6,910.39    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-3.70%
+納斯達克            22,617.73    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-5.28%
+費城半導體指數          8,408.59    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-10.73%
+道瓊              48,147.33    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-1.93%
+日經225           56,436.65    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-5.06%
+上證指數             3,533.79    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-1.22%
+Apple              342.56  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-1.90%
+Microsoft          484.52  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-2.77%
+NVIDIA             125.53  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-14.01%
+Amazon             246.82  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-4.10%
+Tesla              345.82  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-7.64%
+美元/日圓              159.71  JPY <span style="color:#c0392b;font-weight:bold">▲</span>+0.20%
+美元/台幣               32.96  TWD <span style="color:#2e7d32;font-weight:bold">▼</span>-0.21%
+歐元/美元                1.10  EUR <span style="color:#2e7d32;font-weight:bold">▼</span>-0.02%
+美元/人民幣               6.66  CNY <span style="color:#2e7d32;font-weight:bold">▼</span>-0.06%
+WTI原油               83.41  USD <span style="color:#c0392b;font-weight:bold">▲</span>+0.24%
+布蘭特原油               89.95  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-2.21%
+黃金               3,515.40  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-4.62%
+美元指數DXY            103.84    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.03%
+美債10年殖利率             4.91    % <span style="color:#2e7d32;font-weight:bold">▼</span>-2.77%
+</code></pre>
+<blockquote>
+<p>（快照資料時間：2026-11-23 00:04，台股收盤為最近一個交易日）</p>
+</blockquote>
+<h2 id="severity-2">重大事件（severity ≥ 2）</h2>
+<ul>
+<li><strong>[11-22 23:25]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][positive]</strong> 台股暴跌後券商爭取放寬融資維持率至120%，台灣證交所與金管會研議中 - BigGo 財經</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股暴跌引發骨牌效應，證交所與金管會研議放寬融資維持率至120%，有助於緩解斷頭賣壓，穩定台股信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330</code></p>
+</li>
+<li>
+<p><strong>[11-22 23:15]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][positive]</strong> 維護投資人對國內經濟信心  卓揆明邀金融業、科技業、產業界座談</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 行政院長卓榮泰將邀集金融與科技產業界座談，展現國家隊強力維穩台股與國內經濟信心的決心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330</code></p>
+</li>
+<li>
+<p><strong>[11-22 23:12]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Asian countries take steps to aid stock markets after AI rout</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 亞洲國家採取措施救市以應對AI類股回檔，反映科技股短線修正壓力蔓延至區域市場，短期 sentiment 偏弱。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TSM,NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-22 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Investors Brave Stock Market ‘Fragility’ as AI Trade Falters - Bloomberg.com</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: AI交易熱潮降溫，投資人面臨市場脆弱性，科技股估值面臨修正壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-22 22:26]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 韓國防股災　準備啟動護盤基金放寬庫藏股嚴管放空</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 韓國金融當局擬啟動護盤基金、放寬庫藏股並強化放空管制，有助於穩定韓股跌勢。</p>
+</li>
+<li>
+<p><strong>[11-22 22:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 全球蒸發10兆美元！黃仁勳回歸有望？謝金河曝關鍵：世界發現不能沒有他</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 全球AI與金融市場修正引發關注，輝達及黃仁勳動向仍是全球AI族群的核心風向球。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,2330</code></p>
+</li>
+<li>
+<p><strong>[11-22 22:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[匯市][negative]</strong> 加密貨幣失寵 昔日支持者加速認賠出場</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 比特幣跌破57,742美元創2024年9月來新低，美元走強及Fed升息押注升溫導致加密貨幣資金加速外流。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,比特幣</code></p>
+</li>
+<li>
+<p><strong>[11-22 22:07]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[總體經濟][neutral]</strong> 本週操盤筆記：美國10月PCE、Q3 GDP修正值及南韓央行利率決議</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 本週迎來美國10月PCE通膨數據、Q3 GDP修正值與南韓央行利率決議，將直接左右全球降息預期與匯市走向。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數</code></p>
+</li>
+<li>
+<p><strong>[11-22 22:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> AI泡沫要爆了？馬斯克示警2027年數千億美元資金黑洞　逾200家企業恐倒閉</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 馬斯克示警AI產業2027年面臨數千億資金黑洞，打擊市場對AI資本支出的信心，牽動相關供應鏈與科技股評價。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM,2330</code></p>
+</li>
+<li>
+<p><strong>[11-22 22:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Stocks are in a correction heading into the Thanksgiving holiday. What to brace for next.</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股在感恩節假期前夕進入修正與熊市區間，影響市場風險偏好與假期零售消費心理。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPY,QQQ,DJI</code></p>
+</li>
+<li>
+<p><strong>[11-22 21:54]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> US Stock Market Next Week: Will Stocks Crash Again After Nasdaq’s 10% Plunge? - Stocks Down Under</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 那斯達克指數近期重挫10%，科技股面臨沉重賣壓，引發市場對於是否會再次崩盤的恐慌。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>QQQ,NVDA,AAPL</code></p>
+</li>
+<li>
+<p><strong>[11-22 21:45]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> TWA00 加權指數- 【點靈週更｜台股哀鴻遍野，短時間內恐怕還看不到止跌】 - 股市爆料同學會 - CMoney</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股加權指數哀鴻遍野、短線止跌訊號不明，反映外資調節與技術面轉弱。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330</code></p>
+</li>
+<li>
+<p><strong>[11-22 21:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> Taiwan Tightens Short-Selling Rules as AI Stock Crash Wipes 28% Off Market Peak - Coinpaper</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: AI股泡沫破裂致台股自高點重挫28%，台灣證交所緊縮融券與短空規則以穩定市場信心。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TWA00,2330,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-22 21:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> 2330 台積電 - 下周再崩敢上車？外資暗中吃貨友達16檔竟與國家隊同步抄底- 股市爆料同學會 - CMoney</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 外資與國家隊同步在台股大跌時暗中吃貨台積電與友達等16檔股票，顯示法人開始逢低承接。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,2409</code></p>
+</li>
+<li>
+<p><strong>[11-22 21:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> Saudi Arabia, Bahrain report new attacks as Iran says it remains open to a deal with U.S.</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 沙烏地與巴林遭受無人機與飛彈攻擊，中東地緣政治緊張升溫，牽動原油供應風險與油價波動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>USO,BNO</code></p>
+</li>
+<li>
+<p><strong>[11-22 21:14]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 【救市措施】台灣金管會推限空令 韓國準備動用股市穩定基金 - 香港經濟日報HKET</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台灣與韓國相繼推出限空令與股市穩定基金等救市措施，顯示亞洲股市面臨劇烈下檔壓力，台股與韓股短線恐持續波動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,KOSPI</code></p>
+</li>
+<li>
+<p><strong>[11-22 21:10]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 【即時新聞】標普500指數重挫逾11%陷修正，美光(MU)財報將成AI股止跌關鍵！ - CMoney投資網誌</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 標普500指數跌逾11%陷入修正，美光(MU)財報成為AI硬體需求與族群止跌的關鍵風向球。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>MU,NVDA,SPY</code></p>
+</li>
+<li>
+<p><strong>[11-22 21:05]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> Gold Slides to 14-Month Low on Dollar Strength - Wisevoter</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美元指數強勢走高，打壓金價跌至14個月低點，商品市場承壓。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,黃金</code></p>
+</li>
+<li>
+<p><strong>[11-22 20:33]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 股市穩定基金上膛！南韓祭出穩市三箭 嚴打非法放空三個月</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 南韓祭出穩市三箭並準備股市穩定基金，KOSPI上週重挫5.21%，顯示亞股系統性修正壓力沉重。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>KOSPI</code></p>
+</li>
+<li>
+<p><strong>[11-22 20:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> AI美股領跌全球資產，Anthropic加劇流動性壓力，比特幣失守6萬美元大關 - 鉅亨網</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: AI美股領跌並拖累全球風險資產，加密貨幣流動性壓力升溫，比特幣失守6萬美元，市場避險情緒濃厚。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,BTC</code></p>
+</li>
+<li>
+<p><strong>[11-22 20:05]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> TWA00 加權指數- 俄戰場攻防不斷!澤倫斯基家鄉連遇3波攻擊烏拒示弱猛轟俄羅斯... - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 俄烏衝突持續升溫且波及本土，地緣政治風險維持高檔，對全球風險資產評價與能源供應帶來潛在壓力。</p>
+</li>
+<li>
+<p><strong>[11-22 20:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[商品(油金)][negative]</strong> Gold and silver prices plunge amid strong US dollar and rising Treasury yields - News On AIR</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美元走強與美債殖利率攀升，對無息資產黃金與白銀構成強大拋售壓力，金銀價格顯著下挫。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>美元指數,黃金</code></p>
+</li>
+<li>
+<p><strong>[11-22 19:56]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][positive]</strong> TWA00 加權指數- 貝森特談中美：H200晶片出口政策不變- 股市爆料同學會 - CMoney</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國晶片出口政策維持不變，減輕AI晶片供應鏈的不確定性，利好台美半導體與AI概念股。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM</code></p>
+</li>
+<li>
+<p><strong>[11-22 19:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 台股暴跌！他問「比金融海嘯慘？」 網揭2008年慘況：更刺激 - TVBS新聞網</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股出現顯著暴跌賣壓，引發市場對流動性與重挫行情的恐慌，短線籌碼鬆動。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TWA00</code></p>
+</li>
+<li>
+<p><strong>[11-22 19:42]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> Dow, S&amp;P 500 and Nasdaq hit record highs in 2026 before AI-fueled selloff - Crypto Briefing</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股四大指數創高後因AI族群引發拋售潮，科技股重挫，連動全球風險資產下跌。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,TSM,AAPL,MSFT</code></p>
+</li>
+<li>
+<p><strong>[11-22 19:39]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> S&amp;P 500, Nasdaq 100 Drive into Correction Territory - FOREX.com</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: S&amp;P 500與Nasdaq 100雙雙跌入修正領域，技術面走弱，資金轉向防禦型資產。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SPX,NDX</code></p>
+</li>
+<li>
+<p><strong>[11-22 19:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][neutral]</strong> 月配年配都有！聯博首創ETF傘型基金開募中中國大陸財報季！嗶哩嗶哩BILI、理想汽車LI同周交卷Dell財報＋PCE同天出爐中油油價連10不漲！中油累計吸收357億撐住油價｜投資早知道 - Yahoo股市</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 本週將迎來美股Dell財報與美國PCE通膨數據公布，市場正密切關注通膨走勢與科技股財報以定調Fed降息路徑。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>BILI,LI,DELL</code></p>
+</li>
+<li>
+<p><strong>[11-22 19:28]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 台股測底還沒完？ 冠軍分析師亮出5檔抗跌股 雙主軸曝光</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股權值股與半導體遭外資提款，資金轉向軟體服務與資訊安全等抗跌族群。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,台股</code></p>
+</li>
+<li>
+<p><strong>[11-22 19:26]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][positive]</strong> TWA00 加權指數- 勿恐慌！有利多！國安基金進場了！外資賣壓已收斂- 股市爆料同學會 - CMoney</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股單週重挫後引發國安基金進場與外資賣壓收斂，政策面護盤動作有助於減緩恐慌性拋售。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TWA00</code></p>
+</li>
+<li>
+<p><strong>[11-22 19:24]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> S&amp;P 500 Falls Into Correction as AI Stocks Slide - JournalArta</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 標普500因AI類股回檔而進入修正區，顯示高估值科技股面臨獲利了結與籌碼鬆動壓力，美股及全球科技股短期震盪加劇。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,AAPL,MSFT,S&amp;P500</code></p>
+</li>
+<li>
+<p><strong>[11-22 19:08]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> TWA00 加權指數- 會不會根本還沒結束- 股市爆料同學會 - CMoney</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股加權指數修正壓力大增，市場擔憂跌勢未歇，散戶與法人觀望情緒濃厚。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TWA00</code></p>
+</li>
+<li>
+<p><strong>[11-22 19:06]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 台股暴跌只是開始？專家曝3風險骨牌：連續倒下恐不只影響科技業- 金融 - 工商時報</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股面臨系統性修正與連鎖風險，科技股與整體供應鏈評價面臨下修壓力。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>2330,TWA00</code></p>
+</li>
+<li>
+<p><strong>[11-22 18:56]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> U.S. AI Stock Sell-Off Triggers South Korea Market Plunge - 조선일보</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國AI股殺盤骨牌效應擴大，引發南韓股市等亞洲半導體重鎮同步重挫。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>SK Hynix,Samsung,費半</code></p>
+</li>
+<li>
+<p><strong>[11-22 18:54]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> South Korea prepares stock market stabilization fund after Kospi plunges 5.2%</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 南韓KOSPI指數暴跌5.2%，促使當局緊急籌備股市穩定基金，反映亞股資金流出壓力沉重。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>KOSPI</code></p>
+</li>
+<li>
+<p><strong>[11-22 18:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[總體經濟][negative]</strong> Only 5% of Cryptocurrencies Are Rising as Fed Rate Hike Fears Grow - BeInCrypto</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 聯準會升息恐慌再起，加密貨幣市場僅5%上漲，資金風險偏好顯著降溫。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>BTC,ETH</code></p>
+</li>
+<li>
+<p><strong>[11-22 18:36]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 美股暴跌尋底？Anthropic 首日暴漲回落、GTA VI 熱銷創紀錄、Nvidia 面臨中國風險 - CMoney投資網誌</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美股面臨暴跌尋底壓力，Nvidia 面臨中國市場風險且 AI 新創首日暴漲回落，加劇科技股震盪。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,Anthropic</code></p>
+</li>
+<li>
+<p><strong>[11-22 18:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> TWA00 加權指數- 台股美股何時可能落地開始大反彈？！ - 股市爆料同學會 - CMoney</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股與美股同步面臨修正壓力，市場關注何時能夠觸底反彈，資金觀望氣氛濃厚。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TWA00</code></p>
+</li>
+<li>
+<p><strong>[11-22 18:25]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> 台股單週崩跌17.5% 證交所與十大券商達成調降融資維持率共識 - BigGo 財經</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股單週崩跌17.5%，證交所與十大券商共識調降融資維持率，反映市場流動性緊縮與斷頭賣壓沈重。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TWA00</code></p>
+</li>
+<li>
+<p><strong>[11-22 18:24]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[股市][negative]</strong> TWA00 加權指數- ⚫️黑天鵝來襲！全球資產無差別大逃殺，現在該怎麼保命？ - 股市爆料同學會 - CMoney</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 市場擔憂黑天鵝事件導致全球資產無差別大逃殺，恐慌情緒擴散加劇市場賣壓。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>TWA00</code></p>
+</li>
+<li>
+<p><strong>[11-22 17:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> 股民崩潰喊「無底洞」！這主動式ETF日均飆133萬張 三大法人單週狂砍382萬張 - Yahoo股市</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 特定主動式ETF遭三大法人單週狂砍382萬張，顯示市場資金籌碼鬆動，加劇散戶恐慌與賣壓。</p>
+</li>
+<li>
+<p><strong>[11-22 17:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[地緣政治][negative]</strong> 蘇丹首都凌晨遇襲 無人機轟炸住宅區</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 蘇丹首都遇襲加劇區域地緣政治緊張，對全球油價與供應鏈有微幅心理擾動，但實質影響有限。</p>
+</li>
+<li>
+<p><strong>[11-22 17:41]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> 周末精選／金管會穩市全面升級...平盤下全面禁止放空 台股六大名師曝心法、現在可以這樣做 - 經濟日報</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 金管會祭出平盤下全面禁止放空等穩市升級措施，有助於抑制空方氣焰、穩定台股信心。</li>
+<li><strong style="color:#174ea6">標的</strong>: <code>TWA00</code></li>
+</ul>
+<hr />
+<h2 id="_3">分類彙整</h2>
+<h3 id="54">股市（54）</h3>
+<ul>
+<li><strong>[11-22 23:25]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> 台股暴跌後券商爭取放寬融資維持率至120%，台灣證交所與金管會研議中 - BigGo 財經</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股暴跌引發骨牌效應，證交所與金管會研議放寬融資維持率至120%，有助於緩解斷頭賣壓，穩定台股信心。</p>
+</li>
+<li>
+<p><strong>[11-22 23:12]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Asian countries take steps to aid stock markets after AI rout</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 亞洲國家採取措施救市以應對AI類股回檔，反映科技股短線修正壓力蔓延至區域市場，短期 sentiment 偏弱。</p>
+</li>
+<li>
+<p><strong>[11-22 23:08]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 股災後第一波肥肉來了？ 分析師押寶「5檔ETF」卡位大反彈</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 分析師建議透過ETF卡位台股大反彈，顯示市場資金轉向防禦與分散風險的被動投資工具。</p>
+</li>
+<li>
+<p><strong>[11-22 23:01]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Corporate America hunts for ‘generational’ growth in AI, trading cards and the L.A. airport</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 企業界持續尋找AI等長線成長動能，有助於支撐美股科技巨頭的長期估值與題材延續性。</p>
+</li>
+<li>
+<p><strong>[11-22 23:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Dow Jones and S&amp;P 500 Outlook: Top Stock Market Headlines and Data This Week - Benzinga</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股道瓊與標普500指數本週面臨關鍵數據與財報考驗，預期市場波動度將維持高檔。</p>
+</li>
+<li>
+<p><strong>[11-22 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Investors Brave Stock Market ‘Fragility’ as AI Trade Falters - Bloomberg.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: AI交易熱潮降溫，投資人面臨市場脆弱性，科技股估值面臨修正壓力。</p>
+</li>
+<li>
+<p><strong>[11-22 22:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> ChipMOS earnings up next: Can packaging specialist sustain growth?</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 封測廠南茂即將公布財報，市場關注其半導體封裝成長動能是否持續。</p>
+</li>
+<li>
+<p><strong>[11-22 22:26]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 韓國防股災　準備啟動護盤基金放寬庫藏股嚴管放空</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 韓國金融當局擬啟動護盤基金、放寬庫藏股並強化放空管制，有助於穩定韓股跌勢。</p>
+</li>
+<li>
+<p><strong>[11-22 22:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> 全球蒸發10兆美元！黃仁勳回歸有望？謝金河曝關鍵：世界發現不能沒有他</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 全球AI與金融市場修正引發關注，輝達及黃仁勳動向仍是全球AI族群的核心風向球。</p>
+</li>
+<li>
+<p><strong>[11-22 22:10]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> iPhone Duo上市滿月　中國市場降價幅度續擴大</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 蘋果摺疊機iPhone Duo中國市場降價擴大，顯示當地需求疲軟與競爭激烈。</p>
+</li>
+<li>
+<p><strong>[11-22 22:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> AI泡沫要爆了？馬斯克示警2027年數千億美元資金黑洞　逾200家企業恐倒閉</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 馬斯克示警AI產業2027年面臨數千億資金黑洞，打擊市場對AI資本支出的信心，牽動相關供應鏈與科技股評價。</p>
+</li>
+<li>
+<p><strong>[11-22 22:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Stocks are in a correction heading into the Thanksgiving holiday. What to brace for next.</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股在感恩節假期前夕進入修正與熊市區間，影響市場風險偏好與假期零售消費心理。</p>
+</li>
+<li>
+<p><strong>[11-22 21:54]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> US Stock Market Next Week: Will Stocks Crash Again After Nasdaq’s 10% Plunge? - Stocks Down Under</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 那斯達克指數近期重挫10%，科技股面臨沉重賣壓，引發市場對於是否會再次崩盤的恐慌。</p>
+</li>
+<li>
+<p><strong>[11-22 21:45]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> TWA00 加權指數- 【點靈週更｜台股哀鴻遍野，短時間內恐怕還看不到止跌】 - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股加權指數哀鴻遍野、短線止跌訊號不明，反映外資調節與技術面轉弱。</p>
+</li>
+<li>
+<p><strong>[11-22 21:39]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> US Stock Market Forecast: Will the S&amp;P 500 hit 10,000 as Dow Jones and Nasdaq slide? What Morgan Stanley, - The Economic Times</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 探討美股大盤走勢與長期目標（如標普500萬點想像），反映市場在指數回檔之際對長期基本面的辯論。</p>
+</li>
+<li>
+<p><strong>[11-22 21:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Taiwan Tightens Short-Selling Rules as AI Stock Crash Wipes 28% Off Market Peak - Coinpaper</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: AI股泡沫破裂致台股自高點重挫28%，台灣證交所緊縮融券與短空規則以穩定市場信心。</p>
+</li>
+<li>
+<p><strong>[11-22 21:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 2330 台積電 - 下周再崩敢上車？外資暗中吃貨友達16檔竟與國家隊同步抄底- 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 外資與國家隊同步在台股大跌時暗中吃貨台積電與友達等16檔股票，顯示法人開始逢低承接。</p>
+</li>
+<li>
+<p><strong>[11-22 21:28]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> TWA00 加權指數- 所有利空全部操之在外人手中，要小心應對- 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股加權指數受制於國際利空與外資動向，市場情緒偏向保守警惕。</p>
+</li>
+<li>
+<p><strong>[11-22 21:14]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 【救市措施】台灣金管會推限空令 韓國準備動用股市穩定基金 - 香港經濟日報HKET</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台灣與韓國相繼推出限空令與股市穩定基金等救市措施，顯示亞洲股市面臨劇烈下檔壓力，台股與韓股短線恐持續波動。</p>
+</li>
+<li>
+<p><strong>[11-22 21:10]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 【即時新聞】標普500指數重挫逾11%陷修正，美光(MU)財報將成AI股止跌關鍵！ - CMoney投資網誌</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 標普500指數跌逾11%陷入修正，美光(MU)財報成為AI硬體需求與族群止跌的關鍵風向球。</p>
+</li>
+<li>
+<p><strong>[11-22 21:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Zohran Mamdani on Trump, Wall Street and Wealth Taxes</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 紐約市長談論華爾街與富人稅議題，對整體美股市場影響偏向議題面，無立即性資金衝擊。</p>
+</li>
+<li>
+<p><strong>[11-22 21:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> Pizza chains are under pressure. GLP-1 use is only one part of the problem</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 披薩連鎖業者面臨需求減弱、競爭加劇及GLP-1減肥藥改變飲食習慣的結構性壓力。</p>
+</li>
+<li>
+<p><strong>[11-22 20:33]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 股市穩定基金上膛！南韓祭出穩市三箭 嚴打非法放空三個月</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 南韓祭出穩市三箭並準備股市穩定基金，KOSPI上週重挫5.21%，顯示亞股系統性修正壓力沉重。</p>
+</li>
+<li>
+<p><strong>[11-22 20:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Can stocks bounce back after a brutal week? This timing model says history is on the market’s side.</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 歷史季節性計量模型顯示美股在經歷近期大跌後，未來兩週具備向上反彈的偏好，有助於穩定市場信心。</p>
+</li>
+<li>
+<p><strong>[11-22 20:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> AI美股領跌全球資產，Anthropic加劇流動性壓力，比特幣失守6萬美元大關 - 鉅亨網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: AI美股領跌並拖累全球風險資產，加密貨幣流動性壓力升溫，比特幣失守6萬美元，市場避險情緒濃厚。</p>
+</li>
+<li>
+<p><strong>[11-22 20:04]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> The associate of Alice Huang who funneled Nvidia chips to China - WSJ</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 輝達晶片走私中國事件再度引發監管與地緣政治疑慮，對半導體供應鏈情緒帶來干擾。</p>
+</li>
+<li>
+<p><strong>[11-22 19:56]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> TWA00 加權指數- 貝森特談中美：H200晶片出口政策不變- 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國晶片出口政策維持不變，減輕AI晶片供應鏈的不確定性，利好台美半導體與AI概念股。</p>
+</li>
+<li>
+<p><strong>[11-22 19:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 台股暴跌！他問「比金融海嘯慘？」 網揭2008年慘況：更刺激 - TVBS新聞網</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股出現顯著暴跌賣壓，引發市場對流動性與重挫行情的恐慌，短線籌碼鬆動。</p>
+</li>
+<li>
+<p><strong>[11-22 19:43]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> TWA00 加權指數- 看到一堆看空的文章原本忐忑的心也舒適了開始期待下半周囉... - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 市場情緒指標顯示散戶與投資人對於台股加權指數多空看法分歧，情緒由恐慌轉為觀望。</p>
+</li>
+<li>
+<p><strong>[11-22 19:42]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> Dow, S&amp;P 500 and Nasdaq hit record highs in 2026 before AI-fueled selloff - Crypto Briefing</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股四大指數創高後因AI族群引發拋售潮，科技股重挫，連動全球風險資產下跌。</p>
+</li>
+<li>
+<p><strong>[11-22 19:39]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> S&amp;P 500, Nasdaq 100 Drive into Correction Territory - FOREX.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: S&amp;P 500與Nasdaq 100雙雙跌入修正領域，技術面走弱，資金轉向防禦型資產。</p>
+</li>
+<li>
+<p><strong>[11-22 19:28]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> 台股測底還沒完？ 冠軍分析師亮出5檔抗跌股 雙主軸曝光</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股權值股與半導體遭外資提款，資金轉向軟體服務與資訊安全等抗跌族群。</p>
+</li>
+<li>
+<p><strong>[11-22 19:26]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[positive]</strong> TWA00 加權指數- 勿恐慌！有利多！國安基金進場了！外資賣壓已收斂- 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股單週重挫後引發國安基金進場與外資賣壓收斂，政策面護盤動作有助於減緩恐慌性拋售。</p>
+</li>
+<li>
+<p><strong>[11-22 19:24]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> S&amp;P 500 Falls Into Correction as AI Stocks Slide - JournalArta</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 標普500因AI類股回檔而進入修正區，顯示高估值科技股面臨獲利了結與籌碼鬆動壓力，美股及全球科技股短期震盪加劇。</p>
+</li>
+<li>
+<p><strong>[11-22 19:08]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> TWA00 加權指數- 會不會根本還沒結束- 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股加權指數修正壓力大增，市場擔憂跌勢未歇，散戶與法人觀望情緒濃厚。</p>
+</li>
+<li>
+<p><strong>[11-22 19:06]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 台股暴跌只是開始？專家曝3風險骨牌：連續倒下恐不只影響科技業- 金融 - 工商時報</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股面臨系統性修正與連鎖風險，科技股與整體供應鏈評價面臨下修壓力。</p>
+</li>
+<li>
+<p><strong>[11-22 19:01]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 台股重挫連買4天！樂活大叔豪砸308萬掃貨2檔ETF 淡定喊：大不了套牢 - 三立新聞</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股大跌引發存股族進場承接ETF，市場展現逢低買盤，但短線仍受國際股市拖累。</p>
+</li>
+<li>
+<p><strong>[11-22 18:56]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> U.S. AI Stock Sell-Off Triggers South Korea Market Plunge - 조선일보</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國AI股殺盤骨牌效應擴大，引發南韓股市等亞洲半導體重鎮同步重挫。</p>
+</li>
+<li>
+<p><strong>[11-22 18:54]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> South Korea prepares stock market stabilization fund after Kospi plunges 5.2%</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 南韓KOSPI指數暴跌5.2%，促使當局緊急籌備股市穩定基金，反映亞股資金流出壓力沉重。</p>
+</li>
+<li>
+<p><strong>[11-22 18:50]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> S&amp;P 500 Valuations Fuel Crash Concerns, but Timing Is Unclear - JournalArta</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 標普500高估值引發市場對潛在崩盤的擔憂，但 timing 不明，主要對投資人情緒與風險偏好造成壓抑。</p>
+</li>
+<li>
+<p><strong>[11-22 18:38]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[positive]</strong> TWA00 加權指數- 最後決定明天還是看多！ - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 散戶與網路論壇討論情緒偏向主觀看多，對實際大盤走勢無實質影響。</p>
+</li>
+<li>
+<p><strong>[11-22 18:36]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 美股暴跌尋底？Anthropic 首日暴漲回落、GTA VI 熱銷創紀錄、Nvidia 面臨中國風險 - CMoney投資網誌</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美股面臨暴跌尋底壓力，Nvidia 面臨中國市場風險且 AI 新創首日暴漲回落，加劇科技股震盪。</p>
+</li>
+<li>
+<p><strong>[11-22 18:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> TWA00 加權指數- 台股美股何時可能落地開始大反彈？！ - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股與美股同步面臨修正壓力，市場關注何時能夠觸底反彈，資金觀望氣氛濃厚。</p>
+</li>
+<li>
+<p><strong>[11-22 18:32]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> TWA00 加權指數- 台廠深化伺服器與綠能佈局，半導體迎資本攻防- 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台廠深化伺服器與綠能佈局，半導體迎資本攻防，長線基本面支撐台股產業升級。</p>
+</li>
+<li>
+<p><strong>[11-22 18:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> TWA00 加權指數- 低軌衛星占比拚破10%，宣德逆勢漲停！ - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 低軌衛星題材發酵，宣德逆勢漲停，顯示特定題材股在盤勢震盪中仍有資金點火。</p>
+</li>
+<li>
+<p><strong>[11-22 18:25]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> 台股單週崩跌17.5% 證交所與十大券商達成調降融資維持率共識 - BigGo 財經</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股單週崩跌17.5%，證交所與十大券商共識調降融資維持率，反映市場流動性緊縮與斷頭賣壓沈重。</p>
+</li>
+<li>
+<p><strong>[11-22 18:24]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[negative]</strong> TWA00 加權指數- ⚫️黑天鵝來襲！全球資產無差別大逃殺，現在該怎麼保命？ - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 市場擔憂黑天鵝事件導致全球資產無差別大逃殺，恐慌情緒擴散加劇市場賣壓。</p>
+</li>
+<li>
+<p><strong>[11-22 18:16]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> TWA00 加權指數- 好消息，政府調升斷頭門檻- 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 政府調升融資斷頭門檻，有助於緩解短期融資斷頭賣壓，減緩台股跌勢的骨牌效應。</p>
+</li>
+<li>
+<p><strong>[11-22 18:02]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Procter &amp; Gamble to Increase Factory Shifts Without Humans to Cut Costs</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 寶僑推進無人工廠夜間輪班以降低成本，有利提升長期毛利率，對股價微幅正面。</p>
+</li>
+<li>
+<p><strong>[11-22 18:02]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> TWA00 加權指數- 小牛🐸🥤 …… 😃 18:12update - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 散戶投資社群情緒短評，資訊不足，對整體金融市場無直接實質影響。</p>
+</li>
+<li>
+<p><strong>[11-22 18:01]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> TWA00 加權指數 - 有今年賺很多又吐回去的嗎 - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 反映散戶投資人對台股加權指數年度報酬回吐的焦慮情緒，屬市場情緒抒發，實質影響有限。</p>
+</li>
+<li>
+<p><strong>[11-22 17:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 股民崩潰喊「無底洞」！這主動式ETF日均飆133萬張 三大法人單週狂砍382萬張 - Yahoo股市</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 特定主動式ETF遭三大法人單週狂砍382萬張，顯示市場資金籌碼鬆動，加劇散戶恐慌與賣壓。</p>
+</li>
+<li>
+<p><strong>[11-22 17:48]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> 2330 台積電 - 禮拜一上刺刀! - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 投資人情緒討論台積電週一開盤表現，對實際股價走勢無直接實質影響。</p>
+</li>
+<li>
+<p><strong>[11-22 17:41]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> 周末精選／金管會穩市全面升級...平盤下全面禁止放空 台股六大名師曝心法、現在可以這樣做 - 經濟日報</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 金管會祭出平盤下全面禁止放空等穩市升級措施，有助於抑制空方氣焰、穩定台股信心。</li>
+</ul>
+<h3 id="1">債市（1）</h3>
+<ul>
+<li><strong>[11-22 18:41]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> Philippine Treasury bill, bond yields may rise as retail dollar bond offer drains liquidity - Traders Union</li>
+<li><strong style="color:#174ea6">影響</strong>: 菲律賓發行零售美元債券吸納流動性，推升當地公債與國庫券殖利率，對區域債市流動性有緊縮效果。</li>
+</ul>
+<h3 id="3">匯市（3）</h3>
+<ul>
+<li><strong>[11-22 22:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 加密貨幣失寵 昔日支持者加速認賠出場</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 比特幣跌破57,742美元創2024年9月來新低，美元走強及Fed升息押注升溫導致加密貨幣資金加速外流。</p>
+</li>
+<li>
+<p><strong>[11-22 19:02]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> AUD/USD Outlook: Macro Forces Collide Ahead of US, AU Inflation - FOREX.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 澳幣兌美元受美澳即將公布的通膨數據與全球總經變數交織影響，匯價波動加劇。</p>
+</li>
+<li>
+<p><strong>[11-22 17:55]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> UAE Central Bank Maintains Interest Rate Amid Fed Hold - UPPERNEWS</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 阿聯酋央行維持利率不變，隨聯準會動向保持一致，對外匯與債市影響有限。</li>
+</ul>
+<h3 id="4">商品(油金)（4）</h3>
+<ul>
+<li><strong>[11-22 21:05]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Gold Slides to 14-Month Low on Dollar Strength - Wisevoter</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美元指數強勢走高，打壓金價跌至14個月低點，商品市場承壓。</p>
+</li>
+<li>
+<p><strong>[11-22 20:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Gold and silver prices plunge amid strong US dollar and rising Treasury yields - News On AIR</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美元走強與美債殖利率攀升，對無息資產黃金與白銀構成強大拋售壓力，金銀價格顯著下挫。</p>
+</li>
+<li>
+<p><strong>[11-22 20:00]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 快訊｜中油公布11/23至11/29油價不調整 95無鉛維持32.7元、柴油29.9元 - 墨新聞-MORE News</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 國內油價本週不調整，95無鉛維持32.7元，對通膨與實體消費市場無直接新衝擊。</p>
+</li>
+<li>
+<p><strong>[11-22 18:01]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Agriculture Secretary Declares U.S. Cattle Supply Safe as Screwworm Cases Rise</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國農業部宣告牛隻供應安全，化解潛在疫情恐慌，對農畜產品與期貨價格影響有限。</li>
+</ul>
+<h3 id="4_1">地緣政治（4）</h3>
+<ul>
+<li><strong>[11-22 21:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Saudi Arabia, Bahrain report new attacks as Iran says it remains open to a deal with U.S.</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 沙烏地與巴林遭受無人機與飛彈攻擊，中東地緣政治緊張升溫，牽動原油供應風險與油價波動。</p>
+</li>
+<li>
+<p><strong>[11-22 20:05]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> TWA00 加權指數- 俄戰場攻防不斷!澤倫斯基家鄉連遇3波攻擊烏拒示弱猛轟俄羅斯... - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 俄烏衝突持續升溫且波及本土，地緣政治風險維持高檔，對全球風險資產評價與能源供應帶來潛在壓力。</p>
+</li>
+<li>
+<p><strong>[11-22 18:42]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> 約旦河西岸4村莊遭縱火塗鴉 疑以色列屯墾者所為</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 約旦河西岸發生屯墾者暴力事件，中東地緣政治緊張局勢持續，對金融市場直接衝擊有限。</p>
+</li>
+<li>
+<p><strong>[11-22 17:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> 蘇丹首都凌晨遇襲 無人機轟炸住宅區</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 蘇丹首都遇襲加劇區域地緣政治緊張，對全球油價與供應鏈有微幅心理擾動，但實質影響有限。</li>
+</ul>
+<h3 id="10">總體經濟（10）</h3>
+<ul>
+<li><strong>[11-22 23:15]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[positive]</strong> 維護投資人對國內經濟信心  卓揆明邀金融業、科技業、產業界座談</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 行政院長卓榮泰將邀集金融與科技產業界座談，展現國家隊強力維穩台股與國內經濟信心的決心。</p>
+</li>
+<li>
+<p><strong>[11-22 22:07]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span>[neutral]</strong> 本週操盤筆記：美國10月PCE、Q3 GDP修正值及南韓央行利率決議</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 本週迎來美國10月PCE通膨數據、Q3 GDP修正值與南韓央行利率決議，將直接左右全球降息預期與匯市走向。</p>
+</li>
+<li>
+<p><strong>[11-22 21:50]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> Centrica boss says he is 'hugely concerned' over impact of soaring energy bills</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 英國能源巨頭 Centrica 擔憂能源帳單飆升導致民眾無力支付，加重歐洲民生經濟壓力。</p>
+</li>
+<li>
+<p><strong>[11-22 21:50]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> Centrica boss 'hugely concerned' over impact of soaring energy bills</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 能源帳單飆升加重民生負擔，可能抑制英國及歐洲地區消費動能與總體經濟復甦。</p>
+</li>
+<li>
+<p><strong>[11-22 19:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> 月配年配都有！聯博首創ETF傘型基金開募中中國大陸財報季！嗶哩嗶哩BILI、理想汽車LI同周交卷Dell財報＋PCE同天出爐中油油價連10不漲！中油累計吸收357億撐住油價｜投資早知道 - Yahoo股市</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 本週將迎來美股Dell財報與美國PCE通膨數據公布，市場正密切關注通膨走勢與科技股財報以定調Fed降息路徑。</p>
+</li>
+<li>
+<p><strong>[11-22 18:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Only 5% of Cryptocurrencies Are Rising as Fed Rate Hike Fears Grow - BeInCrypto</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 聯準會升息恐慌再起，加密貨幣市場僅5%上漲，資金風險偏好顯著降溫。</p>
+</li>
+<li>
+<p><strong>[11-22 18:28]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> 國銀新南向獲利埋隱憂？六成靠這兩國撐盤 | 金融脈動 | 金融 - 經濟日報</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 國銀新南向獲利高度集中於特定兩國，潛在匯率與地緣政治風險埋下隱憂。</p>
+</li>
+<li>
+<p><strong>[11-22 18:02]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Looking for the Formula to Stop an Apocalypse</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 探討AI安全與數學防護機制，反映產業對AI監管的長期擔憂，對科技股情緒具潛在心理影響。</p>
+</li>
+<li>
+<p><strong>[11-22 18:01]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[neutral]</strong> Rather Than Sell Their House, They Became Landlords Instead</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 高房貸利率促使屋主轉為房東，顯示房市流動性受壓但租賃市場維持熱度，對地產與銀行債市影響溫和。</p>
+</li>
+<li>
+<p><strong>[11-22 18:00]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> How Six Americans Under 40 Are Saving for Retirement</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 探討年輕族群退休規劃，屬常態理財新聞，對資本市場無直接連動。</li>
+</ul>
+<h3 id="4_2">其他（4）</h3>
+<ul>
+<li><strong>[11-22 23:10]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> I’ve studied over 200 kids—parents who do 6 things accidentally raise people pleasers: It starts in ‘ordinary, well-intentioned moments’</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 育兒與心理學相關內容，對全球金融與資本市場無直接影響。</p>
+</li>
+<li>
+<p><strong>[11-22 22:49]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> I’ve studied over 200 kids: Parents who do 6 things accidentally raise people pleasers—what to do instead</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 資訊不足，與全球金融市場無直接關聯。</p>
+</li>
+<li>
+<p><strong>[11-22 22:28]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 陳自瑤傅嘉莉解構《玫瑰戰爭》衝突戲 掌摑場面背後的默契與挑戰 - Singtaousa</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 資訊不足，為影劇娛樂新聞，對總體經濟與金融市場無影響。</p>
+</li>
+<li>
+<p><strong>[11-22 18:02]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> The Case of the Idle Assistants</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 職場生活專欄文章，對金融與實體市場無實質影響。</li>
+</ul>
+<hr />
+<h2 id="_4">全部事件</h2>
+<ul>
+<li><strong>[11-22 23:25]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 台股暴跌後券商爭取放寬融資維持率至120%，台灣證交所與金管會研議中 - BigGo 財經 <code>google-news:台股 大跌</code></li>
+<li><strong>[11-22 23:15]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 維護投資人對國內經濟信心  卓揆明邀金融業、科技業、產業界座談 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-22 23:12]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Asian countries take steps to aid stock markets after AI rout <code>investing-com</code></li>
+<li><strong>[11-22 23:10]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> I’ve studied over 200 kids—parents who do 6 things accidentally raise people pleasers: It starts in ‘ordinary, well-intentioned moments’ <code>cnbc</code></li>
+<li><strong>[11-22 23:08]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 股災後第一波肥肉來了？ 分析師押寶「5檔ETF」卡位大反彈 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-22 23:01]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Corporate America hunts for ‘generational’ growth in AI, trading cards and the L.A. airport <code>marketwatch</code></li>
+<li><strong>[11-22 23:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Dow Jones and S&amp;P 500 Outlook: Top Stock Market Headlines and Data This Week - Benzinga <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-22 23:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Investors Brave Stock Market ‘Fragility’ as AI Trade Falters - Bloomberg.com <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-22 22:49]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> I’ve studied over 200 kids: Parents who do 6 things accidentally raise people pleasers—what to do instead <code>cnbc</code></li>
+<li><strong>[11-22 22:35]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> ChipMOS earnings up next: Can packaging specialist sustain growth? <code>investing-com</code></li>
+<li><strong>[11-22 22:28]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 陳自瑤傅嘉莉解構《玫瑰戰爭》衝突戲 掌摑場面背後的默契與挑戰 - Singtaousa <code>google-news:戰爭 衝突</code></li>
+<li><strong>[11-22 22:26]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 韓國防股災　準備啟動護盤基金放寬庫藏股嚴管放空 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-22 22:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 全球蒸發10兆美元！黃仁勳回歸有望？謝金河曝關鍵：世界發現不能沒有他 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-22 22:20]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 加密貨幣失寵 昔日支持者加速認賠出場 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-22 22:10]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> iPhone Duo上市滿月　中國市場降價幅度續擴大 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-22 22:07]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 本週操盤筆記：美國10月PCE、Q3 GDP修正值及南韓央行利率決議 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-22 22:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> AI泡沫要爆了？馬斯克示警2027年數千億美元資金黑洞　逾200家企業恐倒閉 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-22 22:00]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Stocks are in a correction heading into the Thanksgiving holiday. What to brace for next. <code>marketwatch</code></li>
+<li><strong>[11-22 21:54]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> US Stock Market Next Week: Will Stocks Crash Again After Nasdaq’s 10% Plunge? - Stocks Down Under <code>google-news:stock market selloff</code></li>
+<li><strong>[11-22 21:50]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Centrica boss says he is 'hugely concerned' over impact of soaring energy bills <code>bbcbusiness</code></li>
+<li><strong>[11-22 21:50]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Centrica boss 'hugely concerned' over impact of soaring energy bills <code>bbcbusiness</code></li>
+<li><strong>[11-22 21:45]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> TWA00 加權指數- 【點靈週更｜台股哀鴻遍野，短時間內恐怕還看不到止跌】 - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-22 21:39]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> US Stock Market Forecast: Will the S&amp;P 500 hit 10,000 as Dow Jones and Nasdaq slide? What Morgan Stanley, - The Economic Times <code>google-news:stock market rally</code></li>
+<li><strong>[11-22 21:37]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Taiwan Tightens Short-Selling Rules as AI Stock Crash Wipes 28% Off Market Peak - Coinpaper <code>google-news:stock market selloff</code></li>
+<li><strong>[11-22 21:36]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 2330 台積電 - 下周再崩敢上車？外資暗中吃貨友達16檔竟與國家隊同步抄底- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-22 21:28]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> TWA00 加權指數- 所有利空全部操之在外人手中，要小心應對- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-22 21:25]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Saudi Arabia, Bahrain report new attacks as Iran says it remains open to a deal with U.S. <code>cnbc</code></li>
+<li><strong>[11-22 21:14]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 【救市措施】台灣金管會推限空令 韓國準備動用股市穩定基金 - 香港經濟日報HKET <code>google-news:金管會</code></li>
+<li><strong>[11-22 21:10]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 【即時新聞】標普500指數重挫逾11%陷修正，美光(MU)財報將成AI股止跌關鍵！ - CMoney投資網誌 <code>google-news:台股 大跌</code></li>
+<li><strong>[11-22 21:05]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Gold Slides to 14-Month Low on Dollar Strength - Wisevoter <code>google-news:Federal Reserve rate decision</code></li>
+<li><strong>[11-22 21:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Zohran Mamdani on Trump, Wall Street and Wealth Taxes <code>nytbusiness</code></li>
+<li><strong>[11-22 21:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Pizza chains are under pressure. GLP-1 use is only one part of the problem <code>cnbc</code></li>
+<li><strong>[11-22 20:33]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 股市穩定基金上膛！南韓祭出穩市三箭 嚴打非法放空三個月 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-22 20:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Can stocks bounce back after a brutal week? This timing model says history is on the market’s side. <code>marketwatch</code></li>
+<li><strong>[11-22 20:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> AI美股領跌全球資產，Anthropic加劇流動性壓力，比特幣失守6萬美元大關 - 鉅亨網 <code>google-news:台股 大跌</code></li>
+<li><strong>[11-22 20:05]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> TWA00 加權指數- 俄戰場攻防不斷!澤倫斯基家鄉連遇3波攻擊烏拒示弱猛轟俄羅斯... - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-22 20:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Gold and silver prices plunge amid strong US dollar and rising Treasury yields - News On AIR <code>google-news:Treasury yields</code></li>
+<li><strong>[11-22 20:04]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> The associate of Alice Huang who funneled Nvidia chips to China - WSJ <code>seekingalpha</code></li>
+<li><strong>[11-22 20:00]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 快訊｜中油公布11/23至11/29油價不調整 95無鉛維持32.7元、柴油29.9元 - 墨新聞-MORE News <code>google-news:油價</code></li>
+<li><strong>[11-22 19:56]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> TWA00 加權指數- 貝森特談中美：H200晶片出口政策不變- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-22 19:51]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 台股暴跌！他問「比金融海嘯慘？」 網揭2008年慘況：更刺激 - TVBS新聞網 <code>google-news:台股 大跌</code></li>
+<li><strong>[11-22 19:43]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> TWA00 加權指數- 看到一堆看空的文章原本忐忑的心也舒適了開始期待下半周囉... - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-22 19:42]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> Dow, S&amp;P 500 and Nasdaq hit record highs in 2026 before AI-fueled selloff - Crypto Briefing <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-22 19:39]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> S&amp;P 500, Nasdaq 100 Drive into Correction Territory - FOREX.com <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-22 19:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 月配年配都有！聯博首創ETF傘型基金開募中中國大陸財報季！嗶哩嗶哩BILI、理想汽車LI同周交卷Dell財報＋PCE同天出爐中油油價連10不漲！中油累計吸收357億撐住油價｜投資早知道 - Yahoo股市 <code>google-news:油價</code></li>
+<li><strong>[11-22 19:28]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 台股測底還沒完？ 冠軍分析師亮出5檔抗跌股 雙主軸曝光 <code>yahoo-tw-stock</code></li>
+<li><strong>[11-22 19:26]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> TWA00 加權指數- 勿恐慌！有利多！國安基金進場了！外資賣壓已收斂- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-22 19:24]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> S&amp;P 500 Falls Into Correction as AI Stocks Slide - JournalArta <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-22 19:08]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> TWA00 加權指數- 會不會根本還沒結束- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-22 19:06]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 台股暴跌只是開始？專家曝3風險骨牌：連續倒下恐不只影響科技業- 金融 - 工商時報 <code>google-news:台股 大跌</code></li>
+<li><strong>[11-22 19:02]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> AUD/USD Outlook: Macro Forces Collide Ahead of US, AU Inflation - FOREX.com <code>google-news:inflation CPI</code></li>
+<li><strong>[11-22 19:01]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 台股重挫連買4天！樂活大叔豪砸308萬掃貨2檔ETF 淡定喊：大不了套牢 - 三立新聞 <code>google-news:台股 大跌</code></li>
+<li><strong>[11-22 18:56]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> U.S. AI Stock Sell-Off Triggers South Korea Market Plunge - 조선일보 <code>google-news:stock market selloff</code></li>
+<li><strong>[11-22 18:54]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> South Korea prepares stock market stabilization fund after Kospi plunges 5.2% <code>investing-com</code></li>
+<li><strong>[11-22 18:50]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> S&amp;P 500 Valuations Fuel Crash Concerns, but Timing Is Unclear - JournalArta <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-22 18:42]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 約旦河西岸4村莊遭縱火塗鴉 疑以色列屯墾者所為 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-22 18:41]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Philippine Treasury bill, bond yields may rise as retail dollar bond offer drains liquidity - Traders Union <code>google-news:Treasury yields</code></li>
+<li><strong>[11-22 18:40]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Only 5% of Cryptocurrencies Are Rising as Fed Rate Hike Fears Grow - BeInCrypto <code>google-news:Federal Reserve rate decision</code></li>
+<li><strong>[11-22 18:38]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> TWA00 加權指數- 最後決定明天還是看多！ - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-22 18:36]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 美股暴跌尋底？Anthropic 首日暴漲回落、GTA VI 熱銷創紀錄、Nvidia 面臨中國風險 - CMoney投資網誌 <code>google-news:美股 大跌 暴漲</code></li>
+<li><strong>[11-22 18:35]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> TWA00 加權指數- 台股美股何時可能落地開始大反彈？！ - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-22 18:32]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> TWA00 加權指數- 台廠深化伺服器與綠能佈局，半導體迎資本攻防- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-22 18:30]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> TWA00 加權指數- 低軌衛星占比拚破10%，宣德逆勢漲停！ - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-22 18:28]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 國銀新南向獲利埋隱憂？六成靠這兩國撐盤 | 金融脈動 | 金融 - 經濟日報 <code>google-news:金管會</code></li>
+<li><strong>[11-22 18:25]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> 台股單週崩跌17.5% 證交所與十大券商達成調降融資維持率共識 - BigGo 財經 <code>google-news:台股 大跌</code></li>
+<li><strong>[11-22 18:24]</strong> <strong><span style="color:#d93025;font-weight:bold">[高]</span></strong> TWA00 加權指數- ⚫️黑天鵝來襲！全球資產無差別大逃殺，現在該怎麼保命？ - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-22 18:16]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> TWA00 加權指數- 好消息，政府調升斷頭門檻- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-22 18:02]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Procter &amp; Gamble to Increase Factory Shifts Without Humans to Cut Costs <code>nytbusiness</code></li>
+<li><strong>[11-22 18:02]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> The Case of the Idle Assistants <code>nytbusiness</code></li>
+<li><strong>[11-22 18:02]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> TWA00 加權指數- 小牛🐸🥤 …… 😃 18:12update - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-22 18:02]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Looking for the Formula to Stop an Apocalypse <code>nytbusiness</code></li>
+<li><strong>[11-22 18:01]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Agriculture Secretary Declares U.S. Cattle Supply Safe as Screwworm Cases Rise <code>nytbusiness</code></li>
+<li><strong>[11-22 18:01]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> TWA00 加權指數 - 有今年賺很多又吐回去的嗎 - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-22 18:01]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Rather Than Sell Their House, They Became Landlords Instead <code>nytbusiness</code></li>
+<li><strong>[11-22 18:00]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> How Six Americans Under 40 Are Saving for Retirement <code>nytbusiness</code></li>
+<li><strong>[11-22 17:55]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> UAE Central Bank Maintains Interest Rate Amid Fed Hold - UPPERNEWS <code>google-news:central bank policy</code></li>
+<li><strong>[11-22 17:50]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 股民崩潰喊「無底洞」！這主動式ETF日均飆133萬張 三大法人單週狂砍382萬張 - Yahoo股市 <code>google-news:加權指數</code></li>
+<li><strong>[11-22 17:48]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 蘇丹首都凌晨遇襲 無人機轟炸住宅區 <code>yahoo-tw-stock</code></li>
+<li><strong>[11-22 17:48]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 2330 台積電 - 禮拜一上刺刀! - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-22 17:41]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> 周末精選／金管會穩市全面升級...平盤下全面禁止放空 台股六大名師曝心法、現在可以這樣做 - 經濟日報 <code>google-news:金管會</code></li>
+</ul>
+    </article>
+  
+</div>
+<footer>由金融情報系統自動發佈 · 僅供參考，不構成投資建議</footer>
+<script>
+const WEEK = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function nowParts(tz){
+  const p = {};
+  new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short', month: 'short',
+    day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
+  }).formatToParts(new Date()).forEach(x => p[x.type] = x.value);
+  return p;
+}
+function marketOpen(tz, open, close){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  return wd>=1 && wd<=5 && m>=open && m<close;
+}
+// Taiwan index-futures night session 15:00 -> next-day 05:00 (crosses midnight):
+// 15:00-24:00 Mon-Fri, plus 00:00-05:00 Tue-Sat (Sat 00:00-05:00 is Fri night session).
+function nightOpen(tz){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  if (m >= 5*60 && m < 15*60) return false;   // 05:00-15:00 recess
+  if (m >= 15*60) return wd >= 1 && wd <= 5;   // 15:00-24:00 Mon-Fri
+  return wd >= 2 && wd <= 6;                   // 00:00-05:00 Tue-Sat
+}
+function pad(n){ return String(n).padStart(2,'0'); }
+function setMkt(id, open, label){
+  const el = document.getElementById(id);
+  el.className = 'mkt ' + (open ? 'open' : 'closed');
+  el.textContent = (label ? label + ' ' : '') + (open ? '開盤中' : '未開盤');
+}
+function tick(){
+  const tw = nowParts('Asia/Taipei');
+  const ny = nowParts('America/New_York');
+  document.getElementById('clk-tw').textContent = pad(tw.hour)+':'+pad(tw.minute)+':'+pad(tw.second);
+  document.getElementById('clk-ny').textContent = pad(ny.hour)+':'+pad(ny.minute)+':'+pad(ny.second);
+  // Taiwan: TWSE weighted index 09:00-13:30; TX futures day 08:45-13:45; TX night 15:00-05:00
+  setMkt('tw-idx',  marketOpen('Asia/Taipei', 9*60, 13*60+30), '加權');
+  setMkt('tx-day',  marketOpen('Asia/Taipei', 8*60+45, 13*60+45), '期日盤');
+  setMkt('tx-night', nightOpen('Asia/Taipei'), '期夜盤');
+  // US: regular session 09:30-16:00 ET; after-hours 16:00-20:00 ET
+  setMkt('ny-mkt',  marketOpen('America/New_York', 9*60+30, 16*60), '美股');
+  setMkt('ny-night', marketOpen('America/New_York', 16*60, 20*60), '美股夜');
+}
+tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>
