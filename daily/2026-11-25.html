@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日報告 2026-11-25</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; margin: 0;
+         background: #f5f6f8; color: #1c1e21; line-height: 1.7; }
+  header { background: #1b2a4a; color: #fff; padding: 14px 24px;
+           display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  header h1 { font-size: 18px; margin: 0; flex: 1; }
+  header nav a { color: #cdd8ee; text-decoration: none; margin-left: 14px; font-size: 14px; }
+  header nav a:hover, header nav a.active { color: #fff; text-decoration: underline; }
+  #clock { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; font-size: 13px; }
+  .clk { background: rgba(255,255,255,.08); border-radius: 6px; padding: 4px 10px; }
+  .clk-city { color: #9fb0cf; margin-right: 6px; }
+  .clk-time { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .mkt { margin-left: 8px; font-size: 12px; padding: 1px 7px; border-radius: 9px; }
+  .mkt.open { background: #2e7d32; color: #fff; }
+  .mkt.closed { background: #5a6474; color: #fff; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 20px; }
+  .card { background: #fff; border-radius: 8px; padding: 18px 22px; margin: 14px 0;
+          box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .card h3 { margin: 0 0 6px; }
+  .card a { color: #1b2a4a; text-decoration: none; }
+  .card a:hover { text-decoration: underline; }
+  .muted { color: #666; font-size: 13px; }
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px;
+           color: #fff; margin-left: 6px; }
+  .b-daily { background: #2e7d32; }
+  .b-deep { background: #b45309; }
+  .day-nav { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+  .day-nav a { font-size: 13px; padding: 3px 10px; background: #e8ecf3; border-radius: 12px;
+               color: #33415c; text-decoration: none; }
+  .day-nav a:hover { background: #d2dbea; }
+  article.card { line-height: 1.15; }
+  article.card p { margin: 3px 0; }
+  article.card ul, article.card ol { margin: 3px 0 6px; padding-left: 22px; }
+  article.card h1, article.card h2, article.card h3 { padding-bottom: 4px; }
+  article.card h1, article.card h2 { border-bottom: 2px solid #33415c; }
+  article.card h1 { font-size: 30px; margin-top: 8px; }
+  article.card h2 { font-size: 23px; margin-top: 12px; color: #1b2a4a;
+        border-left: 6px solid #1459c8; padding-left: 12px; }
+  article.card h3 { font-size: 19px; margin-top: 10px; color: #24365c;
+        background: #eef4fb; border-radius: 6px; padding: 4px 12px; }
+  article.card h4 { font-size: 17px; margin-top: 18px; color: #145c3a;
+        background: #e8f5ee; border-left: 4px solid #2e7d32;
+        padding: 5px 10px; border-radius: 4px; }
+  article.card h5 { font-size: 15px; margin-top: 14px; color: #4a5568;
+        font-weight: 600; }
+  article.card h4, article.card h5 { margin-bottom: 2px; }
+  article.card strong { font-weight: 700; }
+  article.card blockquote { border-left: 4px solid #9fb0cf; margin: 4px 0;
+        padding: 2px 12px; color: #4a5568; background: #f4f6fa; }
+  article.card hr { border: none; border-top: 1px dashed #c3ccdb; margin: 12px 0; }
+  article.card code { background: #eef0f4; padding: 1px 5px; border-radius: 4px;
+        font-size: 14px; font-family: Consolas, monospace; }
+  article.card pre { background: #1b2a4a; color: #e6ecf7; padding: 14px; border-radius: 8px; overflow-x: auto; }
+  article.card pre code { background: transparent; color: inherit; padding: 0; }
+  article.card table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+  article.card th, article.card td { border: 1px solid #d8dce3; padding: 6px 10px; }
+  article.card th { background: #eef1f6; }
+  article.card a { color: #1459c8; }
+  footer { text-align: center; color: #999; font-size: 12px; padding: 20px; }
+</style>
+</head>
+<body>
+  <header>
+  <h1>金融情報系統報告</h1>
+  <nav>
+    <a href="../index.html" class="">首頁</a>
+    <a href="../calendar.html" class="">行事曆</a>
+    <a href="../daily/2026-11-25.html" class="active">最新每日</a>
+    <a href="../deep/2026-11-23-pm.html" class="">最新深度</a>
+  </nav>
+  <div id="clock">
+    <span class="clk"><span class="clk-city">台北</span><span class="clk-time" id="clk-tw">--:--:--</span><span class="mkt closed" id="tw-idx">…</span><span class="mkt closed" id="tx-day">…</span><span class="mkt closed" id="tx-night">…</span></span>
+    <span class="clk"><span class="clk-city">紐約</span><span class="clk-time" id="clk-ny">--:--:--</span><span class="mkt closed" id="ny-mkt">…</span><span class="mkt closed" id="ny-night">…</span></span>
+  </div>
+</header>
+<div class="wrap">
+  
+    <div class="day-nav">
+      <a href="../index.html">← 首頁</a>
+      
+        
+        <a href="../daily/2026-11-25.html">2026-11-25</a>
+        
+        <a href="../daily/2026-11-24.html">2026-11-24</a>
+        
+        <a href="../daily/2026-11-23.html">2026-11-23</a>
+        
+        <a href="../daily/2026-11-22.html">2026-11-22</a>
+        
+        <a href="../daily/2026-11-21.html">2026-11-21</a>
+        
+        <a href="../daily/2026-11-20.html">2026-11-20</a>
+        
+        <a href="../daily/2026-11-19.html">2026-11-19</a>
+        
+        <a href="../daily/2026-11-18.html">2026-11-18</a>
+        
+        <a href="../daily/2026-11-17.html">2026-11-17</a>
+        
+        <a href="../daily/2026-11-16.html">2026-11-16</a>
+        
+        <a href="../daily/2026-11-15.html">2026-11-15</a>
+        
+        <a href="../daily/2026-11-14.html">2026-11-14</a>
+        
+        <a href="../daily/2026-11-13.html">2026-11-13</a>
+        
+        <a href="../daily/2026-11-12.html">2026-11-12</a>
+        
+        <a href="../daily/2026-11-11.html">2026-11-11</a>
+        
+        <a href="../daily/2026-11-10.html">2026-11-10</a>
+        
+        <a href="../daily/2026-11-09.html">2026-11-09</a>
+        
+        <a href="../daily/2026-11-08.html">2026-11-08</a>
+        
+        <a href="../daily/2026-11-07.html">2026-11-07</a>
+        
+        <a href="../daily/2026-11-06.html">2026-11-06</a>
+        
+        <a href="../daily/2026-11-05.html">2026-11-05</a>
+        
+        <a href="../daily/2026-11-04.html">2026-11-04</a>
+        
+        <a href="../daily/2026-11-03.html">2026-11-03</a>
+        
+        <a href="../daily/2026-11-02.html">2026-11-02</a>
+        
+        <a href="../daily/2026-11-01.html">2026-11-01</a>
+        
+        <a href="../daily/2026-10-31.html">2026-10-31</a>
+        
+        <a href="../daily/2026-10-30.html">2026-10-30</a>
+        
+        <a href="../daily/2026-10-29.html">2026-10-29</a>
+        
+        <a href="../daily/2026-10-28.html">2026-10-28</a>
+        
+        <a href="../daily/2026-10-27.html">2026-10-27</a>
+        
+        <a href="../daily/2026-10-26.html">2026-10-26</a>
+        
+        <a href="../daily/2026-10-25.html">2026-10-25</a>
+        
+        <a href="../daily/2026-10-24.html">2026-10-24</a>
+        
+        <a href="../daily/2026-10-23.html">2026-10-23</a>
+        
+        <a href="../daily/2026-10-22.html">2026-10-22</a>
+        
+        <a href="../daily/2026-10-21.html">2026-10-21</a>
+        
+        <a href="../daily/2026-10-20.html">2026-10-20</a>
+        
+        <a href="../daily/2026-10-19.html">2026-10-19</a>
+        
+        <a href="../daily/2026-10-18.html">2026-10-18</a>
+        
+        <a href="../daily/2026-10-17.html">2026-10-17</a>
+        
+        <a href="../daily/2026-10-16.html">2026-10-16</a>
+        
+        <a href="../daily/2026-10-15.html">2026-10-15</a>
+        
+        <a href="../daily/2026-10-14.html">2026-10-14</a>
+        
+        <a href="../daily/2026-10-13.html">2026-10-13</a>
+        
+        <a href="../daily/2026-10-12.html">2026-10-12</a>
+        
+        <a href="../daily/2026-10-11.html">2026-10-11</a>
+        
+        <a href="../daily/2026-10-10.html">2026-10-10</a>
+        
+        <a href="../daily/2026-10-09.html">2026-10-09</a>
+        
+        <a href="../daily/2026-10-08.html">2026-10-08</a>
+        
+        <a href="../daily/2026-10-07.html">2026-10-07</a>
+        
+        <a href="../daily/2026-10-06.html">2026-10-06</a>
+        
+        <a href="../daily/2026-10-05.html">2026-10-05</a>
+        
+        <a href="../daily/2026-10-04.html">2026-10-04</a>
+        
+        <a href="../daily/2026-10-03.html">2026-10-03</a>
+        
+        <a href="../daily/2026-10-02.html">2026-10-02</a>
+        
+        <a href="../daily/2026-10-01.html">2026-10-01</a>
+        
+        <a href="../daily/2026-09-30.html">2026-09-30</a>
+        
+        <a href="../daily/2026-09-29.html">2026-09-29</a>
+        
+        <a href="../daily/2026-09-28.html">2026-09-28</a>
+        
+        <a href="../daily/2026-09-27.html">2026-09-27</a>
+        
+        <a href="../daily/2026-09-26.html">2026-09-26</a>
+        
+        <a href="../daily/2026-09-25.html">2026-09-25</a>
+        
+        <a href="../daily/2026-09-24.html">2026-09-24</a>
+        
+        <a href="../daily/2026-09-23.html">2026-09-23</a>
+        
+        <a href="../daily/2026-09-22.html">2026-09-22</a>
+        
+        <a href="../daily/2026-09-21.html">2026-09-21</a>
+        
+        <a href="../daily/2026-09-20.html">2026-09-20</a>
+        
+        <a href="../daily/2026-09-19.html">2026-09-19</a>
+        
+        <a href="../daily/2026-09-18.html">2026-09-18</a>
+        
+        <a href="../daily/2026-09-17.html">2026-09-17</a>
+        
+        <a href="../daily/2026-09-16.html">2026-09-16</a>
+        
+        <a href="../daily/2026-09-15.html">2026-09-15</a>
+        
+        <a href="../daily/2026-09-14.html">2026-09-14</a>
+        
+        <a href="../daily/2026-09-13.html">2026-09-13</a>
+        
+        <a href="../daily/2026-09-12.html">2026-09-12</a>
+        
+        <a href="../daily/2026-09-11.html">2026-09-11</a>
+        
+        <a href="../daily/2026-09-10.html">2026-09-10</a>
+        
+        <a href="../daily/2026-09-09.html">2026-09-09</a>
+        
+        <a href="../daily/2026-09-08.html">2026-09-08</a>
+        
+        <a href="../daily/2026-09-07.html">2026-09-07</a>
+        
+        <a href="../daily/2026-09-06.html">2026-09-06</a>
+        
+        <a href="../daily/2026-09-05.html">2026-09-05</a>
+        
+        <a href="../daily/2026-09-04.html">2026-09-04</a>
+        
+        <a href="../daily/2026-09-03.html">2026-09-03</a>
+        
+        <a href="../daily/2026-09-02.html">2026-09-02</a>
+        
+        <a href="../daily/2026-09-01.html">2026-09-01</a>
+        
+        <a href="../daily/2026-08-31.html">2026-08-31</a>
+        
+        <a href="../daily/2026-08-30.html">2026-08-30</a>
+        
+        <a href="../daily/2026-08-29.html">2026-08-29</a>
+        
+        <a href="../daily/2026-08-28.html">2026-08-28</a>
+        
+        <a href="../daily/2026-08-27.html">2026-08-27</a>
+        
+        <a href="../daily/2026-08-26.html">2026-08-26</a>
+        
+        <a href="../daily/2026-08-25.html">2026-08-25</a>
+        
+        <a href="../daily/2026-08-24.html">2026-08-24</a>
+        
+        <a href="../daily/2026-08-23.html">2026-08-23</a>
+        
+        <a href="../daily/2026-08-22.html">2026-08-22</a>
+        
+        <a href="../daily/2026-08-21.html">2026-08-21</a>
+        
+        <a href="../daily/2026-08-20.html">2026-08-20</a>
+        
+        <a href="../daily/2026-08-19.html">2026-08-19</a>
+        
+        <a href="../daily/2026-08-18.html">2026-08-18</a>
+        
+        <a href="../daily/2026-08-17.html">2026-08-17</a>
+        
+        <a href="../daily/2026-08-16.html">2026-08-16</a>
+        
+        <a href="../daily/2026-08-15.html">2026-08-15</a>
+        
+        <a href="../daily/2026-08-14.html">2026-08-14</a>
+        
+        <a href="../daily/2026-08-13.html">2026-08-13</a>
+        
+        <a href="../daily/2026-08-12.html">2026-08-12</a>
+        
+        <a href="../daily/2026-08-11.html">2026-08-11</a>
+        
+        <a href="../daily/2026-08-10.html">2026-08-10</a>
+        
+        <a href="../daily/2026-08-09.html">2026-08-09</a>
+        
+        <a href="../daily/2026-08-08.html">2026-08-08</a>
+        
+        <a href="../daily/2026-08-07.html">2026-08-07</a>
+        
+        <a href="../daily/2026-08-06.html">2026-08-06</a>
+        
+        <a href="../daily/2026-08-05.html">2026-08-05</a>
+        
+        <a href="../daily/2026-08-04.html">2026-08-04</a>
+        
+        <a href="../daily/2026-08-03.html">2026-08-03</a>
+        
+        <a href="../daily/2026-08-02.html">2026-08-02</a>
+        
+      
+    </div>
+    <article class="card">
+      <div class="muted">2026-11-25
+        <span class="badge b-daily">
+          每日報告
+        </span>
+      </div>
+      <h1 id="2026-11-25">金融重點報告 2026-11-25</h1>
+<blockquote>
+<p>產出時間: 2026-11-25 01:48（台灣時間）
+資料截止: 11-25 01:26（收錄庫最新事件，若久久未前進代表蒐集上游疑中斷）
+品質儀表板: 資料新鮮度 ≤29min | 去重率 28.3% | 最大來源佔 17.0% | 驗證覆蓋 25.3% | ⚠️疑似誤殺 136
+本報告由 AI 自動生成，僅供參考，不構成投資建議。</p>
+</blockquote>
+<h2 id="_1">📅 行事曆排期事件</h2>
+<blockquote>
+<p>下列為今日／近期已排定、可能影響市場的重要事件（法人預期供參考）：</p>
+</blockquote>
+<ul>
+<li>⭐ 今天 [高]美國商務部 BEA：GDP 第三季第二次修正 + PCE(10月)</li>
+<li>📅 2026-11-26 [低]美股休市：感恩節 Thanksgiving 休市一日</li>
+</ul>
+<hr />
+<h2 id="_2">🆕 本次新增事件（置頂：最新產出）</h2>
+<blockquote>
+<p>本次新增 <strong>60 筆</strong>，重要 8 筆</p>
+</blockquote>
+<p><strong>重要事件（severity ≥ 1）</strong>：</p>
+<ul>
+<li><strong>[11-25 01:19]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Nasdaq, S&amp;P 500 fall as Nvidia-driven AI rally unwinds <code>investing-com</code></li>
+<li><strong style="color:#174ea6">影響</strong>: 美國GDP第三季第二次修正與10月PCE數據顯示經濟放緩，導致風險偏好下降，AI股Nvidia領跌納指與標普500。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,SPY</code></p>
+</li>
+<li>
+<p><strong>[11-25 01:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> Huang’s Nvidia return sparks relief for battered AI trade, but questions remain <code>investing-com</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 雖然黃仁勳回歸提振AI板塊情緒，但同日公布的GDP修正與PCE數據仍限制市場整體上行空間。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-25 01:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Nvidia shares slide as Trump's role in Jensen Huang's comeback questioned by US politicians <code>bbcbusiness</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國政界質疑特朗普對黃仁勳回歸的影響，加上當日GDP與PCE數據不佳，使NVDA股價回落。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-25 01:17]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Stock market today: S&amp;P 500, Nasdaq fall as chip stocks tumble, investors test Nvidia-fueled rally - Yahoo Finance <code>google-news:stock market rally</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國GDP第二次修正與10月PCE顯示通膨仍高，投資人減碼AI及晶片股，致納指與標普500同步下跌。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-25 01:09]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> S&amp;P 500 Drops 1% at Midday While the Dow Holds Green - 24/7 Wall St. <code>google-news:S&amp;P 500 Nasdaq</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 同日公布的美國GDP修正與PCE數據加劇風險偏好下降，導致標普500跌1%，AI相關股受拖累。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,SPY</code></p>
+</li>
+<li>
+<p><strong>[11-25 01:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[商品(油金)][negative]</strong> Europe's Gas Prices Jumped 163% in a Year - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 歐洲天然氣價格年增163%，推高能源成本與通膨壓力。</p>
+</li>
+<li>
+<p><strong>[11-25 01:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[商品(油金)][positive]</strong> Saudi Arabia Sees Smaller Economic Slump as More Oil Reaches Market - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 沙烏地增加原油供應，市場預期油價承壓，對能源股形成利好。</p>
+</li>
+<li>
+<p><strong>[11-25 01:11]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[股市][positive]</strong> 多頭反攻！台股漲3310點史上最高| 股市要聞| 股市 - UDN <code>google-news:台股 大漲</code></p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 台股突破3310點新高，受外資流入與AI概念股帶動，顯示本地市場仍具韌性。</li>
+<li><strong style="color:#174ea6">標的</strong>: <code>2330</code></li>
+</ul>
+<p><strong>其他同時段收錄（未分析，共 52 筆）</strong>：</p>
+<ul>
+<li><strong>[11-25 00:30]</strong> 美國期中選後信心大翻身！11月消費者信心衝近2年新高 遠超預期（<code>yahoo-tw-finance</code>）</li>
+<li><strong>[11-25 00:27]</strong> Nvidia, Anthropic and other AI stocks get back to tumbling and drag the US market lower - AP News（<code>google-news:stock market rally</code>）</li>
+<li><strong>[11-24 23:23]</strong> TWA00 加權指數- 講一個大家知道的事只是大家不願意面對- 股市爆料同學會 - CMoney（<code>google-news:加權指數</code>）</li>
+<li><strong>[11-25 00:24]</strong> Americans don’t like Trump’s tariffs. He’s doubling down anyway — as soon as this week.（<code>marketwatch</code>）</li>
+<li><strong>[11-25 00:52]</strong> Midday Need to Know: Chip stocks slide, Microsoft outage, and more（<code>seekingalpha</code>）</li>
+<li><strong>[11-25 00:44]</strong> 那斯達克指數跌入修正區間 歷史數據顯示轉為熊市機率僅兩成（<code>yahoo-tw-finance</code>）</li>
+<li><strong>[11-25 00:42]</strong> Jensen Huang to face DC grilling the same day Nvidia releases new products at GTC（<code>cnbc</code>）</li>
+<li><strong>[11-25 00:42]</strong> Four generations of a family working in one factory（<code>bbcbusiness</code>）</li>
+<li><strong>[11-25 00:41]</strong> T3 Defense Q3 GAAP EPS of -$30.80 misses by $29.69, revenue of $4.9M misses by $4.85M（<code>seekingalpha</code>）</li>
+<li><strong>[11-25 00:37]</strong> Earnings call transcript: Epsilon Energy posts strong Q3 2026 growth, shares jump（<code>investing-com</code>）</li>
+<li><strong>[11-25 00:00]</strong> AI失業潮恐沒想像嚴重！美企明年擬擴大招聘 逾3成看好AI帶動增聘（<code>yahoo-tw-finance</code>）</li>
+<li><strong>[11-25 00:46]</strong> S&amp;P500 and Nasdaq Index: AI Stocks Slide as Nvidia and Anthropic Retreat - FXEmpire（<code>google-news:S&amp;P 500 Nasdaq</code>）</li>
+<li><strong>[11-25 00:44]</strong> Nasdaq 100 plunges 3% as Wall Street selloff deepens, S&amp;P 500 falls 1.3% - Business Upturn（<code>google-news:S&amp;P 500 Nasdaq</code>）</li>
+<li><strong>[11-25 00:00]</strong> 美陸軍報告 美中若衝突 夏威夷基地難有效展開部署 - UDN（<code>google-news:戰爭 衝突</code>）</li>
+<li><strong>[11-25 00:12]</strong> TREASURIES-US yields slip as AI rally fizzles - marketscreener.com（<code>google-news:Treasury yields</code>）</li>
+<li><strong>[11-25 00:07]</strong> TWA00 加權指數- 綠綠跟本不想顧盤了- 股市爆料同學會 - CMoney（<code>google-news:加權指數</code>）</li>
+<li><strong>[11-25 00:18]</strong> Coming next year: Medicare Advantage plans without drug coverage for almost 640,000 people and fewer choices for the rest（<code>marketwatch</code>）</li>
+<li><strong>[11-25 00:08]</strong> A 10% cap on credit-card interest rates? Holiday shoppers shouldn’t bank on it.（<code>marketwatch</code>）</li>
+<li><strong>[11-25 00:24]</strong> Microsoft engineers faced 'fog of war' during 24-hour outage: report（<code>seekingalpha</code>）</li>
+<li><strong>[11-25 00:13]</strong> Trump’s Nvidia Push Shows Companies’ Importance in Global Economic War（<code>nytbusiness</code>）</li>
+<li><strong>[11-25 00:11]</strong> Earnings call transcript: Avante posts Q2 2026 revenue beat as stock slips（<code>investing-com</code>）</li>
+<li><strong>[11-25 00:11]</strong> 台股下跌時可以買嗎？15年老牌科技基金經理人教戰：分批與定期定額 3 大指標（<code>yahoo-tw-finance</code>）</li>
+<li><strong>[11-25 00:07]</strong> Retail stocks surge into Black Friday amid earnings beats（<code>investing-com</code>）</li>
+<li><strong>[11-25 00:06]</strong> Consumer confidence shoots up after Democrats' midterm victories — though inflation worries persist（<code>cnbc</code>）</li>
+<li><strong>[11-24 23:58]</strong> 黃仁勳回鍋全球股市飆 內外資大賣 小心囚徒困境上演（<code>yahoo-tw-finance</code>）</li>
+<li><strong>[11-24 23:47]</strong> Jensen Huang faces DC grilling the same day Nvidia releases new products at GTC（<code>cnbc</code>）</li>
+<li><strong>[11-24 23:58]</strong> Stock Market Today: Dow up modestly, S&amp;P 500 and Nasdaq in retreat a day after Nvidia's 31% surge; Dell results on tap: live updates - MarketWatch（<code>google-news:stock market rally</code>）</li>
+<li><strong>[11-24 23:52]</strong> Nasdaq declines as Nvidia slides, giving back part of Monday’s rally: Live updates - CNBC（<code>google-news:stock market rally</code>）</li>
+<li><strong>[11-24 23:39]</strong> Nasdaq falls as Nvidia slides over 7%, AI stocks retreat after Monday's sharp Wall Street rally - Business Today（<code>google-news:S&amp;P 500 Nasdaq</code>）</li>
+<li><strong>[11-24 23:32]</strong> Three Reasons Why US Stock Markets Are Under Pressure: Nasdaq Plunges 460 Points, S&amp;P 500 In Red - NDTV Profit（<code>google-news:S&amp;P 500 Nasdaq</code>）</li>
+<li><strong>[11-24 23:06]</strong> Is the Stock Market in the Early Stages of a Crash? - AOL.com（<code>google-news:stock market selloff</code>）</li>
+<li><strong>[11-24 23:56]</strong> 狂歡只一天？輝達回檔拖累美股，台指期再失守4萬點 這些變數成關鍵 - 三立新聞（<code>google-news:台股 大跌</code>）</li>
+<li><strong>[11-24 23:53]</strong> YieldMax® Ultra Short Option Income Strategy ETF announces weekly distribution of $0.1943（<code>seekingalpha</code>）</li>
+<li><strong>[11-24 23:52]</strong> "YieldMax S&amp;P 500 0DTE Covered
+Call ETF announces weekly distribution of $0.1891"（<code>seekingalpha</code>）</li>
+<li><strong>[11-24 23:50]</strong> "YieldMax R2000 0DTE Covered Call
+ETF announces weekly distribution of $0.2411"（<code>seekingalpha</code>）</li>
+<li><strong>[11-24 23:49]</strong> "YieldMax Nasdaq 100 0DTE
+Covered Call ETF announces weekly distribution of $0.2197"（<code>seekingalpha</code>）</li>
+<li><strong>[11-24 23:48]</strong> Appian stock hits 52-week high at 57.26 USD（<code>investing-com</code>）</li>
+<li><strong>[11-24 23:46]</strong> Embecta earnings beat by $0.43, revenue topped estimates（<code>investing-com</code>）</li>
+<li><strong>[11-24 23:36]</strong> 黃仁勳回歸股民喊「凍蒜」！沈春華認「起貪念」帳面落差近八位數（<code>yahoo-tw-finance</code>）</li>
+<li><strong>[11-24 23:46]</strong> Luxury Water Is Luring Drinkers Who Have Lost Their Thirst for Alcohol（<code>nytbusiness</code>）</li>
+<li><strong>[11-24 23:30]</strong> How Would Duke Energy Stock Hold Up in a Market Crash? - The Motley Fool（<code>google-news:stock market selloff</code>）</li>
+<li><strong>[11-24 23:28]</strong> Stock Market Today: Dow flat, S&amp;P 500 and Nasdaq in retreat a day after Nvidia's 31% surge; Dell results on tap: live updates - MarketWatch（<code>google-news:stock market rally</code>）</li>
+<li><strong>[11-24 23:05]</strong> Binance Integrates Cboe Index Feeds, Enabling Real-Time S&amp;P 500 and Nasdaq 100 Tracking - BigGo Finance（<code>google-news:S&amp;P 500 Nasdaq</code>）</li>
+<li><strong>[11-24 23:25]</strong> S&amp;P Cotality Case-Shiller Index: Inflation Erodes September Gains - Advisor Perspectives（<code>google-news:inflation CPI</code>）</li>
+<li><strong>[11-24 23:21]</strong> Libya and Iraq Could Be the Next Big Headache for Oil Markets - Crude Oil Prices Today | OilPrice.com（<code>google-news:oil price crude</code>）</li>
+<li><strong>[11-24 23:37]</strong> Fed, Broadcom and Micron Make Dec. 9 a Big Day for Stocks - JournalArta（<code>google-news:Federal Reserve rate decision</code>）</li>
+<li><strong>[11-24 23:27]</strong> TWA00 加權指數- 別只盯著漲停板看：行情狂飆時，真正幫你留住錢的幾個習慣- 股市爆料同學會 - CMoney（<code>google-news:加權指數</code>）</li>
+<li><strong>[11-24 23:22]</strong> The 50 stocks that matter most to hedge funds - Goldman（<code>seekingalpha</code>）</li>
+<li><strong>[11-24 23:11]</strong> Pressure Builds at American Airlines as It Lags Delta and United（<code>nytbusiness</code>）</li>
+<li><strong>[11-24 23:09]</strong> S&amp;P 500 Opens Lower as Tech Selloff Drags the Nasdaq Down 1.4% - 24/7 Wall St.（<code>google-news:S&amp;P 500 Nasdaq</code>）</li>
+<li><strong>[11-24 23:18]</strong> TWA00 加權指數- 台股大反彈！ - 股市爆料同學會 - CMoney（<code>google-news:加權指數</code>）</li>
+<li><strong>[11-24 23:11]</strong> Treasury yields dip after NY Fed's Williams warns on inflation; 5-year auction eyed - FlipItMoney（<code>google-news:Treasury yields</code>）</li>
+</ul>
+<hr />
+<h2 id="_3">市場行情快照</h2>
+<pre><code>加權指數            40,122.35    點 <span style="color:#c0392b;font-weight:bold">▲</span>+8.99%
+台積電              2,230.00  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+9.85%
+鴻海                 226.50  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+9.95%
+聯發科              4,050.00  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+9.91%
+台達電              1,085.00  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+9.60%
+富邦金                143.50  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+9.96%
+S&amp;P 500          7,204.05    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-0.46%
+納斯達克            23,739.19    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-1.45%
+費城半導體指數          8,868.99    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-7.50%
+道瓊              49,982.36    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.78%
+日經225           58,644.63    點 <span style="color:#c0392b;font-weight:bold">▲</span>+3.91%
+上證指數             3,548.37    點 <span style="color:#c0392b;font-weight:bold">▲</span>+0.27%
+Apple              353.26  USD <span style="color:#c0392b;font-weight:bold">▲</span>+1.20%
+Microsoft          498.89  USD <span style="color:#c0392b;font-weight:bold">▲</span>+1.30%
+NVIDIA             153.14  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-7.22%
+Amazon             252.88  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-0.98%
+Tesla              383.69  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-0.46%
+美元/日圓              159.21  JPY <span style="color:#c0392b;font-weight:bold">▲</span>+0.17%
+美元/台幣               32.97  TWD <span style="color:#c0392b;font-weight:bold">▲</span>+0.05%
+歐元/美元                1.10  EUR <span style="color:#c0392b;font-weight:bold">▲</span>+0.04%
+美元/人民幣               6.65  CNY <span style="color:#2e7d32;font-weight:bold">▼</span>-0.36%
+WTI原油               81.51  USD <span style="color:#c0392b;font-weight:bold">▲</span>+1.67%
+布蘭特原油               88.09  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-1.43%
+黃金               3,562.10  USD <span style="color:#2e7d32;font-weight:bold">▼</span>-2.45%
+美元指數DXY            103.79    點 <span style="color:#2e7d32;font-weight:bold">▼</span>-0.51%
+美債10年殖利率             4.91    % <span style="color:#2e7d32;font-weight:bold">▼</span>-0.20%
+</code></pre>
+<blockquote>
+<p>（快照資料時間：2026-11-24 22:30，台股收盤為最近一個交易日）</p>
+</blockquote>
+<h2 id="severity-2">重大事件（severity ≥ 2）</h2>
+<ul>
+<li><strong>[11-25 01:19]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Nasdaq, S&amp;P 500 fall as Nvidia-driven AI rally unwinds</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國GDP第三季第二次修正與10月PCE數據顯示經濟放緩，導致風險偏好下降，AI股Nvidia領跌納指與標普500。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,SPY</code></p>
+</li>
+<li>
+<p><strong>[11-25 01:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][neutral]</strong> Huang’s Nvidia return sparks relief for battered AI trade, but questions remain</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 雖然黃仁勳回歸提振AI板塊情緒，但同日公布的GDP修正與PCE數據仍限制市場整體上行空間。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-25 01:17]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Stock market today: S&amp;P 500, Nasdaq fall as chip stocks tumble, investors test Nvidia-fueled rally - Yahoo Finance</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國GDP第二次修正與10月PCE顯示通膨仍高，投資人減碼AI及晶片股，致納指與標普500同步下跌。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></p>
+</li>
+<li>
+<p><strong>[11-25 01:09]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> S&amp;P 500 Drops 1% at Midday While the Dow Holds Green - 24/7 Wall St.</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 同日公布的美國GDP修正與PCE數據加劇風險偏好下降，導致標普500跌1%，AI相關股受拖累。</li>
+<li>
+<p><strong style="color:#174ea6">標的</strong>: <code>NVDA,SPY</code></p>
+</li>
+<li>
+<p><strong>[11-25 01:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[股市][negative]</strong> Nvidia shares slide as Trump's role in Jensen Huang's comeback questioned by US politicians</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國政界質疑特朗普對黃仁勳回歸的影響，加上當日GDP與PCE數據不佳，使NVDA股價回落。</li>
+<li><strong style="color:#174ea6">標的</strong>: <code>NVDA</code></li>
+</ul>
+<hr />
+<h2 id="_4">分類彙整</h2>
+<h3 id="6">股市（6）</h3>
+<ul>
+<li><strong>[11-25 01:19]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Nasdaq, S&amp;P 500 fall as Nvidia-driven AI rally unwinds</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國GDP第三季第二次修正與10月PCE數據顯示經濟放緩，導致風險偏好下降，AI股Nvidia領跌納指與標普500。</p>
+</li>
+<li>
+<p><strong>[11-25 01:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[neutral]</strong> Huang’s Nvidia return sparks relief for battered AI trade, but questions remain</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 雖然黃仁勳回歸提振AI板塊情緒，但同日公布的GDP修正與PCE數據仍限制市場整體上行空間。</p>
+</li>
+<li>
+<p><strong>[11-25 01:17]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Stock market today: S&amp;P 500, Nasdaq fall as chip stocks tumble, investors test Nvidia-fueled rally - Yahoo Finance</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 美國GDP第二次修正與10月PCE顯示通膨仍高，投資人減碼AI及晶片股，致納指與標普500同步下跌。</p>
+</li>
+<li>
+<p><strong>[11-25 01:11]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> 多頭反攻！台股漲3310點史上最高| 股市要聞| 股市 - UDN</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 台股突破3310點新高，受外資流入與AI概念股帶動，顯示本地市場仍具韌性。</p>
+</li>
+<li>
+<p><strong>[11-25 01:09]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> S&amp;P 500 Drops 1% at Midday While the Dow Holds Green - 24/7 Wall St.</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 同日公布的美國GDP修正與PCE數據加劇風險偏好下降，導致標普500跌1%，AI相關股受拖累。</p>
+</li>
+<li>
+<p><strong>[11-25 01:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span>[negative]</strong> Nvidia shares slide as Trump's role in Jensen Huang's comeback questioned by US politicians</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 美國政界質疑特朗普對黃仁勳回歸的影響，加上當日GDP與PCE數據不佳，使NVDA股價回落。</li>
+</ul>
+<h3 id="2">商品(油金)（2）</h3>
+<ul>
+<li><strong>[11-25 01:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[negative]</strong> Europe's Gas Prices Jumped 163% in a Year - Crude Oil Prices Today | OilPrice.com</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 歐洲天然氣價格年增163%，推高能源成本與通膨壓力。</p>
+</li>
+<li>
+<p><strong>[11-25 01:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span>[positive]</strong> Saudi Arabia Sees Smaller Economic Slump as More Oil Reaches Market - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 沙烏地增加原油供應，市場預期油價承壓，對能源股形成利好。</li>
+</ul>
+<h3 id="72">其他（72）</h3>
+<ul>
+<li><strong>[11-25 00:52]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Midday Need to Know: Chip stocks slide, Microsoft outage, and more</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-25 00:46]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> S&amp;P500 and Nasdaq Index: AI Stocks Slide as Nvidia and Anthropic Retreat - FXEmpire</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-25 00:44]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 那斯達克指數跌入修正區間 歷史數據顯示轉為熊市機率僅兩成</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-25 00:44]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Nasdaq 100 plunges 3% as Wall Street selloff deepens, S&amp;P 500 falls 1.3% - Business Upturn</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-25 00:42]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Jensen Huang to face DC grilling the same day Nvidia releases new products at GTC</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-25 00:42]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Four generations of a family working in one factory</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-25 00:41]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> T3 Defense Q3 GAAP EPS of -$30.80 misses by $29.69, revenue of $4.9M misses by $4.85M</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-25 00:37]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Earnings call transcript: Epsilon Energy posts strong Q3 2026 growth, shares jump</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-25 00:30]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 美國期中選後信心大翻身！11月消費者信心衝近2年新高 遠超預期</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-25 00:27]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Nvidia, Anthropic and other AI stocks get back to tumbling and drag the US market lower - AP News</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-25 00:24]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Microsoft engineers faced 'fog of war' during 24-hour outage: report</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-25 00:24]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Americans don’t like Trump’s tariffs. He’s doubling down anyway — as soon as this week.</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-25 00:18]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Coming next year: Medicare Advantage plans without drug coverage for almost 640,000 people and fewer choices for the rest</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-25 00:13]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Trump’s Nvidia Push Shows Companies’ Importance in Global Economic War</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-25 00:12]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> TREASURIES-US yields slip as AI rally fizzles - marketscreener.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-25 00:11]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Earnings call transcript: Avante posts Q2 2026 revenue beat as stock slips</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-25 00:11]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 台股下跌時可以買嗎？15年老牌科技基金經理人教戰：分批與定期定額 3 大指標</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-25 00:08]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> A 10% cap on credit-card interest rates? Holiday shoppers shouldn’t bank on it.</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-25 00:07]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Retail stocks surge into Black Friday amid earnings beats</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-25 00:07]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> TWA00 加權指數- 綠綠跟本不想顧盤了- 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-25 00:06]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Consumer confidence shoots up after Democrats' midterm victories — though inflation worries persist</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-25 00:00]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> AI失業潮恐沒想像嚴重！美企明年擬擴大招聘 逾3成看好AI帶動增聘</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-25 00:00]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 美陸軍報告 美中若衝突 夏威夷基地難有效展開部署 - UDN</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:58]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 黃仁勳回鍋全球股市飆 內外資大賣 小心囚徒困境上演</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:58]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Stock Market Today: Dow up modestly, S&amp;P 500 and Nasdaq in retreat a day after Nvidia's 31% surge; Dell results on tap: live updates - MarketWatch</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:56]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 狂歡只一天？輝達回檔拖累美股，台指期再失守4萬點 這些變數成關鍵 - 三立新聞</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:53]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> YieldMax® Ultra Short Option Income Strategy ETF announces weekly distribution of $0.1943</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:52]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> "YieldMax S&amp;P 500 0DTE Covered
+Call ETF announces weekly distribution of $0.1891"</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:52]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Nasdaq declines as Nvidia slides, giving back part of Monday’s rally: Live updates - CNBC</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:50]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> "YieldMax R2000 0DTE Covered Call
+ETF announces weekly distribution of $0.2411"</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:49]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> "YieldMax Nasdaq 100 0DTE
+Covered Call ETF announces weekly distribution of $0.2197"</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:48]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Appian stock hits 52-week high at 57.26 USD</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:47]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Jensen Huang faces DC grilling the same day Nvidia releases new products at GTC</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:46]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Luxury Water Is Luring Drinkers Who Have Lost Their Thirst for Alcohol</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:46]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Embecta earnings beat by $0.43, revenue topped estimates</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:39]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Nasdaq falls as Nvidia slides over 7%, AI stocks retreat after Monday's sharp Wall Street rally - Business Today</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:37]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Fed, Broadcom and Micron Make Dec. 9 a Big Day for Stocks - JournalArta</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:36]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 黃仁勳回歸股民喊「凍蒜」！沈春華認「起貪念」帳面落差近八位數</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:32]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Three Reasons Why US Stock Markets Are Under Pressure: Nasdaq Plunges 460 Points, S&amp;P 500 In Red - NDTV Profit</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:30]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> How Would Duke Energy Stock Hold Up in a Market Crash? - The Motley Fool</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:28]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Stock Market Today: Dow flat, S&amp;P 500 and Nasdaq in retreat a day after Nvidia's 31% surge; Dell results on tap: live updates - MarketWatch</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:27]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> TWA00 加權指數- 別只盯著漲停板看：行情狂飆時，真正幫你留住錢的幾個習慣- 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:25]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> S&amp;P Cotality Case-Shiller Index: Inflation Erodes September Gains - Advisor Perspectives</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:23]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> TWA00 加權指數- 講一個大家知道的事只是大家不願意面對- 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:22]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> The 50 stocks that matter most to hedge funds - Goldman</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:21]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Libya and Iraq Could Be the Next Big Headache for Oil Markets - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:18]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> TWA00 加權指數- 台股大反彈！ - 股市爆料同學會 - CMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:11]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Treasury yields dip after NY Fed's Williams warns on inflation; 5-year auction eyed - FlipItMoney</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:11]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Pressure Builds at American Airlines as It Lags Delta and United</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:09]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> S&amp;P 500 Opens Lower as Tech Selloff Drags the Nasdaq Down 1.4% - 24/7 Wall St.</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:06]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Is the Stock Market in the Early Stages of a Crash? - AOL.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:05]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Binance Integrates Cboe Index Feeds, Enabling Real-Time S&amp;P 500 and Nasdaq 100 Tracking - BigGo Finance</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:04]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Stock Market Today: S&amp;P 500 and Nasdaq Fall as Nvidia Drops 5.5% - Coinpaper</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:03]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Nvidia brought Jensen Huang back. But the investigations aren’t over</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:03]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 川普關稅又來？美股早盤費半摔6%</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:02]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Can Shell withstand global investor caution amid rising US Treasury yields and shifting monetary signals? - Traders Union</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 23:00]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Iran Faces a Deepening Natural Gas Crisis Ahead of Winter - Crude Oil Prices Today | OilPrice.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 22:59]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Nvidia’s stock drops as these major questions loom over Jensen Huang’s return</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 22:59]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> The number of 401(k) millionaires drops as the stock market swings</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 22:57]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Wall Street set for lower open as Nvidia-fueled AI rally fades By Reuters - Investing.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 22:57]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 〈美股早盤〉狂歡只一天？黃仁勳回歸行情降溫 輝達拖累主要指數開低</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 22:56]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> US stocks open lower as Nvidia falls more than 5% and Anthropic briefly slips below its IPO price - MLQ.ai</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 22:56]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> What to do if your Thanksgiving flight gets delayed — especially with a nor’easter brewing</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 22:55]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Jensen Huang's Nvidia Return Rallied Markets. Why Stock Futures Declined A Day Later - NDTV</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 22:55]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Anthropic’s stock just broke below its IPO price for the first time</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 22:52]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 美股股利自動轉買比特幣 新型ETF降進場決策門檻</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 22:52]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Anthropic stock falls below $83 IPO price, but analysts are still largely positive</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 22:52]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Stock Market Warning Signs: Is Monday’s Rally Already Over? - Investing.com</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 22:52]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 砸7450億在德州蓋2奈米廠？台積電回應：持續評估</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 22:51]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Oil News: Crude Oil Rebounds as Traders Weigh Rising Supply and Hormuz Attacks - FXEmpire</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 22:50]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> Binance Partners With Cboe to Offer Real-Time S&amp;P 500, Nasdaq-100 Data - bloomingbit</p>
+</li>
+<li>
+<p><strong style="color:#174ea6">影響</strong>: 無</p>
+</li>
+<li>
+<p><strong>[11-24 22:49]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span>[neutral]</strong> 台股大跌後反彈！呂文婉曝「定存利率」直呼慶幸：寒冬送暖- 娛樂 - 中時新聞網</p>
+</li>
+<li><strong style="color:#174ea6">影響</strong>: 無</li>
+</ul>
+<hr />
+<h2 id="_5">全部事件</h2>
+<ul>
+<li><strong>[11-25 01:19]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Nasdaq, S&amp;P 500 fall as Nvidia-driven AI rally unwinds <code>investing-com</code></li>
+<li><strong>[11-25 01:18]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Huang’s Nvidia return sparks relief for battered AI trade, but questions remain <code>investing-com</code></li>
+<li><strong>[11-25 01:17]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Stock market today: S&amp;P 500, Nasdaq fall as chip stocks tumble, investors test Nvidia-fueled rally - Yahoo Finance <code>google-news:stock market rally</code></li>
+<li><strong>[11-25 01:11]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> 多頭反攻！台股漲3310點史上最高| 股市要聞| 股市 - UDN <code>google-news:台股 大漲</code></li>
+<li><strong>[11-25 01:09]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> S&amp;P 500 Drops 1% at Midday While the Dow Holds Green - 24/7 Wall St. <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-25 01:04]</strong> <strong><span style="color:#e8710a;font-weight:bold">[中高]</span></strong> Nvidia shares slide as Trump's role in Jensen Huang's comeback questioned by US politicians <code>bbcbusiness</code></li>
+<li><strong>[11-25 01:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Europe's Gas Prices Jumped 163% in a Year - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[11-25 01:00]</strong> <strong><span style="color:#1a73e8;font-weight:bold">[中低]</span></strong> Saudi Arabia Sees Smaller Economic Slump as More Oil Reaches Market - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[11-25 00:52]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Midday Need to Know: Chip stocks slide, Microsoft outage, and more <code>seekingalpha</code></li>
+<li><strong>[11-25 00:46]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> S&amp;P500 and Nasdaq Index: AI Stocks Slide as Nvidia and Anthropic Retreat - FXEmpire <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-25 00:44]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 那斯達克指數跌入修正區間 歷史數據顯示轉為熊市機率僅兩成 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-25 00:44]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Nasdaq 100 plunges 3% as Wall Street selloff deepens, S&amp;P 500 falls 1.3% - Business Upturn <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-25 00:42]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Jensen Huang to face DC grilling the same day Nvidia releases new products at GTC <code>cnbc</code></li>
+<li><strong>[11-25 00:42]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Four generations of a family working in one factory <code>bbcbusiness</code></li>
+<li><strong>[11-25 00:41]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> T3 Defense Q3 GAAP EPS of -$30.80 misses by $29.69, revenue of $4.9M misses by $4.85M <code>seekingalpha</code></li>
+<li><strong>[11-25 00:37]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Earnings call transcript: Epsilon Energy posts strong Q3 2026 growth, shares jump <code>investing-com</code></li>
+<li><strong>[11-25 00:30]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 美國期中選後信心大翻身！11月消費者信心衝近2年新高 遠超預期 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-25 00:27]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Nvidia, Anthropic and other AI stocks get back to tumbling and drag the US market lower - AP News <code>google-news:stock market rally</code></li>
+<li><strong>[11-25 00:24]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Microsoft engineers faced 'fog of war' during 24-hour outage: report <code>seekingalpha</code></li>
+<li><strong>[11-25 00:24]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Americans don’t like Trump’s tariffs. He’s doubling down anyway — as soon as this week. <code>marketwatch</code></li>
+<li><strong>[11-25 00:18]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Coming next year: Medicare Advantage plans without drug coverage for almost 640,000 people and fewer choices for the rest <code>marketwatch</code></li>
+<li><strong>[11-25 00:13]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Trump’s Nvidia Push Shows Companies’ Importance in Global Economic War <code>nytbusiness</code></li>
+<li><strong>[11-25 00:12]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> TREASURIES-US yields slip as AI rally fizzles - marketscreener.com <code>google-news:Treasury yields</code></li>
+<li><strong>[11-25 00:11]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Earnings call transcript: Avante posts Q2 2026 revenue beat as stock slips <code>investing-com</code></li>
+<li><strong>[11-25 00:11]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 台股下跌時可以買嗎？15年老牌科技基金經理人教戰：分批與定期定額 3 大指標 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-25 00:08]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> A 10% cap on credit-card interest rates? Holiday shoppers shouldn’t bank on it. <code>marketwatch</code></li>
+<li><strong>[11-25 00:07]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Retail stocks surge into Black Friday amid earnings beats <code>investing-com</code></li>
+<li><strong>[11-25 00:07]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> TWA00 加權指數- 綠綠跟本不想顧盤了- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-25 00:06]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Consumer confidence shoots up after Democrats' midterm victories — though inflation worries persist <code>cnbc</code></li>
+<li><strong>[11-25 00:00]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> AI失業潮恐沒想像嚴重！美企明年擬擴大招聘 逾3成看好AI帶動增聘 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-25 00:00]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 美陸軍報告 美中若衝突 夏威夷基地難有效展開部署 - UDN <code>google-news:戰爭 衝突</code></li>
+<li><strong>[11-24 23:58]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 黃仁勳回鍋全球股市飆 內外資大賣 小心囚徒困境上演 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-24 23:58]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Stock Market Today: Dow up modestly, S&amp;P 500 and Nasdaq in retreat a day after Nvidia's 31% surge; Dell results on tap: live updates - MarketWatch <code>google-news:stock market rally</code></li>
+<li><strong>[11-24 23:56]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 狂歡只一天？輝達回檔拖累美股，台指期再失守4萬點 這些變數成關鍵 - 三立新聞 <code>google-news:台股 大跌</code></li>
+<li><strong>[11-24 23:53]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> YieldMax® Ultra Short Option Income Strategy ETF announces weekly distribution of $0.1943 <code>seekingalpha</code></li>
+<li><strong>[11-24 23:52]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> "YieldMax S&amp;P 500 0DTE Covered
+Call ETF announces weekly distribution of $0.1891" <code>seekingalpha</code></li>
+<li><strong>[11-24 23:52]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Nasdaq declines as Nvidia slides, giving back part of Monday’s rally: Live updates - CNBC <code>google-news:stock market rally</code></li>
+<li><strong>[11-24 23:50]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> "YieldMax R2000 0DTE Covered Call
+ETF announces weekly distribution of $0.2411" <code>seekingalpha</code></li>
+<li><strong>[11-24 23:49]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> "YieldMax Nasdaq 100 0DTE
+Covered Call ETF announces weekly distribution of $0.2197" <code>seekingalpha</code></li>
+<li><strong>[11-24 23:48]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Appian stock hits 52-week high at 57.26 USD <code>investing-com</code></li>
+<li><strong>[11-24 23:47]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Jensen Huang faces DC grilling the same day Nvidia releases new products at GTC <code>cnbc</code></li>
+<li><strong>[11-24 23:46]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Luxury Water Is Luring Drinkers Who Have Lost Their Thirst for Alcohol <code>nytbusiness</code></li>
+<li><strong>[11-24 23:46]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Embecta earnings beat by $0.43, revenue topped estimates <code>investing-com</code></li>
+<li><strong>[11-24 23:39]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Nasdaq falls as Nvidia slides over 7%, AI stocks retreat after Monday's sharp Wall Street rally - Business Today <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-24 23:37]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Fed, Broadcom and Micron Make Dec. 9 a Big Day for Stocks - JournalArta <code>google-news:Federal Reserve rate decision</code></li>
+<li><strong>[11-24 23:36]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 黃仁勳回歸股民喊「凍蒜」！沈春華認「起貪念」帳面落差近八位數 <code>yahoo-tw-finance</code></li>
+<li><strong>[11-24 23:32]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Three Reasons Why US Stock Markets Are Under Pressure: Nasdaq Plunges 460 Points, S&amp;P 500 In Red - NDTV Profit <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-24 23:30]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> How Would Duke Energy Stock Hold Up in a Market Crash? - The Motley Fool <code>google-news:stock market selloff</code></li>
+<li><strong>[11-24 23:28]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Stock Market Today: Dow flat, S&amp;P 500 and Nasdaq in retreat a day after Nvidia's 31% surge; Dell results on tap: live updates - MarketWatch <code>google-news:stock market rally</code></li>
+<li><strong>[11-24 23:27]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> TWA00 加權指數- 別只盯著漲停板看：行情狂飆時，真正幫你留住錢的幾個習慣- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-24 23:25]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> S&amp;P Cotality Case-Shiller Index: Inflation Erodes September Gains - Advisor Perspectives <code>google-news:inflation CPI</code></li>
+<li><strong>[11-24 23:23]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> TWA00 加權指數- 講一個大家知道的事只是大家不願意面對- 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-24 23:22]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> The 50 stocks that matter most to hedge funds - Goldman <code>seekingalpha</code></li>
+<li><strong>[11-24 23:21]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Libya and Iraq Could Be the Next Big Headache for Oil Markets - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[11-24 23:18]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> TWA00 加權指數- 台股大反彈！ - 股市爆料同學會 - CMoney <code>google-news:加權指數</code></li>
+<li><strong>[11-24 23:11]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Treasury yields dip after NY Fed's Williams warns on inflation; 5-year auction eyed - FlipItMoney <code>google-news:Treasury yields</code></li>
+<li><strong>[11-24 23:11]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Pressure Builds at American Airlines as It Lags Delta and United <code>nytbusiness</code></li>
+<li><strong>[11-24 23:09]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> S&amp;P 500 Opens Lower as Tech Selloff Drags the Nasdaq Down 1.4% - 24/7 Wall St. <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-24 23:06]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Is the Stock Market in the Early Stages of a Crash? - AOL.com <code>google-news:stock market selloff</code></li>
+<li><strong>[11-24 23:05]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Binance Integrates Cboe Index Feeds, Enabling Real-Time S&amp;P 500 and Nasdaq 100 Tracking - BigGo Finance <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-24 23:04]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Stock Market Today: S&amp;P 500 and Nasdaq Fall as Nvidia Drops 5.5% - Coinpaper <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-24 23:03]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Nvidia brought Jensen Huang back. But the investigations aren’t over <code>cnbc</code></li>
+<li><strong>[11-24 23:03]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 川普關稅又來？美股早盤費半摔6% <code>yahoo-tw-stock</code></li>
+<li><strong>[11-24 23:02]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Can Shell withstand global investor caution amid rising US Treasury yields and shifting monetary signals? - Traders Union <code>google-news:Treasury yields</code></li>
+<li><strong>[11-24 23:00]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Iran Faces a Deepening Natural Gas Crisis Ahead of Winter - Crude Oil Prices Today | OilPrice.com <code>google-news:oil price crude</code></li>
+<li><strong>[11-24 22:59]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Nvidia’s stock drops as these major questions loom over Jensen Huang’s return <code>marketwatch</code></li>
+<li><strong>[11-24 22:59]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> The number of 401(k) millionaires drops as the stock market swings <code>marketwatch</code></li>
+<li><strong>[11-24 22:57]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Wall Street set for lower open as Nvidia-fueled AI rally fades By Reuters - Investing.com <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-24 22:57]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 〈美股早盤〉狂歡只一天？黃仁勳回歸行情降溫 輝達拖累主要指數開低 <code>yahoo-tw-stock</code></li>
+<li><strong>[11-24 22:56]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> US stocks open lower as Nvidia falls more than 5% and Anthropic briefly slips below its IPO price - MLQ.ai <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-24 22:56]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> What to do if your Thanksgiving flight gets delayed — especially with a nor’easter brewing <code>marketwatch</code></li>
+<li><strong>[11-24 22:55]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Jensen Huang's Nvidia Return Rallied Markets. Why Stock Futures Declined A Day Later - NDTV <code>google-news:stock market rally</code></li>
+<li><strong>[11-24 22:55]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Anthropic’s stock just broke below its IPO price for the first time <code>marketwatch</code></li>
+<li><strong>[11-24 22:52]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 美股股利自動轉買比特幣 新型ETF降進場決策門檻 <code>yahoo-tw-stock</code></li>
+<li><strong>[11-24 22:52]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Anthropic stock falls below $83 IPO price, but analysts are still largely positive <code>cnbc</code></li>
+<li><strong>[11-24 22:52]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Stock Market Warning Signs: Is Monday’s Rally Already Over? - Investing.com <code>google-news:stock market rally</code></li>
+<li><strong>[11-24 22:52]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 砸7450億在德州蓋2奈米廠？台積電回應：持續評估 <code>yahoo-tw-stock</code></li>
+<li><strong>[11-24 22:51]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Oil News: Crude Oil Rebounds as Traders Weigh Rising Supply and Hormuz Attacks - FXEmpire <code>google-news:oil price crude</code></li>
+<li><strong>[11-24 22:50]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> Binance Partners With Cboe to Offer Real-Time S&amp;P 500, Nasdaq-100 Data - bloomingbit <code>google-news:S&amp;P 500 Nasdaq</code></li>
+<li><strong>[11-24 22:49]</strong> <strong><span style="color:#9e9e9e;font-weight:bold">[低]</span></strong> 台股大跌後反彈！呂文婉曝「定存利率」直呼慶幸：寒冬送暖- 娛樂 - 中時新聞網 <code>google-news:台股 大跌</code></li>
+</ul>
+    </article>
+  
+</div>
+<footer>由金融情報系統自動發佈 · 僅供參考，不構成投資建議</footer>
+<script>
+const WEEK = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function nowParts(tz){
+  const p = {};
+  new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short', month: 'short',
+    day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
+  }).formatToParts(new Date()).forEach(x => p[x.type] = x.value);
+  return p;
+}
+function marketOpen(tz, open, close){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  return wd>=1 && wd<=5 && m>=open && m<close;
+}
+// Taiwan index-futures night session 15:00 -> next-day 05:00 (crosses midnight):
+// 15:00-24:00 Mon-Fri, plus 00:00-05:00 Tue-Sat (Sat 00:00-05:00 is Fri night session).
+function nightOpen(tz){
+  const p = nowParts(tz);
+  const wd = WEEK.indexOf(p.weekday);
+  const m = parseInt(p.hour,10)*60 + parseInt(p.minute,10);
+  if (m >= 5*60 && m < 15*60) return false;   // 05:00-15:00 recess
+  if (m >= 15*60) return wd >= 1 && wd <= 5;   // 15:00-24:00 Mon-Fri
+  return wd >= 2 && wd <= 6;                   // 00:00-05:00 Tue-Sat
+}
+function pad(n){ return String(n).padStart(2,'0'); }
+function setMkt(id, open, label){
+  const el = document.getElementById(id);
+  el.className = 'mkt ' + (open ? 'open' : 'closed');
+  el.textContent = (label ? label + ' ' : '') + (open ? '開盤中' : '未開盤');
+}
+function tick(){
+  const tw = nowParts('Asia/Taipei');
+  const ny = nowParts('America/New_York');
+  document.getElementById('clk-tw').textContent = pad(tw.hour)+':'+pad(tw.minute)+':'+pad(tw.second);
+  document.getElementById('clk-ny').textContent = pad(ny.hour)+':'+pad(ny.minute)+':'+pad(ny.second);
+  // Taiwan: TWSE weighted index 09:00-13:30; TX futures day 08:45-13:45; TX night 15:00-05:00
+  setMkt('tw-idx',  marketOpen('Asia/Taipei', 9*60, 13*60+30), '加權');
+  setMkt('tx-day',  marketOpen('Asia/Taipei', 8*60+45, 13*60+45), '期日盤');
+  setMkt('tx-night', nightOpen('Asia/Taipei'), '期夜盤');
+  // US: regular session 09:30-16:00 ET; after-hours 16:00-20:00 ET
+  setMkt('ny-mkt',  marketOpen('America/New_York', 9*60+30, 16*60), '美股');
+  setMkt('ny-night', marketOpen('America/New_York', 16*60, 20*60), '美股夜');
+}
+tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>
